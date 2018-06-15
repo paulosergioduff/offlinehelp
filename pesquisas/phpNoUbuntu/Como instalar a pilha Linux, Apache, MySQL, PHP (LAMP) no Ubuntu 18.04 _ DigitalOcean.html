@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html class="wf-proximanova-n6-active wf-proximanova-n4-active wf-proximanova-i4-active wf-proximanova-n3-active wf-active" style="" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Como instalar a pilha Linux, Apache, MySQL, PHP (LAMP) no Ubuntu 18.04 | DigitalOcean</title>
+
+<meta name="description" content="A pilha 'LAMP' é um grupo de softwares open source que é tipicamente instalado em conjunto para permitir a um servidor hospedar websites dinâmicos e aplicações web. Este termo é atualmente um acrônimo que representa o sistema operacional Linux, com o">
+<meta name="keywords" content="LAMP Stack PHP Apache MySQL">
+
+<meta name="og:title" content="Como instalar a pilha Linux, Apache, MySQL, PHP (LAMP) no Ubuntu 18.04 | DigitalOcean">
+<meta name="og:description" content="A pilha 'LAMP' é um grupo de softwares open source que é tipicamente instalado em conjunto para permitir a um servidor hospedar websites dinâmicos e aplicações web. Este termo é atualmente um acrônimo que representa o sistema operacional Linux, com o">
+<meta name="og:site_name" content="DigitalOcean">
+<meta name="og:type" content="article">
+<meta name="og:image" content="https://www.digitalocean.com/assets/community/default_community_sharing-65c1cc547375d6e37cc45195b3686769.png">
+
+<meta name="twitter:site" content="DigitalOcean">
+<meta name="twitter:title" content="Como instalar a pilha Linux, Apache, MySQL, PHP (LAMP) no Ubuntu 18.04 | DigitalOcean">
+<meta name="twitter:description" content="A pilha 'LAMP' é um grupo de softwares open source que é tipicamente instalado em conjunto para permitir a um servidor hospedar websites dinâmicos e aplicações web. Este termo é atualmente um acrônimo que representa o sistema operacional Linux, com o">
+<meta name="twitter:creator" content="DigitalOcean">
+<meta name="twitter:card" content="photo">
+<meta name="twitter:url" content="https://www.digitalocean.com/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt">
+<meta name="twitter:image" content="https://www.digitalocean.com/assets/community/default_community_sharing-65c1cc547375d6e37cc45195b3686769.png">
+
+  <link rel="canonical" href="https://www.digitalocean.com/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt">
+
+        <link rel="alternate" hreflang="en" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04">
+      <link rel="alternate" hreflang="pt" href="https://www.digitalocean.com/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt">
+
+
+    <link rel="stylesheet" media="all" href="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/application-8182fc72f635ec1ff7bbcf274878ee72.css">
+
+    
+    <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="mOjwEY5xO5tNUSnQfjfCegDcPgAD69oxUOT3zmFcdq2BrlLBSvkANQ7jQGT1FEmW08IEciDh9QH+UNzAcQPTEg==">
+    
+<link rel="stylesheet" type="text/css" href="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/cookieconsent.css">
+<script src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/cookieconsent.js"></script>
+<style>
+  .cc-window {font-family: proxima-nova, 'proxima nova', 'helvetica neue', helvetica, arial, sans-serif; font-size: 13px; line-height: 17px}
+  .cc-bottom {bottom: 20px}
+  .cc-right {right: 20px}
+  .cc-window a {text-decoration: none}
+  .cc-window.cc-floating {max-width: 461px; padding: 20px 35px 20px 20px;}
+  .cc-floating .cc-message {margin-bottom: 0;}
+  .cc-floating .cc-message a {color: #0069ff;}
+  .cc-message .cc-compliance {position: absolute; top: 5px; right: 0; font-weight: bold; font-size: 15px;}
+  .cc-message .cc-compliance .cc-btn {border-width: 0; color: #999;}
+  .cc-message + .cc-compliance {display: none;}
+  @media only screen and (min-width: 420px) {
+    .cc-window {font-size: 14px; line-height: 20px; border-radius: 4px;}
+    .cc-message .cc-compliance {top: 1px; right: 1px;}
+  }
+</style>
+
+<script>
+//<![CDATA[
+
+  window.cookieConsentDomain = '';
+
+//]]>
+</script>
+<script>
+//<![CDATA[
+
+  window.cookiesToSet = ["first_landing_page=/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt; expires=Sat, 25 Aug 2018 13:03:52 +0000; path=/; domain=","last_landing_page=/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt; path=/; domain=","referrer=https://www.google.com/; expires=Sat, 25 Aug 2018 13:03:52 +0000; path=/; domain="];
+
+//]]>
+</script>
+<script src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/cookieConsent-ca4d3f834257a4a2e973c608de85ea66.js"></script>
+
+    <script src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/bugsnag.js"></script>
+
+<script>
+  window.Bugsnag = bugsnag({
+    apiKey: '9ffc01bc3e1fa7891bfd20909d1bfb0e',
+    logger: null
+  })
+</script>
+
+<script type="text/javascript">
+  window.cookieConsent.promise.then(function () {
+    if(window.analytics=window.analytics||[],window.analytics.included)window.console&&console.error&&console.error("analytics.js included twice");else{window.analytics.included=!0,window.analytics.methods=["identify","group","track","page","pageview","alias","ready","on","once","off","trackLink","trackForm","trackClick","trackSubmit"],window.analytics.factory=function(a){return function(){var n=Array.prototype.slice.call(arguments);return n.unshift(a),window.analytics.push(n),window.analytics}};for(var i=0;i<window.analytics.methods.length;i++){var key=window.analytics.methods[i];window.analytics[key]=window.analytics.factory(key)}window.analytics.load=function(a){var n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+a+"/analytics.min.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(n,t)},window.analytics.SNIPPET_VERSION="2.0.9",
+      window.analytics.load("puo3uv968t")}
+    window.analytics.page();
+  });
+</script>
+
+
+<!-- Google Tag Manager -->
+<script>
+window.cookieConsent.promise.then(function () {
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KHWBBT');
+});
+</script>
+<!-- End Google Tag Manager -->
+
+
+      <script src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/izu1uqu.js"></script>
+      <style type="text/css">.tk-proxima-nova{font-family:"proxima-nova",sans-serif;}</style><style type="text/css">@font-face{font-family:tk-proxima-nova-n6;src:url(https://use.typekit.net/af/2e3ccc/00000000000000003b9b0939/27/l?subset_id=2&fvd=n6&v=3) format("woff2"),url(https://use.typekit.net/af/2e3ccc/00000000000000003b9b0939/27/d?subset_id=2&fvd=n6&v=3) format("woff"),url(https://use.typekit.net/af/2e3ccc/00000000000000003b9b0939/27/a?subset_id=2&fvd=n6&v=3) format("opentype");font-weight:600;font-style:normal;}@font-face{font-family:tk-proxima-nova-n4;src:url(https://use.typekit.net/af/1426a3/00000000000000003b9b0934/27/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/1426a3/00000000000000003b9b0934/27/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/1426a3/00000000000000003b9b0934/27/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;}@font-face{font-family:tk-proxima-nova-i4;src:url(https://use.typekit.net/af/6756a2/00000000000000003b9b0935/27/l?subset_id=2&fvd=i4&v=3) format("woff2"),url(https://use.typekit.net/af/6756a2/00000000000000003b9b0935/27/d?subset_id=2&fvd=i4&v=3) format("woff"),url(https://use.typekit.net/af/6756a2/00000000000000003b9b0935/27/a?subset_id=2&fvd=i4&v=3) format("opentype");font-weight:400;font-style:italic;}@font-face{font-family:tk-proxima-nova-n3;src:url(https://use.typekit.net/af/12260d/00000000000000003b9b0932/27/l?subset_id=2&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/12260d/00000000000000003b9b0932/27/d?subset_id=2&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/12260d/00000000000000003b9b0932/27/a?subset_id=2&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;}</style><script>try{Typekit.load({ async: true });}catch(e){}</script>
+      <script src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/polyfill.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.digitalocean.com/community/tutorials/feed">
+    <script>
+      window.comApp = {
+        prefix: '/community',
+        svgIconPath: 'https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg',
+        railsEnv: 'production',
+        rootUrl: 'https://www.digitalocean.com/community'
+      };
+    </script>
+      <script src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/forms2.js"></script>
+
+    <script src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/application-cd9bcf480b4e04f25d0c694413e7667c.js"></script>
+  <style>.fluidvids {width: 100%; max-width: 100%; position: relative;}.fluidvids-item {position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;}</style><script id="twitter-wjs" src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/widgets.js"></script><script id="facebook-jssdk" src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/all.js"></script><style type="text/css">@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/2e3ccc/00000000000000003b9b0939/27/l?subset_id=2&fvd=n6&v=3) format("woff2"),url(https://use.typekit.net/af/2e3ccc/00000000000000003b9b0939/27/d?subset_id=2&fvd=n6&v=3) format("woff"),url(https://use.typekit.net/af/2e3ccc/00000000000000003b9b0939/27/a?subset_id=2&fvd=n6&v=3) format("opentype");font-weight:600;font-style:normal;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/1426a3/00000000000000003b9b0934/27/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/1426a3/00000000000000003b9b0934/27/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/1426a3/00000000000000003b9b0934/27/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/6756a2/00000000000000003b9b0935/27/l?subset_id=2&fvd=i4&v=3) format("woff2"),url(https://use.typekit.net/af/6756a2/00000000000000003b9b0935/27/d?subset_id=2&fvd=i4&v=3) format("woff"),url(https://use.typekit.net/af/6756a2/00000000000000003b9b0935/27/a?subset_id=2&fvd=i4&v=3) format("opentype");font-weight:400;font-style:italic;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/12260d/00000000000000003b9b0932/27/l?subset_id=2&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/12260d/00000000000000003b9b0932/27/d?subset_id=2&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/12260d/00000000000000003b9b0932/27/a?subset_id=2&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;}</style><style></style><link id="mktoForms2BaseStyle" rel="stylesheet" type="text/css" href="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/forms2.css"><link id="mktoForms2ThemeStyle" rel="stylesheet" type="text/css" href="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/forms2-theme-simple.css"><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_customer_chat_bounce_in{animation-duration:250ms;animation-name:fb_bounce_in}.fb_customer_chat_bounce_out{animation-duration:250ms;animation-name:fb_fade_out}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}.fb_mobile_overlay_active{background-color:#fff;height:100%;overflow:hidden;position:fixed;visibility:hidden;width:100%}@keyframes fb_fade_out{from{opacity:1}to{opacity:0}}@keyframes fb_bounce_in{0%{opacity:0;transform:scale(.8, .8);transform-origin:100% 100%}10%{opacity:.1}20%{opacity:.2}30%{opacity:.3}40%{opacity:.4}50%{opacity:.5}60%{opacity:.6}70%{opacity:.7}80%{opacity:.8;transform:scale(1.03, 1.03)}90{opacity:.9}100%{opacity:1;transform:scale(1, 1)}}</style></head>
+  <body class="feature-filter-bar feature-upvotes tutorials-controller tutorial-single" data-env="production" data-prefix="/community" data-user-id="" data-facebook-app-id="694818843983011" data-completed-tutorial-id="" data-tutorial-id="2631" data-js="tutorial"><div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-window cc-floating cc-type-info cc-theme-block cc-bottom cc-right cc-color-override-1306030216 " style=""><!--googleoff: all--><div class="cc-message">We
+ use cookies to provide our services and for analytics and marketing. To
+ find out more about our use of cookies and how you can disable them, 
+please see our <a aria-label="DigitalOcean Privacy Policy" role="button" tabindex="0" target="_blank" href="https://www.digitalocean.com/legal/privacy/">Privacy Policy</a>. By continuing to browse our website, you agree to our use of cookies.<div class="cc-compliance"><a aria-label="dismiss cookie message" role="button" tabindex="0" class="cc-btn cc-dismiss">✕</a></div></div><div class="cc-compliance"><a aria-label="dismiss cookie message" role="button" tabindex="0" class="cc-btn cc-dismiss">Got it!</a></div><!--googleon: all--></div>
+    
+
+    <div class="outside_viewport">
+        <div id="contents-modal" class="modal fade mini-modal" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1>Contents</h1>
+          <button class="close-button icon icon-close-light" data-dismiss="modal" aria-label="close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="table-of-contents-modal tocify"><ul id="tocify-header0" class="tocify-header"><li class="tocify-item" data-unique="pré-requisitos"><a>Pré-requisitos</a></li></ul><ul id="tocify-header1" class="tocify-header"><li class="tocify-item tocify-focus" data-unique="passo-1-—-instalação-do-apache-e-atualização-do-firewall"><a>Passo 1 — Instalação do Apache e Atualização do Firewall</a></li></ul><ul id="tocify-header2" class="tocify-header"><li class="tocify-item" data-unique="passo-2-—-instalação-do-mysql"><a>Passo 2 — Instalação do MySQL</a></li></ul><ul id="tocify-header3" class="tocify-header"><li class="tocify-item" data-unique="passo-3-—-instalação-do-php"><a>Passo 3 — Instalação do PHP</a></li></ul><ul id="tocify-header4" class="tocify-header"><li class="tocify-item" data-unique="step-4-—-testando-o-processamento-php-no-seu-servidor-web"><a>Step 4 — Testando o Processamento PHP  no seu Servidor Web</a></li></ul><ul id="tocify-header5" class="tocify-header"><li class="tocify-item" data-unique="conclusão"><a>Conclusão</a></li></ul></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="share-modal" class="modal fade mini-modal" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1>Share</h1>
+        <button type="button" class="close-button icon icon-close-light" aria-label="close" data-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="social-sharing social-sharing-container">
+          <ul class="top ">
+            <li class="shareBtn" id="sbTwitter">
+              <a href="http://twitter.com/share?text=Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04&amp;url=https://www.digitalocean.com/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt?utm_content=como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt&amp;utm_medium=community&amp;utm_source=twshare" class="share-icon share-popup" title="Share on Twitter">
+                <span class="sIcon icon-bird"></span>
+              </a>
+              <a href="http://twitter.com/share?text=Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04&amp;url=https://www.digitalocean.com/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt?utm_content=como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt&amp;utm_medium=community&amp;utm_source=twshare" class="share-link share-popup" title="Share on Twitter">
+                Twitter
+              </a>
+            </li>
+            <li class="shareBtn" id="sbFacebook">
+              <a class="share-icon facebook-share" href="https://www.digitalocean.com/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt?utm_content=como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt&amp;utm_medium=community&amp;utm_source=fbshare" onclick="" title="Share on Facebook">
+                <span class="sIcon icon-facebook-B"></span>
+              </a>
+
+              <a class="share-link facebook-share" href="https://www.digitalocean.com/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt?utm_content=como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt&amp;utm_medium=community&amp;utm_source=fbshare" onclick="" title="Share on Facebook">
+                Facebook
+              </a>
+            </li>
+            <li class="shareBtn" id="sbGoogle">
+              <a href="https://plus.google.com/share?url=https://www.digitalocean.com/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt?utm_content=como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt&amp;utm_medium=community&amp;utm_source=gpshare" class="share-icon share-popup" title="Share on Google+">
+                <span class="sIcon icon-google-plus-B"></span>
+              </a>
+              <a href="https://plus.google.com/share?url=https://www.digitalocean.com/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt?utm_content=como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt&amp;utm_medium=community&amp;utm_source=gpshare" class="share-link share-popup" title="Share on Google+">
+                Google+
+              </a>
+            </li>
+            <li class="shareBtn" id="sbYC">
+              <a href="https://news.ycombinator.com/submitlink?t=Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04&amp;u=https://www.digitalocean.com/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt?utm_content=como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt&amp;utm_medium=community&amp;utm_source=hnshare" class="share-icon share-popup" target="_blank" title="Submit to Hacker News">
+                <span class="sIcon icon-hacker-news"></span>
+              </a>
+              <a href="https://news.ycombinator.com/submitlink?t=Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04&amp;u=https://www.digitalocean.com/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt?utm_content=como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt&amp;utm_medium=community&amp;utm_source=hnshare" class="share-link share-popup" target="_blank" title="Submit to Hacker News">
+                Hacker News
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="table-of-contents has-init sticky" style="top: 72px;">
+    <div data-js="tableOfContentsDesktop" class="tocify"><ul id="tocify-header0" class="tocify-header"><li class="tocify-item" data-unique="pré-requisitos"><a>Pré-requisitos</a></li></ul><ul id="tocify-header1" class="tocify-header"><li class="tocify-item tocify-focus" data-unique="passo-1-—-instalação-do-apache-e-atualização-do-firewall"><a>Passo 1 — Instalação do Apache e Atualização do Firewall</a></li></ul><ul id="tocify-header2" class="tocify-header"><li class="tocify-item" data-unique="passo-2-—-instalação-do-mysql"><a>Passo 2 — Instalação do MySQL</a></li></ul><ul id="tocify-header3" class="tocify-header"><li class="tocify-item" data-unique="passo-3-—-instalação-do-php"><a>Passo 3 — Instalação do PHP</a></li></ul><ul id="tocify-header4" class="tocify-header"><li class="tocify-item" data-unique="step-4-—-testando-o-processamento-php-no-seu-servidor-web"><a>Step 4 — Testando o Processamento PHP  no seu Servidor Web</a></li></ul><ul id="tocify-header5" class="tocify-header"><li class="tocify-item" data-unique="conclusão"><a>Conclusão</a></li></ul></div>
+    <button type="button" class="Button--reset Tutorial-button " data-js="markAsComplete" data-tutorialinteraction="" data-tutorialsingle=""><svg class="svg-icon svg-icon-completed"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-completed"></use></svg><span>Mark as Complete</span></button>
+  </div>
+  
+  <div id="share-modal" class="modal fade mini-modal" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1>Share</h1>
+        <button type="button" class="close-button icon icon-close-light" aria-label="close" data-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="social-sharing social-sharing-container">
+          <ul class="bottom ">
+            <li class="shareBtn" id="sbTwitter">
+              <a href="http://twitter.com/share?text=Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04&amp;url=https://www.digitalocean.com/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt?utm_content=como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt&amp;utm_medium=community&amp;utm_source=twshare" class="share-icon share-popup" title="Share on Twitter">
+                <span class="sIcon icon-bird"></span>
+              </a>
+              <a href="http://twitter.com/share?text=Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04&amp;url=https://www.digitalocean.com/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt?utm_content=como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt&amp;utm_medium=community&amp;utm_source=twshare" class="share-link share-popup" title="Share on Twitter">
+                Twitter
+              </a>
+            </li>
+            <li class="shareBtn" id="sbFacebook">
+              <a class="share-icon facebook-share" href="https://www.digitalocean.com/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt?utm_content=como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt&amp;utm_medium=community&amp;utm_source=fbshare" onclick="" title="Share on Facebook">
+                <span class="sIcon icon-facebook-B"></span>
+              </a>
+
+              <a class="share-link facebook-share" href="https://www.digitalocean.com/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt?utm_content=como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt&amp;utm_medium=community&amp;utm_source=fbshare" onclick="" title="Share on Facebook">
+                Facebook
+              </a>
+            </li>
+            <li class="shareBtn" id="sbGoogle">
+              <a href="https://plus.google.com/share?url=https://www.digitalocean.com/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt?utm_content=como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt&amp;utm_medium=community&amp;utm_source=gpshare" class="share-icon share-popup" title="Share on Google+">
+                <span class="sIcon icon-google-plus-B"></span>
+              </a>
+              <a href="https://plus.google.com/share?url=https://www.digitalocean.com/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt?utm_content=como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt&amp;utm_medium=community&amp;utm_source=gpshare" class="share-link share-popup" title="Share on Google+">
+                Google+
+              </a>
+            </li>
+            <li class="shareBtn" id="sbYC">
+              <a href="https://news.ycombinator.com/submitlink?t=Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04&amp;u=https://www.digitalocean.com/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt?utm_content=como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt&amp;utm_medium=community&amp;utm_source=hnshare" class="share-icon share-popup" target="_blank" title="Submit to Hacker News">
+                <span class="sIcon icon-hacker-news"></span>
+              </a>
+              <a href="https://news.ycombinator.com/submitlink?t=Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04&amp;u=https://www.digitalocean.com/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt?utm_content=como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt&amp;utm_medium=community&amp;utm_source=hnshare" class="share-link share-popup" target="_blank" title="Submit to Hacker News">
+                Hacker News
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div id="newsletter-signup-dialog" class="newsletter-signups-dialog" data-newsletter-signup-dialog="" data-article-target=".content-body">
+  <div class="form-message">
+  <div class="pull-right">
+    <a href="javascript:;" class="newsletter-signups-dialog-dismiss" data-newsletter-signup-dismiss="">×</a>
+
+  </div>
+  <h4 class="newsletter-signups-dialog-title">
+    Sign up for our newsletter.
+  </h4>
+  <p class="newsletter-signups-dialog-description">
+    Get the latest tutorials on SysAdmin and open source topics.
+  </p>
+  <form class="newsletter-signup" id="new_newsletter_signup" data-newsletter-signup="true" action="/community/newsletter" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" value="✓" type="hidden">
+
+  <input data-newsletter-signup-field="url" name="newsletter_signup[url]" id="newsletter_signup_url" type="hidden">
+  <input data-newsletter-signup-field="title" name="newsletter_signup[title]" id="newsletter_signup_title" type="hidden">
+
+  <div class="newsletter-signup-ajax-error" data-newsletter-signup-ajax-error=""></div>
+
+
+  <div class="form-group">
+    <input placeholder="Enter your email address" required="required" class="field" name="newsletter_signup[email]" id="newsletter_signup_email" type="email">
+  </div>
+
+  <button data-disable-with="Sign Up" class="button blue-button">
+    Sign Up
+  </button>
+
+</form>
+
+</div>
+
+<div class="thanks-message hidden" data-newsletter-signup-successful=""> 
+  <div class="pull-right"> 
+    <a href="javascript:;" class="newsletter-signups-dialog-dismiss icon icon-close-light" data-newsletter-signup-dismiss=""></a> 
+  </div> 
+
+  <span class="newsletter-signups-dialog-success"> 
+    Thanks for signing up! 
+  </span> 
+</div>
+
+</div>
+
+
+      
+    </div>
+
+      
+      
+<header class="unified-nav-shims__header">
+  <div class="UnifiedMobileNav " role="banner">
+  <a class="UnifiedMobileNav-spaceRight" href="https://www.digitalocean.com/">
+    <svg xmlns="http://www.w3.org/2000/svg" width="172" height="29" role="img" aria-labelledby="h5c6ybn7ru9yxmigl1921d7gi3djvig"><title id="h5c6ybn7ru9yxmigl1921d7gi3djvig">DigitalOcean home</title><g class="UnifiedNav-logoSVG" fill-rule="evenodd"><path d="M14.4942 29v-5.5674c5.9572 0 10.5633-5.8478 8.2892-12.059-.8425-2.3006-2.693-4.1355-5.0126-4.9706-6.262-2.2534-12.1564 2.3135-12.1573 8.2207 0 0-.0006.0014-.0014.0014H0C0 5.2123 9.1687-2.1167 19.1138.9624c4.3459 1.3457 7.7993 4.7708 9.1561 9.081C31.3742 19.9068 23.985 29 14.4942 29"></path><path d="M14.507 23.4468H8.9103v-5.549s.0005-.0011.0011-.0011h5.5949c.0006 0 .0009.0006.0009.0006v5.5495M8.9093 27.7118H4.6105l-.0012-.0012v-4.2638h4.3009v4.2638l-.0009.0012M4.6125 23.4468H1.0088c-.0015 0-.0026-.0012-.0026-.0012v-3.5724s.0011-.0025.0026-.0025h3.601c.0015 0 .0027.0011.0027.0011v3.575M43.2806 9.6357h1.649c1.8346 0 3.345.358 4.49 1.0647 1.2714.7603 1.9164 2.2069 1.9164 4.2991 0 2.1554-.6465 3.6671-1.9207 4.4942h-.0008c-1.0971.7196-2.5981 1.0846-4.462 1.0846h-1.6719V9.6357zm8.324-1.0736c-1.6598-1.142-3.7252-1.721-6.1387-1.721h-5.2537V23.373h5.2537c2.4074 0 4.4737-.6113 6.1407-1.8157.907-.6382 1.6197-1.5304 2.1185-2.651.4962-1.1144.7479-2.4288.7479-3.9067 0-1.4605-.2517-2.758-.7482-3.857-.4988-1.104-1.212-1.972-2.1202-2.5804zM58.1303 6.6376c-.5051 0-.9403.1777-1.2906.5254-.3546.335-.5346.7597-.5346 1.2618 0 .501.1791.9322.532 1.2825.3529.35.788.528 1.2932.528.5042 0 .9394-.178 1.2928-.528.3535-.3508.5324-.7821.5324-1.2825 0-.5015-.18-.926-.5324-1.2592-.3534-.3503-.7886-.528-1.2928-.528M56.6247 23.3729h2.9538V11.7294h-2.9538zM69.5321 19.5787c-.5162.5814-1.1793.8635-2.0264.8635-.8471 0-1.5064-.282-2.015-.863-.5065-.5777-.7637-1.3439-.7637-2.2773 0-.9479.2572-1.7238.764-2.3058.502-.576 1.1796-.8683 2.0147-.8683.8465 0 1.5096.284 2.0262.8695.5142.582.7751 1.3573.7751 2.3046 0 .9328-.2609 1.6988-.7749 2.2768zm.775-6.8767c-.8908-.7858-1.8858-1.2444-2.9614-1.2444-1.6305 0-2.9859.5598-4.0276 1.662-1.0555 1.0932-1.5907 2.5006-1.5907 4.1823 0 1.644.5269 3.0464 1.568 4.1709 1.0498 1.088 2.4123 1.6396 4.0503 1.6396 1.139 0 2.1182-.3144 2.9157-.9356v.268c0 .9662-.2608 1.7176-.7751 2.234-.5137.5154-1.226.7764-2.1173.7764-1.3637 0-2.2183-.5314-3.2589-1.9262l-2.0115 1.917.0542.0754c.4346.605 1.1 1.197 1.9785 1.7594.8787.5603 1.9832.8447 3.2832.8447 1.7536 0 3.1726-.5363 4.2172-1.5933 1.0506-1.0628 1.5835-2.486 1.5835-4.2286V11.7294H70.307v.9726zM75.7434 23.3729h2.9541V11.7294h-2.9541zM77.249 6.6376c-.5052 0-.94.1777-1.2906.5254-.3547.335-.5344.7597-.5344 1.2618 0 .501.1789.9322.532 1.2825.353.35.7878.528 1.293.528.5045 0 .9396-.178 1.2928-.528.3535-.3508.5323-.7821.5323-1.2825 0-.5015-.1797-.926-.5323-1.2592-.3532-.3503-.7883-.528-1.2929-.528M85.1724 8.5831h-2.9082v3.1463h-1.6888v2.6702h1.6888v4.8365c0 1.5134.3047 2.5964.9064 3.2181.6031.6247 1.6741.9414 3.1831.9414.48 0 .963-.0156 1.4354-.0463l.133-.0088v-2.6683l-1.013.0526c-.7033 0-1.1728-.1226-1.3961-.3637-.226-.245-.3406-.7636-.3406-1.5404v-4.421h2.7497v-2.6703h-2.7497V8.583M101.7735 23.3729h2.9544V6.8412h-2.9544zM134.5728 19.2094c-.5286.5874-1.0693 1.0966-1.4855 1.3613v.0005c-.4085.2599-.924.3918-1.532.3918-.8703 0-1.5703-.3144-2.1405-.9621-.567-.644-.8545-1.4716-.8545-2.4613s.2838-1.8162.8436-2.4556c.5625-.6434 1.2588-.9562 2.1285-.9562.9515 0 1.9548.5869 2.8145 1.5947l1.9525-1.8568c-1.273-1.6433-2.897-2.4081-4.8352-2.4081-1.622 0-3.028.5862-4.1788 1.7411-1.1446 1.147-1.7251 2.6074-1.7251 4.3409 0 1.7335.58 3.1977 1.7234 4.352 1.1447 1.1557 2.5514 1.7417 4.1805 1.7417 2.139 0 3.8651-.9158 5.029-2.5935l-1.9204-1.8304M140.2405 16.0973c.1422-.5567.401-1.0207.7714-1.381.4005-.3906.9214-.5885 1.5489-.5885.716 0 1.2702.2019 1.6474.6014.3495.3696.5467.8296.588 1.368h-4.5557zm6.4569-2.7414c-.4191-.5788-.9896-1.0448-1.6965-1.3854-.7047-.3404-1.526-.513-2.441-.513-1.6489 0-2.9982.6037-4.0113 1.7946-.9836 1.182-1.4818 2.651-1.4818 4.3665 0 1.7648.547 3.2253 1.6254 4.341 1.0727 1.1105 2.5083 1.6737 4.267 1.6737 1.992 0 3.627-.799 4.8587-2.3752l.0666-.0847-1.9273-1.837c-.1789.2139-.4317.4561-.6628.6722-.2918.273-.5659.4842-.8588.6289-.4415.218-.9369.3255-1.4907.3255-.8187 0-1.4964-.2388-2.0147-.71-.4847-.4403-.768-1.0345-.843-1.7683h7.8265l.0264-1.0693c0-.7569-.1038-1.4862-.3088-2.1677a6.312 6.312 0 0 0-.934-1.8918zM152.797 18.9234c.3352-.2318.8085-.3483 1.4073-.3483.7112 0 1.4654.1413 2.2426.421v1.1421c-.6421.592-1.4996.8922-2.5499.8922-.5114 0-.909-.1126-1.1822-.3355-.2683-.218-.3985-.4955-.3985-.847 0-.3994.1571-.7022.4808-.9245zm5.2452-6.3229h-.0003c-.8952-.758-2.1328-1.143-3.678-1.143-.9829 0-1.902.2144-2.7336.6324-.7691.387-1.5245 1.0275-2.0043 1.8662l.0298.0358 1.8917 1.796c.7791-1.2322 1.6454-1.66 2.7941-1.66.6172 0 1.1298.1643 1.5234.4881.3916.3216.5819.7304.5819 1.249v.5652c-.7324-.221-1.4629-.333-2.1738-.333-1.47 0-2.6663.3432-3.555 1.0193-.9.6852-1.3562 1.665-1.3562 2.9125 0 1.094.3847 1.9829 1.1461 2.6433.7677.6372 1.7275.961 2.8524.961 1.1246 0 2.177-.4495 3.132-1.2191v.9587h2.9089v-7.4852c0-1.4173-.4572-2.523-1.3591-3.2872zM170.7656 12.8285c-.8227-.9092-1.9791-1.371-3.4371-1.371-1.172 0-2.1236.3338-2.8357.9926v-.7207h-2.897v11.6435h2.954v-6.4215c0-.8823.2119-1.5828.6293-2.0826.4162-.4987.989-.741 1.75-.741.6691 0 1.1765.2167 1.5506.662.3759.4474.5662 1.0638.5662 1.8335v6.7496H172v-6.7496c0-1.6127-.415-2.889-1.2344-3.7948M92.8158 18.9234c.3351-.2318.8087-.3483 1.4075-.3483.7112 0 1.4652.1413 2.2426.421v1.1421c-.6421.592-1.4998.8922-2.5502.8922-.5114 0-.9087-.1126-1.1819-.3355-.2683-.218-.3988-.4955-.3988-.847 0-.3994.1574-.7022.4808-.9245zm5.2451-6.3229h-.0003c-.8952-.758-2.1328-1.143-3.6776-1.143-.983 0-1.902.2144-2.7337.6324-.7694.387-1.5247 1.0275-2.0043 1.8662l.0295.0358 1.8917 1.796c.7792-1.2322 1.6458-1.66 2.7941-1.66.6172 0 1.1298.1643 1.5234.4881.3916.3216.5822.7304.5822 1.249v.5652c-.7327-.221-1.4631-.333-2.174-.333-1.47 0-2.6664.3432-3.555 1.0193-.8999.6852-1.3562 1.665-1.3562 2.9125 0 1.094.3847 1.9829 1.1463 2.6433.7677.6372 1.7272.961 2.8524.961 1.1246 0 2.1766-.4495 3.1318-1.2191v.9587H99.42v-7.4852c0-1.4173-.457-2.523-1.359-3.2872zM115.4464 9.5808c-3.0682 0-5.5645 2.4755-5.5645 5.5188s2.4963 5.5188 5.5645 5.5188c3.0682 0 5.5645-2.4755 5.5645-5.5188s-2.4963-5.5188-5.5645-5.5188zm0 14.0408c-4.7383 0-8.5928-3.8228-8.5928-8.522 0-4.6994 3.8545-8.5223 8.5928-8.5223 4.738 0 8.5925 3.8229 8.5925 8.5223 0 4.6992-3.8545 8.522-8.5925 8.522z"></path></g></svg>
+
+</a>
+
+  <button class="UnifiedMobileNav-toggleButton" type="button" aria-label="Open navigation" data-unified-mobile-nav-trigger-open="">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="UnifiedMobileNav-toggleButtonSVG UnifiedMobileNav-openButtonSVG"><g transform="translate(0 1)" fill-rule="evenodd"><rect width="24" height="3.5" rx="1.75"></rect><rect y="9" width="24" height="3.5" rx="1.75"></rect><rect y="18" width="24" height="3.5" rx="1.75"></rect></g></svg>
+
+  </button>
+
+  <nav class="UnifiedMobileNav-popUp" role="navigation" aria-hidden="true" data-unified-mobile-nav-popup="">
+  <button class="UnifiedMobileNav-toggleButton UnifiedMobileNav-popUpCloseButton" type="button" aria-label="Close navigation" data-unified-mobile-nav-trigger-close="">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="UnifiedMobileNav-toggleButtonSVG UnifiedMobileNav-closeButtonSVG"><path d="M14.8284 12l4.2427 4.2426c.781.781.781 2.0474 0 2.8285-.781.781-2.0474.781-2.8285 0L12 14.8284l-4.2426 4.2427c-.781.781-2.0474.781-2.8285 0-.781-.781-.781-2.0474 0-2.8285L9.1716 12 4.9289 7.7574c-.781-.781-.781-2.0474 0-2.8285.781-.781 2.0474-.781 2.8285 0L12 9.1716l4.2426-4.2427c.781-.781 2.0474-.781 2.8285 0 .781.781.781 2.0474 0 2.8285L14.8284 12z" fill-rule="evenodd"></path></svg>
+
+  </button>
+
+  <div class="UnifiedMobileNav-section">
+    <ul class="UnifiedMobileNav-list">
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-primaryLink" href="https://www.digitalocean.com/products/droplets/">
+          <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" aria-hidden="true" class="UnifiedMobileNav-productIcon"><g stroke="#0069FF" stroke-width="2" fill="none" fill-rule="evenodd"><path d="M22.6 41.2C14.2 41.2 7 34.3 7 25.8 7 12.9 22.6 4.2 22.6 4.2s15.6 9 15.6 21.7c0 8.4-7.1 15.3-15.6 15.3z"></path><path d="M22.6 30.8c-2.9 0-5.2-2.3-5.2-5.2 0-4 5.2-7.8 5.2-7.8s5.2 3.7 5.2 7.8c0 2.9-2.3 5.2-5.2 5.2z"></path></g></svg>
+
+
+          Droplets
+</a>      </li>
+
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-primaryLink" href="https://www.digitalocean.com/products/spaces/">
+          <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" aria-hidden="true" class="UnifiedMobileNav-productIcon"><g transform="translate(4 4)" fill="#0069FF" fill-rule="nonzero"><path d="M6.5 7.6c.4 0 .7-.1 1-.3.3-.3.5-.6.5-1s-.1-.7-.3-1c-.2-.3-.6-.5-1-.5h-.1c-.7 0-1.4.6-1.4 1.3 0 .4.1.7.3 1 .3.3.6.5 1 .5zM2.7 13.3c.8 0 1.4-.5 1.5-1.3 0-.4-.1-.7-.3-1-.2-.3-.6-.5-1-.5h-.1c-.7 0-1.4.6-1.4 1.3 0 .4.1.7.3 1 .2.3.6.4 1 .5zM2.8 18.6c0-.4-.1-.7-.3-1-.2-.3-.6-.5-1-.5h-.1c-.3 0-.7.1-.9.3-.3.2-.5.6-.5 1s.1.7.3 1c.2.3.6.5 1 .5.8.1 1.5-.5 1.5-1.3zM2.8 23.9c-.4 0-.8.1-1 .3-.3.2-.5.6-.5 1s.1.7.3 1c.2.3.6.5 1 .5s.7-.1 1-.3c.3-.2.5-.6.5-1 .1-.8-.5-1.5-1.3-1.5zM6.7 29.6c-.8 0-1.5.6-1.5 1.3 0 .4.1.7.3 1 .2.3.6.5 1 .5s.7-.1 1-.3c.3-.2.5-.6.5-1s-.1-.7-.3-1c-.2-.3-.6-.4-1-.5zM12.4 33.3c-.4 0-.8.1-1 .3-.3.2-.5.6-.5 1s.1.7.3 1c.2.3.6.5 1 .5s.7-.1 1-.3c.3-.2.5-.6.5-1s-.1-.7-.3-1c-.3-.3-.6-.5-1-.5z"></path><circle cx="25.1" cy="27" r="1.4"></circle><circle cx="28.8" cy="21.8" r="1.4"></circle><circle cx="28.9" cy="15.5" r="1.4"></circle><circle cx="25" cy="10.1" r="1.4"></circle><path d="M12.3 3.8c.8 0 1.4-.5 1.5-1.3.1-.8-.6-1.5-1.3-1.5h-.1c-.3 0-.7.1-.9.3-.3.2-.5.6-.5 1s.1.7.3 1c.2.3.6.5 1 .5zM18.6 30.1v-2.4c-4.9-.2-8.9-4.2-8.9-9.2 0-5 3.9-9 8.9-9.2V6.9c-6.2.2-11.3 5.3-11.3 11.6s5.1 11.4 11.3 11.6zM19.2 0v2.4c8.8.2 15.9 7.4 15.9 16.2 0 8.8-7.1 16-15.9 16.2v2.4c10.1-.2 18.3-8.5 18.3-18.6C37.5 8.5 29.3.2 19.2 0z"></path></g></svg>
+
+
+          Spaces
+</a>      </li>
+
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-primaryLink" href="https://www.digitalocean.com/products/kubernetes/">
+          <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" aria-hidden="true" class="UnifiedMobileNav-productIcon"><path fill="none" stroke="#0069FF" stroke-width="2" d="M36.779 23.119c0 7.962-6.454 14.416-14.416 14.416-7.962 0-14.416-6.454-14.416-14.416 0-7.962 6.454-14.417 14.416-14.417 7.962 0 14.416 6.455 14.416 14.417zm-9.212.031c0 2.844-2.306 5.151-5.151 5.151-2.845 0-5.151-2.307-5.151-5.151 0-2.845 2.306-5.151 5.151-5.151 2.845 0 5.151 2.306 5.151 5.151zm-5.153-5.291V3.435v14.424zM6.999 10.598l11.22 9.136-11.22-9.136zm30.833 0l-11.219 9.136 11.219-9.136zm4.001 16.795l-14.11-3.095 14.11 3.095zM3 27.393l14.11-3.095L3 27.393zM31.2 41l-6.405-13.343L31.2 41zm-17.558 0l6.304-13.343L13.642 41z"></path></svg>
+
+
+          Kubernetes
+</a>      </li>
+
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-primaryLink" href="https://www.digitalocean.com/products/tools-and-integrations/">
+          <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" aria-hidden="true" class="UnifiedMobileNav-productIcon"><g stroke="#0069FF" stroke-width="2" fill="none" fill-rule="evenodd"><path d="M8.4 7.5h28.4c1 0 1.9.8 1.9 1.9v26.2c0 1-.8 1.9-1.9 1.9H8.4c-1 0-1.9-.8-1.9-1.9V9.4c0-1.1.8-1.9 1.9-1.9zM22.4 17.7h4.4M12.4 17.7h7.7M22.4 28.4h4.4M12.4 28.4h7.7M28.9 23.1h3.8M18.3 23.1h8.5M12.4 23.1H16"></path></g></svg>
+
+
+          Tools &amp; Integrations
+</a>      </li>
+
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-primaryLink" href="https://developers.digitalocean.com/documentation/">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" class="UnifiedMobileNav-productIcon"><g stroke="#0069FF" fill="none" fill-rule="evenodd"><path d="M3.4 17.5h12.2c.8 0 1.5-.7 1.5-1.5V3.8c0-.7-.6-1.3-1.3-1.3H6c-.7 0-1.3.6-1.3 1.3V16c.1.9-.5 1.5-1.3 1.5S2 16.9 2 16.1v-5h2.8M14.3 9H7.8M14.3 11.5H7.8M14.3 14H7.8M4.8 5.4H17"></path></g></svg>
+
+
+          API Documentation
+</a>      </li>
+    </ul>
+  </div>
+
+  <div class="UnifiedMobileNav-section">
+    <ul class="UnifiedMobileNav-list UnifiedMobileNav--columned">
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-secondaryLink" href="https://www.digitalocean.com/community">Community</a>
+      </li>
+
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-secondaryLink" href="https://www.digitalocean.com/community/tutorials">Tutorials</a>
+      </li>
+
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-secondaryLink" href="https://www.digitalocean.com/community/questions">Q&amp;A</a>
+      </li>
+
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-secondaryLink" href="https://www.digitalocean.com/community/projects">Projects</a>
+      </li>
+
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-secondaryLink" href="https://www.meetup.com/pro/digitalocean/?utm_source=do_community/">Meetups</a>
+      </li>
+
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-secondaryLink" href="https://www.digitalocean.com/customers/">Customers</a>
+      </li>
+
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-secondaryLink" href="https://www.digitalocean.com/pricing/">Pricing</a>
+      </li>
+
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-secondaryLink" href="https://www.digitalocean.com/community/tags/product-documentation/tutorials/">Docs</a>
+      </li>
+
+      <li class="UnifiedMobileNav-ListItem">
+        <a class="UnifiedMobileNav-secondaryLink" href="https://www.digitalocean.com/company/contact/">Support</a>
+      </li>
+
+        <li class="UnifiedMobileNav-ListItem">
+          <a class="UnifiedMobileNav-secondaryLink" href="https://www.digitalocean.com/community/auth/digitalocean">Login</a>
+        </li>
+    </ul>
+  </div>
+
+  <div class="UnifiedMobileNav-section">
+    <form action="/community/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+      <input name="q" id="q" aria-label="Search Community" placeholder="Search Community" autocomplete="off" spellcheck="false" class="UnifiedMobileNav-searchInput" data-algolia-application-id="6ZHEUVKJ88" data-algolia-api-key="c5470567eae7fa1177d43222e18ba086" data-unified-nav-search-input="true" type="text">
+</form>
+      <a class="UnifiedMobileNav-button--primary UnifiedMobileNav-button--fullWidth unified-nav-shims__mobile-sign-up-button" href="https://www.digitalocean.com/community/auth/digitalocean?display=sessionless+register">Sign Up</a>
+  </div>
+</nav>
+
+</div>
+
+  <div class="UnifiedNav " data-unified-nav="">
+  <nav class="unified-nav-shims__container" role="navigation">
+    <ul class="UnifiedNav-list">
+      <li clas="UnifiedNav-listItem">
+        <a class="UnifiedNav-siteLogo" href="https://www.digitalocean.com/">
+          <svg width="172" height="29" xmlns="http://www.w3.org/2000/svg"><title>DigitalOcean home</title><g class="UnifiedNav-logoSVG" fill-rule="evenodd"><path d="M14.4942 29v-5.5674c5.9572 0 10.5633-5.8478 8.2892-12.059-.8425-2.3006-2.693-4.1355-5.0126-4.9706-6.262-2.2534-12.1564 2.3135-12.1573 8.2207 0 0-.0006.0014-.0014.0014H0C0 5.2123 9.1687-2.1167 19.1138.9624c4.3459 1.3457 7.7993 4.7708 9.1561 9.081C31.3742 19.9068 23.985 29 14.4942 29"></path><path d="M14.507 23.4468H8.9103v-5.549s.0005-.0011.0011-.0011h5.5949c.0006 0 .0009.0006.0009.0006v5.5495M8.9093 27.7118H4.6105l-.0012-.0012v-4.2638h4.3009v4.2638l-.0009.0012M4.6125 23.4468H1.0088c-.0015 0-.0026-.0012-.0026-.0012v-3.5724s.0011-.0025.0026-.0025h3.601c.0015 0 .0027.0011.0027.0011v3.575M43.2806 9.6357h1.649c1.8346 0 3.345.358 4.49 1.0647 1.2714.7603 1.9164 2.2069 1.9164 4.2991 0 2.1554-.6465 3.6671-1.9207 4.4942h-.0008c-1.0971.7196-2.5981 1.0846-4.462 1.0846h-1.6719V9.6357zm8.324-1.0736c-1.6598-1.142-3.7252-1.721-6.1387-1.721h-5.2537V23.373h5.2537c2.4074 0 4.4737-.6113 6.1407-1.8157.907-.6382 1.6197-1.5304 2.1185-2.651.4962-1.1144.7479-2.4288.7479-3.9067 0-1.4605-.2517-2.758-.7482-3.857-.4988-1.104-1.212-1.972-2.1202-2.5804zM58.1303 6.6376c-.5051 0-.9403.1777-1.2906.5254-.3546.335-.5346.7597-.5346 1.2618 0 .501.1791.9322.532 1.2825.3529.35.788.528 1.2932.528.5042 0 .9394-.178 1.2928-.528.3535-.3508.5324-.7821.5324-1.2825 0-.5015-.18-.926-.5324-1.2592-.3534-.3503-.7886-.528-1.2928-.528M56.6247 23.3729h2.9538V11.7294h-2.9538zM69.5321 19.5787c-.5162.5814-1.1793.8635-2.0264.8635-.8471 0-1.5064-.282-2.015-.863-.5065-.5777-.7637-1.3439-.7637-2.2773 0-.9479.2572-1.7238.764-2.3058.502-.576 1.1796-.8683 2.0147-.8683.8465 0 1.5096.284 2.0262.8695.5142.582.7751 1.3573.7751 2.3046 0 .9328-.2609 1.6988-.7749 2.2768zm.775-6.8767c-.8908-.7858-1.8858-1.2444-2.9614-1.2444-1.6305 0-2.9859.5598-4.0276 1.662-1.0555 1.0932-1.5907 2.5006-1.5907 4.1823 0 1.644.5269 3.0464 1.568 4.1709 1.0498 1.088 2.4123 1.6396 4.0503 1.6396 1.139 0 2.1182-.3144 2.9157-.9356v.268c0 .9662-.2608 1.7176-.7751 2.234-.5137.5154-1.226.7764-2.1173.7764-1.3637 0-2.2183-.5314-3.2589-1.9262l-2.0115 1.917.0542.0754c.4346.605 1.1 1.197 1.9785 1.7594.8787.5603 1.9832.8447 3.2832.8447 1.7536 0 3.1726-.5363 4.2172-1.5933 1.0506-1.0628 1.5835-2.486 1.5835-4.2286V11.7294H70.307v.9726zM75.7434 23.3729h2.9541V11.7294h-2.9541zM77.249 6.6376c-.5052 0-.94.1777-1.2906.5254-.3547.335-.5344.7597-.5344 1.2618 0 .501.1789.9322.532 1.2825.353.35.7878.528 1.293.528.5045 0 .9396-.178 1.2928-.528.3535-.3508.5323-.7821.5323-1.2825 0-.5015-.1797-.926-.5323-1.2592-.3532-.3503-.7883-.528-1.2929-.528M85.1724 8.5831h-2.9082v3.1463h-1.6888v2.6702h1.6888v4.8365c0 1.5134.3047 2.5964.9064 3.2181.6031.6247 1.6741.9414 3.1831.9414.48 0 .963-.0156 1.4354-.0463l.133-.0088v-2.6683l-1.013.0526c-.7033 0-1.1728-.1226-1.3961-.3637-.226-.245-.3406-.7636-.3406-1.5404v-4.421h2.7497v-2.6703h-2.7497V8.583M101.7735 23.3729h2.9544V6.8412h-2.9544zM134.5728 19.2094c-.5286.5874-1.0693 1.0966-1.4855 1.3613v.0005c-.4085.2599-.924.3918-1.532.3918-.8703 0-1.5703-.3144-2.1405-.9621-.567-.644-.8545-1.4716-.8545-2.4613s.2838-1.8162.8436-2.4556c.5625-.6434 1.2588-.9562 2.1285-.9562.9515 0 1.9548.5869 2.8145 1.5947l1.9525-1.8568c-1.273-1.6433-2.897-2.4081-4.8352-2.4081-1.622 0-3.028.5862-4.1788 1.7411-1.1446 1.147-1.7251 2.6074-1.7251 4.3409 0 1.7335.58 3.1977 1.7234 4.352 1.1447 1.1557 2.5514 1.7417 4.1805 1.7417 2.139 0 3.8651-.9158 5.029-2.5935l-1.9204-1.8304M140.2405 16.0973c.1422-.5567.401-1.0207.7714-1.381.4005-.3906.9214-.5885 1.5489-.5885.716 0 1.2702.2019 1.6474.6014.3495.3696.5467.8296.588 1.368h-4.5557zm6.4569-2.7414c-.4191-.5788-.9896-1.0448-1.6965-1.3854-.7047-.3404-1.526-.513-2.441-.513-1.6489 0-2.9982.6037-4.0113 1.7946-.9836 1.182-1.4818 2.651-1.4818 4.3665 0 1.7648.547 3.2253 1.6254 4.341 1.0727 1.1105 2.5083 1.6737 4.267 1.6737 1.992 0 3.627-.799 4.8587-2.3752l.0666-.0847-1.9273-1.837c-.1789.2139-.4317.4561-.6628.6722-.2918.273-.5659.4842-.8588.6289-.4415.218-.9369.3255-1.4907.3255-.8187 0-1.4964-.2388-2.0147-.71-.4847-.4403-.768-1.0345-.843-1.7683h7.8265l.0264-1.0693c0-.7569-.1038-1.4862-.3088-2.1677a6.312 6.312 0 0 0-.934-1.8918zM152.797 18.9234c.3352-.2318.8085-.3483 1.4073-.3483.7112 0 1.4654.1413 2.2426.421v1.1421c-.6421.592-1.4996.8922-2.5499.8922-.5114 0-.909-.1126-1.1822-.3355-.2683-.218-.3985-.4955-.3985-.847 0-.3994.1571-.7022.4808-.9245zm5.2452-6.3229h-.0003c-.8952-.758-2.1328-1.143-3.678-1.143-.9829 0-1.902.2144-2.7336.6324-.7691.387-1.5245 1.0275-2.0043 1.8662l.0298.0358 1.8917 1.796c.7791-1.2322 1.6454-1.66 2.7941-1.66.6172 0 1.1298.1643 1.5234.4881.3916.3216.5819.7304.5819 1.249v.5652c-.7324-.221-1.4629-.333-2.1738-.333-1.47 0-2.6663.3432-3.555 1.0193-.9.6852-1.3562 1.665-1.3562 2.9125 0 1.094.3847 1.9829 1.1461 2.6433.7677.6372 1.7275.961 2.8524.961 1.1246 0 2.177-.4495 3.132-1.2191v.9587h2.9089v-7.4852c0-1.4173-.4572-2.523-1.3591-3.2872zM170.7656 12.8285c-.8227-.9092-1.9791-1.371-3.4371-1.371-1.172 0-2.1236.3338-2.8357.9926v-.7207h-2.897v11.6435h2.954v-6.4215c0-.8823.2119-1.5828.6293-2.0826.4162-.4987.989-.741 1.75-.741.6691 0 1.1765.2167 1.5506.662.3759.4474.5662 1.0638.5662 1.8335v6.7496H172v-6.7496c0-1.6127-.415-2.889-1.2344-3.7948M92.8158 18.9234c.3351-.2318.8087-.3483 1.4075-.3483.7112 0 1.4652.1413 2.2426.421v1.1421c-.6421.592-1.4998.8922-2.5502.8922-.5114 0-.9087-.1126-1.1819-.3355-.2683-.218-.3988-.4955-.3988-.847 0-.3994.1574-.7022.4808-.9245zm5.2451-6.3229h-.0003c-.8952-.758-2.1328-1.143-3.6776-1.143-.983 0-1.902.2144-2.7337.6324-.7694.387-1.5247 1.0275-2.0043 1.8662l.0295.0358 1.8917 1.796c.7792-1.2322 1.6458-1.66 2.7941-1.66.6172 0 1.1298.1643 1.5234.4881.3916.3216.5822.7304.5822 1.249v.5652c-.7327-.221-1.4631-.333-2.174-.333-1.47 0-2.6664.3432-3.555 1.0193-.8999.6852-1.3562 1.665-1.3562 2.9125 0 1.094.3847 1.9829 1.1463 2.6433.7677.6372 1.7272.961 2.8524.961 1.1246 0 2.1766-.4495 3.1318-1.2191v.9587H99.42v-7.4852c0-1.4173-.457-2.523-1.359-3.2872zM115.4464 9.5808c-3.0682 0-5.5645 2.4755-5.5645 5.5188s2.4963 5.5188 5.5645 5.5188c3.0682 0 5.5645-2.4755 5.5645-5.5188s-2.4963-5.5188-5.5645-5.5188zm0 14.0408c-4.7383 0-8.5928-3.8228-8.5928-8.522 0-4.6994 3.8545-8.5223 8.5928-8.5223 4.738 0 8.5925 3.8229 8.5925 8.5223 0 4.6992-3.8545 8.522-8.5925 8.522z"></path></g></svg>
+
+</a>      </li>
+
+      <li class="UnifiedNav-listItem UnifiedNav-listItem--extraSpace" data-unified-nav-dropdown-component="">
+        <a class="UnifiedNav-link" data-unified-nav-dropdown-trigger="true" href="#">
+          Products
+
+          <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" class="UnifiedNavDropdown-chevron">
+  <path d="M31.296 7.68c-.256-.32-.704-.512-1.216-.512-.448 0-.896.192-1.216.512L16 20.736 3.2 7.68c-.256-.32-.704-.512-1.216-.512-.448 0-.896.192-1.216.448S.256 8.32.256 8.768c0 .512.192.96.512 1.28L14.72 24.32c.32.32.704.512 1.152.512.256 0 .512-.064.768-.192.128-.064.256-.128.384-.128l.128-.064 14.016-14.336c.768-.64.704-1.728.128-2.432z"></path>
+</svg>
+
+</a>
+        <div class="UnifiedNavDropdown" data-unified-nav-dropdown-content="">
+  <ul class="UnifiedNavDropdown-list">
+
+    <li class="UnifiedNavDropdown-item UnifiedNavDropdown-item--interactive">
+  <a href="https://www.digitalocean.com/products/droplets/">
+    <div class="UnifiedNavDropdown-link">
+      <div class="UnifiedNavDropdown-link-icon">
+        <img alt="" src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/droplets-8c0da195b507fa4eedeca0ceb242910b.svg">
+      </div>
+      <div class="UnifiedNavDropdown-link-content">
+        <p class="UnifiedNavDropdown-link-contentTitle">
+          Droplets
+        </p>
+        <p class="UnifiedNavDropdown-link-contentDescription">
+          Scalable compute services.
+        </p>
+      </div>
+    </div>
+</a></li>
+
+
+    <li class="UnifiedNavDropdown-item UnifiedNavDropdown-item--interactive">
+  <a href="https://www.digitalocean.com/products/spaces/">
+    <div class="UnifiedNavDropdown-link">
+      <div class="UnifiedNavDropdown-link-icon">
+        <img alt="" src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/spaces-2e58e376eb8351928201edb669534578.svg">
+      </div>
+      <div class="UnifiedNavDropdown-link-content">
+        <p class="UnifiedNavDropdown-link-contentTitle">
+          Spaces
+        </p>
+        <p class="UnifiedNavDropdown-link-contentDescription">
+          Simple object storage.
+        </p>
+      </div>
+    </div>
+</a></li>
+
+
+    <li class="UnifiedNavDropdown-item UnifiedNavDropdown-item--interactive">
+  <a href="https://www.digitalocean.com/products/kubernetes/">
+    <div class="UnifiedNavDropdown-link">
+      <div class="UnifiedNavDropdown-link-icon">
+        <img alt="" src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/kubernetes-f2d12fcd6216cb404dac3a41cfd7a6d3.svg">
+      </div>
+      <div class="UnifiedNavDropdown-link-content">
+        <p class="UnifiedNavDropdown-link-contentTitle">
+          Kubernetes
+        </p>
+        <p class="UnifiedNavDropdown-link-contentDescription">
+          Coming soon.
+        </p>
+      </div>
+    </div>
+</a></li>
+
+
+    <li class="UnifiedNavDropdown-item UnifiedNavDropdown-item--interactive">
+  <a href="https://www.digitalocean.com/products/tools-and-integrations/">
+    <div class="UnifiedNavDropdown-link">
+      <div class="UnifiedNavDropdown-link-icon">
+        <img alt="" src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/Tools-Integrations-24294946903162aa4238a2c62d51b267.svg">
+      </div>
+      <div class="UnifiedNavDropdown-link-content">
+        <p class="UnifiedNavDropdown-link-contentTitle">
+          Tools &amp; Integrations
+        </p>
+        <p class="UnifiedNavDropdown-link-contentDescription">
+          Automate your infrastructure.
+        </p>
+      </div>
+    </div>
+</a></li>
+
+
+    <li class="UnifiedNavDropdown-item UnifiedNavDropdown-item--borderedTop UnifiedNavDropdown-item--interactive">
+      <a href="https://developers.digitalocean.com/documentation/">
+        <div class="UnifiedNavDropdown-link UnifiedNavDropdown-link--centered UnifiedNavDropdown-link--small">
+          <div class="UnifiedNavDropdown-link-icon">
+            <img alt="" src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/Documentation-264262b8b0785ce36dd159e115ad0759.svg">
+          </div>
+          <span class="UnifiedNavDropdown-link-content">
+            API Documentation
+          </span>
+        </div>
+</a>    </li>
+  </ul>
+</div>
+
+      </li>
+
+      <li class="UnifiedNav-listItem">
+        <a class="UnifiedNav-link" href="https://www.digitalocean.com/customers/">Customers</a>
+      </li>
+
+      <li class="UnifiedNav-listItem" data-unified-nav-dropdown-component="">
+        <a class="UnifiedNav-link UnifiedNav-link--community" data-unified-nav-dropdown-trigger="true" href="#">
+          <span class="UnifiedNav-linkText">Community</span>
+
+          <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" class="UnifiedNavDropdown-chevron">
+  <path d="M31.296 7.68c-.256-.32-.704-.512-1.216-.512-.448 0-.896.192-1.216.512L16 20.736 3.2 7.68c-.256-.32-.704-.512-1.216-.512-.448 0-.896.192-1.216.448S.256 8.32.256 8.768c0 .512.192.96.512 1.28L14.72 24.32c.32.32.704.512 1.152.512.256 0 .512-.064.768-.192.128-.064.256-.128.384-.128l.128-.064 14.016-14.336c.768-.64.704-1.728.128-2.432z"></path>
+</svg>
+
+</a>
+        <div class="UnifiedNavDropdown" data-unified-nav-dropdown-content="">
+  <ul class="UnifiedNavDropdown-list">
+    <li class="UnifiedNavDropdown-item UnifiedNavDropdown-item--interactive">
+  <a href="https://www.digitalocean.com/community">
+    <div class="UnifiedNavDropdown-link">
+      <div class="UnifiedNavDropdown-link-icon">
+        <img alt="" src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/CommunityOverview-1019dcfb0f684b3302e471081336a21a.svg">
+      </div>
+      <div class="UnifiedNavDropdown-link-content">
+        <p class="UnifiedNavDropdown-link-contentTitle">
+          Community Overview
+        </p>
+        <p class="UnifiedNavDropdown-link-contentDescription">
+          Connect, share and learn
+        </p>
+      </div>
+    </div>
+</a></li>
+
+
+    <li class="UnifiedNavDropdown-item UnifiedNavDropdown-item--interactive">
+  <a href="https://www.digitalocean.com/community/tutorials">
+    <div class="UnifiedNavDropdown-link">
+      <div class="UnifiedNavDropdown-link-icon">
+        <img alt="" src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/Tutorials-b6da4f195d0a2a0138b8fd170c36f1bb.svg">
+      </div>
+      <div class="UnifiedNavDropdown-link-content">
+        <p class="UnifiedNavDropdown-link-contentTitle">
+          Tutorials
+        </p>
+        <p class="UnifiedNavDropdown-link-contentDescription">
+          DevOps and development guides
+        </p>
+      </div>
+    </div>
+</a></li>
+
+
+    <li class="UnifiedNavDropdown-item UnifiedNavDropdown-item--interactive">
+  <a href="https://www.digitalocean.com/community/questions">
+    <div class="UnifiedNavDropdown-link">
+      <div class="UnifiedNavDropdown-link-icon">
+        <img alt="" src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/QandA-3e0367f422de8278d660c770f3bb7709.svg">
+      </div>
+      <div class="UnifiedNavDropdown-link-content">
+        <p class="UnifiedNavDropdown-link-contentTitle">
+          Questions &amp; Answers
+        </p>
+        <p class="UnifiedNavDropdown-link-contentDescription">
+          Development and systems Q&amp;A
+        </p>
+      </div>
+    </div>
+</a></li>
+
+
+    <li class="UnifiedNavDropdown-item UnifiedNavDropdown-item--interactive">
+  <a href="https://www.digitalocean.com/community/projects">
+    <div class="UnifiedNavDropdown-link">
+      <div class="UnifiedNavDropdown-link-icon">
+        <img alt="" src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/Projects-f56d9a0622a9e104071806947dae4d69.svg">
+      </div>
+      <div class="UnifiedNavDropdown-link-content">
+        <p class="UnifiedNavDropdown-link-contentTitle">
+          Projects
+        </p>
+        <p class="UnifiedNavDropdown-link-contentDescription">
+          Community-built integrations
+        </p>
+      </div>
+    </div>
+</a></li>
+
+  </ul>
+  <div class="UnifiedNavDropdown-split">
+    <dl class="UnifiedNavDropdown-splitSection">
+      <dt class="UnifiedNavDropdown-splitSection-label">
+        Get Involved
+      </dt>
+      <dd class="UnifiedNavDropdown-splitSection-linkLine">
+        <a class="UnifiedNavDropdown-splitSection-link" href="https://www.digitalocean.com/write-for-donations">Write for DOnations</a>
+      </dd>
+      <dd class="UnifiedNavDropdown-splitSection-linkLine">
+        <a target="_blank" class="UnifiedNavDropdown-splitSection-link" href="https://www.meetup.com/pro/digitalocean/?utm_source=do_community/">Join us at a Meetup</a>
+      </dd>
+    </dl>
+    <dl class="UnifiedNavDropdown-splitSection">
+      <dt class="UnifiedNavDropdown-splitSection-label">
+        Featured Post
+      </dt>
+      <dd class="UnifiedNavDropdown-splitSection-linkLine">
+        <a class="UnifiedNavDropdown-splitSection-link" href="https://www.digitalocean.com/community/tutorials/an-introduction-to-kubernetes">An Introduction to Kubernetes</a>
+        <p class="UnifiedNavDropdown-splitSection-extraText">
+          by Justin Ellingwood
+        </p>
+      </dd>
+    </dl>
+  </div>
+</div>
+
+      </li>
+
+      <li class="UnifiedNav-listItem UnifiedNav-spaceRight">
+        <a class="UnifiedNav-link" href="https://www.digitalocean.com/pricing/">Pricing</a>
+      </li>
+
+      <li class="UnifiedNav-listItem UnifiedNav-listItem--extraSpace">
+        <div class="UnifiedNavSearch-wrap">
+          <div class="UnifiedNavSearch" data-unified-nav-search-component="">
+            <a class="UnifiedNavSearch-link" data-unified-nav-search-trigger="true" href="https://www.digitalocean.com/community/search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" class="UnifiedNavSearch-icon">
+  <g transform="translate(1 1)" fill="currentColor" fill-rule="evenodd">
+    <path d="M6,12 C2.6862915,12 0,9.3137085 0,6 C0,2.6862915 2.6862915,0 6,0 C9.3137085,0 12,2.6862915 12,6 C12,9.3137085 9.3137085,12 6,12 Z M6,10 C8.209139,10 10,8.209139 10,6 C10,3.790861 8.209139,2 6,2 C3.790861,2 2,3.790861 2,6 C2,8.209139 3.790861,10 6,10 Z" fill-rule="nonzero"></path>
+    <rect transform="rotate(-45 11.828 11.828)" x="10.828" y="8.828" width="2" height="6" rx="1"></rect>
+  </g>
+</svg>
+
+</a>            <div class="UnifiedNavSearch-box" data-unified-nav-search-box="">
+              <form action="/community/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+                <input name="q" id="q" title="Search" placeholder="Search" autocomplete="off" spellcheck="false" class="header-search__input UnifiedNavSearch-input" data-algolia-application-id="6ZHEUVKJ88" data-algolia-api-key="c5470567eae7fa1177d43222e18ba086" data-unified-nav-search-input="true" type="text">
+</form>              <button class="UnifiedNavSearch-closeButton" data-unified-nav-search-close="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" role="img" aria-labelledby="o6sborfcifzh62hkh7gkp85bkb59jcd" class="UnifiedNavSearch-closeIcon"><title id="o6sborfcifzh62hkh7gkp85bkb59jcd">Close search</title>
+  <g transform="rotate(45 6.293 8.707)" fill="currentColor" fill-rule="evenodd">
+    <rect x="-1" y="6" width="16" height="2" rx="1"></rect>
+    <rect x="6" y="-1" width="2" height="16" rx="1"></rect>
+  </g>
+</svg>
+
+              </button>
+            </div>
+          </div>
+          <div class="search-results-dropdown dropdown" data-root-path="https://www.digitalocean.com/community">
+  <div class="container">
+    <div class="header-search-results-list"></div>
+
+    <div id="btn-wrap">
+      <a class="more-search-results" data-search-path="/community/search" href="https://www.digitalocean.com/community/search">
+        <span class="icon-mag"></span>
+        View All Results
+</a>    </div>
+  </div>
+</div>
+
+<script type="text/template" id="autocomplete-hits-template">
+  <div class="inner-search">
+    <ul>
+        {{#hits}}
+          <li>
+            <span class='icon icon-{{type}}'></span>
+            <a href='{{url}}'>{{title}}</a>
+          </li>
+        {{/hits}}
+    </ul>
+  </div>
+</script>
+
+        </div>
+      </li>
+
+      <li class="UnifiedNav-listItem">
+        <a class="UnifiedNav-link UnifiedNav-link--docs" href="https://www.digitalocean.com/community/tags/product-documentation/tutorials/">
+          <span class="UnifiedNav-linkText">Docs</span>
+</a>      </li>
+
+      <li class="UnifiedNav-listItem" data-unified-nav-dropdown-component="">
+        <a class="UnifiedNav-link" data-unified-nav-dropdown-trigger="true" href="#">
+          Support
+
+          <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" class="UnifiedNavDropdown-chevron">
+  <path d="M31.296 7.68c-.256-.32-.704-.512-1.216-.512-.448 0-.896.192-1.216.512L16 20.736 3.2 7.68c-.256-.32-.704-.512-1.216-.512-.448 0-.896.192-1.216.448S.256 8.32.256 8.768c0 .512.192.96.512 1.28L14.72 24.32c.32.32.704.512 1.152.512.256 0 .512-.064.768-.192.128-.064.256-.128.384-.128l.128-.064 14.016-14.336c.768-.64.704-1.728.128-2.432z"></path>
+</svg>
+
+</a>
+        <div class="UnifiedNavDropdown UnifiedNavDropdown--small UnifiedNavDropdown--right" data-unified-nav-dropdown-content="">
+  <ul class="UnifiedNavDropdown-list">
+    <li class="UnifiedNavDropdown-item UnifiedNavDropdown-item--interactive">
+  <a href="https://www.digitalocean.com/company/contact/">
+    <div class="UnifiedNavDropdown-link UnifiedNavDropdown-link--small">
+      <div class="UnifiedNavDropdown-link-icon UnifiedNavDropdown-link-icon">
+        <img alt="" src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/Support-e610eba9184efb6701d0da90b5a8d86b.svg">
+      </div>
+      <div class="UnifiedNavDropdown-link-content">
+        <p class="UnifiedNavDropdown-link-contentTitle">
+          Contact Support
+        </p>
+      </div>
+    </div>
+</a></li>
+
+
+    <li class="UnifiedNavDropdown-item UnifiedNavDropdown-item--interactive">
+  <a href="https://www.digitalocean.com/help/">
+    <div class="UnifiedNavDropdown-link UnifiedNavDropdown-link--small">
+      <div class="UnifiedNavDropdown-link-icon UnifiedNavDropdown-link-icon">
+        <img alt="" src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/FAQ-4a45fa85f64688c2d8a412d4a6e279ee.svg">
+      </div>
+      <div class="UnifiedNavDropdown-link-content">
+        <p class="UnifiedNavDropdown-link-contentTitle">
+          FAQ
+        </p>
+      </div>
+    </div>
+</a></li>
+
+
+    <li class="UnifiedNavDropdown-item UnifiedNavDropdown-item--interactive">
+  <a href="https://status.digitalocean.com/">
+    <div class="UnifiedNavDropdown-link UnifiedNavDropdown-link--small">
+      <div class="UnifiedNavDropdown-link-icon UnifiedNavDropdown-link-icon">
+        <img alt="" src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/Network-Status-b981a587ed9cd13e5d9e26c8ed8d9ef7.svg">
+      </div>
+      <div class="UnifiedNavDropdown-link-content">
+        <p class="UnifiedNavDropdown-link-contentTitle">
+          Network Status
+        </p>
+      </div>
+    </div>
+</a></li>
+
+  </ul>
+</div>
+
+      </li>
+
+        <li class="UnifiedNav-listItem">
+          <a class="UnifiedNav-link" id="log-in" href="https://www.digitalocean.com/community/auth/digitalocean">Log In</a>
+        </li>
+
+        <li class="UnifiedNav-listItem">
+          <a class="UnifiedNav-button" id="sign-up" href="https://www.digitalocean.com/community/auth/digitalocean?display=sessionless+register">Sign Up</a>
+        </li>
+    </ul>
+  </nav>
+</div>
+
+
+  <div class="legacy-header ">
+    <div class="flash-container">
+      
+    </div>
+
+    <div class="wrapper">
+      
+    </div>
+  </div>
+</header>
+
+
+      
+
+      <div class="wrapper layout-wrapper">
+
+        
+
+
+
+
+
+
+
+
+
+<div class="section-content section-content-growable content Tutorial-content">
+  <div class="postable-info-bar-container">
+  <div class="postable-info-bar">
+    <div class="left-section">
+      
+    </div>
+
+    <div class="right-section">
+      
+
+
+      <div class="section-item section-item-subscribe">
+  <span class="opt-in-switch off signed-out-subscribe">
+    <span class="subscribe-label">
+      <span class="icon icon-subscribe"></span>
+      <span class="subscription-label subscribe">Subscribe</span>
+      <span class="icon icon-subscribed"></span>
+      <span class="subscription-label subscribed">Subscribed</span>
+    </span>
+    <a data-toggle="modal" data-target="#sign-in-modal" class="mini-switch-container" href="javascript:void(0);"><div class="mini-switch off signed-out-subscribe"><div class="switch-handle"></div></div></a>
+  </span>
+</div>
+
+<div class="section-item social-sharing-item">
+  <div class="sharing">
+  <a class="share-button" href="#" data-toggle="modal" data-target="#share-modal">
+    <span class="icon icon-share-square"></span>
+    <span class="share-button-text">Share</span>
+  </a>
+</div>
+
+</div>
+
+        <div class="section-item table-of-contents-triggers"><div class="toc-trigger-mobile" data-toggle="modal" data-target="#contents-modal">
+  <a href="javascript:void(0);">
+    <span class="icon icon-contents"></span>
+    <span class="title">Contents</span>
+    <span class="icon icon-arrow-down"></span>
+  </a>
+</div>
+
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+
+  <div class="container tutorial-header">
+
+      <div class="info-cta">
+    <a class="icon-close-light" href="javascript:void();"></a>
+    We hope you find this tutorial helpful. In addition to guides like 
+this one, we provide simple cloud infrastructure for developers. <a href="https://www.digitalocean.com/?utm_medium=community&amp;utm_source=community_gencta&amp;utm_campaign=needaserver&amp;utm_content=como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt">
+        Learn more →
+</a>  </div>
+
+
+    <button name="button" type="button" class="new-upvote-button" data-include-caret="true" data-upvotable-id="2631" data-upvotable-type="Tutorial"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-upvote-empty"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-upvote-empty"></use></svg></span><span class="new-upvote-count">0</span></button>
+
+    <h1 class="content-title Tutorial-header">
+      <button type="button" class="Button--reset Tutorial-headerButton " data-toggle="tooltip" title="" data-js="markAsComplete" data-tutorialinteraction="" data-tutorialsingle="" data-original-title="Mark as Complete">
+        <svg class="svg-icon svg-icon-completed"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-completed"></use></svg>
+      </button> Como instalar a pilha Linux, Apache, MySQL, PHP (LAMP) no Ubuntu 18.04
+    </h1>
+
+    <span class="meta-section timestamp"><span class="tutorial-date-text">Posted</span><span class="tutorial-date">May  9, 2018</span></span>
+
+    <span class="meta-section pageviews"><span class="icon icon-eye v-mid"></span><span class="views-count v-mid">1k</span><span class="sr-only"> views</span></span>
+
+    <span class="meta-section tags">
+      <a class="tag" href="https://www.digitalocean.com/community/tags/lamp-stack?type=tutorials">LAMP Stack</a> <a class="tag" href="https://www.digitalocean.com/community/tags/php?type=tutorials">PHP</a> <a class="tag" href="https://www.digitalocean.com/community/tags/mysql?type=tutorials">MySQL</a> <a class="tag" href="https://www.digitalocean.com/community/tags/apache?type=tutorials">Apache</a>
+      <a class="tag" href="https://www.digitalocean.com/community/tags/ubuntu-18-04?type=tutorials">Ubuntu 18.04</a>
+    </span>
+  </div>
+
+  <div class="postable-info-bar-container">
+  <div class="postable-info-bar">
+    <div class="left-section">
+        <div class="tutorial-author-avatar">
+          <a href="https://www.digitalocean.com/community/users/mdrake"><div class="mod-avatar mod-avatar-small"><img class="avatar avatar-small" src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/3072b0699d3add2e0d0f31b97397dd68302c8842.jpg" alt="3072b0699d3add2e0d0f31b97397dd68302c8842"><span class="mod-star" title="" data-toggle="tooltip" data-container="body" data-original-title="MOD"><span class="mod-star-icon"></span></span></div></a>
+        </div>
+        <div class="author-and-date">
+          <div class="tutorial-author">
+            <div class="by">By: </div>
+            <a href="https://www.digitalocean.com/community/users/mdrake">Mark Drake</a>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+    <div class="content-body tutorial-content" data-growable-markdown="">
+      <h3 id="introdução">Introdução</h3>
+
+<p>A pilha "LAMP" é um grupo de softwares open source que é tipicamente 
+instalado em conjunto para permitir a um servidor hospedar websites 
+dinâmicos e aplicações web. Este termo é atualmente um acrônimo que 
+representa o sistema operacional <strong>L</strong>inux, com o servidor web <strong>A</strong>pache. A informação do site é armazenada em uma base de dados <strong>M</strong>ySQL, e o conteúdo dinâmico é processado pelo <strong>P</strong>HP.</p>
+
+<p>Neste guia, vamos instalar uma pilha LAMP em um servidor Ubuntu 18.04.</p>
+
+<div name="pré-requisitos" data-unique="pré-requisitos"></div><h2 id="pré-requisitos">Pré-requisitos</h2>
+
+<p>Para completar esse tutorial, você vai precisar ter um servidor 
+Ubuntu 18.04 com uma conta de usuário que não seja root, com privilégios
+ <code>sudo</code> configurada e um firewall básico. Isso poe ser configurado utilizando nosso guia de <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04">Configuração Inicial de servidor com Ubuntu 18.04</a>. </p>
+
+<div name="passo-1-—-instalação-do-apache-e-atualização-do-firewall" data-unique="passo-1-—-instalação-do-apache-e-atualização-do-firewall"></div><h2 id="passo-1-—-instalação-do-apache-e-atualização-do-firewall">Passo 1 — Instalação do Apache e Atualização do Firewall</h2>
+
+<p>O servidor web Apache está entre os servidores web mais populares do 
+mundo. É bem documentado, e tem sido amplamente utilizado em grande 
+parte da história da web, o que faz dele uma ótima escolha padrão para 
+hospedar um website.</p>
+
+<p>Instale o Apache utilizando o gerenciador de pacotes do Ubuntu, <code>apt</code>:</p>
+<pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo apt update
+</li><li class="line" prefix="$">sudo apt install apache2
+</li></ul></code></pre>
+<p>Como estamos utilizando um comando <code>sudo</code>, essas operações são executadas com privilégios de root. Ele irá pedir a senha do usuário comum para verificar suas intenções.</p>
+
+<p>Uma vez que você tenha digitado sua senha, o <code>apt</code> irá lhe dizer quais pacotes ele planeja instalar e quanto de espaço extra em disco ele irá consumir. Pressione <code>Y</code> e aperte <code>Enter</code> para continuar, e a instalação prosseguirá.</p>
+
+<h3 id="ajustar-o-firewall-para-permitir-tráfego-web">Ajustar o Firewall para Permitir Tráfego Web</h3>
+
+<p>Agora, assumindo que você seguiu as instruções de configuração 
+inicial do servidor para habilitar o firewall UFW, certifique-se de que 
+seu firewall permite tráfego HTTP e HTTPS. Você pode certificar-se de 
+que o UFW tem um perfil de aplicativo para o Apache assim:</p>
+<pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo ufw app list
+</li></ul></code></pre><pre class="code-pre "><code langs=""><div class="secondary-code-label " title="Output">Output</div>Available applications:
+  <span class="highlight">Apache</span>
+  <span class="highlight">Apache Full</span>
+  <span class="highlight">Apache Secure</span>
+  OpenSSH
+</code></pre>
+<p>Se você olhar para o perfil <code>Apache Full</code>, ele deve mostrar que ele habilita tráfego para as portas <code>80</code> e <code>443</code>:</p>
+<pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo ufw app info "Apache Full"
+</li></ul></code></pre><pre class="code-pre "><code langs=""><div class="secondary-code-label " title="Output">Output</div>Profile: Apache Full
+Title: Web Server (HTTP,HTTPS)
+Description: Apache v2 is the next generation of the omnipresent Apache web
+server.
+
+Ports:
+  <span class="highlight">80,443/tcp</span>
+</code></pre>
+<p>Permita o tráfego entrante HTTP e HTTPS para esse perfil:</p>
+<pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo ufw allow in "Apache Full"
+</li></ul></code></pre>
+<p>Você pode fazer uma verificação imediata para verificar se tudo 
+correu como planejado visitando o endereço IP público do seu servidor no
+ seu navegador web (Veja a nota abaixo do próximo cabeçalho para 
+descobrir qual é o seu endereço IP público se você ainda não tiver essa 
+informação):</p>
+<pre class="code-pre "><code langs="">http://<span class="highlight">ip_do_seu_servidor</span>
+</code></pre>
+<p>Você verá a página web padrão do Ubuntu 18.04, que está lá para fins de teste e informação. Ela deve ser algo assim:</p>
+
+<p class="growable"><img src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/small_apache_default_1804.png" alt=""></p>
+
+<p>Se você ver esta página, então seu servidor web agora está corretamente instalado e acessível através do seu firewall.</p>
+
+<h3 id="como-encontrar-o-endereço-ip-público-do-seu-servidor">Como Encontrar o Endereço IP Público do seu Servidor</h3>
+
+<p>Se você não sabe qual é o endereço IP público do seu servidor, há uma
+ série de maneiras pelas quais você pode encontrá-lo. Geralmente, esse é
+ o endereço que você utiliza para se conectar ao seu servidor através do
+ SSH.</p>
+
+<p>A partir da linha de comando, você pode encontrar isso de algumas maneiras. Primeiro, você pode utilizar as ferramentas <code>iproute2</code> para obter seu endereço digitando isso:</p>
+<pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
+</li></ul></code></pre>
+<p>Esse comando vai lhe retornar duas ou três linhas. Todos são 
+endereços corretos, mas seu computador só poderá utilizar um deles, 
+portanto, sinta-se livre para tentar cada um.</p>
+
+<p>Um método alternativo é usar o utilitário <code>curl</code> para 
+entrar em contato com algum meio externo para lhe dizer como ele vê o 
+seu servidor. Você pode fazer isso perguntando a um servidor específico 
+qual é o seu IP:</p>
+<pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo apt install curl
+</li><li class="line" prefix="$">curl http://icanhazip.com
+</li></ul></code></pre>
+<p>Independentemente do método que você usa para obter seu endereço IP, 
+digite-o na barra de endereço do seu navegador web para ver a página 
+padrão do Apache.</p>
+
+<div name="passo-2-—-instalação-do-mysql" data-unique="passo-2-—-instalação-do-mysql"></div><h2 id="passo-2-—-instalação-do-mysql">Passo 2 — Instalação do MySQL</h2>
+
+<p>Agora que temos nosso servidor web pronto e funcionando, é hora de 
+instalar o MySQL. O MySQL é um sistema de gerenciamento de bancos de 
+dados. Basicamente, ele irá organizar e fornecer acesso às bases de 
+dados onde nosso site pode armazenar informação.</p>
+
+<p>Novamente, utilize o <code>apt</code> para obter e instalar este software:</p>
+<pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo apt install mysql-server
+</li></ul></code></pre>
+<p><span class="note"><strong>Nota</strong>: Neste caso, você não tem que executar <code>sudo apt update</code>
+ antes do comando. Isso é porque o executamos recentemente através dos 
+comandos acima para instalar o Apache. O índice de pacotes  em nosso 
+computador já deve estar atualizado.<br></span></p>
+
+<p>Novamente, será mostrada uma lista dos pacotes que serão instalados, 
+juntamente com a quantidade de espaço em disco que irão ocupar. Digite <code>Y</code> para continuar.</p>
+
+<p>Quando a instalação estiver concluída, execute um script de segurança
+ simples que vem pré-instalado com o MySQL e que irá remover alguns 
+padrões perigosos e bloquear o acesso ao seu sistema de banco de dados. 
+Inicie o script interativo executando:</p>
+<pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo mysql_secure_installation
+</li></ul></code></pre>
+<p>Você será perguntado se você quer configurar o <code>VALIDATE PASSWORD PLUGIN</code>.</p>
+
+<p><span class="note"><strong>Nota</strong>: A habilitação dessa 
+funcionalidade é algo que deve ser avaliado. Se habilitado, senhas que 
+não seguem o critério especificado serão rejeitadas pelo MySQL com um 
+erro. Isso irá causar problemas se você utilizar uma senha fraca 
+juntamente com software que configura automaticamente as credenciais de 
+usuário do MySQL, tais como os pacotes do Ubuntu para o phpMyAdmin. É 
+seguro deixar a validação desativada, mas você deve sempre utilizar 
+senhas fortes e exclusivas para as credenciais do banco de dados.<br></span></p>
+
+<p>Responda <code>Y</code> para Sim, ou qualquer outra coisa para continuar sem a habilitação.</p>
+<pre class="code-pre "><code langs="">VALIDATE PASSWORD PLUGIN can be used to test passwords
+and improve security. It checks the strength of password
+and allows the users to set only those passwords which are
+secure enough. Would you like to setup VALIDATE PASSWORD plugin?
+
+Press y|Y for Yes, any other key for No:
+</code></pre>
+<p>Se você responder "yes", você será solicitado a selecionar um nível de validação de senha. Tenha em mente que se você digitar <code>2</code>,
+ para o nível mais forte, você receberá erros quando tentar configurar 
+qualquer senha que não contenha números, letras maiúsculas e minúsculas,
+ e caracteres especiais, ou que seja baseada em palavras comuns do 
+dicionário.</p>
+<pre class="code-pre "><code langs="">There are three levels of password validation policy:
+
+LOW    Length &gt;= 8
+MEDIUM Length &gt;= 8, numeric, mixed case, and special characters
+STRONG Length &gt;= 8, numeric, mixed case, special characters and dictionary                  file
+
+Please enter 0 = LOW, 1 = MEDIUM and 2 = STRONG: <span class="highlight">1</span>
+</code></pre>
+<p>Independentemente de você escolher configurar o <code>VALIDATE PASSWORD PLUGIN</code>,
+ seu servidor em seguida irá solicitar que você selecione e confirme a 
+senha para o usuário root do MySQL. Esta é uma conta administrativa no 
+MySQL que possui privilégios avançados. Pense nela como sendo similar à 
+conta de root para o próprio servidor (embora esta que você está 
+configurando agora é uma conta específica do MySQL). Certifique-se de 
+que esta é uma senha forte e exclusiva, e não a deixe em branco.</p>
+
+<p>Se você habilitou a validação de senha, será mostrado a força da 
+senha de root atual, e será perguntado se você quer alterar aquela 
+senha. Se você estiver satisfeito com sua senha atual, digite N para 
+"não" no prompt:</p>
+<pre class="code-pre "><code langs="">Using existing password for root.
+
+Estimated strength of the password: <span class="highlight">100</span>
+Change the password for root ? ((Press y|Y for Yes, any other key for No) : <span class="highlight">n</span>
+</code></pre>
+<p>Para o restante das perguntas, pressione <code>Y</code> e aperte a tecla <code>Enter</code>
+ para cada prompt. Isso irá remover alguns usuários anônimos e o banco 
+de dados de teste, desabilitar logins remotos de root, e carregar essas 
+novas regras de forma que o MySQL respeite imediatamente as alterações 
+que fizemos. </p>
+
+<p>Nesse ponto, seu sistema de banco de dados está agora configurado e 
+podemos seguir em frente para a instalação do PHP, o componente final da
+ pilha LAMP.</p>
+
+<div name="passo-3-—-instalação-do-php" data-unique="passo-3-—-instalação-do-php"></div><h2 id="passo-3-—-instalação-do-php">Passo 3 — Instalação do PHP</h2>
+
+<p>O PHP é o componente da nossa configuração que irá processar código 
+para exibir o conteúdo dinâmico. Ele pode executar script, conectar às 
+nossas bases de dados MySQL para obter informações, e entregar o 
+conteúdo processado para o nosso servidor web exibir.</p>
+
+<p>Uma vez mais, aproveite o sistema <code>apt</code> para instalar o 
+PHP. Adicionalmente, inclua alguns pacotes auxiliares dessa vez para que
+ o código PHP possa rodar sob o servidor Apache e falar com o seu banco 
+de dados MySQL:</p>
+<pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo apt install php libapache2-mod-php php-mysql
+</li></ul></code></pre>
+<p>Isto irá instalar o PHP sem problemas. Vamos testar isso em instantes.</p>
+
+<p>Na maioria do casos, vamos querer modificar a forma com a qual o 
+Apache serve arquivos quando uma pasta é requisitada. Atualmente, se um 
+usuário requisita uma pasta do servidor, o Apache irá olhar 
+primeiramente para um arquivo chamado <code>index.html</code>. Queremos informar ao nosso servidor web para dar preferência aos arquivos PHP, então faremos o Apache olhar para um arquivo <code>index.php</code> primeiro.</p>
+
+<p>Para fazer isto, digite este comando para abrir o arquivo <code>dir.inf</code> em um editor de texto com privilégios de root:</p>
+<pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo nano /etc/apache2/mods-enabled/dir.conf
+</li></ul></code></pre>
+<p>Ele terá esta aparência:</p>
+<div class="code-label " title="/etc/apache2/mods-enabled/dir.conf">/etc/apache2/mods-enabled/dir.conf</div><pre class="code-pre "><code langs="">/etc/apache2/mods-enabled/dir.conf
+
+&lt;IfModule mod_dir.c&gt;
+    DirectoryIndex index.html index.cgi index.pl <span class="highlight">index.php</span> index.xhtml index.htm
+&lt;/IfModule&gt;
+</code></pre>
+<p>Mova o arquivo de índice PHP (em destaque acima) para a primeira posição depois da especificação <code>DirectoryIndex</code> , como segue:</p>
+<div class="code-label " title="/etc/apache2/mods-enabled/dir.conf">/etc/apache2/mods-enabled/dir.conf</div><pre class="code-pre "><code langs="">/etc/apache2/mods-enabled/dir.conf
+
+&lt;IfModule mod_dir.c&gt;
+    DirectoryIndex <span class="highlight">index.php</span> index.html index.cgi index.pl index.xhtml index.htm
+&lt;/IfModule&gt;
+</code></pre>
+<p>Quando você tiver concluído, salve e feche o arquivo pressionando <code>CTRL-X</code>. Confirme a gravação digitando <code>Y</code> e em seguida pressione <code>ENTER</code> para confirmar a localização de salvamento do arquivo.</p>
+
+<p>Após isso, reinicie o servidor web Apache de forma que nossas 
+alterações sejam reconhecidas. Você pode fazer isto digitando o 
+seguinte:</p>
+<pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo systemctl restart apache2
+</li></ul></code></pre>
+<p>Você pode também verificar o status do serviço <code>apache2</code> utilizando <code>systemctl</code>:</p>
+<pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo systemctl status apache2
+</li></ul></code></pre><pre class="code-pre "><code langs=""><div class="secondary-code-label " title="Sample Output">Sample Output</div>● apache2.service - LSB: Apache2 web server
+   Loaded: loaded (/etc/init.d/apache2; bad; vendor preset: enabled)
+  Drop-In: /lib/systemd/system/apache2.service.d
+           └─apache2-systemd.conf
+   Active: active (running) since Tue 2018-04-23 14:28:43 EDT; 45s ago
+     Docs: man:systemd-sysv-generator(8)
+  Process: 13581 ExecStop=/etc/init.d/apache2 stop (code=exited, status=0/SUCCESS)
+  Process: 13605 ExecStart=/etc/init.d/apache2 start (code=exited, status=0/SUCCESS)
+    Tasks: 6 (limit: 512)
+   CGroup: /system.slice/apache2.service
+           ├─13623 /usr/sbin/apache2 -k start
+           ├─13626 /usr/sbin/apache2 -k start
+           ├─13627 /usr/sbin/apache2 -k start
+           ├─13628 /usr/sbin/apache2 -k start
+           ├─13629 /usr/sbin/apache2 -k start
+           └─13630 /usr/sbin/apache2 -k start
+</code></pre>
+<p>Para melhorar a funcionalidade do PHP, você tem a opção de instalar 
+alguns módulos adicionais. Para ver as opções disponíveis para os 
+módulos e bibliotecas PHP, direcione os resultados do comando <code>apt search</code> para o comando <code>less</code>, um paginador que lhe permite percorrer a saída de outros comandos:</p>
+<pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">apt search php- | less
+</li></ul></code></pre>
+<p>Use as teclas de seta para rolar para cima e para baixo e <code>Q</code> para sair.</p>
+
+<p>O resultado são todos os componentes opcionais que você pode instalar. Ele lhe dará uma breve descrição de cada um:</p>
+<pre class="code-pre "><code langs="">bandwidthd-pgsql/bionic 2.0.1+cvs20090917-10ubuntu1 amd64
+  Tracks usage of TCP/IP and builds html files with graphs
+
+bluefish/bionic 2.2.10-1 amd64
+  advanced Gtk+ text editor for web and software development
+
+cacti/bionic 1.1.38+ds1-1 all
+  web interface for graphing of monitoring systems
+
+ganglia-webfrontend/bionic 3.6.1-3 all
+  cluster monitoring toolkit - web front-end
+
+golang-github-unknwon-cae-dev/bionic 0.0~git20160715.0.c6aac99-4 all
+  PHP-like Compression and Archive Extensions in Go
+
+haserl/bionic 0.9.35-2 amd64
+  CGI scripting program for embedded environments
+
+kdevelop-php-docs/bionic 5.2.1-1ubuntu2 all
+  transitional package for kdevelop-php
+
+kdevelop-php-docs-l10n/bionic 5.2.1-1ubuntu2 all
+  transitional package for kdevelop-php-l10n
+…
+:
+</code></pre>
+<p>Para aprender mais sobre o que cada módulo faz, você pode pesquisar 
+na internet para maiores informações sobre eles. Alternativamente, veja a
+ descrição longa do pacote digitando:</p>
+<pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">apt show <span class="highlight">nome_do_pacote</span>
+</li></ul></code></pre>
+<p>Haverá uma grande quantidade de saída, com um campo chamado <code>Description</code> que terá uma explicação mais longa da funcionalidade que o módulo oferece.</p>
+
+<p>Por exemplo, para encontrar o que o módulo <code>php-cli</code> faz, você pode digitar isto:</p>
+<pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">apt show php-cli
+</li></ul></code></pre>
+<p>Juntamente com várias outras informações, você vai encontrar algo parecido com isto:</p>
+<pre class="code-pre "><code langs=""><div class="secondary-code-label " title="Output">Output</div>…
+Description: command-line interpreter for the PHP scripting language (default)
+ This package provides the /usr/bin/php command interpreter, useful for
+ testing PHP scripts from a shell or performing general shell scripting tasks.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on Ubuntu's default
+ PHP version (currently 7.2).
+…
+</code></pre>
+<p>Se, após pesquisar, você decidir que gostaria de instalar um pacote, você pode fazê-lo utilizando o comando <code>apt install</code> assim como fizemos para nossos outros softwares.</p>
+
+<p>Se decidir que o <code>php-cli</code> é algo que você precisa, você poderia digitar:</p>
+<pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo apt install php-cli
+</li></ul></code></pre>
+<p>Se você quiser instalar mais de um módulo, você pode fazer isso listando cada um, separado por um espaço, seguindo o comando <code>apt install</code>, como abaixo:</p>
+<pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo apt install <span class="highlight">pacote1 pacote2</span> ...
+</li></ul></code></pre>
+<p>Nesse ponto, sua pilha LAMP está instalada e configurada. Antes de 
+fazer mais alterações ou implantar um aplicativo, seria útil testar 
+proativamente sua configuração do PHP, para o caso de haver algum 
+problema que deva ser resolvido. </p>
+
+<div name="step-4-—-testando-o-processamento-php-no-seu-servidor-web" data-unique="step-4-—-testando-o-processamento-php-no-seu-servidor-web"></div><h2 id="step-4-—-testando-o-processamento-php-no-seu-servidor-web">Step 4 — Testando o Processamento PHP  no seu Servidor Web</h2>
+
+<p>A fim de testar se seu sistema está corretamente configurado para o PHP, crie um script PHP bem básico denominado <code>info.php</code>.
+ Para que o Apache possa encontrar o arquivo e servi-lo corretamente, 
+ele deve ser salvo em um diretório muito específico, o qual é chamado de
+ "web root".</p>
+
+<p>No Ubuntu 18.04, este diretório está localizado em <code>/var/www/html</code>. Crie o arquivo neste local digitando:</p>
+<pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo nano /var/www/html/info.php
+</li></ul></code></pre>
+<p>Isto vai abrir um arquivo em branco. Coloque o texto a seguir, que é um código PHP válido, dentro do arquivo:</p>
+<div class="code-label " title="info.php">info.php</div><pre class="code-pre "><code langs="">&lt;?php
+phpinfo();
+?&gt;
+
+</code></pre>
+<p>Quando você tiver concluído, salve e feche o arquivo.</p>
+
+<p>Agora você pode testar se seu servidor web pode exibir corretamente o
+ conteúdo gerado por esse script PHP. Para testar isso, visite esta 
+página em seu navegador web. Você vai precisar novamente do endereço IP 
+público do seu servidor.</p>
+
+<p>O endereço que você vai querer visitar é:</p>
+<pre class="code-pre "><code langs="">http://<span class="highlight">ip_do_seu_servidor</span>/info.php
+</code></pre>
+<p>A página que você deve ver deve se parecer com isto:</p>
+
+<p class="growable"><img src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/small_php_info_1804.png" alt=""></p>
+
+<p>Esta página fornece a você informações básicas sobre seu servidor a 
+partir da perspectiva do PHP. Ela é útil para depuração e para assegurar
+ que suas configurações estão sendo corretamente aplicadas.</p>
+
+<p>Se você pode ver essa página em seu navegador, então seu PHP está funcionando como esperado.</p>
+
+<p>Você provavelmente vai querer remover este arquivo depois do teste, 
+pois ele realmente pode fornecer informações sobre seu servidor para 
+usuários não autorizados. Para fazer isto, execute o seguinte comando:</p>
+<pre class="code-pre command"><code langs=""><ul class="prefixed"><li class="line" prefix="$">sudo rm /var/www/html/info.php
+</li></ul></code></pre>
+<p>Você sempre poderá recriar esta página se precisar acessar novamente as informações mais tarde.</p>
+
+<div name="conclusão" data-unique="conclusão"></div><h2 id="conclusão">Conclusão</h2>
+
+<p>Agora que você tem uma pilha LAMP instalada, você terá muitas opções 
+para o que fazer em seguida. Basicamente, você instalou uma plataforma 
+que lhe permitirá instalar a maioria dos tipos de websites e softwares 
+web em seu servidor.</p>
+
+<p>Como um próximo passo imediato, você deve se certificar de que as 
+conexões para o seu servidor web são seguras, servindo-as via HTTPS. A 
+opção mais fácil aqui é <a href="https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-18-04">utilizar o Let's Encrypt</a> para proteger seu site com um certificado TLS/SSL gratuito.</p>
+
+    </div>
+</div>
+
+<div class="tutorial-footer">
+  <div class="tutorial-footer-details">
+
+  <div class="postable-info-bar-container">
+  <div class="postable-info-bar">
+    <div class="left-section">
+      <div class="postable-info-bar-container">
+  <div class="postable-info-bar">
+    <div class="left-section">
+        <div class="tutorial-author-avatar">
+          <a href="https://www.digitalocean.com/community/users/mdrake"><div class="mod-avatar mod-avatar-small"><img class="avatar avatar-small" src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/3072b0699d3add2e0d0f31b97397dd68302c8842.jpg" alt="3072b0699d3add2e0d0f31b97397dd68302c8842"><span class="mod-star" title="" data-toggle="tooltip" data-container="body" data-original-title="MOD"><span class="mod-star-icon"></span></span></div></a>
+        </div>
+        <div class="author-and-date">
+          <div class="tutorial-author">
+            <div class="by">By: </div>
+            <a href="https://www.digitalocean.com/community/users/mdrake">Mark Drake</a>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <div class="right-section">
+      <div class="upvote-container">
+        <button name="button" type="button" class="new-upvote-button" data-include-caret="false" data-upvotable-id="2631" data-upvotable-type="Tutorial"><span class="icon new-upvote-icon"><svg class="svg-icon svg-icon-heart"><use xlink:href="https://www.digitalocean.com/assets/community/icon-sprite-d76eb75d70ccf8ffb4c0b47b7dbc88ca.svg#icon-heart"></use></svg></span><span class="new-upvote-text">Upvote</span><span class="new-upvote-count">0</span></button>
+      </div>
+      <div class="section-item section-item-subscribe">
+  <span class="opt-in-switch off signed-out-subscribe">
+    <span class="subscribe-label">
+      <span class="icon icon-subscribe"></span>
+      <span class="subscription-label subscribe">Subscribe</span>
+      <span class="icon icon-subscribed"></span>
+      <span class="subscription-label subscribed">Subscribed</span>
+    </span>
+    <a data-toggle="modal" data-target="#sign-in-modal" class="mini-switch-container" href="javascript:void(0);"><div class="mini-switch off signed-out-subscribe"><div class="switch-handle"></div></div></a>
+  </span>
+</div>
+
+<div class="section-item social-sharing-item">
+  <div class="sharing">
+  <a class="share-button" href="#" data-toggle="modal" data-target="#share-modal">
+    <span class="icon icon-share-square"></span>
+    <span class="share-button-text">Share</span>
+  </a>
+</div>
+
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+  <div class="section-content tutorial-contributors two">
+
+
+      <div class="tutorial-footer-user">
+        <div class="tutorial-footer-user-avatar-container">
+          <a href="https://www.digitalocean.com/community/users/fernandopimenta"><img alt="fernandopimenta" class="avatar avatar-small" src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/3ec177b47883507aea505b1201bf9d8a.png" width="80" height="80"></a>
+        </div>
+        <div class="user-info">
+          <div class="tutorial-user-type">Translation:</div>
+          <a href="https://www.digitalocean.com/community/users/fernandopimenta">Fernando Pimenta</a>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+  
+  <div class="tutorial-ctas">
+  <div class="section-content">
+    <div class="cta-description">
+      <h2>Spin up an SSD cloud server in under a minute.</h2>
+
+      <p>Simple setup. Full root access. Straightforward pricing.</p>
+
+      <a class="cloud-tutorial-cta" href="https://www.digitalocean.com/?utm_medium=community&amp;utm_source=community_gencta&amp;utm_campaign=needaserver&amp;utm_content=como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt">Deploy Server</a>
+    </div>
+  </div>
+</div>
+    <div class="related-tutorials">
+    <div class="section-content">
+      <h2>Related Tutorials</h2>
+
+      <ul>
+        <li><a class="related-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04">How To Install Linux, Apache, MySQL, PHP (LAMP) stack on Ubuntu 18.04</a></li>
+<li><a class="related-link" href="https://www.digitalocean.com/community/tutorials/how-to-secure-roundcube-on-ubuntu-16-04">How To Secure Roundcube on Ubuntu 16.04</a></li>
+<li><a class="related-link" href="https://www.digitalocean.com/community/tutorials/how-to-secure-web-server-infrastructure-with-digitalocean-cloud-firewalls-using-doctl">How To Secure Web Server Infrastructure With DigitalOcean Cloud Firewalls Using Doctl</a></li>
+<li><a class="related-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-your-own-webmail-client-with-roundcube-on-ubuntu-16-04">How To Install Your Own Webmail Client with Roundcube on Ubuntu 16.04</a></li>
+<li><a class="related-link" href="https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-simplesamlphp-for-saml-authentication-on-ubuntu-16-04">How to Install and Configure SimpleSAMLphp for SAML Authentication on Ubuntu 16.04</a></li>
+
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="content-comments">
+  <div class="section-content">
+    <div class="tutorial commentable" id="tutorial_2631">
+
+  <div class="comments-header">
+    <h4 class="comments-count"><span>0 Comments</span></h4>
+  </div>
+
+  <div class="response response-form no-avatar no-comments">
+  <div class="js-display-on-error flash error hidden"></div>
+
+
+  <form class="content-form disabled-form" id="new_comment" action="/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt/comments" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" value="✓" disabled="disabled" type="hidden">
+
+    <div class="meltdown_wrap" style="height: auto;"><div class="meltdown_topmargin"></div><div class="meltdown_bar"><ul class="meltdown_controls meltdown_controls_preview"><li class="meltdown_control-preview meltdown_control meltdown_controlbutton disabled" title="" data-original-title="Toggle Preview"><span>Preview</span></li></ul><div class="preview-header">Markdown Preview</div><ul class="meltdown_controls meltdown_controls_main"><li class="meltdown_control-bold meltdown_control meltdown_controlbutton disabled" title="" data-original-title="Bold" style=""><span unselectable="on">B</span></li><li class="meltdown_control-italics meltdown_control meltdown_controlbutton disabled" title="" data-original-title="Italics"><span unselectable="on">I</span></li><li class="meltdown_control-h1 meltdown_control meltdown_controlbutton disabled" title="" data-original-title="Header 1"><span unselectable="on">H1</span></li><li class="meltdown_control-h2 meltdown_control meltdown_controlbutton disabled" title="" data-original-title="Header 2"><span unselectable="on">H2</span></li><li class="meltdown_control-h3 meltdown_control meltdown_controlbutton disabled" title="" data-original-title="Header 3"><span unselectable="on">H3</span></li><li class="meltdown_control-ul meltdown_control meltdown_controlbutton disabled" title="" data-original-title="Unordered List"><span unselectable="on">UL</span></li><li class="meltdown_control-ol meltdown_control meltdown_controlbutton disabled" title="" data-original-title="Ordered List"><span unselectable="on">OL</span></li><li class="meltdown_control-link meltdown_control meltdown_controlbutton disabled" title="" data-original-title="Link"><span unselectable="on">Link</span></li><li class="meltdown_control-code meltdown_control meltdown_controlbutton disabled" title="" data-original-title="Code"><span unselectable="on">Code</span></li><li class="meltdown_control-highlight meltdown_control meltdown_controlbutton disabled" title="" data-original-title="Highlight"><span unselectable="on">Highlight</span></li><li class="meltdown_control-table meltdown_control meltdown_controlbutton disabled" title="" data-original-title="Table" style=""><span unselectable="on">Table</span></li></ul></div><div class="meltdown_editor-wrap"><div class="meltdown_editor-deco"><textarea name="comment[content]" id="comment_content" placeholder="Leave a comment..." class="js-comment-content tutorial-comment-field meltdown_editor" data-markdown="true" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 120px;"></textarea></div></div><div class="meltdown_preview-wrap"><div class="meltdown_preview-wrap2"><div class="meltdown_preview-error-message">Could not load preview. <a href="#">Try again</a></div><div class="meltdown_preview-loading-message">Loading preview...</div><div class="meltdown_preview content-body"></div></div></div><div class="meltdown_bottommargin"></div></div>
+
+      <div class="log-in-notice "><a href="https://www.digitalocean.com/community/auth/digitalocean">Log In to Comment</a></div>
+
+    <div class="clearfix"></div>
+</form>
+</div>
+
+
+  <div class="comments">
+    <ul class="response-list">
+    </ul>
+
+  </div>
+
+  <div class="load-more-container"></div>
+</div>
+
+
+  </div>
+</div>
+
+<div class="creative-commons">
+  <a class="creative-commons-image" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img rel="license" alt="Creative Commons License" src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/creativecommons-08b32a9279fcd47fcd78ac6a26331389.png"></a>
+    <div class="license-text">This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</div>
+</div>
+
+
+
+
+
+        <div class="clearfix"></div>
+      </div>
+
+
+      <footer class="Footer">
+  <span class="Footer-logo icon-sammy"></span>
+
+  <div>Copyright © 2018 DigitalOcean™ Inc.</div>
+
+  <ul class="Footer-nav">
+    <li><a href="https://www.digitalocean.com/community">Community</a></li>
+    <li><a href="https://www.digitalocean.com/community/tutorials">Tutorials</a></li>
+    <li><a href="https://www.digitalocean.com/community/questions">Questions</a></li>
+    <li><a href="https://www.digitalocean.com/community/projects">Projects</a></li>
+    <li><a href="https://www.digitalocean.com/community/tags">Tags</a></li>
+    <li><a href="https://www.digitalocean.com/community/newsletter">Newsletter</a></li>
+    <li>
+      <a href="https://www.digitalocean.com/community/tutorials/feed">
+        RSS <span class="icon-rss"></span>
+</a>    </li>
+  </ul>
+
+  <br>
+
+  <ul class="Footer-nav Footer-nav--secondary">
+    <li><a href="https://www.digitalocean.com/products/one-click-apps/">Distros &amp; One-Click Apps</a></li>
+    <li><a href="https://www.digitalocean.com/legal/terms/">Terms, Privacy, &amp; Copyright</a></li>
+    <li><a href="https://www.digitalocean.com/security/">Security</a></li>
+      <li><a data-toggle="modal" data-target="#sign-in-modal" href="#">Report a Bug</a></li>
+    <li><a href="https://www.digitalocean.com/write-for-donations">Write for DOnations</a></li>
+    <li><a href="http://store.digitalocean.com/">Shop</a></li>
+  </ul>
+</footer>
+
+
+
+
+
+      <div id="sign-in-modal" class="modal fade mini-modal" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1>Almost there!</h1>
+        <a class="close-button" data-dismiss="modal" aria-label="close" href=""><span class="icon icon-close-light"></span></a>
+      </div>
+      <div class="modal-body">
+        <div class="sign-in-message">Sign into your account, or create a new one, to start interacting.</div>
+
+        <div class="sign-in-modal-actions">
+          <a class="sign-in-link button blue-button" data-default-url="/community/auth/digitalocean" href="https://www.digitalocean.com/community/auth/digitalocean">Log In</a>
+          <a class="sign-up-link button green-button" data-default-url="/community/auth/digitalocean?display=sessionless+register" href="https://www.digitalocean.com/community/auth/digitalocean?display=sessionless+register">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    
+  <script>
+    $(function() {
+      if (!!window.init_sharing) {
+        window.init_sharing();
+      }
+      new window.NewsletterSignup();
+      new window.GrowableMarkdown({ target: '[data-growable-markdown]' });
+
+      window.Bugsnag.beforeNotify = function(payload, metaData) {
+        // custom logic to determine groupingHash
+        metaData.groupingHash = "tutorialShow";
+      }
+    });
+  </script>
+  <script type="application/ld+json">
+    {"@context":"http://schema.org","@type":"Article","name":"Como instalar a pilha Linux, Apache, MySQL, PHP (LAMP) no Ubuntu 18.04","headline":"Como instalar a pilha Linux, Apache, MySQL, PHP (LAMP) no Ubuntu 18.04","alternativeHeadline":"Como instalar a pilha Linux, Apache, MySQL, PHP (LAMP) no Ubuntu 18.04","description":"A pilha \"LAMP\" é um grupo de softwares open source que é tipicamente instalado em conjunto para permitir a um servidor hospedar websites dinâmicos e aplicações web. Este termo é atualmente um acrônimo que representa o sistema operacional Linux, com o servidor web Apache....","keywords":"LAMP Stack,PHP,MySQL,Apache,April 2018","url":"https://www.digitalocean.com/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.digitalocean.com/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-18-04-pt"},"dateModified":"2018-05-09T21:30:57Z","inLanguage":"pt","accessMode":"textual","accessModeSufficient":"textual","isAccessibleForFree":true,"license":"https://creativecommons.org/licenses/by-nc-sa/4.0/","publishingPrinciples":"https://www.digitalocean.com/community/tutorials/technical-recommendations-and-best-practices-for-digitalocean-s-tutorials","author":{"@type":"Person","name":"Mark Drake","@id":"https://www.digitalocean.com/community/users/mdrake"},"datePublished":"2018-05-09T21:30:57Z","image":{"@type":"ImageObject","url":"https://www.digitalocean.com/assets/community/default_community_sharing-65c1cc547375d6e37cc45195b3686769.png","height":375,"width":750},"interactionStatistic":[{"@type":"InteractionCounter","interactionType":"http://schema.org/LikeAction","userInteractionCount":"0"},{"@type":"InteractionCounter","interactionType":"http://schema.org/CommentAction","userInteractionCount":"0"}],"sourceOrganization":{"@type":"Organization","name":"DigitalOcean Community","url":"https://www.digitalocean.com/community"},"publisher":{"@type":"Organization","name":"DigitalOcean","url":"https://www.digitalocean.com","logo":{"@type":"ImageObject","url":"https://assets.digitalocean.com/logos/DO_Logo_horizontal_blue.png","width":351,"height":60}}}
+  </script>
+  <script>
+    $(function() {
+      setTimeout(function(){
+        window.cookieConsent.promise.then(function () {
+          $.getJSON(
+            'https://assets.digitalocean.com/labs/btp.json',
+            function(data) {
+              new BelowTutorialPanel(data);
+            }
+          );
+        });
+      }, 2000);
+    });
+  </script>
+
+  <div id="report-a-bug-modal" class="modal fade mini-modal" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1>Report a Bug</h1>
+          <a class="close-button" data-dismiss="modal" aria-label="close" href=""><span class="icon icon-close-light"></span></a>
+        </div>
+        <div class="modal-body">
+          <div class="report-a-bug-message text-center">Use this form to report bugs related to the Community</div>
+          <div class="report-a-bug-actions do-form">
+            <div class="form-wrap">
+              <form class="new_bug_report" id="new_bug_report" action="/community/bug_reports" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="mOjwEY5xO5tNUSnQfjfCegDcPgAD69oxUOT3zmFcdq2BrlLBSvkANQ7jQGT1FEmW08IEciDh9QH+UNzAcQPTEg==" type="hidden">
+                <fieldset name="report-a-bug-info">
+                <legend class="sr-only">Report a bug:</legend>
+                  <div class="field">
+                    <label for="bug_reporter_name" class="sr-only">Name</label>
+                    <input placeholder="Name" id="bug_reporter_name" name="bug_report[name]" type="text">
+                  </div>
+                  <div class="field">
+                    <label for="bug_reporter_email" class="sr-only">Email</label>
+                    <input name="Email" placeholder="Email" id="bug_reporter_email" required="required" type="text">
+                  </div>
+                  <div class="field">
+                    <label for="bug_reporter_message" class="sr-only">Message</label>
+                    <textarea name="Message" placeholder="Message" id="bug_reporter_message" required="required" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 125px;"></textarea>
+                  </div>
+
+                  <div class="field actions">
+                    <input name="commit" value="Submit" class="button" type="submit">
+                  </div>
+                </fieldset>
+</form>            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    
+  
+
+<textarea tabindex="-1" aria-hidden="true" ,="" style="position: absolute; top: -999px; left: 0px; right: auto; bottom: auto; border: 0px none; padding: 0px; box-sizing: content-box; overflow-wrap: break-word; height: 0px !important; min-height: 0px !important; overflow: hidden; transition: none 0s ease 0s; font-family: &quot;proxima-nova&quot;, sans-serif; font-size: 17px; font-weight: 400; font-style: normal; letter-spacing: 0px; text-transform: none; word-spacing: 0px; text-indent: 0px; line-height: 21px; width: 58px;" class="autosizejs" id="autosizejs">Message
+</textarea><a id="scrollUp" href="#top" style="position: fixed; z-index: 1000;">Scroll to top</a><div id="scrollUp-active" style="position: absolute; top: 300px; width: 100%; border-top: 1px dotted rgb(0, 255, 255); z-index: 1000;"></div><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border: medium none;" src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/RQ7NiRXMcYA.html" frameborder="0"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div><iframe scrolling="no" allowtransparency="true" src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/widget_iframe.html" title="Twitter settings iframe" style="display: none;" frameborder="0"></iframe><div id="mktoStyleLoaded" style="display: none; border-top-color: rgb(18, 52, 86);"></div><form novalidate="novalidate" style="font-family: Helvetica, Arial, sans-serif; font-size: 13px; color: rgb(51, 51, 51); visibility: hidden; position: absolute; top: -500px; left: -1000px; width: 1350px;" class="mktoForm mktoHasWidth mktoLayoutLeft"></form><iframe id="rufous-sandbox" scrolling="no" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: medium none;" title="Twitter analytics iframe" frameborder="0"></iframe><iframe name="mktoFormsXDIframe0.5436149887030287" id="MktoForms2XDIframe" style="display: none;" src="Como%20instalar%20a%20pilha%20Linux,%20Apache,%20MySQL,%20PHP%20(LAMP)%20no%20Ubuntu%2018.04%20|%20DigitalOcean_files/XDFrame.html"></iframe></body></html>

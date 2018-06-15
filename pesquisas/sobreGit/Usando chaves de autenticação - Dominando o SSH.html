@@ -1,0 +1,521 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Usando chaves de autenticação - Dominando o SSH</title>
+<script src="Usando%20chaves%20de%20autentica%C3%A7%C3%A3o%20-%20Dominando%20o%20SSH_files/osd.js"></script><script src="Usando%20chaves%20de%20autentica%C3%A7%C3%A3o%20-%20Dominando%20o%20SSH_files/pubads_impl_rendering_207.js"></script><script async="" src="Usando%20chaves%20de%20autentica%C3%A7%C3%A3o%20-%20Dominando%20o%20SSH_files/ga.js"></script><script type="text/javascript" id="jsEngine" charset="utf-8" src="Usando%20chaves%20de%20autentica%C3%A7%C3%A3o%20-%20Dominando%20o%20SSH_files/gdh-engine.js"></script>
+<style type="text/css">
+<!--
+@import url("//www.hardware.com.br/v10/css/gdh-style.css");
+-->
+</style>
+<link rel="alternate" type="application/rss+xml" title="Conteúdo e notícias" href="https://www.hardware.com.br/feeds/global.xml">
+<script async="" src="Usando%20chaves%20de%20autentica%C3%A7%C3%A3o%20-%20Dominando%20o%20SSH_files/usr.js"></script><script src="Usando%20chaves%20de%20autentica%C3%A7%C3%A3o%20-%20Dominando%20o%20SSH_files/embed.js" data-timestamp="1527253144950"></script><link rel="preload" href="Usando%20chaves%20de%20autentica%C3%A7%C3%A3o%20-%20Dominando%20o%20SSH_files/integrator.js" as="script"><link rel="prefetch" as="style" href="Usando%20chaves%20de%20autentica%C3%A7%C3%A3o%20-%20Dominando%20o%20SSH_files/a_data/lounge.css"><link rel="prefetch" as="script" href="Usando%20chaves%20de%20autentica%C3%A7%C3%A3o%20-%20Dominando%20o%20SSH_files/a_data/common.js"><link rel="prefetch" as="script" href="Usando%20chaves%20de%20autentica%C3%A7%C3%A3o%20-%20Dominando%20o%20SSH_files/a_data/lounge.js"><script async="" src="Usando%20chaves%20de%20autentica%C3%A7%C3%A3o%20-%20Dominando%20o%20SSH_files/b.asc"></script><script async="" src="Usando%20chaves%20de%20autentica%C3%A7%C3%A3o%20-%20Dominando%20o%20SSH_files/req.js"></script><link rel="prefetch" as="script" href="Usando%20chaves%20de%20autentica%C3%A7%C3%A3o%20-%20Dominando%20o%20SSH_files/a_data/config.js"></head>
+<body>
+<div id="header">
+<div id="mid_header">
+<div id="logo"><a href="https://www.hardware.com.br/" class="nounder">Hardware.com.br</a></div>
+<div class="business_block1"></div>
+</div>
+</div>
+<div id="top_bar">
+<div id="menu_bar">
+<div id="main_menu">
+<ul id="nav" class="droppy">
+<li><a href="https://www.hardware.com.br/" class="has-subnav">Guia do hardware</a>
+
+<ul>
+<li><a href="https://www.hardware.com.br/artigos/">Artigos</a></li>
+<li><a href="https://www.hardware.com.br/tutoriais/">Tutoriais</a></li>
+<li><a href="https://www.hardware.com.br/livros/">Livros Online</a></li>
+<li><a href="https://www.hardware.com.br/dicas/">Dicas</a></li>
+<li><a href="https://www.hardware.com.br/analises/">Análises</a></li>
+<li><a href="https://www.hardware.com.br/guias/">Guias</a></li>
+<li><a href="https://www.hardware.com.br/termos/">Dicionário técnico</a></li>
+<li><a href="https://www.hardware.com.br/noticias/?go=LastMonth">Notícias</a></li><li><a href="https://www.hardware.com.br/comentarios/">Comentários</a></li>
+</ul>
+
+</li>
+<li><a href="https://www.hardware.com.br/press/" class="has-subnav">GDH Press</a>
+
+<ul>
+<li><a href="https://www.hardware.com.br/livros/hardware-ii/">Hardware II</a></li>
+<li><a href="https://www.hardware.com.br/livros/smartphones/">Smartphones</a></li>
+<li><a href="https://www.hardware.com.br/livros/linux/">Linux, Guia Prático</a></li>
+<li><a href="https://www.hardware.com.br/livros/servidores-linux/">Servidores Linux</a></li>
+<li><a href="https://www.hardware.com.br/livros/redes/">Redes, Guia Prático</a></li>
+<li><a href="https://www.hardware.com.br/livros/hardware/">Hardware I</a></li>
+<li><a href="https://www.hardware.com.br/press/promocao/">Promoções</a></li>
+</ul>
+
+</li>
+<li class="nochilds"><a href="https://www.hardware.com.br/comunidade/">Fórum GdH</a></li>
+<li class="nochilds"><a href="https://anuncie.hardware.com.br/">Anuncie</a></li>
+<li class="nochilds"><a href="https://www.hardware.com.br/rss.html">RSS</a></li>
+</ul>
+</div>
+<div id="sub_menu">
+<ul id="sub_nav" class="droppy">
+<li><a href="https://www.hardware.com.br/">Home</a></li>
+<li><a href="https://www.hardware.com.br/equipe.html">Equipe</a></li>
+<li><a class="cms-ajax cms-foreground" href="https://www.hardware.com.br/perfil/" data-ajax-already="true">Efetuar Login</a></li>
+<li>
+<form id="topsearch" action="https://www.google.com/cse" method="get">
+<input name="ie" value="UTF-8" type="hidden">
+<input name="cx" value="009062332369909290639:tqg1m-r0qdk" type="hidden">
+<input placeholder="Buscar..." name="q" class="" size="8" type="text">
+</form>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="container">
+<div id="wrapper">
+<div id="side_bar" class="cms-ajax-container">
+<div id="sidebar_container">
+<div class="business_block2">
+<div style="width: 336px">
+<a href="https://anuncie.hardware.com.br/campaigns/editor" style="float: right; font-size: 120%;">
+Criar anúncio
+</a>
+<div style="text-align: left; font-size: 110%; text-transform: uppercase; color: #777; font-weight: bold; margin-bottom: 10px;">
+Publicidade
+</div>
+</div>
+<script type="text/javascript">
+  var gpt_slots = gpt_slots || [];
+</script>
+<div id="div-gpt-ad-1463757128864-0" style="height:280px; width:336px;" data-google-query-id="CNyF_6r1oNsCFUYShwod4FwGaQ">
+<script type="text/javascript">
+      gpt_slots.push({
+        id: "/1012970/site",
+        size: [336, 280],
+        div: "div-gpt-ad-1463757128864-0"
+      });
+    </script>
+<div id="google_ads_iframe_/1012970/site_0__container__" style="border: 0pt none; display: inline-block; width: 336px; height: 280px;"><iframe style="border: 0px none; vertical-align: bottom;" src="Usando%20chaves%20de%20autentica%C3%A7%C3%A3o%20-%20Dominando%20o%20SSH_files/container.html" id="google_ads_iframe_/1012970/site_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" data-is-safeframe="true" width="336" height="280" frameborder="0"></iframe></div></div>
+</div>
+
+<div id="side_content">
+<ul id="hot_tabs" class="cms-tabs tabs">
+<li><a href="#def-first" class="active">Notícias</a></li>
+<li><a href="#def-third">Guias</a></li>
+<li><a href="#def-code">O que há de novo?</a></li>
+</ul>
+<div id="def-first" class="tab" style="display: block;">
+<h2>Notícias</h2>
+<div class="blockLastNews">
+<div class="groupGrid">
+<div class="groupGridKey">23/05</div>
+<a href="https://www.hardware.com.br/noticias/2018-05/mediatek-anuncia-helio-p22-soc-para-smartphones-intermediarios.html">· MediaTek anuncia Helio P22, SoC para smartphones intermediários</a><br><a href="https://www.hardware.com.br/noticias/2018-05/novo-razer-blade-notebook-gamer-com-tela-de-15-polegadas-mai-compacto-do-mercado.html">· Novo Razer Blade é o notebook gamer com tela de 15,6 polegadas mais compacto do mercado</a><br><a href="https://www.hardware.com.br/noticias/2018-05/sony-diz-que-ps4-esta-entrando-em-seu-ciclo-final-de-vida-de-mercado.html">· Sony diz que o PS4 está entrando em seu ciclo final de vida de mercado</a><br><a href="https://www.hardware.com.br/noticias/2018-05/acer-anuncia-notebook-gamer-predator-helios-500-eqipado-com-core-i9.html">· Acer anuncia o notebook gamer Predator Helios 500 equipado com Core i9</a><br><a href="https://www.hardware.com.br/noticias/2018-05/confira-os-requisitos-minimos-recomendados-para-the-crew.html">· Confira os requisitos mínimos e recomendados para The Crew 2</a><br><a href="https://www.hardware.com.br/noticias/2018-05/nzxt-anuncia-dois-novos-gabinetes-mid-tower-h500-h500i.html">· NZXT anuncia dois novos gabinetes mid tower: H500 e H500i</a><br>
+</div>
+<div class="groupGrid">
+<div class="groupGridKey">21/05</div>
+<a href="https://www.hardware.com.br/noticias/2018-05/acer-lanca-por-us-1999-99-monitor-gamer-predator-x27-4k-27-polegadas-suporta-ao-sync.html">· Acer lança por US$ 1.999,99 o monitor gamer Predator X27: 4K, 27 polegadas e suporte ao G-Sync</a><br><a href="https://www.hardware.com.br/noticias/2018-05/relatorio-revela-que-ataques-que-utilizam-exploits-para-microsoft-office-cresceram-quatro-vezes-no-inicio-de-2018.html">· Relatório revela que ataques que utilizam exploits para Microsoft Office cresceram quatro vezes no início de 2018</a><br><a href="https://www.hardware.com.br/noticias/2018-05/nvida-anuncia-gtx-1050-com-gb-de-memoria-gddr5.html">· NVIDIA anuncia GTX 1050 com 3 GB de memória GDDR5</a><br>
+</div>
+<div class="groupGrid">
+<div class="groupGridKey">20/05</div>
+<a href="https://www.hardware.com.br/noticias/2018-05/adeus-dvds-drivers-das-novas-placas-mae-da-evga-serao-distribuidos-por-pendrive.html">· Adeus DVD, drivers das novas placas-mãe da EVGA serão distribuídos por pendrive</a><br><a href="https://www.hardware.com.br/noticias/2018-05/memorias-ram-ficarao-ainda-mais-caras-no-proximo-trimestre.html">· Memórias RAM ficarão ainda mais caras no próximo trimestre</a><br><a href="https://www.hardware.com.br/noticias/2018-05/um-mundo-sem-senhas-seguranca-das-urnas-eletronicas-foram-alguns-dos-temas-do-mind-the-sec-2018.html">· Um mundo sem senhas e a segurança das urnas eletrônicas foram alguns dos temas do Mind The Sec RJ 2018</a><br>
+</div>
+<div class="groupGrid">
+<div class="groupGridKey">18/05</div>
+<a href="https://www.hardware.com.br/noticias/2018-05/samsung-estaria-preparando-um-monitor-de-49-polegadas-com-resolucao-de-5120-1440-pixels-120-hz.html">· Samsung estaria preparando um monitor curvo 49 polegadas com resolução de 5120 x 1440 pixels e 120 Hz</a><br><a href="https://www.hardware.com.br/noticias/2018-05/zotac-anuncia-mini-pc-zboxcl329-nano-refrigeracao-passiva-soc-intel-gemini-lake.html">· ZOTAC anuncia o mini-PC ZBox CI329 nano: refrigeração passiva e SoC Intel Gemini Lake</a><br><a href="https://www.hardware.com.br/noticias/2018-05/team-group-lanca-kits-de-memoria-force-dark-pro-ddr4-para-processadores-amd-ryzen.html">· Team Group lança kits de memória T-Force Dark Pro DDR4 para processadores AMD Ryzen</a><br>
+</div>
+<div class="groupGrid">
+<div class="groupGridKey">16/05</div>
+<a href="https://www.hardware.com.br/noticias/2018-05/msi-anuncia-mech-nova-serie-de-placas-de-video-baseadas-em-gpus-amd-radeon-rx.html">· MSI anuncia Mech 2, nova série de placas de vídeo baseadas em GPUs AMD (Radeon RX)</a><br><a href="https://www.hardware.com.br/noticias/2018-05/intel-confirma-core-i3-8121u-primeiro-processador-cannon-lake-10-nm.html">· Intel confirma o Core i3-8121U, primeiro processador Cannon Lake (10nm)</a><br>
+</div>
+<div class="groupGrid">
+<div class="groupGridKey">15/05</div>
+<a href="https://www.hardware.com.br/noticias/2018-05/intel-anuncia-um-novo-chipset-para-as-cpus-coffe-lake-z390.html">· Intel anuncia um novo chipset para as CPUs Coffee Lake: Z390</a><br><a href="https://www.hardware.com.br/noticias/2018-05/primeiro-notebook-equipado-com-um-processador-intel-de-10nm-ja-esta-em-pre-venda.html">· Primeiro notebook equipado com um processador Intel de 10nm já está em pré-venda</a><br><a href="https://www.hardware.com.br/noticias/2018-05/wasabi-mango-anuncia-primeiro-monitor-4k-com-taxa-de-atualizacaoo-de-120hz.html">· Wasabi Mango anuncia o primeiro monitor 4K com taxa de atualização de 120 Hz</a><br>
+</div>
+</div>
+<h5><a href="https://www.hardware.com.br/noticias/2018-05/">Notícias do mês de Maio de 2018 »</a></h5>
+</div>
+<div id="def-third" class="tab" style="display: none;">
+<h2>Guias</h2>
+<div id="block_guide" class="cms-ajax-container">
+<p style="text-align: left;">· <a href="https://www.hardware.com.br/livros/redes/">Redes, Guia Prático, 2ed.</a><br>
+· <a href="https://www.hardware.com.br/guias/guia-virtualbox/">Guia do Virtual Box</a><br>
+· <a href="https://www.hardware.com.br/guias/montagem-manutencao-micros/">Montagem e manutenção de micros e configuração do setup</a><br>
+· <a href="https://www.hardware.com.br/guias/hds/">Tudo sobre os HDs, flash e armazenamento</a><br>
+· <a href="https://www.hardware.com.br/guias/placas-mae-barramentos/">Placas-mãe e barramentos</a><br>
+· <a href="https://www.hardware.com.br/guias/memoria-ram/">Memória RAM</a><br>
+· <a href="https://www.hardware.com.br/guias/processadores-era-moderna/">Processadores, a era moderna</a><br>
+· <a href="https://www.hardware.com.br/guias/processadores-64bits/">Processadores, a era dos 64 bits (revolução industrial)</a><br>
+· <a href="https://www.hardware.com.br/guias/historia-processadores/">Processadores, da pré-história ao Pentium 4</a><br>
+· <a href="https://www.hardware.com.br/guias/fontes-protecao/">Fontes de alimentação e dispositivos de proteção</a><br>
+· <a href="https://www.hardware.com.br/guias/windows-linux/">Windows no Linux: VirtualBox, VMware e Wine</a><br>
+· <a href="https://www.hardware.com.br/guias/fedora/">Guia do Fedora</a><br>
+· <a href="https://www.hardware.com.br/guias/debian-desktops/">Debian em desktops</a><br>
+· <a href="https://www.hardware.com.br/guias/programas-linux/">Aplicativos Linux</a><br>
+· <a href="https://www.hardware.com.br/guias/mandriva-kde4/">Mandriva Linux e o KDE 4</a><br>
+· <a href="https://www.hardware.com.br/guias/usando-slackware/">Dominando o Slackware</a><br>
+· <a href="https://www.hardware.com.br/guias/entendendo-linux/">Entendendo o Linux</a><br>
+· <a href="https://www.hardware.com.br/guias/ubuntu/">Guia do Ubuntu</a><br>
+· <a href="https://www.hardware.com.br/guias/programando-shell-script/">Programando em shell script</a><br>
+· <a href="https://www.hardware.com.br/guias/grafica-software-livre/">Computação gráfica com software livre</a><br>
+· <a href="https://www.hardware.com.br/guias/netbooks/">Guia dos netbooks</a><br>
+· <a href="https://www.hardware.com.br/guias/distros-linux/">Distribuições Linux</a><br>
+· <a href="https://www.hardware.com.br/guias/seguranca-linux-windows/">Segurança no Linux e no Windows</a><br>
+· <a href="https://www.hardware.com.br/guias/configurando-samba/">Configurando o Samba</a><br>
+· <a href="https://www.hardware.com.br/guias/cabeamento-redes/">Cabeamento de redes</a><br>
+· <a href="https://www.hardware.com.br/guias/redes-wireless/">Redes wireless</a><br>
+· <a href="https://www.hardware.com.br/guias/placas3d-monitores/">Placas 3D e monitores</a><br>
+· <a href="https://www.hardware.com.br/guias/processadores/">Guia dos processadores</a><br>
+· <a href="https://www.hardware.com.br/guias/notebooks/">Guia dos notebooks</a><br>
+· <a href="https://www.hardware.com.br/guias/acesso-remoto/">Acesso remoto</a><br>
+· <a href="https://www.hardware.com.br/guias/terminais-leves-ltsp/">Terminais leves com o LTSP</a><br>
+· <a href="https://www.hardware.com.br/guias/compartilhando-conexao-squid/">Configurando o Squid</a><br>
+· <a href="https://www.hardware.com.br/guias/historia-informatica/">A história da informática</a><br>
+· <a href="https://www.hardware.com.br/guias/hardware-redes-linux-iniciantes/">Hardware, redes e Linux para iniciantes</a></p>
+</div>
+</div>
+<div id="def-code" class="tab" style="display: none;">
+<h2>Novo na área</h2>
+<div class="blockLastUpdates">
+<div class="groupGrid">
+<div class="groupGridKey">60 dias</div>
+<a href="https://www.hardware.com.br/artigos/tudo-que-voce-precisa-saber-sobre-black-shark-smartphone-gamer-da-xiaomi/">· Tudo o que você precisa saber sobre o Black Shark, smartphone gamer da Xiaomi (Artigo)</a><br><a href="https://www.hardware.com.br/artigos/ha-42-anos-era-lancado-apple/">· Há 42 anos era lançado o Apple I (Artigo)</a><br><a href="https://www.hardware.com.br/analises/kingston-kc-1000-de-480-gb/">· Kingston KC1000 de 480 GB (Análise)</a><br>
+</div>
+<div class="groupGrid">
+<div class="groupGridKey">90 dias</div>
+<a href="https://www.hardware.com.br/artigos/opiniao-revelacao-sobre-as-falhas-de-seguranca-dos-processadores-ryzen-envolvendo-em-misterio-muito-amadorismo/">· OPINIÃO: Revelação das falhas de segurança dos processadores Ryzen é envolto em mistério e muito amadorismo (Artigo)</a><br><a href="https://www.hardware.com.br/artigos/segredos-para-uso-de-dispositivos-de-internet-das-coisas-por-ney-acyr-rodrigues-diretor-executivo-de-negocios-da-iot-da-embratel/">·
+ Segredos para o uso de dispositivos de Internet das Coisas, por Ney 
+Acyr Rodrigues, Diretor Executivo de Negócios de IoT da Embratel 
+(Artigo)</a><br><a href="https://www.hardware.com.br/analises/dazz-cyborg/">· Dazz Cyborg (Análise)</a><br>
+</div>
+</div>
+</div>
+<div id="hc2" class="haccordion">
+<ul>
+<li style="width: 80px; height: 28px;"><div class="hpanel hpanel_first" style="width: 60px; height: 28px;"><a class="generic-tip" href="https://www.hardware.com.br/artigos/" original-title="1.217 Artigos">Artigos</a></div></li>
+<li style="width: 40px; height: 28px;"><div class="hpanel" style="width: 60px; height: 28px;"><a class="generic-tip" href="https://www.hardware.com.br/tutoriais/" original-title="391 Tutoriais">Tutoriais</a></div></li>
+<li style="width: 40px; height: 28px;"><div class="hpanel" style="width: 60px; height: 28px;"><a class="generic-tip" href="https://www.hardware.com.br/livros/" original-title="12 Livros">Livros</a></div></li>
+<li style="width: 40px; height: 28px;"><div class="hpanel" style="width: 60px; height: 28px;"><a class="generic-tip" href="https://www.hardware.com.br/dicas/" original-title="936 Dicas">Dicas</a></div></li>
+<li style="width: 40px; height: 28px;"><div class="hpanel" style="width: 60px; height: 28px;"><a class="generic-tip" href="https://www.hardware.com.br/analises/" original-title="143 Análises">Análises</a></div></li>
+
+<li style="width: 40px; height: 28px;"><div class="hpanel" style="width: 60px; height: 28px;"> </div></li>
+</ul>
+</div>
+
+<h2>Livros </h2>
+<p><a href="https://www.hardware.com.br/livros/servidores-linux/"><img src="Usando%20chaves%20de%20autentica%C3%A7%C3%A3o%20-%20Dominando%20o%20SSH_files/book_sevlinux.jpg" alt="SERVIDORES LINUX, Guia Prático" width="124" height="167"></a></p>
+<div class="linq_gdhpress"><a href="https://www.hardware.com.br/press/compras/"><b>Compre o seu</b></a>
+<p><a href="https://www.hardware.com.br/livros/servidores-linux/">... ou leia os capítulos disponíveis online.</a></p>
+</div>
+</div>
+</div>
+</div>
+<div id="content" class="cms-elastic" style="width: auto;">
+<script type="text/javascript">
+<!--
+    document.write('<span style="display: none">&nbsp;</span>');
+//-->
+</script><span style="display: none">&nbsp;</span>
+<div id="commonpage" class="cms-elastic">
+<h4 class="cms-sb-changed" style="margin-left: 0px; max-width: 550px;"><a href="https://www.hardware.com.br/tutoriais/">Índice - Tutoriais</a></h4>
+<div id="article_sess_48" class="cms-ajax-container cms-elastic cms-container-ready">
+<h1 class="cms-sb-changed" style="margin-left: 0px; max-width: 550px;"><a href="https://www.hardware.com.br/tutoriais/dominando-ssh/">Dominando o SSH</a></h1>
+<div class="post_by_tp cms-sb-changed" style="margin-left: 0px; max-width: 550px;">
+<p>Carlos E. Morimoto criou 26/ago/2006 às 22h05</p><span><a class="generic-tip iconbox-text" href="https://www.hardware.com.br/tutoriais/dominando-ssh/pagina5.html#comments" original-title="9 comentários">9</a>
+<a target="_blank" class="generic-tip iconbox" style="background-position: -10px -576px" href="https://twitter.com/?status=Usando%20chaves%20de%20autentica%C3%A7%C3%A3o%20https://hardware.com.br/r/articles.48" original-title="Compartilhar no Twitter"></a>
+<a target="_blank" class="generic-tip iconbox" style="background-position: -10px -516px" href="https://www.facebook.com/share.php?u=https%3A%2F%2Fwww.hardware.com.br%2Ftutoriais%2Fdominando-ssh%2Fpagina5.html" original-title="Compartilhar no Facebook"></a>
+<a target="_blank" class="generic-tip iconbox" style="background-position: -10px -531px; width: 24px;" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.hardware.com.br%2Ftutoriais%2Fdominando-ssh%2Fpagina5.html" original-title="Compartilhar no Google+"></a>
+</span></div>
+<div class="articles-prev cms-sb-changed" style="margin-left: 0px; max-width: 540px;"><a href="https://www.hardware.com.br/tutoriais/dominando-ssh/pagina4.html"> Anterior: Configuração do servidor SSH</a></div>
+<select id="article_change_48" class="cms-change-url articleTocBox cms-sb-changed" style="margin-left: 0px; max-width: 521px;">
+<option value="https://www.hardware.com.br/tutoriais/dominando-ssh/"> Introdução</option>
+<option value="https://www.hardware.com.br/tutoriais/dominando-ssh/pagina2.html"> Entendendo o SSH</option>
+<option value="https://www.hardware.com.br/tutoriais/dominando-ssh/pagina3.html"> Configuração do cliente SSH</option>
+<option value="https://www.hardware.com.br/tutoriais/dominando-ssh/pagina4.html"> Configuração do servidor SSH</option>
+<option selected="selected" value="https://www.hardware.com.br/tutoriais/dominando-ssh/pagina5.html"> Usando chaves de autenticação</option>
+<option value="https://www.hardware.com.br/tutoriais/dominando-ssh/pagina6.html"> SSH com login automático</option>
+<option value="https://www.hardware.com.br/tutoriais/dominando-ssh/pagina7.html"> Usando o ForwardAgent</option>
+<option value="https://www.hardware.com.br/tutoriais/dominando-ssh/pagina8.html"> Usando múltiplas chaves</option>
+<option value="https://www.hardware.com.br/tutoriais/dominando-ssh/pagina9.html"> Transferindo arquivos via SFTP</option>
+<option value="https://www.hardware.com.br/tutoriais/dominando-ssh/pagina10.html"> Criando túneis seguros</option>
+<option value="https://www.hardware.com.br/tutoriais/dominando-ssh/pagina11.html"> SSH no Windows</option>
+</select>
+<div class="articles-next cms-sb-changed" style="margin-left: 0px; max-width: 540px;"><a href="https://www.hardware.com.br/tutoriais/dominando-ssh/pagina6.html">Próximo: SSH com login automático</a></div>
+<h2 class="cms-sb-changed" style="margin-left: 0px; max-width: 550px;"><a href="https://www.hardware.com.br/tutoriais/dominando-ssh/pagina5.html">Usando chaves de autenticação</a></h2>
+<p style="text-align: justify; margin-left: 0px; max-width: 550px;" class="cms-sb-changed"><br>
+Por mais seguras que sejam suas senhas, sempre existe uma pequena 
+possibilidade de que um atacante descubra alguma delas, observando 
+enquanto você digita no teclado, ou que simplesmente consiga adivinhá-la
+ a partir de informações pessoais ou de senhas
+antigas. Se você tem o hábito de usar as mesmas senhas em vários locais,
+ a possibilidade cresce, pois muitos serviços armazenam ou transmitem 
+senhas de formas não seguras. Com isso, as senhas acabam sendo o ponto 
+fraco da segurança.</p>
+<p style="text-align: justify; margin-left: 0px; max-width: 550px;" class="cms-sb-changed">Como
+ de praxe, o SSH oferece uma resposta para o problema. Em vez de 
+depender unicamente da senha como forma de autenticação, você pode 
+utilizar um par de chaves de autenticação, onde a chave pública é 
+instalada nos
+servidores que serão acessados e a chave privada (que nunca sai da sua 
+máquina) é protegida por uma passphrase, sem a qual a chave se torna 
+inútil.</p>
+<p style="text-align: justify; margin-left: 0px; max-width: 550px;" class="cms-sb-changed">Nesse
+ caso, temos uma segurança de dois níveis, em que é preciso saber a 
+passphrase e, além dela, ter a chave privada, um arquivo salvo no HD ou 
+em um pendrive, algo similar ao sistema bancário, onde você precisa ter o
+cartão e saber a senha.</p>
+<p style="text-align: justify; margin-left: 0px; max-width: 550px;" class="cms-sb-changed">Para gerar o par de chaves, use (no cliente) o comando:</p>
+<div class="cmdmargin cms-sb-changed" style="margin-left: 20px; max-width: 510px;">$ ssh-keygen -t rsa</div>
+<br style="margin-left: 0px; max-width: 550px;" class="cms-sb-changed">
+<p style="text-align: justify; margin-left: 0px; max-width: 550px;" class="cms-sb-changed">Ele deve ser executado usando seu login de usuário (o mesmo que você usa para acessar os servidores remotos), não como root:</p>
+<div class="rawoutput cms-sb-changed" style="margin-left: 20px; max-width: 510px;">Generating public/private rsa key pair.<br>
+Enter file in which to save the key (/home/morimoto/.ssh/id_rsa):<br>
+Created directory '/home/morimoto/.ssh'.<br>
+Enter passphrase (empty for no passphrase): ********<br>
+Enter same passphrase again: ********<br>
+<strong>Your identification has been saved in /home/morimoto/.ssh/id_rsa.<br>
+Your public key has been saved in /home/morimoto/.ssh/id_rsa.pub.</strong><br>
+The key fingerprint is:<br>
+ff:28:26:f6:87:67:9f:4c:9a:c8:0a:3b:21:81:88:b4 morimoto@athenas</div>
+<br style="margin-left: 0px; max-width: 550px;" class="cms-sb-changed">
+<p style="text-align: justify; margin-left: 0px; max-width: 550px;" class="cms-sb-changed">A
+ passphrase pode ser desde uma senha "normal", com 8 ou 12 caracteres, 
+até uma frase complexa, sem limite de tamanho; o importante é que não 
+seja algo fácil de adivinhar. A passphrase é, na verdade, um componente 
+da chave
+de encriptação; sem ela é impossível usar a chave.</p>
+<p style="text-align: justify; margin-left: 0px; max-width: 550px;" class="cms-sb-changed">O
+ comando gerará os arquivos ".ssh/id_rsa" e ".ssh/id_rsa.pub" dentro do 
+seu diretório home, que são, respectivamente, sua chave privada e sua 
+chave pública. O ".ssh/id_rsa" é um arquivo secreto, que deve usar
+obrigatoriamente o modo de acesso "600" (que você define usando o 
+chmod), para evitar que outros usuários da máquina possam lê-lo. Muitos 
+servidores recusam a conexão caso os arquivos estejam com as permissões 
+abertas.</p>
+<p style="text-align: justify; margin-left: 0px; max-width: 550px;" class="cms-sb-changed">Depois
+ de gerar seu par de chaves, falta o comando final, que instala a chave 
+pública no servidor, permitindo que ela seja usada para autenticação:</p>
+<div class="cmdmargin cms-sb-changed" style="margin-left: 20px; max-width: 510px;">$ ssh-copy-id -i ~/.ssh/id_rsa.pub login@servidor</div>
+<br style="margin-left: 0px; max-width: 550px;" class="cms-sb-changed">
+<p style="text-align: justify; margin-left: 0px; max-width: 550px;" class="cms-sb-changed">Como
+ o nome sugere, o comando "ssh-copy-id" copia sua chave pública, 
+instalando-a no servidor. Ao usá-lo, substitua o "login" pelo seu login 
+de usuário e o "servidor" pelo endereço IP ou o domínio do servidor.</p>
+<p style="text-align: justify; margin-left: 0px; max-width: 550px;" class="cms-sb-changed">Ao
+ ser executado, ele abrirá uma conexão via SFTP (ainda utilizando seu 
+login e senha de acesso), que é usada para instalar a chave pública (o 
+arquivo ".ssh/id_rsa.pub", dentro do seu home) no diretório 
+correspondente do
+servidor. Naturalmente, para que a transferência funcione, é necessário 
+que o SFTP esteja ativo na configuração do servidor.</p>
+<p style="text-align: justify; margin-left: 0px; max-width: 550px;" class="cms-sb-changed">Caso
+ você utilize o mesmo login de usuário nas duas máquinas (usa o usuário 
+"joao" em ambas, por exemplo), pode omitir o login no comando, digitando
+ apenas "ssh-copy-id servidor", como em:</p>
+<div class="cmdmargin cms-sb-changed" style="margin-left: 20px; max-width: 510px;">$ ssh-copy-id -i ~/.ssh/id_rsa.pub 192.168.0.1</div>
+<br style="margin-left: 0px; max-width: 550px;" class="cms-sb-changed">
+<p style="text-align: justify; margin-left: 0px; max-width: 550px;" class="cms-sb-changed">A
+ partir daí, ao invés de pedir sua senha, o servidor envia um "desafio" 
+encriptado usando a chave pública. Para respondê-lo, o cliente SSH na 
+sua máquina precisa usar a chave privada, que por sua vez precisa ser 
+destravada
+usando a passphrase. Mesmo que alguém consiga roubar sua chave privada, 
+não conseguirá conectar sem saber a passphrase e vice-versa.</p>
+<p style="text-align: justify; margin-left: 0px; max-width: 550px;" class="cms-sb-changed">Em resumo, o que o ssh-copy-id faz nada mais é do que copiar o conteúdo do arquivo "<strong>.ssh/id_rsa.pub</strong>", dentro do seu diretório home, para o arquivo "<strong>.ssh/authorized_keys</strong>" dentro do diretório
+home do servidor remoto, uma operação que também pode ser realizada manualmente em caso de problemas.</p>
+<p style="text-align: justify; margin-left: 0px; max-width: 550px;" class="cms-sb-changed">O
+ arquivo ".ssh/id_rsa.pub" é composto por uma única (e longa) linha, que
+ contém sua chave pública de encriptação. Ela segue este padrão:</p>
+<div class="rawoutput">ssh-rsa AAAA(muitos caracteres)6lYzxBpu6M3Moe4HXaTs= login@nomedamaquina"</div>
+<br>
+<p style="text-align: justify">Você pode instalar a chave manualmente 
+simplesmente logando-se na máquina remota via SSH e copiando a linha 
+para dentro do arquivo ".ssh/authorized_keys", o que pode ser feito 
+copiando e colando o texto através de qualquer
+editor que suporte esta função, como o joe ou o vi. No final, o arquivo 
+".ssh/authorized_keys" da máquina remota (dentro do home) terá o mesmo 
+conteúdo do arquivo ".ssh/id_rsa.pub" da sua máquina, o que orienta o 
+servidor remoto a passar a checar sua
+chave privada e a passphrase, ao invés de pedir senha.</p>
+<p style="text-align: justify">Concluindo, depois de gerar a chave e 
+conseguir se conectar através dela, você pode desativar a possibilidade 
+de fazer logins normais, usando senha. Nesse caso, apenas você, que 
+possui a chave gerada, conseguirá se conectar
+ao servidor.</p>
+<p style="text-align: justify">Outras pessoas, mesmo que descubram a 
+senha de alguma das contas, não terão como se conectar e nem como 
+instalar uma nova chave para fazê-lo, a menos que tenham acesso físico 
+ao servidor, a fim de copiar a chave manualmente.
+Isso significa que, mesmo alguém com a senha de root do seu servidor em 
+mãos não conseguirá fazer nada remotamente (o sonho de todo 
+administrador ;). Isso pode ser usado para incrementar a segurança.</p>
+<p style="text-align: justify">Para isso, mude as opções "PasswordAuthentication" e "UsePAM" para "no" no arquivo "<strong>/etc/ssh/sshd_config</strong>" do servidor:</p>
+<div class="rawoutput">PasswordAuthentication no<br>
+UsePAM no</div>
+<br>
+<p style="text-align: justify">A opção "PasswordAutentication no" 
+permite desativar o uso das senhas, como esperado, enquanto a "UsePAM 
+no" reforça a configuração, desativando qualquer outra forma de 
+autenticação com exceção das chaves.</p>
+<p style="text-align: justify">Para que as alterações entrem em vigor, reinicie o servidor SSH:</p>
+<div class="cmdmargin"># /etc/init.d/ssh restart</div>
+<br>
+<p style="text-align: justify">ou:<br></p>
+<div class="cmdmargin"># service sshd restart</div>
+<br>
+<div class="articleToc">
+<table>
+<tbody><tr><td class="articleToc-title">Índice</td><td class="articleToc-cont">
+<div class="articles-next"><a href="https://www.hardware.com.br/tutoriais/dominando-ssh/pagina6.html">Próximo: SSH com login automático</a></div>
+<div class="articles-prev"><a href="https://www.hardware.com.br/tutoriais/dominando-ssh/pagina4.html"> Anterior: Configuração do servidor SSH</a></div>
+</td></tr>
+</tbody></table>
+<div class="articleTocTree">
+<ul class="treeview">
+<li><a href="https://www.hardware.com.br/tutoriais/dominando-ssh/">Introdução</a>
+</li><li><a href="https://www.hardware.com.br/tutoriais/dominando-ssh/pagina2.html">Entendendo o SSH</a>
+</li><li><a href="https://www.hardware.com.br/tutoriais/dominando-ssh/pagina3.html">Configuração do cliente SSH</a>
+</li><li><a href="https://www.hardware.com.br/tutoriais/dominando-ssh/pagina4.html">Configuração do servidor SSH</a>
+</li><li><span class=" selected">Usando chaves de autenticação</span>
+</li><li><a href="https://www.hardware.com.br/tutoriais/dominando-ssh/pagina6.html">SSH com login automático</a>
+</li><li><a href="https://www.hardware.com.br/tutoriais/dominando-ssh/pagina7.html">Usando o ForwardAgent</a>
+</li><li><a href="https://www.hardware.com.br/tutoriais/dominando-ssh/pagina8.html">Usando múltiplas chaves</a>
+</li><li><a href="https://www.hardware.com.br/tutoriais/dominando-ssh/pagina9.html">Transferindo arquivos via SFTP</a>
+</li><li><a href="https://www.hardware.com.br/tutoriais/dominando-ssh/pagina10.html">Criando túneis seguros</a>
+</li><li class="last"><a href="https://www.hardware.com.br/tutoriais/dominando-ssh/pagina11.html">SSH no Windows</a>
+</li></ul>
+</div>
+</div>
+<div class="post_by"><p><span class="comment_botao"><a href="https://www.hardware.com.br/tutoriais/dominando-ssh/pagina5.html#comments">9 comentários</a></span>Por Carlos E. Morimoto. Revisado 26/ago/2006 às 22h05</p></div>
+</div>
+</div>
+<div id="comments" class="cms-elastic">
+<h1>Comentários</h1>
+<div id="disqus_thread"><iframe id="dsq-app8492" name="dsq-app8492" allowtransparency="true" scrolling="no" tabindex="0" title="Disqus" style="width: 1px !important; min-width: 100% !important; border: medium none !important; overflow: hidden !important; height: 1779px !important;" src="Usando%20chaves%20de%20autentica%C3%A7%C3%A3o%20-%20Dominando%20o%20SSH_files/a.html" horizontalscrolling="no" verticalscrolling="no" width="100%" frameborder="0"></iframe></div>
+<script>
+
+var disqus_config = function () {
+  this.page.title = "Dominando o SSH"
+  this.page.url = "https://www.hardware.com.br/tutoriais/dominando-ssh/";
+  this.page.identifier = "articles.44";
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//hardwarebr.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</div>
+
+<div id="base_block_full">
+<h1>Destaques </h1>
+<div class="like_text">
+<div class="like_text_inner">
+<h2>Gostou do texto?</h2>
+<p><a href="https://www.hardware.com.br/livros/">Veja nossos livros impressos:</a><br>
+<a href="https://www.hardware.com.br/livros/smartphones/">Smartphones</a> | <a href="https://www.hardware.com.br/livros/linux/">Linux</a> | <a href="https://www.hardware.com.br/livros/hardware/">Hardware</a> <br>
+<a href="https://www.hardware.com.br/livros/redes/">Redes</a> | <a href="https://www.hardware.com.br/livros/servidores-linux/">Servidores Linux</a><br>
+<br>
+... ou encontre o que procura usando a busca:
+</p>
+<form action="https://www.google.com/cse" id="google_se_bottom">
+<div align="right">
+<input name="ie" value="UTF-8" type="hidden">
+<input value="009062332369909290639:tqg1m-r0qdk" name="cx" style="" type="hidden">
+<input name="q" size="24" type="text">
+<input name="sa" value="Buscar" type="submit">
+</div>
+</form>
+</div>
+</div>
+<div id="block_hot" class="cms-ajax-container">
+<p>· <em><a href="https://www.hardware.com.br/noticias/2011-02/novo-dominio.html">Guia do Hardware agora é Hardware.com.br</a></em><br>
+· <strong><a href="https://www.hardware.com.br/livros/hardware-ii/">Hardware II, o Guia Definitivo</a></strong><br>
+· <strong><a href="https://www.hardware.com.br/noticias/2014-10/ultimo-saldao-de-livros-gdhpress-livros-com-pequenos-defeitos.html">Último Saldão de livros GDHPress: Livros com pequenos defeitos</a></strong></p>
+<p><a href="https://www.hardware.com.br/noticias/2011-03/redes-sociais.html">Siga-nos:<br>
+RSS | Twitter | Facebook</a></p>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+
+</div>
+<div id="footer_bar">
+<div id="copyright">© 1999-2018 Hardware.com.br. Todos os direitos reservados.</div>
+<ul>
+<li><a href="https://www.hardware.com.br/">Home</a></li><li><a href="https://www.hardware.com.br/comunidade/">Fórum GdH</a></li><li><a href="https://www.hardware.com.br/rss.html">RSS</a></li>
+<li><a href="https://www.hardware.com.br/equipe.html">Equipe</a></li>
+<li><a href="#header">Topo</a></li>
+</ul>
+</div>
+<script type="text/javascript">
+    var atingePublisher = atingePublisher || [];
+    atingePublisher.push(["targeting", "area", "tutoriais"]);
+    
+    atingePublisher.push(["pageview"]);
+</script>
+<script type="text/javascript" src="Usando%20chaves%20de%20autentica%C3%A7%C3%A3o%20-%20Dominando%20o%20SSH_files/Dx5CcmXNwd6mFu.js"></script>
+<script type="text/javascript">
+    var gpt_slots = gpt_slots || [];
+
+    if(gpt_slots.length){
+        (function() {
+          var useSSL = 'https:' == document.location.protocol;
+          var src = (useSSL ? 'https:' : 'http:') +
+          '//www.googletagservices.com/tag/js/gpt.js';
+          document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+        })();
+    }
+</script><script src="Usando%20chaves%20de%20autentica%C3%A7%C3%A3o%20-%20Dominando%20o%20SSH_files/gpt.js"></script><script id="gpt-impl-0.8324198484683427" src="Usando%20chaves%20de%20autentica%C3%A7%C3%A3o%20-%20Dominando%20o%20SSH_files/pubads_impl_207.js"></script><script src="Usando%20chaves%20de%20autentica%C3%A7%C3%A3o%20-%20Dominando%20o%20SSH_files/integrator.js"></script><script>processGoogleTokenSync({"newToken":"FBS"},5);</script>
+<script type="text/javascript">
+    if(gpt_slots.length){
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+
+        (function() {
+            
+            if((!googletag.getVersion || !googletag.getVersion()) && document.getElementById){
+                for(var i = 0; i < gpt_slots.length; ++i){
+                    var div = document.getElementById(gpt_slots[i].div);
+
+                    if(div)
+                        div.setAttribute("style", "");
+                }
+            }
+
+            
+            googletag.cmd.push(function() {
+                googletag.pubads().setTargeting("area", "tutoriais");
+                
+
+                for(var i = 0; i < gpt_slots.length; ++i){
+                    var slot = gpt_slots[i];
+                    var sizeMapping = slot.sizeMapping;
+                    var gslot = googletag.defineSlot(slot.id, slot.size, slot.div);
+
+                    if(sizeMapping){
+                        var gSizeMapping = googletag.sizeMapping();
+
+                        for(var y = 0; y < sizeMapping.length; ++y)
+                            gSizeMapping.addSize.apply(gSizeMapping, sizeMapping[y]);
+
+                        gslot.defineSizeMapping(gSizeMapping.build());
+                    }
+
+                    gslot.addService(googletag.pubads());
+                }
+
+                googletag.pubads().enableSingleRequest();
+                googletag.pubads().collapseEmptyDivs();
+                googletag.enableServices();
+
+                for(var i = 0; i < gpt_slots.length; ++i)
+                    googletag.display(gpt_slots[i].div);
+            });
+        })();
+    }
+</script>
+
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><iframe style="display: none;"></iframe><iframe id="google_osd_static_frame_849894677425" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe></body></html>

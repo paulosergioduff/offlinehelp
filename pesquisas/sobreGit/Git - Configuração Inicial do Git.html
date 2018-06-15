@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html class=" js fontface no-webkit no-chrome no-windows no-ie8" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script type="text/javascript" async="" src="Git%20-%20Configura%C3%A7%C3%A3o%20Inicial%20do%20Git_files/analytics.js"></script><script async="" src="Git%20-%20Configura%C3%A7%C3%A3o%20Inicial%20do%20Git_files/js.js"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-49925874-3');
+  </script>
+
+  <meta charset="utf-8">
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+  <title>Git - Configuração Inicial do Git</title>
+
+  <link href="https://git-scm.com/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+  <link rel="stylesheet" media="screen" href="Git%20-%20Configura%C3%A7%C3%A3o%20Inicial%20do%20Git_files/application-b45fbc699b1077ef1b7be2d9934aa274.css">
+  <script src="Git%20-%20Configura%C3%A7%C3%A3o%20Inicial%20do%20Git_files/modernize-4ac63d4743ec9baf731eade71599d693.js"></script>
+  <!--[if (gte IE 6)&(lte IE 8)]>
+  <script src="/javascripts/selectivizr-min.js"></script>
+  <![endif]-->
+
+</head>
+
+<body id="documentation">
+
+  <div class="inner">
+    <header>
+
+  <a href="https://git-scm.com/"><img src="Git%20-%20Configura%C3%A7%C3%A3o%20Inicial%20do%20Git_files/logo2x.png" alt="Git" width="110" height="46"></a>
+  <span id="tagline">--distributed-even-if-your-workflow-isnt</span>
+  <script type="text/javascript">
+    var taglines = ["fast-version-control","everything-is-local","distributed-even-if-your-workflow-isnt","local-branching-on-the-cheap","distributed-is-the-new-centralized"];
+    var tagline = taglines[Math.floor(Math.random() * taglines.length)];
+    document.getElementById('tagline').innerHTML = '--' + tagline;
+  </script>
+  <form id="search" action="/search/results">
+    <input id="search-text" name="search" placeholder="Search entire site..." autocomplete="off" type="text">
+  </form>
+  <div id="search-results"></div>
+
+</header>
+
+  </div> <!-- .inner -->
+
+    <div class="inner">
+      <div id="content-wrapper">
+        <aside class="sidebar">
+  <nav>
+    <ul>
+      <li>
+        <a href="https://git-scm.com/about">About</a>
+        <ul class="">
+          <li>
+            <a href="https://git-scm.com/about">Branching and Merging</a>
+          </li>
+          <li>
+            <a href="https://git-scm.com/about/small-and-fast">Small and Fast</a>
+          </li>
+          <li>
+            <a href="https://git-scm.com/about/distributed">Distributed</a>
+          </li>
+          <li>
+            <a href="https://git-scm.com/about/info-assurance">Data Assurance</a>
+          </li>
+          <li>
+            <a href="https://git-scm.com/about/staging-area">Staging Area</a>
+          </li>
+          <li>
+            <a href="https://git-scm.com/about/free-and-open-source">Free and Open Source</a>
+          </li>
+          <li>
+            <a href="https://git-scm.com/about/trademark">Trademark</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a class="active" href="https://git-scm.com/doc">Documentation</a>
+        <ul class="expanded">
+          <li>
+            <a href="https://git-scm.com/docs">Reference</a>
+          </li>
+          <li>
+            <a href="https://git-scm.com/book">Book</a>
+          </li>
+          <li>
+            <a href="https://git-scm.com/videos">Videos</a>
+          </li>
+          <li>
+            <a href="https://git-scm.com/doc/ext">External Links</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://git-scm.com/downloads">Downloads</a>
+        <ul class="">
+          <li>
+            <a href="https://git-scm.com/downloads/guis">GUI Clients</a>
+          </li>
+          <li>
+            <a href="https://git-scm.com/downloads/logos">Logos</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://git-scm.com/community">Community</a>
+      </li>
+    </ul>
+      <hr class="sidebar">
+        <p>
+This book is available in
+  <a href="https://git-scm.com/book/en">English</a>.
+</p>
+<p>
+  Full translation available in
+  </p><table>
+  <tbody><tr><td><a href="https://git-scm.com/book/bg">български език</a>,</td></tr>
+  <tr><td><a href="https://git-scm.com/book/es">Español</a>,</td></tr>
+  <tr><td><a href="https://git-scm.com/book/fr">Français</a>,</td></tr>
+  <tr><td><a href="https://git-scm.com/book/ja">日本語</a>,</td></tr>
+  <tr><td><a href="https://git-scm.com/book/ko">한국어</a>,</td></tr>
+  <tr><td><a href="https://git-scm.com/book/nl">Nederlands</a>,</td></tr>
+  <tr><td><a href="https://git-scm.com/book/ru">Русский</a>,</td></tr>
+  <tr><td><a href="https://git-scm.com/book/uk">Українська</a></td></tr>
+  <tr><td><a href="https://git-scm.com/book/zh">简体中文</a>,</td></tr>
+  </tbody></table>
+<p></p>
+<p>
+  Partial translations available in
+  </p><table>
+    <tbody><tr><td><a href="https://git-scm.com/book/cs">Čeština</a>,</td></tr>
+  <tr><td><a href="https://git-scm.com/book/id">Indonesian</a>,</td></tr>
+<!--  <a href="/book/fi">Suomi</a>,
+  <a href="/book/mk">Македонски</a>, -->
+  <tr><td><a href="https://git-scm.com/book/pl">Polski</a>,</td></tr>
+  <tr><td><a href="https://git-scm.com/book/sr">Српски</a>,</td></tr>
+  <tr><td><a href="https://git-scm.com/book/tl">Tagalog</a>,</td></tr>
+  <tr><td><a href="https://git-scm.com/book/zh-tw">繁體中文</a>,</td></tr>
+  </tbody></table>
+<p></p>
+<p>
+  Translations started for
+  </p><table>
+<!--  <tr><td><a href="/book/ar">Arabic</a>,</td></tr>
+   <a href="/book/az">Azərbaycan dili</a>, -->
+  <tbody><tr><td><a href="https://git-scm.com/book/be">Беларуская</a>,</td></tr>
+<!--  <a href="/book/ca">Català</a>, -->
+   <tr><td><a href="https://git-scm.com/book/de">Deutsch</a>,</td></tr>
+<!-- <a href="/book/eo">Esperanto</a>,
+     <a href="/book/es-ni">Español (Nicaragua)</a>, -->
+  <tr><td><a href="https://git-scm.com/book/fa" dir="rtl">فارسی</a>,</td></tr>
+  <tr><td><a href="https://git-scm.com/book/gr">Ελληνικά</a>,</td></tr>
+<!--  <a href="/book/hi">हिन्दी</a>,
+  <a href="/book/hu">Magyar</a>, -->
+  <tr><td><a href="https://git-scm.com/book/it">Italiano</a>,</td></tr>
+<!--  <a href="/book/no-nb">Norwegian Bokmål</a>, -->
+  <tr><td><a href="https://git-scm.com/book/ms">Bahasa Melayu</a>,</td></tr>
+  <tr><td><a href="https://git-scm.com/book/pl">Polski</a>,</td></tr>
+  <tr><td><a href="https://git-scm.com/book/pt-br">Português (Brasil)</a>,</td></tr>
+<!--  <a href="/book/ro">Română</a>,
+  <tr><td><a href="/book/th">ภาษาไทย</a>,</td></tr> -->
+<!--  <a href="/book/vi">Tiếng Việt</a>, -->
+  <tr><td><a href="https://git-scm.com/book/tr">Türkçe</a>,</td></tr>
+<tr><td><a href="https://git-scm.com/book/uz/v2">Ўзбекча</a>.</td></tr>
+</tbody></table>
+<p></p>
+<hr class="sidebar">
+<p>
+The source of this book is <a href="https://github.com/progit/progit2">hosted on GitHub.</a><br>
+Patches, suggestions and comments are welcome.
+</p>
+
+
+  </nav>
+</aside>
+
+        <div id="content">
+          
+
+<div id="book-chapters">
+  <a class="dropdown-trigger" id="book-chapters-trigger" data-panel-id="chapters-dropdown" href="#">Chapters ▾</a>
+<div class="dropdown-panel" id="chapters-dropdown">
+  <div class="three-column">
+    <div class="column-left">
+      <ol class="book-toc">
+  <li class="chapter">
+  <h2>. <a href="https://git-scm.com/book/pt-br/v1/Primeiros-passos">Primeiros passos</a></h2>
+    <ol>
+          <li>
+            .1
+            <a href="https://git-scm.com/book/pt-br/v1/Primeiros-passos-Sobre-Controle-de-Vers%C3%A3o">Sobre Controle de Versão</a>
+          </li>
+          <li>
+            .2
+            <a href="https://git-scm.com/book/pt-br/v1/Primeiros-passos-Uma-Breve-Hist%C3%B3ria-do-Git">Uma Breve História do Git</a>
+          </li>
+          <li>
+            .3
+            <a href="https://git-scm.com/book/pt-br/v1/Primeiros-passos-No%C3%A7%C3%B5es-B%C3%A1sicas-de-Git">Noções Básicas de Git</a>
+          </li>
+          <li>
+            .4
+            <a href="https://git-scm.com/book/pt-br/v1/Primeiros-passos-Instalando-Git">Instalando Git</a>
+          </li>
+          <li>
+            .5
+            <a href="https://git-scm.com/book/pt-br/v1/Primeiros-passos-Configura%C3%A7%C3%A3o-Inicial-do-Git">Configuração Inicial do Git</a>
+          </li>
+          <li>
+            .6
+            <a href="https://git-scm.com/book/pt-br/v1/Primeiros-passos-Obtendo-Ajuda">Obtendo Ajuda</a>
+          </li>
+          <li>
+            .7
+            <a href="https://git-scm.com/book/pt-br/v1/Primeiros-passos-Resumo">Resumo</a>
+          </li>
+    </ol>
+  </li>
+  <li class="chapter">
+  <h2>. <a href="https://git-scm.com/book/pt-br/v1/Git-Essencial">Git Essencial</a></h2>
+    <ol>
+          <li>
+            .1
+            <a href="https://git-scm.com/book/pt-br/v1/Git-Essencial-Obtendo-um-Reposit%C3%B3rio-Git">Obtendo um Repositório Git</a>
+          </li>
+          <li>
+            .2
+            <a href="https://git-scm.com/book/pt-br/v1/Git-Essencial-Gravando-Altera%C3%A7%C3%B5es-no-Reposit%C3%B3rio">Gravando Alterações no Repositório</a>
+          </li>
+          <li>
+            .3
+            <a href="https://git-scm.com/book/pt-br/v1/Git-Essencial-Visualizando-o-Hist%C3%B3rico-de-Commits">Visualizando o Histórico de Commits</a>
+          </li>
+          <li>
+            .4
+            <a href="https://git-scm.com/book/pt-br/v1/Git-Essencial-Desfazendo-Coisas">Desfazendo Coisas</a>
+          </li>
+          <li>
+            .5
+            <a href="https://git-scm.com/book/pt-br/v1/Git-Essencial-Trabalhando-com-Remotos">Trabalhando com Remotos</a>
+          </li>
+          <li>
+            .6
+            <a href="https://git-scm.com/book/pt-br/v1/Git-Essencial-Tagging">Tagging</a>
+          </li>
+          <li>
+            .7
+            <a href="https://git-scm.com/book/pt-br/v1/Git-Essencial-Dicas-e-Truques">Dicas e Truques</a>
+          </li>
+          <li>
+            .8
+            <a href="https://git-scm.com/book/pt-br/v1/Git-Essencial-Sum%C3%A1rio">Sumário</a>
+          </li>
+    </ol>
+  </li>
+  <li class="chapter">
+  <h2>. <a href="https://git-scm.com/book/pt-br/v1/Ramifica%C3%A7%C3%A3o-Branching-no-Git">Ramificação (Branching) no Git</a></h2>
+    <ol>
+          <li>
+            .1
+            <a href="https://git-scm.com/book/pt-br/v1/Ramifica%C3%A7%C3%A3o-Branching-no-Git-O-que-%C3%A9-um-Branch">O que é um Branch</a>
+          </li>
+          <li>
+            .2
+            <a href="https://git-scm.com/book/pt-br/v1/Ramifica%C3%A7%C3%A3o-Branching-no-Git-B%C3%A1sico-de-Branch-e-Merge">Básico de Branch e Merge</a>
+          </li>
+          <li>
+            .3
+            <a href="https://git-scm.com/book/pt-br/v1/Ramifica%C3%A7%C3%A3o-Branching-no-Git-Gerenciamento-de-Branches">Gerenciamento de Branches</a>
+          </li>
+          <li>
+            .4
+            <a href="https://git-scm.com/book/pt-br/v1/Ramifica%C3%A7%C3%A3o-Branching-no-Git-Fluxos-de-Trabalho-com-Branches">Fluxos de Trabalho com Branches</a>
+          </li>
+          <li>
+            .5
+            <a href="https://git-scm.com/book/pt-br/v1/Ramifica%C3%A7%C3%A3o-Branching-no-Git-Branches-Remotos">Branches Remotos</a>
+          </li>
+          <li>
+            .6
+            <a href="https://git-scm.com/book/pt-br/v1/Ramifica%C3%A7%C3%A3o-Branching-no-Git-Rebasing">Rebasing</a>
+          </li>
+          <li>
+            .7
+            <a href="https://git-scm.com/book/pt-br/v1/Ramifica%C3%A7%C3%A3o-Branching-no-Git-Sum%C3%A1rio">Sumário</a>
+          </li>
+    </ol>
+  </li>
+</ol>
+
+    </div>
+    <div class="column-middle">
+      <ol class="book-toc">
+  <li class="chapter">
+  <h2>. <a href="https://git-scm.com/book/pt-br/v1/Git-no-Servidor">Git no Servidor</a></h2>
+    <ol>
+          <li>
+            .1
+            <a href="https://git-scm.com/book/pt-br/v1/Git-no-Servidor-Os-Protocolos">Os Protocolos</a>
+          </li>
+          <li>
+            .2
+            <a href="https://git-scm.com/book/pt-br/v1/Git-no-Servidor-Configurando-Git-no-Servidor">Configurando Git no Servidor</a>
+          </li>
+          <li>
+            .3
+            <a href="https://git-scm.com/book/pt-br/v1/Git-no-Servidor-Gerando-Sua-Chave-P%C3%BAblica-SSH">Gerando Sua Chave Pública SSH</a>
+          </li>
+          <li>
+            .4
+            <a href="https://git-scm.com/book/pt-br/v1/Git-no-Servidor-Configurando-o-Servidor">Configurando o Servidor</a>
+          </li>
+          <li>
+            .5
+            <a href="https://git-scm.com/book/pt-br/v1/Git-no-Servidor-Acesso-P%C3%BAblico">Acesso Público</a>
+          </li>
+          <li>
+            .6
+            <a href="https://git-scm.com/book/pt-br/v1/Git-no-Servidor-GitWeb">GitWeb</a>
+          </li>
+          <li>
+            .7
+            <a href="https://git-scm.com/book/pt-br/v1/Git-no-Servidor-Gitosis">Gitosis</a>
+          </li>
+          <li>
+            .8
+            <a href="https://git-scm.com/book/pt-br/v1/Git-no-Servidor-Gitolite">Gitolite</a>
+          </li>
+          <li>
+            .9
+            <a href="https://git-scm.com/book/pt-br/v1/Git-no-Servidor-Servi%C3%A7o-Git">Serviço Git</a>
+          </li>
+          <li>
+            .10
+            <a href="https://git-scm.com/book/pt-br/v1/Git-no-Servidor-Git-Hospedado">Git Hospedado</a>
+          </li>
+          <li>
+            .11
+            <a href="https://git-scm.com/book/pt-br/v1/Git-no-Servidor-Sum%C3%A1rio">Sumário</a>
+          </li>
+    </ol>
+  </li>
+  <li class="chapter">
+  <h2>. <a href="https://git-scm.com/book/pt-br/v1/Git-Distribu%C3%ADdo">Git Distribuído</a></h2>
+    <ol>
+          <li>
+            .1
+            <a href="https://git-scm.com/book/pt-br/v1/Git-Distribu%C3%ADdo-Fluxos-de-Trabalho-Distribu%C3%ADdos">Fluxos de Trabalho Distribuídos</a>
+          </li>
+          <li>
+            .2
+            <a href="https://git-scm.com/book/pt-br/v1/Git-Distribu%C3%ADdo-Contribuindo-Para-Um-Projeto">Contribuindo Para Um Projeto</a>
+          </li>
+          <li>
+            .3
+            <a href="https://git-scm.com/book/pt-br/v1/Git-Distribu%C3%ADdo-Mantendo-Um-Projeto">Mantendo Um Projeto</a>
+          </li>
+          <li>
+            .4
+            <a href="https://git-scm.com/book/pt-br/v1/Git-Distribu%C3%ADdo-Resumo">Resumo</a>
+          </li>
+    </ol>
+  </li>
+  <li class="chapter">
+  <h2>. <a href="https://git-scm.com/book/pt-br/v1/Ferramentas-do-Git">Ferramentas do Git</a></h2>
+    <ol>
+          <li>
+            .1
+            <a href="https://git-scm.com/book/pt-br/v1/Ferramentas-do-Git-Sele%C3%A7%C3%A3o-de-Revis%C3%A3o">Seleção de Revisão</a>
+          </li>
+          <li>
+            .2
+            <a href="https://git-scm.com/book/pt-br/v1/Ferramentas-do-Git-%C3%81rea-de-Sele%C3%A7%C3%A3o-Interativa">Área de Seleção Interativa</a>
+          </li>
+          <li>
+            .3
+            <a href="https://git-scm.com/book/pt-br/v1/Ferramentas-do-Git-Fazendo-Stash">Fazendo Stash</a>
+          </li>
+          <li>
+            .4
+            <a href="https://git-scm.com/book/pt-br/v1/Ferramentas-do-Git-Reescrevendo-o-Hist%C3%B3rico">Reescrevendo o Histórico</a>
+          </li>
+          <li>
+            .5
+            <a href="https://git-scm.com/book/pt-br/v1/Ferramentas-do-Git-Depurando-com-Git">Depurando com Git</a>
+          </li>
+          <li>
+            .6
+            <a href="https://git-scm.com/book/pt-br/v1/Ferramentas-do-Git-Subm%C3%B3dulos">Submódulos</a>
+          </li>
+          <li>
+            .7
+            <a href="https://git-scm.com/book/pt-br/v1/Ferramentas-do-Git-Merge-de-Sub-%C3%A1rvore-Subtree-Merging">Merge de Sub-árvore (Subtree Merging)</a>
+          </li>
+          <li>
+            .8
+            <a href="https://git-scm.com/book/pt-br/v1/Ferramentas-do-Git-Sum%C3%A1rio">Sumário</a>
+          </li>
+    </ol>
+  </li>
+</ol>
+
+    </div>
+    <div class="column-right">
+      <ol class="book-toc">
+  <li class="chapter">
+  <h2>. <a href="https://git-scm.com/book/pt-br/v1/Customizando-o-Git">Customizando o Git</a></h2>
+    <ol>
+          <li>
+            .1
+            <a href="https://git-scm.com/book/pt-br/v1/Customizando-o-Git-Configura%C3%A7%C3%A3o-do-Git">Configuração do Git</a>
+          </li>
+          <li>
+            .2
+            <a href="https://git-scm.com/book/pt-br/v1/Customizando-o-Git-Atributos-Git">Atributos Git</a>
+          </li>
+          <li>
+            .3
+            <a href="https://git-scm.com/book/pt-br/v1/Customizando-o-Git-Hooks-do-Git">Hooks do Git</a>
+          </li>
+          <li>
+            .4
+            <a href="https://git-scm.com/book/pt-br/v1/Customizando-o-Git-Um-exemplo-de-Pol%C3%ADtica-Git-For%C3%A7ada">Um exemplo de Política Git Forçada</a>
+          </li>
+          <li>
+            .5
+            <a href="https://git-scm.com/book/pt-br/v1/Customizando-o-Git-Sum%C3%A1rio">Sumário</a>
+          </li>
+    </ol>
+  </li>
+  <li class="chapter">
+  <h2>. <a href="https://git-scm.com/book/pt-br/v1/Git-e-Outros-Sistemas">Git e Outros Sistemas</a></h2>
+    <ol>
+          <li>
+            .1
+            <a href="https://git-scm.com/book/pt-br/v1/Git-e-Outros-Sistemas-Git-e-Subversion">Git e Subversion</a>
+          </li>
+          <li>
+            .2
+            <a href="https://git-scm.com/book/pt-br/v1/Git-e-Outros-Sistemas-Migrando-para-o-Git">Migrando para o Git</a>
+          </li>
+          <li>
+            .3
+            <a href="https://git-scm.com/book/pt-br/v1/Git-e-Outros-Sistemas-Resumo">Resumo</a>
+          </li>
+    </ol>
+  </li>
+  <li class="chapter">
+  <h2>. <a href="https://git-scm.com/book/pt-br/v1/Git-Internamente">Git Internamente</a></h2>
+    <ol>
+          <li>
+            .1
+            <a href="https://git-scm.com/book/pt-br/v1/Git-Internamente-Encanamento-Plumbing-e-Porcelana-Porcelain">Encanamento (Plumbing) e Porcelana (Porcelain)</a>
+          </li>
+          <li>
+            .2
+            <a href="https://git-scm.com/book/pt-br/v1/Git-Internamente-Objetos-do-Git">Objetos do Git</a>
+          </li>
+          <li>
+            .3
+            <a href="https://git-scm.com/book/pt-br/v1/Git-Internamente-Referencias-Git">Referencias Git</a>
+          </li>
+          <li>
+            .4
+            <a href="https://git-scm.com/book/pt-br/v1/Git-Internamente-Packfiles">Packfiles</a>
+          </li>
+          <li>
+            .5
+            <a href="https://git-scm.com/book/pt-br/v1/Git-Internamente-O-Refspec">O Refspec</a>
+          </li>
+          <li>
+            .6
+            <a href="https://git-scm.com/book/pt-br/v1/Git-Internamente-Protocolos-de-Transfer%C3%AAncia">Protocolos de Transferência</a>
+          </li>
+          <li>
+            .7
+            <a href="https://git-scm.com/book/pt-br/v1/Git-Internamente-Manuten%C3%A7%C3%A3o-e-Recupera%C3%A7%C3%A3o-de-Dados">Manutenção e Recuperação de Dados</a>
+          </li>
+          <li>
+            .8
+            <a href="https://git-scm.com/book/pt-br/v1/Git-Internamente-Resumo">Resumo</a>
+          </li>
+    </ol>
+  </li>
+</ol>
+
+    </div>
+  </div>
+ </div>
+
+    <span class="light" id="edition">
+      1st Edition
+    </span>
+</div>
+
+<div id="main" class="book edition1">
+    <h1>.5 Primeiros passos - Configuração Inicial do Git</h1>
+  <div><h2>Configuração Inicial do Git</h2>
+
+<p>Agora que você tem o Git em seu sistema, você pode querer fazer 
+algumas coisas para customizar seu ambiente Git. Você só precisa fazer 
+uma vez; as configurações serão mantidas entre atualizações. Você também
+ poderá alterá-las a qualquer momento executando os comandos novamente.</p>
+
+<p>Git vem com uma ferramenta chamada git config que permite a você ler e
+ definir variáveis de configuração que controlam todos os aspectos de 
+como o Git parece e opera. Essas variáveis podem ser armazenadas em três
+ lugares diferentes:</p>
+
+<ul>
+<li>arquivo <code>/etc/gitconfig</code>: Contém valores para todos usuários do sistema e todos os seus repositórios. Se você passar a opção <code>--system</code> para <code>git config</code>, ele lerá e escreverá a partir deste arquivo especificamente.</li>
+<li>arquivo <code>~/.gitconfig</code>: É específico para seu usuário. Você pode fazer o Git ler e escrever a partir deste arquivo especificamente passando a opção <code>--global</code>.</li>
+<li>arquivo de configuração no diretório git (ou seja, <code>.git/config</code>)
+ de qualquer repositório que você está utilizando no momento: Específico
+ para aquele único repositório. Cada nível sobrepõem o valor do nível 
+anterior, sendo assim valores em <code>.git/config</code> sobrepõem aqueles em <code>/etc/gitconfig</code>.</li>
+</ul>
+
+<p>Em sistemas Windows, Git procura pelo arquivo <code>.gitconfig</code> no diretório <code>$HOME</code> (<code>C:\Documents and Settins\$USER</code>
+ para a maioria das pessoas). Também procura por /etc/gitconfig, apesar 
+de que é relativo à raiz de MSys, que é o local onde você escolheu 
+instalar o Git no seu sistema Windows quando executou o instalador.</p>
+
+<h3 id="Sua-Identidade"><a href="#Sua-Identidade">Sua Identidade</a></h3>
+
+<p>A primeira coisa que você deve fazer quando instalar o Git é definir o
+ seu nome de usuário e endereço de e-mail. Isso é importante porque 
+todos os commits no Git utilizam essas informações, e está imutavelmente
+ anexado nos commits que você realiza:</p>
+
+<pre><code>$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+</code></pre>
+
+<p>Relembrando, você só precisará fazer isso uma vez caso passe a opção <code>--global</code>,
+ pois o Git sempre usará essa informação para qualquer coisa que você 
+faça nesse sistema. Caso você queira sobrepor estas com um nome ou 
+endereço de e-mail diferentes para projetos específicos, você pode 
+executar o comando sem a opção <code>--global</code> quando estiver no próprio projeto.</p>
+
+<h3 id="Seu-Editor"><a href="#Seu-Editor">Seu Editor</a></h3>
+
+<p>Agora que sua identidade está configurada, você pode configurar o 
+editor de texto padrão que será utilizado quando o Git precisar que você
+ digite uma mensagem. Por padrão, Git usa o editor padrão do sistema, 
+que é geralmente Vi ou Vim. Caso você queira utilizar um editor 
+diferente, tal como o Emacs, você pode executar o seguinte:</p>
+
+<pre><code>$ git config --global core.editor emacs
+</code></pre>
+
+<h3 id="Sua-Ferramenta-de-Diff"><a href="#Sua-Ferramenta-de-Diff">Sua Ferramenta de Diff</a></h3>
+
+<p>Outra opção útil que você pode querer configurar é a ferramente 
+padrão de diff utilizada para resolver conflitos de merge (fusão). 
+Digamos que você queira utilizar o vimdiff:</p>
+
+<pre><code>$ git config --global merge.tool vimdiff
+</code></pre>
+
+<p>Git aceita kdiff3, tkdiff, meld, xxdiff, emerge, vimdiff, gvimdiff, 
+ecmerge e opendiff como ferramentas válidas para merge. Você também pode
+ configurar uma ferramenta personalizada; veja o Capítulo 7 para maiores
+ informações em como fazê-lo.</p>
+
+<h3 id="Verificando-Suas-Configurações"><a href="#Verificando-Suas-Configurações">Verificando Suas Configurações</a></h3>
+
+<p>Caso você queira verificar suas configurações, você pode utilizar o comando <code>git config --list</code> para listar todas as configurações que o Git encontrar naquele momento:</p>
+
+<pre><code>$ git config --list
+user.name=Scott Chacon
+user.email=schacon@gmail.com
+color.status=auto
+color.branch=auto
+color.interactive=auto
+color.diff=auto
+...
+</code></pre>
+
+<p>Você pode ver algumas chaves mais de uma vez, porque o Git lê as mesmas chaves em diferentes arquivos (<code>/etc/gitconfig</code> e <code>~/.gitconfig</code>, por exemplo). Neste caso, Git usa o último valor para cada chave única que é obtida.</p>
+
+<p>Você também pode verificar qual o valor que uma determinada chave tem para o Git digitando <code>git config {key}</code>:</p>
+
+<pre><code>$ git config user.name
+Scott Chacon
+</code></pre>
+
+<div id="nav"><a href="https://git-scm.com/book/pt-br/v1/Primeiros-passos-Instalando-Git">prev</a> | <a href="https://git-scm.com/book/pt-br/v1/Primeiros-passos-Obtendo-Ajuda">next</a></div></div>
+</div>
+
+        </div>
+      </div>
+      <footer>
+  <div class="site-source">
+    <a href="https://git-scm.com/site">About this site</a><br>
+    Patches, suggestions, and comments are welcome.
+  </div>
+  <div class="sfc-member">
+    Git is a member of <a href="https://git-scm.com/sfc">Software Freedom Conservancy</a>
+  </div>
+</footer>
+
+<script src="Git%20-%20Configura%C3%A7%C3%A3o%20Inicial%20do%20Git_files/application-dc6a8c6db7aef60d3304689fb96f2a1c.js"></script>
+
+    </div>
+
+
+
+</body></html>

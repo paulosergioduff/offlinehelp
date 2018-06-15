@@ -1,0 +1,17 @@
+git status
+git add *
+git branch -d SDN0002_20180525
+sudo chmod -R 777 /var/www/html/
+mkdir SDN0008_20180602
+git clone -b SDN0008_20180602 https://oncontratos.visualstudio.com/OnContratos/_git/OnContratos
+git config --global user.email "paulosergioduff@hotmail.com"
+git config --global user.name "paulosergioduff"
+	git commit -m "SDN0005_20180601 #26 {Reposição da estrutura de arquivos}"
+git push origin SDN0005_20180601
+
+03:52:51
+
+
+SDN0003_20180527 #38
+
+git push origin SDN0003_20180527

@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<!-- saved from url=(0115)https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration -->
+<html itemscope="" itemtype="http://schema.org/QAPage" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <title>ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português</title>
+        <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/br/img/favicon.ico?v=c6678b633455">
+        <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/br/img/apple-touch-icon.png?v=e57f45c9cfaf">
+        <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow em Português" href="https://pt.stackoverflow.com/opensearch.xml">
+        <meta name="referrer" content="origin">
+
+
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration">
+        <meta property="og:site_name" content="Stack Overflow em Português">
+        <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/br/img/apple-touch-icon@2.png?v=2bb2b60be04f">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:domain" content="pt.stackoverflow.com">
+        <meta name="twitter:site" content="@StackOverflowPT">
+        <meta name="twitter:creator" content="@StackOverflowPT">
+        <meta name="twitter:title" property="og:title" itemprop="title name" content="The mbstring extension is missing. Please check your PHP configuration">
+        <meta name="twitter:description" property="og:description" itemprop="description" content="Mesmo tentando instalar oque falta sudo apt-get install phpmyadmin php-mbstring php-gettext, ele diz que já está instalado 
+E eu tambem já ativei a extensão extension=php_mbstring.dll, oque pode s...">
+        <script src="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/f.txt"></script><script src="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/pubads_impl_rendering_207.js"></script><script src="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/rules-p-c1rF4kxgLUzNc.js" async=""></script><script async="" src="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/quant.js"></script><script async="" src="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/beacon.js"></script><script async="" src="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/analytics.js"></script><script src="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/jquery.min.js"></script>
+        <script src="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/stub.pt-BR.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/stacks.css">
+        <link rel="stylesheet" type="text/css" href="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/primary.css">
+    
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+
+            StackExchange.ready(function () {
+                                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({votesCast:[],totalCommentCount:6,shownCommentCount:5,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:200644});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('526', '200644');
+                // TODO: There's a CR for replacing this with inline info on the question for moderators
+                // https://trello.com/c/ynDHhvrB/158-cr-move-the-mod-info-out-of-the-margin-and-into-the-post-estimate-needed
+                // Before we roll out the sidebar everywhere (or at least shortly after that?), we should implement it.
+                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+        
+        
+        
+        
+        
+        
+                <script>
+        StackExchange.ready(function () {
+            StackExchange.realtime.init('wss://qa.sockets.stackexchange.com');
+            StackExchange.realtime.subscribeToReputationNotifications('526');
+                StackExchange.realtime.subscribeToTopBarNotifications('526');
+        });
+    </script>
+    <script>
+        StackExchange.init({"locale":"pt-BR","serverTime":1527559669,"routeName":"Questions/Show","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","site":{"name":"Stack Overflow em Português","description":"Perguntas e respostas para programadores profissionais e entusiastas","isNoticesTabEnabled":true,"enableNewTagCreationWarning":false,"insertSpaceAfterNameTabCompletion":false,"id":526,"childUrl":"https://pt.meta.stackoverflow.com","enableSocialMediaInSharePopup":true,"protocol":"https"},"user":{"fkey":"89f3ffe19e9fa2cb975286e1e540bf8a11ebe98f90d24163d0fb58c4c3e13caa","tid":"7ea586bf-0022-c633-2f39-bcc43c20af17","rep":787,"isRegistered":true,"userType":3,"userId":29969,"accountId":6769346,"gravatar":"<div class=\"gravatar-wrapper-32\"><img src=\"https://graph.facebook.com/1453933021599821/picture?type=large\" alt=\"\" width=\"32\" height=\"32\"></div>","profileUrl":"https://pt.stackoverflow.com/users/29969/paulo-s%c3%a9rgio-duff","canSeeDeletedPosts":false},"realtime":{"newest":true,"active":true,"tagged":true,"staleDisconnectIntervalInHours":0,"workerIframeDomain":"https://cdn.sstatic.net"},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75,"likedTagsMaxLength":300,"dislikedTagsMaxLength":300},"jobPreferences":{"maxNumDeveloperRoles":2,"maxNumIndustries":4}}, {"site":{"allowImageUploads":true,"commentHighlightingWithCSS":true,"enableUserHovercards":true,"styleCode":true,"enableImgurHttps":true,"forceHttpsImages":true},"userMessaging":{},"comments":{},"userProfile":{},"tags":{"allowNonAsciiTags":true},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"snippets":{"snippetsEnabled":true,"renderDomain":"stacksnippets.net"},"paths":{},"markdown":{"asteriskIntraWordEmphasis":true},"monitoring":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000},"slack":{"sidebarAdDismissCookie":"slack-sidebar-ad"}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.pt-BR.js":"388a71e9dc5d","js/moderator.pt-BR.js":"4c2df6eb1c03","js/full-anon.pt-BR.js":"24f47105555c","js/full.pt-BR.js":"4b27efbe23d2","js/wmd.pt-BR.js":"791aac255ebf","js/third-party/jquery.autocomplete.min.js":"bdb258e949a8","js/third-party/jquery.autocomplete.min.pt-BR.js":"","js/mobile.pt-BR.js":"1403436bf10d","js/help.pt-BR.js":"25db8b313bcc","js/tageditor.pt-BR.js":"0b389228a3d8","js/tageditornew.pt-BR.js":"47c8791af8c6","js/inline-tag-editing.pt-BR.js":"7dceffa4e7da","js/revisions.pt-BR.js":"b82dcc645042","js/review.pt-BR.js":"69670bfa6c62","js/tagsuggestions.pt-BR.js":"ed03603f4e13","js/post-validation.pt-BR.js":"52edb837f40e","js/explore-qlist.pt-BR.js":"ad4c7afc1df4","js/events.pt-BR.js":"2cb5c115d9cb","js/keyboard-shortcuts.pt-BR.js":"83bfb2702443","js/external-editor.pt-BR.js":"43fc5e42a913","js/adops.pt-BR.js":"9a6a7812a212","js/external-editor.pt-BR.js":"43fc5e42a913","js/snippet-javascript.pt-BR.js":"6d875acd503e","js/snippet-javascript-codemirror.pt-BR.js":"c14c7d94a856"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    <noscript id="noscript-css"><style>body,.top-bar{margin-top:1.9em}</style></noscript>
+    <script async="" src="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/full.pt-BR.js"></script><link rel="preload" href="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/f(1).txt" as="script"><script type="text/javascript" src="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/f(1).txt"></script><link rel="preload" href="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/f(2).txt" as="script"><script type="text/javascript" src="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/f(2).txt"></script><script src="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/pubads_impl_207.js" async=""></script><script async="" src="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/snippet-javascript.pt-BR.js"></script><script async="" src="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/post-validation.pt-BR.js"></script></head>
+        <body class="question-page new-topbar">
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+
+
+<header class="top-bar js-top-bar _fixed">
+    <div class="-container">
+        <div class="-main">
+                                <a href="https://pt.stackoverflow.com/" class="-logo js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+                        <span class="-img _glyph">Stack Overflow em Português</span>
+                    </a>
+
+
+                <nav class="navigation" role="navigation" aria-label="navegação do site">
+                    <ol class="-list">
+        <li class="-item _current">
+            <a id="nav-questions" href="https://pt.stackoverflow.com/questions" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">Perguntas</a>
+        </li>
+        <li class="-item">
+            <a id="nav-tags" href="https://pt.stackoverflow.com/tags" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">Tags</a>
+        </li>
+        <li class="-item">
+            <a id="nav-users" href="https://pt.stackoverflow.com/users" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">Usuários</a>
+        </li>
+                    </ol>
+                </nav>
+
+        </div>
+
+            <form id="search" action="https://pt.stackoverflow.com/search" method="get" class="searchbar js-searchbar " autocomplete="off" role="search">
+                    <div class="ps-relative">
+                        <input name="q" type="text" placeholder="Pesquisar..." value="" autocomplete="off" maxlength="240" class="f-input js-search-field">
+                        <button type="submit" aria-label="Pesquisar..." class="btn-topbar-primary js-search-submit"><svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"></path></svg></button>
+                    </div>
+            </form>
+
+        
+
+
+
+
+
+<ol class="-secondary js-secondary-topbar-links">
+        <li class="-item searchbar-trigger js-searchbar-trigger"><a href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#" class="-link"><svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"></path></svg></a></li>
+                <li class="-item">
+                <a href="https://pt.stackoverflow.com/users/29969/paulo-s%c3%a9rgio-duff" class="my-profile js-gps-track" data-gps-track="profile_summary.click()">
+                <div class="gravatar-wrapper-24" title="Paulo Sérgio Duff"><img src="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/picture" alt="" width="24" height="24" class="-avatar js-avatar-me"></div>
+                    <div class="-rep js-header-rep" title="sua reputação: 787">787</div>
+                        <div class="-badges">
+<span title="3 medalhas de prata"><span class="badge2">●</span><span class="badgecount">3</span></span><span title="15 medalhas de bronze"><span class="badge3">●</span><span class="badgecount">15</span></span>                        </div>
+                </a>
+            </li>
+        <li class="-item">
+        <a href="https://stackexchange.com/users/6769346?tab=inbox" class="-link js-inbox-button" title="Últimas mensagens no inbox">
+            <svg aria-hidden="true" class="svg-icon iconInbox" width="20" height="18" viewBox="0 0 20 18"><path d="M15.19 1H4.63c-.85 0-1.6.54-1.85 1.35L0 10.79V15c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2v-4.21l-2.87-8.44A2 2 0 0 0 15.19 1zm-.28 10l-2 2h-6l-2-2H1.96L4.4 3.68A1 1 0 0 1 5.35 3h9.12a1 1 0 0 1 .95.68L17.86 11h-2.95z"></path></svg>
+            <span class="indicator-badge js-unread-count _important" style="display: none;"></span>
+        </a>
+    </li>
+    <li class="-item">
+        <a href="https://stackexchange.com/users/6769346?tab=reputation" class="-link js-achievements-button" title="Conquistas recentes: reputação, medalhas e privilégios obtidos" data-unread-class="_highlighted-positive">
+            <svg aria-hidden="true" class="svg-icon iconAchievements" width="18" height="18" viewBox="0 0 18 18"><path d="M15 2V1H3v1H0v4c0 1.6 1.4 3 3 3v1c.4 1.5 3 2.6 5 3v2H5s-1 1.5-1 2h10c0-.4-1-2-1-2h-3v-2c2-.4 4.6-1.5 5-3V9c1.6-.2 3-1.4 3-3V2h-3zM3 7c-.5 0-1-.5-1-1V4h1v3zm8.4 2.5L9 8 6.6 9.4l1-2.7L5 5h3l1-2.7L10 5h2.8l-2.3 1.8 1 2.7h-.1zM16 6c0 .5-.5 1-1 1V4h1v2z"></path></svg>
+            <span class="indicator-badge js-unread-count _positive" style="display: none;"></span>
+        </a>
+    </li>
+
+    <li class="-item review-button-item" data-remove-order="2">
+        <a href="https://pt.stackoverflow.com/review" class="-link js-gps-track js-review-button" title="Filas de análise - ajude a melhorar o site" data-gps-track="review_popup.click({ in_danger: false })">
+            <svg aria-hidden="true" class="svg-icon iconReviewQueue" width="18" height="18" viewBox="0 0 18 18"><path d="M16 7.5l-5 4.97-1.79-1.77a1 1 0 0 0-1.4 0l-2.1 2.1a1 1 0 0 0 0 1.4L8.5 17H2a2 2 0 0 1-2-2V3c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v4.5zM12 7H2v2h10V7zm2-4H2v2h12V3zM2 11v2h3v-2H2zm16-.5l-7 7-4-4L8.5 12l2.5 2.5L16.5 9l1.5 1.5z"></path></svg>
+        </a>
+        
+    </li>
+    <li class="-item help-button-item" data-remove-order="1"><a href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#" class="-link js-help-button" title="Central de ajuda e outros recursos">
+        <svg aria-hidden="true" class="svg-icon iconHelp" width="18" height="18" viewBox="0 0 18 18"><path d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23zM11.77 8a5.8 5.8 0 0 1-1.02.91l-.53.37c-.26.2-.42.43-.5.69a4 4 0 0 0-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.03-.66.12-1.21.4-1.66a5.29 5.29 0 0 1 1.43-1.22c.16-.12.28-.25.38-.39a1.34 1.34 0 0 0 .02-1.71c-.24-.31-.51-.46-1.03-.46-.51 0-.8.26-1.02.6-.21.33-.18.73-.18 1.1H5.75c0-1.38.35-2.25 1.1-2.76.52-.35 1.17-.5 1.93-.5 1 0 1.79.18 2.49.71.64.5.98 1.18.98 2.12 0 .57-.2 1.05-.48 1.44z"></path></svg>
+    </a></li>
+
+    <li class="-item">
+        <a href="https://stackexchange.com/" class="-link js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="Todos os 173 sites do Stack Exchange">
+            <svg aria-hidden="true" class="svg-icon iconStackExchange" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13c0 1.1.9 2 2 2h8v3l3-3h1a2 2 0 0 0 2-2v-2H1v2zM15 1H3a2 2 0 0 0-2 2v2h16V3a2 2 0 0 0-2-2zM1 6h16v4H1V6z"></path></svg>
+        </a>
+    </li>
+
+
+    <li class="-dialog-container js-topbar-dialog-corral">
+
+
+    <div class="topbar-dialog siteSwitcher-dialog dno">
+        <div class="header">
+            <h3><a href="https://pt.stackoverflow.com/">comunidade atual</a>
+            </h3>
+        </div>
+        <div class="modal-content current-site-container">
+            <ul class="current-site">
+                    <li class="grid">
+                            <div class="fl1">
+            <a href="https://pt.stackoverflow.com/" class="current-site-link site-link js-gps-track grid gs8 gsx" data-id="526" data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="favicon favicon-br site-icon grid--cell" title="Stack Overflow em Português"></div>
+        <span class="grid--cell fl1">
+            Stack Overflow em Português
+        </span>
+    </a>
+
+    </div>
+    <div class="related-links">
+            <a href="https://pt.stackoverflow.com/help" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:14 })">ajuda</a>
+                    <a href="https://chat.stackexchange.com/?tab=site&amp;host=pt.stackoverflow.com" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                    <a href="https://pt.stackoverflow.com/users/logout" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:8 })">log-out</a>
+    </div>
+
+                    </li>
+                    <li class="related-site grid">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                            <a href="https://pt.meta.stackoverflow.com/" class="site-link js-gps-track grid gs8 gsx" data-id="527" data-gps-track="site.switch({ target_site:527, item_type:3 }),site_switcher.click({ item_type:4 })">
+        <div class="favicon favicon-brmeta site-icon grid--cell" title="Stack Overflow em Português Meta"></div>
+        <span class="grid--cell fl1">
+            Stack Overflow em Português Meta
+        </span>
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+                    <a href="https://stackexchange.com/users/6769346/?tab=accounts">suas comunidades</a>
+            </h3>
+
+                <a href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#" id="edit-pinned-sites">editar</a>
+                <a href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#" id="cancel-pinned-sites" style="display: none;">cancelar</a>
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <ul class="my-sites">
+                        <li>
+                                <a href="https://pt.stackoverflow.com/" class="site-link js-gps-track grid gs8 gsx" data-id="526" data-gps-track="site.switch({ target_site:526, item_type:3 }),site_switcher.click({ item_type:1 })">
+        <div class="favicon favicon-br site-icon grid--cell" title="Stack Overflow em Português"></div>
+        <span class="grid--cell fl1">
+            Stack Overflow em Português
+        </span>
+            <span class="rep-score grid--cell">787</span>
+    </a>
+
+                        </li>
+                        <li>
+                                <a href="https://ell.stackexchange.com/" class="site-link js-gps-track grid gs8 gsx" data-id="481" data-gps-track="site.switch({ target_site:481, item_type:3 }),site_switcher.click({ item_type:1 })">
+        <div class="favicon favicon-ell site-icon grid--cell" title="English Language Learners"></div>
+        <span class="grid--cell fl1">
+            English Language Learners
+        </span>
+            <span class="rep-score grid--cell">101</span>
+    </a>
+
+                        </li>
+                        <li>
+                                <a href="https://serverfault.com/" class="site-link js-gps-track grid gs8 gsx" data-id="2" data-gps-track="site.switch({ target_site:2, item_type:3 }),site_switcher.click({ item_type:1 })">
+        <div class="favicon favicon-serverfault site-icon grid--cell" title="Server Fault"></div>
+        <span class="grid--cell fl1">
+            Server Fault
+        </span>
+            <span class="rep-score grid--cell">101</span>
+    </a>
+
+                        </li>
+                        <li>
+                                <a href="https://softwareengineering.stackexchange.com/" class="site-link js-gps-track grid gs8 gsx" data-id="131" data-gps-track="site.switch({ target_site:131, item_type:3 }),site_switcher.click({ item_type:1 })">
+        <div class="favicon favicon-softwareengineering site-icon grid--cell" title="Software Engineering"></div>
+        <span class="grid--cell fl1">
+            Software Engineering
+        </span>
+            <span class="rep-score grid--cell">101</span>
+    </a>
+
+                        </li>
+                        <li>
+                                <a href="https://es.stackoverflow.com/" class="site-link js-gps-track grid gs8 gsx" data-id="637" data-gps-track="site.switch({ target_site:637, item_type:3 }),site_switcher.click({ item_type:1 })">
+        <div class="favicon favicon-es site-icon grid--cell" title="Stack Overflow en español"></div>
+        <span class="grid--cell fl1">
+            Stack Overflow en español
+        </span>
+            <span class="rep-score grid--cell">101</span>
+    </a>
+
+                        </li>
+                </ul>
+                    <div class="pinned-site-editor-container" style="display: none;">
+                        <input id="js-site-search-txt" type="text" class="site-filter-input" value="" placeholder="Adicione uma comunidade do Stack Exchange">
+                        <input type="submit" id="pin-site-btn" value="Adicionar" disabled="disabled">
+                        <ul class="js-found-sites found-sites"></ul>
+                        <ul class="pinned-site-list sortable" data-custom-list="False">
+                        </ul>
+                        <input type="submit" value="Salvar" id="save-pinned-sites-btn" disabled="disabled">
+                        <a href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#" id="reset-pinned-sites">restaurar para a lista padrão</a>
+                    </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="https://stackexchange.com/sites">mais comunidades stack exchange</a>
+            </h3>
+            <a href="https://stackoverflow.blog/" class="fr">Blog da empresa</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+            <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="https://pt.stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Comece aqui para obter uma visão geral rápida do site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="https://pt.stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Central de ajuda
+                        <span class="item-summary">
+                            Respostas detalhadas a qualquer pergunta que você tiver
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="https://pt.meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discutir o funcionamento e as políticas deste site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                Sobre Nós
+                                <span class="item-summary">
+                                    Saiba mais sobre a empresa Stack Overflow
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Negócios
+                                <span class="item-summary">
+                                    Saiba mais sobre a contratação de desenvolvedores ou publicação de anúncios conosco
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+            </li>
+</ol>
+
+    </div>
+</header>
+    <div id="js-gdpr-consent-banner" class="p16 bg-black-700 fc-white ps-fixed b0 l0 r0 z-banner" role="banner" aria-hidden="false">
+        <div class="wmx10 mx-auto grid grid__center jc-spacebetween gs8 gsx" role="alertdialog" aria-describedby="notice-message">
+            <div class="grid--cell" aria-label="notice-message">
+                <p class="mb0 lh-lg">
+                    This site uses cookies to deliver our services and to show you relevant ads and job listings.
+                    By using our site, you acknowledge that you have read and understand our
+                    <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/cookie-policy">Cookie Policy</a>,
+                    <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/privacy-policy">Privacy Policy</a>, and our
+                    <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/terms-of-service/public">Terms of Service</a>.
+                    Your use of Stack Overflow’s Products and Services, including the Stack Overflow Network, is subject to these policies and terms.
+                </p>
+            </div>
+            <div class="grid--cell ml-auto" aria-label="notice-dismiss">
+                <button class="s-btn s-btn__inverted fc-white bg-black-700 baw0 p16 js-notice-close" role="status" aria-hidden="true">
+                    <svg aria-hidden="true" class="svg-icon m0 iconClearSm" width="14" height="14" viewBox="0 0 14 14"><path d="M12 3.41L10.59 2 7 5.59 3.41 2 2 3.41 5.59 7 2 10.59 3.41 12 7 8.41 10.59 12 12 10.59 8.41 7z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        StackExchange.ready(function () { StackExchange.topbar.init({ observeSize: false }); });
+        StackExchange.scrollPadding.setPaddingTop(60, 10);     </script>
+
+
+    
+
+
+    <div class="container  ">
+                
+        <div id="content" class="snippet-hidden">
+
+
+            
+
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/br/img/apple-touch-icon.png?v=e57f45c9cfaf">
+
+    <div class="inner-content clearfix">
+            <div id="question-header">
+                    <h1 itemprop="name"><a href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration" class="question-hyperlink">The mbstring extension is missing. Please check your PHP configuration [fechada]</a></h1>
+
+            
+<div class="pl8 aside-cta" role="navigation" aria-label="fazer uma nova pergunta">
+            <a href="https://pt.stackoverflow.com/questions/ask" class="ws-nowrap btn">Faça uma pergunta</a>
+</div>
+
+        </div>
+            <div id="mainbar" role="main" aria-label="pergunta e respostas">
+
+            
+
+<div class="question" data-questionid="200644" id="question">
+
+    
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="200644">
+        <a class="vote-up-off" title="Esta pergunta mostra esforço de pesquisa; é útil e clara">votar a favor</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+        <a class="vote-down-off" title="Esta pergunta não mostra nenhum esforço de pesquisa; ela não é clara ou não é útil">votar contra</a>
+
+        <a class="star-off" href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#" title="Clique para marcar como pergunta favorita (clique novamente para desfazer)">favorita</a>
+        <div class="favoritecount"><b></b></div>
+
+
+</div>
+
+            </div>
+
+            
+<div class="postcell post-layout--right">
+    <div class="post-text" itemprop="text">
+
+<p>Mesmo tentando instalar oque falta <code>sudo apt-get install phpmyadmin php-mbstring php-gettext</code>, ele diz que já está instalado </p>
+
+<p><a href="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/R4YjJ.png" rel="nofollow noreferrer"><img src="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/R4YjJ.png" alt="inserir a descrição da imagem aqui"></a></p>
+
+<p>E eu tambem já ativei a extensão <code>extension=php_mbstring.dll</code>, oque pode ser meu problema ??</p>
+
+<p>Extensões:</p>
+
+<p><a href="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/seXXN.png" rel="nofollow noreferrer"><img src="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/seXXN.png" alt="inserir a descrição da imagem aqui"></a></p>
+    </div>
+    <div class="post-taglist">
+        <a href="https://pt.stackoverflow.com/questions/tagged/ubuntu" class="post-tag js-gps-track" title="mostrar perguntas com a tag &#39;ubuntu&#39;" rel="tag">ubuntu</a> <a href="https://pt.stackoverflow.com/questions/tagged/phpmyadmin" class="post-tag js-gps-track" title="mostrar perguntas com a tag &#39;phpmyadmin&#39;" rel="tag">phpmyadmin</a> 
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://pt.stackoverflow.com/q/200644/29969" title="permalink curto para esta pergunta" class="short-link" id="link-post-200644">compartilhar</a><span class="lsep">|</span><a href="https://pt.stackoverflow.com/posts/200644/edit" class="suggest-edit-post" title="analise e melhore esta publicação">editar</a><span class="lsep">|</span><a href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#" class="flag-post-link" title="sinalizar esta publicação por problemas sérios ou para atenção do moderador" data-postid="200644">sinalizar</a></div>        
+    </div>
+
+    <div class="post-signature grid--cell fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="https://pt.stackoverflow.com/posts/200644/revisions" title="mostrar todas as edições desta publicação">editada <span title="2017-04-26 02:27:57Z" class="relativetime">26/04/17 às 2:27</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </div>
+    <div class="post-signature owner grid--cell fl0">
+        <div class="user-info ">
+    <div class="user-action-time">
+        perguntada <span title="2017-04-26 02:12:41Z" class="relativetime">26/04/17 às 2:12</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://pt.stackoverflow.com/users/24265/lucas-carezia"><div class="gravatar-wrapper-32"><img src="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/nt8wS.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://pt.stackoverflow.com/users/24265/lucas-carezia">Lucas Carezia</a>
+        <div class="-flair">
+            <span class="reputation-score" title="pontos de reputação " dir="ltr">1.245</span><span title="1 medalhas de ouro"><span class="badge1"></span><span class="badgecount">1</span></span><span title="8 medalhas de prata"><span class="badge2"></span><span class="badgecount">8</span></span><span title="26 medalhas de bronze"><span class="badge3"></span><span class="badgecount">26</span></span>
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+</div>
+
+                        <div class="special-status post-layout--full">
+                <div class="question-status">
+        <h2>                    <b>fechada</b> como fora de escopo por <a href="https://pt.stackoverflow.com/users/3635/guilherme-nascimento">Guilherme Nascimento</a>, <a href="https://pt.stackoverflow.com/users/13322/marconi">Marconi</a>, <a href="https://pt.stackoverflow.com/users/51124/taisbevalle">Taisbevalle</a>, <a href="https://pt.stackoverflow.com/users/766/marcelo-de-andrade">Marcelo de Andrade</a>, <a href="https://pt.stackoverflow.com/users/18246/linq">LINQ</a> <span dir="ltr"><span title="2017-05-08 21:11:05Z" class="relativetime">8/05/17 às 21:11</span></span>
+</h2>
+        <p>Esta pergunta parece não pertencer ao site. Segundo os usuários, este foi o motivo:</p><ul class="close-as-off-topic-status-list"><li>"Essa pergunta não parece ser <b>sobre programação</b>, dentro do escopo definido na <a href="https://pt.stackoverflow.com/help/on-topic">central de ajuda</a>." – Marconi, Taisbevalle, Marcelo de Andrade</li></ul> <span class="close-status-suffix">Conheça as regras na <a href="https://pt.stackoverflow.com/help/closed-questions">central de ajuda</a> e <a href="https://pt.stackoverflow.com/posts/200644/edit">edite a pergunta</a> para que fique adequada.</span><p></p>
+    </div>
+            </div>
+    
+    <div class="post-layout--right">
+	    <div id="comments-200644" class="comments js-comments-container ">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="1" data-canpost="true" data-cansee="false" data-comments-unavailable="false" data-addlink-disabled="false">
+
+
+
+    <li id="comment-411423" class="comment js-comment " data-comment-id="411423">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="número de votos para &#39;comentários úteis&#39; recebidos" class="cool">1</span>
+            </div>
+                <div class="comment-voting">
+                        <a class="comment-up comment-up-off" title="Este comentário adiciona algo útil à publicação">voto a favor</a>
+                </div>
+                            <div class="comment-flagging">
+                        <a class="comment-flag" title="Sinalize este comentário se ele tiver problemas graves ou por necessidade de moderação">sinalizar</a>
+                </div>
+        </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Não tem sentido, seu php.ini esta com as extensões .dll, isso seria no windows, vc deve ter feito algo muito errado. Obs: Ao invés de imagem copie os trechos.</span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/3635/guilherme-nascimento" title="69.226 reputation" class="comment-user">Guilherme Nascimento</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#comment411423_200644"><span title="2017-04-26 02:31:03Z" class="relativetime-clean">26/04/17 às 2:31</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-411424" class="comment js-comment " data-comment-id="411424">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                <div class="comment-voting">
+                        <a class="comment-up comment-up-off" title="Este comentário adiciona algo útil à publicação">voto a favor</a>
+                </div>
+                            <div class="comment-flagging">
+                        <a class="comment-flag" title="Sinalize este comentário se ele tiver problemas graves ou por necessidade de moderação">sinalizar</a>
+                </div>
+        </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Tudo bem, amanhã vou reinstalar o phpmyadmin, eu coloco imagem por que eu acho que fica mais fácil a visualização, obrigado pela resposta</span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/24265/lucas-carezia" title="1.245 reputation" class="comment-user owner">Lucas Carezia</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#comment411424_200644"><span title="2017-04-26 02:37:07Z" class="relativetime-clean">26/04/17 às 2:37</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-411425" class="comment js-comment " data-comment-id="411425">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="número de votos para &#39;comentários úteis&#39; recebidos" class="cool">1</span>
+            </div>
+                <div class="comment-voting">
+                        <a class="comment-up comment-up-off" title="Este comentário adiciona algo útil à publicação">voto a favor</a>
+                </div>
+                            <div class="comment-flagging">
+                        <a class="comment-flag" title="Sinalize este comentário se ele tiver problemas graves ou por necessidade de moderação">sinalizar</a>
+                </div>
+        </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">O problema é o conteudo do teu phpmyadmin, esta coisa de .dll é windows, vc pode reinstalar o phpmyadmin o quanto quiser o problema é outro. Recomendo que reinstale o php todo, ou verifique esta esta editando o php.ini correto.</span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/3635/guilherme-nascimento" title="69.226 reputation" class="comment-user">Guilherme Nascimento</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#comment411425_200644"><span title="2017-04-26 02:39:20Z" class="relativetime-clean">26/04/17 às 2:39</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-411426" class="comment js-comment " data-comment-id="411426">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                <div class="comment-voting">
+                        <a class="comment-up comment-up-off" title="Este comentário adiciona algo útil à publicação">voto a favor</a>
+                </div>
+                            <div class="comment-flagging">
+                        <a class="comment-flag" title="Sinalize este comentário se ele tiver problemas graves ou por necessidade de moderação">sinalizar</a>
+                </div>
+        </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Se não me engano o PHP.ini está em <code>/etc/PHP/7.0/php.ini</code>. estou no celular agora, então não tenho certeza</span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/24265/lucas-carezia" title="1.245 reputation" class="comment-user owner">Lucas Carezia</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#comment411426_200644"><span title="2017-04-26 02:43:32Z" class="relativetime-clean">26/04/17 às 2:43</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-411427" class="comment js-comment " data-comment-id="411427">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                <div class="comment-voting">
+                        <a class="comment-up comment-up-off" title="Este comentário adiciona algo útil à publicação">voto a favor</a>
+                </div>
+                            <div class="comment-flagging">
+                        <a class="comment-flag" title="Sinalize este comentário se ele tiver problemas graves ou por necessidade de moderação">sinalizar</a>
+                </div>
+        </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Ok, vou aguardar então.</span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/3635/guilherme-nascimento" title="69.226 reputation" class="comment-user">Guilherme Nascimento</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#comment411427_200644"><span title="2017-04-26 02:46:08Z" class="relativetime-clean">26/04/17 às 2:46</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+            </ul>
+				<div class="comment-form">
+					<form id="add-comment-200644" class="" data-placeholdertext="Use comentários para pedir mais informações ou sugerir melhorias. Evite responder perguntas em comentários."></form>
+				</div>
+	    </div>
+
+        <div id="comments-link-200644">
+
+                <a class="js-add-link comments-link " title="Use comentários para pedir mais informações ou sugerir melhorias. Evite responder perguntas em comentários." href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#">comentar</a><span class="js-link-separator ">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link " title="ver todos os comentários desta publicação" href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#" onclick="">mostrar mais <b>1</b> comentário</a>
+        </div>         
+    </div>        </div>
+</div>
+
+
+
+        <div id="answers">
+
+                <a name="tab-top"></a>
+                <div id="answers-header">
+                    <div class="subheader answers-subheader">
+                        <h2 data-answercount="2">
+                                2 Respostas
+                                <span style="display:none;" itemprop="answerCount">2</span>
+                        </h2>
+                        <div>
+                            
+<div id="tabs">
+        <a href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration?answertab=active#tab-top" data-nav-xhref="" title="Respostas com a atividade mais recente primeiro" data-value="active" data-shortcut="A">
+            ativas</a>
+        <a href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration?answertab=oldest#tab-top" data-nav-xhref="" title="Respostas na ordem em que foram fornecidas" data-value="oldest" data-shortcut="O">
+            mais antigas</a>
+        <a class="youarehere " href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration?answertab=votes#tab-top" data-nav-xhref="" title="Respostas com a pontuação mais alta primeiro" data-value="votes" data-shortcut="V">
+            votos</a>
+    </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+  
+<a name="200646"></a>
+<div id="answer-200646" class="answer" data-answerid="200646" itemscope="" itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="200646">
+        <a class="vote-up-off" title="Esta resposta é útil">votar a favor</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+        <a class="vote-down-off" title="Esta resposta não é útil">votar contra</a>
+
+
+
+
+</div>
+
+            </div>
+            
+
+
+<div class="answercell post-layout--right">
+    <div class="post-text" itemprop="text">
+<p>O <code>extension=php_mbstring.dll</code> seria windows no Ubuntu o correto seria:</p>
+
+<pre><code>extension=mbstring.so
+</code></pre>
+
+<p>Sem o prefixo <code>php_</code> e com a extensão <code>.so</code>, note que usar <code>sudo apt-get install php-mbstring</code> só vai funcionar para a versão do PHP que esta usando na linha de comando, se tiver mais de uma versão do PHP, tipo php5 e php7 vai ter que alternar primeiro.</p>
+
+<p>Para instalar para o <em>PHP 7.0</em> pode tentar este comando:</p>
+
+<pre><code>sudo apt-get install php7.0-mbstring
+</code></pre>
+
+<p>PHP 7.1:</p>
+
+<pre><code>sudo apt-get install php7.1-mbstring
+</code></pre>
+
+<p>No Ubuntu mais recente creio que mesmo no PHP5 deve especificar a versão (ou quando usa múltiplas versões):</p>
+
+<pre><code>sudo apt-get install php5.3-mbstring
+sudo apt-get install php5.4-mbstring
+sudo apt-get install php5.5-mbstring
+sudo apt-get install php5.6-mbstring
+</code></pre>
+
+<p>Depois de instalar e editar o php.ini deve-se reiniciar o Apache:</p>
+
+<pre><code>sudo service apache2 restart
+</code></pre>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://pt.stackoverflow.com/a/200646/29969" title="permalink curto para esta resposta" class="short-link" id="link-post-200646">compartilhar</a><span class="lsep">|</span><a href="https://pt.stackoverflow.com/posts/200646/edit" class="suggest-edit-post" title="analise e melhore esta publicação">editar</a><span class="lsep">|</span><a href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#" class="flag-post-link" title="sinalizar esta publicação por problemas sérios ou para atenção do moderador" data-postid="200646">sinalizar</a></div>                    </div>
+    <div class="post-signature grid--cell fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="https://pt.stackoverflow.com/posts/200646/revisions" title="mostrar todas as edições desta publicação">editada <span title="2017-04-26 02:29:31Z" class="relativetime">26/04/17 às 2:29</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        respondida <span title="2017-04-26 02:21:31Z" class="relativetime">26/04/17 às 2:21</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://pt.stackoverflow.com/users/3635/guilherme-nascimento"><div class="gravatar-wrapper-32"><img src="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/XVLcj.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://pt.stackoverflow.com/users/3635/guilherme-nascimento">Guilherme Nascimento</a>
+        <div class="-flair">
+            <span class="reputation-score" title="pontos de reputação 69.226" dir="ltr">69,2mil</span><span title="9 medalhas de ouro"><span class="badge1"></span><span class="badgecount">9</span></span><span title="82 medalhas de prata"><span class="badge2"></span><span class="badgecount">82</span></span><span title="191 medalhas de bronze"><span class="badge3"></span><span class="badgecount">191</span></span>
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+</div>
+    
+    <div class="post-layout--right">
+	    <div id="comments-200646" class="comments js-comments-container ">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="true" data-cansee="false" data-comments-unavailable="false" data-addlink-disabled="false">
+
+
+
+    <li id="comment-411422" class="comment js-comment " data-comment-id="411422">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                <div class="comment-voting">
+                        <a class="comment-up comment-up-off" title="Este comentário adiciona algo útil à publicação">voto a favor</a>
+                </div>
+                            <div class="comment-flagging">
+                        <a class="comment-flag" title="Sinalize este comentário se ele tiver problemas graves ou por necessidade de moderação">sinalizar</a>
+                </div>
+        </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Eu só tenho o php7 instalado, e mesmo mudando para <code>extension=mbstring.so</code>, continua retornando o mesmo erro, mas de qualquer forma modifiquei a pergunta para você ver melhor.</span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/24265/lucas-carezia" title="1.245 reputation" class="comment-user owner">Lucas Carezia</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#comment411422_200646"><span title="2017-04-26 02:27:35Z" class="relativetime-clean">26/04/17 às 2:27</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+            </ul>
+				<div class="comment-form">
+					<form id="add-comment-200646" class="" data-placeholdertext="Use comentários para pedir mais informações ou sugerir melhorias. Evite comentários como “+1” ou “obrigado”."></form>
+				</div>
+	    </div>
+
+        <div id="comments-link-200646">
+
+                <a class="js-add-link comments-link " title="Use comentários para pedir mais informações ou sugerir melhorias. Evite comentários como “+1” ou “obrigado”." href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#">comentar</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="ver todos os comentários desta publicação" href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#" onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+
+  
+<a name="200678"></a>
+<div id="answer-200678" class="answer" data-answerid="200678" itemscope="" itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="200678">
+        <a class="vote-up-off" title="Esta resposta é útil">votar a favor</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="Esta resposta não é útil">votar contra</a>
+
+
+
+
+</div>
+
+            </div>
+            
+
+
+<div class="answercell post-layout--right">
+    <div class="post-text" itemprop="text">
+<p>Consegui resolver o problema executando o comando <code>apt-get remove --purge php7.0-*</code> e depois <code>apt-get install php7.0 php7.0-fpm php7.0-mbstring</code>.</p>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://pt.stackoverflow.com/a/200678/29969" title="permalink curto para esta resposta" class="short-link" id="link-post-200678">compartilhar</a><span class="lsep">|</span><a href="https://pt.stackoverflow.com/posts/200678/edit" class="suggest-edit-post" title="analise e melhore esta publicação">editar</a><span class="lsep">|</span><a href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#" class="flag-post-link" title="sinalizar esta publicação por problemas sérios ou para atenção do moderador" data-postid="200678">sinalizar</a></div>                    </div>
+            
+
+
+    <div class="post-signature owner grid--cell fl0">
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        respondida <span title="2017-04-26 11:53:29Z" class="relativetime">26/04/17 às 11:53</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://pt.stackoverflow.com/users/24265/lucas-carezia"><div class="gravatar-wrapper-32"><img src="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/nt8wS.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://pt.stackoverflow.com/users/24265/lucas-carezia">Lucas Carezia</a>
+        <div class="-flair">
+            <span class="reputation-score" title="pontos de reputação " dir="ltr">1.245</span><span title="1 medalhas de ouro"><span class="badge1"></span><span class="badgecount">1</span></span><span title="8 medalhas de prata"><span class="badge2"></span><span class="badgecount">8</span></span><span title="26 medalhas de bronze"><span class="badge3"></span><span class="badgecount">26</span></span>
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+</div>
+    
+    <div class="post-layout--right">
+	    <div id="comments-200678" class="comments js-comments-container ">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="true" data-cansee="false" data-comments-unavailable="false" data-addlink-disabled="false">
+
+
+
+    <li id="comment-411546" class="comment js-comment " data-comment-id="411546">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                <div class="comment-voting">
+                        <a class="comment-up comment-up-off" title="Este comentário adiciona algo útil à publicação">voto a favor</a>
+                </div>
+                            <div class="comment-flagging">
+                        <a class="comment-flag" title="Sinalize este comentário se ele tiver problemas graves ou por necessidade de moderação">sinalizar</a>
+                </div>
+        </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Basicamente removeu tudo e reinstalou tudo novamente :)</span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/3635/guilherme-nascimento" title="69.226 reputation" class="comment-user">Guilherme Nascimento</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#comment411546_200678"><span title="2017-04-26 13:38:04Z" class="relativetime-clean">26/04/17 às 13:38</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+            </ul>
+				<div class="comment-form">
+					<form id="add-comment-200678" class="" data-placeholdertext="Use comentários para pedir mais informações ou sugerir melhorias. Evite comentários como “+1” ou “obrigado”."></form>
+				</div>
+	    </div>
+
+        <div id="comments-link-200678">
+
+                <a class="js-add-link comments-link " title="Use comentários para pedir mais informações ou sugerir melhorias. Evite comentários como “+1” ou “obrigado”." href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#">comentar</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="ver todos os comentários desta publicação" href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#" onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+                
+
+
+                        <h2 class="bottom-notice" data-loc="1">
+Esta não é a resposta que você está procurando?                            Pesquise outras perguntas com a tag <a href="https://pt.stackoverflow.com/questions/tagged/ubuntu" class="post-tag" title="mostrar perguntas com a tag &#39;ubuntu&#39;" rel="tag">ubuntu</a> <a href="https://pt.stackoverflow.com/questions/tagged/phpmyadmin" class="post-tag" title="mostrar perguntas com a tag &#39;phpmyadmin&#39;" rel="tag">phpmyadmin</a>  ou <a href="https://pt.stackoverflow.com/questions/ask">faça sua própria pergunta</a>.                        </h2>
+            </div>
+        </div>
+                <div id="sidebar" class="show-votes" role="complementary" aria-label="barra lateral">
+                            <div class="module question-stats">
+                    <table id="qinfo">
+                        <tbody><tr>
+                            <td>
+                                <p class="label-key">perguntada</p>
+                            </td>
+                            <td style="padding-left: 10px">
+                                <p class="label-key" title="2017-04-26 02:12:41Z"><b>1 ano, 1 mes atrás</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="label-key">acessada</p>
+                            </td>
+
+                            <td style="padding-left: 10px">
+                                <p class="label-key">
+                                    <b>1.565 vezes</b>
+                                </p>
+                            </td>
+                        </tr>
+                            <tr>
+                                <td>
+                                    <p class="label-key">ativas</p>
+                                </td>
+                                <td style="padding-left: 10px">
+                                    <p class="label-key"><b><a href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration?lastactivity" class="lastactivity-link" title="2017-04-26 11:53:29Z">1 ano, 1 mes atrás</a></b></p>
+                                </td>
+                            </tr>
+                    </tbody></table>
+                </div>
+            <div class="module community-bulletin" data-tracker="cb=1">
+    <div class="related">
+                <div class="bulletin-title">
+                    Em destaque no Meta
+                </div>
+                <hr>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <a href="https://meta.stackexchange.com/questions/310321/brace-yourselves-the-gdpr-is-coming?cb=1" class="question-hyperlink" data-ga="[&quot;community bulletin board&quot;,&quot;Em destaque no Meta&quot;,&quot;https://meta.stackexchange.com/questions/310321/brace-yourselves-the-gdpr-is-coming&quot;,null,null]">
+<div class="favicon favicon-stackexchangemeta" title="Meta Stack Exchange"></div>                </a>
+        </div>
+        <div class="bulletin-item-content">
+            <a href="https://meta.stackexchange.com/questions/310321/brace-yourselves-the-gdpr-is-coming?cb=1" class="question-hyperlink" data-ga="[&quot;community bulletin board&quot;,&quot;Em destaque no Meta&quot;,&quot;https://meta.stackexchange.com/questions/310321/brace-yourselves-the-gdpr-is-coming&quot;,null,null]">Brace yourselves: The GDPR is coming!</a>
+        </div>
+        <br class="cbt">
+    </div>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <a href="https://pt.meta.stackoverflow.com/questions/3825/vamos-nos-conectar?cb=1" class="question-hyperlink" data-ga="[&quot;community bulletin board&quot;,&quot;Em destaque no Meta&quot;,&quot;https://pt.meta.stackoverflow.com/questions/3825/vamos-nos-conectar&quot;,null,null]">
+<div class="favicon favicon-brmeta" title="Stack Overflow em Português Meta"></div>                </a>
+        </div>
+        <div class="bulletin-item-content">
+            <a href="https://pt.meta.stackoverflow.com/questions/3825/vamos-nos-conectar?cb=1" class="question-hyperlink" data-ga="[&quot;community bulletin board&quot;,&quot;Em destaque no Meta&quot;,&quot;https://pt.meta.stackoverflow.com/questions/3825/vamos-nos-conectar&quot;,null,null]">Vamos nos conectar?</a>
+        </div>
+        <br class="cbt">
+    </div>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <a href="https://pt.meta.stackoverflow.com/questions/699/faq-da-comunidade?cb=1" class="question-hyperlink" data-ga="[&quot;community bulletin board&quot;,&quot;Em destaque no Meta&quot;,&quot;https://pt.meta.stackoverflow.com/questions/699/faq-da-comunidade&quot;,null,null]">
+<div class="favicon favicon-brmeta" title="Stack Overflow em Português Meta"></div>                </a>
+        </div>
+        <div class="bulletin-item-content">
+            <a href="https://pt.meta.stackoverflow.com/questions/699/faq-da-comunidade?cb=1" class="question-hyperlink" data-ga="[&quot;community bulletin board&quot;,&quot;Em destaque no Meta&quot;,&quot;https://pt.meta.stackoverflow.com/questions/699/faq-da-comunidade&quot;,null,null]">FAQ da comunidade</a>
+        </div>
+        <br class="cbt">
+    </div>
+                <div class="bulletin-title">
+                    Debates mais ativos
+                </div>
+                <hr>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <span title="Contagem de votos (a favor - contra)">10</span>
+        </div>
+        <div class="bulletin-item-content">
+            <a href="https://pt.meta.stackoverflow.com/questions/7070/t%c3%adtulo-longo-demais-%c3%a9-aceit%c3%a1vel?cb=1" class="question-hyperlink" data-ga="[&quot;community bulletin board&quot;,&quot;Debates mais ativos&quot;,&quot;https://pt.meta.stackoverflow.com/questions/7070/t%c3%adtulo-longo-demais-%c3%a9-aceit%c3%a1vel&quot;,null,null]">Título longo demais é aceitável?</a>
+        </div>
+        <br class="cbt">
+    </div>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <span title="Contagem de votos (a favor - contra)">12</span>
+        </div>
+        <div class="bulletin-item-content">
+            <a href="https://pt.meta.stackoverflow.com/questions/7075/cl%c3%a1usula-de-arbitragem?cb=1" class="question-hyperlink" data-ga="[&quot;community bulletin board&quot;,&quot;Debates mais ativos&quot;,&quot;https://pt.meta.stackoverflow.com/questions/7075/cl%c3%a1usula-de-arbitragem&quot;,null,null]">Cláusula de arbitragem</a>
+        </div>
+        <br class="cbt">
+    </div>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <span title="Contagem de votos (a favor - contra)">5</span>
+        </div>
+        <div class="bulletin-item-content">
+            <a href="https://pt.meta.stackoverflow.com/questions/7090/filtrar-a-fila-de-an%c3%a1lises-por-tag?cb=1" class="question-hyperlink" data-ga="[&quot;community bulletin board&quot;,&quot;Debates mais ativos&quot;,&quot;https://pt.meta.stackoverflow.com/questions/7090/filtrar-a-fila-de-an%c3%a1lises-por-tag&quot;,null,null]">Filtrar a fila de análises por tag?</a>
+        </div>
+        <br class="cbt">
+    </div>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <span title="Contagem de votos (a favor - contra)">4</span>
+        </div>
+        <div class="bulletin-item-content">
+            <a href="https://pt.meta.stackoverflow.com/questions/7092/responder-com-chute-e-depois-remover-a-resposta-caso-n%c3%a3o-atenda?cb=1" class="question-hyperlink" data-ga="[&quot;community bulletin board&quot;,&quot;Debates mais ativos&quot;,&quot;https://pt.meta.stackoverflow.com/questions/7092/responder-com-chute-e-depois-remover-a-resposta-caso-n%c3%a3o-atenda&quot;,null,null]">Responder com “chute” e depois remover a resposta caso não atenda</a>
+        </div>
+        <br class="cbt">
+    </div>
+    </div>
+</div>
+            
+<div id="dfp-tsb" class="everyonelovesstackoverflow everyoneloves__top-sidebar" style="" data-google-query-id="COa7wJzrqdsCFdsFrQYdtE4EZQ" data-clc-prefilled="true" data-clc-ready="true"><div id="google_ads_iframe_/248424177/pt.stackoverflow.com/sb/question-pages_0__container__" style="border: 0pt none; display: inline-block; width: 300px; height: 250px;"><iframe frameborder="0" src="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/container.html" id="google_ads_iframe_/248424177/pt.stackoverflow.com/sb/question-pages_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="300" height="250" data-is-safeframe="true" style="border: 0px; vertical-align: bottom;"></iframe></div></div>
+<script>;try{(function(a){function b(a){return'string'==typeof a?document.getElementById(a):a}function c(a){return a=b(a),!!a&&'none'===getComputedStyle(a).display}function d(a){return!c(a)}function e(a){return!!a}function f(a){return /^\s*$/.test(b(a).innerHTML)}function g(a){var b=a.style;b.height=b.maxHeight=b.minHeight='auto',b.display='none',[].forEach.call(a.children,g)}function h(a,b){var c;return function(){return a&&(c=a.call(b||this,arguments),a=null),c}}function i(a){var b=document.createElement('script');b.src=a,document.body.appendChild(b)}function j(a){return k([],a)}function k(a,b){return a.push=function(a){return b(),delete this.push,this.push(a)},a}function l(){try{return!new Function('return async()=>{};')}catch(a){return!0}}function m(){return'undefined'!=typeof googletag&&!!googletag.apiReady}function n(){m()||(googletag={cmd:j(A)})}function o(){var a=document.createElement('div');a.className='adsbox',a.id='clc-abd',a.style.position='absolute',a.style.pointerEvents='none',a.innerHTML='&nbsp;',document.body.appendChild(a)}function p(a){var b=a.serviceName,c=a.slot,d=a.lineItemId;try{var e=c.getSlotElementId(),f=[];e||f.push('id=0');var h=document.getElementById(e);if(!e||h?h.hasAttribute('data-clc-stalled')&&f.push('st=1'):f.push('el=0'),0!==f.length)return void B(f.join('&'));-1===x.dh.indexOf(d)?h.setAttribute('data-clc-prefilled','true'):g(h),h.setAttribute('data-clc-ready','true')}catch(a){var i=document.querySelector('#dfp-tsb, #dfp-isb, #clc-tsb');i&&i.setAttribute('data-clc-ready','true'),B('e=1')}}function q(){return Object.keys(F.ids)}function r(a){var b=F.ids[a],c=F.slots[b];'function'==typeof c&&(c=c(a));return{path:'/'+C+'/'+E+'/'+b+'/'+D,sizes:c,zone:b}}function s(a){if(!!clc.collapse)return clc.collapse[a];return'lb'!==a&&'mlb'!==a||!!clc.collapse_leaderboards}function t(a,b){'dfp-isb'===a&&b.setTargeting('Sidebar',['Inline']),'dfp-tsb'===a&&b.setTargeting('Sidebar',['Right']);var c=r(a),d=c.path,e=c.sizes,f=c.zone,g=googletag.defineSlot(d,e,a);s(f)&&g.setCollapseEmptyDiv(!0,!0),g.addService(b),!1}function u(b){var c=a.dfp&&a.dfp.targeting||{};Object.keys(c).forEach(function(a){b.setTargeting(a,c[a])})}function v(a){var g=a.map(b).filter(e);return{eligible:g.filter(f).filter(d).map(function(a){return a.id}),ineligible:g.filter(c)}}function w(b){if(void 0===b&&(b=q()),!m())return n(),void googletag.cmd.push(function(){return w(b)});var c=v(b),d=c.eligible,e=c.ineligible;if(e.forEach(g),0!==d.length){o(),googletag.destroySlots();var f=googletag.pubads();f.enableSingleRequest(),a.sreEvent||(f.addEventListener('slotRenderEnded',p),a.sreEvent=!0),u(f),d.forEach(function(a){return t(a,f)}),googletag.enableServices(),d.forEach(function(a){googletag.display(a)})}}var x=function(a){for(var b=[],c=1;c<arguments.length;c++)b[c-1]=arguments[c];for(var d,e=0,f=b;e<f.length;e++)for(var g in d=f[e],d)a[g]=d[g];return a}({"lib":"https://cdn.sstatic.net/clc/clc.min.js?v=04d772c81312","style":"https://cdn.sstatic.net/clc/styles/clc.min.css?v=8a0a093a431f","u":"https://clc.stackoverflow.com/markup.js","wa":true,"kt":2000,"tto":true,"h":"clc.stackoverflow.com","allowed":"^(((talent\\.)?stackoverflow)|(blog\\.codinghorror)|(serverfault|askubuntu)|([^\\.]+\\.stackexchange))\\.com$","wv":true,"al":false,"dh":[4385506061,4386578282,4386579572]},a.options||{}),y=h(function(){i(l()?x.lib.replace(/(\.min)?\.js(\?v=[0-9a-fA-F]+)?$/,'.ie$1.js$2'):x.lib)}),z=a.cmd||[];Array.isArray(z)&&(0<z.length?y():k(z,y));var A=h(function(){i('https://www.googletagservices.com/tag/js/gpt.js')}),B=function(a){new Image().src='https://'+x.h+'/stalled.gif?'+a},C='248424177',D=/^\/tags\//.test(location.pathname)||/^\/questions\/tagged\//.test(location.pathname)?'tag-pages':'question-pages',E=location.hostname;var F={slots:{lb:[[728,90]],mlb:[[728,90]],sb:function(a){return'dfp-tsb'===a?[[300,250],[300,600]]:[[300,250]]},"tag-sponsorship":[[730,135]],"mobile-below-question":[[320,50],[300,250]]},ids:{"dfp-tlb":'lb',"dfp-mlb":'mlb',"dfp-tsb":'sb',"dfp-isb":'sb',"dfp-tag":'tag-sponsorship',"dfp-m-aq":'mobile-below-question',"clc-tlb":'lb',"clc-mlb":'mlb',"clc-tsb":'sb'}};(function(){x.al&&z.push(function(){return a.load()})})(),n();a.cmd=z,a.dfp={load:w},a.options=x})(this.clc=this.clc||{})}catch(a){window.console.error(a)}</script>            <script>
+                var clc = clc || {};
+                clc.collapse = { sb: !0,'tag-sponsorship':!0,lb:!0,mlb:!0,'mobile-below-question':!0};
+                                clc.dfp = clc.dfp || {};
+                clc.dfp.targeting = {Registered:['true'],Reputation:['200'],'pt.so-tag':['ubuntu','phpmyadmin']};
+                
+                var googletag = googletag || {};
+                googletag.cmd = googletag.cmd || [];
+                googletag.cmd.push(function () { clc.dfp.load(); });
+            </script>
+            
+
+                <div class="module sidebar-related">
+                    <h4 id="h-related">Relacionado</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/2073?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes answered-accepted default">4</div></a><a href="https://pt.stackoverflow.com/questions/2073/erro-ao-compilar-o-php-5-3-28-utilizando-php-build?rq=1" class="question-hyperlink">Erro ao compilar o php 5.3.28 utilizando php-build</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/7931?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes default">1</div></a><a href="https://pt.stackoverflow.com/questions/7931/problemas-com-o-rewriterule-no-apache-2-22-no-digitalocean-comm?rq=1" class="question-hyperlink">Problemas com o RewriteRule no apache 2.22 (no DigitalOcean.comm)</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/133418?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes default">0</div></a><a href="https://pt.stackoverflow.com/questions/133418/phpmyadmin-erro-error-during-session-start-please-check-your-php-and-or-webser?rq=1" class="question-hyperlink">phpMyAdmin Erro “Error during session start; please check your PHP and/or webserver log file and configure your PHP installation properly.”</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/150176?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes default">1</div></a><a href="https://pt.stackoverflow.com/questions/150176/erro-no-the-mdstring-extension-is-missing?rq=1" class="question-hyperlink">Erro no the mdstring extension is missing</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/158275?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes answered-accepted default">0</div></a><a href="https://pt.stackoverflow.com/questions/158275/problemas-de-conex%c3%a3o-wifi-e-para-instalar-git-no-ubuntu-16-04?rq=1" class="question-hyperlink">Problemas de conexão Wifi e para instalar git no ubuntu 16.04</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/238428?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes default">2</div></a><a href="https://pt.stackoverflow.com/questions/238428/quais-os-passos-para-criar-uma-imagem-de-docker-para-ubuntu-1604-php-5-6-e-apa?rq=1" class="question-hyperlink">Quais os passos para criar uma imagem de Docker para Ubuntu 16:04, php 5.6 e apache (com Composer, xdebug, phpunit, npm e REDIS)?</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/242449?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes answered-accepted default">0</div></a><a href="https://pt.stackoverflow.com/questions/242449/n%c3%a3o-consigo-instalar-o-php-fpm-no-ubuntu?rq=1" class="question-hyperlink">Não consigo instalar o PHP-FPM no Ubuntu</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/248388?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes default">0</div></a><a href="https://pt.stackoverflow.com/questions/248388/como-instalar-o-python-yaml?rq=1" class="question-hyperlink">Como instalar o python-yaml?</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/262371?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes default">0</div></a><a href="https://pt.stackoverflow.com/questions/262371/the-mbstring-extension-is-missing-please-check-your-php-configuration-ubuntu?rq=1" class="question-hyperlink">The mbstring extension is missing. Please check your PHP configuration - Ubuntu</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/276594?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes default">0</div></a><a href="https://pt.stackoverflow.com/questions/276594/problemas-ao-instalar-java-7-no-ubuntu?rq=1" class="question-hyperlink">Problemas ao Instalar Java 7 no Ubuntu</a></div>
+                    </div>
+                </div>
+
+
+
+        </div>
+    </div>
+<script>StackExchange.ready(function(){$.get('/posts/200644/ivc/6bcd');});</script>
+<noscript><div><img src="/posts/200644/ivc/6bcd" class="dno" alt="" width="0" height="0"></div></noscript><div style="display:none" id="prettify-lang"></div></div>
+
+
+        </div>
+    </div><script src="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/gpt.js"></script>
+
+    <footer id="footer" class="site-footer js-footer" role="contentinfo">
+        <div class="site-footer--container">
+            
+            <nav class="site-footer--nav">
+                    <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+                        <h5 class="-title"><a href="https://pt.stackoverflow.com/">Stack Overflow em Português</a></h5>
+                        <ul class="-list js-primary-footer-links">
+                                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 2 })" href="https://pt.stackoverflow.com/tour">Tour</a></li>
+                                <li class="-item"><a href="https://pt.stackoverflow.com/help" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 3 })">Ajuda</a></li>
+                                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 5 })" href="https://chat.stackexchange.com/?tab=site&amp;host=pt.stackoverflow.com">Chat</a></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 13 })" href="https://pt.stackoverflow.com/contact">Contato</a></li>
+                                <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 14 })" href="https://pt.meta.stackoverflow.com/">Feedback</a></li>
+                                                            <li class="-item"><a onclick="StackExchange.switchMobile(&quot;on&quot;)" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 12 })">Móvel</a></li>
+                        </ul>
+                    </div>
+                <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+                    <h5 class="-title"><a class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">Empresa</a></h5>
+                    <ul class="-list">
+                                                    <li class="-item"><a href="https://stackoverflow.com/" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 15})">Stack Overflow</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 19 })">Stack Overflow Business</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 17})">Developer Jobs</a></li>
+                                <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">Sobre</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 27 })" href="https://stackoverflow.com/company/press">Imprensa</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 7 })" href="https://stackoverflow.com/legal">Legal</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 8 })" href="https://stackoverflow.com/legal/privacy-policy">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="site-footer--col site-footer--categories-nav site-footer--col__visible">
+                    <a href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#" class="site-footer--back js-footer-back"><svg aria-hidden="true" class="svg-icon iconArrowLeftAlt" width="18" height="18" viewBox="0 0 18 18"><path d="M10.58 16L12 14.59 6.4 9 12 3.41 10.57 2l-7 7z"></path></svg></a>
+                    <div>
+                        <h5 class="-title"><a href="https://stackexchange.com/">Stack Exchange<br> Network</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Technology">Technology</a></li>
+                            <li class="-item"><a href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Life / Arts">Life / Arts</a></li>
+                            <li class="-item"><a href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Culture / Recreation">Culture / Recreation</a></li>
+                            <li class="-item"><a href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Science">Science</a></li>
+                            <li class="-item"><a href="https://pt.stackoverflow.com/questions/200644/the-mbstring-extension-is-missing-please-check-your-php-configuration#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Other">Other</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="site-footer--categories">
+                    <div class="site-footer--col site-footer--category js-footer-col" data-name="Technology">
+        <ul class="-list">
+                <li class="-item"><a href="https://stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                <li class="-item"><a href="https://serverfault.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="system and network administrators">Server Fault</a></li>
+                <li class="-item"><a href="https://superuser.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="computer enthusiasts and power users">Super User</a></li>
+                <li class="-item"><a href="https://webapps.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="power users of web applications">Web Applications</a></li>
+                <li class="-item"><a href="https://askubuntu.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                <li class="-item"><a href="https://webmasters.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="pro webmasters">Webmasters</a></li>
+                <li class="-item"><a href="https://gamedev.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="professional and independent game developers">Game Development</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://tex.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                <li class="-item"><a href="https://softwareengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="professionals, academics, and students working within the systems development life cycle">Software Engineering</a></li>
+                <li class="-item"><a href="https://unix.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                <li class="-item"><a href="https://apple.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                <li class="-item"><a href="https://wordpress.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="WordPress developers and administrators">WordPress Development</a></li>
+                <li class="-item"><a href="https://gis.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                <li class="-item"><a href="https://electronics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://android.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                <li class="-item"><a href="https://security.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="information security professionals">Information Security</a></li>
+                <li class="-item"><a href="https://dba.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                <li class="-item"><a href="https://drupal.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="Drupal developers and administrators">Drupal Answers</a></li>
+                <li class="-item"><a href="https://sharepoint.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="SharePoint enthusiasts">SharePoint</a></li>
+                <li class="-item"><a href="https://ux.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="user experience researchers and experts">User Experience</a></li>
+                <li class="-item"><a href="https://mathematica.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="users of Wolfram Mathematica">Mathematica</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://salesforce.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                <li class="-item"><a href="https://expressionengine.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                <li class="-item"><a href="https://pt.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="programadores profissionais e entusiastas">Stack Overflow em Português</a></li>
+                <li class="-item"><a href="https://blender.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="people who use Blender to create 3D graphics, animations, or games">Blender</a></li>
+                <li class="-item"><a href="https://networkengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="network engineers">Network Engineering</a></li>
+                <li class="-item"><a href="https://crypto.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="software developers, mathematicians and others interested in cryptography">Cryptography</a></li>
+                <li class="-item"><a href="https://codereview.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="peer programmer code reviews">Code Review</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://magento.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="users of the Magento e-Commerce platform">Magento</a></li>
+                <li class="-item"><a href="https://softwarerecs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="people seeking specific software recommendations">Software Recommendations</a></li>
+                <li class="-item"><a href="https://dsp.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="practitioners of the art and science of signal, image and video processing">Signal Processing</a></li>
+                <li class="-item"><a href="https://emacs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="those using, extending or developing Emacs">Emacs</a></li>
+                <li class="-item"><a href="https://raspberrypi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="users and developers of hardware and software for Raspberry Pi">Raspberry Pi</a></li>
+                <li class="-item"><a href="https://ru.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="программистов">Stack Overflow на русском</a></li>
+                <li class="-item"><a href="https://codegolf.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="programming puzzle enthusiasts and code golfers">Programming Puzzles &amp; Code Golf</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://es.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="programadores y profesionales de la informática">Stack Overflow en español</a></li>
+                <li class="-item"><a href="https://ethereum.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="users of Ethereum, the decentralized application platform and smart contract enabled blockchain">Ethereum</a></li>
+                <li class="-item"><a href="https://datascience.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="Data science professionals, Machine Learning specialists, and those interested in learning more about the field">Data Science</a></li>
+                <li class="-item"><a href="https://arduino.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="developers of open-source hardware and software that is compatible with Arduino">Arduino</a></li>
+                <li class="-item"><a href="https://bitcoin.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="Bitcoin crypto-currency enthusiasts">Bitcoin</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#technology" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 26 })">
+                        <strong>
+                            more (29)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Life / Arts">
+        <ul class="-list">
+                <li class="-item"><a href="https://photo.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                <li class="-item"><a href="https://scifi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                <li class="-item"><a href="https://graphicdesign.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                <li class="-item"><a href="https://movies.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                <li class="-item"><a href="https://music.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="musicians, students, and enthusiasts">Music: Practice &amp; Theory</a></li>
+                <li class="-item"><a href="https://worldbuilding.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="writers/artists using science, geography and culture to construct imaginary worlds and settings">Worldbuilding</a></li>
+                <li class="-item"><a href="https://cooking.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Life / Arts"><ul class="-list">
+                <li class="-item"><a href="https://diy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="contractors and serious DIYers">Home Improvement</a></li>
+                <li class="-item"><a href="https://money.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                <li class="-item"><a href="https://academia.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="academics and those enrolled in higher education">Academia</a></li>
+                <li class="-item"><a href="https://law.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="legal professionals, students, and others with experience or interest in law">Law</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#lifearts" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 26 })">
+                        <strong>
+                            more (15)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Culture / Recreation">
+        <ul class="-list">
+                <li class="-item"><a href="https://english.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                <li class="-item"><a href="https://skeptics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="scientific skepticism">Skeptics</a></li>
+                <li class="-item"><a href="https://judaism.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                <li class="-item"><a href="https://travel.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="road warriors and seasoned travelers">Travel</a></li>
+                <li class="-item"><a href="https://christianity.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                <li class="-item"><a href="https://ell.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="speakers of other languages learning English">English Language Learners</a></li>
+                <li class="-item"><a href="https://japanese.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">Japanese Language</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Culture / Recreation"><ul class="-list">
+                <li class="-item"><a href="https://gaming.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                <li class="-item"><a href="https://bicycles.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                <li class="-item"><a href="https://rpg.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                <li class="-item"><a href="https://anime.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="anime and manga fans">Anime &amp; Manga</a></li>
+                <li class="-item"><a href="https://puzzling.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="those who create, solve, and study puzzles">Puzzling</a></li>
+                <li class="-item"><a href="https://mechanics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles">Motor Vehicle Maintenance &amp; Repair</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#culturerecreation" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 26 })">
+                        <strong>
+                            more (33)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Science">
+        <ul class="-list">
+                <li class="-item"><a href="https://mathoverflow.net/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="professional mathematicians">MathOverflow</a></li>
+                <li class="-item"><a href="https://math.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                <li class="-item"><a href="https://stats.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                <li class="-item"><a href="https://cstheory.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                <li class="-item"><a href="https://physics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="active researchers, academics and students of physics">Physics</a></li>
+                <li class="-item"><a href="https://chemistry.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="scientists, academics, teachers and students">Chemistry</a></li>
+                <li class="-item"><a href="https://biology.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="biology researchers, academics, and students">Biology</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Science"><ul class="-list">
+                <li class="-item"><a href="https://cs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="students, researchers and practitioners of computer science">Computer Science</a></li>
+                <li class="-item"><a href="https://philosophy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="those interested in the study of the fundamental nature of knowledge, reality, and existence">Philosophy</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#science" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 26 })">
+                        <strong>
+                            more (10)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Other">
+        <ul class="-list">
+                <li class="-item"><a href="https://meta.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                <li class="-item"><a href="https://stackapps.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                <li class="-item"><a href="https://api.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="programmatic interaction with Stack Exchange sites">API</a></li>
+                <li class="-item"><a href="https://data.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="querying Stack Exchange data using SQL">Data</a></li>
+                <li class="-item"><a href="https://area51.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 27, link: 25 })" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                    </ul>
+    </div>
+                </div>
+            </nav>
+            <div class="site-footer--copyright fs-fine">
+                <ul class="-list">
+                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link:4 })" href="https://stackoverflow.blog/?blb=1">Blog</a></li>
+                    <li class="-item"><a href="https://www.facebook.com/officialstackoverflow/" class="-link">Facebook</a></li>
+                    <li class="-item"><a href="https://twitter.com/stackoverflow" class="-link">Twitter</a></li>
+                    <li class="-item"><a href="https://linkedin.com/company/stack-overflow" class="-link">LinkedIn</a></li>
+                </ul>
+
+                <p class="mt-auto mb24">
+site design / logo © 2018 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a>
+                            with <a href="https://stackoverflow.blog/2009/06/25/attribution-required/" rel="license">attribution required</a>.
+                    <span id="svnrev">rev&nbsp;2018.5.28.30533</span>
+                </p>
+            </div>
+        </div>
+
+            </footer>
+    <noscript>
+        <div id="noscript-warning">Stack Overflow em Portugu&#234;s funciona melhor com o JavaScript ativado
+        </div>
+    </noscript>
+
+<script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+            StackExchange.ready(function () {
+
+                StackExchange.ga.init({
+                    sendTitles: true,
+                    tracker: window.ga,
+                    trackingCodes: [
+                        'UA-108242619-5'
+                    ]
+                });
+
+                    StackExchange.ga.setDimension('dimension1', '6769346');
+
+
+                    StackExchange.ga.setDimension('dimension2', '|ubuntu|phpmyadmin|');
+
+                    StackExchange.ga.setDimension('dimension3', 'Questions/Show');
+
+
+                StackExchange.ga.trackPageView();
+            });
+            
+/**/
+            
+            var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+            (function() {
+                var ssl = 'https:' == document.location.protocol,
+                    s = document.getElementsByTagName('script')[0],
+                    qc = document.createElement('script');
+                 qc.async = true;
+                    qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                    s.parentNode.insertBefore(qc, s);
+                    _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+/**/
+                 var sc = document.createElement('script');
+                    sc.async = true;
+                    sc.src = (ssl ? 'https://sb' : 'http://b') + '.scorecardresearch.com/beacon.js';
+                    s.parentNode.insertBefore(sc, s);
+                    _comscore.push({ c1: "2", c2: "17440561" });
+            })();
+            
+
+</script>
+            
+    
+    
+<div class="adsbox" id="clc-abd" style="position: absolute; pointer-events: none;">&nbsp;</div><iframe id="google_osd_static_frame_5090601578714" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./ubuntu - The mbstring extension is missing. Please check your PHP configuration - Stack Overflow em Português_files/saved_resource.html"></iframe></body></html>
