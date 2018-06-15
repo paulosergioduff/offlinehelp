@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="pt-br"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Instalando o Doctrine ORM - Como criar um CRUD com PHP Artigo - WebDevBr</title>
+        <link href="https://www.webdevbr.com.br/favicon.ico" type="image/x-icon" rel="icon">
+    <link href="https://www.webdevbr.com.br/favicon.ico" type="image/x-icon" rel="shortcut icon">
+
+    <meta name="copyright" content="WebDevBr">
+    <meta name="robots" content="index,follow">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.webdevbr.com.br/feed.rss">
+    <meta name="google-site-verification" content="rQyjZXhUw9IzkVtEGMvQR7lZwJbRx7xrqKQ_WQz9iVg">
+    <meta name="generator" content="WebDevBr">
+    <meta name="description" content="ORM ou Object Relational Mapping é a design pattern maravilhosa para se trabalhar com bancos de dados relacionais como é o MySql, por exemplo.A real vantagem do Doctrine ORM é que ele cria uma cópia d">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Instalando o Doctrine ORM - Como criar um CRUD com PHP Artigo - WebDevBr">
+    <meta property="og:url" content="https://www.webdevbr.com.br/instalando-o-doctrine-orm-como-criar-um-crud-com-php">
+    <meta property="og:site_name" content="WebDevBr - Cursos e Treinamentos de PHP e Javascript">
+    <link rel="canonical" href="https://www.webdevbr.com.br/instalando-o-doctrine-orm-como-criar-um-crud-com-php">
+
+    <link href="Instalando%20o%20Doctrine%20ORM%20-%20Como%20criar%20um%20CRUD%20com%20PHP%20Artigo%20-%20WebDevBr_arquivos/css.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="Instalando%20o%20Doctrine%20ORM%20-%20Como%20criar%20um%20CRUD%20com%20PHP%20Artigo%20-%20WebDevBr_arquivos/rrssb.css">
+    <style>
+        .rrssb-buttons li.small a .rrssb-icon {
+            max-width: 24px;
+        }
+    </style>
+    <!--Rastreamento-->
+        <!-- Facebook Conversion Code for Conclusões de compra - Erik Figueiredo 1 -->
+        <!-- Facebook Conversion Code for Visita WebDevBr -->
+        <script async="" src="Instalando%20o%20Doctrine%20ORM%20-%20Como%20criar%20um%20CRUD%20com%20PHP%20Artigo%20-%20WebDevBr_arquivos/analytics.js"></script><script async="" src="Instalando%20o%20Doctrine%20ORM%20-%20Como%20criar%20um%20CRUD%20com%20PHP%20Artigo%20-%20WebDevBr_arquivos/fbds.js"></script><script>(function() {
+          var _fbq = window._fbq || (window._fbq = []);
+          if (!_fbq.loaded) {
+            var fbds = document.createElement('script');
+            fbds.async = true;
+            fbds.src = 'https://connect.facebook.net/en_US/fbds.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(fbds, s);
+            _fbq.loaded = true;
+          }
+        })();
+        window._fbq = window._fbq || [];
+        window._fbq.push(['track', '6021418467051', {'value':'0.00','currency':'BRL'}]);
+        </script>
+        <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6021418467051&amp;cd[value]=0.00&amp;cd[currency]=BRL&amp;noscript=1" /></noscript>
+            <!--FimRastreament-->
+    <script></script>
+    <link rel="stylesheet" href="Instalando%20o%20Doctrine%20ORM%20-%20Como%20criar%20um%20CRUD%20com%20PHP%20Artigo%20-%20WebDevBr_arquivos/app.css">    <link rel="stylesheet" href="Instalando%20o%20Doctrine%20ORM%20-%20Como%20criar%20um%20CRUD%20com%20PHP%20Artigo%20-%20WebDevBr_arquivos/prism.css">
+</head>
+<body>
+    <header id="top">
+        <section>
+	<nav class="navbar navbar-inverse navbar-static-top">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Ver menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    			<ul class="nav navbar-nav navbar-right">
+    				    					<li><a href="https://www.webdevbr.com.br/acesso/login">Cadastro/Login</a></li>
+    				                    <li class="slack dropdown">
+                        <a href="" id="slack-btn" data-toggle="modal" data-target="#slackModal"><span class="label label-danger"><big>Slack!</big></span><span id="float-slack" style="display: none;"><img src="Instalando%20o%20Doctrine%20ORM%20-%20Como%20criar%20um%20CRUD%20com%20PHP%20Artigo%20-%20WebDevBr_arquivos/float-slack.png" alt=""></span></a>
+                                            </li>
+        			<li><a href="https://www.webdevbr.com.br/aulas"><span class="label label-primary"><big><span class="glyphicon glyphicon-education"></span> Estudar!</big></span></a></li>
+        			    			</ul>
+                <ul class="nav navbar-nav navbar-right visible-xs">
+                    <li class="active"><a href="https://www.webdevbr.com.br/">Início</a></li>
+
+                    <li><a href="https://www.webdevbr.com.br/php"> PHP</a></li><li><a href="https://www.webdevbr.com.br/frameworks">- Frameworks</a></li><li><a href="https://www.webdevbr.com.br/cakephp">-- CakePHP</a></li><li><a href="https://www.webdevbr.com.br/laravel">-- Laravel</a></li><li><a href="https://www.webdevbr.com.br/zend-framework">-- Zend Framework</a></li><li><a href="https://www.webdevbr.com.br/boas-praticas">- Boas práticas</a></li><li><a href="https://www.webdevbr.com.br/resfult">-- RESTful</a></li><li><a href="https://www.webdevbr.com.br/javascript"> JavaScript</a></li><li><a href="https://www.webdevbr.com.br/angularjs">- AngularJs</a></li><li><a href="https://www.webdevbr.com.br/ionic-framework">- Ionic Framework</a></li>
+                    <li><a href="https://www.webdevbr.com.br/gratis">Grátis</a></li>
+                    <li><a href="https://www.webdevbr.com.br/blog">Blog</a></li>
+                    <li><a href="https://www.webdevbr.com.br/mvc-e-php-entendendo-o-padrao-na-pratica-criando-um-framework-php">Série MVC</a></li>
+                    <li><a href="https://www.webdevbr.com.br/manual-do-type-script">Série Manual do TypeScript</a></li>
+                    <li><a href="https://www.webdevbr.com.br/padroes-de-projeto-no-php">Série Padrões de Projeto no PHP</a></li>
+                    
+                </ul>
+            </div>
+		
+	</nav>
+	<div class="container content">
+		<div class="row row-1">
+			<a class="" href="https://www.webdevbr.com.br/">
+				<img alt="Brand" src="Instalando%20o%20Doctrine%20ORM%20-%20Como%20criar%20um%20CRUD%20com%20PHP%20Artigo%20-%20WebDevBr_arquivos/logo.png">
+			</a>
+		</div>
+		<div class="visible-md visible-lg visible-sm">
+			<nav>
+				<ul class="nav nav-pills nav-dark">
+					<li class="active"><a href="https://www.webdevbr.com.br/">Início</a></li>
+
+					<li><a href="https://www.webdevbr.com.br/php">PHP</a><ul class="nav nav-pills nav-dark depth-0"><li><a href="https://www.webdevbr.com.br/frameworks">Frameworks</a><ul class="nav nav-pills nav-dark depth-1"><li><a href="https://www.webdevbr.com.br/cakephp">CakePHP</a></li><li><a href="https://www.webdevbr.com.br/laravel">Laravel</a></li><li><a href="https://www.webdevbr.com.br/zend-framework">Zend Framework</a></li></ul></li><li><a href="https://www.webdevbr.com.br/boas-praticas">Boas práticas</a><ul class="nav nav-pills nav-dark depth-1"><li><a href="https://www.webdevbr.com.br/resfult">RESTful</a></li></ul></li></ul></li><li><a href="https://www.webdevbr.com.br/javascript">JavaScript</a><ul class="nav nav-pills nav-dark depth-0"><li><a href="https://www.webdevbr.com.br/angularjs">AngularJs</a></li><li><a href="https://www.webdevbr.com.br/ionic-framework">Ionic Framework</a></li></ul></li>
+					<li><a href="https://www.webdevbr.com.br/gratis">Grátis</a></li>
+					<li>
+                        <a href="https://www.webdevbr.com.br/blog">Blog</a>
+                        <ul class="nav nav-pills nav-dark depth-0">
+                        <li>
+                            <a href="https://www.webdevbr.com.br/blog">Todos os artigos</a>
+                            <ul class="nav nav-pills nav-dark depth-1">
+                                <li><a href="https://www.webdevbr.com.br/mvc-e-php-entendendo-o-padrao-na-pratica-criando-um-framework-php">Série MVC</a></li>
+                                <li><a href="https://www.webdevbr.com.br/manual-do-type-script">Série Manual do TypeScript</a></li>
+                                <li><a href="https://www.webdevbr.com.br/padroes-de-projeto-no-php">Série Padrões de Projeto no PHP</a></li>
+                            </ul>
+                        </li>
+                        </ul>
+                    </li>
+					<li><a href="https://www.webdevbr.com.br/contato">Contato</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</section>
+    </header>
+    <main>
+        <section id="content">
+            <header id="highlight">
+                	<div class="title title-dark" style="display: table; width: 100%; line-height: initial; height: 200px">
+        <div style="display: table-cell; vertical-align: middle; width: 100%; margin: 0 auto;">
+    		<div class="container">
+    			<h1>Instalando o Doctrine ORM - Como criar um CRUD com PHP <small>Artigo</small></h1>
+    		</div>
+    	</div>
+    </div>
+    <div class="title title-dark" style="background-color:#27ae60; height: auto; min-height: 66px;">
+        <div class="container text-center">
+            <h3>Conheça os cursos gratuitos do WebDevBr! - <a href="https://www.webdevbr.com.br/aulas#/cursos" class="btn btn-dark btn-lg">Inscreva-se!</a></h3>
+        </div>
+    </div>
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <ul class="nav navbar-nav navbar-right">
+                <!--<li class="active"><a href="">Teste de conhecimento</a></li>-->
+                <li><p class="navbar-text">Pesquisa:</p>
+                    <form class="navbar-form navbar-left" role="search" action="/busca">
+                        <div class="form-group">
+                          <input name="term" class="form-control" placeholder="Pesquisa..." type="text">
+                        </div>
+                        <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-search"></span></button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+            </header>
+            <div class="container">
+                                <div class="article">
+	<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+          <div class="share">
+    <ul class="rrssb-buttons clearfix rrssb-1">
+      <li class="rrssb-facebook" style="width: calc(100% - 84px);" data-initwidth="33.333333333333336" data-size="86">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.webdevbr.com.br/instalando-o-doctrine-orm-como-criar-um-crud-com-php" class="popup">
+          <span class="rrssb-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" width="29" height="29" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z" class="cls-2" fill-rule="evenodd"></path></svg>
+          </span>
+          <span class="rrssb-text">compartilhar</span>
+        </a>
+      </li>
+      <li class="rrssb-googleplus small" style="width: 42px;" data-initwidth="33.333333333333336" data-size="51">
+        <!-- Replace href with your meta and URL information.  -->
+        <a href="https://plus.google.com/share?url=https://www.webdevbr.com.br/instalando-o-doctrine-orm-como-criar-um-crud-com-php" class="popup">
+          <span class="rrssb-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"></path></svg>            </span>
+          <span class="rrssb-text">google+</span>
+        </a>
+      </li>
+      <li class="rrssb-twitter small" style="width: 42px;" data-initwidth="33.333333333333336" data-size="47">
+        <a href="https://twitter.com/intent/tweet?text=Recomendo:%20Instalando%20o%20Doctrine%20ORM%20-%20Como%20criar%20um%20CRUD%20com%20PHP%20https://www.webdevbr.com.br/instalando-o-doctrine-orm-como-criar-um-crud-com-php%20@erikfig%20#WebDevBr" class="popup">
+          <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"></path></svg></span>
+          <span class="rrssb-text">twitter</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+    </div>
+    <div class="col-md-12">
+        <hr>
+        <center><small>Este artigo foi publicado a 3 anos, 3 meses, 2 semanas, 6 dias atrás.</small></center>
+        <hr>
+    </div>
+  </div>
+		<div class="article-content">
+		<p>ORM ou Object Relational Mapping é a design pattern maravilhosa 
+para se trabalhar com bancos de dados relacionais como é o MySql, por 
+exemplo.</p>
+
+<p>A real vantagem do Doctrine ORM é que ele cria uma cópia do seu banco
+ de dados em forma de objetos, cada tabela tem a sua própria classe PHP e
+ cada campo é uma variável. Esse conceito é chamado de entidade, ou 
+seja, cada objeto (classe) é uma entidade do Doctrine ORM que pode ser 
+usada para gerar o seu banco de dados completo, O Doctrine ORM dispensa o
+ uso de classes para disponibilizar o banco de dados, ele é o model e o 
+migration da sua aplicação.</p>
+
+<p>Olhando por outro angulo, cada entidade é também um registro no 
+banco, cada vez que criamos um novo objeto e preenchemos seus atributos 
+(variáveis) com dados estamos na verdade trabalhando com um registro no 
+banco de dado, na sequência apenas dizemos ao Doctrine para realizar a 
+ação final (rodar o comando SQL), esta tarefa é o flush.</p>
+<div class="alert alert-success">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+  <h3>Gostou deste artigo?</h3>
+  <p>Receba atualizações semanais com novos artigos do WebDevBr e outras dicas!</p>
+
+  <form action="https://webdevbr.us11.list-manage.com/subscribe/post" method="POST">
+    <input name="u" value="4317b163878d6296c93ff715c" type="hidden">
+    <input name="id" value="0475efc612" type="hidden">
+    <div class="form-group">
+      <input class="form-control" placeholder="Nome" name="MERGE1" size="25" type="text">
+    </div>
+    <div class="form-group">
+      <input class="form-control" placeholder="Email" autocapitalize="off" autocorrect="off" name="MERGE0" size="25" type="email">
+    </div>
+    <div style="display:none">
+    <input name="b_4317b163878d6296c93ff715c_0475efc612" tabindex="-1" type="text">
+    </div>
+    <button type="submit" class="btn btn-danger" name="submit">Cadastrar</button>
+  </form>
+</div>
+
+
+<p>Essa integração com ORM é perfeita para quem trabalha com Orientação a
+ Objetos, você trata o banco como objeto PHP, não precisa se preocupar 
+com nenhuma linha de SQL e se você perder o caminho, um simples var_dump
+ te ajuda, afinal é tudo PHP, né?</p>
+
+<h3>Baixando o Doctrine ORM</h3>
+
+<p>De primeira já digo, vamos usar o Composer, então se você não sabe usar, visite este link primeiro.</p>
+
+<p>A linha pra baixar o Doctrine ORM é:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php"><span class="token string">"doctrine/orm"</span><span class="token punctuation">:</span> <span class="token string">"2.4.*"</span>
+<span class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>Vou também alterar o local dos comando de console (config) pra ficar 
+fácil mais pra frente e setar o diretório do projeto (autoload), nosso 
+composer.json completo fica assim:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php"><span class="token punctuation">{</span>
+    <span class="token string">"require"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"doctrine/orm"</span><span class="token punctuation">:</span> <span class="token string">"2.4.*"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">"autoload"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"psr-0"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            <span class="token string">"WebDevBr"</span><span class="token punctuation">:</span> <span class="token string">"src"</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">"config"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"bin-dir"</span><span class="token punctuation">:</span> <span class="token string">"./bin"</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Depois que você rodar o Composer e instalar tudo, precisamos 
+configurar nossa conexão com o banco e o "console" (muito, muito, muito *
+ 3 útil).</p>
+
+<h3>Conectando ao banco de dados</h3>
+
+<p>Pra conectar ao banco de dados precisamos passar dois parâmetros, um 
+"isDevMode" que informa se estamos em modo de desenvolvimento ou não e 
+um array com os dados de conexão. Também precisamos configurar o nosso 
+entity manager, ou gerenciador de entidades, pra isso precisamos apenas 
+dizer aonde nossas entidades estão.</p>
+
+<p>Veja como fica nosso arquivo de configuração do Doctrine:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php"><span class="token delimiter">&lt;?php</span>
+<span class="token comment" spellcheck="true">// bootstrap.php</span>
+<span class="token keyword">require_once</span> <span class="token string">"vendor/autoload.php"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">use</span> <span class="token package">Doctrine<span class="token punctuation">\</span>ORM<span class="token punctuation">\</span>Tools<span class="token punctuation">\</span>Setup</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">Doctrine<span class="token punctuation">\</span>ORM<span class="token punctuation">\</span>EntityManager</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Diretório aonde vou guardar as entidades</span>
+<span class="token variable">$paths</span> <span class="token operator">=</span> <span class="token keyword">array</span><span class="token punctuation">(</span><span class="token string">"./src/App/Entities"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$isDevMode</span> <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Dados da conexão</span>
+<span class="token variable">$dbParams</span> <span class="token operator">=</span> <span class="token keyword">array</span><span class="token punctuation">(</span>
+    <span class="token string">'driver'</span>   <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'pdo_mysql'</span><span class="token punctuation">,</span>
+    <span class="token string">'user'</span>     <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'root'</span><span class="token punctuation">,</span>
+    <span class="token string">'password'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    <span class="token string">'dbname'</span>   <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'foo'</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$config</span> <span class="token operator">=</span> Setup<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">createAnnotationMetadataConfiguration</span><span class="token punctuation">(</span><span class="token variable">$paths</span><span class="token punctuation">,</span> <span class="token variable">$isDevMode</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$entityManager</span> <span class="token operator">=</span> EntityManager<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token variable">$dbParams</span><span class="token punctuation">,</span> <span class="token variable">$config</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Veja que temos a variável $entityManager no final, ela vai ser 
+responsável por fazer todos os tramites entre o PHP OOP e o MySql, em 
+outras palavras ela vai ser responsável por inerir, cadastrar, 
+requisitar e deletar dados do banco. Vou nomear este arquivo de 
+bootstrap.php</p>
+
+<h3>Configurando o console</h3>
+
+<p>Agora que já temos nosso Doctrine configurado vou passar estes dados 
+para o "console", pra isso criamos um novo arquivo chamado 
+cli-config.php</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php"><span class="token delimiter">&lt;?php</span>
+<span class="token keyword">use</span> <span class="token package">Doctrine<span class="token punctuation">\</span>ORM<span class="token punctuation">\</span>Tools<span class="token punctuation">\</span>Console<span class="token punctuation">\</span>ConsoleRunner</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Aqui é carrego o arquivo que criamos antes</span>
+<span class="token keyword">require_once</span> <span class="token string">'bootstrap.php'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">return</span> ConsoleRunner<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">createHelperSet</span><span class="token punctuation">(</span><span class="token variable">$entityManager</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3>Facilitando ainda mais</h3>
+
+<p>Fácil né, são poucas linhas de código, mas mesmo assim ainda posso 
+simplificar mais, então eu criei um package com estas configurações 
+prontas e que já instala o Doctrine ORM também, assim fica mais fácil.</p>
+
+<p>Pra instalar chame esta linha no require do Composer ao invés da do Doctrine:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php"><span class="token string">"webdevbr/doctrine"</span><span class="token punctuation">:</span> <span class="token string">"1.0.0"</span>
+<span class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>E o composer.json ficaria:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php"><span class="token punctuation">{</span>
+    <span class="token string">"require"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"webdevbr/doctrine"</span><span class="token punctuation">:</span> <span class="token string">"1.0.0"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">"autoload"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"psr-0"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            <span class="token string">"WebDevBr"</span><span class="token punctuation">:</span> <span class="token string">"src"</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">"config"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"bin-dir"</span><span class="token punctuation">:</span> <span class="token string">"./bin"</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Pra usar é simples, o bootstrap.php ficaria assim:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php"><span class="token delimiter">&lt;?php</span>
+
+<span class="token keyword">require</span> <span class="token string">'vendor/autoload.php'</span><span class="token punctuation">;</span>
+<span class="token variable">$isDevMode</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token variable">$conn</span> <span class="token operator">=</span> <span class="token keyword">array</span><span class="token punctuation">(</span>
+    <span class="token string">'driver'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'pdo_mysql'</span><span class="token punctuation">,</span>
+    <span class="token string">'user'</span><span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">'root'</span><span class="token punctuation">,</span>
+    <span class="token string">'password'</span><span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">''</span><span class="token punctuation">,</span>
+    <span class="token string">'dbname'</span><span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">'foo'</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$doctrine</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WebDevBr<span class="token punctuation">\</span>Doctrine<span class="token punctuation">\</span>Doctrine</span><span class="token punctuation">(</span><span class="token variable">$conn</span><span class="token punctuation">,</span> <span class="token variable">$isDevMode</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$doctrine</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">setEntitiesDir</span><span class="token punctuation">(</span><span class="token string">'./src/App/Entities'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$entityManager</span> <span class="token operator">=</span> <span class="token variable">$doctrine</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">getEntityManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>E agora você só configura o cli-config.php (se quiser copiar de vendor/WebDevBr/Doctrine/cli-config.php).</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php"><span class="token delimiter">&lt;?php</span>
+
+<span class="token keyword">require_once</span> <span class="token string">'bootstrap.php'</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">Doctrine<span class="token punctuation">\</span>ORM<span class="token punctuation">\</span>Tools<span class="token punctuation">\</span>Console<span class="token punctuation">\</span>ConsoleRunner</span><span class="token punctuation">;</span>
+<span class="token keyword">return</span> ConsoleRunner<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">createHelperSet</span><span class="token punctuation">(</span><span class="token variable">$entityManager</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Very ease, né. No próximo artigo vamos criar uma entidade e criar a 
+tabela no banco sem usar nenhuma outra ferramenta (de banco de dados), 
+só o Doctrine ORM, você pode usar qualquer um dos dois métodos de 
+instalação, o importante é você ter o Entity Manager disponível e o 
+cli-config.php configurado corretamente.</p>
+
+<p>Att. Erik</p>
+<p></p>	</div>
+    <hr>
+        <h3>Cursos relacionados</h3>
+    
+						<ul class="products-grid row">
+		<li class="col-md-3 col-xs-6">
+			<a href="https://www.webdevbr.com.br/curso-loja-virtual-com-cakephp-2" class="img-flip">
+							<img src="Instalando%20o%20Doctrine%20ORM%20-%20Como%20criar%20um%20CRUD%20com%20PHP%20Artigo%20-%20WebDevBr_arquivos/galery_curso-loja-virtual-com--cakephp-2.jpg" alt="" class="img-thumbnail">
+					</a>
+		<h4><a href="https://www.webdevbr.com.br/curso-loja-virtual-com-cakephp-2">Curso Loja Virtual com CakePHP 2</a></h4>
+		<p>R$ 125,00<br>
+			<small>	até 12x R$ 12,55*
+</small>
+		</p>
+		<p>
+												<a href="https://www.webdevbr.com.br/carrinho/add/2" class="btn btn-dark">inscrever-se</a>
+										<a href="https://www.webdevbr.com.br/curso-loja-virtual-com-cakephp-2" class="btn btn-dark">+ detalhes</a>
+		</p>
+		</li>
+    						<li class="col-md-3 col-xs-6">
+			<a href="https://www.webdevbr.com.br/curso-php-praticas-modernas-alem-da-orientacao-a-objetos" class="img-flip">
+							<img src="Instalando%20o%20Doctrine%20ORM%20-%20Como%20criar%20um%20CRUD%20com%20PHP%20Artigo%20-%20WebDevBr_arquivos/galery_php-praticas-modernas.jpg" alt="" class="img-thumbnail">
+					</a>
+		<h4><a href="https://www.webdevbr.com.br/curso-php-praticas-modernas-alem-da-orientacao-a-objetos">Curso PHP Práticas Modernas - Além da Orientação a Objetos</a></h4>
+		<p>R$ 420,00<br>
+			<small>	até 12x R$ 42,17*
+</small>
+		</p>
+		<p>
+												<a href="https://www.webdevbr.com.br/carrinho/add/20" class="btn btn-dark">inscrever-se</a>
+										<a href="https://www.webdevbr.com.br/curso-php-praticas-modernas-alem-da-orientacao-a-objetos" class="btn btn-dark">+ detalhes</a>
+		</p>
+		</li>
+            <div class="clearfix visible-xs-block"></div>
+    						<li class="col-md-3 col-xs-6">
+			<a href="https://www.webdevbr.com.br/curso-laravel-5-1-essencial" class="img-flip">
+							<img src="Instalando%20o%20Doctrine%20ORM%20-%20Como%20criar%20um%20CRUD%20com%20PHP%20Artigo%20-%20WebDevBr_arquivos/galery_curso-laravel-5-1-essencial.jpg" alt="" class="img-thumbnail">
+					</a>
+		<h4><a href="https://www.webdevbr.com.br/curso-laravel-5-1-essencial">Curso Laravel 5.1 Essencial</a></h4>
+		<p>R$ 219,00<br>
+			<small>	até 12x R$ 21,99*
+</small>
+		</p>
+		<p>
+												<a href="https://www.webdevbr.com.br/carrinho/add/19" class="btn btn-dark">inscrever-se</a>
+										<a href="https://www.webdevbr.com.br/curso-laravel-5-1-essencial" class="btn btn-dark">+ detalhes</a>
+		</p>
+		</li>
+    						<li class="col-md-3 col-xs-6">
+			<a href="https://www.webdevbr.com.br/curso-loja-virtual-com-cakephp-3" class="img-flip">
+							<img src="Instalando%20o%20Doctrine%20ORM%20-%20Como%20criar%20um%20CRUD%20com%20PHP%20Artigo%20-%20WebDevBr_arquivos/galery_curso-cakephp-3-loja-virtual-essencial.jpg" alt="" class="img-thumbnail">
+					</a>
+		<h4><a href="https://www.webdevbr.com.br/curso-loja-virtual-com-cakephp-3">Curso Loja Virtual com CakePHP 3</a></h4>
+		<p>R$ 125,00<br>
+			<small>	até 12x R$ 12,55*
+</small>
+		</p>
+		<p>
+												<a href="https://www.webdevbr.com.br/carrinho/add/21" class="btn btn-dark">inscrever-se</a>
+										<a href="https://www.webdevbr.com.br/curso-loja-virtual-com-cakephp-3" class="btn btn-dark">+ detalhes</a>
+		</p>
+		</li>
+            <div class="clearfix visible-xs-block"></div>
+    			</ul>
+		
+    <hr>
+        <aside class="author-bio col-md-12 dark-box">
+	<div class="col-md-12">
+		<img src="Instalando%20o%20Doctrine%20ORM%20-%20Como%20criar%20um%20CRUD%20com%20PHP%20Artigo%20-%20WebDevBr_arquivos/erik-figueiredo.jpg" alt="" class="author-picture">
+		<h3><author>Erik Figueiredo</author></h3>
+        <p>Erik Figueiredo é desenvolvedor web full stack, apaixonado pela profissão e professor/fundador do WebDevBr.</p>
+        <p><a href="https://plus.google.com/+ErikFigueiredoDs?rel=author" class="btn btn-danger">G+</a>
+        <a href="https://br.linkedin.com/in/erikfigueiredo" class="btn btn-success">Linkedin</a>
+        <a href="https://www.facebook.com/erikfigueiredods" class="btn btn-primary">Facebook</a></p>
+    </div>
+</aside>
+</div>
+
+            </div>
+            <div class="container">
+                <p></p><center>* Parcelamento apenas cartão de crédito! Pode haver uma pequena variação no parcelamento em relação a simulações apresentadas!</center><p></p>
+            </div>
+        </section>
+    </main>
+    <footer id="bottom">
+        <nav class="navbar navbar-inverse navbar-static-bottom">
+	<p class="navbar-text">© 2018 - WebDevBr. All Rights Reserved. by: <a href="https://www.erikfigueiredo.com.br/">Erik Figueiredo</a></p>
+</nav>    </footer>
+    <div class="modal fade" id="slackModal" tabindex="-1" role="dialog" aria-labelledby="slackModalLabel">
+      <div class="modal-dialog" id="slack" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title" id="myModalLabel">Participe do Slack do WebDevBr</h4>
+          </div>
+          <div class="modal-body">
+            <p><img src="Instalando%20o%20Doctrine%20ORM%20-%20Como%20criar%20um%20CRUD%20com%20PHP%20Artigo%20-%20WebDevBr_arquivos/slack.png" alt="Slack do WebDevBr" class="img-responsive" width="940"></p>
+            <p>Se você nunca acessou será necessário pegar um convite no formulário logo a baixo.</p>
+            <div class="form-group">
+              <input class="slack-email form-control" placeholder="Seu email..." type="email">
+            </div>
+            <button class="slack-submit btn btn-dark" type="button">Solicitar convite</button>
+            <div class="alert alert-success" style="margin: 0px; display: none;">Verifique seu email</div>
+            <hr>
+            <p>Se você já pegou seu convite e se cadastrou, acesse o Slack usando o botão logo abaixo!</p>
+            <p><a href="https://webdevbrasil.slack.com/" target="_blank" class="btn btn-primary">Ir para o Slack do WebDevBr</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="Instalando%20o%20Doctrine%20ORM%20-%20Como%20criar%20um%20CRUD%20com%20PHP%20Artigo%20-%20WebDevBr_arquivos/jquery-1.js"></script>
+    <script src="Instalando%20o%20Doctrine%20ORM%20-%20Como%20criar%20um%20CRUD%20com%20PHP%20Artigo%20-%20WebDevBr_arquivos/swiper.js"></script>
+    <script src="Instalando%20o%20Doctrine%20ORM%20-%20Como%20criar%20um%20CRUD%20com%20PHP%20Artigo%20-%20WebDevBr_arquivos/bootstrap.js"></script>
+    <script src="Instalando%20o%20Doctrine%20ORM%20-%20Como%20criar%20um%20CRUD%20com%20PHP%20Artigo%20-%20WebDevBr_arquivos/rrssb.js"></script>
+    <script>
+	$('pre code').parent().not('[class*="language-"]').addClass('language-php line-numbers');
+</script>
+<script src="Instalando%20o%20Doctrine%20ORM%20-%20Como%20criar%20um%20CRUD%20com%20PHP%20Artigo%20-%20WebDevBr_arquivos/prism.js"></script>
+<script>
+$('.slack-submit').click(function() {
+    var email = $('.slack-email').val();
+    $.ajax('/slack/invite/'+email)
+        .success(function (data) {
+            $('#slack div.alert').show();
+        });
+});
+
+$('#float-slack').on('mousemove click', function() {
+    $('#float-slack').hide('slow');
+});
+setTimeout(function() {
+    $('#float-slack').hide('slow');
+}, 5000);
+
+$('body').append('<div id="webdevbr-embed"></div>');
+$('a.webdevbr-embed').click(function(){
+    var url = $(this).attr('href');
+    $.ajax({
+        type: "GET",
+        url: "/modal-embed.html",
+        dataType: "html",
+        success: function(data)
+        {
+          $('#webdevbr-embed').html(data);
+          var modal = $('#webdevbr-embed .modal');
+          modal.find('iframe').attr('src', url);
+          modal.modal('show');
+        }
+    });
+
+    return false;
+});
+</script><div id="webdevbr-embed"></div>
+        <!--Start of Zopim Live Chat Script-->
+        <script type="text/javascript">
+         /* window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+          d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+          _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+          $.src="//v2.zopim.com/?3Jkwn5c4fNYTwzekubPwgvFHd8yzoaIK";z.t=+new Date;$.
+          type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+                */
+        </script>
+        <!--End of Zopim Live Chat Script-->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-41359179-4', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+
+
+</body></html>

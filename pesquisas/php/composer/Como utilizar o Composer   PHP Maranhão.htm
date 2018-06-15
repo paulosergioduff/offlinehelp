@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="pt-BR">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="pt-BR">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="pt-BR">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="pt-BR"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>Como utilizar o Composer | PHP Maranhão</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="stylesheet" type="text/css" media="all" href="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/style.css">
+<link rel="pingback" href="https://www.phpmaranhao.com.br/xmlrpc.php">
+<!--[if lt IE 9]>
+<script src="https://www.phpmaranhao.com.br/wp-content/themes/phpmaranhao/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+<link rel="alternate" type="application/rss+xml" title="Feed de PHP Maranhão »" href="https://www.phpmaranhao.com.br/feed/">
+<link rel="alternate" type="application/rss+xml" title="PHP Maranhão »  Feed de comentários" href="https://www.phpmaranhao.com.br/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Feed da tag PHP Maranhão » Como utilizar o Composer" href="https://www.phpmaranhao.com.br/tag/como-utilizar-o-composer/feed/">
+		<script id="facebook-jssdk" src="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/all.js"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"https:\/\/www.phpmaranhao.com.br\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4.15"}};
+			!function(a,b,c){function d(a){var c,d,e,f=b.createElement("canvas"),g=f.getContext&&f.getContext("2d"),h=String.fromCharCode;return g&&g.fillText?(g.textBaseline="top",g.font="600 32px Arial","flag"===a?(g.fillText(h(55356,56806,55356,56826),0,0),f.toDataURL().length>3e3):"diversity"===a?(g.fillText(h(55356,57221),0,0),c=g.getImageData(16,16,1,1).data,g.fillText(h(55356,57221,55356,57343),0,0),c=g.getImageData(16,16,1,1).data,e=c[0]+","+c[1]+","+c[2]+","+c[3],d!==e):("simple"===a?g.fillText(h(55357,56835),0,0):g.fillText(h(55356,57135),0,0),0!==g.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag"),unicode8:d("unicode8"),diversity:d("diversity")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag&&c.supports.unicode8&&c.supports.diversity||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/wp-emoji-release.js" type="text/javascript"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="sociablecss-css" href="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/sociable.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-css" href="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/crayon.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-theme-monokai-css" href="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/monokai.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-font-monaco-css" href="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/monaco.css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_image_widget-css" href="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/style_002.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/jetpack.css" type="text/css" media="all">
+<script type="text/javascript" src="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/jquery_002.js"></script>
+<script type="text/javascript" src="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/jquery-migrate.js"></script>
+<script type="text/javascript" src="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/sociable.js"></script>
+<script type="text/javascript" src="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/vuible.js"></script>
+<script type="text/javascript" src="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/addtofavorites.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/www.phpmaranhao.com.br\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Pressione %s para Copiar, %s para Colar","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/crayon.js"></script>
+<link rel="https://api.w.org/" href="https://www.phpmaranhao.com.br/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.phpmaranhao.com.br/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.phpmaranhao.com.br/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.4.15">
+<script type="text/javascript">var base_url_sociable = 'http://www.phpmaranhao.com.br/wp-content/plugins/sociable/'</script><script type="text/javascript" src="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/plusone.js"></script>
+<link rel="dns-prefetch" href="https://jetpack.wordpress.com/">
+<link rel="dns-prefetch" href="https://s0.wp.com/">
+<link rel="dns-prefetch" href="https://s1.wp.com/">
+<link rel="dns-prefetch" href="https://s2.wp.com/">
+<link rel="dns-prefetch" href="https://public-api.wordpress.com/">
+<link rel="dns-prefetch" href="https://0.gravatar.com/">
+<link rel="dns-prefetch" href="https://1.gravatar.com/">
+<link rel="dns-prefetch" href="https://2.gravatar.com/">
+<link rel="dns-prefetch" href="https://widgets.wp.com/">
+<link rel="stylesheet" type="text/css" id="gravatar-card-css" href="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/services.css"><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_customer_chat_bounce_in_v1{animation-duration:250ms;animation-name:fb_bounce_in_v1}.fb_customer_chat_bounce_out_v1{animation-duration:250ms;animation-name:fb_bounce_out_v1}.fb_customer_chat_bounce_in_v2{animation-duration:300ms;animation-name:fb_bounce_in_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2{animation-duration:300ms;animation-name:fb_bounce_out_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_v2_mobile_chat_started{animation-duration:300ms;animation-name:fb_bounce_in_v2_mobile_chat_started;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2_mobile_chat_started{animation-duration:300ms;animation-name:fb_bounce_out_v2_mobile_chat_started;transition-timing-function:ease-in}.fb_customer_chat_bubble_pop_in{animation-duration:250ms;animation-name:fb_customer_chat_bubble_bounce_in_animation}.fb_customer_chat_bubble_animated_no_badge{box-shadow:0 3px 12px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_no_badge:hover{box-shadow:0 5px 24px rgba(0, 0, 0, .3)}.fb_customer_chat_bubble_animated_with_badge{box-shadow:-5px 4px 14px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_with_badge:hover{box-shadow:-5px 8px 24px rgba(0, 0, 0, .2)}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}.fb_mobile_overlay_active{background-color:#fff;height:100%;overflow:hidden;position:fixed;visibility:hidden;width:100%}@keyframes fb_bounce_in_v1{0%{opacity:0;transform:scale(.8, .8);transform-origin:bottom right}80%{opacity:.8;transform:scale(1.03, 1.03)}100%{opacity:1;transform:scale(1, 1)}}@keyframes fb_bounce_in_v2{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}50%{transform:scale(1.03, 1.03);transform-origin:bottom right}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}}@keyframes fb_bounce_in_v2_mobile_chat_started{0%{opacity:0;top:20px}100%{opacity:1;top:0}}@keyframes fb_bounce_out_v1{from{opacity:1}to{opacity:0}}@keyframes fb_bounce_out_v2{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}}@keyframes fb_bounce_out_v2_mobile_chat_started{0%{opacity:1;top:0}100%{opacity:0;top:20px}}@keyframes fb_customer_chat_bubble_bounce_in_animation{0%{bottom:6pt;opacity:0;transform:scale(0, 0);transform-origin:center}70%{bottom:18pt;opacity:1;transform:scale(1.2, 1.2)}100%{transform:scale(1, 1)}}</style></head>
+
+<body class="archive tag tag-como-utilizar-o-composer tag-107 two-column right-sidebar">
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<div id="site-logo"><img src="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/phpma.png" alt="Logo PHP Maranhão"></div>
+			<hgroup>
+				<h1 id="site-title"><span><a href="https://www.phpmaranhao.com.br/" title="PHP Maranhão" rel="home">PHP Maranhão</a></span></h1>
+			</hgroup>
+
+						<a href="https://www.phpmaranhao.com.br/">
+									<img src="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/poco.jpg" alt="" width="1000" height="288">
+							</a>
+						<h2 id="site-description">Profissionais PHP do Maranhão</h2>
+
+								<form method="get" id="searchform" action="https://www.phpmaranhao.com.br/">
+		<label for="s" class="assistive-text">Pesquisa</label>
+		<input class="field" name="s" id="s" placeholder="Pesquisa" type="text">
+		<input class="submit" name="submit" id="searchsubmit" value="Pesquisa" type="submit">
+	</form>
+			
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text">Menu principal</h3>
+								<div class="skip-link"><a class="assistive-text" href="#content" title="Pular para o conteúdo principal">Pular para o conteúdo principal</a></div>
+				<div class="skip-link"><a class="assistive-text" href="#secondary" title="Pular para o conteúdo secundário">Pular para o conteúdo secundário</a></div>
+								<div class="menu-menu-1-container"><ul id="menu-menu-1" class="menu"><li id="menu-item-755" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-755"><a href="http://www.phpmaranhao.com.br/">Home</a></li>
+<li id="menu-item-814" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-814"><a href="https://www.phpmaranhao.com.br/php-ma/">PHP MA?!</a></li>
+<li id="menu-item-763" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-763"><a href="https://www.phpmaranhao.com.br/coordenacao/">Coordenação</a></li>
+<li id="menu-item-758" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-758"><a href="https://www.phpmaranhao.com.br/category/eventos-2/">Eventos</a></li>
+<li id="menu-item-764" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-764"><a href="https://www.phpmaranhao.com.br/comunidades/">Comunidades</a></li>
+<li id="menu-item-757" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-757"><a href="https://www.phpmaranhao.com.br/dicas-criticas-e-sugestoes/">Dicas, Críticas e Sugestões.</a></li>
+<li id="menu-item-831" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-831"><a href="https://www.phpmaranhao.com.br/encontre-um-profissional/">Profissionais</a></li>
+<li id="menu-item-819" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-819"><a href="https://www.phpmaranhao.com.br/store/">Store</a></li>
+</ul></div>			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<section id="primary">
+			<div id="content" role="main">
+
+			
+				<header class="page-header">
+					<h1 class="page-title">Arquivos da Tag: <span>Como utilizar o Composer</span></h1>
+
+									</header>
+
+				
+								
+					
+	<article id="post-511" class="post-511 post type-post status-publish format-standard hentry category-noticias tag-como-utilizar-o-composer tag-composer-no-unix tag-composer-no-windows tag-conhecendo-o-composer tag-iniciando-com-o-composer tag-instalando-o-composer">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="https://www.phpmaranhao.com.br/introducao-ao-composer-parte-2/" title="Link Permanente para Introdução ao Composer { Parte 2 }" rel="bookmark">Introdução ao Composer { Parte 2 }</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Publicado em </span><a href="https://www.phpmaranhao.com.br/introducao-ao-composer-parte-2/" title="02:21" rel="bookmark"><time class="entry-date" datetime="2013-02-24T02:21:48+00:00" pubdate="">24/02/2013</time></a><span class="by-author"> <span class="sep"> por </span> <span class="author vcard"><a class="url fn n" href="https://www.phpmaranhao.com.br/author/nandokstro/" title="Ver todos os posts de nandokstro" rel="author">nandokstro</a></span></span>			</div><!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="https://www.phpmaranhao.com.br/introducao-ao-composer-parte-2/#respond"><span class="leave-reply">Comentar</span></a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Continuando nossos posts sobre o composer… <strong><a title="Introdução ao Composer - Parte 1" href="http://www.phpmaranhao.com.br/introducao-ao-composer-parte-1/" target="_blank">1° Parte</a></strong></p>
+<p><img class="aligncenter" alt="" src="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/logo-composer-transparent.png" width="300" height="356"></p>
+<h1><strong>Instalando o Composer</strong></h1>
+<p><strong>&nbsp;Requerimentos</strong></p>
+<p>O composer requer o php 5.3.2 ou superior para rodar. Algumas 
+configurações a mais serão necessárias com respeito ao php, porém o 
+instalador irá avisar sobre eventuais imcompatibilidades.</p>
+<p>O composer é multiplataforma e é trabalhado para funcionar igualmente nas três plataformas existentes: Windows, Linux e OSX.</p>
+<h1>Instalação nos *nix.</h1>
+<p>Podemos instalar o composer local em um projeto ou de forma global ou seja utiliza-lo para vários projetos.</p>
+<p><strong>Local</strong></p>
+<p>Primeiro precisamos baixa-lo em nosso diretório de trabalho ou projeto.</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5b2395def2a3a694246943" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Alternar números de linha"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Exibir código simples"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Alternar quebras de linha"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Abrir código em nova janela"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="readonly" style="-moz-tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;" wrap="soft">$ curl -sS https://getcomposer.org/installer | php</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table" style="">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5b2395def2a3a694246943-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5b2395def2a3a694246943-1"><span class="crayon-sy">$</span><span class="crayon-h"> </span><span class="crayon-v">curl</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-e">sS </span><span class="crayon-v">https</span><span class="crayon-o">:</span><span class="crayon-c">//getcomposer.org/installer | php</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0010 seconds] -->
+<p>O comando acima irá baixar o composer.phar para o seu diretório de 
+trabalho. O composer.phar é um arquivo binário, a extensão .phar é um 
+extensão de arquivos executáveis php, que podem ser rodadas em linhas de
+ comando, dentre outras coisas.</p>
+<p>Você pode também instalar o composer em um diretório especifico, 
+através do comando –install-dir, depois fornecer um diretório de 
+destino, podendo ser um caminho relativo ou absoluto.</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5b2395def2a46535672616" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Alternar números de linha"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Exibir código simples"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Alternar quebras de linha"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Abrir código em nova janela"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="readonly" style="-moz-tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;" wrap="soft">$ curl -sS https://getcomposer.org/installer | php -- --install-dir=bin</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table" style="">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5b2395def2a46535672616-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5b2395def2a46535672616-1"><span class="crayon-sy">$</span><span class="crayon-h"> </span><span class="crayon-v">curl</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-e">sS </span><span class="crayon-v">https</span><span class="crayon-o">:</span><span class="crayon-c">//getcomposer.org/installer | php -- --install-dir=bin</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0001 seconds] -->
+<p><strong>Global</strong></p>
+<p>Para utilizar o composer de forma global basta que você mova o 
+executável para a pasta de executáveis do sistema unix. Veja abaixo:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5b2395def2a49769504771" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -19px; display: none; z-index: 4;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Alternar números de linha"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Exibir código simples"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Alternar quebras de linha"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Abrir código em nova janela"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="readonly" style="-moz-tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;" wrap="soft">$ curl -sS https://getcomposer.org/installer | php
+$ sudo mv composer.phar /usr/local/bin/composer</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table" style="">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5b2395def2a49769504771-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5b2395def2a49769504771-2">2</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5b2395def2a49769504771-1"><span class="crayon-sy">$</span><span class="crayon-h"> </span><span class="crayon-v">curl</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-e">sS </span><span class="crayon-v">https</span><span class="crayon-o">:</span><span class="crayon-c">//getcomposer.org/installer | php</span></div><div class="crayon-line crayon-striped-line" id="crayon-5b2395def2a49769504771-2"><span class="crayon-sy">$</span><span class="crayon-h"> </span><span class="crayon-e">sudo </span><span class="crayon-e">mv </span><span class="crayon-v">composer</span><span class="crayon-sy">.</span><span class="crayon-v">phar</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-v">usr</span><span class="crayon-o">/</span><span class="crayon-v">local</span><span class="crayon-o">/</span><span class="crayon-v">bin</span><span class="crayon-o">/</span><span class="crayon-v">composer</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0002 seconds] -->
+<p></p>
+<h1>&nbsp;Instalação no Windows</h1>
+<p><strong>Usando o instalador</strong></p>
+<p>Esta maneira é rápida e simples, para se instalar o composer em seu windows.</p>
+<p>Baixe e execute o <a href="https://getcomposer.org/Composer-Setup.exe">Composer-Setup.exe</a>
+ , ele vai instalar a versão mais recente&nbsp; e configurar o path do 
+windows para você, permitindo que você execute o composer em qualquer 
+diretório a partir da linha de comando.</p>
+<p>Para instalação manual no windows <a title="Instalação do Composer no Windows manualmente" href="http://getcomposer.org/doc/00-intro.md#manual-installation" target="_blank">veja aqui</a>.</p>
+<h1>Utilizando o Composer</h1>
+<p>Para mostrar como utilizar o composer na prática nada melhor que 
+indicar alguns bons links e materiais para estudo. Creio que dois serão 
+essenciais:</p>
+<p>Um post mais dissecado de nosso amigo Thiago Belem -&gt; <a title="Blog do Thiago Belem - Utilizando o Composer" href="http://blog.thiagobelem.net/gerenciando-dependencias-com-o-composer/" target="_blank"><strong>Aqui</strong></a></p>
+<p>E um ScreenCast da Code Squad, de nosso amigo Elton Minetto -&gt; <a title="Code Squad - Treinamento de Elite: Utilizando o Composer." href="http://www.code-squad.com/screencast/composer" target="_blank">Aqui</a></p>
+<h1>Conclusão</h1>
+<p>Fiz uma abordagem superficial, basicamente a mesma coisa que esta no get started do <a title="Get Started Composer" href="http://getcomposer.org/doc/00-intro.md" target="_blank">composer</a> não deixe de conferir a <a title="Docs Composer" href="http://getcomposer.org/doc/" target="_blank">documentação</a> para mais informações úteis!</p>
+<blockquote><p>&nbsp;Contribua conosco, deixe seu comentário abaixo, quer seja uma correção, quer seja um acréscimo, contribua!.</p></blockquote>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+												<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">Publicado em</span> <a href="https://www.phpmaranhao.com.br/category/noticias/" rel="category tag">Notícias</a>			</span>
+									<span class="sep"> | </span>
+							<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">Marcado com</span> <a href="https://www.phpmaranhao.com.br/tag/como-utilizar-o-composer/" rel="tag">Como utilizar o Composer</a>, <a href="https://www.phpmaranhao.com.br/tag/composer-no-unix/" rel="tag">Composer no Unix</a>, <a href="https://www.phpmaranhao.com.br/tag/composer-no-windows/" rel="tag">Composer no Windows</a>, <a href="https://www.phpmaranhao.com.br/tag/conhecendo-o-composer/" rel="tag">Conhecendo o composer</a>, <a href="https://www.phpmaranhao.com.br/tag/iniciando-com-o-composer/" rel="tag">Iniciando com o Composer</a>, <a href="https://www.phpmaranhao.com.br/tag/instalando-o-composer/" rel="tag">Instalando o Composer</a>			</span>
+						
+									<span class="sep"> | </span>
+						<span class="comments-link"><a href="https://www.phpmaranhao.com.br/introducao-ao-composer-parte-2/#respond"><span class="leave-reply">Comentar</span></a></span>
+			
+					</footer><!-- #entry-meta -->
+	</article><!-- #post-511 -->
+
+				
+				
+			
+			</div><!-- #content -->
+		</section><!-- #primary -->
+
+		<div id="secondary" class="widget-area" role="complementary">
+			<aside id="image-2" class="widget widget_image"><h3 class="widget-title">5.PHP – Fórum de Profissionais PHP</h3><div class="jetpack-image-container"><a href="http://5php.phpmaranhao.com.br/"><img src="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/logo_escuro.png" alt="5.PHP" title="5.PHP" class="alignnone" width="200" height="77"></a></div>
+</aside><aside id="text-3" class="widget widget_text"><h3 class="widget-title">Curta o PHP MA no Face!! :D</h3>			<div class="textwidget"><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border: medium none;" src="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/mAiQUwlReIP.htm" frameborder="0"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="f1fefb96bd21bc" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" style="display: none;" src="https://web.facebook.com/connect/ping?client_id=397727050278644&amp;domain=www.phpmaranhao.com.br&amp;origin=1&amp;redirect_uri=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2FmAiQUwlReIP.js%3Fversion%3D42%23cb%3Df35ad9d3442150e%26domain%3Dwww.phpmaranhao.com.br%26origin%3Dhttps%253A%252F%252Fwww.phpmaranhao.com.br%252Ff20fdc628a63e14%26relation%3Dparent&amp;response_type=token%2Csigned_request%2Ccode&amp;sdk=joey&amp;version" frameborder="0"></iframe></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=397727050278644";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-like-box fb_iframe_widget" data-href="https://www.facebook.com/DevsWebMaranhao " data-width="250" data-show-faces="true" data-stream="true" data-header="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=397727050278644&amp;container_width=178&amp;header=true&amp;href=https%3A%2F%2Fwww.facebook.com%2FDevsWebMaranhao&amp;locale=pt_BR&amp;sdk=joey&amp;show_faces=true&amp;stream=true&amp;width=250"><span style="vertical-align: bottom; width: 250px; height: 540px;"><iframe name="f28f0d6c2ca4788" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:like_box Facebook Social Plugin" style="border: medium none; visibility: visible; width: 250px; height: 540px;" src="https://web.facebook.com/plugins/like_box.php?app_id=397727050278644&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2FmAiQUwlReIP.js%3Fversion%3D42%23cb%3Df2700f07bc4795c%26domain%3Dwww.phpmaranhao.com.br%26origin%3Dhttps%253A%252F%252Fwww.phpmaranhao.com.br%252Ff20fdc628a63e14%26relation%3Dparent.parent&amp;container_width=178&amp;header=true&amp;href=https%3A%2F%2Fwww.facebook.com%2FDevsWebMaranhao&amp;locale=pt_BR&amp;sdk=joey&amp;show_faces=true&amp;stream=true&amp;width=250" class="" width="250px" height="1000px" frameborder="0"></iframe></span></div></div>
+		</aside><aside id="text-2" class="widget widget_text"><h3 class="widget-title">PHP do Jeito Certo! :-)</h3>			<div class="textwidget"><a href="http://br.phptherightway.com/" target="_blank" title="PHP do Jeito Certo! :-)">
+    <img src="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/rect-180x150.png" alt="PHP: Do Jeito Certo">
+</a></div>
+		</aside><aside id="linkcat-2" class="widget widget_links"><h3 class="widget-title">Lista de Links</h3>
+	<ul class="xoxo blogroll">
+<li><a href="http://goo.gl/NcyJuJ" target="_blank">Lista de discussão</a></li>
+
+	</ul>
+</aside>
+		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h3 class="widget-title">Tópicos recentes</h3>		<ul>
+					<li>
+				<a href="https://www.phpmaranhao.com.br/vem-ai-a-conferencia-php-do-rio-grande-do-sul/">Vêm aí a Conferência PHP do Rio Grande do Sul!!!</a>
+						</li>
+					<li>
+				<a href="https://www.phpmaranhao.com.br/2-phpraia/">2˚ PHPraia! É terça-feira!</a>
+						</li>
+					<li>
+				<a href="https://www.phpmaranhao.com.br/php-ma-apoia-darkmira-tour-php-br-16/">PHP MA apoia Darkmira Tour PHP BR “16</a>
+						</li>
+					<li>
+				<a href="https://www.phpmaranhao.com.br/1o-phpraia-e-hoje/">1º PHPraia – É hoje!</a>
+						</li>
+					<li>
+				<a href="https://www.phpmaranhao.com.br/5-php-inscricoes-abertas/">5.PHP – Inscrições abertas</a>
+						</li>
+				</ul>
+		</aside>		<aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Categorias</h3>		<ul>
+	<li class="cat-item cat-item-3"><a href="https://www.phpmaranhao.com.br/category/artigos/">Artigos</a>
+</li>
+	<li class="cat-item cat-item-133"><a href="https://www.phpmaranhao.com.br/category/eventos-2/" title="Eventos da comunidade PHP Maranhão">Eventos</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="https://www.phpmaranhao.com.br/category/noticias/">Notícias</a>
+</li>
+	<li class="cat-item cat-item-129"><a href="https://www.phpmaranhao.com.br/category/php-conference/">PHP Conference</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="https://www.phpmaranhao.com.br/category/sem-categoria/">Sem categoria</a>
+</li>
+	<li class="cat-item cat-item-119"><a href="https://www.phpmaranhao.com.br/category/zend-framework-2/">Zend Framework 2</a>
+</li>
+		</ul>
+</aside><aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Arquivos</h3>		<ul>
+			<li><a href="https://www.phpmaranhao.com.br/2016/04/">abril 2016</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2016/02/">fevereiro 2016</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2016/01/">janeiro 2016</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2015/09/">setembro 2015</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2015/06/">junho 2015</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2015/04/">abril 2015</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2014/09/">setembro 2014</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2013/12/">dezembro 2013</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2013/10/">outubro 2013</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2013/09/">setembro 2013</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2013/07/">julho 2013</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2013/05/">maio 2013</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2013/04/">abril 2013</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2013/02/">fevereiro 2013</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2013/01/">janeiro 2013</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2012/12/">dezembro 2012</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2012/09/">setembro 2012</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2011/12/">dezembro 2011</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2011/11/">novembro 2011</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2011/10/">outubro 2011</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2011/09/">setembro 2011</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2011/05/">maio 2011</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2011/04/">abril 2011</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2011/03/">março 2011</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2011/01/">janeiro 2011</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2010/08/">agosto 2010</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2010/07/">julho 2010</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2010/06/">junho 2010</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2010/05/">maio 2010</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2010/04/">abril 2010</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2010/03/">março 2010</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2010/02/">fevereiro 2010</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2009/12/">dezembro 2009</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2009/09/">setembro 2009</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2009/08/">agosto 2009</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2009/07/">julho 2009</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2009/06/">junho 2009</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2009/03/">março 2009</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2009/02/">fevereiro 2009</a></li>
+	<li><a href="https://www.phpmaranhao.com.br/2009/01/">janeiro 2009</a></li>
+		</ul>
+		</aside>		</div><!-- #secondary .widget-area -->
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+
+			
+
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+	<div style="display:none">
+	</div>
+<script type="text/javascript" src="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/jquery.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"https:\/\/www.phpmaranhao.com.br\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","recaptchaEmpty":"Please verify that you are not a robot.","sending":"Enviando ..."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/scripts.js"></script>
+<script type="text/javascript" src="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/devicepx-jetpack.js"></script>
+<script type="text/javascript" src="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/wpgroho.js"></script>
+<script type="text/javascript" src="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/wp-embed.js"></script>
+<script type="text/javascript" src="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/e-201824.js" async="" defer="defer"></script>
+<script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:3.9.7',blog:'52762628',post:'0',tz:'-3',srv:'www.phpmaranhao.com.br'} ]);
+	_stq.push([ 'clickTrackerInit', '52762628', '0' ]);
+</script>
+
+
+
+<img src="Como%20utilizar%20o%20Composer%20%20%20PHP%20Maranh%C3%A3o_arquivos/g.gif" alt=":)" id="wpstats" width="6" height="5"></body></html>

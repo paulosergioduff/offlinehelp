@@ -1,0 +1,2180 @@
+<!DOCTYPE html>
+<html itemscope="" itemtype="http://schema.org/QAPage" class=""><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+        <title>Vantagens de usar PHP Orientado a Objetos? Onde usar? - Stack Overflow em Português</title>
+        <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/br/img/favicon.ico?v=c6678b633455">
+        <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/br/img/apple-touch-icon.png?v=e57f45c9cfaf">
+        <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow em Português" href="https://pt.stackoverflow.com/opensearch.xml">
+
+
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://pt.stackoverflow.com/questions/108204/vantagens-de-usar-php-orientado-a-objetos-onde-usar">
+        <meta property="og:site_name" content="Stack Overflow em Português">
+        <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/br/img/apple-touch-icon@2.png?v=2bb2b60be04f">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:domain" content="pt.stackoverflow.com">
+        <meta name="twitter:site" content="@StackOverflowPT">
+        <meta name="twitter:creator" content="@StackOverflowPT">
+        <meta name="twitter:title" property="og:title" itemprop="title name" content="Vantagens de usar PHP Orientado a Objetos? Onde usar?">
+        <meta name="twitter:description" property="og:description" itemprop="description" content="Ultimamente fiz uma mini mídia social e praticamente não utilizei a orientação a objetos, com exceção á uma classe que fiz para CRUD com PDO e bibliotecas prontas do GitHub. 
+
+Esse conceito seria ">
+        <script src="Vantagens%20de%20usar%20PHP%20Orientado%20a%20Objetos%20%20Onde%20usar%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/osd.js"></script><script src="Vantagens%20de%20usar%20PHP%20Orientado%20a%20Objetos%20%20Onde%20usar%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/pubads_impl_rendering_215.js"></script><script src="Vantagens%20de%20usar%20PHP%20Orientado%20a%20Objetos%20%20Onde%20usar%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/rules-p-c1rF4kxgLUzNc.js" async=""></script><script async="" src="Vantagens%20de%20usar%20PHP%20Orientado%20a%20Objetos%20%20Onde%20usar%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/quant.js"></script><script async="" src="Vantagens%20de%20usar%20PHP%20Orientado%20a%20Objetos%20%20Onde%20usar%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/beacon.js"></script><script async="" src="Vantagens%20de%20usar%20PHP%20Orientado%20a%20Objetos%20%20Onde%20usar%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/analytics.js"></script><script src="Vantagens%20de%20usar%20PHP%20Orientado%20a%20Objetos%20%20Onde%20usar%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/jquery.js"></script>
+        <script src="Vantagens%20de%20usar%20PHP%20Orientado%20a%20Objetos%20%20Onde%20usar%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/stub.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="Vantagens%20de%20usar%20PHP%20Orientado%20a%20Objetos%20%20Onde%20usar%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/stacks.css">
+        <link rel="stylesheet" type="text/css" href="Vantagens%20de%20usar%20PHP%20Orientado%20a%20Objetos%20%20Onde%20usar%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/primary.css">
+    
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://pt.stackoverflow.com/questions/108204/vantagens-de-usar-php-orientado-a-objetos-onde-usar">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://pt.stackoverflow.com/questions/108204/vantagens-de-usar-php-orientado-a-objetos-onde-usar">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://pt.stackoverflow.com/questions/108204/vantagens-de-usar-php-orientado-a-objetos-onde-usar">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+
+            StackExchange.ready(function () {
+                                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:1,shownCommentCount:1,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:108204});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('526', '108204');
+                // TODO: There's a CR for replacing this with inline info on the question for moderators
+                // https://trello.com/c/ynDHhvrB/158-cr-move-the-mod-info-out-of-the-margin-and-into-the-post-estimate-needed
+                // Before we roll out the sidebar everywhere (or at least shortly after that?), we should implement it.
+                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+        
+        
+        
+        
+        
+        
+                <script>
+        StackExchange.ready(function () {
+            StackExchange.realtime.init('wss://qa.sockets.stackexchange.com');
+            StackExchange.realtime.subscribeToReputationNotifications('526');
+                StackExchange.realtime.subscribeToTopBarNotifications('526');
+        });
+    </script>
+    <script>
+        StackExchange.init({"locale":"pt-BR","serverTime":1529059384,"routeName":"Questions/Show","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","site":{"name":"Stack Overflow em Português","description":"Perguntas e respostas para programadores profissionais e entusiastas","isNoticesTabEnabled":true,"enableNewTagCreationWarning":false,"insertSpaceAfterNameTabCompletion":false,"id":526,"childUrl":"https://pt.meta.stackoverflow.com","enableSocialMediaInSharePopup":true,"protocol":"https"},"timingsGuid":"d6353f1d-bf80-43e4-b8e6-25d6206040db","timingsInfo":"Al3XvgWII3dPQT9nk+O0RhGwyNdU3PQBkf3EaHz6Ldor2xPZngHnIdwOGfVGB9Xfcb/zw/uPptyFeX9AsvFAa0A94UmWG/A1/LK4wXDQahhoESPQIP/cGYPUNMDjo2+M68LHmLmwF0O6w0TQGos3UGXy5rnwNpNJgRBiAPlEaRJbCbKDMzUQOgWlarp8g9e5sOGnjOen3DOtX8QjuwqyXhVnfW5mwoHAnDyr7x5TxspRSyMj8giRCVWaL6TTxNGLCLMUSrRI6q38KmMAePYdZ1noWqo7pEjdEjEWL1bFk1Y=","user":{"fkey":"06429704a6711243a60c2f7d47eaa4aefb56d05fb44bc4ca37b4c5799c4bbad4","tid":"ab5f03d2-4f55-5d32-3185-1a84d3ee3ae6","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true},"realtime":{"newest":true,"active":true,"tagged":true,"staleDisconnectIntervalInHours":0,"workerIframeDomain":"https://cdn.sstatic.net"},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75,"likedTagsMaxLength":300,"dislikedTagsMaxLength":300},"jobPreferences":{"maxNumDeveloperRoles":2,"maxNumIndustries":4}}, {"site":{"allowImageUploads":true,"commentHighlightingWithCSS":true,"enableUserHovercards":true,"styleCode":true,"enableImgurHttps":true,"forceHttpsImages":true},"userMessaging":{},"comments":{},"userProfile":{},"tags":{"allowNonAsciiTags":true},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"snippets":{"snippetsEnabled":true,"renderDomain":"stacksnippets.net"},"paths":{},"markdown":{"asteriskIntraWordEmphasis":true},"monitoring":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000},"slack":{"sidebarAdDismissCookie":"slack-sidebar-ad"}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.pt-BR.js":"ef12e628a1a4","js/moderator.pt-BR.js":"acff7ad8d703","js/full-anon.pt-BR.js":"855cba7281f6","js/full.pt-BR.js":"81f566c07427","js/wmd.pt-BR.js":"2dc870452aa0","js/third-party/jquery.autocomplete.min.js":"bdb258e949a8","js/third-party/jquery.autocomplete.min.pt-BR.js":"","js/mobile.pt-BR.js":"52464677570a","js/help.pt-BR.js":"63e80a40cb21","js/tageditor.pt-BR.js":"5de0718b5d4f","js/tageditornew.pt-BR.js":"36ff750eb4a3","js/inline-tag-editing.pt-BR.js":"7dceffa4e7da","js/revisions.pt-BR.js":"ab84404f813e","js/review.pt-BR.js":"8f566609d845","js/tagsuggestions.pt-BR.js":"98282ebb815a","js/post-validation.pt-BR.js":"47d57b1e5aa6","js/explore-qlist.pt-BR.js":"e2a8178eb759","js/events.pt-BR.js":"8e308b1d3293","js/keyboard-shortcuts.pt-BR.js":"0346e616a99f","js/external-editor.pt-BR.js":"2b6464549022","js/adops.pt-BR.js":"22a9bd59b1e9","js/external-editor.pt-BR.js":"2b6464549022","js/snippet-javascript.pt-BR.js":"4eec60f3b439","js/snippet-javascript-codemirror.pt-BR.js":"17feb73742f7"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    <noscript id="noscript-css"><style>body,.top-bar{margin-top:1.9em}</style></noscript>
+    <script async="" src="Vantagens%20de%20usar%20PHP%20Orientado%20a%20Objetos%20%20Onde%20usar%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/full-anon.js"></script><link rel="preload" href="Vantagens%20de%20usar%20PHP%20Orientado%20a%20Objetos%20%20Onde%20usar%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/integrator.js" as="script"><script type="text/javascript" src="Vantagens%20de%20usar%20PHP%20Orientado%20a%20Objetos%20%20Onde%20usar%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/integrator.js"></script><link rel="preload" href="Vantagens%20de%20usar%20PHP%20Orientado%20a%20Objetos%20%20Onde%20usar%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/integrator_002.js" as="script"><script type="text/javascript" src="Vantagens%20de%20usar%20PHP%20Orientado%20a%20Objetos%20%20Onde%20usar%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/integrator_002.js"></script><script src="Vantagens%20de%20usar%20PHP%20Orientado%20a%20Objetos%20%20Onde%20usar%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/pubads_impl_215.js" async=""></script><script async="" src="Vantagens%20de%20usar%20PHP%20Orientado%20a%20Objetos%20%20Onde%20usar%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/snippet-javascript.js"></script><script async="" src="Vantagens%20de%20usar%20PHP%20Orientado%20a%20Objetos%20%20Onde%20usar%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/post-validation.js"></script><script async="" src="Vantagens%20de%20usar%20PHP%20Orientado%20a%20Objetos%20%20Onde%20usar%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/prettify-full.js"></script></head>
+        <body class="question-page new-topbar">
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+
+
+<header class="top-bar js-top-bar _fixed">
+    <div class="-container">
+        <div class="-main">
+                                <a href="https://pt.stackoverflow.com/" class="-logo js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+                        <span class="-img">Stack Overflow em Português</span>
+                    </a>
+
+
+                <nav class="navigation" role="navigation" aria-label="navegação do site">
+                    <ol class="-list">
+        <li class="-item _current">
+            <a id="nav-questions" href="https://pt.stackoverflow.com/questions" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">Perguntas</a>
+        </li>
+        <li class="-item">
+            <a id="nav-tags" href="https://pt.stackoverflow.com/tags" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">Tags</a>
+        </li>
+        <li class="-item">
+            <a id="nav-users" href="https://pt.stackoverflow.com/users" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">Usuários</a>
+        </li>
+                    </ol>
+                </nav>
+
+        </div>
+
+            <form id="search" action="/search" method="get" class="searchbar js-searchbar " autocomplete="off" role="search">
+                    <div class="ps-relative">
+                        <input name="q" placeholder="Pesquisar..." autocomplete="off" maxlength="240" class="f-input js-search-field" type="text">
+                        <button type="submit" aria-label="Pesquisar..." class="btn-topbar-primary js-search-submit"><svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"></path></svg></button>
+                    </div>
+            </form>
+
+        
+
+
+
+
+
+<ol class="-secondary js-secondary-topbar-links">
+        <li class="-item searchbar-trigger js-searchbar-trigger"><a href="#" class="-link"><svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"></path></svg></a></li>
+            <li class="-item">
+        <a href="https://stackexchange.com/users/?tab=inbox" class="-link js-inbox-button" title="Últimas mensagens no inbox">
+            <svg aria-hidden="true" class="svg-icon iconInbox" width="20" height="18" viewBox="0 0 20 18"><path d="M15.19 1H4.63c-.85 0-1.6.54-1.85 1.35L0 10.79V15c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2v-4.21l-2.87-8.44A2 2 0 0 0 15.19 1zm-.28 10l-2 2h-6l-2-2H1.96L4.4 3.68A1 1 0 0 1 5.35 3h9.12a1 1 0 0 1 .95.68L17.86 11h-2.95z"></path></svg>
+            <span class="indicator-badge js-unread-count _important" style="display: none;"></span>
+        </a>
+    </li>
+    <li class="-item">
+        <a href="https://stackexchange.com/users/?tab=reputation" class="-link js-achievements-button" title="Conquistas recentes: reputação, medalhas e privilégios obtidos" data-unread-class="_highlighted-positive">
+            <svg aria-hidden="true" class="svg-icon iconAchievements" width="18" height="18" viewBox="0 0 18 18"><path d="M15 2V1H3v1H0v4c0 1.6 1.4 3 3 3v1c.4 1.5 3 2.6 5 3v2H5s-1 1.5-1 2h10c0-.4-1-2-1-2h-3v-2c2-.4 4.6-1.5 5-3V9c1.6-.2 3-1.4 3-3V2h-3zM3 7c-.5 0-1-.5-1-1V4h1v3zm8.4 2.5L9 8 6.6 9.4l1-2.7L5 5h3l1-2.7L10 5h2.8l-2.3 1.8 1 2.7h-.1zM16 6c0 .5-.5 1-1 1V4h1v2z"></path></svg>
+            <span class="indicator-badge js-unread-count _positive" style="display: none;"></span>
+        </a>
+    </li>
+
+    <li class="-item help-button-item" data-remove-order="1"><a href="#" class="-link js-help-button" title="Central de ajuda e outros recursos">
+        <svg aria-hidden="true" class="svg-icon iconHelp" width="18" height="18" viewBox="0 0 18 18"><path d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23zM11.77 8a5.8 5.8 0 0 1-1.02.91l-.53.37c-.26.2-.42.43-.5.69a4 4 0 0 0-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.03-.66.12-1.21.4-1.66a5.29 5.29 0 0 1 1.43-1.22c.16-.12.28-.25.38-.39a1.34 1.34 0 0 0 .02-1.71c-.24-.31-.51-.46-1.03-.46-.51 0-.8.26-1.02.6-.21.33-.18.73-.18 1.1H5.75c0-1.38.35-2.25 1.1-2.76.52-.35 1.17-.5 1.93-.5 1 0 1.79.18 2.49.71.64.5.98 1.18.98 2.12 0 .57-.2 1.05-.48 1.44z"></path></svg>
+    </a></li>
+
+    <li class="-item">
+        <a href="https://stackexchange.com/" class="-link js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="Todos os 174 sites do Stack Exchange">
+            <svg aria-hidden="true" class="svg-icon iconStackExchange" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13c0 1.1.9 2 2 2h8v3l3-3h1a2 2 0 0 0 2-2v-2H1v2zM15 1H3a2 2 0 0 0-2 2v2h16V3a2 2 0 0 0-2-2zM1 6h16v4H1V6z"></path></svg>
+        </a>
+    </li>
+
+            <li class="-ctas">
+                        <a href="https://pt.stackoverflow.com/users/login?ssrc=head&amp;returnurl=https%3a%2f%2fpt.stackoverflow.com%2fquestions%2f108204%2fvantagens-de-usar-php-orientado-a-objetos-onde-usar" class="login-link btn-clear" rel="nofollow">Log-in</a>
+                        <a href="https://pt.stackoverflow.com/users/signup?ssrc=head&amp;returnurl=https%3a%2f%2fpt.stackoverflow.com%2fquestions%2f108204%2fvantagens-de-usar-php-orientado-a-objetos-onde-usar" class="login-link btn-topbar-primary" rel="nofollow" data-ga="[&quot;sign up&quot;,&quot;Sign Up Navigation&quot;,&quot;Header&quot;,null,null]">Registrar-se</a>
+
+            </li>
+
+    <li class="-dialog-container js-topbar-dialog-corral">
+
+
+    <div class="topbar-dialog siteSwitcher-dialog dno">
+        <div class="header">
+            <h3><a href="https://pt.stackoverflow.com/">comunidade atual</a>
+            </h3>
+        </div>
+        <div class="modal-content current-site-container">
+            <ul class="current-site">
+                    <li class="grid">
+                            <div class="fl1">
+            <a href="https://pt.stackoverflow.com/" class="current-site-link site-link js-gps-track grid gs8 gsx" data-id="526" data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="favicon favicon-br site-icon grid--cell" title="Stack Overflow em Português"></div>
+        <span class="grid--cell fl1">
+            Stack Overflow em Português
+        </span>
+    </a>
+
+    </div>
+    <div class="related-links">
+            <a href="https://pt.stackoverflow.com/help" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:14 })">ajuda</a>
+                    <a href="https://chat.stackexchange.com/?tab=site&amp;host=pt.stackoverflow.com" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+                    </li>
+                    <li class="related-site grid">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                            <a href="https://pt.meta.stackoverflow.com/" class="site-link js-gps-track grid gs8 gsx" data-id="527" data-gps-track="site.switch({ target_site:527, item_type:3 }),site_switcher.click({ item_type:4 })">
+        <div class="favicon favicon-brmeta site-icon grid--cell" title="Stack Overflow em Português Meta"></div>
+        <span class="grid--cell fl1">
+            Stack Overflow em Português Meta
+        </span>
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+suas comunidades            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+Faça <a href="https://pt.stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fpt.stackoverflow.com%2fquestions%2f108204%2fvantagens-de-usar-php-orientado-a-objetos-onde-usar" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> ou <a href="https://pt.stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fpt.stackoverflow.com%2fquestions%2f108204%2fvantagens-de-usar-php-orientado-a-objetos-onde-usar" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">registre-se</a> para personalizar suas comunidades
+                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="https://stackexchange.com/sites">mais comunidades stack exchange</a>
+            </h3>
+            <a href="https://stackoverflow.blog/" class="fr">Blog da empresa</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+            <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="https://pt.stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Comece aqui para obter uma visão geral rápida do site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="https://pt.stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Central de ajuda
+                        <span class="item-summary">
+                            Respostas detalhadas a qualquer pergunta que você tiver
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="https://pt.meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discutir o funcionamento e as políticas deste site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                Sobre Nós
+                                <span class="item-summary">
+                                    Saiba mais sobre a empresa Stack Overflow
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Negócios
+                                <span class="item-summary">
+                                    Saiba mais sobre a contratação de desenvolvedores ou publicação de anúncios conosco
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+            </li>
+</ol>
+
+    </div>
+</header>
+    <div id="js-gdpr-consent-banner" class="p16 bg-black-700 fc-white ps-fixed b0 l0 r0 z-banner" role="banner" aria-hidden="false">
+        <div class="wmx10 mx-auto grid grid__center jc-spacebetween gs8 gsx" role="alertdialog" aria-describedby="notice-message">
+            <div class="grid--cell" aria-label="notice-message">
+                <p class="mb0 lh-lg">
+                    This site uses cookies to deliver our services and to show you relevant ads and job listings. 
+By using our site, you acknowledge that you have read and understand our <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/cookie-policy">Cookie Policy</a>, <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/privacy-policy">Privacy Policy</a>, and our <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/terms-of-service/public">Terms of Service</a>.
+ 
+Your use of Stack Overflow’s Products and Services, including the Stack 
+Overflow Network, is subject to these policies and terms.
+                </p>
+            </div>
+            <div class="grid--cell ml-auto" aria-label="notice-dismiss">
+                <button class="s-btn s-btn__inverted fc-white bg-black-700 baw0 p16 js-notice-close" role="status" aria-hidden="true">
+                    <svg aria-hidden="true" class="svg-icon m0 iconClearSm" width="14" height="14" viewBox="0 0 14 14"><path d="M12 3.41L10.59 2 7 5.59 3.41 2 2 3.41 5.59 7 2 10.59 3.41 12 7 8.41 10.59 12 12 10.59 8.41 7z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        StackExchange.ready(function () { StackExchange.topbar.init({ observeSize: false }); });
+        StackExchange.scrollPadding.setPaddingTop(60, 10);     </script>
+
+
+    
+
+
+    <div class="container  ">
+                
+        <div id="content" class="snippet-hidden">
+
+
+            
+
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/br/img/apple-touch-icon.png?v=e57f45c9cfaf">
+
+    <div class="inner-content clearfix">
+            <div id="question-header">
+                    <h1 itemprop="name"><a href="https://pt.stackoverflow.com/questions/108204/vantagens-de-usar-php-orientado-a-objetos-onde-usar" class="question-hyperlink">Vantagens de usar PHP Orientado a Objetos? Onde usar? [duplicada]</a></h1>
+
+            
+
+
+
+<div class="pl8 aside-cta" role="navigation" aria-label="fazer uma nova pergunta">
+            <a href="https://pt.stackoverflow.com/questions/ask" class="ws-nowrap btn-outlined">Faça uma pergunta</a>
+</div>
+
+        </div>
+            <div id="mainbar" role="main" aria-label="pergunta e respostas">
+
+            
+
+<div class="question" data-questionid="108204" id="question">
+
+    <style>.everyoneloves__top-leaderboard:empty,.everyoneloves__mid-leaderboard:empty{                margin-bottom:0;
+}</style>
+        <div id="dfp-tlb" class="everyonelovesstackoverflow everyoneloves__top-leaderboard" style="" data-google-query-id="CKPckY6-1dsCFREphwodeh0EKw" data-clc-prefilled="true" data-clc-ready="true"><div id="google_ads_iframe_/248424177/pt.stackoverflow.com/lb/question-pages_0__container__" style="border: 0pt none; display: inline-block; width: 728px; height: 90px;"><iframe style="border: 0px none; vertical-align: bottom;" src="Vantagens%20de%20usar%20PHP%20Orientado%20a%20Objetos%20%20Onde%20usar%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/container.htm" id="google_ads_iframe_/248424177/pt.stackoverflow.com/lb/question-pages_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" data-is-safeframe="true" width="728" height="90" frameborder="0"></iframe></div></div>
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="vote">
+        <input name="_id_" value="108204" type="hidden">
+        <a class="vote-up-off" title="Esta pergunta mostra esforço de pesquisa; é útil e clara">votar a favor</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">12</span>
+        <a class="vote-down-off" title="Esta pergunta não mostra nenhum esforço de pesquisa; ela não é clara ou não é útil">votar contra</a>
+
+        <a class="star-off" href="#">favorita</a>
+        <div class="favoritecount"><b>5</b></div>
+
+
+</div>
+
+            </div>
+
+            
+<div class="postcell post-layout--right">
+    <div class="post-text" itemprop="text">
+
+<div class="question-status question-originals-of-duplicate">
+    <p>Esta pergunta já tem uma resposta aqui:</p>
+    <ul>
+        <li>
+            <a href="https://pt.stackoverflow.com/questions/104340/php-mistura-c%c3%b3digos-de-orienta%c3%a7%c3%a3o-a-objetos-e-linguagem-procedural" dir="ltr">PHP mistura códigos de orientação a objetos e linguagem procedural?</a>
+                <span class="question-originals-answer-count">
+                    2 respostas
+                </span>
+        </li>
+    </ul>
+    </div>
+<p>Ultimamente fiz uma mini mídia social e praticamente não utilizei a 
+orientação a objetos, com exceção á uma classe que fiz para CRUD com PDO
+ e bibliotecas prontas do GitHub. </p>
+
+<p>Esse conceito seria aplicado mais para a construção de bibliotecas e APIs? Vi alguns <a href="http://br.phptherightway.com/pages/Design-Patterns.html" rel="nofollow">padrões de projetos</a>, mas não encaixei nenhum diretamente na construção de um sistema web.</p>
+
+<p>Qual o real uso da OO em PHP? Algum exemplo de como aplicar a OO em um website?</p>
+    </div>
+    <div class="post-taglist">
+        <a href="https://pt.stackoverflow.com/questions/tagged/php" class="post-tag js-gps-track" title="mostrar perguntas com a tag 'php'" rel="tag">php</a> <a href="https://pt.stackoverflow.com/questions/tagged/orienta%c3%a7%c3%a3o-a-objetos" class="post-tag js-gps-track" title="mostrar perguntas com a tag 'orientação-a-objetos'" rel="tag">orientação-a-objetos</a> <a href="https://pt.stackoverflow.com/questions/tagged/estilo-de-codifica%c3%a7%c3%a3o" class="post-tag js-gps-track" title="mostrar perguntas com a tag 'estilo-de-codificação'" rel="tag">estilo-de-codificação</a> <a href="https://pt.stackoverflow.com/questions/tagged/paradigmas" class="post-tag js-gps-track" title="mostrar perguntas com a tag 'paradigmas'" rel="tag">paradigmas</a> 
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://pt.stackoverflow.com/q/108204" title="permalink curto para esta pergunta" class="short-link" id="link-post-108204">compartilhar</a><span class="lsep">|</span><a href="https://pt.stackoverflow.com/posts/108204/edit" class="suggest-edit-post" title="">melhorar esta pergunta</a></div>        
+    </div>
+
+    <div class="post-signature grid--cell fl0">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="https://pt.stackoverflow.com/posts/108204/revisions" title="mostrar todas as edições desta publicação">editada <span title="2016-11-24 10:58:14Z" class="relativetime">24/11/16 às 10:58</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://pt.stackoverflow.com/users/101/maniero"><div class="gravatar-wrapper-32"><img src="Vantagens%20de%20usar%20PHP%20Orientado%20a%20Objetos%20%20Onde%20usar%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/jmxoN.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://pt.stackoverflow.com/users/101/maniero">Maniero</a><span class="mod-flair" title="moderador">♦</span>
+        <div class="-flair">
+            <span class="reputation-score" title="pontos de reputação 273.541" dir="ltr">274mil</span><span title="45 medalhas de ouro"><span class="badge1"></span><span class="badgecount">45</span></span><span title="681 medalhas de prata"><span class="badge2"></span><span class="badgecount">681</span></span><span title="1049 medalhas de bronze"><span class="badge3"></span><span class="badgecount">1049</span></span>
+        </div>
+    </div>
+</div>    </div>
+    <div class="post-signature owner grid--cell fl0">
+        <div class="user-info ">
+    <div class="user-action-time">
+        perguntada <span title="2016-01-14 01:08:25Z" class="relativetime">14/01/16 às 1:08</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://pt.stackoverflow.com/users/23036/leonardo-vilarinho"><div class="gravatar-wrapper-32"><img src="Vantagens%20de%20usar%20PHP%20Orientado%20a%20Objetos%20%20Onde%20usar%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/5qeQj.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://pt.stackoverflow.com/users/23036/leonardo-vilarinho">Leonardo Vilarinho</a>
+        <div class="-flair">
+            <span class="reputation-score" title="pontos de reputação " dir="ltr">5.603</span><span title="1 medalhas de ouro"><span class="badge1"></span><span class="badgecount">1</span></span><span title="24 medalhas de prata"><span class="badge2"></span><span class="badgecount">24</span></span><span title="78 medalhas de bronze"><span class="badge3"></span><span class="badgecount">78</span></span>
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+</div>
+
+                        <div class="special-status post-layout--full">
+                <div class="question-status">
+        <h2>                    <b>marcada</b> como duplicata por <a href="https://pt.stackoverflow.com/users/201/brasofilo">brasofilo</a>, <a href="https://pt.stackoverflow.com/users/4995/wallace-maxters">Wallace Maxters</a>, <a href="https://pt.stackoverflow.com/users/8113/omni">Omni</a>, <a href="https://pt.stackoverflow.com/users/24542/ricardo">Ricardo</a>, <a href="https://pt.stackoverflow.com/users/4808/renan">Renan</a> <span dir="ltr"><span title="2016-01-16 00:00:53Z" class="relativetime">16/01/16 às 0:00</span></span>
+</h2>
+        <p>Esta pergunta foi feita antes e já tem uma resposta. Se essas respostas não abordarem completamente sua pergunta, <a href="https://pt.stackoverflow.com/questions/ask">faça uma nova pergunta</a>.</p>
+    </div>
+            </div>
+    
+    <div class="post-layout--right">
+	    <div id="comments-108204" class="comments js-comments-container ">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <li id="comment-223489" class="comment js-comment " data-comment-id="223489">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="número de votos para 'comentários úteis' recebidos" class="cool">1</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Relacionada: <a href="http://pt.stackoverflow.com/questions/104340/php-mistura-c%c3%b3digos-de-orienta%c3%a7%c3%a3o-a-objetos-e-linguagem-procedural">PHP mistura códigos de orientação a objetos e linguagem procedural?</a></span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/227/utluiz" title="61.141 reputation" class="comment-user">utluiz<span class="mod-flair" title="moderador">♦</span></a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment223489_108204"><span title="2016-01-14 02:04:33Z" class="relativetime-clean">14/01/16 às 2:04</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+            </ul>
+	    </div>
+
+        <div id="comments-link-108204" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comentários para pedir mais informações ou sugerir melhorias. Evite responder perguntas em comentários.">comentar</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="ver todos os comentários desta publicação" href="#" onclick=""></a>
+        </div>         
+    </div>        </div>
+</div>
+
+
+
+        <div id="answers">
+
+                <a name="tab-top"></a>
+                <div id="answers-header">
+                    <div class="subheader answers-subheader">
+                        <h2 data-answercount="2">
+                                2 Respostas
+                                <span style="display:none;" itemprop="answerCount">2</span>
+                        </h2>
+                        <div>
+                            
+<div id="tabs">
+        <a href="https://pt.stackoverflow.com/questions/108204/vantagens-de-usar-php-orientado-a-objetos-onde-usar?answertab=active#tab-top" data-nav-xhref="" title="Respostas com a atividade mais recente primeiro" data-value="active" data-shortcut="A">
+            ativas</a>
+        <a href="https://pt.stackoverflow.com/questions/108204/vantagens-de-usar-php-orientado-a-objetos-onde-usar?answertab=oldest#tab-top" data-nav-xhref="" title="Respostas na ordem em que foram fornecidas" data-value="oldest" data-shortcut="O">
+            mais antigas</a>
+        <a class="youarehere " href="https://pt.stackoverflow.com/questions/108204/vantagens-de-usar-php-orientado-a-objetos-onde-usar?answertab=votes#tab-top" data-nav-xhref="" title="Respostas com a pontuação mais alta primeiro" data-value="votes" data-shortcut="V">
+            votos</a>
+    </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+  
+<a name="108209"></a>
+<div id="answer-108209" class="answer accepted-answer" data-answerid="108209" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="vote">
+        <input name="_id_" value="108209" type="hidden">
+        <a class="vote-up-off" title="Esta resposta é útil">votar a favor</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">14</span>
+        <a class="vote-down-off" title="Esta resposta não é útil">votar contra</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="carregando quando esta resposta foi aceita...">aceitos</span>
+
+</div>
+
+            </div>
+            
+
+
+<div class="answercell post-layout--right">
+    <div class="post-text" itemprop="text">
+<h1>TL;DR</h1>
+
+<p>Orientação a Objetos (OO), independente da linguagem e do quanto ela 
+adere à teoria, pode trazer os mesmos benefícios, sendo os principais 
+relacionados à organização do código, facilidade de manutenção e 
+capacidade de extensão das funcionalidade.</p>
+
+<p>Você está certo em supor que OO é melhor para bibliotecas e APIs, já 
+que código feito para uso de terceiros precisa ter uma interface bem 
+definida, extensibilidade e encapsulamento, enquanto flexibilidade 
+demais gera dores de cabeça para lidar com a evolução do código.</p>
+
+<p>Entretanto, este paradigma, por si só, não resolve qualquer um dos 
+problemas e, se mau utilizado, pode causar tanto ou mais danos do que 
+ajudar. </p>
+
+<h1>Você não precisa de OO</h1>
+
+<p>Isso mesmo que você leu. Dá pra fazer tudo que se faz com objetos usando apenas programação procedural. </p>
+
+<p>Uma boa linguagem de programação precisa basicamente de 3 componentes:</p>
+
+<ul>
+<li>Estruturas de dados básicos: vetores, mapas, classes, tipos simples, etc.</li>
+<li>Estruturas de controle: <code>if</code>, <code>for</code>, etc.</li>
+<li>Estruturas de organização do código: subrotinas, blocos, funções, métodos, etc.</li>
+</ul>
+
+<p>Agora, pense no que são classes, por exemplo. Tratam-se de uma 
+composição de trechos de código organizados (métodos), os quais contém 
+lógica de controle, e um conjunto de dados ou atributos (estado do 
+objeto) que chamamos em PHP de <code>$this</code>. </p>
+
+<p>Bem, você pode obter o mesmo resultado usando um conjunto de funções e
+ uma estrutura de dados compartilhada entre elas. Quem sabe programar um
+ pouco em C, por exemplo, sabe muito bem disso.</p>
+
+<p>Exemplo procedural:</p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="pln">$this </span><span class="pun">=</span><span class="pln"> criar_estrutura</span><span class="pun">();</span><span class="pln">
+fazer_algo</span><span class="pun">(</span><span class="pln">$this</span><span class="pun">);</span></code></pre>
+
+<p>Exemplo OO:</p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="pln">$objeto </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Classe</span><span class="pun">();</span><span class="pln">
+$objeto</span><span class="pun">-&gt;</span><span class="pln">fazer_algo</span><span class="pun">();</span></code></pre>
+
+<p>Os dois códigos fazem a mesma coisa, entretanto no primeiro o estado é
+ explícito e precisa ser passado em cada chamada ao conjunto de funções 
+que são análogas aos métodos de uma classe.</p>
+
+<p>Porém, como pretendo mostrar adiante, OO traz outros benefícios e não
+ é à toa ou coincidência ou uma simples moda que a faz se tornar o 
+paradigma mais usado no mundo.</p>
+
+<p>Você pode encontrar bons materiais aqui no SO sobre vantagens de OO, sendo um exemplo <a href="https://pt.stackoverflow.com/q/55493/227">esta pergunta</a>.</p>
+
+<h1>O que distingue a Orientação a Objetos</h1>
+
+<p>Um grande diferencial da OO em relação aos outros paradigmas é que 
+ele vai além no que diz respeito à abstração e encapsulamento dos dados.</p>
+
+<p>Claro, nada é de graça. Com os benefícios vêm os efeitos colaterais, a
+ saber, maior cerimônia, complexidade e restrições, além de impactos no 
+gerenciamento de memória e no desempenho (não querendo dizer com isso 
+que necessariamente um sistema vai ficar <em>lento</em> ou <em>pesado</em> só por usar OO).</p>
+
+<p>Entretanto, o que se vê no geral é que o ganho pode ser bem maior que o preço pago por <em>jogar dentro das regras dos objetos</em>.</p>
+
+<p>Quando você tem atributo privados encapsulando o estado de um objeto,
+ pode ser "chato" ter que ficar acessando tudo por métodos. Em teoria 
+(mas tem que ser muito teórico mesmo), um bom programador não precisa 
+esconder suas estruturas de dados, <strong><em>apenas</em></strong> tomar o cuidado para não ser tentado a mexer no que não deve.</p>
+
+<p>Porém, se olharmos projetos reais que envolvam produtos de verdade, 
+constataremos que é ilusão achar que humanos simplesmente vão seguir 
+corretamente todas as regras e boas práticas. Num projeto complexo, pode
+ ser humanamente impossível estar a par do funcionamento de tudo. </p>
+
+<p>Alguém pode argumentar que <em>basta estudar a API do PHP para aprender a usar as funções</em>,
+ mas em projetos reais você também precisa aprender a API do sistema em 
+particular e outros sistemas com os quais você faz integração, às vezes 
+mais complexos e desorganizado que a própria linguagem (se é que é 
+possível :P).</p>
+
+<p>Dado esse cenário caótico, as restrições, padrões e regras impostos pela OO são muito bem-vindos em muitos casos.</p>
+
+<h2>Abstração e reuso</h2>
+
+<p>Como se faz reuso de código sem OO? Com funções. E como você faz para adicionar variações? Parâmetros.</p>
+
+<p>O problema disso é que no decorrer do tempo você vai precisar alterar
+ os parâmetros. Não é incomum em códigos PHP por aí encontrar funções 
+com 10 parâmetros, alguns opcionais, outros desnecessários. E se você 
+precisar remover uma parâmetro, vai ter que sair varrendo o código 
+procurando pelas chamadas. </p>
+
+<p>Uma alternativa a isso é receber vetores, mapas ou outras estruturas 
+genéricas como parâmetros. Isso pode funcionar bem até certo ponto.</p>
+
+<p>Ao usar objetos, você pode diferentes construtores e ter métodos para
+ definir propriedades específicas que geralmente são opcionais. </p>
+
+<p>Vamos agora a um cenário onde você tem uma rotina que processa uma 
+entidade com vários atributos, sendo 2 deles obrigatórios e os demais 
+opcionais. </p>
+
+<p>Uma implementação OO poderia ser:</p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="pln">$cliente </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Cliente</span><span class="pun">(</span><span class="pln">$cpf</span><span class="pun">,</span><span class="pln"> $nome</span><span class="pun">);</span><span class="pln">
+$cliente</span><span class="pun">-&gt;</span><span class="pln">setEndereco</span><span class="pun">(</span><span class="pln">$end</span><span class="pun">);</span><span class="pln">
+$email</span><span class="pun">-&gt;</span><span class="pln">enviar</span><span class="pun">(</span><span class="pln">$cliente</span><span class="pun">);</span></code></pre>
+
+<p>Uma versão procedural simplista seria:</p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="pln">enviar_email_cliente</span><span class="pun">(</span><span class="pln">$cpf</span><span class="pun">,</span><span class="pln"> $nome</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">,</span><span class="pln"> $end</span><span class="pun">);</span><span class="pln"> </span><span class="com">//demais parâmetros omitidos</span></code></pre>
+
+<p>Uma versão mais flexível:</p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="pln">enviar_email_cliente</span><span class="pun">(</span><span class="pln">$cpf</span><span class="pun">,</span><span class="pln"> $nome</span><span class="pun">,</span><span class="pln"> array</span><span class="pun">(</span><span class="str">"endereco"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> $end</span><span class="pun">));</span></code></pre>
+
+<p>Considere ainda que este sistema é um grande ERP, composto por 
+módulos desenvolvidos por diferentes equipes, e existem centenas de 
+chamadas à rotina e em nenhuma delas os valores são estáticos como no 
+exemplo.</p>
+
+<p>Agora imagine que foi necessário remover o atributo <code>endereco</code> da entidade <code>Cliente</code> e mover para outra entidade, já que agora clientes podem ter vários endereços. </p>
+
+<p>Agora vai a pergunta: <strong>o que acontece quando você efetua a mudança</strong>? Em qual dos casos a IDE ou o interpretador vai avisar você de que o atributo não existe mais? </p>
+
+<p>Este é um <em>trade-off</em> entre flexibilidade e segurança. Muita 
+flexibilidade, como é permitido e até incentivado em PHP, também é causa
+ frequente erros difíceis de serem encontrados.</p>
+
+<h1>Encapsulamento</h1>
+
+<p>Posso imaginar que no seu sistema você tenha um punhado de variáveis,
+ algumas globais, para trocar informações entre as funções. Se não 
+tiver, parabéns, mas esta não é a regra.</p>
+
+<p>O problema com variáveis compartilhadas é que você incorre no grande 
+risco de que um trecho de código interfira com outros inadvertidamente. </p>
+
+<p>Vamos a outro exemplo. Você quer monitorar o tempo de uma rotina 
+muito demorada. Uma abordagem procedural ingênua usando uma variável 
+global seria:</p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="pln">iniciar_timer</span><span class="pun">();</span><span class="pln">
+</span><span class="kwd">foreach</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$planetas </span><span class="kwd">as</span><span class="pln"> $planeta</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    popular</span><span class="pun">(</span><span class="pln">$planeta</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+echo </span><span class="str">"Total: "</span><span class="pln"> </span><span class="pun">.</span><span class="pln"> finalizar_timer</span><span class="pun">();</span></code></pre>
+
+<p>Bem, obviamente isso funciona, mas não ajuda muito. A rotina demora 
+muito e não se sabe em qual planeta estamos tendo mais dificuldades em 
+popular. Queremos saber o tempo total, assim como o tempo individual.</p>
+
+<p>Poderíamos melhorar da seguinte forma:</p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="pln">$inicio_geral </span><span class="pun">=</span><span class="pln"> iniciar_timer</span><span class="pun">();</span><span class="pln">
+</span><span class="kwd">foreach</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$planetas </span><span class="kwd">as</span><span class="pln"> $planeta</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    $inicio_parcial </span><span class="pun">=</span><span class="pln"> iniciar_timer</span><span class="pun">();</span><span class="pln">
+    popular</span><span class="pun">(</span><span class="pln">$planeta</span><span class="pun">);</span><span class="pln">
+    echo </span><span class="str">"Planeta $planeta: "</span><span class="pln"> </span><span class="pun">.</span><span class="pln"> finalizar_timer</span><span class="pun">(</span><span class="pln">$inicio_parcial</span><span class="pun">);</span><span class="pln">
+    echo </span><span class="str">"Parcial: "</span><span class="pln"> </span><span class="pun">.</span><span class="pln"> </span><span class="pun">(</span><span class="pln">time</span><span class="pun">()</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> $inicio_geral</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+echo </span><span class="str">"Total: "</span><span class="pln"> </span><span class="pun">.</span><span class="pln"> finalizar_timer</span><span class="pun">(</span><span class="pln">$inicio_geral</span><span class="pun">);</span></code></pre>
+
+<p>Pronto, agora não termos mais o estado global e podemos reusar a rotina.</p>
+
+<p>Porém, verificou-se que o processo está vazando muita memória e se 
+quer investigar quando isso ocorre. Para isso, precisamos recuperar a 
+quantidade de memória alocada antes de executar a rotina e a quantidade 
+de memória após ela executar e adicionar essas informações a um arquivo 
+de log.</p>
+
+<p>Como podemos alterar as rotinas para fazer isso sem mexer no código? 
+Tenha em mente que essas rotinas estão sendo usados por outras pessoas 
+que contribuem para a colonização da galáxia.</p>
+
+<p>Se não queremos variáveis globais, podemos mudar o retorno da rotina <code>inicar_timer</code> para retornar um array contendo tanto o tempo quanto a memória e assim recuperar ambos valores em <code>finalizar_timer</code>. </p>
+
+<p>Entretanto, você potencialmente está quebrando a implementação de várias pessoas, já que agora o <code>echo</code> não vai imprimir o que você esperava. Tudo isso porque programadores espertos, sabendo que você retornava um <em>timestamp</em>, <strong>acessaram diretamente o valor</strong>.</p>
+
+<p>Alguém pode argumentar que é possível corrigir isso de forma simples. Por exemplo:</p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="pln">$inicio_geral </span><span class="pun">=</span><span class="pln"> iniciar_timer</span><span class="pun">();</span><span class="pln">
+</span><span class="kwd">foreach</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$planetas </span><span class="kwd">as</span><span class="pln"> $planeta</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    $inicio_parcial </span><span class="pun">=</span><span class="pln"> iniciar_timer</span><span class="pun">();</span><span class="pln">
+    popular</span><span class="pun">(</span><span class="pln">$planeta</span><span class="pun">);</span><span class="pln">
+    imprimir_tempo</span><span class="pun">(</span><span class="str">"Planeta $planeta"</span><span class="pun">,</span><span class="pln"> $inicio_parcial</span><span class="pun">);</span><span class="pln">
+    imprimir_tempo</span><span class="pun">(</span><span class="str">"Parcial, $inicio_geral);
+}
+imprimir_tempo("</span><span class="typ">Total</span><span class="str">", $inicio_geral);</span></code></pre>
+
+<p>Excelente. Agora explique para para mundo porque mais uma vez foram 
+implementadas mudanças incompatíveis com versões anteriores e agora 
+todos terão que ficar usando uma versão antiga do seu código ou parar o 
+que estão fazendo procurando por todos os usos das rotinas afetadas, 
+ajustando e testando tudo novamente.</p>
+
+<p>OO não resolve todos os problemas, mas neste exemplo (e em vários 
+outros que vejo no dia a dia) um correto encapsulamento do estado 
+poderia ter resolvido todo o problema de início. Por outro lado, a falta
+ de encapsulamento, <strong>tende</strong> a causar este tipo de problema.</p>
+
+<p>Nesse ponto, as restrições e burocracias da OO teriam permitido que 
+todas as alterações fossem feitas sem interrupção e sem introduzir 
+incompatibilidades: </p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="pln">$geral </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Timer</span><span class="pun">();</span><span class="pln">
+</span><span class="kwd">foreach</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$planetas </span><span class="kwd">as</span><span class="pln"> $planeta</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    $parcial </span><span class="pun">=</span><span class="pln"> iniciar_timer</span><span class="pun">();</span><span class="pln">
+    popular</span><span class="pun">(</span><span class="pln">$planeta</span><span class="pun">);</span><span class="pln">
+    $parcial</span><span class="pun">-&gt;</span><span class="pln">logTime</span><span class="pun">(</span><span class="str">"Planeta $planeta"</span><span class="pun">);</span><span class="pln">
+    $geral</span><span class="pun">-&gt;</span><span class="pln">logTime</span><span class="pun">(</span><span class="typ">Parcial</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+$geral</span><span class="pun">-&gt;</span><span class="pln">logTime</span><span class="pun">(</span><span class="str">"Total"</span><span class="pun">);</span></code></pre>
+
+<p>Resumindo: as restrições impostas pela OO aumentam o reuso porque 
+limitam a forma como o código cliente pode interagir com os dados.</p>
+
+<p>Em programação funcional, por outro lado, poderíamos ainda ter um método que faz a contagem automaticamente. Exemplo:</p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="pln">monitorar_execucao</span><span class="pun">(</span><span class="str">"Total"</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">foreach</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$planetas </span><span class="kwd">as</span><span class="pln"> $planeta</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        monitorar_execucao</span><span class="pun">(</span><span class="str">"Planeta $planeta"</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> 
+            popular</span><span class="pun">(</span><span class="pln">$planeta</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">});</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">});</span></code></pre>
+
+<p>No exemplo acima, os logs de início e fim são feitos automaticamente e
+ podemos adicionar quaisquer mecanismos de monitoração desejados.</p>
+
+<p>E se quisermos dar um pouco mais de flexibilidade, podemos ainda disponibilizar um objeto como parâmetro:</p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="pln">monitorar_execucao</span><span class="pun">(</span><span class="str">"Total"</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$timer_global</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">foreach</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$planetas </span><span class="kwd">as</span><span class="pln"> $planeta</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        monitorar_execucao</span><span class="pun">(</span><span class="str">"Planeta $planeta"</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$timer_parcial</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> 
+            popular</span><span class="pun">(</span><span class="pln">$planeta</span><span class="pun">);</span><span class="pln">
+            $timer_global</span><span class="pun">-&gt;</span><span class="pln">log</span><span class="pun">(</span><span class="str">"parcial"</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">});</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">});</span></code></pre>
+
+<p>Note como usamos programação funcional e OO em conjunto para obter uma API mais flexível, segura e consistente. <strong>Podemos mudar a implementação interna sem afetar quem usa a rotina</strong>.</p>
+
+<h2>Entidades</h2>
+
+<p>Provavelmente você deve ter algumas entidades que salva num banco de dados.</p>
+
+<p>Sem orientação a objetos, não é incomum se usar um conjunto definido 
+de variáveis ou mesmo um mapa ou array para armazenar tais estruturas de
+ dados.</p>
+
+<p>Por exemplo:</p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="pln">$carrinho </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="str">"Pão"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Leite"</span><span class="pun">];</span></code></pre>
+
+<p>A não ser que seu sistema seja muito trivial, você deve ter 
+encontrado alguns problemas enquanto criava rotinas para recuperar, 
+inserir ou alterar dados. Ora você esquece quais os atributos um mapa 
+carrega, ora você precisa passar um monte de valores por parâmetro, etc.
+ Adicionar campos pode virar um pesadelo mais para frente.</p>
+
+<p>Agora com quantidade:</p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="pln">$carrinho </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+    </span><span class="pun">[</span><span class="str">"desc"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">"Pão"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"quantidade"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="lit">2</span><span class="pun">],</span><span class="pln"> 
+    </span><span class="pun">[</span><span class="str">"desc"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">"Leite"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"quantidade"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="lit">1</span><span class="pun">]</span><span class="pln"> 
+</span><span class="pun">];</span></code></pre>
+
+<p>Agora com valor unitário</p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="pln">$carrinho </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+    </span><span class="pun">[</span><span class="str">"desc"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">"Pão"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"quantidade"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="lit">2</span><span class="pun">,</span><span class="pln"> </span><span class="str">"valor"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="pun">.</span><span class="lit">50</span><span class="pun">],</span><span class="pln"> 
+    </span><span class="pun">[</span><span class="str">"desc"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="str">"Leite"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"quantidade"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="str">"valor"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="lit">2.0</span><span class="pun">]</span><span class="pln"> 
+</span><span class="pun">];</span></code></pre>
+
+<p>Excelente, você não precisa de mais nada para ter os eu carrinho de compras. Vamos calcular o total:</p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="pln">$total </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">foreach</span><span class="pun">(</span><span class="pln">$carrinho </span><span class="kwd">as</span><span class="pln"> $item</span><span class="pun">)</span><span class="pln"> 
+    $total </span><span class="pun">+=</span><span class="pln"> $item</span><span class="pun">[</span><span class="str">'valor'</span><span class="pun">];</span></code></pre>
+
+<p>Se há vários locais da sua aplicação onde você precisa percorrer, 
+adicionar, remover, pesquisar elementos e assim por diante, você tem 
+basicamente duas opções. Uma é acessar tudo manualmente como no exemplo 
+acima e, quando ocorrerem mudanças (tal como novos campos), você sai 
+mudando em todos os lugares. Outra é criar várias funções para manipular
+ a estrutura de dados, tais como <code>adicionar_item($carrinho, $item)</code> e <code>consultar_item($carrinho, $descricao)</code>.</p>
+
+<p>Repare como tudo isso soa exatamente como meu primeiro exemplo de OO 
+vs. procedural. Podemos resolver tudo isso sem OO, mas convenhamos, 
+estamos reinventando a roda e fazendo manualmente o que poderíamos 
+delegar para o interpretador do PHP fazer de forma mais segura.</p>
+
+<p>Indo mais longe, mas vamos imaginar que agora você tem carrinhos com 
+muitos itens e frequentemente precisa percorrer todos os elementos para 
+totalizar ou consultar os itens. Primeiro você pensa em mudar a 
+estrutura para algo como:</p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="pln">$carrinho </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+    </span><span class="str">"total"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="lit">2</span><span class="pun">,</span><span class="pln">
+    </span><span class="str">"items"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+        </span><span class="str">"Pão"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="pun">[</span><span class="str">"quantidade"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="lit">2</span><span class="pun">,</span><span class="pln"> </span><span class="str">"valor"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="pun">.</span><span class="lit">50</span><span class="pun">],</span><span class="pln"> 
+        </span><span class="str">"Leite"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="pun">[</span><span class="str">"quantidade"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="str">"valor"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="lit">2.0</span><span class="pun">]</span><span class="pln"> 
+    </span><span class="pun">]</span><span class="pln">
+</span><span class="pun">];</span></code></pre>
+
+<p>Resolve o problema, mas vai quebrar todo o código atual mais uma vez, caso você não faça <strong><em>todos os acessos via funções próprias</em></strong>. </p>
+
+<p>Mas claro que você não precisa de objetos. Basta que cada módulo procedural tenha escrito na documentação algo como <em>"não acesse as estruturas de dados diretamente!"</em> E a partir daí obviamente você pode confiar que todo mundo, incluindo você, <em>nunca</em> vai respeitar esse desejo e usar corretamente sua API. Boa sorte! :)</p>
+
+<p>Mais uma vez:</p>
+
+<ul>
+<li>A falta de encapsulamento é fonte comum de problemas. </li>
+<li>É complicado manter a consistência tendo apenas um conjunto "solto" de rotinas.</li>
+<li>Isso também dificulta que outras pessoas criem novas rotinas e criem
+ novas funcionalidades em cima das suas, pois a não fica claro como elas
+ podem ou não usar sua estrutura de dados, enquanto com classes isso 
+seria mais óbvio. </li>
+</ul>
+
+<p>Objetos que representam entidades complexas são muito seguramente 
+manipuladas pelas várias rotinas do sistema com uma interface bem 
+definida em uma classe. </p>
+
+<p>Usando o exemplo de validação, um objeto bem encapsulado garante a 
+consistência interna dos dados, o que não é tão simples com funções 
+isoladas. É claro que você pode criar uma rotina de validação e chamar 
+em cada função, mas não é tão eficiente em muitos casos impeditivo ter 
+que analisar em cada rotina toda a estrutura recebida para determinar se
+ o estado é válido. Isso leva muitas bibliotecas a não realizarem 
+validação suficiente, resultando em dificuldades para identificar 
+problemas quando valores inesperados aparecem. </p>
+
+<h1>O potencial do PHP em diferentes paradigmas</h1>
+
+<p>Você pode resolver uma gama de problemas usando somente um paradigma 
+específico, mas quase sempre, para uma aplicação não trivial um só 
+paradigma não é a melhor escolha ou suficiente.</p>
+
+<p>Quando falamos em programação procedural, funcional e orientado a 
+objetos, devemos pensar em como podemos usar todos os paradigmas em 
+harmonia para uma melhor solução.</p>
+
+<p>Orientação a objetos é importante e todas as principais linguagens 
+têm algum nível de suporte a ela ou possuem variações para suportar o 
+paradigma, tal como o C++. </p>
+
+<p>Programação funcional é outro paradigma que todas as linguagens 
+procuram aproveitar até certo ponto. Mesmo linguagens como o Java,  
+tradicionalmente nada amigável a este paradigma, abraçou-o veementemente
+ em sua versão 8.</p>
+
+<p>Já programação procedural é algo que, até certo ponto, inevitável. 
+Ainda não estamos no estágio (e não estou certo de que chegaremos) onde 
+tudo poderá ser resolvido por expressões funcionais. As boas e velhas 
+estruturas de controle tais como <code>if</code> e <code>for</code> ainda vão existir dentro dos métodos e funções.</p>
+
+<p>O interessante do PHP é que ele possui um suporte razoável para todos
+ esses paradigmas, embora alguns sejam mais bem explorados do que os 
+demais.</p>
+
+<p>A linguagem é muito conhecida por ser de fácil aprendizado, onde 
+alguém consegue ter algum código executando com sucesso no seu primeiro 
+dia, senão na primeira hora.</p>
+
+<p>Por causa disso, parte da comunidade encontra dificuldades com o uso 
+de OO e mesmo programação funcional já que são conceitos que levam mais 
+tempo para digerir, além do que o PHP tem uma herança procedural muito 
+forte e praticamente todos os módulos possuem uma API procedural, às 
+vezes suportando OO ao mesmo tempo ou misturando objetos com funções 
+isoladas.</p>
+
+<p>Vejo um movimento da comunidade PHP em direção ao uso de outros 
+paradigmas, mas menos para programação funcional, o que é uma pena.</p>
+
+<p>Enfim, seria bom ver os três paradigmas funcionando em conjunto permitindo soluções melhores em todas as áreas.</p>
+
+<h1>Exemplos onde Orientação a Objetos é ruim</h1>
+
+<p>Lugares onde em geral OO não é legal ou é usada apenas indiretamente incluem:</p>
+
+<ul>
+<li><strong>Templates</strong>, por exemplo, como os templates HTML do 
+Wordpress onde você mistura lógica de controle com código HTML. Mesmo em
+ outras linguagens isso vale. Embora objetos auxiliares (<em>helpers</em>) sejam usados, um template de texto é intrinsicamente procedural em sua natureza.</li>
+<li><strong>Funções sem estado</strong> (<em>stateless</em>) não 
+armazenam nem compartilham variáveis, nem possuem pré-requisitos. Por 
+exemplo, mesmo numa linguagem puramente OO, uma rotina para converter um
+ inteiro em texto não precisa necessariamente estar em um objeto. O 
+Java, por exemplo, usa método estáticos para esses casos.</li>
+<li><strong>Rotinas de alto desempenho</strong> funcionam melhor com estruturas de dados simples.</li>
+</ul>
+
+<h1>Padrões de Projetos</h1>
+
+<p>Vários projetos de código livre morrem por falta de manutenção devido
+ à má estruturação, pois ninguém consegue ou tem coragem de mexer. 
+Independente do paradigma utilizado, é importante aprender as melhores 
+práticas.</p>
+
+<p>Padrões de projetos não são exclusividade do paradigma de Programação
+ OO, mas são soluções conhecidas para problemas específicos, além de uma
+ linguagem comum para você não reinventar a roda e chamar de "cubo 
+redondo".</p>
+
+<p>Conhecer padrões de projeto podem lhe ensinar como outras pessoas 
+resolveram certos tipos de problemas e, uma vez que você aprender alguns
+ você perceberá uma coisa boa e outra ruim:</p>
+
+<ul>
+<li>A boa é que você vai aprender outras formas de pensar sobre o 
+problema que não teria feito sozinho e logo estará ajustando e compondo 
+esses diferentes padrões em novas formas. Assim você usa a experiência 
+dos outros para crescer mais rapidamente.</li>
+<li>A ruim é que você começa a querer aplicar os padrões em tudo e acaba
+ criando alguns monstrinhos até aprender (espero) a usar esses novos 
+poderes com responsabilidade.</li>
+</ul>
+
+<h1>Considerações</h1>
+
+<p>Não só em bibliotecas ou frameworks, o uso de Orientação a Objetos é 
+bem-vindo em qualquer funcionalidade do seu programa, principalmente 
+quando você almeja reuso e comunicação entre diferentes partes do código
+ ao mesmo tempo que que almeja certo encapsulamento para evitar 
+problemas mais para frente.</p>
+
+<p>Use o paradigma que for melhor para resolver cada problema, inclusive
+ todos juntos. Mas para isso você vai precisar conhecer todos, além das 
+boas e más práticas de cada um.</p>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://pt.stackoverflow.com/a/108209" title="permalink curto para esta resposta" class="short-link" id="link-post-108209">compartilhar</a><span class="lsep">|</span><a href="https://pt.stackoverflow.com/posts/108209/edit" class="suggest-edit-post" title="">melhorar esta resposta</a></div>                    </div>
+    <div class="post-signature grid--cell fl0">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="https://pt.stackoverflow.com/posts/108209/revisions" title="mostrar todas as edições desta publicação">editada <span title="2017-04-13 12:59:44Z" class="relativetime">13/04/17 às 12:59</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://pt.stackoverflow.com/users/-1/comunidade"><div class="gravatar-wrapper-32"><img src="Vantagens%20de%20usar%20PHP%20Orientado%20a%20Objetos%20%20Onde%20usar%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/a007be5a61f6aa8f3e85ae2fc18dd66e.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://pt.stackoverflow.com/users/-1/comunidade">Comunidade</a><span class="mod-flair" title="moderador">♦</span>
+        <div class="-flair">
+            <span class="reputation-score" title="pontos de reputação " dir="ltr">1</span>
+        </div>
+    </div>
+</div>    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        respondida <span title="2016-01-14 02:03:39Z" class="relativetime">14/01/16 às 2:03</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://pt.stackoverflow.com/users/227/utluiz"><div class="gravatar-wrapper-32"><img src="Vantagens%20de%20usar%20PHP%20Orientado%20a%20Objetos%20%20Onde%20usar%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/72e303f801142b55122fe8d98e0e06b5.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://pt.stackoverflow.com/users/227/utluiz">utluiz</a><span class="mod-flair" title="moderador">♦</span>
+        <div class="-flair">
+            <span class="reputation-score" title="pontos de reputação 61.141" dir="ltr">61,1mil</span><span title="6 medalhas de ouro"><span class="badge1"></span><span class="badgecount">6</span></span><span title="111 medalhas de prata"><span class="badge2"></span><span class="badgecount">111</span></span><span title="220 medalhas de bronze"><span class="badge3"></span><span class="badgecount">220</span></span>
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+</div>
+    
+    <div class="post-layout--right">
+	    <div id="comments-108209" class="comments js-comments-container ">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="4" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <li id="comment-223497" class="comment js-comment " data-comment-id="223497">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Obrigado pela a resposta deu 
+para entender bastante sobre o assunto, sobre as globais acho que não 
+usei não, no projeto em si só usei funções e classes em uma mini classe 
+que criei para crud, as variáveis foram distintas por arquivos.. Uma 
+dúvida que restou foi haver com a pergunta relacionada a essa, lá diz 
+que não é indicável misturar OO com estruturada, logo não tenho a menor 
+idéia de nao fazer essa mistura pois seria uma classe para cada página?</span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/23036/leonardo-vilarinho" title="5.603 reputation" class="comment-user owner">Leonardo Vilarinho</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment223497_108209"><span title="2016-01-14 02:59:56Z" class="relativetime-clean">14/01/16 às 2:59</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-223996" class="comment js-comment " data-comment-id="223996">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="número de votos para 'comentários úteis' recebidos" class="cool">1</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@Bacco Pergunta reformulada. 
+Mas quanto mais cresce, mais complicada fica. Acho que fiz mais justiça 
+aos outros paradigmas agora. :)</span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/227/utluiz" title="61.141 reputation" class="comment-user">utluiz<span class="mod-flair" title="moderador">♦</span></a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment223996_108209"><span title="2016-01-15 02:51:36Z" class="relativetime-clean">15/01/16 às 2:51</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-224612" class="comment js-comment " data-comment-id="224612">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="número de votos para 'comentários úteis' recebidos" class="cool">3</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@Edilson Mais paciência. 
+Primeiro você precisa entender que é de certa forma uma ironia. Você 
+pode programar em binário também. Mas para não deixar você na espera, 
+adiante que meu texto é uma defesa da POO. Basicamente meu argumento é 
+que o fato de você não precisar de algo não significa que não seja 
+melhor se você usar. Sinceramente, sugiro você não adicionar críticas 
+assim sem ler até o final.</span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/227/utluiz" title="61.141 reputation" class="comment-user">utluiz<span class="mod-flair" title="moderador">♦</span></a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment224612_108209"><span title="2016-01-16 11:23:56Z" class="relativetime-clean">16/01/16 às 11:23</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-224613" class="comment js-comment " data-comment-id="224613">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="número de votos para 'comentários úteis' recebidos" class="cool">1</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@Edilson já parou pra considerar que <b>talvez</b> as partes que você não concorda estejam corretas, e <b>talvez</b>
+ sua visão esteja um pouco "engessada"? Não estou afirmando que é o 
+caso, mas às vezes é legal entender que os autores de ambas as respostas
+ não inventaram do dia pra noite o que estão escrevendo, e com certeza 
+tem uma razão para cada ponto que expressaram. Se alguma parte não 
+agradou eu acho legal vc se manifestar (eu fiz isso antes nessa mesma 
+resposta, por motivo contrário do seu), mas acho muito legal ver e 
+aproveitar tudo o que a resposta tem a acrescentar também.</span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/70/bacco" title="73.946 reputation" class="comment-user">Bacco</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment224613_108209"><span title="2016-01-16 11:38:50Z" class="relativetime-clean">16/01/16 às 11:38</span></a></span>
+                        <span class="edited-yes" title="Este comentário foi editado 6 vezes"></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-224667" class="comment js-comment " data-comment-id="224667">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="número de votos para 'comentários úteis' recebidos" class="cool">1</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Espero não ter transmitido a 
+ideia de estar aborrecido com a resposta e os comentários, mas questões 
+são para ser esclarecidas. E obrigado a todos pela compreensão. +1</span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/6402/edilson" title="4.466 reputation" class="comment-user">Edilson</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment224667_108209"><span title="2016-01-16 15:13:00Z" class="relativetime-clean">16/01/16 às 15:13</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+            </ul>
+	    </div>
+
+        <div id="comments-link-108209" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link  dno" title="Use comentários para pedir mais informações ou sugerir melhorias. Evite comentários como “+1” ou “obrigado”."></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link " title="ver todos os comentários desta publicação" href="#" onclick="">mostrar mais <b>4</b> comentários</a>
+        </div>         
+    </div>    </div>
+</div>
+<div id="dfp-mlb" class="everyonelovesstackoverflow everyoneloves__mid-leaderboard" style="display: none;" data-google-query-id="CKTckY6-1dsCFREphwodeh0EKw" data-clc-prefilled="true" data-clc-ready="true"><div id="google_ads_iframe_/248424177/pt.stackoverflow.com/mlb/question-pages_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/248424177/pt.stackoverflow.com/mlb/question-pages_0" title="3rd party ad content" name="google_ads_iframe_/248424177/pt.stackoverflow.com/mlb/question-pages_0" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom;" srcdoc="" width="728" height="90" frameborder="0"></iframe></div></div>
+  
+<a name="108227"></a>
+<div id="answer-108227" class="answer" data-answerid="108227" itemscope="" itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="vote">
+        <input name="_id_" value="108227" type="hidden">
+        <a class="vote-up-off" title="Esta resposta é útil">votar a favor</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">9</span>
+        <a class="vote-down-off" title="Esta resposta não é útil">votar contra</a>
+
+
+
+
+</div>
+
+            </div>
+            
+
+
+<div class="answercell post-layout--right">
+    <div class="post-text" itemprop="text">
+<h1>Introdução contextual ou TL; DR</h1>
+
+<p>Esta resposta é uma discordância democrática e saudável à resposta do
+ utluiz. É necessário deixar claro isto porque algumas pessoas acham que
+ diversidade de visão não é construtivo ou mesmo que é briga. Acho que 
+aqui estamos fazendo de forma saudável e todos podem se beneficiar 
+disto.</p>
+
+<p>Melhor que uma pergunta que gera uma boa resposta é ter uma pergunta 
+que gera várias boas respostas e que fazem as pessoas refletir e 
+aprender mais. Mesmo que discordem do que está escrito.</p>
+
+<p>Para quem não tem paciência para ler tudo ou acha que já sabe o que precisa aprender sobre o assunto, o que eu digo é:</p>
+
+<ul>
+<li>OOP é bom, mas não é panaceia.</li>
+<li>Tudo o que o utluiz diz funciona bem em outros contextos, mas em PHP, boa parte da vantagem do OOP se perde.</li>
+<li>OOP traz problemas novos, sem resolver todos do procedural, portanto
+ alguns problemas podem se beneficiar mais de OOP ou procedural, OOP não
+ é adequado para qualquer coisa.</li>
+<li>Afirmo que PHP costuma atender problemas mais adequados para procedural que OOP.</li>
+<li><strong>Muito do que é dito na outra resposta é sobre tipagem estática, e não OO</strong>.</li>
+<li>A principal discordância é em usar exemplo de <strong>procedural ruim contra OOP bom</strong>. É injusto.</li>
+</ul>
+
+<p>A resposta dele não está errada, tem qualidade. Só quero dar uma 
+outra visão. Em várias partes, concordo com o que está lá. Só acho que 
+ela não está bem contextualizada para o PHP. A prática do PHP é um pouco
+ diferente do que está descrito ali. A pergunta é sobre OOP em PHP, não 
+em Java.</p>
+
+<p>Algumas coisas desta resposta fazem mais sentido olhando a versão original da resposta dele. Não vou mexer tanto.</p>
+
+<p>Recomendo fortemente <a href="https://www.youtube.com/watch?v=QM1iUe6IofM" rel="nofollow noreferrer">assistir um vídeo</a>
+ que mostra de forma clara como OOP é mais problemático do que parece e 
+onde está realmente o seu problema. Se quer ficar com a posição de que 
+OOP é ótimo sempre, ok, mas não diga que não avisei :)</p>
+
+<h1>Melhor para bibliotecas ou sistemas complexos</h1>
+
+<p>A minha opinião sempre (cerca de 25 anos) foi que OOP é melhor 
+aplicada à bibliotecas e APIs. Não só, claro, mas principalmente. E 
+mesmo assim, não em todos casos de bibliotecas. Pra mim OOP brilha em 
+problemas onde o PHP não costuma passar perto. Mas em pontos específicos
+ o PHP pode se beneficiar do paradigma.</p>
+
+<p>Por sorte muitas vezes a pessoa acha que está usando OOP e está 
+apenas usando uma classe simples que funciona como um módulo ou uma 
+estrutura simples. A parte ruim é que ela acertou por coincidência. <strong>Usar classe não significa que está fazendo OOP</strong>.</p>
+
+<p>Consumir APIs que foram construídas com OOP não é a mesma coisa que programar orientado a objeto.</p>
+
+<h1>Abstração e reuso</h1>
+
+<p>Concordo que é comum vermos as pessoas fazerem tudo o que o utluiz 
+diz na sua resposta quando programam procedural. Mas também já vi 
+pessoas botarem tudo em classes e cometerem erros piores. Veja (aqui 
+mesmo) a maioria dos códigos comuns que as pessoas escrevem em OOP que 
+fazem uma bagunça muito maior que o citado. Ela amontoa o que não pode e
+ retalha o que não dá. É algo quase aleatório.</p>
+
+<p>Talvez a explicação esteja certa se fizer puramente procedural do 
+jeito que se fazia nos anos 60/70. Mas não é o caso de fazer assim. 
+Modularizar é algo importante. Fazer tudo virar objeto nem tanto. Falo 
+muito sobre o assunto em <a href="https://pt.stackoverflow.com/q/108047/101">outra pergunta</a>.</p>
+
+<p>C é uma das poucas linguagens que não implementam nenhuma facilidade 
+de OOP e a cultura é não tentar forçar este paradigma nela. As pessoas 
+programam muito bem nela sem este paradigma nos sistemas mais complexos 
+possíveis e não têm as dificuldades e erros citados (nem na versão 
+antiga, nem na versão nova da resposta do utluiz). O "problema" da 
+linguagem é ser muito baixo nível e o que mais faz falta pra ela é 
+generacidade e um pouco mais de capacidade de modularização. Tá, também 
+há a cultura de escrever código mneumônico, mas isto mudou bastante. 
+Falta ser mais estática do que ela é. Em C e outras linguagens você 
+resolve tudo o que foi citado sem dificuldades.</p>
+
+<p>Tem um tipo específico de reuso não citado na resposta dele que 
+realmente OOP ajuda. Não vou entrar em detalhes para não alongar.</p>
+
+<p><strong>PHP é uma linguagem bastante dinâmica</strong> e se a pessoa 
+souber o que está fazendo consegue muito reuso sem usar OOP. Na verdade 
+pode obter até mais aproveitando bem os recursos dinâmicos da linguagem.
+ Reforço que não estou dizendo que OOP não deva ser usado nunca.</p>
+
+<p>Abstração é algo bom. E ela é usada desde que existe computador. OOP não inventou isto.</p>
+
+<p>O problema não é o paradigma OO ou procedural, ou outro. É não saber 
+usar a ferramenta. E algumas pessoas vendem OOP como se fosse algo que 
+você usa e tudo se resolve. Mesmo que não seja a intenção delas, acabam 
+fazendo isto sem perceber. Muitas pessoas leem que OOP organiza o código
+ e ela passa adotar o paradigma como se ele fosse mágico. Quem disse 
+talvez saiba que não é bem assim. <strong>Quem lê e ainda está aprendendo, não percebe as nuances, não entende que não é panaceia</strong>.</p>
+
+<h3>Exemplo usado</h3>
+
+<p>O problema da manutenção, citado nesta seção da resposta dele, ocorre
+ nos dois paradigmas. OOP tem até um princípio que diz que você não deve
+ modificar suas classes. Obviamente não dá para seguir sempre este 
+princípio. <strong>Mudanças provocam dificuldades em todos paradigmas</strong>.</p>
+
+<p>O problema citado realmente existe por um defeito da linguagem. Por 
+isto citei C que não tem esse defeito. Realmente PHP não tem uma 
+estrutura de dados simples meio termo. Ou você tem um <em>array</em> associativo dinâmico que produz o problema que ele citou ou tem a classe que resolve o problema específico. Mas este <strong>é um problema de coisa mais estática e mais dinâmica, não é uma dicotomia entre procedural e OOP</strong>.</p>
+
+<p>Pois bem. Use a classe então. Porque você colocou em uma classe, está fazendo OOP? Então C é OO também. Ela tem <code>struct</code>. Claro que discordo disto. Todos discordam.</p>
+
+<p>Não vou repetir todos os detalhes do que já disse em inúmeras 
+respostas, algumas citadas aqui. OOP é mais do que criar uma classe. 
+Colocar dados em uma estrutura eu sempre achei útil. Está usando OOP 
+assim?</p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="pln">enviar_email_cliente</span><span class="pun">(</span><span class="pln">$JoseDaSilva</span><span class="pun">);</span><span class="pln"> </span><span class="com">//esta variável é baseada em uma estrutura</span></code></pre>
+
+<p>Dá para fazer melhor que isto, mas não quis modificar o exemplo que seria ruim até em OOP.</p>
+
+<p>Não tem nada de OOP aí. Se esta variável tem uma estrutura definida 
+com AA ou com classe, não é um detalhe importante (internamente no PHP 
+vai dar no mesmo). Escolha qual achar melhor para seu propósito, mas o 
+problema de manutenção da estrutura está resolvido. Os exemplos citados 
+criam problema por fazer do jeito errado.</p>
+
+<p>Quer que o IDE auxilie? Ok, use a classe para criar a estrutura. Só 
+que o IDE vai ajudar porque ficou mais estático, não porque fez OOP. 
+Teve paciência de chegar até aqui? Então vai adorar <a href="http://steve-yegge.blogspot.com.br/2008/05/dynamic-languages-strike-back.html" rel="nofollow noreferrer">esse blog que tem um bom artigo sobre essa questão</a>.
+ O Steve é o cara que pode espantar a maioria dos leitores, mas pelo 
+menos ele não gera confusão com superficialismos. E que eu sei que as 
+pessoas preferem. Não preciso dizer que sou fã dele, apesar de não 
+concordar com tudo o que ele fala.</p>
+
+<p>Estamos criando um dicotomia entre paradigmas quando na verdade a 
+questão é sobre tipagem. PHP teria muito mais robustez e facilidades de 
+manutenção por ter tipagem estática do que por usar OOP. E se tirarem a 
+tipagem dinâmica, ela perde seu maior mérito. Já repeti várias vezes que
+ se é para ter essa robustez toda, não use PHP. <strong>Forçar o uso de 
+tipagem estática e orientação a objeto é deturpar o que esta linguagem 
+sempre teve de bom e diferente de outras soluções</strong>. Ter como opção para algumas coisas é bem útil.</p>
+
+<h1>Fluxo de chamadas de funções</h1>
+
+<blockquote>
+  <p>Na resposta original havia algo sobre isto, veja: <a href="https://pt.stackoverflow.com/revisions/108209/1">https://pt.stackoverflow.com/revisions/108209/1</a></p>
+</blockquote>
+
+<p>Não vejo como o problema citado seja resolvido por OOP. Na verdade 
+acho que não só OOP, mas toda modularização ajuda a piorar o problema. 
+Também não prego fazer linguições para evitar o problema citado, que é 
+real.</p>
+
+<p>É possível resolver tão bem quanto OOP, sem usá-lo, mantendo uma 
+sintaxe limpa e organizada. Se as pessoas não sabem como fazê-lo, é 
+outro problema. Mas elas também não sabem <a href="https://pt.stackoverflow.com/q/73530/101">pra que serve um construtor</a>, muito usado em OOP.</p>
+
+<h1>Variáveis globais</h1>
+
+<blockquote>
+  <p>Aqui também é sobre a versão original</p>
+</blockquote>
+
+<p><a href="https://pt.stackoverflow.com/q/21158/101">Um problema real</a>. Mas OOP não resolve ele. Há problemas que precisam do estado global.</p>
+
+<p>A variável global tem outro problema: ter escopo global.</p>
+
+<p>Há problemas que ou você complica o <em>design</em> ou faz algo que 
+no fundo usa escopo global, mesmo que disfarçado. O problema do escopo 
+global é quando ele é desnecessário e é usado assim mesmo. Há problemas 
+que são inerentemente globais.</p>
+
+<p>Em PHP mesmo o abuso de globais causa pouco problema porque eles são 
+efêmeros. Claro que pode causar algum. Mas pode ser uma solução simples 
+também. E vou repetir mais uma vez, pode causar problemas usando 
+qualquer ferramenta.</p>
+
+<p>Em outro contexto eu acharia as globais mais perigosas.</p>
+
+<p>Não vou me alongar, mais sobre o assunto:</p>
+
+<ul>
+<li><a href="https://pt.stackoverflow.com/q/102652/101">Variável Global Personalizada</a></li>
+<li><a href="https://pt.stackoverflow.com/q/102402/101">$GLOBALS para armazenar configurações?</a></li>
+<li><a href="https://pt.stackoverflow.com/q/49521/101">Como usar variáveis estáticas e globais em PHP?</a></li>
+</ul>
+
+<h1>Exemplo prático</h1>
+
+<blockquote>
+  <p>Baseado na resposta original do utluiz</p>
+</blockquote>
+
+<p>Não gosto deste exemplo porque é comparação de uma implementação 
+errada com uma certa. Não de uma paradigma com outro. O exemplo mostra 
+como não fazer de forma procedural e como fazer OO. É uma comparação 
+injusta.</p>
+
+<p>Mas não é culpa dele fazer isto. É difícil dar bons exemplos simples que o paradigma em si ajuda de forma clara.</p>
+
+<p>Eu entendo que em OOP é mais difícil cometer este erro. Mas é mais 
+fácil cometer outros, e até piores. Mas note que a diferença de ser mais
+ difícil e mais fácil é irrisória.</p>
+
+<p>Exemplo sem classe e sem problemas.</p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="pln">$time </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Timer</span><span class="pun">();</span><span class="pln">
+gerar_relatorio</span><span class="pun">();</span><span class="pln">
+</span><span class="typ">Stop</span><span class="pun">(</span><span class="pln">$time</span><span class="pun">);</span></code></pre>
+
+<p>Pronto, não criou uma classe e dá tudo certo.</p>
+
+<p>Tem linguagem que permitiria usar <code>$time-&gt;Stop()</code>. Aí é defeito da linguagem e não do paradigma. É só sintaxe, não muda a semântica. Não muda o paradigma.</p>
+
+<p>Tem outro exemplo que posso fazer sem usar classe que faria algo 
+semelhante. A sintaxe não ficará boa em PHP. Novamente é um problema da 
+linguagem.</p>
+
+<p>Eu resolvo isto de forma funcional melhor que procedural ou OO. Mas 
+funcional não tá na moda. E não é bem-vindo em PHP. Em pseudo-código:</p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="typ">Timer</span><span class="pun">(</span><span class="pln">gerar_relatorio</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">print</span><span class="pun">)</span><span class="pln"> </span><span class="com">//é um exemplo, pode ser de outra forma, print é opcional</span></code></pre>
+
+<p>De qualquer forma, <code>Timer</code> é algo da aplicação ou de biblioteca? Isto ajuda fundamentar o que eu disse no começo. Nem acho que seja o caso de <code>Timer</code> que pode funcionar bem sem OOP, mas OOP é melhor aplicado à bibliotecas, gerais ou de aplicação específica.</p>
+
+<p>Usar a classe <code>Timer</code> pronta está programando OO ou só consumindo algo que por acaso foi feito assim?</p>
+
+<p>Esse <code>Timer</code> tem que ser bem escrito em procedural ou OOP,
+ senão a comparação não é justa. Se ele precisa ter mais dados, ok, crie
+ uma estrutura de dados para isso. Mas isto não é OOP.</p>
+
+<p>Possivelmente eu até usaria OOP para criar um <em>timer</em> flexível. Mas em PHP 99% do tempo as pessoas não estão fazendo bibliotecas, ou ERPs, ou <em>dev tool</em>, ou outras soluções complexas "monolíticas". <strong>PHP roda <em>scripts</em>!</strong></p>
+
+<h1>Encapsulamento</h1>
+
+<p>A seção cita variáveis globais, mas não vi nenhuma no código. Não vi 
+vazamento de memória. Vi um código mal escrito. E OOP não faz as pessoas
+ magicamente escrevem códigos bem escritos.</p>
+
+<p>Uma pessoa pode saber fazer bem em OOP e mal em procedural. Isto pode
+ ocorrer. Tem gente que só aprendeu fazer de um jeito. Tem pouco 
+material ensinando fazer procedural certo. O legado do procedural 
+realmente não é bom.</p>
+
+<p>Mas o que vejo mais (a realidade de alguns privilegiados não pode ser
+ posta para todos) é a pessoa não saber fazer dos jeitos. Este site tem 
+um bom universo estatístico para comprovarmos isto. O procedural é mais 
+simples dela aprender.</p>
+
+<p>Precisa encapsular? Ok, sou favorável sempre, ainda que nem sempre 
+seja tão necessário quanto acham. Só encapsular não é OOP. Diversos 
+paradigmas pregam isto.</p>
+
+<p>As mudanças incompatíveis citadas ocorreram porque o código foi mal 
+escrito. Se escrever mal OOP, a incompatibilidade também ocorrerá. A 
+resposta cita que <strong>o correto</strong> encapsulamento vai resolver um problema. Vale o mesmo para o procedural, fazendo o correto não tem problema algum.</p>
+
+<p>A solução é dada por fazer corretamente, não porque usou OOP ou 
+procedural. OOP não ajuda nada neste ponto. A não ser que a pessoa 
+esteja acostumada fazer OOP e não tenha ideia de como fazer o mesmo em 
+procedural. Aí é uma questão cultural individual.</p>
+
+<p>Pra falar a verdade achei que a versão nova da resposta até tenta 
+vender, mesmo que não seja intencional, OOP como uma solução mágica para
+ todos os problemas. Tem um monte de regra para seguir fazendo OOP para 
+tudo dar certo. Então aplique um monte de regra em procedural e tudo vai
+ dar certo. <strong>É muito comum os proponentes justificarem que OOP 
+não está dando certo porque as pessoas não sabem fazer certo. Procedural
+ também</strong>.</p>
+
+<p>Em uma linguagem de <em>script</em>, o encapsulamento se dá 
+principalmente pela contenção do código em arquivos fontes que serão 
+carregados sob demanda e que executarão e serão descartados em seguida. 
+Quer mais granulidade. Tem como. É só saber organizar, como também é 
+necessário saber em OOP.</p>
+
+<p>Eu sei que pode ser uma simplificação, mas parece que a resposta 
+vende um pouco a ideia que OOP é encapsular. Pode não ser intencional, 
+eu sei. Encapsulamento faz parte de diversos paradigmas, OOP não pode 
+tomar propriedade para ele.</p>
+
+<p>No procedural também podemos mudar a estrutura interna sem afetar os 
+consumidores. Basta fazer certo. OOP também só entrega o que promete se 
+fizer certo.</p>
+
+<p>Eu ia fazer a versão procedural do novo <code>Timer</code> OOP da 
+resposta, mas achei ele tão confuso que resolvi não arriscar :) Não 
+entendi qual seria a intenção ali. Me parece que é OOP ruim também, mas 
+posso estar enganado por não ter visto todo o contexto. Parece que o 
+código mistura responsabilidades.</p>
+
+<h1>Entidades</h1>
+
+<p>Acho pouco relevante como a entidade é representada. Em PHP classes no fundo são <em>arrays</em>
+ associativos, ainda que a implementação difira um pouco do AA padrão da
+ linguagem. Em diversas situações não é possível determinar se tudo o 
+que está na classe está sendo feita de forma correta. A impressão que eu
+ tenho é que a resposta não considera a realidade do PHP. Para fazer 
+tudo o que ela prega, PHP teria que ter uma classe de forma mais 
+estática do que é. Você não pode garantir o que não é estático.</p>
+
+<p><strong>A criação de classes pode burocratizar um pouco o desenvolvimento</strong>. O que é bom em grande parte das aplicações feitas em Java, por exemplo. Mas <strong>PHP é uma linguagem com menos cerimônia</strong>. Falo muito sobre isto em <a href="https://pt.stackoverflow.com/q/104340/101">outra pergunta</a>.</p>
+
+<p>Admito que pessoas muito desorganizadas podem encontrar em OOP alguma
+ salvação. Mas ela pode se dar mal optando por isso. Vejo perguntas aqui
+ no site onde a pessoa começou fazendo mais procedural e ela errava. 
+Passou fazer OOP e ficou muito pior. As pessoas estão sendo "obrigadas" a
+ usar OOP. Ninguém quer ficar de fora disto que todo mundo está usando.</p>
+
+<p>Curiosamente em OOP hora se prega para juntar tudo, hora se prega 
+para separar. Sim, tem que fazer os dois. Mas é o que eu sempre digo, 
+usar uma regra geral para casos específicos não dá certo. Então muito do
+ que se diz de benefício de OOP não significa muita coisa quando vai 
+codificar o problema real. Fica lindo na teoria e péssimo na prática. Aí
+ quem domina a ferramenta que é complexa, faz certo, quem não domina se 
+atrapalha mais.</p>
+
+<p>Novamente. Tem casos onde pode haver ganhos. O problema é que é 
+difícil dizer sem conhecer o caso específico profundamente, coisa que 
+levaria horas, dias, nunca poderá ser respondido aqui.</p>
+
+<p>Pegando o exemplo específico (da resposta original), quem garante que
+ a validação dentro da classe será chamada, por ela mesma ou 
+externamente? Quem garante que aquela validação pode ser usada em todas 
+situações? Quem garante que o sistema pode trabalhar bem com o objeto 
+sempre em estado válido único? Eu poderia continuar fazendo vários 
+questionamentos. OOP não garante nada a mais. Nem quando bem feito. Mas o
+ bem feito em qualquer paradigma, pode dar melhores garantias em grande 
+parte das situações.</p>
+
+<p>Adicionar campos novos é mais fácil em uma estrutura mais dinâmica do
+ que em uma classe, ainda que em PHP a classe possa ser dinamizada.</p>
+
+<p>Todos os problemas citados podem ocorrer em qualquer paradigma e nenhum ajuda fazer melhor o que foi mal feito.</p>
+
+<p><strong>OOP traz problemas novos</strong>. Por isso explodiram os tais dos <em>design patterns</em>
+ famosos. A maioria deles foram criados para resolver os problemas de 
+OOP. Problemas que não existem se usar o PHP "tradicional". Aplique 
+padrões específicos para o procedural e os problemas dele serão 
+resolvidos.</p>
+
+<p>Eu acho que se tivesse um livro canônico e popular, talvez chamado <strong>"<em>Design Patters</em> para Procedural"</strong>
+ :P e ele tivesse vindo antes de OOP, este último não teria este sucesso
+ todo. É bem um talvez, porque o advento da GUI quase obrigou OOP 
+existir. E aí entra onde OOP deveria ser usado mesmo. Coisa longe do 
+PHP. <strong>OOP faz mais sentido em JS que PHP</strong>.</p>
+
+<p>Cuidado para não confundir paradigmas com padrões de projeto. Nem com tipagem.</p>
+
+<p>Muitas das vantagens e desvantagens que as pessoas veem em OOP (nem 
+todas, claro) está mais ligado à linguagem ser estática do que ser 
+orientada a objeto. Curiosamente OOP puro (aquele do Smalltalk) funciona
+ melhor em linguagens dinâmicas. E não dá todas as garantias citadas. Os
+ problemas citados não existe em C que é procedural, mas é estático.</p>
+
+<p>Se PHP não ajuda garantir muita coisa, é uma falácia dizer que alguma
+ coisa será garantida se usar o paradigma. Mais uma vez, a garantia virá
+ do uso correto de qualquer paradigma, que é muito subjetivo. Ou da 
+tipagem estática, que é algo que a classe começou introduzir em PHP. SE 
+ela tivesse sido chamada de <code>struct</code> e não <code>class</code>, aceitariam que não é OOP? Falo da classe como um <em>container</em> de dados, só, sem outros apetrechos. OS apetrechos fazem ser OOP.</p>
+
+<p>A versão nova da resposta tem exemplos novos, mas é repetição do que eu já disse, não vou comentar especificamente.</p>
+
+<h1>O potencial do PHP em diferentes paradigmas</h1>
+
+<p>Concordo com quase tudo nesta seção. Faço algumas ressalvas ou ressaltos.</p>
+
+<p>PHP costuma ser usada para coisas relativamente triviais. É uma linguagem de <em>script</em>.</p>
+
+<p>Imperativo é diferente de procedural ou funcional, que também são 
+diferentes entre si. Não é só que um usa procedimentos e outro usa 
+funções, bem longe disto definir estes paradigmas (não vou entrar em 
+detalhes, quem tiver dúvida, faça perguntas específicas).</p>
+
+<p>Imperativo realmente não vai desaparecer e é totalmente ortogonal com vários outros paradigmas, incluindo OOP.</p>
+
+<p>Procedural também é ortogonal, mas nem tanto. A maneira de organizar 
+um ou outro é diferente, em certo ponto específico você escolhe um ou 
+outro, mas pode misturá-los na aplicação como um todo.</p>
+
+<p>Eu vejo as pessoas realmente tendo muito problema com OOP, em todas 
+as linguagens. OOP não é tão simples quanto vendem. É verdade que as 
+pessoas também têm problemas com procedural. Mas é porque elas não 
+aprenderam desenvolver softwares de uma maneira geral, e isto, me 
+parece, ocorre mais em PHP que outras linguagens. Até vejo mais ainda em
+ <em>webdev</em> em geral. Parece haver "paraquedismo" maior nesta área.</p>
+
+<p><strong>Concordo 100% que procedural é mais fácil</strong> e como ele costuma resolver, sem problema algum, a maioria dos problemas que o PHP costuma trabalhar, ele deve ser a opção <em>default</em>,
+ pelo menos de quem não tem OOP como seu paradigma fundamental e que o 
+domine absolutamente, o que talvez até seja um caso de martelo dourado. 
+Tentar fazer o que não entende é pior que fazer com a "melhor 
+ferramenta".</p>
+
+<p>Me escute! Prefira um machado do que uma moto-serra se não souber 
+usar uma. Mesmo que não saiba usar o machado também, e de qualquer jeito
+ tenha que cortar a árvore. Claro que eu prefiro que aprenda usar ambos 
+antes de fazer isto. Mas isto ninguém escuta. Uma pessoa bem treinada no
+ machado será bem rápida e não vai se machucar. Na moto-serra ela vai 
+morrer antes de conseguir treinamento adequado. Eu falo isto e as 
+pessoas não escutam. Vejo isto o tempo todo. E as pessoas que são bem 
+treinadas costumam incentivar o sujeito a largar o machado e ir pra 
+moto-serra achando que elas vão se auto-treinar magicamente, afinal elas
+ conseguiram fazer isto e acham que todo mundo consegue fazer o mesmo. 
+Bem treinado, na árvore certa é possível se beneficiar da moto-serra. 
+Embora o risco sempre será maior e quando erar, o estrago também será. É
+ claro que estou falando de procedural e OOP ainda. Parece que 
+lenhadores são mais espertos que programadores. Eles usam os dois.</p>
+
+<p>Ultimamente tenho percebido que quem aprende OOP primeiro, e até bem,
+ tem dificuldade de entender procedural corretamente, talvez até por ela
+ ter uma visão do que OOP é, que, no mínimo, eu discordo.</p>
+
+<h1>Polêmica</h1>
+
+<p>No campo absolutamente pessoal, então não tome isto como verdade absoluta.</p>
+
+<p>Eu acho que muitos proponentes de OOP devem ter lido algum livro que 
+vendeu OOP de forma marketeira. Esta forma coloca OOP de forma tão 
+genérica que a sua definição serve para boa parte dos paradigmas. Ou 
+seja, ela fala sobre organizar código.</p>
+
+<p>Se for isso, então eu programo OOP há mais de 30 anos em tudo que faço, antes de ter alguma linguagem <em>mainstream</em> suportando isto "oficialmente" e eu nunca ter ouvido falar no termo.</p>
+
+<p>Mas acho que OOP é muito mais que isto. E a <strong>maioria das definições sobre OOP encontradas colocam requisitos muito maiores que os citados genericamente</strong>.
+ Pra mim a definição genérica de OOP é essencialmente a mesma da 
+modularização. Ou seja, ela tenta "sequestrar" algo que não é dela. 
+Assim como músicas de qualidade questionável, como "funk", "sertanejo", e
+ "pagode" que usam nomes de outros gêneros musicais originais e mais 
+antigos, que tinham qualidade, para tentar se validar.</p>
+
+<p>OOP não tem méritos próprios?</p>
+
+<p>Dentro da especificação mais estrita eu acho OOP bem válido para vários problemas. Quando se diz que OOP é <strong>só</strong>
+ uma forma de encapsular, de por as coisas juntas, de separar 
+responsabilidades, fazer reuso de forma geral, de abstrair, pra mim é 
+outro paradigma. OOP não pode pegar o que está presente em outros 
+paradigmas, não colocar mais nada e dizer que é algo diferente. Não pode
+ dizer que só colocar o substantivo na frente do verbo seja uma inovação
+ que muda o paradigma. Isso é só sintaxe. Dá pra fazer isto no 
+procedural.</p>
+
+<p>Ah, polimorfismo puro não dá a robustez esperada. Ele implementado de forma estática é que dá.</p>
+
+<p>Em perguntas citadas aqui eu falo com mais detalhes sobre o que eu e muita gente vê em OOP.</p>
+
+<p>Discorda disto? Ok. Eu sei que existem duas vertentes do que é OOP. 
+Aceito isto. Espero que quem discorda aceite isto também e não tenha a 
+sua verdade como absoluta. Tem perguntas sobre o assunto. Vá lá, 
+discorde e fundamente o que pensa.</p>
+
+<h1>Conclusão</h1>
+
+<p>É um direito de cada um procurar o que elas acham melhor pra elas. Só
+ quis colocar outra perspectiva. Em nenhum momento digo que está errado 
+usar OOP. Pelo contrário, eu o uso.</p>
+
+<p><strong>Faça o que você domina e se sinta mais confortável</strong>. 
+Comece pelo simples. E vá procurando soluções para os problemas quando 
+for percebendo que eles surgem. Não resolva um problema que não existe. 
+Dê uma passo de cada vez. Não force o uso de uma paradigma sem 
+necessidade. Entenda o que está fazendo, não siga receitas.</p>
+
+<p><strong>Não faça porque todo mundo está fazendo</strong>. Se 
+questione se está tomando a decisão certa. Questione pessoas mais 
+experientes com dúvidas específicas. Aproveite a experiência delas para 
+acelerar a sua. Mas não queime etapas.</p>
+
+<p>Eu acho justo a pessoa querer evoluir, dominar novas ferramentas, 
+entender tudo o que ela pode fazer. O que eu acho estranho é quando a 
+pessoa decide o que é bom pra ela sem entender como usa aquilo direito. E
+ passa ignorar outras formas que podem ser melhores. E desiste de 
+evoluir de outro jeito que pode ser melhor pra ela.</p>
+
+<p>A maior falácia que vejo sobre OOP é que isto organiza códigos. Ele 
+ajuda! Como outras coisas ajudam. Quem sabe o que está fazendo fará bem 
+em qualquer paradigma. Quem não sabe, produzirá um desastre em qualquer 
+paradigma. Mas será mais fácil produzir desastres em um que ele não 
+domina.</p>
+
+<p>Hoje vejo que a pessoa não aprende bem o procedural porque não há 
+incentivo em aprender bem e não aprende bem OOP porque ele é mais 
+difícil de aprender "certo".</p>
+
+<p>Tem coisa que faz diferença usar um processador de alimentos ou um liquidificador. Tem coisa que dá na mesma.</p>
+
+<p>Por que tem gente que prefere conscientemente usar a faca se o 
+processador é tão bom? Por que usar lâmina de barbear se a máquina é 
+melhor? Por que usar o telefone fixo se o celular resolve tudo? Por que 
+usar outros paradigmas se OOP resolve o problema melhor que eles?</p>
+
+<p>Fora estes <em>frameworks</em> complexos - e eu questiono bastante o 
+uso deles em PHP - e alguns casos bem específicos, eu raramente vejo uso
+ válido para OOP em PHP no nicho onde ele brilha.</p>
+
+<p>Então abaixo dou um exemplo de como eu aplicaria OOP em um website comum em PHP:</p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="pln">&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;</span></code></pre>
+
+<p>:)</p>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://pt.stackoverflow.com/a/108227" title="permalink curto para esta resposta" class="short-link" id="link-post-108227">compartilhar</a><span class="lsep">|</span><a href="https://pt.stackoverflow.com/posts/108227/edit" class="suggest-edit-post" title="">melhorar esta resposta</a></div>                    </div>
+    <div class="post-signature grid--cell fl0">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="https://pt.stackoverflow.com/posts/108227/revisions" title="mostrar todas as edições desta publicação">editada <span title="2017-04-13 12:59:40Z" class="relativetime">13/04/17 às 12:59</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://pt.stackoverflow.com/users/-1/comunidade"><div class="gravatar-wrapper-32"><img src="Vantagens%20de%20usar%20PHP%20Orientado%20a%20Objetos%20%20Onde%20usar%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/a007be5a61f6aa8f3e85ae2fc18dd66e.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://pt.stackoverflow.com/users/-1/comunidade">Comunidade</a><span class="mod-flair" title="moderador">♦</span>
+        <div class="-flair">
+            <span class="reputation-score" title="pontos de reputação " dir="ltr">1</span>
+        </div>
+    </div>
+</div>    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        respondida <span title="2016-01-14 09:49:52Z" class="relativetime">14/01/16 às 9:49</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://pt.stackoverflow.com/users/101/maniero"><div class="gravatar-wrapper-32"><img src="Vantagens%20de%20usar%20PHP%20Orientado%20a%20Objetos%20%20Onde%20usar%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/jmxoN.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://pt.stackoverflow.com/users/101/maniero">Maniero</a><span class="mod-flair" title="moderador">♦</span>
+        <div class="-flair">
+            <span class="reputation-score" title="pontos de reputação 273.541" dir="ltr">274mil</span><span title="45 medalhas de ouro"><span class="badge1"></span><span class="badgecount">45</span></span><span title="681 medalhas de prata"><span class="badge2"></span><span class="badgecount">681</span></span><span title="1049 medalhas de bronze"><span class="badge3"></span><span class="badgecount">1049</span></span>
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+</div>
+    
+    <div class="post-layout--right">
+	    <div id="comments-108227" class="comments js-comments-container ">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="8" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <li id="comment-223559" class="comment js-comment " data-comment-id="223559">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="número de votos para 'comentários úteis' recebidos" class="cool">2</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Estranho o voto negativo. +1 
+para fazer justiça. Concordo com tudo, salvo algumas poucas observações 
+que farei na minha resposta atualizada.</span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/227/utluiz" title="61.141 reputation" class="comment-user">utluiz<span class="mod-flair" title="moderador">♦</span></a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment223559_108227"><span title="2016-01-14 10:52:52Z" class="relativetime-clean">14/01/16 às 10:52</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-223665" class="comment js-comment " data-comment-id="223665">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="número de votos para 'comentários úteis' recebidos" class="cool">2</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Esse último exemplo foi show 
+hein kkk.. Obrigado pela resposta e pelos links, deu para fundamentar um
+ pouco mais do conteúdo. Eu pessoalmente uso OOP apenas quando tenho um 
+código bem massivo como de banco de dados, o resto faço sem mesmo usar 
+funções, pois realmente discordo de algumas coisas que já li, que dizem 
+ser melhor usar OOP em 100% do seu projeto fica organizado e blábláblá. 
+Eu creio que depende do programador ter um código organizado e adequado e
+ não de um padrão, etc. Obrigado aos dois que responderam, ambas 
+respostas foram boas e complementais para o assunto, obrigado.</span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/23036/leonardo-vilarinho" title="5.603 reputation" class="comment-user owner">Leonardo Vilarinho</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment223665_108227"><span title="2016-01-14 13:39:27Z" class="relativetime-clean">14/01/16 às 13:39</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-226950" class="comment js-comment " data-comment-id="226950">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="número de votos para 'comentários úteis' recebidos" class="cool">3</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Como ninguém que negativa 
+está dizendo porque fica claro que só pode ser: A) a pessoa não entende 
+do assunto e acha que eu estou errado, se ela tem certeza que estou 
+errado, ela falaria onde tem erro; B) Ela apenas discorda e acha que o 
+voto serve para demonstrar isto; C) Apenas não gosta de mim e acha que 
+eu mereço punição.</span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/101/maniero" title="273.541 reputation" class="comment-user">Maniero<span class="mod-flair" title="moderador">♦</span></a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment226950_108227"><span title="2016-01-21 19:19:56Z" class="relativetime-clean">21/01/16 às 19:19</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-227226" class="comment js-comment " data-comment-id="227226">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="número de votos para 'comentários úteis' recebidos" class="cool">2</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@Edilson ok, respeito sua 
+opinião. Eu discordo obviamente. Concordo que pode ter ficado um pouco 
+confuso porque tem duas versões da resposta do utluiz. O que pode 
+parecer contraditório é que eu não sou anti-OOP como alguns acham. Eu 
+mostro que ele tem problemas, mas não é algo horrível que nunca deva ser
+ usado. Ser imparcial não é fácil. Eu sei que as pessoas querem que se 
+tome partido. Mas eu não faço isto. O que você percebe sobre o que está 
+escrito é um problema exclusivamente seu. Eu sei o que eu sinto. 
+Obrigado por justificar seu voto, pelo menos eu sei porque ele foi dado.</span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/101/maniero" title="273.541 reputation" class="comment-user">Maniero<span class="mod-flair" title="moderador">♦</span></a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment227226_108227"><span title="2016-01-22 14:15:55Z" class="relativetime-clean">22/01/16 às 14:15</span></a></span>
+                        <span class="edited-yes" title="Este comentário foi editado 2 vezes"></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-227227" class="comment js-comment " data-comment-id="227227">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="número de votos para 'comentários úteis' recebidos" class="cool">2</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Claramente você viu coisas no
+ texto que não existem, como o fez com o texto do utluiz, então não vale
+ a pena nem tentar debater ponto  por ponto dos seus comentários, não 
+vai levar a lugar algum. Eu encontro alguns erros conceituais no que 
+está dizendo, e se eu tentar isto vai ficar longo demais. Você fez um 
+relato pessoal, não quer dizer que seja válido para outras pessoas. Não 
+lembro da pergunta sobre <i>patterns</i>, mas acho muito pouco provável 
+que eu tenho dito o que está afirmando, eu acho que disse algo parecido e
+ você entendeu outra coisa, parece ser comum isto acontecer.</span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/101/maniero" title="273.541 reputation" class="comment-user">Maniero<span class="mod-flair" title="moderador">♦</span></a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment227227_108227"><span title="2016-01-22 14:16:05Z" class="relativetime-clean">22/01/16 às 14:16</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+            </ul>
+	    </div>
+
+        <div id="comments-link-108227" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link  dno" title="Use comentários para pedir mais informações ou sugerir melhorias. Evite comentários como “+1” ou “obrigado”."></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link " title="ver todos os comentários desta publicação" href="#" onclick="">mostrar mais <b>8</b> comentários</a>
+        </div>         
+    </div>    </div>
+</div>
+                
+
+
+                        <h2 class="bottom-notice" data-loc="1">
+Esta não é a resposta que você está procurando?                            Pesquise outras perguntas com a tag <a href="https://pt.stackoverflow.com/questions/tagged/php" class="post-tag" title="mostrar perguntas com a tag 'php'" rel="tag">php</a> <a href="https://pt.stackoverflow.com/questions/tagged/orienta%c3%a7%c3%a3o-a-objetos" class="post-tag" title="mostrar perguntas com a tag 'orientação-a-objetos'" rel="tag">orientação-a-objetos</a> <a href="https://pt.stackoverflow.com/questions/tagged/estilo-de-codifica%c3%a7%c3%a3o" class="post-tag" title="mostrar perguntas com a tag 'estilo-de-codificação'" rel="tag">estilo-de-codificação</a> <a href="https://pt.stackoverflow.com/questions/tagged/paradigmas" class="post-tag" title="mostrar perguntas com a tag 'paradigmas'" rel="tag">paradigmas</a>  ou <a href="https://pt.stackoverflow.com/questions/ask">faça sua própria pergunta</a>.                        </h2>
+            </div>
+        </div>
+                <div id="sidebar" class="show-votes" role="complementary" aria-label="barra lateral">
+                            <div class="module question-stats">
+                    <table id="qinfo">
+                        <tbody><tr>
+                            <td>
+                                <p class="label-key">perguntada</p>
+                            </td>
+                            <td style="padding-left: 10px">
+                                <p class="label-key" title="2016-01-14 01:08:25Z"><b>2 anos, 5 meses atrás</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="label-key">acessada</p>
+                            </td>
+
+                            <td style="padding-left: 10px">
+                                <p class="label-key">
+                                    <b>3.313 vezes</b>
+                                </p>
+                            </td>
+                        </tr>
+                            <tr>
+                                <td>
+                                    <p class="label-key">ativas</p>
+                                </td>
+                                <td style="padding-left: 10px">
+                                    <p class="label-key"><b><a href="https://pt.stackoverflow.com/questions/108204/vantagens-de-usar-php-orientado-a-objetos-onde-usar?lastactivity" class="lastactivity-link" title="2016-11-24 10:58:14Z">1 ano, 6 meses atrás</a></b></p>
+                                </td>
+                            </tr>
+                    </tbody></table>
+                </div>
+            
+            
+<div id="dfp-tsb" class="everyonelovesstackoverflow everyoneloves__top-sidebar" style="display: none;" data-google-query-id="CKXckY6-1dsCFREphwodeh0EKw" data-clc-prefilled="true" data-clc-ready="true"><div id="google_ads_iframe_/248424177/pt.stackoverflow.com/sb/question-pages_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/248424177/pt.stackoverflow.com/sb/question-pages_0" title="3rd party ad content" name="google_ads_iframe_/248424177/pt.stackoverflow.com/sb/question-pages_0" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom;" srcdoc="" width="300" height="250" frameborder="0"></iframe></div></div>
+<script>;try{(function(a){function b(a){return'string'==typeof a?document.getElementById(a):a}function c(a){return a=b(a),!!a&&'none'===getComputedStyle(a).display}function d(a){return!c(a)}function e(a){return!!a}function f(a){return /^\s*$/.test(b(a).innerHTML)}function g(a){var b=a.style;b.height=b.maxHeight=b.minHeight='auto',b.display='none',[].forEach.call(a.children,g)}function h(a,b){var c;return function(){return a&&(c=a.call(b||this,arguments),a=null),c}}function i(a){var b=document.createElement('script');b.src=a,document.body.appendChild(b)}function j(a){return k([],a)}function k(a,b){return a.push=function(a){return b(),delete this.push,this.push(a)},a}function l(){try{return!new Function('return async()=>{};')}catch(a){return!0}}function m(){return'undefined'!=typeof googletag&&!!googletag.apiReady}function n(){m()||(googletag={cmd:j(A)})}function o(){var a=document.createElement('div');a.className='adsbox',a.id='clc-abd',a.style.position='absolute',a.style.pointerEvents='none',a.innerHTML='&nbsp;',document.body.appendChild(a)}function p(a){var b=a.serviceName,c=a.slot,d=a.lineItemId;try{var e=c.getSlotElementId(),f=[];e||f.push('id=0');var h=document.getElementById(e);if(!e||h?h.hasAttribute('data-clc-stalled')&&f.push('st=1'):f.push('el=0'),0!==f.length)return void B(f.join('&'));-1===x.dh.indexOf(d)?h.setAttribute('data-clc-prefilled','true'):g(h),h.setAttribute('data-clc-ready','true')}catch(a){var i=document.querySelector('#dfp-tsb, #dfp-isb, #clc-tsb');i&&i.setAttribute('data-clc-ready','true'),B('e=1')}}function q(){return Object.keys(F.ids)}function r(a){var b=F.ids[a],c=F.slots[b];'function'==typeof c&&(c=c(a));return{path:'/'+C+'/'+E+'/'+b+'/'+D,sizes:c,zone:b}}function s(a){return!(clc.collapse&&void 0!==clc.collapse[a])||!!clc.collapse[a]}function t(a,b){'dfp-isb'===a&&b.setTargeting('Sidebar',['Inline']),'dfp-tsb'===a&&b.setTargeting('Sidebar',['Right']);var c=r(a),d=c.path,e=c.sizes,f=c.zone,g=googletag.defineSlot(d,e,a);s(f)&&g.setCollapseEmptyDiv(!0,!0),g.addService(b),!1}function u(b){var c=a.dfp&&a.dfp.targeting||{};Object.keys(c).forEach(function(a){b.setTargeting(a,c[a])})}function v(a){var g=a.map(b).filter(e);return{eligible:g.filter(f).filter(d).map(function(a){return a.id}),ineligible:g.filter(c)}}function w(b){if(void 0===b&&(b=q()),!m())return n(),void googletag.cmd.push(function(){return w(b)});var c=v(b),d=c.eligible,e=c.ineligible;if(e.forEach(g),0!==d.length){o(),googletag.destroySlots();var f=googletag.pubads();f.enableSingleRequest(),a.sreEvent||(f.addEventListener('slotRenderEnded',p),a.sreEvent=!0),u(f),d.forEach(function(a){return t(a,f)}),googletag.enableServices(),d.forEach(function(a){googletag.display(a)})}}var x=function(a){for(var b=[],c=1;c<arguments.length;c++)b[c-1]=arguments[c];for(var d,e=0,f=b;e<f.length;e++)for(var g in d=f[e],d)a[g]=d[g];return a}({"lib":"https://cdn.sstatic.net/clc/clc.min.js?v=04d772c81312","style":"https://cdn.sstatic.net/clc/styles/clc.min.css?v=8a0a093a431f","u":"https://clc.stackoverflow.com/markup.js","wa":true,"kt":2000,"tto":true,"h":"clc.stackoverflow.com","allowed":"^(((talent\\.)?stackoverflow)|(blog\\.codinghorror)|(serverfault|askubuntu)|([^\\.]+\\.stackexchange))\\.com$","wv":true,"al":false,"dh":[4385506061,4386578282,4386579572]},a.options||{}),y=h(function(){i(l()?x.lib.replace(/(\.min)?\.js(\?v=[0-9a-fA-F]+)?$/,'.ie$1.js$2'):x.lib)}),z=a.cmd||[];Array.isArray(z)&&(0<z.length?y():k(z,y));var A=h(function(){i('https://www.googletagservices.com/tag/js/gpt.js')}),B=function(a){new Image().src='https://'+x.h+'/stalled.gif?'+a},C='248424177',D=/^\/tags\//.test(location.pathname)||/^\/questions\/tagged\//.test(location.pathname)?'tag-pages':'question-pages',E=location.hostname;var F={slots:{lb:[[728,90]],mlb:[[728,90]],sb:function(a){return'dfp-tsb'===a?[[300,250],[300,600]]:[[300,250]]},"tag-sponsorship":[[730,135]],"mobile-below-question":[[320,50],[300,250]]},ids:{"dfp-tlb":'lb',"dfp-mlb":'mlb',"dfp-tsb":'sb',"dfp-isb":'sb',"dfp-tag":'tag-sponsorship',"dfp-m-aq":'mobile-below-question',"clc-tlb":'lb',"clc-mlb":'mlb',"clc-tsb":'sb'}};(function(){x.al&&z.push(function(){return a.load()})})(),n();a.cmd=z,a.dfp={load:w},a.options=x})(this.clc=this.clc||{})}catch(a){window.console.error(a)}</script>            <script>
+                var clc = clc || {};
+                clc.collapse = { sb: !0,'tag-sponsorship':!0,lb:!0,mlb:!0,'mobile-below-question':!0};
+                                clc.dfp = clc.dfp || {};
+                clc.dfp.targeting = {Registered:['false'],'pt.so-tag':['php','orientação-a-objetos','estilo-de-codificação','paradigmas']};
+                
+                var googletag = googletag || {};
+                googletag.cmd = googletag.cmd || [];
+                googletag.cmd.push(function () { clc.dfp.load(); });
+            </script>
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Vinculado</h4>
+	<div class="linked" data-tracker="lq=1">
+
+<div class="spacer">
+	<a href="https://pt.stackoverflow.com/q/104340?lq=1" title="Contagem de votos (a favor - contra)">
+		<div class="answer-votes answered-accepted default">48</div>
+	</a>
+	<a href="https://pt.stackoverflow.com/questions/104340/php-mistura-c%c3%b3digos-de-orienta%c3%a7%c3%a3o-a-objetos-e-linguagem-procedural?noredirect=1&amp;lq=1" class="question-hyperlink">PHP mistura códigos de orientação a objetos e linguagem procedural?</a>
+</div>
+<div class="spacer">
+	<a href="https://pt.stackoverflow.com/q/73530?lq=1" title="Contagem de votos (a favor - contra)">
+		<div class="answer-votes answered-accepted default">78</div>
+	</a>
+	<a href="https://pt.stackoverflow.com/questions/73530/para-que-serve-um-construtor?noredirect=1&amp;lq=1" class="question-hyperlink">Para que serve um construtor?</a>
+</div>
+<div class="spacer">
+	<a href="https://pt.stackoverflow.com/q/123459?lq=1" title="Contagem de votos (a favor - contra)">
+		<div class="answer-votes answered-accepted default">19</div>
+	</a>
+	<a href="https://pt.stackoverflow.com/questions/123459/%c3%89-uma-boa-pr%c3%a1tica-usar-construtores-ou-m%c3%a9todos-m%c3%a1gicos-em-interfaces?noredirect=1&amp;lq=1" class="question-hyperlink">É uma boa prática usar construtores (ou métodos mágicos) em interfaces?</a>
+</div>
+<div class="spacer">
+	<a href="https://pt.stackoverflow.com/q/55493?lq=1" title="Contagem de votos (a favor - contra)">
+		<div class="answer-votes answered-accepted default">18</div>
+	</a>
+	<a href="https://pt.stackoverflow.com/questions/55493/quais-as-vantagens-pr%c3%a1ticas-de-se-utilizar-orienta%c3%a7%c3%a3o-a-objetos-no-dia-a-dia-de?noredirect=1&amp;lq=1" class="question-hyperlink">Quais as vantagens práticas de se utilizar orientação a objetos no dia a dia de uma equipe de desenvolvimento?</a>
+</div>
+<div class="spacer">
+	<a href="https://pt.stackoverflow.com/q/21158?lq=1" title="Contagem de votos (a favor - contra)">
+		<div class="answer-votes answered-accepted default">26</div>
+	</a>
+	<a href="https://pt.stackoverflow.com/questions/21158/quais-problemas-um-estado-global-pode-acarretar?noredirect=1&amp;lq=1" class="question-hyperlink">Quais problemas um estado global pode acarretar?</a>
+</div>
+<div class="spacer">
+	<a href="https://pt.stackoverflow.com/q/108047?lq=1" title="Contagem de votos (a favor - contra)">
+		<div class="answer-votes answered-accepted default">10</div>
+	</a>
+	<a href="https://pt.stackoverflow.com/questions/108047/o-que-%c3%a9-orientado-a-objeto-e-quais-outros-m%c3%a9todos?noredirect=1&amp;lq=1" class="question-hyperlink">O que é “Orientado a objeto” e quais outros métodos?</a>
+</div>
+<div class="spacer">
+	<a href="https://pt.stackoverflow.com/q/49521?lq=1" title="Contagem de votos (a favor - contra)">
+		<div class="answer-votes answered-accepted default">3</div>
+	</a>
+	<a href="https://pt.stackoverflow.com/questions/49521/como-usar-vari%c3%a1veis-est%c3%a1ticas-e-globais-em-php?noredirect=1&amp;lq=1" class="question-hyperlink">Como usar variáveis estáticas e globais em PHP?</a>
+</div>
+<div class="spacer">
+	<a href="https://pt.stackoverflow.com/q/102402?lq=1" title="Contagem de votos (a favor - contra)">
+		<div class="answer-votes answered-accepted default">9</div>
+	</a>
+	<a href="https://pt.stackoverflow.com/questions/102402/globals-para-armazenar-configura%c3%a7%c3%b5es?noredirect=1&amp;lq=1" class="question-hyperlink">$GLOBALS para armazenar configurações?</a>
+</div>
+<div class="spacer">
+	<a href="https://pt.stackoverflow.com/q/195069?lq=1" title="Contagem de votos (a favor - contra)">
+		<div class="answer-votes answered-accepted default">8</div>
+	</a>
+	<a href="https://pt.stackoverflow.com/questions/195069/o-que-%c3%a9-programa%c3%a7%c3%a3o-procedural-e-n%c3%a3o-procedural?noredirect=1&amp;lq=1" class="question-hyperlink">O que é programação procedural e não procedural?</a>
+</div>
+<div class="spacer">
+	<a href="https://pt.stackoverflow.com/q/211768?lq=1" title="Contagem de votos (a favor - contra)">
+		<div class="answer-votes answered-accepted default">7</div>
+	</a>
+	<a href="https://pt.stackoverflow.com/questions/211768/tudo-que-consigo-fazer-em-poo-eu-consigo-fazer-em-pe?noredirect=1&amp;lq=1" class="question-hyperlink">Tudo que consigo fazer em POO eu consigo fazer em PE?</a>
+</div>					<div class="spacer more">
+				<a href="https://pt.stackoverflow.com/questions/linked/108204?lq=1">consulte mais perguntas vinculadas...</a>
+			</div>
+	</div>
+</div>
+
+                <div class="module sidebar-related">
+                    <h4 id="h-related">Relacionado</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/14990?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes answered-accepted default">17</div></a><a href="https://pt.stackoverflow.com/questions/14990/como-identificar-classes-em-um-sistema-orientado-a-objetos?rq=1" class="question-hyperlink">Como identificar classes em um sistema orientado a objetos?</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/27211?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes default">-4</div></a><a href="https://pt.stackoverflow.com/questions/27211/sobre-orientado-a-objeto-em-php?rq=1" class="question-hyperlink">Sobre Orientado a Objeto em PHP</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/54310?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes default">10</div></a><a href="https://pt.stackoverflow.com/questions/54310/origem-da-orienta%c3%a7%c3%a3o-a-objetos?rq=1" class="question-hyperlink">Origem da orientação a objetos</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/104340?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes answered-accepted default">48</div></a><a href="https://pt.stackoverflow.com/questions/104340/php-mistura-c%c3%b3digos-de-orienta%c3%a7%c3%a3o-a-objetos-e-linguagem-procedural?rq=1" class="question-hyperlink">PHP mistura códigos de orientação a objetos e linguagem procedural?</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/113899?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes answered-accepted default">11</div></a><a href="https://pt.stackoverflow.com/questions/113899/quais-s%c3%a3o-as-vantagens-de-utilizar-banco-de-dados-orientado-a-objetos?rq=1" class="question-hyperlink">Quais são as vantagens de utilizar banco de dados orientado a objetos?</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/215799?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes answered-accepted default">1</div></a><a href="https://pt.stackoverflow.com/questions/215799/quais-as-vantagens-e-desvantagens-de-utilizar-mysqli-orientado-a-objetos?rq=1" class="question-hyperlink">Quais as vantagens e desvantagens de utilizar mysqli Orientado a Objetos?</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/219364?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes answered-accepted default">9</div></a><a href="https://pt.stackoverflow.com/questions/219364/o-que-significa-orientado-a-documentos?rq=1" class="question-hyperlink">O que significa orientado a documentos?</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/224138?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes default">22</div></a><a href="https://pt.stackoverflow.com/questions/224138/o-que-%c3%a9-projeto-orientado-a-dados?rq=1" class="question-hyperlink">O que é projeto orientado a dados?</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/276787?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes default">7</div></a><a href="https://pt.stackoverflow.com/questions/276787/quais-as-limita%c3%a7%c3%b5es-do-paradigma-orientado-a-objetos?rq=1" class="question-hyperlink">Quais as limitações do paradigma orientado a objetos?</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/297722?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes answered-accepted default">-2</div></a><a href="https://pt.stackoverflow.com/questions/297722/url-amig%c3%a1vel-com-php-orientado-a-obejotos?rq=1" class="question-hyperlink">URL Amigável com PHP Orientado a Obejotos</a></div>
+                    </div>
+                </div>
+
+
+
+        </div>
+    </div>
+<script>StackExchange.ready(function(){$.get('/posts/108204/ivc/de7d');});</script>
+<noscript><div><img src="/posts/108204/ivc/de7d" class="dno" alt="" width="0" height="0"></div></noscript><div style="display:none" id="prettify-lang">lang-php</div></div>
+
+
+        </div>
+    </div><script src="Vantagens%20de%20usar%20PHP%20Orientado%20a%20Objetos%20%20Onde%20usar%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/gpt.js"></script>
+
+    <footer id="footer" class="site-footer js-footer" role="contentinfo">
+        <div class="site-footer--container">
+            
+            <nav class="site-footer--nav">
+                    <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+                        <h5 class="-title"><a href="https://pt.stackoverflow.com/">Stack Overflow em Português</a></h5>
+                        <ul class="-list js-primary-footer-links">
+                                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 2 })" href="https://pt.stackoverflow.com/tour">Tour</a></li>
+                                <li class="-item"><a href="https://pt.stackoverflow.com/help" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 3 })">Ajuda</a></li>
+                                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 5 })" href="https://chat.stackexchange.com/?tab=site&amp;host=pt.stackoverflow.com">Chat</a></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 13 })" href="https://pt.stackoverflow.com/contact">Contato</a></li>
+                                <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 14 })" href="https://pt.meta.stackoverflow.com/">Feedback</a></li>
+                                                            <li class="-item"><a onclick='StackExchange.switchMobile("on")' class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 12 })">Móvel</a></li>
+                        </ul>
+                    </div>
+                <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+                    <h5 class="-title"><a class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">Empresa</a></h5>
+                    <ul class="-list">
+                                                    <li class="-item"><a href="https://stackoverflow.com/" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 15})">Stack Overflow</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 19 })">Stack Overflow Business</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 17})">Developer Jobs</a></li>
+                                <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">Sobre</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 27 })" href="https://stackoverflow.com/company/press">Imprensa</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 7 })" href="https://stackoverflow.com/legal">Legal</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 8 })" href="https://stackoverflow.com/legal/privacy-policy">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="site-footer--col site-footer--categories-nav site-footer--col__visible">
+                    <a href="#" class="site-footer--back js-footer-back"><svg aria-hidden="true" class="svg-icon iconArrowLeftAlt" width="18" height="18" viewBox="0 0 18 18"><path d="M10.58 16L12 14.59 6.4 9 12 3.41 10.57 2l-7 7z"></path></svg></a>
+                    <div>
+                        <h5 class="-title"><a href="https://stackexchange.com/">Stack Exchange<br> Network</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Technology">Technology</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Life / Arts">Life / Arts</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Culture / Recreation">Culture / Recreation</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Science">Science</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Other">Other</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="site-footer--categories">
+                    <div class="site-footer--col site-footer--category js-footer-col" data-name="Technology">
+        <ul class="-list">
+                <li class="-item"><a href="https://stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                <li class="-item"><a href="https://serverfault.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="system and network administrators">Server Fault</a></li>
+                <li class="-item"><a href="https://superuser.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="computer enthusiasts and power users">Super User</a></li>
+                <li class="-item"><a href="https://webapps.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of web applications">Web Applications</a></li>
+                <li class="-item"><a href="https://askubuntu.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                <li class="-item"><a href="https://webmasters.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="pro webmasters">Webmasters</a></li>
+                <li class="-item"><a href="https://gamedev.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and independent game developers">Game Development</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://tex.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                <li class="-item"><a href="https://softwareengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professionals, academics, and students working within the systems development life cycle">Software Engineering</a></li>
+                <li class="-item"><a href="https://unix.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                <li class="-item"><a href="https://apple.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                <li class="-item"><a href="https://wordpress.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="WordPress developers and administrators">WordPress Development</a></li>
+                <li class="-item"><a href="https://gis.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                <li class="-item"><a href="https://electronics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://android.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                <li class="-item"><a href="https://security.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="information security professionals">Information Security</a></li>
+                <li class="-item"><a href="https://dba.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                <li class="-item"><a href="https://drupal.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Drupal developers and administrators">Drupal Answers</a></li>
+                <li class="-item"><a href="https://sharepoint.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="SharePoint enthusiasts">SharePoint</a></li>
+                <li class="-item"><a href="https://ux.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="user experience researchers and experts">User Experience</a></li>
+                <li class="-item"><a href="https://mathematica.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Wolfram Mathematica">Mathematica</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://salesforce.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                <li class="-item"><a href="https://expressionengine.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                <li class="-item"><a href="https://pt.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programadores profissionais e entusiastas">Stack Overflow em Português</a></li>
+                <li class="-item"><a href="https://blender.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who use Blender to create 3D graphics, animations, or games">Blender</a></li>
+                <li class="-item"><a href="https://networkengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="network engineers">Network Engineering</a></li>
+                <li class="-item"><a href="https://crypto.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="software developers, mathematicians and others interested in cryptography">Cryptography</a></li>
+                <li class="-item"><a href="https://codereview.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="peer programmer code reviews">Code Review</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://magento.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of the Magento e-Commerce platform">Magento</a></li>
+                <li class="-item"><a href="https://softwarerecs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people seeking specific software recommendations">Software Recommendations</a></li>
+                <li class="-item"><a href="https://dsp.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="practitioners of the art and science of signal, image and video processing">Signal Processing</a></li>
+                <li class="-item"><a href="https://emacs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those using, extending or developing Emacs">Emacs</a></li>
+                <li class="-item"><a href="https://raspberrypi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users and developers of hardware and software for Raspberry Pi">Raspberry Pi</a></li>
+                <li class="-item"><a href="https://ru.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="программистов">Stack Overflow на русском</a></li>
+                <li class="-item"><a href="https://codegolf.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programming puzzle enthusiasts and code golfers">Programming Puzzles &amp; Code Golf</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://es.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programadores y profesionales de la informática">Stack Overflow en español</a></li>
+                <li class="-item"><a href="https://ethereum.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Ethereum, the decentralized application platform and smart contract enabled blockchain">Ethereum</a></li>
+                <li class="-item"><a href="https://datascience.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Data science professionals, Machine Learning specialists, and those interested in learning more about the field">Data Science</a></li>
+                <li class="-item"><a href="https://arduino.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="developers of open-source hardware and software that is compatible with Arduino">Arduino</a></li>
+                <li class="-item"><a href="https://bitcoin.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Bitcoin crypto-currency enthusiasts">Bitcoin</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#technology" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (30)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Life / Arts">
+        <ul class="-list">
+                <li class="-item"><a href="https://photo.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                <li class="-item"><a href="https://scifi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                <li class="-item"><a href="https://graphicdesign.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                <li class="-item"><a href="https://movies.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                <li class="-item"><a href="https://music.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="musicians, students, and enthusiasts">Music: Practice &amp; Theory</a></li>
+                <li class="-item"><a href="https://worldbuilding.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="writers/artists using science, geography and culture to construct imaginary worlds and settings">Worldbuilding</a></li>
+                <li class="-item"><a href="https://cooking.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Life / Arts"><ul class="-list">
+                <li class="-item"><a href="https://diy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="contractors and serious DIYers">Home Improvement</a></li>
+                <li class="-item"><a href="https://money.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                <li class="-item"><a href="https://academia.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="academics and those enrolled in higher education">Academia</a></li>
+                <li class="-item"><a href="https://law.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="legal professionals, students, and others with experience or interest in law">Law</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#lifearts" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (15)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Culture / Recreation">
+        <ul class="-list">
+                <li class="-item"><a href="https://english.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                <li class="-item"><a href="https://skeptics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientific skepticism">Skeptics</a></li>
+                <li class="-item"><a href="https://judaism.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                <li class="-item"><a href="https://travel.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="road warriors and seasoned travelers">Travel</a></li>
+                <li class="-item"><a href="https://christianity.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                <li class="-item"><a href="https://ell.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="speakers of other languages learning English">English Language Learners</a></li>
+                <li class="-item"><a href="https://japanese.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">Japanese Language</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Culture / Recreation"><ul class="-list">
+                <li class="-item"><a href="https://gaming.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                <li class="-item"><a href="https://bicycles.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                <li class="-item"><a href="https://rpg.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                <li class="-item"><a href="https://anime.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="anime and manga fans">Anime &amp; Manga</a></li>
+                <li class="-item"><a href="https://puzzling.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who create, solve, and study puzzles">Puzzling</a></li>
+                <li class="-item"><a href="https://mechanics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles">Motor Vehicle Maintenance &amp; Repair</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#culturerecreation" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (33)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Science">
+        <ul class="-list">
+                <li class="-item"><a href="https://mathoverflow.net/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional mathematicians">MathOverflow</a></li>
+                <li class="-item"><a href="https://math.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                <li class="-item"><a href="https://stats.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                <li class="-item"><a href="https://cstheory.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                <li class="-item"><a href="https://physics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="active researchers, academics and students of physics">Physics</a></li>
+                <li class="-item"><a href="https://chemistry.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientists, academics, teachers and students">Chemistry</a></li>
+                <li class="-item"><a href="https://biology.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="biology researchers, academics, and students">Biology</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Science"><ul class="-list">
+                <li class="-item"><a href="https://cs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, researchers and practitioners of computer science">Computer Science</a></li>
+                <li class="-item"><a href="https://philosophy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those interested in the study of the fundamental nature of knowledge, reality, and existence">Philosophy</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#science" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (10)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Other">
+        <ul class="-list">
+                <li class="-item"><a href="https://meta.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                <li class="-item"><a href="https://stackapps.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                <li class="-item"><a href="https://api.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programmatic interaction with Stack Exchange sites">API</a></li>
+                <li class="-item"><a href="https://data.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="querying Stack Exchange data using SQL">Data</a></li>
+                <li class="-item"><a href="https://area51.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                    </ul>
+    </div>
+                </div>
+            </nav>
+            <div class="site-footer--copyright fs-fine">
+                <ul class="-list">
+                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link:4 })" href="https://stackoverflow.blog/?blb=1">Blog</a></li>
+                    <li class="-item"><a href="https://www.facebook.com/officialstackoverflow/" class="-link">Facebook</a></li>
+                    <li class="-item"><a href="https://twitter.com/stackoverflow" class="-link">Twitter</a></li>
+                    <li class="-item"><a href="https://linkedin.com/company/stack-overflow" class="-link">LinkedIn</a></li>
+                </ul>
+
+                <p class="mt-auto mb24">
+site design / logo © 2018 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a>
+                            with <a href="https://stackoverflow.blog/2009/06/25/attribution-required/" rel="license">attribution required</a>.
+                    <span id="svnrev">rev&nbsp;2018.6.14.30752</span>
+                </p>
+            </div>
+        </div>
+
+            </footer>
+    <noscript>
+        <div id="noscript-warning">Stack Overflow em Portugu&#234;s funciona melhor com o JavaScript ativado
+            <img src="https://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno">
+        </div>
+    </noscript>
+
+<script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+            StackExchange.ready(function () {
+
+                StackExchange.ga.init({
+                    sendTitles: true,
+                    tracker: window.ga,
+                    trackingCodes: [
+                        'UA-108242619-5'
+                    ]
+                });
+
+
+
+                    StackExchange.ga.setDimension('dimension2', '|php|orienta&#231;&#227;o-a-objetos|estilo-de-codifica&#231;&#227;o|paradigmas|');
+
+                    StackExchange.ga.setDimension('dimension3', 'Questions/Show');
+
+
+                StackExchange.ga.trackPageView();
+            });
+            
+/**/
+            
+            var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+            (function() {
+                var ssl = 'https:' == document.location.protocol,
+                    s = document.getElementsByTagName('script')[0],
+                    qc = document.createElement('script');
+                 qc.async = true;
+                    qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                    s.parentNode.insertBefore(qc, s);
+                    _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+/**/
+                 var sc = document.createElement('script');
+                    sc.async = true;
+                    sc.src = (ssl ? 'https://sb' : 'http://b') + '.scorecardresearch.com/beacon.js';
+                    s.parentNode.insertBefore(sc, s);
+                    _comscore.push({ c1: "2", c2: "17440561" });
+            })();
+            
+
+</script>
+            
+    
+    
+<div class="adsbox" id="clc-abd" style="position: absolute; pointer-events: none;">&nbsp;</div><iframe id="google_osd_static_frame_6185622907876" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe></body></html>

@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Instalação do  Composer no Ubuntu | Gilberto Albino</title>
+        <link rel="profile" href="http://gmpg.org/xfn/11">
+        <link rel="pingback" href="https://gilbertoalbino.com/xmlrpc.php">
+        <link rel="dns-prefetch" href="https://www.google.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Feed para Gilberto Albino »" href="https://gilbertoalbino.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para Gilberto Albino »" href="https://gilbertoalbino.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para Gilberto Albino » Instalação do  Composer no Ubuntu" href="https://gilbertoalbino.com/instalacao-do-composer-no-ubuntu/feed/">
+		<script type="text/javascript" async="" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/recaptcha__pt_br.js"></script><script type="text/javascript" async="" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/ga.js"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/gilbertoalbino.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.6"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/wp-emoji-release.js" type="text/javascript" defer="defer"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="contact-form-7-bootstrap-style-css" href="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/style_002.css" type="text/css" media="all">
+<link rel="stylesheet" id="fastr-style-css" href="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="searchwp-live-search-css" href="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/style_003.css" type="text/css" media="all">
+<script type="text/javascript" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/jquery_002.js"></script>
+<script type="text/javascript" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/jquery-migrate.js"></script>
+<link rel="https://api.w.org/" href="https://gilbertoalbino.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://gilbertoalbino.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://gilbertoalbino.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="[ ZF2 ] – Instalando o ZF Tool no Ubuntu" href="https://gilbertoalbino.com/zf2-instalando-o-zf-tool-no-ubuntu/">
+<link rel="next" title="Instalar ou Atualizar PHP 5.6 no Ubuntu 14" href="https://gilbertoalbino.com/instalar-ou-atualizar-php-5-6-no-ubuntu-14/">
+<meta name="generator" content="WordPress 4.9.6">
+<link rel="canonical" href="https://gilbertoalbino.com/instalacao-do-composer-no-ubuntu/">
+<link rel="shortlink" href="https://gilbertoalbino.com/?p=1552">
+<link rel="alternate" type="application/json+oembed" href="https://gilbertoalbino.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fgilbertoalbino.com%2Finstalacao-do-composer-no-ubuntu%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://gilbertoalbino.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fgilbertoalbino.com%2Finstalacao-do-composer-no-ubuntu%2F&amp;format=xml">
+<!-- Google Analytics Injector from http://www.geckosolutions.se/blog/wordpress-plugins/ -->
+<script type="text/javascript">
+	var site = '' + document.location;
+	if(site.indexOf('http://www.gilbertoalbino.com') == -1 ) {
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-8179594-1']);_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	}
+</script>
+<!-- Google Analytics Injector -->
+		<style type="text/css">
+			div.wpcf7 .ajax-loader {
+				background-image: url('https://gilbertoalbino.com/wp-content/plugins/contact-form-7/images/ajax-loader.gif');
+			}
+		</style>
+		        <!--[if gte IE 9]>
+            <style type="text/css">
+              .gradient {
+                 filter: none;
+              }
+            </style>
+        <![endif]-->
+        <script type="text/javascript" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/scripts_003.js"></script>
+    <style type="text/css"></style></head>
+    <body class="post-template-default single single-post postid-1552 single-format-standard">
+        <div id="page" class="hfeed site">
+                        <header id="masthead" class="site-header text-center" role="banner">
+                <div class="container">
+                                            <a class="site-logo" href="https://gilbertoalbino.com/" title="Gilberto Albino" rel="home">
+                            <img src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/a.jpg" alt="" class="header-image">
+                        </a>
+                                        
+                    <div class="site-branding text-center">
+                                            </div>
+                    
+                    
+                     <div class="widget widget_search"><form role="search" method="get" class="search-form" action="https://gilbertoalbino.com/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input class="search-field" placeholder="Digite o que procura..." name="s" data-swplive="true" data-swpengine="default" data-swpconfig="default" autocomplete="off" aria-describedby="searchwp_live_search_results_5b239557209fe_instructions" aria-owns="searchwp_live_search_results_5b239557209fe" aria-expanded="false" aria-autocomplete="both" aria-activedescendant="" type="search"><p class="searchwp-live-search-instructions screen-reader-text" id="searchwp_live_search_results_5b239557209fe_instructions">When
+ autocomplete results are available use up and down arrows to review and
+ enter to go to the desired page. Touch device users, explore by touch 
+or with swipe gestures.</p>
+	</label>
+	<input class="search-submit" value="Enviar" type="submit">
+</form>
+</div> 
+                    
+                    <div>
+                        <nav id="site-navigation" class="main-navigation" role="navigation">
+                            <div class="menu"><ul>
+<li><a href="https://gilbertoalbino.com/">Início</a></li><li class="page_item page-item-6"><a href="https://gilbertoalbino.com/about/">Sobre</a></li>
+<li class="page_item page-item-83"><a href="https://gilbertoalbino.com/contato/">Contato</a></li>
+</ul></div>
+                        </nav><!-- #site-navigation -->
+                    </div>
+                    
+                    
+                    
+                </div>
+            </header><!-- #masthead -->
+            <div id="content" class="site-content container">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			
+<article id="post-1552" class="post-1552 post type-post status-publish format-standard hentry category-composer-2 category-linux category-ubuntu tag-composer tag-linux tag-ubuntu-2">
+	<header class="entry-header">
+		<div class="entry-meta">
+			<span class="posted-on"><time class="entry-date published" datetime="2015-03-01T22:58:23+00:00">1 de março de 2015</time><time class="updated" datetime="2016-03-01T09:30:50+00:00">1 de março de 2016</time></span>            			<span class="cat-links">
+				on <a href="https://gilbertoalbino.com/category/composer-2/" rel="category tag">Composer</a>, <a href="https://gilbertoalbino.com/category/linux/" rel="category tag">Linux</a>, <a href="https://gilbertoalbino.com/category/linux/ubuntu/" rel="category tag">Ubuntu</a>			</span>
+			
+						<span class="tags-links">
+				tagged <a href="https://gilbertoalbino.com/tag/composer/" rel="tag">composer</a>, <a href="https://gilbertoalbino.com/tag/linux/" rel="tag">Linux</a>, <a href="https://gilbertoalbino.com/tag/ubuntu-2/" rel="tag">ubuntu</a>			</span>
+			
+		</div><!-- .entry-meta -->
+        
+		<h1 class="entry-title">Instalação do  Composer no Ubuntu</h1>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>Neste post irei demonstrar como instalar o Composer no Ubuntu.</p>
+<p><span id="more-1552"></span></p>
+<p>Certifique-se de ter o <strong>curl </strong>instaldo:</p>
+<pre><code class="bash hljs">sudo apt-get install curl</code></pre>
+<p>Acesse a linha de comando como sudo e digite:</p>
+<pre><code class="bash hljs">curl -sS https://getcomposer.org/installer | php</code></pre>
+<p>Este comando irá baixar o composer e instalá-lo.</p>
+<p>Torne-o executável:</p>
+<pre><code class="bash hljs">chmod +x composer.phar</code></pre>
+<p>Mova-o para a pasta de binários local:</p>
+<pre><code class="bash hljs">mv composer.phar /usr/<span class="langbuilt_in">local</span>/bin/composer</code></pre>
+<p>Este comando irá mover o <strong>Composer</strong> para a pasta de executáveis do usuário local.</p>
+<p>Agora você poderá executar o <strong>Composer</strong> de qualquer lugar de seu computador sem a necessidade de utilizar a extensão “<strong>.phar</strong>“.</p>
+<pre><code class="bash hljs">composer self-update</code></pre>
+<p>É isso aí. Espero que tenham gostado!<br>
+Abraço do Giba!</p>
+<h2 id="related-posts-via-taxonomies-title">Assuntos relacionados</h2><ul id="related-posts-via-taxonomies-list"><li><a href="https://gilbertoalbino.com/linux-como-habilitar-autocompletar-no-terminar-do-ubuntu/" title="[ Linux ] Como habilitar autocompletar no terminar do Ubuntu">[ Linux ] Como habilitar autocompletar no terminar do Ubuntu</a></li><li><a href="https://gilbertoalbino.com/linux-como-remover-pacotes-baixados-no-ubuntu/" title="[ Linux ] – Como remover pacotes baixados no Ubuntu">[ Linux ] – Como remover pacotes baixados no Ubuntu</a></li><li><a href="https://gilbertoalbino.com/linux-criar-virtual-host-no-ubuntu/" title="[ Linux ] Criar Virtual Host no Ubuntu">[ Linux ] Criar Virtual Host no Ubuntu</a></li><li><a href="https://gilbertoalbino.com/linux-como-instalar-o-r-no-ubuntu/" title="[ Linux ] Como instalar o R no Ubuntu">[ Linux ] Como instalar o R no Ubuntu</a></li><li><a href="https://gilbertoalbino.com/linux-como-limpar-o-historico-da-linha-de-comando/" title="[Linux] Como limpar o histórico da linha de comando">[Linux] Como limpar o histórico da linha de comando</a></li><li><a href="https://gilbertoalbino.com/ubuntu-como-remover-ppas-repositorios/" title="[Ubuntu] Como remover PPA’s (Repositórios)">[Ubuntu] Como remover PPA’s (Repositórios)</a></li><li><a href="https://gilbertoalbino.com/como-instalar-phpunit-no-ubuntu/" title="Como Instalar PHPUnit no Ubuntu">Como Instalar PHPUnit no Ubuntu</a></li><li><a href="https://gilbertoalbino.com/zf2-instalando-o-zf-tool-no-ubuntu/" title="[ ZF2 ] – Instalando o ZF Tool no Ubuntu">[ ZF2 ] – Instalando o ZF Tool no Ubuntu</a></li><li><a href="https://gilbertoalbino.com/linux-instalar-o-zend-framework-com-zend-tools-zf-no-ubuntu/" title="[ Linux ] Instalar o Zend Framework com Zend Tools (ZF) no Ubuntu">[ Linux ] Instalar o Zend Framework com Zend Tools (ZF) no Ubuntu</a></li><li><a href="https://gilbertoalbino.com/marcar-pacotes-por-tarefa-mark-package-by-task-no-ubuntu-10-10-maverick-meerkat/" title="Marcar pacotes por tarefa (Mark Package By Task) no Ubuntu 10.10 (Maverick) Meerkat?">Marcar pacotes por tarefa (Mark Package By Task) no Ubuntu 10.10 (Maverick) Meerkat?</a></li></ul>			</div><!-- .entry-content -->
+</article><!-- #post-## -->
+
+			
+			
+<div id="comments" class="comments-area">
+
+	
+			<h2 class="comments-title">
+			11 thoughts on “<span>Instalação do  Composer no Ubuntu</span>”		</h2>
+
+		
+		<ol class="comment-list">
+			
+	<li id="comment-3772" class="comment even thread-even depth-1">
+		<article id="div-comment-3772" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/edc7d36ffccb4875f8f4e593422798f3.jpg" srcset="https://secure.gravatar.com/avatar/edc7d36ffccb4875f8f4e593422798f3?s=64&amp;d=mm&amp;r=g 2x" class="avatar avatar-32 photo" width="32" height="32">					<cite class="fn"><a onclick="javascript:pageTracker._trackPageview('/outgoing/AINDANÃO');" href="http://xn--aindano-2wa/" rel="external nofollow" class="url">GABRIEL</a></cite> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://gilbertoalbino.com/instalacao-do-composer-no-ubuntu/#comment-3772">
+						<time datetime="2015-11-22T15:50:19+00:00">
+							22 de novembro de 2015 at 15:50						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>Obrigado, funcionou perfeitamente.</p>
+			</div><!-- .comment-content -->
+
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://gilbertoalbino.com/instalacao-do-composer-no-ubuntu/?replytocom=3772#respond" onclick='return addComment.moveForm( "div-comment-3772", "3772", "respond", "1552" )' aria-label="Responder para GABRIEL">Responder</a></div>		</article><!-- .comment-body -->
+
+	</li><!-- #comment-## -->
+
+	<li id="comment-3814" class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="div-comment-3814" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/d6d6c6a9ca7ff0864ef13cf6f1a292d7.jpg" srcset="https://secure.gravatar.com/avatar/d6d6c6a9ca7ff0864ef13cf6f1a292d7?s=64&amp;d=mm&amp;r=g 2x" class="avatar avatar-32 photo" width="32" height="32">					<cite class="fn">renan henrique</cite> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://gilbertoalbino.com/instalacao-do-composer-no-ubuntu/#comment-3814">
+						<time datetime="2016-04-09T21:31:59+00:00">
+							9 de abril de 2016 at 21:31						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>Perfect Wins<br>
+Valeu cara…</p>
+			</div><!-- .comment-content -->
+
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://gilbertoalbino.com/instalacao-do-composer-no-ubuntu/?replytocom=3814#respond" onclick='return addComment.moveForm( "div-comment-3814", "3814", "respond", "1552" )' aria-label="Responder para renan henrique">Responder</a></div>		</article><!-- .comment-body -->
+
+	</li><!-- #comment-## -->
+
+	<li id="comment-3819" class="pingback even thread-even depth-1">
+		<div class="comment-body">
+			Pingback: <a onclick="javascript:pageTracker._trackPageview('/outgoing/laenderdev.expressahost.com.br/index.php/2016/04/05/zend-framework-2-instalacao-02/');" href="http://laenderdev.expressahost.com.br/index.php/2016/04/05/zend-framework-2-instalacao-02/" rel="external nofollow" class="url">Zend Framework 2 – Instalação #02 – LaenderDev</a> 		</div>
+
+	</li><!-- #comment-## -->
+
+	<li id="comment-3823" class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="div-comment-3823" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/bed2e6cff2a3b29f1640b4ba31d7a3e0.jpg" srcset="https://secure.gravatar.com/avatar/bed2e6cff2a3b29f1640b4ba31d7a3e0?s=64&amp;d=mm&amp;r=g 2x" class="avatar avatar-32 photo" width="32" height="32">					<cite class="fn">Felipe Bampi</cite> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://gilbertoalbino.com/instalacao-do-composer-no-ubuntu/#comment-3823">
+						<time datetime="2016-04-27T18:34:34+00:00">
+							27 de abril de 2016 at 18:34						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>Muito obrigado!!!</p>
+			</div><!-- .comment-content -->
+
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://gilbertoalbino.com/instalacao-do-composer-no-ubuntu/?replytocom=3823#respond" onclick='return addComment.moveForm( "div-comment-3823", "3823", "respond", "1552" )' aria-label="Responder para Felipe Bampi">Responder</a></div>		</article><!-- .comment-body -->
+
+	</li><!-- #comment-## -->
+
+	<li id="comment-3825" class="comment even thread-even depth-1 parent">
+		<article id="div-comment-3825" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/4572a6e63c21b15ef88e54d4dd7c3324.jpg" srcset="https://secure.gravatar.com/avatar/4572a6e63c21b15ef88e54d4dd7c3324?s=64&amp;d=mm&amp;r=g 2x" class="avatar avatar-32 photo" width="32" height="32">					<cite class="fn">roberto</cite> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://gilbertoalbino.com/instalacao-do-composer-no-ubuntu/#comment-3825">
+						<time datetime="2016-05-11T20:00:08+00:00">
+							11 de maio de 2016 at 20:00						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>ubuntu 10.04 o comando “composer self-update” nao aconteceu nada <img draggable="false" class="emoji" alt="🙁" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/1f641.svg"></p>
+			</div><!-- .comment-content -->
+
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://gilbertoalbino.com/instalacao-do-composer-no-ubuntu/?replytocom=3825#respond" onclick='return addComment.moveForm( "div-comment-3825", "3825", "respond", "1552" )' aria-label="Responder para roberto">Responder</a></div>		</article><!-- .comment-body -->
+
+	<ul class="children">
+
+	<li id="comment-4169" class="comment byuser comment-author-giba bypostauthor odd alt depth-2">
+		<article id="div-comment-4169" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/f9d3adec59ca4dfe8e8ffe5167291f70.jpg" srcset="https://secure.gravatar.com/avatar/f9d3adec59ca4dfe8e8ffe5167291f70?s=64&amp;d=mm&amp;r=g 2x" class="avatar avatar-32 photo" width="32" height="32">					<cite class="fn">Giba</cite> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://gilbertoalbino.com/instalacao-do-composer-no-ubuntu/#comment-4169">
+						<time datetime="2017-09-23T09:35:21+00:00">
+							23 de setembro de 2017 at 09:35						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>Os procedimentos são os mesmos para qualquer versão do ubuntu. Refaça e tente novamente.</p>
+			</div><!-- .comment-content -->
+
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://gilbertoalbino.com/instalacao-do-composer-no-ubuntu/?replytocom=4169#respond" onclick='return addComment.moveForm( "div-comment-4169", "4169", "respond", "1552" )' aria-label="Responder para Giba">Responder</a></div>		</article><!-- .comment-body -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li id="comment-3849" class="comment even thread-odd thread-alt depth-1">
+		<article id="div-comment-3849" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/b8638428a188598c9e848fae6c3f525e.jpg" srcset="https://secure.gravatar.com/avatar/b8638428a188598c9e848fae6c3f525e?s=64&amp;d=mm&amp;r=g 2x" class="avatar avatar-32 photo" width="32" height="32">					<cite class="fn">Leonardo</cite> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://gilbertoalbino.com/instalacao-do-composer-no-ubuntu/#comment-3849">
+						<time datetime="2016-07-20T00:12:59+00:00">
+							20 de julho de 2016 at 00:12						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>Valeu ajudou muito aqui, obrigado</p>
+			</div><!-- .comment-content -->
+
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://gilbertoalbino.com/instalacao-do-composer-no-ubuntu/?replytocom=3849#respond" onclick='return addComment.moveForm( "div-comment-3849", "3849", "respond", "1552" )' aria-label="Responder para Leonardo">Responder</a></div>		</article><!-- .comment-body -->
+
+	</li><!-- #comment-## -->
+
+	<li id="comment-3855" class="comment odd alt thread-even depth-1 parent">
+		<article id="div-comment-3855" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/d7a638b4ef1ab1cdfb98135e8ed3b25f.jpg" srcset="https://secure.gravatar.com/avatar/d7a638b4ef1ab1cdfb98135e8ed3b25f?s=64&amp;d=mm&amp;r=g 2x" class="avatar avatar-32 photo" width="32" height="32">					<cite class="fn">kakaroto developer</cite> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://gilbertoalbino.com/instalacao-do-composer-no-ubuntu/#comment-3855">
+						<time datetime="2016-07-29T15:22:26+00:00">
+							29 de julho de 2016 at 15:22						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>funcionou de boa , seria legal mostrando  um print de tela usando
+ o composer assim ficaria mais completo o post instalando algo e 
+removendo via composer  <img draggable="false" class="emoji" alt="🙂" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/1f642.svg"></p>
+<p>valeu pela dica vou ser feliz <img draggable="false" class="emoji" alt="🙂" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/1f642.svg"></p>
+			</div><!-- .comment-content -->
+
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://gilbertoalbino.com/instalacao-do-composer-no-ubuntu/?replytocom=3855#respond" onclick='return addComment.moveForm( "div-comment-3855", "3855", "respond", "1552" )' aria-label="Responder para kakaroto developer">Responder</a></div>		</article><!-- .comment-body -->
+
+	<ul class="children">
+
+	<li id="comment-4159" class="comment byuser comment-author-giba bypostauthor even depth-2">
+		<article id="div-comment-4159" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/f9d3adec59ca4dfe8e8ffe5167291f70.jpg" srcset="https://secure.gravatar.com/avatar/f9d3adec59ca4dfe8e8ffe5167291f70?s=64&amp;d=mm&amp;r=g 2x" class="avatar avatar-32 photo" width="32" height="32">					<cite class="fn">Giba</cite> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://gilbertoalbino.com/instalacao-do-composer-no-ubuntu/#comment-4159">
+						<time datetime="2017-09-23T09:15:43+00:00">
+							23 de setembro de 2017 at 09:15						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>Obrigado pelas dicas, mas a intenção era demonstrar a instalação e não a utilização. Mil desculpas!</p>
+			</div><!-- .comment-content -->
+
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://gilbertoalbino.com/instalacao-do-composer-no-ubuntu/?replytocom=4159#respond" onclick='return addComment.moveForm( "div-comment-4159", "4159", "respond", "1552" )' aria-label="Responder para Giba">Responder</a></div>		</article><!-- .comment-body -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li id="comment-3897" class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="div-comment-3897" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/5f9c5af74f52c0a63d90253cbc2a1f33.jpg" srcset="https://secure.gravatar.com/avatar/5f9c5af74f52c0a63d90253cbc2a1f33?s=64&amp;d=mm&amp;r=g 2x" class="avatar avatar-32 photo" width="32" height="32">					<cite class="fn">Sebastião Kleber</cite> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://gilbertoalbino.com/instalacao-do-composer-no-ubuntu/#comment-3897">
+						<time datetime="2016-11-07T15:20:55+00:00">
+							7 de novembro de 2016 at 15:20						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>Muito bom, funcionou corretamente.</p>
+<p>Obrigado.</p>
+			</div><!-- .comment-content -->
+
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://gilbertoalbino.com/instalacao-do-composer-no-ubuntu/?replytocom=3897#respond" onclick='return addComment.moveForm( "div-comment-3897", "3897", "respond", "1552" )' aria-label="Responder para Sebastião Kleber">Responder</a></div>		</article><!-- .comment-body -->
+
+	</li><!-- #comment-## -->
+
+	<li id="comment-4150" class="comment byuser comment-author-giba bypostauthor even thread-even depth-1">
+		<article id="div-comment-4150" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+					<img alt="" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/f9d3adec59ca4dfe8e8ffe5167291f70.jpg" srcset="https://secure.gravatar.com/avatar/f9d3adec59ca4dfe8e8ffe5167291f70?s=64&amp;d=mm&amp;r=g 2x" class="avatar avatar-32 photo" width="32" height="32">					<cite class="fn">Giba</cite> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://gilbertoalbino.com/instalacao-do-composer-no-ubuntu/#comment-4150">
+						<time datetime="2017-09-23T08:53:02+00:00">
+							23 de setembro de 2017 at 08:53						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>Olá, Rafael. Eu utilizo o PHPStorm. Não faço a mínima ideia de como as coisas funcionam no Visual Studio.</p>
+			</div><!-- .comment-content -->
+
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://gilbertoalbino.com/instalacao-do-composer-no-ubuntu/?replytocom=4150#respond" onclick='return addComment.moveForm( "div-comment-4150", "4150", "respond", "1552" )' aria-label="Responder para Giba">Responder</a></div>		</article><!-- .comment-body -->
+
+	</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Deixe uma resposta <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://gilbertoalbino.com/instalacao-do-composer-no-ubuntu/#respond" style="display:none;">Cancelar resposta</a></small></h3>			<form action="https://gilbertoalbino.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-notes"><span id="email-notes">O seu endereço de e-mail não será publicado.</span> Campos obrigatórios são marcados com <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comentário</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Nome <span class="required">*</span></label> <input id="author" name="author" size="30" maxlength="245" required="required" type="text"></p>
+<p class="comment-form-email"><label for="email">E-mail <span class="required">*</span></label> <input id="email" name="email" size="30" maxlength="100" aria-describedby="email-notes" required="required" type="text"></p>
+<p class="comment-form-url"><label for="url">Site</label> <input id="url" name="url" size="30" maxlength="200" type="text"></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" value="yes" type="checkbox"><label for="wp-comment-cookies-consent">Salvar meus dados neste navegador para a próxima vez que eu comentar.</label></p>
+<p class="form-submit"><input name="submit" id="submit" class="submit" value="Publicar comentário" type="submit"> <input name="comment_post_ID" value="1552" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+</p><p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="ee309d7a00" type="hidden"></p><div class="inv-recaptcha-holder"><div class="grecaptcha-badge" data-style="inline" style="width: 256px; height: 60px; box-shadow: gray 0px 0px 5px;"><div class="grecaptcha-logo"><iframe src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LeaS0QUAAAAABeR4oiQuuCWYZ8VuAm_UstZMMYg&amp;co=aHR0cHM6Ly9naWxiZXJ0b2FsYmluby5jb206NDQz&amp;hl=pt-BR&amp;v=v1528855115741&amp;size=invisible&amp;badge=inline&amp;cb=z7t15i8kehqt" role="presentation" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" width="256" height="60" frameborder="0"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; "></textarea></div></div><p style="display: none;"></p>			<input id="ak_js" name="ak_js" value="1529058647892" type="hidden"></form>
+			</div><!-- #respond -->
+	<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank">Learn how your comment data is processed</a>.</p>
+</div><!-- #comments -->
+
+		
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+
+	<div id="secondary" class="widget-area text-center" role="complementary">
+				<aside id="search-5" class="widget widget_search"><form role="search" method="get" class="search-form" action="https://gilbertoalbino.com/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input class="search-field" placeholder="Digite o que procura..." name="s" data-swplive="true" data-swpengine="default" data-swpconfig="default" autocomplete="off" aria-describedby="searchwp_live_search_results_5b2395574b7fa_instructions" aria-owns="searchwp_live_search_results_5b2395574b7fa" aria-expanded="false" aria-autocomplete="both" aria-activedescendant="" type="search"><p class="searchwp-live-search-instructions screen-reader-text" id="searchwp_live_search_results_5b2395574b7fa_instructions">When
+ autocomplete results are available use up and down arrows to review and
+ enter to go to the desired page. Touch device users, explore by touch 
+or with swipe gestures.</p>
+	</label>
+	<input class="search-submit" value="Enviar" type="submit">
+</form>
+</aside>	</div><!-- #secondary -->        </div><!-- #content -->
+        <footer id="colophon" class="site-footer" role="contentinfo">
+            <a class="back-to-top" href="#">↑</a>
+            <div class="container">
+                <div class="site-info">
+                    © Todos os direitos Gilberto Albino
+                </div><!-- .site-info -->
+            </div>
+        </footer><!-- #colophon -->
+        </div><!-- #page -->
+        
+        
+<!-- tracker added by Ultimate Google Analytics plugin v1.6.0: http://www.oratransplant.nl/uga -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-8179594-1 ");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+				<style type="text/css">
+					.searchwp-live-search-results {
+						opacity: 0;
+						transition: opacity .25s ease-in-out;
+						-moz-transition: opacity .25s ease-in-out;
+						-webkit-transition: opacity .25s ease-in-out;
+						height: 0;
+						overflow: hidden;
+						z-index: 9999;
+						position: absolute;
+						display: none;
+					}
+
+					.searchwp-live-search-results-showing {
+						display: block;
+						opacity: 1;
+						height: auto;
+						overflow: auto;
+					}
+
+					.searchwp-live-search-no-results {
+						padding: 3em 2em 0;
+						text-align: center;
+					}
+
+					.searchwp-live-search-no-min-chars:after {
+						content: "Continue typing";
+						display: block;
+						text-align: center;
+						padding: 2em 2em 0;
+					}
+				</style>
+			<link rel="stylesheet" id="hljstheme-css" href="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/docco.css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/gilbertoalbino.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Verifique se voc\u00ea n\u00e3o \u00e9 um rob\u00f4."}}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/scripts.js"></script>
+<script type="text/javascript" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/jquery.js"></script>
+<script type="text/javascript" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/scripts_002.js"></script>
+<script type="text/javascript">
+var renderInvisibleReCaptcha = function() {
+
+    for (var i = 0; i < document.forms.length; ++i) {
+        var form = document.forms[i];
+        var holder = form.querySelector('.inv-recaptcha-holder');
+
+        if (null === holder) continue;
+		holder.innerHTML = '';
+
+         (function(frm){
+			var cf7SubmitElm = frm.querySelector('.wpcf7-submit');
+            var holderId = grecaptcha.render(holder,{
+                'sitekey': '6LeaS0QUAAAAABeR4oiQuuCWYZ8VuAm_UstZMMYg', 'size': 'invisible', 'badge' : 'inline',
+                'callback' : function (recaptchaToken) {
+					if((null !== cf7SubmitElm) && (typeof jQuery != 'undefined')){jQuery(frm).submit();grecaptcha.reset(holderId);return;}
+					 HTMLFormElement.prototype.submit.call(frm);
+                },
+                'expired-callback' : function(){grecaptcha.reset(holderId);}
+            });
+
+			if(null !== cf7SubmitElm && (typeof jQuery != 'undefined') ){
+				jQuery(cf7SubmitElm).off('click').on('click', function(clickEvt){
+					clickEvt.preventDefault();
+					grecaptcha.execute(holderId);
+				});
+			}
+			else
+			{
+				frm.onsubmit = function (evt){evt.preventDefault();grecaptcha.execute(holderId);};
+			}
+
+
+        })(form);
+    }
+};
+</script>
+<script type="text/javascript" async="" defer="defer" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/api.js"></script>
+<script type="text/javascript" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/comment-reply.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var searchwp_live_search_params = [];
+searchwp_live_search_params = {"ajaxurl":"https:\/\/gilbertoalbino.com\/wp-admin\/admin-ajax.php","config":{"default":{"engine":"default","input":{"delay":500,"min_chars":3},"results":{"position":"bottom","width":"auto","offset":{"x":0,"y":5}},"spinner":{"lines":10,"length":8,"width":4,"radius":8,"corners":1,"rotate":0,"direction":1,"color":"#000","speed":1,"trail":60,"shadow":false,"hwaccel":false,"className":"spinner","zIndex":2000000000,"top":"50%","left":"50%"}}},"msg_no_config_found":"No valid SearchWP Live Search configuration found!","aria_instructions":"When autocomplete results are available use up and down arrows to review and enter to go to the desired page. Touch device users, explore by touch or with swipe gestures."};;
+/* ]]> */
+</script>
+<script type="text/javascript" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/searchwp-live-search.js"></script>
+<script type="text/javascript" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/wp-embed.js"></script>
+<script type="text/javascript" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/highlight.js"></script>
+<script async="async" type="text/javascript" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/form.js"></script>
+    <style>code.hljs { /*margin: 5px;*/ }</style>
+    <script type="text/javascript">
+    (function($, window) {
+        var init_fn_flag = false;
+        var init_fn = (function() {
+            if (init_fn_flag)
+                return;
+            init_fn_flag = true;
+             hljs.configure({"tabReplace":"    ","classPrefix":"lang"});
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+            $('pre:not(:has(code))').each(function(i, block){
+                var class_desc = $(block).attr("class") || "";
+                var reg_mat = class_desc.match(/brush\s*:\s*([\w\d]+)/i);
+                if(!reg_mat || reg_mat.length < 2)
+                    return;
+                var code_content = $(block).removeClass("brush:").removeClass("ruler:").removeClass("first-line:").removeClass("highlight:")
+                    .removeClass("brush:" + reg_mat[1] + ";").removeClass(reg_mat[1] + ";").removeClass("true;").removeClass("false;").html();
+                $(block).empty().append($("<code class='hljs'></code>").html(code_content)).addClass(reg_mat[1]);
+                hljs.highlightBlock(block);
+            });
+        });
+        $(document).ready(init_fn);
+        $(window).on("load", init_fn);
+    })(jQuery, window);
+    </script>
+    
+<div class="searchwp-live-search-results" id="searchwp_live_search_results_5b239557209fe" role="listbox" tabindex="0" style="left: 168.5px; top: 200px; width: 479px;"></div><div class="searchwp-live-search-results" id="searchwp_live_search_results_5b2395574b7fa" role="listbox" tabindex="0" style="left: 168.5px; top: 5894px; width: 479px;"></div><div style="visibility: hidden; position: absolute; width:100%; top: -10000px; left: 0px; right: 0px; transition: visibility 0s linear 0.3s, opacity 0.3s linear; opacity: 0;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: #fff; opacity: 0.5;  filter: alpha(opacity=50)"></div><div style="margin: 0 auto; top: 0px; left: 0px; right: 0px; position: absolute; border: 1px solid #ccc; z-index: 2000000000; background-color: #fff; overflow: hidden;"><iframe title="desafio reCAPTCHA" src="Instala%C3%A7%C3%A3o%20do%20Composer%20no%20Ubuntu%20%20%20Gilberto%20Albino_arquivos/bframe.htm" style="width: 100%; height: 100%;" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" name="3pem9ki4psjs" frameborder="0"></iframe></div></div></body></html>

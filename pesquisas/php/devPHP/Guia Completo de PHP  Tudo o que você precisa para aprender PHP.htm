@@ -1,0 +1,2788 @@
+<!DOCTYPE html>
+<html class="" lang="pt-br"><head><script type="text/javascript" async="" src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/js_002"></script><script type="text/javascript" async="" src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/analytics.js"></script><script type="text/javascript" async="" src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/analytics.js"></script><script type="text/javascript" async="" src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/3c87d8b151f544a25289b55ced5920f9.js"></script><script async="" src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/uwt.js"></script><script src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/identity.js" async=""></script><script src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/1701038830155422.js" async=""></script><script async="" src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/fbevents.js"></script>
+		<title>Guia Completo de PHP: Tudo o que você precisa para aprender PHP</title> 
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<meta http-equiv="content-language" content="pt-br">
+		<meta name="description" content="Neste Guia você encontrará todo o conteúdo que precisa para aprender PHP, uma linguagem amplamente utilizada na programação web. Acesse agora mesmo!">
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="apple-mobile-web-app-title" content="Guia Completo de PHP: Tudo o que você precisa para aprender PHP">
+		<link rel="canonical" href="https://www.devmedia.com.br/guia/linguagem-php/38780">
+        <meta name="robots" content="index, follow">
+        <!-- facebook meta tag -->
+        <meta property="og:locale" content="pt_BR">
+        <meta property="og:url" content="https://www.devmedia.com.br/guia/linguagem-php/38780">
+        <meta property="og:title" content="Guia Completo de PHP: Tudo o que você precisa para aprender PHP">
+        <meta property="og:site_name" content="DevMedia">
+        <meta property="og:type" content="website">
+
+        <!-- facebook autor -->
+	    <meta property="fb:admins" content="devmedia.com.br">
+	    <meta property="article:author" content="https://www.facebook.com/devmedia.com.br">
+        <meta property="og:description" content="Neste Guia você encontrará todo o conteúdo que precisa para aprender PHP, uma linguagem amplamente utilizada na programação web. Acesse agora mesmo!">
+
+        <!-- facebook image -->
+        <meta property="og:image" content="http://arquivo.devmedia.com.br/noticias/guia/guia_php_38157.png">
+        <meta property="og:image:type" content="image/jpg">
+        <meta property="og:image:width" content="600">
+        <meta property="og:image:height" content="293">
+
+        <!-- Twitter Cards -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Guia Completo de PHP: Tudo o que você precisa para aprender PHP">
+        <meta name="twitter:description" content="Neste Guia você encontrará todo o conteúdo que precisa para aprender PHP, uma linguagem amplamente utilizada na programação web. Acesse agora mesmo!">
+        <meta name="twitter:site" content="@DevMedia">
+        <meta name="twitter:image" content="http://arquivo.devmedia.com.br/noticias/guia/guia_php_38157.png">
+        <meta name="twitter:creator" content="@DevMedia">
+
+        <!-- Google tags-->
+        <link rel="author" href="https://plus.google.com/+devmedia/posts">
+        <link rel="publisher" href="https://plus.google.com/+devmedia">
+        <meta itemprop="name" content="Guia Completo de PHP: Tudo o que você precisa para aprender PHP">
+        <meta itemprop="description" content="Neste Guia você encontrará todo o conteúdo que precisa para aprender PHP, uma linguagem amplamente utilizada na programação web. Acesse agora mesmo!">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3">
+        <meta name="author" content="https://www.facebook.com/devmedia.com.br">
+    		<!-- ICON MAC -->
+		<link rel="apple-touch-icon" href="https://www.devmedia.com.br/favicon.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="https://www.devmedia.com.br/imagens/2013/Devmedia72x.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="https://www.devmedia.com.br/imagens/2013/Devmedia114x.png">
+		<link rel="apple-touch-icon" sizes="129x129" href="https://www.devmedia.com.br/imagens/2013/Devmedia129x.png">  
+		<!-- FAVICON HTML5-->
+		<link rel="icon" href="https://www.devmedia.com.br/favicon.png">
+		<!-- FAVICON IE-->
+		<link rel="icon" type="image/png" href="https://www.devmedia.com.br/favicon.png">
+		<link href="https://plus.google.com/101753743720604160232" rel="publisher">
+
+		<!-- FONTE HEADER FOOTER -->
+		<link href="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/css_004.css" rel="stylesheet">		<!-- FONTE HEADER FOOTER -->
+			
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/devmedia.css">
+
+		<!-- CSS - HEADER E FOOTER -->
+		<link rel="stylesheet" type="text/css" href="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/devmedia-header-footer.css">
+		<!-- <link rel="stylesheet" type="text/css" href="//www.devmedia.com.br/includeb/style.min.css"> -->
+
+				
+		<link href="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/css_003.css" rel="stylesheet" type="text/css">
+		<link href="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/css.css" rel="stylesheet">
+        <link href="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/css_005.css" rel="stylesheet">
+        <link href="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/css_006.css" rel="stylesheet">
+        <link rel="stylesheet" href="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/slick.css">
+        <link rel="stylesheet" href="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/slick-theme.css">
+        <link rel="stylesheet" type="text/css" href="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/guia.css"><link rel="stylesheet" href="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/vs.css"><link rel="stylesheet" type="text/css" href="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/jquery.css">
+        <link rel="stylesheet" href="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/slider.css">		
+		<!-- SCRIPTS -->
+		<script async="" src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/gtm.js"></script><script src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/jquery_002.js"></script>		
+		<!--<script async src="//www.devmedia.com.br/js/2013/menu.js?d=6.6"></script>-->
+		
+		<!--[if lt IE 9]>
+			<script async defer src="js/modernizr.custom.js"></script>
+		<![endif]-->
+		<!-- Optmizer -->
+		<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date; h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')}; (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c; })(window,document.documentElement,'async-hide','dataLayer',4000, {'GTM-MCHBV6W':true});</script>	
+		<!-- End Optmizer -->
+
+		<!-- Google Analytics -->
+		<script async="" src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/js"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		  	gtag('config', 'UA-15997918-1');
+			gtag('event', 'not logged in', {
+						'event_category': 'access',
+					 	'event_label': 'No MVP'
+					});		</script>
+		<!-- End Google Analytics -->
+		
+
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-MCHBV6W');</script>
+		<!-- End Google Tag Manager -->
+
+		<script src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/main_guia.js"></script>
+        <script src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/highlight.js"></script>
+        <script src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/jquery.js"></script><script src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/jquery_003.js"></script>
+        <script src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/utils.js"></script>
+        <script type="text/javascript" async="" src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/devslider.js" id="devslider"></script>
+        <script src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/slick.js"></script>
+        		
+		<!-- Facebook Pixel Code -->
+		<script>
+		  !function(f,b,e,v,n,t,s)
+		  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+		  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+		  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+		  n.queue=[];t=b.createElement(e);t.async=!0;
+		  t.src=v;s=b.getElementsByTagName(e)[0];
+		  s.parentNode.insertBefore(t,s)}(window, document,'script',
+		  'https://connect.facebook.net/en_US/fbevents.js');
+		  fbq('init', '1701038830155422', {
+		    em: '',
+		    fn: '',
+		    ph: ''
+		  });
+		  fbq('track', 'PageView');
+		</script>
+		<noscript><img height="1" width="1" style="display:none"
+		  src="https://www.facebook.com/tr?id=1701038830155422&ev=PageView&noscript=1"
+		/></noscript>
+		<!-- End Facebook Pixel Code -->
+		
+		<!-- Twitter universal website tag code -->
+		<script rel="nofollow">
+			!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+			},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+			a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+			// Insert Twitter Pixel ID and Standard Event data below
+			twq('init','nyawh');
+			twq('track','PageView');
+		</script>
+		<!-- End Twitter universal website tag code -->
+
+		<!-- Notificacao Pushcrew -->
+		<script type="text/javascript">
+			(function(p,u,s,h){
+				p._pcq=p._pcq||[];
+				p._pcq.push(['_currentTime',Date.now()]);
+				s=u.createElement('script');
+				s.type='text/javascript';
+				s.async=true;
+				s.src='https://cdn.pushcrew.com/js/3c87d8b151f544a25289b55ced5920f9.js';
+				h=u.getElementsByTagName('script')[0];
+				h.parentNode.insertBefore(s,h);
+			})(window,document);
+		</script>
+		<!-- End Notificacao Pushcrew -->
+
+		<!-- Active Campaign -->
+		<script type="text/javascript">
+		    var trackcmp_email = '';
+		    var trackcmp = document.createElement("script");
+		    trackcmp.async = true;
+		    trackcmp.type = 'text/javascript';
+		    trackcmp.src = '//trackcmp.net/visit?actid=251901529&e='+encodeURIComponent(trackcmp_email)+'&r='+encodeURIComponent(document.referrer)+'&u='+encodeURIComponent(window.location.href);
+		    var trackcmp_s = document.getElementsByTagName("script");
+		    if (trackcmp_s.length) {
+		        trackcmp_s[0].parentNode.appendChild(trackcmp);
+		    } else {
+		        var trackcmp_h = document.getElementsByTagName("head");
+		        trackcmp_h.length && trackcmp_h[0].appendChild(trackcmp);
+		    }
+		</script><script async="" type="text/javascript" src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/visit"></script>
+		<!-- End Active Campaign -->
+
+		<!-- Menu Lateral -->
+		<script>
+			$(document).ready(function(){
+				$.ajax({url: "//www.devmedia.com.br/includebphp/topo_menu_lateral.php"})
+				.done(function(res){
+					$("header .lateral").append(res);
+				});
+				$(".busca-mobile img").click(function(){
+					if($(".busca-mobile").hasClass("active")){
+						if($(".busca-mobile.active form input").val().length > 0){
+							$(".busca-mobile.active form").submit();
+						}						
+					}else{
+						$(".busca-mobile").addClass("active");
+					}
+				});
+				$(".busca-mobile .busca-close").click(function(){
+					$(".busca-mobile").removeClass("active");
+				});
+
+				$(".foto-usuario-devmedia").on("mouseover click", function(){
+					$(".menu-usuario-devmedia").addClass("open-menu-usuario-devmedia");
+				});
+				$(".menu-usuario-devmedia, header").on("mouseleave", function(){
+					$(".menu-usuario-devmedia").removeClass("open-menu-usuario-devmedia");
+				});
+
+				$(window).on("scroll", function() {
+					if (window.innerWidth <= 768) {
+						$(".menu-usuario-devmedia").removeClass("open-menu-usuario-devmedia");
+					}
+				});
+
+			});
+			
+			function fixScreenDevMedia(){
+				$("body").css("top", ($(window).scrollTop() * -1) + "px");
+				$("body").addClass("fixScreen-devmedia");
+			}
+
+			function unfixScreenDevMedia(){
+				var top = $("body").offset().top * -1;
+				$("body").removeClass("fixScreen-devmedia");
+				$(window).scrollTop(top);
+			}
+		</script>
+		<!-- Menu Lateral -->
+	<link type="text/css" rel="stylesheet" href="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/httpFront-v4.css"></head>
+	<body class="hellobar hellobar-on">
+		<section class="container-site-devmedia">
+			<header class="header-site-devmedia" style="position: fixed; top: -75px;">
+				<nav class="lateral">
+					<!-- MENU LATERAL -->
+				<style>
+header nav.lateral>ul li>a {
+    box-shadow: none !important;
+    }
+    header nav.lateral>ul hr{
+        width: 90%;
+    	border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    }
+</style>
+<ul>
+    <li>
+	    <strong>
+	    <a href="#" rel="nofollow">
+			    <span class="font-dev">bem</span>
+				<span class="font-media">vindo</span>
+		</a>
+		</strong>
+	</li>
+	<li><a href="#" class="back" data-main="true">Voltar</a></li>
+            <li><a href="https://www.devmedia.com.br/join/" rel="nofollow"><span class="icon2 tecnologia"></span>Cadastre-se</a></li>
+        <li><a href="https://www.devmedia.com.br/app/" rel="nofollow"><span class="icon2 recomendado"></span>Baixe o App</a></li>
+        <li><a href="https://www.devmedia.com.br/mvp/" rel="nofollow"><span class="icon2 mvp"></span>Assine MVP</a></li>
+    <hr>
+    <li><a href="https://www.devmedia.com.br/guias/" rel="nofollow"><span class="icon2 guias"></span>Linguagens</a></li>
+    <li><a href="https://www.devmedia.com.br/exemplos/" rel="nofollow"><span class="icon2 app"></span>Projetos</a></li>
+    <li><a href="https://www.devmedia.com.br/ultimas-atualizacoes/" rel="nofollow" style="text-transform:uppercase;"><span class="icon2 pocketvideos"></span>Últimas atualizações</a></li>
+    <hr>
+    <li><a href="#" rel="nofollow">Códigos em vídeos</a></li>
+    <li><a href="https://www.devmedia.com.br/cursos/" rel="nofollow"><span class="icon2 guias"></span>Cursos</a></li>
+    <li><a href="https://www.devmedia.com.br/devcast/" rel="nofollow"><span class="icon2 cursos"></span>DevCast</a></li>
+    <hr>
+    <li><a href="#" rel="nofollow">Códigos em Artigos</a></li>
+    <li><a href="https://www.devmedia.com.br/artigos/" rel="nofollow"><span class="icon2 recomendado"></span>Artigos</a></li>
+    <hr>    
+    <li><a href="https://www.devmedia.com.br/jobs/" rel="nofollow"><span class="icon2 tecnologia"></span>JOBS</a></li>
+    <li><a href="https://www.devmedia.com.br/forum/" rel="nofollow"><span class="icon2 forum"></span>Fórum</a></li>
+    <li><a href="https://www.devmedia.com.br/fale-conosco/" rel="nofollow"><span class="icon2 atendimento"></span>Fale conosco</a></li>
+</ul>
+
+<script>
+    $(function(){        
+        $(window).resize(function(){
+            $("header nav.lateral,header nav.lateral>ul").height(window.innerHeight);
+        });
+        
+       /* $(document).keyup(function(e){
+            if(e.keyCode==27 && $("header nav.lateral").css("display")=="block"){//esc
+                $("header nav.lateral").fadeOut(100).find(".active").removeClass("active");
+            }
+            if (typeof unfixScreenDevMedia != undefined) {
+                unfixScreenDevMedia();
+            }
+        });*/
+        
+        $(document).on("click", "header .opacity,header nav.lateral", function(e){
+            if($(e.target).attr('class')=="lateral"){
+                $("header nav.lateral").fadeOut(100).find(".active").removeClass("active");
+            }
+
+            if (typeof unfixScreenDevMedia != undefined) {
+                unfixScreenDevMedia();
+            }
+        });
+        
+        $(document).on("click", "header .menu",function(event){
+            event.preventDefault();
+            $("header nav.lateral,header nav.lateral>ul").height(window.innerHeight);
+            $("header nav.lateral").css({"display":"table"});
+            $("header nav.lateral").fadeIn(100,function(){
+                $("header nav.lateral").css({"display":"block"});
+                $("header nav.lateral>ul").css({"display":"table"});
+            });
+            if (typeof fixScreenDevMedia != undefined) {
+                fixScreenDevMedia();
+            }
+        });
+        
+        $(document).on("click", "header nav.lateral li a", function(event){
+            if($(this).attr("href")=="#") event.preventDefault();
+            var alvo = $(this).parent().parent().find(".active");
+            if(alvo.length){event.preventDefault();alvo.removeClass("active");}
+            else{$(this).parent().children("ul").addClass("active");$("header nav.lateral").scrollTop(0);}
+        });
+        
+        $(document).on("click", "header nav.lateral li .home", function(){
+            $("header nav.lateral").find(".active").removeClass("active");
+        });
+
+        $(document).on("click", "header nav.lateral li .back", function(){
+            if($(this).data("main")==true){
+                $("header nav.lateral").fadeOut(100).find(".active").removeClass("active");
+                $("header .opacity").fadeOut(100);
+                $("body").css({"overflow":"auto"});
+            }else{
+                $(this).parent().parent().parent().find(".active").removeClass("active");
+            }
+        });
+    });
+</script></nav>
+		
+				<nav class="menu-topo-devmedia"> 
+					<!-- MENU MOBILE -->     
+					<div class="devmenu-mobile">
+						<i class="drop-mobile">
+							<a href="#" class="menu">
+								<span></span>
+								<span></span>
+								<span></span>
+							</a>
+						</i>
+						<a class="logo-mob" href="https://www.devmedia.com.br/">
+							<span class="font-dev-topo">Dev</span><span class="font-media-topo">Media</span>
+						</a>
+					</div>
+					<!-- FI MENU MOBILE -->     
+					<!-- MENU DESKTOP -->  
+					<div class="devmenu">
+						<a class="logo-devmedia-svg" href="https://www.devmedia.com.br/" title="DevMedia - Códigos para quem faz Código">
+															<svg class="logo-devmedia" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 584.52 132.87" shape-rendering="geometricPrecision "><defs><style>.cls-1{fill:#7bac3b;}.cls-2{fill:#484848;}</style></defs><title>DevMedia - Códigos e Jobs para Programadores</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><g id="_Group_" data-name="&lt;Group&gt;"><path id="_Path_" data-name="&lt;Path&gt;" class="cls-1" d="M39.7,61.42,94.78,6.34A66.45,66.45,0,0,0,9.87,31.59Z"></path><path id="_Path_2" data-name="&lt;Path&gt;" class="cls-1" d="M71.3,39.7l55.18,55.18A66.47,66.47,0,0,0,101.19,9.81Z"></path><path id="_Path_3" data-name="&lt;Path&gt;" class="cls-1" d="M93,71.31,37.89,126.44A66.47,66.47,0,0,0,123,101.28Z"></path><path id="_Path_4" data-name="&lt;Path&gt;" class="cls-1" d="M61.42,93l-55-55a66.46,66.46,0,0,0,25.11,85Z"></path></g><path class="cls-2" d="M168.68,95.88V38.41h20.88a31.2,31.2,0,0,1,12.34,2.27,24.82,24.82,0,0,1,14.21,15.26,34.27,34.27,0,0,1,1.78,11.13,33.65,33.65,0,0,1-2,11.86A25.34,25.34,0,0,1,210.2,88a25.7,25.7,0,0,1-8.94,5.83,31.58,31.58,0,0,1-11.7,2.06Zm38-28.82a24.48,24.48,0,0,0-1.13-7.61,17,17,0,0,0-3.32-6,14.78,14.78,0,0,0-5.38-3.89,18.18,18.18,0,0,0-7.25-1.38h-9.71V86.08h9.71a17.5,17.5,0,0,0,7.33-1.46,15,15,0,0,0,5.34-4,17.87,17.87,0,0,0,3.28-6A24.19,24.19,0,0,0,206.64,67.06Z"></path><path class="cls-2" d="M270.19,86.08v9.79H226.72V38.41h43.47V48.2h-32.3V62h32.3v9.07h-32.3v15Z"></path><path class="cls-2" d="M390.26,95.88V46.18l-22,33.77-22-33.77v49.7h-4.13V38.41h4.13l22,34.12,22-34.12h4.13V95.88Z"></path><path class="cls-2" d="M448.19,92.15v3.72H408V38.41h39.47v3.72H412.12V64.71h36.07v3.56H412.12V92.15Z"></path><path class="cls-2" d="M459.23,95.88V38.41h21.22a29.36,29.36,0,0,1,11.94,2.27,24,24,0,0,1,8.54,6.15,25.77,25.77,0,0,1,5.1,9.11,35.75,35.75,0,0,1,1.7,11.13,34.94,34.94,0,0,1-1.9,11.86A25.58,25.58,0,0,1,500.36,88a24.4,24.4,0,0,1-8.62,5.83,29.64,29.64,0,0,1-11.29,2.06ZM503.6,67.06a31.22,31.22,0,0,0-1.54-10,22.51,22.51,0,0,0-4.49-7.89A20.49,20.49,0,0,0,490.32,44a24.61,24.61,0,0,0-9.87-1.86H463.36v50h17.09a24.65,24.65,0,0,0,10-1.9,19.94,19.94,0,0,0,7.24-5.3,23.18,23.18,0,0,0,4.41-8A31.72,31.72,0,0,0,503.6,67.06Z"></path><path class="cls-2" d="M518.32,95.88V38.41h4.13V95.88Z"></path><path class="cls-2" d="M555.84,38.41h3.67l25,57.47H580l-6-13.82-32.8.15-6,13.67h-4.59Zm16.71,39.67L557.67,43.43,542.44,78.24Z"></path><polygon class="cls-2" points="322.35 38.41 304.73 82.9 304.69 82.78 304.64 82.9 287.02 38.41 275.85 38.41 298.27 95.88 304.69 95.88 311.1 95.88 333.52 38.41 322.35 38.41"></polygon></g></g></svg>
+													</a>
+
+						<nav class="menu-itens-devmedia">
+							<span class="menu-item-devmedia show-submenu-devmedia">Aprenda
+							<svg viewBox="0 0 7.453 4.647" class="img-seta-menu">
+							<path class="img-seta-menu-path" d="M18.9,6.556l2.851-2.851L18.9.9" transform="translate(7.454 -18.002) rotate(90)"></path>
+							</svg>
+								<nav class="submenu-itens-devmedia">
+									<a href="https://www.devmedia.com.br/guias/" class="submenu-item-devmedia">Linguagens</a>
+									<a href="https://www.devmedia.com.br/cursos/" class="submenu-item-devmedia">Cursos</a>
+									<a href="https://www.devmedia.com.br/devcast/" class="submenu-item-devmedia">DevCast</a>
+									<a href="https://www.devmedia.com.br/exemplos/" class="submenu-item-devmedia">Projetos</a>
+									<a href="https://www.devmedia.com.br/artigos/" class="submenu-item-devmedia">Artigos</a>
+									<hr class="line-submenu">
+									<a href="https://www.devmedia.com.br/ultimas-atualizacoes/" class="submenu-item-devmedia">Últimas Atualizações</a>
+								</nav>
+							</span>
+							<a class="menu-item-devmedia menu-forum-devmedia" href="https://www.devmedia.com.br/forum/">Fórum</a>
+						</nav>
+						
+						<div class="login-box">
+							<div class="form-busca form-busca-off">
+								<form class="form-busca-site" action="//www.devmedia.com.br/busca/">
+									<input class="btn-text-top" name="txtsearch" placeholder="Buscar" type="text">
+									<button class="btn-buscar-top" type="submit"></button>
+								</form>
+							</div>
+							<div class="page-mvp">
+																<a href="https://www.devmedia.com.br/mvp/" class="link-page-mvp">Assine</a>
+							</div>
+															<div class="cadastrese-devmedia">
+									<a class="link-login-devmedia" href="https://www.devmedia.com.br/join/">Cadastre-se</a>
+								</div>
+								<div class="login-devmedia">
+									<a class="link-login-devmedia" href="https://www.devmedia.com.br/login/login.asp?topo=login">Login</a>
+								</div>
+														<div class="busca-mobile">
+								<form action="//www.devmedia.com.br/busca/">
+									<span class="busca-close"></span>
+									<input name="txtsearch" placeholder="Buscar" type="text">
+								</form>
+								<img src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/buscar_grey.png">
+							</div>
+						</div>
+					</div>
+					<!-- FIM MENU DESKTOP -->  
+
+				</nav>
+			</header>
+			
+			<style>
+.page-mvp 
+{
+    width: 154px !important;
+    height: 44px;
+    border: 1px solid #EDEDED;
+    border-radius: 30px;
+    margin: 0 40px;
+}
+#viewaula #menu-aula
+{
+    top: 130px;
+}
+</style>
+
+
+	<!-- HELLO BAR DESTACK -->
+	<style>
+		.under_hellobar_closed { animation: under_hellobarClosed .3s ease-in 1 forwards; margin-top: 55px; }
+		.container-site-devmedia {
+			margin-top: 55px;
+		}
+		.container-site-devmedia{padding-top:0 !important;}
+		.wrapper-header_guia{padding-top: 55px !important;}
+		.moveHeader { top: 80px !important; }
+		.under_hellobar_wrapper { width: 100%; height: 0px; top: -55px; background:rgba(242, 244, 245, 1); position: relative; display: flex; justify-content: center; animation-name: under_hellobar; animation-duration: .3s;  animation-delay: .1s; animation-fill-mode: forwards;}
+		/*.under_hellobar_wrapper { width: 100%; height: 0px; background: rgba(26, 193, 187, 0.99);
+		background: -webkit-linear-gradient(left, rgba(26, 193, 1	87, 0.99) 1%, rgba(0, 126, 174, 0.87) 100%);
+		background: -o-linear-gradient(left, rgba(26, 193, 187, 0.99) 1%, rgba(0, 126, 174, 0.87) 100%);
+		background: linear-gradient(to right, rgba(26, 193, 187, 0.99) 1%, rgba(0, 126, 174, 0.87) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0080ff', endColorstr='#00a5d9',GradientType=1 ); position: relative; display: flex; justify-content: center; animation-name: under_hellobar; animation-duration: .3s;  animation-delay: .1s; animation-fill-mode: forwards;}*/
+
+		@keyframes under_hellobar {
+
+		from { height: 0px; }
+		to {  height: 55px; }
+
+		}
+
+		@keyframes under_hellobarClosed {
+			from { margin-top: 55px; }
+			to {  margin-top: 0px; }
+		}
+
+		.under_hellobar_container { max-width: 1100px; display: flex;	align-items: center; opacity: 0; animation: under_hellobarContainer .3s ease-in .1s 1 forwards; margin-left: 55px;}
+		@keyframes under_hellobarContainer {
+			from { opacity: 0; }
+			to { opacity: 1; }
+
+		}
+		.under_hellobar_closed .under_hellobar_container { animation: under_hellobarContainerClosed .3s ease-in 1 forwards; }
+		@keyframes under_hellobarContainerClosed {
+			from { opacity: 1; }
+			to { opacity: 0; }
+		}
+		.under_hellobar_container p {font-family: Montserrat, sans-serif;font-weight: normal;font-size: 16px;color: rgb(59, 60, 62); }
+		/*.under_hellobar_container p {font-family: Montserrat, sans-serif;font-weight: normal;font-size: 16px;color: #fff; }*/
+		.under_hellobar_btn {font-size: 16px;color: #253A44;font-family: Montserrat, sans-serif;font-weight: 600;text-decoration: none;}
+		/*.under_hellobar_btn {font-size: 16px;color: #fff;font-family: Montserrat, sans-serif;font-weight: bold;text-decoration: none;}*/
+		.under_hellobar_container img:first-child { margin-right: 10px;width: 36px;height: auto; }
+		.under_hellobar_container img:last-child { margin-left: 40px; }
+		.under_hellobar_close { position: absolute; right: 40px; top: 50%; transform: translateY(-50%); display: flex; width: 40px; height: 40px; cursor: pointer; }
+		.under_hellobar_close:after { content: ""; width: 20px; height: 2px; background-color: rgba(135, 149, 162, 1); position: relative; top: 45%; right: 50%; transform: rotate(-45deg) translate(45%, 50%); transform-origin: right; transition: all .5s; }
+		.under_hellobar_close:before { content: ""; width: 20px; height: 2px; background-color: rgba(135, 149, 162, 1); transform: rotate(45deg) translate(-45%, 50%); transform-origin: left; position: relative; top: 45%; left: 50%; transition: all .5s; }
+		.under_hellobar_close:hover:after { transform: rotate(-405deg) translate(45%, 50%); }
+		.under_hellobar_close:hover:before { transform: rotate(-315deg) translate(-45%, 50%); }
+
+		@media screen and (max-width: 1280px) {
+		.under_hellobar_wrapper { justify-content: left; }    
+		.under_hellobar_container { margin: 0 auto; }
+		.under_hellobar_container p { font-size: 16px; }
+		.under_hellobar_btn { font-size: 14px; }
+
+		}
+
+		@media screen and (max-width: 1050px) {
+		.under_hellobar_container img:last-child { display: none; }
+		.under_hellobar_close { right: 10px; }
+
+		}
+
+		@media screen and (max-width: 767px) {
+		.under_hellobar_wrapper { display: none; }
+		.header-site-devmedia{position:fixed !important;top:0 !important;}
+		}
+	</style>
+
+	<div class="under_hellobar_wrapper">
+		<div class="under_hellobar_container">
+			<img src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/icon-notification-hellobar-grey.svg" alt="">
+			<!--<img src="//www.devmedia.com.br/layout/home/imagem/icon-notification-hellobar-blue.svg" alt="">-->
+			<p>Série da semana: CSS: da Sintaxe ao Flexbox&nbsp;</p>
+			<a href="https://www.devmedia.com.br/css/" title="Serie CSS" class="under_hellobar_btn">Veja mais</a>
+		</div>
+		<div class="under_hellobar_close"></div>
+	</div>
+	
+	<script>	
+		var canCheckHeight = false;
+		setInterval(function(){
+			if(canCheckHeight && $(".container-site-devmedia").css("margin-top")=="0px")
+			{
+				$(".header-site-devmedia").css('position',"fixed");
+                $("#viewaula #menu-aula").css("top","75px");
+                $(".content-site-devmedia #nav-projeto").css("top","75px");
+				$(".menu-aula-float-button").css("top","90px");
+				canCheckHeight = false;
+			}
+		},1);				
+		$(document).ready(function(){
+			//$(".header-site-devmedia").addClass('moveHeader')
+			$("body").addClass("hellobar");
+			$("body").addClass("hellobar-on");
+            $("#viewaula #menu-aula").css("top","130px");
+            $(".content-site-devmedia #nav-projeto").css("top","130px");
+			$(".menu-aula-float-button").css("top","145px");
+			$(".menu-usuario-devmedia").css("position","absolute");
+			$(".header-site-devmedia").css('position',"absolute");
+			$('.under_hellobar_close').on("click", function(){
+				$('.container-site-devmedia' ).addClass('under_hellobar_closed');
+				$("body").removeClass("hellobar-on");
+				$("body").addClass("hellobar-off");
+				//console.log("TOP: "+currentTop);
+				canCheckHeight = true;
+			});
+		});
+		$(window).scroll(function(){ showHelloBar(); });
+		function showHelloBar(){
+			if($(window).scrollTop() > 55){
+				$(".header-site-devmedia").css('position',"fixed");
+                $("#viewaula #menu-aula").css("top","75px");
+                $(".content-site-devmedia #nav-projeto").css("top","75px");
+				$(".menu-aula-float-button").css("top","90px");
+	        }
+			else{
+				if($(".container-site-devmedia").hasClass("under_hellobar_closed"))
+				{
+					$(".header-site-devmedia").css('position',"fixed");
+                    $("#viewaula #menu-aula").css("top","75px");
+                    $(".content-site-devmedia #nav-projeto").css("top","75px");
+					$(".menu-aula-float-button").css("top","90px");
+				}
+				else
+				{
+					$(".header-site-devmedia").css('position',"absolute");
+                    $("#viewaula #menu-aula").css("top","130px");
+                    $(".content-site-devmedia #nav-projeto").css("top","130px");
+					$(".menu-aula-float-button").css("top","145px");
+				}
+			}
+	    }
+	</script>
+	<!-- FIM HELLO BAR DESTACK -->
+
+			<main class="content-site-devmedia"><main class="wrapper-header_guia">
+    
+    <!-- Início Coluna da Esquerda Header -->
+    <div class="col-left-hd_guia">
+        
+    </div>
+    <!-- Fim Coluna da Esquerda Header -->
+
+    <div class="container-hd_guia">
+        <div class="content-hd_guia">
+			<a id="ga-mvp-guias-top-link" href="#modulo-mvp" class="topo-link-acesso">
+					<div class="sup-title_guia_mvp">Quer ter acesso a todos os cursos desse guia?
+						<svg class="slide-next" viewBox="0 0 4.6 7.5" xml:space="preserve">
+							<path class="seta" d="M0.9,6.6l2.9-2.9L0.9,0.9"></path>
+						</svg>
+					</div>
+				</a>
+			<div class="titulo-area-guia">
+				<span class="titulo-tipo">Guia</span>
+				<h1 class="h1-title_guia font100">Linguagem PHP</h1>				
+			</div>
+            <input id="idguia" value="38780" type="hidden">
+            <hr class="divisor-line_guia">
+            <h2 class="description_guia">
+                Neste Guia de Consulta você encontrará todo o conteúdo 
+que precisa para aprender  PHP, uma linguagem de programação amplamente 
+utilizada para a construção de aplicações web.
+			</h2>
+			
+        </div>
+    </div>
+
+    <!-- Início Coluna da Direita Header -->
+    <div class="col-right-hd_guia">
+
+        <!-- Início Menu Header -->
+        <nav class="container-menu_guia container-menu-hd_guia">
+            <ul class="menu_guia">
+					<li class="item-menu_guia like-voto" data-tipo="1"><span class="link-menu_guia icon-like"><span class="numlikes">18</span><span class="name-item-menu_guia">Gostei</span></span></li>
+				<li class="item-menu_guia" data-id="38780"><a href="#" class="link-menu_guia icon-favorite fav-usuario"><span class="numfav">16</span><span class="name-item-menu_guia">Marcar como favorito</span></a></li>				
+				<!-- <li class="item-menu_guia"><span class="link-menu_guia icon-dislike like-voto" data-tipo="0"><span class="numdislikes"></span><span class="name-item-menu_guia">Não gostei</span></span></li> -->
+				<li class="item-menu_guia">
+					<!-- <li class="item-menu_guia"> -->
+						<div class="link-menu_guia icon-share-full">
+							<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.devmedia.com.br/guia/linguagem-php/38780" class="link-menu_guia icon-facebook-logo-button share-guia" onclick="window.open(this.href, 'mywindow',
+'menubar=1,resizable=0,width=540,height=500,left=20,top=20'); return false;"></a>	
+							
+							<a href="https://twitter.com/intent/tweet?text=Linguagem+PHP+https%3A%2F%2Fwww.devmedia.com.br%2Fguia%2Flinguagem-php%2F38780+%40devmedia" onclick="window.open(this.href, 'mywindow',
+'menubar=1,resizable=0,width=540,height=500,left=20,top=20'); return false;" class="link-menu_guia icon-twitter share-guia "></a>
+
+
+							<span class="name-item-menu_guia">Compartilhar</span>
+						</div>
+					<!-- </li> -->
+					<!-- <a href="#" class="link-menu_guia icon-share-full share_guia"><span class="name-item-menu_guia">Compartilhar</span></a>
+					<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.devmedia.com.br/guia/linguagem-php/38780" class="link-menu_guia icon-facebook-logo-button share_guia"><span class="name-item-menu_guia">Facebook</span></a>
+					<a target="_blank" href="https://twitter.com/?status=https://www.devmedia.com.br/guia/linguagem-php/38780" class="link-menu_guia icon-twitter share_guia"><span class="name-item-menu_guia">Twitter+</span></a> -->
+				</li>
+            </ul>
+        </nav>
+        <!-- Início Menu Header -->
+
+    </div>
+	<!-- Fim Coluna da Direita Header -->
+</main>
+
+<!-- Início Wrapper Body -->
+	<div class="wrapper-bd_guia">
+
+		<!-- Início Coluna da Esquerda Body -->
+		<div class="col-left-bd_guia">
+			
+<section class="action-menu menu-hidden" id="menu-body_guia" style="position: fixed; opacity: 1; top: 90px;">
+    <ul class="action-menu-list">
+        <li class="action-menu-item like-button " data-id="38780" data-tipo="1">
+            <span class="action-menu-icone">
+                <svg class="icone-svg svg-like">
+                    <path class="svg-element border" d="M18.2,26.7h-2.7c-1.6,0-2.9-1.3-2.9-2.9V16c4.8-1.3,4.5-4.5,4.5-8.1c0,0,3.4-0.5,3.4,2.4v3.8h5
+                        c1.3-0.1,2.5,1,2.6,2.3c0,0.2,0,0.4,0,0.6l-0.9,6.9c-0.3,1.7-1.7,2.9-3.3,2.9h-5.7V26.7z"></path>
+                    <path class="svg-element border" d="M9.9,25.7h1.8c0.4,0,0.8-0.4,0.8-0.8l0,0v-9.1c0-0.4-0.4-0.8-0.8-0.8l0,0H9
+                        c-0.4,0-0.8,0.4-0.8,0.8l0,0v8.3"></path>
+                    <circle class="svg-element circle" cx="8.4" cy="25.6" r="1.5"></circle>
+                </svg>
+                    <span class="menu-icone-like-count">18</span>
+            </span>
+            <span class="action-menu-label">Gostei</span>
+        </li>
+
+        <li class="action-menu-item fav-button " data-id="38780">
+            <span class="action-menu-icone">
+                <svg class="icone-svg svg-star">
+                    <path class="svg-element border" d="M27.2,14.2c0.2-0.2,0.3-0.5,0.2-0.7c-0.1-0.3-0.3-0.5-0.6-0.5l-5.4-0.7c-0.3-0.2-0.6-0.4-0.8-0.7
+                        l-2.4-4.9c-0.1-0.3-0.3-0.4-0.6-0.4c-0.3,0-0.5,0.2-0.6,0.4l-2.5,4.9c-0.2,0.4-0.5,0.6-0.9,0.6L8.3,13c-0.3,0-0.6,0.2-0.6,0.5
+                        c-0.1,0.3,0,0.6,0.2,0.7l3.8,3.7c0.3,0.3,0.4,0.7,0.3,1l-0.9,5.3c0,0.3,0.1,0.5,0.3,0.7c0.1,0.1,0.3,0.1,0.4,0.1l0,0
+                        c0.1,0,0.2,0,0.3-0.1l0.4-0.2l4.4-2.3c0.2-0.1,0.3-0.1,0.5-0.1c0.2,0,0.4,0,0.5,0.1l4.8,2.5C22.8,25,22.9,25,23,25
+                        c0.1,0,0.3,0,0.4-0.1c0.2-0.2,0.3-0.5,0.3-0.7l-0.9-5.3c-0.1-0.4,0.1-0.8,0.3-1L27.2,14.2z"></path>
+                    <line class="svg-element line" x1="11.1" y1="8" x2="10.4" y2="7.1"></line>
+                    <line class="svg-element line" x1="23.9" y1="8" x2="24.5" y2="7.1"></line>
+                    <line class="svg-element line" x1="7.2" y1="20.1" x2="6.2" y2="20.4"></line>
+                    <line class="svg-element line" x1="27.8" y1="20.1" x2="28.9" y2="20.4"></line>
+                    <line class="svg-element line" x1="17.6" y1="27.6" x2="17.6" y2="28.7"></line>
+                </svg>
+            </span>
+            <span class="action-menu-label">Favoritar</span>
+        </li>
+
+        <li class="action-menu-item comment-button" data-href="#comentariosArtigo">
+            <span class="action-menu-icone">
+                <svg class="icone-svg svg-comment">
+                    <path class="svg-element border" d="M26,7.8H8.8c-1.5,0-2.7,1.2-2.7,2.7v16.8l5.8-4.6h14.3c1.5,0,2.7-1.2,2.7-2.7v-9.5
+                        C28.7,8.9,27.5,7.9,26,7.8z"></path>
+                    <line class="svg-element line" x1="11.4" y1="12.9" x2="23.6" y2="12.9"></line>
+                    <line class="svg-element line" x1="11.4" y1="17" x2="17.4" y2="17"></line>
+                </svg>
+            </span>
+            <span class="action-menu-label">Comentários</span>
+        </li>
+
+        <!--<li class="action-menu-divider"></li> -->
+
+        <li class="action-menu-item sub-menu">
+            <span class="action-menu-icone">
+                <svg class="icone-svg svg-share" viewBox="0 0 17.552 18.498">
+                    <g transform="translate(1 1)">
+                        <path class="svg-element lines" d="M12.594,11.3a2.959,2.959,0,0,0-2.337,1.152L5.728,9.917a2.96,2.96,0,0,0,0-1.948l4.529-2.526a2.964,2.964,0,1,0-.441-.818L5.287,7.151A2.946,2.946,0,1,0,5.3,10.734l4.529,2.53a2.9,2.9,0,0,0-.171.985A2.95,2.95,0,1,0,12.594,11.3Zm0-9.666a2.025,2.025,0,1,1-2.025,2.025,2.026,2.026,0,0,1,2.025-2.025ZM2.954,10.97A2.025,2.025,0,1,1,4.979,8.945,2.026,2.026,0,0,1,2.954,10.97Zm9.64,5.3a2.025,2.025,0,1,1,2.025-2.025,2.026,2.026,0,0,1-2.025,2.025Zm0,0" transform="translate(0 -0.7)"></path>
+                    </g>
+                </svg>
+            </span>
+            <span class="action-menu-sub-icone">
+                <span class="social-icone">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.devmedia.com.br/guia/linguagem-php/38780" target="_blank" class="facebook-share" title="Compartilhe no Facebook" onclick="window.open(this.href, 'mywindow',
+'menubar=1,resizable=0,width=540,height=500,left=20,top=20'); return false;">
+                        <svg class="sub-icone-svg svg-facebook">
+                            <path class="svg-element" d="M17.5,7.1c-5.7,0-10.4,4.7-10.4,10.4s4.7,10.4,10.4,10.4s10.4-4.7,10.4-10.4S23.2,7.1,17.5,7.1z M20.9,13.1h-1.4 c-0.2,0-0.3,0-0.4,0.1c-0.3,0.1-0.5,0.3-0.6,0.6c0,0.2-0.1,0.3-0.1,0.5v1.4h2.4l-0.2,2.4h-2v6h-2.5v-6h-2v-2.3H16 c0.2,0,0.2,0,0.2-0.2c0-0.7,0-1.2,0-1.9c0-0.9,0.4-1.6,1-2.2c0.4-0.3,1-0.5,1.4-0.6c0.8-0.1,1.5,0,2.3,0.1H21L20.9,13.1L20.9,13.1z"></path>
+                        </svg>
+                    </a>
+                </span>
+                <span class="social-icone">
+                    <a href="https://twitter.com/intent/tweet?text=Linguagem+PHP+https%3A%2F%2Fwww.devmedia.com.br%2Fguia%2Flinguagem-php%2F38780+%40devmedia" target="_blank" class="twitter-share" title="Compartilhe no Twitter" onclick="window.open(this.href, 'mywindow',
+'menubar=1,resizable=0,width=540,height=500,left=20,top=20'); return false;">
+                        <svg class="sub-icone-svg svg-twitter">
+                            <path class="svg-element" d="M17.5,7.1c-5.7,0-10.4,4.7-10.4,10.4s4.7,10.4,10.4,10.4s10.4-4.7,10.4-10.4S23.2,7.1,17.5,7.1z M22.3,15.2 c-0.1,0.2-0.3,0.3-0.4,0.4l-0.1,0.1c0.1,1.9-0.8,3.8-2.3,5c-0.8,0.6-1.7,1-2.7,1.1c-1.4,0.2-2.8-0.1-4-0.9c1.1,0.1,2.2-0.2,3-0.9 c-0.9,0-1.7-0.6-2-1.5c0.3,0.1,0.6,0,0.9,0c-0.5-0.1-1-0.4-1.3-0.9c-0.2-0.3-0.4-0.6-0.3-1c0.1,0.1,0.3,0.1,0.4,0.2 c0.1,0,0.3,0.1,0.4,0.1c-0.4-0.4-0.8-1-0.8-1.6c-0.1-0.4,0-0.9,0.2-1.3c1.1,1.3,2.7,2.1,4.3,2.2c0-0.1,0-0.2,0-0.3 c-0.1-1,0.6-2,1.6-2.2c0.7-0.2,1.4,0,1.8,0.5c0.1,0.1,0.2,0.1,0.2,0.1c0.4-0.1,0.7-0.2,1.1-0.4c0,0,0.1,0,0.1-0.1 c-0.2,0.5-0.4,0.9-0.8,1.1c0.4,0,0.8-0.1,1.1-0.3l0,0C22.6,14.8,22.5,15,22.3,15.2z"></path>
+                        </svg>
+                    </a>
+                </span>
+            </span>
+        </li>
+    </ul>    
+</section>
+
+<section class="menu-mobile-footer">
+    <ul class="action-menu-list-mobile">
+
+        <li class="action-menu-item comment-button" data-href="#comentariosArtigo">
+            <span class="action-menu-icone">
+                <svg class="icone-svg svg-comment">
+                    <path class="svg-element border" d="M26,7.8H8.8c-1.5,0-2.7,1.2-2.7,2.7v16.8l5.8-4.6h14.3c1.5,0,2.7-1.2,2.7-2.7v-9.5
+                        C28.7,8.9,27.5,7.9,26,7.8z"></path>
+                    <line class="svg-element line" x1="11.4" y1="12.9" x2="23.6" y2="12.9"></line>
+                    <line class="svg-element line" x1="11.4" y1="17" x2="17.4" y2="17"></line>
+                </svg>
+            </span>
+            <span class="action-menu-label">Comentários</span>
+        </li>
+
+        <li class="action-menu-item sub-menu menu-mobile-social">
+            <span class="action-menu-icone share-mobile">
+                <svg class="icone-svg svg-share" viewBox="0 0 17.552 18.498">
+                    <g transform="translate(1 1)">
+                        <path class="svg-element lines" d="M12.594,11.3a2.959,2.959,0,0,0-2.337,1.152L5.728,9.917a2.96,2.96,0,0,0,0-1.948l4.529-2.526a2.964,2.964,0,1,0-.441-.818L5.287,7.151A2.946,2.946,0,1,0,5.3,10.734l4.529,2.53a2.9,2.9,0,0,0-.171.985A2.95,2.95,0,1,0,12.594,11.3Zm0-9.666a2.025,2.025,0,1,1-2.025,2.025,2.026,2.026,0,0,1,2.025-2.025ZM2.954,10.97A2.025,2.025,0,1,1,4.979,8.945,2.026,2.026,0,0,1,2.954,10.97Zm9.64,5.3a2.025,2.025,0,1,1,2.025-2.025,2.026,2.026,0,0,1-2.025,2.025Zm0,0" transform="translate(0 -0.7)"></path>
+                    </g>
+                </svg>
+                <div class="social-icones-mobile">
+                    <span class="action-menu-sub-icone">
+                        <span class="social-icone social-facebook-mobile">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.devmedia.com.br/guia/linguagem-php/38780" target="_blank" class="facebook-share" title="Compartilhe no Facebook" onclick="window.open(this.href, 'mywindow',
+        'menubar=1,resizable=0,width=540,height=500,left=20,top=20'); return false;">
+                                <svg class="sub-icone-svg svg-facebook">
+                                    <path class="svg-element" d="M17.5,7.1c-5.7,0-10.4,4.7-10.4,10.4s4.7,10.4,10.4,10.4s10.4-4.7,10.4-10.4S23.2,7.1,17.5,7.1z M20.9,13.1h-1.4 c-0.2,0-0.3,0-0.4,0.1c-0.3,0.1-0.5,0.3-0.6,0.6c0,0.2-0.1,0.3-0.1,0.5v1.4h2.4l-0.2,2.4h-2v6h-2.5v-6h-2v-2.3H16 c0.2,0,0.2,0,0.2-0.2c0-0.7,0-1.2,0-1.9c0-0.9,0.4-1.6,1-2.2c0.4-0.3,1-0.5,1.4-0.6c0.8-0.1,1.5,0,2.3,0.1H21L20.9,13.1L20.9,13.1z"></path>
+                                </svg>
+                            </a>
+                        </span>
+                        <span class="social-icone social-twitter-mobile">
+                            <a href="https://twitter.com/intent/tweet?text=Linguagem+PHP+https%3A%2F%2Fwww.devmedia.com.br%2Fguia%2Flinguagem-php%2F38780+%40devmedia" target="_blank" class="twitter-share" title="Compartilhe no Twitter" onclick="window.open(this.href, 'mywindow',
+        'menubar=1,resizable=0,width=540,height=500,left=20,top=20'); return false;">
+                                <svg class="sub-icone-svg svg-twitter">
+                                    <path class="svg-element" d="M17.5,7.1c-5.7,0-10.4,4.7-10.4,10.4s4.7,10.4,10.4,10.4s10.4-4.7,10.4-10.4S23.2,7.1,17.5,7.1z M22.3,15.2 c-0.1,0.2-0.3,0.3-0.4,0.4l-0.1,0.1c0.1,1.9-0.8,3.8-2.3,5c-0.8,0.6-1.7,1-2.7,1.1c-1.4,0.2-2.8-0.1-4-0.9c1.1,0.1,2.2-0.2,3-0.9 c-0.9,0-1.7-0.6-2-1.5c0.3,0.1,0.6,0,0.9,0c-0.5-0.1-1-0.4-1.3-0.9c-0.2-0.3-0.4-0.6-0.3-1c0.1,0.1,0.3,0.1,0.4,0.2 c0.1,0,0.3,0.1,0.4,0.1c-0.4-0.4-0.8-1-0.8-1.6c-0.1-0.4,0-0.9,0.2-1.3c1.1,1.3,2.7,2.1,4.3,2.2c0-0.1,0-0.2,0-0.3 c-0.1-1,0.6-2,1.6-2.2c0.7-0.2,1.4,0,1.8,0.5c0.1,0.1,0.2,0.1,0.2,0.1c0.4-0.1,0.7-0.2,1.1-0.4c0,0,0.1,0,0.1-0.1 c-0.2,0.5-0.4,0.9-0.8,1.1c0.4,0,0.8-0.1,1.1-0.3l0,0C22.6,14.8,22.5,15,22.3,15.2z"></path>
+                                </svg>
+                            </a>
+                        </span>
+                    </span>
+                </div>
+            </span>            
+        </li>
+
+        <li class="action-menu-item fav-button " data-id="38780">
+            <span class="action-menu-icone">
+                <svg class="icone-svg svg-star">
+                    <path class="svg-element border" d="M27.2,14.2c0.2-0.2,0.3-0.5,0.2-0.7c-0.1-0.3-0.3-0.5-0.6-0.5l-5.4-0.7c-0.3-0.2-0.6-0.4-0.8-0.7
+                        l-2.4-4.9c-0.1-0.3-0.3-0.4-0.6-0.4c-0.3,0-0.5,0.2-0.6,0.4l-2.5,4.9c-0.2,0.4-0.5,0.6-0.9,0.6L8.3,13c-0.3,0-0.6,0.2-0.6,0.5
+                        c-0.1,0.3,0,0.6,0.2,0.7l3.8,3.7c0.3,0.3,0.4,0.7,0.3,1l-0.9,5.3c0,0.3,0.1,0.5,0.3,0.7c0.1,0.1,0.3,0.1,0.4,0.1l0,0
+                        c0.1,0,0.2,0,0.3-0.1l0.4-0.2l4.4-2.3c0.2-0.1,0.3-0.1,0.5-0.1c0.2,0,0.4,0,0.5,0.1l4.8,2.5C22.8,25,22.9,25,23,25
+                        c0.1,0,0.3,0,0.4-0.1c0.2-0.2,0.3-0.5,0.3-0.7l-0.9-5.3c-0.1-0.4,0.1-0.8,0.3-1L27.2,14.2z"></path>
+                    <line class="svg-element line" x1="11.1" y1="8" x2="10.4" y2="7.1"></line>
+                    <line class="svg-element line" x1="23.9" y1="8" x2="24.5" y2="7.1"></line>
+                    <line class="svg-element line" x1="7.2" y1="20.1" x2="6.2" y2="20.4"></line>
+                    <line class="svg-element line" x1="27.8" y1="20.1" x2="28.9" y2="20.4"></line>
+                    <line class="svg-element line" x1="17.6" y1="27.6" x2="17.6" y2="28.7"></line>
+                </svg>
+            </span>
+            <span class="action-menu-label">Favoritar</span>
+        </li>
+
+        <li class="action-menu-item-mobile like-button " data-id="38780" data-tipo="1">
+            <span class="action-menu-icone">
+                <svg class="icone-svg svg-like">
+                    <path class="svg-element border" d="M18.2,26.7h-2.7c-1.6,0-2.9-1.3-2.9-2.9V16c4.8-1.3,4.5-4.5,4.5-8.1c0,0,3.4-0.5,3.4,2.4v3.8h5
+                        c1.3-0.1,2.5,1,2.6,2.3c0,0.2,0,0.4,0,0.6l-0.9,6.9c-0.3,1.7-1.7,2.9-3.3,2.9h-5.7V26.7z"></path>
+                    <path class="svg-element border" d="M9.9,25.7h1.8c0.4,0,0.8-0.4,0.8-0.8l0,0v-9.1c0-0.4-0.4-0.8-0.8-0.8l0,0H9
+                        c-0.4,0-0.8,0.4-0.8,0.8l0,0v8.3"></path>
+                    <circle class="svg-element circle" cx="8.4" cy="25.6" r="1.5"></circle>
+                </svg>
+            </span>
+            <span class="action-menu-label">Gostei</span>
+        </li>
+
+    </ul>
+</section>
+			<!-- Início Menu Body -->
+			<!-- <nav class="container-menu_guia" id="menu-body_guia">
+				<ul class="menu_guia">
+					<li class="item-menu_guia"><a href="#" data-id="38780" class="link-menu_guia icon-favorite fav-usuario"><span class="name-item-menu_guia">Favoritar</span></a></li>
+					<li class="item-menu_guia"><a href="https://www.devmedia.com.br/anotacoes/add/?idcomp=38780" class="link-menu_guia icon-note"><span class="name-item-menu_guia">Anotar</span></a></li>
+					<li class="item-menu_guia"><a href="#comentariosArtigo" class="link-menu_guia icon-question"><span class="name-item-menu_guia">Dúvidas?</span></a></li>					
+					<li class="item-menu_guia"><span class="link-menu_guia icon-like like-voto" data-tipo="1"><span class="name-item-menu_guia">Gostei</span></a></li>
+					<li class="item-menu_guia"><span class="link-menu_guia icon-dislike like-voto" data-tipo="0"><span class="name-item-menu_guia">Não gostei</span></a></li>					
+					<li class="item-menu_guia"><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.devmedia.com.br/guia/linguagem-php/38780" class="link-menu_guia icon-facebook-logo-button share_guia" onclick="window.open(this.href, 'mywindow',
+'menubar=1,resizable=0,width=540,height=500,left=20,top=20'); return false;"> <span class="name-item-menu_guia">Facebook</span></a></li>
+					<li class="item-menu_guia"><a href="https://twitter.com/intent/tweet?text=Linguagem+PHP+https%3A%2F%2Fwww.devmedia.com.br%2Fguia%2Flinguagem-php%2F38780+%40devmedia" onclick="window.open(this.href, 'mywindow',
+'menubar=1,resizable=0,width=540,height=500,left=20,top=20'); return false;" class="link-menu_guia icon-twitter share_guia"><span class="name-item-menu_guia">Twitter</span></a></li>
+
+				</ul>
+			</nav> -->
+			<!-- Fim Menu Body -->
+
+		</div>
+		<!-- Fim Coluna da Esquerda Body -->
+
+		<!-- Início Container Body -->
+		<div class="container-bd_guia" id="guia_container">
+
+			<!-- Itens do mobile -->
+			<nav class="container-menu-side-mobile_guia">
+				<span class="title-menu-side-mobile_guia">Vá direto ao ponto!</span>
+				<ul class="menu-side-mobile_guia">
+					
+				<li class="item-menu-side-mobile_guia"><a href="#introducao" class="link-menu-side-mobile_guia">Introdução</a></li><li class="item-menu-side-mobile_guia"><a href="#recursos-basicos" class="link-menu-side-mobile_guia">Recursos básicos</a></li><li class="item-menu-side-mobile_guia"><a href="#formularios" class="link-menu-side-mobile_guia">Formulários</a></li><li class="item-menu-side-mobile_guia"><a href="#sessoes" class="link-menu-side-mobile_guia">Sessões</a></li><li class="item-menu-side-mobile_guia"><a href="#serializacao" class="link-menu-side-mobile_guia">Serialização</a></li><li class="item-menu-side-mobile_guia"><a href="#banco_dados" class="link-menu-side-mobile_guia">Banco de dados</a></li><li class="item-menu-side-mobile_guia"><a href="#mvc" class="link-menu-side-mobile_guia">MVC</a></li><li class="item-menu-side-mobile_guia"><a href="#composer" class="link-menu-side-mobile_guia">Composer</a></li><li class="item-menu-side-mobile_guia"><a href="#templates" class="link-menu-side-mobile_guia">Templates</a></li><li class="item-menu-side-mobile_guia"><a href="#extra" class="link-menu-side-mobile_guia">Conteúdo extra</a></li><li class="item-menu-side-mobile_guia"><a href="#mais" class="link-menu-side-mobile_guia">Mais sobre PHP</a></li></ul>
+			</nav>
+
+			<main class="intro-area_guia" id="introducao">
+    <h2 class="h3-title_guia">Introdução</h2>
+    <p class="text-content_guia">PHP é uma linguagem de programação de código aberto, criada para o desenvolvimento web. Com ela podemos escrever pequenos
+        scripts de forma procedural, utilizar a orientação a objetos ou ainda ambas. Esse Guia de Referência tem como objetivo
+        acompanhar seus primeiros passos nessa tecnologia.</p>
+
+    <p class="text-content_guia">Por ser uma linguagem de fácil aprendizado, o PHP é ideal para programadores que estão ingressando no desenvolvimento
+        web. Se esse é o seu caso é natural haver pouca familiaridade com conceitos como back-end, servidor web, requisição
+        e muitos outros. Mas não se preocupe, esses assuntos fundamentais são apresentados no curso a seguir.</p>
+
+    <!-- Início Link relacionados único COM imagem -->
+    <a href="http://www.devmedia.com.br/curso/o-que-e-php/2001" target="_blank" title="Curso: O que é PHP?" class="container-rel-link_guia rel-link-with-img_guia rel-link-no-list_guia">
+        <div class="container-img-rel-link_guia">
+            <img src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/curso_o-que-e-php_2001.png" alt="Curso O que é PHP?" class="img-rel-link_guia">
+        </div>
+        <div class="container-title-rel-link_guia">
+            <div class="tag-title-rel-link_guia">Curso</div>
+            <div class="description-title-link_guia">O que é PHP? </div>
+        </div>
+    </a>
+    <!-- Fim Link relacionados único COM imagem -->
+
+    <p class="text-content_guia">Para aprender mais características dessa tecnologia, confira o bate-papo:</p>
+    <!-- Início Link relacionados único COM imagem -->
+    <a href="http://www.devmedia.com.br/bate-papo-sobre-php/38821" target="_blank" title="Bate-papo sobre PHP" class="container-rel-link_guia rel-link-with-img_guia rel-link-no-list_guia">
+        <div class="container-img-rel-link_guia">
+            <img src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/devcast_bate-papo-sobre-php_38821.png" alt="Um bate-papo sobre PHP" class="img-rel-link_guia">
+        </div>
+        <div class="container-title-rel-link_guia">
+            <div class="tag-title-rel-link_guia">DevCast</div>
+            <div class="description-title-link_guia">Um bate-papo sobre PHP</div>
+        </div>
+    </a>
+    <!-- Fim Link relacionados único COM imagem -->
+
+
+    <p class="text-content_guia">Para um primeiro contato com a linguagem PHP indicamos o seguinte curso:</p>
+
+<!-- Início Link relacionados único COM imagem -->
+    <a href="https://www.devmedia.com.br/curso/introducao-ao-php/2171" target="_blank" title="Introdução ao PHP" class="container-rel-link_guia rel-link-with-img_guia rel-link-no-list_guia">
+        <div class="container-img-rel-link_guia">
+            <img src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/curso_introducao-ao-php_2171.png" alt="Introdução ao PHP" class="img-rel-link_guia">
+        </div>
+        <div class="container-title-rel-link_guia">
+            <div class="tag-title-rel-link_guia">Curso</div>
+            <div class="description-title-link_guia">Introdução ao PHP <span class="tag-new_guia">Novo!</span></div>
+        </div>
+    </a>
+    <!-- Fim Link relacionados único COM imagem -->
+
+    <!-- Início Lista de links relacionados SEM imagem -->
+    <ul class="list-rel-link_guia">
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/php-tutorial/32540" target="_blank" title="Artigo: PHP Tutorial" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Artigo</div>
+                    <div class="description-title-link_guia">PHP Tutorial</div>
+                </div>
+            </a>
+        </li>
+<li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/como-criar-minha-primeira-classe-em-php/38895" target="_blank" title="Como criar minha primeira classe em PHP" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">5 minutos</div>
+                    <div class="description-title-link_guia">Como criar minha primeira classe em PHP</div>
+                </div>
+            </a>
+        </li>
+
+<li class="list-item-rel-link_guia">
+            <a href="https://www.devmedia.com.br/curso/o-que-e-psr/2159" target="_blank" title="O que é PSR?" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Curso</div>
+                    <div class="description-title-link_guia">O que é PSR? <span class="tag-new_guia">Novo!</span></div>
+                    
+                </div>
+            </a>
+        </li>
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/php-pdo-como-criar-sua-primeira-conexao/39007" target="_blank" title="PHP PDO: Como criar sua primeira conexão" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">5 minutos</div>
+                    <div class="description-title-link_guia">PHP PDO: Como criar sua primeira conexão</div>
+                </div>
+            </a>
+        </li>
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/conectando-no-sql-server-utilizando-pdo-em-php/38936" target="_blank" title="Conectando no SQL Server utilizando PDO em PHP" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">5 minutos</div>
+                    <div class="description-title-link_guia">Conectando no SQL Server utilizando PDO em PHP</div>
+                </div>
+            </a>
+        </li>
+    </ul>
+    <!-- Fim Lista de links relacionados SEM imagem -->
+
+
+    <p class="text-content_guia">E se você decidiu que PHP é a sua praia, aprenda mais sobre ela nestes cursos:</p>
+
+<!-- Início Lista de links relacionados COM imagem -->  
+    <div class="container-list-rel-link-with-img_guia">
+        <ul class="list-rel-link_guia list-rel-link-with-img_guia">
+                    <li class="list-item-rel-link_guia">
+                <a href="http://www.devmedia.com.br/curso/curso-de-php-basico/395" target="_blank" title="PHP Básico" class="container-rel-link_guia rel-link-with-img_guia">
+                    <div class="container-img-rel-link_guia">
+                        <img src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/curso_395.jpg" alt="PHP Básico" class="img-rel-link_guia">
+                    </div>
+                    <div class="container-title-rel-link_guia">
+                        <div class="tag-title-rel-link_guia">Curso</div>
+                        <div class="description-title-link_guia"> PHP Básico</div>
+                    </div>
+                </a>
+            </li>
+            <li class="list-item-rel-link_guia">
+                <a href="http://www.devmedia.com.br/curso/php-exceptions-trabalhando-com-excecoes-em-php/2089" target="_blank" title="PHP Exceptions: Trabalhando com exceções em PHP" class="container-rel-link_guia rel-link-with-img_guia">
+                    <div class="container-img-rel-link_guia">
+                        <img src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/curso_php-exceptions-trabalhando-com-excecoes-em-php_2089.png" alt="PHP Exceptions: Trabalhando com exceções em PHP" class="img-rel-link_guia">
+                    </div>
+                    <div class="container-title-rel-link_guia">
+                        <div class="tag-title-rel-link_guia">Curso</div>
+                        <div class="description-title-link_guia">PHP Exceptions: Trabalhando com exceções em PHP</div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- Fim Lista de links relacionados COM imagem -->
+</main>
+
+<div class="modulo-mvp"><a id="ga-mvp-guias-mid-link0" href="#modulo-mvp"><img src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/modulo_mvp_guia_interna.png"><div class="acesso-conteudo">Quer ter acesso a todos esses conteúdos?</div><div class="saiba-mais">Saiba mais</div></a></div><section class="content-area_guia secao-par" id="recursos-basicos">
+    <h3 class="h3-title_guia">Recursos básicos</h3>
+    <p class="text-content_guia">Nesta seção você encontrará documentações criadas com o intuito de apresentar conceitos e recursos fundamentais da linguagem
+        PHP. Utilize esse material para consulta rápida:</p>
+
+    <ul class="list-rel-link_guia">
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/php-declaracao-e-atribuicao-de-variaveis/38220" target="_blank" title="Documentação: PHP: declaração e atribuição de variáveis" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Documentação</div>
+                    <div class="description-title-link_guia">Declaração e atribuição de variáveis</div>
+                </div>
+            </a>
+        </li>
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/php-declaracao-e-atribuicao-de-constantes/38222" target="_blank" title="Documentação: PHP: declaração e atribuição de constantes" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Documentação</div>
+                    <div class="description-title-link_guia">Declaração e atribuição de constantes</div>
+                </div>
+            </a>
+        </li>
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/php-declaracao-e-atribuicao-de-arrays-em-php/38621" target="_blank" title="Documentação: PHP: Declaração e atribuição de arrays em PHP" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Documentação</div>
+                    <div class="description-title-link_guia">Declaração e atribuição de arrays</div>
+                </div>
+            </a>
+        </li>
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/php-modificadores-de-acesso/38438" target="_blank" title="Documentação: PHP: Modificadores de acesso" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Documentação</div>
+                    <div class="description-title-link_guia">Modificadores de acesso</div>
+                </div>
+            </a>
+        </li>
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/php-if-else-e-o-operador-ternario/38219" target="_blank" title="Documentação: PHP: If/else e o operador ternário" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Documentação</div>
+                    <div class="description-title-link_guia">If/else e o operador ternário</div>
+                </div>
+            </a>
+        </li>
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/php-estrutura-condicional-switch-case/38223" target="_blank" title="Documentação: PHP: Estrutura condicional switch/case" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Documentação</div>
+                    <div class="description-title-link_guia">Switch/case</div>
+                </div>
+            </a>
+        </li>
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/php-estrutura-de-repeticao-for/38221" target="_blank" title="Documentação: PHP: For" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Documentação</div>
+                    <div class="description-title-link_guia">Estrutura de repetição For</div>
+                </div>
+            </a>
+        </li>
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/php-while-e-do-while/38310" target="_blank" title="Documentação: PHP: while e do while" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Documentação</div>
+                    <div class="description-title-link_guia">Estruturas de repetição While e Do-While</div>
+                </div>
+            </a>
+        </li>
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/php-utilizando-os-operadores-break-e-continue/38882" target="_blank" title="Break/Continue" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">5 minutos</div>
+                    <div class="description-title-link_guia">Operadores break e continue</div>
+                </div>
+            </a>
+        </li>
+    </ul>
+</section>
+
+<section class="content-area_guia" id="formularios">
+    <h3 class="h3-title_guia">Formulários</h3>
+    <p class="text-content_guia">Saber como trabalhar com formulários em PHP é fundamental, pois são a ferramenta mais básica para a adição de interatividade
+        em sites. Na maior parte do tempo é através deles que a aplicação receberá dados do usuário.</p>
+
+    <p class="text-content_guia">Nos conteúdos a seguir você aprenderá como receber no PHP os dados enviados por um formulário:</p>
+
+    <ul class="list-rel-link_guia">
+<li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/-post-e-get-acessando-informacoes-de-formularios-em-php/38965" target="_blank" title="$_POST e $_GET: Acessando informações de formulários em PHP" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">5 minutos</div>
+                    <div class="description-title-link_guia">$_POST e $_GET: Acessando informações de formulários em PHP</div>
+                </div>
+            </a>
+        </li>
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/php-forms-manipulando-dados-de-formularios/29392" target="_blank" title="Artigo: PHP Forms: Manipulando dados de formulários" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Artigo</div>
+                    <div class="description-title-link_guia">PHP Forms: Manipulando dados de formulários</div>
+                </div>
+            </a>
+        </li>
+    </ul>
+
+    <p class="text-content_guia">Os dados submetidos pelo usuário 
+através dos formulários precisam estar de acordo com os padrões 
+esperados pela aplicação. No DevCast a seguir conversamos sobre a 
+importância de validar esses dados:</p>
+
+    <a href="http://www.devmedia.com.br/validacao-de-formularios-na-web-front-end-ou-back-end/37788" target="_blank" title="DevCast: Validação de formulários na web: front-end ou back-end?" class="container-rel-link_guia rel-link-with-img_guia rel-link-no-list_guia">
+        <div class="container-img-rel-link_guia">
+            <img src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/devcast_validacao-de-formularios-na-web-front-end-ou-back-en.jpg" alt="Validação de formulários na web: front-end ou back-end?" class="img-rel-link_guia">
+        </div>
+        <div class="container-title-rel-link_guia">
+            <div class="tag-title-rel-link_guia">DevCast</div>
+            <div class="description-title-link_guia">Validação de formulários na web: front-end ou back-end?</div>
+        </div>
+    </a>
+    <!-- Fim Link relacionados único COM imagem -->
+    <p class="text-content_guia">Saiba como implementar uma dupla verificação front-end/back-end neste exemplo:</p>
+    <!-- Início Link relacionados único COM imagem -->
+    <a href="http://www.devmedia.com.br/exemplo/trabalhando-com-formulario-de-cadastro-em-php/13" target="_blank" title="Exemplo: Trabalhando com formulário de cadastro em PHP" class="container-rel-link_guia rel-link-with-img_guia rel-link-no-list_guia">
+        <div class="container-img-rel-link_guia">
+            <img src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/exemplo_forms-em-php_38317.png" alt="Trabalhando com formulário de cadastro em PHP" class="img-rel-link_guia">
+        </div>
+        <div class="container-title-rel-link_guia">
+            <div class="tag-title-rel-link_guia">Exemplo</div>
+            <div class="description-title-link_guia">Trabalhando com formulário de cadastro em PHP</div>
+        </div>
+    </a>
+
+    <p class="text-content_guia">Veja também como implementar mecanismos de segurança em suas aplicações PHP:</p>
+
+    <ul class="list-rel-link_guia">
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/recaptcha-validando-formularios-com-google-recaptcha/31792" target="_blank" title="Validando formulários com Google reCaptcha" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Artigo</div>
+                    <div class="description-title-link_guia">Validando formulários com Google reCaptcha</div>
+                </div>
+            </a>
+        </li>
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/controle-de-acesso-senhas-seguras-em-aplicacoes-web/34021" target="_blank" title="Validando formulários com Google reCaptcha" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">DevCast</div>
+                    <div class="description-title-link_guia">Controle de acesso: senhas seguras em aplicações web</div>
+                </div>
+            </a>
+        </li>
+    </ul>
+    <!-- Fim Link relacionados único COM imagem -->
+</section>
+
+<div class="modulo-mvp"><a id="ga-mvp-guias-mid-link1" href="#modulo-mvp"><img src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/modulo_mvp_guia_interna.png"><div class="acesso-conteudo">Quer ter acesso a todos esses conteúdos?</div><div class="saiba-mais">Saiba mais</div></a></div><section class="content-area_guia secao-par" id="sessoes">
+    <h3 class="h3-title_guia">Sessões</h3>
+    <p class="text-content_guia">As sessões são um meio de manter dados temporariamente acessíveis a todas as páginas visitadas pelo usuário em uma aplicação
+        web, sem que seja necessário gravar essas informações em um banco de dados. Diferentemente dos cookies, os dados
+        salvos na sessão ficam armazenados no servidor e não no computador do cliente, o que faz deste recurso uma opção
+        para o armazenamento de dados sensíveis.</p>
+
+    <p class="text-content_guia">Para iniciar seus estudos sobre esse recurso indicamos os seguintes artigos:</p>
+
+    <!-- Início Lista de links relacionados SEM imagem -->
+    <ul class="list-rel-link_guia">
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/criando-sessao-para-login-no-php/27347" target="_blank" title="Artigo: Criando sessão para login no PHP" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Artigo</div>
+                    <div class="description-title-link_guia">Criando sessão para login no PHP</div>
+                </div>
+            </a>
+        </li>
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/serializacao-de-objetos-em-session-no-php/28535" target="_blank" title="Artigo: Serialização de objetos em SESSION no PHP" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Artigo</div>
+                    <div class="description-title-link_guia">Serialização de objetos em SESSION no PHP</div>
+                </div>
+            </a>
+        </li>
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/gerenciador-de-tarefas-em-php-com-sessoes/33218" target="_blank" title="Artigo: Gerenciador de Tarefas em PHP com sessões" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Artigo</div>
+                    <div class="description-title-link_guia">Gerenciador de Tarefas em PHP com sessões</div>
+                </div>
+            </a>
+        </li>
+    </ul>
+    <!-- Fim Lista de links relacionados SEM imagem -->
+
+</section>
+
+<section class="content-area_guia" id="serializacao">
+    <h3 class="h3-title_guia">Serialização</h3>
+    <p class="text-content_guia">A serialização nos permite gravar os dados, presentes na memória do computador, em arquivos. Esse processo é assunto
+        dos artigos a seguir:</p>
+
+    <!-- Início Lista de links relacionados SEM imagem -->
+    <ul class="list-rel-link_guia">
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/serializacao-de-dados-em-php/25224" target="_blank" title="Artigo: Serialização de dados em PHP" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Artigo</div>
+                    <div class="description-title-link_guia">Serialização de dados em PHP</div>
+                </div>
+            </a>
+        </li>
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/serializacao-como-funciona-o-processo-no-php/30068" target="_blank" title="Artigo: Serialização: como funciona o processo no PHP" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Artigo</div>
+                    <div class="description-title-link_guia">Serialização: como funciona o processo no PHP</div>
+                </div>
+            </a>
+        </li>
+    </ul>
+    <!-- Fim Lista de links relacionados SEM imagem -->
+
+</section>
+
+<section class="content-area_guia secao-par" id="banco_dados">
+    <h3 class="h3-title_guia">Banco de dados</h3>
+    <p class="text-content_guia">Uma tarefa fundamental, presente na 
+maioria das aplicações, é permitir ao usuário consultar informações 
+cadastradas anteriormente.
+        Você descobrirá ao longo dos seus estudos que uma aplicação pode
+ gravar dados de várias maneiras. Uma das mais comuns
+        é a gravação em bancos de dados.</p>
+
+    <p class="text-content_guia">No PHP recomenda-se o PDO, PHP Data Object, como forma de acessar bancos de dados. Confira nos artigos abaixo como utilizar
+        essa extensão:</p>
+
+    <ul class="list-rel-link_guia">
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/php-pdo-como-se-conectar-ao-banco-de-dados/37211" target="_blank" title="Artigo: PHP PDO: Como se conectar ao banco de dados" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Artigo</div>
+                    <div class="description-title-link_guia">PHP PDO: Como se conectar ao banco de dados</div>
+                </div>
+            </a>
+        </li>
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/como-conectar-mysql-com-php-via-pdo/30317" target="_blank" title="Como conectar MySQL com PHP via PDO " class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Artigo</div>
+                    <div class="description-title-link_guia">Como conectar MySQL com PHP via PDO </div>
+                </div>
+            </a>
+        </li>
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/usando-pdo-php-data-objects-para-aumentar-a-produtividade/28446" target="_blank" title="Usando PDO (PHP Data Objects) para aumentar a produtividade" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Artigo</div>
+                    <div class="description-title-link_guia">Usando PDO (PHP Data Objects) para aumentar a produtividade</div>
+                </div>
+            </a>
+        </li>
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/orientacao-a-objetos-e-pdo-no-php/32644" target="_blank" title="Orientação a objetos e PDO no PHP " class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Artigo</div>
+                    <div class="description-title-link_guia">Orientação a objetos e PDO no PHP </div>
+                </div>
+            </a>
+        </li>
+		<li class="list-item-rel-link_guia">
+			<a href="https://www.devmedia.com.br/seu-banco-esta-protegido-de-sql-injection/39834" title="Seu banco está protegido de SQL Injection?" target="_blank" class="container-rel-link_guia rel-link-no-img_guia">
+				<div class="container-title-rel-link_guia">
+					<div class="tag-title-rel-link_guia">DevCast</div>
+					<div class="description-title-link_guia"> Seu banco está protegido de SQL Injection? <span class="tag-new_guia">Novo!</span></div>
+				</div>
+			</a>
+		</li>
+    </ul>
+</section>
+
+<section class="content-area_guia" id="mvc">
+    <h3 class="h3-title_guia">MVC</h3>
+    <p class="text-content_guia">Independentemente da sua complexidade, é fundamental para a sustentabilidade do sistema que sua arquitetura esteja bem
+        resolvida. O padrão arquitetural MVC (Model-View-Controller) propõe uma divisão entre as regras de negócio, o tratamento
+        das requisições e a apresentação do sistema, que ajuda a manter sua coesão e facilidade de leitura.</p>
+
+    <figure class="img-content_guia">
+        <img src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/mvc.png" alt="MVC" width="620">
+    </figure>
+
+    <p class="text-content_guia">No curso abaixo você pode conferir o que é esse padrão e quais problemas ele procura evitar:</p>
+
+    <a href="https://www.devmedia.com.br/curso/o-que-e-mvc/1492" target="_blank" title="O que é MVC?" class="container-rel-link_guia rel-link-with-img_guia">
+        <div class="container-img-rel-link_guia">
+            <img src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/curso_1492.jpg" alt="O que é MVC?" class="img-rel-link_guia">
+        </div>
+        <div class="container-title-rel-link_guia">
+            <div class="tag-title-rel-link_guia">Curso</div>
+            <div class="description-title-link_guia">O que é MVC?</div>
+        </div>
+    </a>
+
+    <p class="text-content_guia">E nos cursos a seguir você aprenderá a implementar esse padrão na linguagem PHP:</p>
+
+    <ul class="list-rel-link_guia">
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/curso/como-implementar-o-mvc-em-php/1927" target="_blank" title="Curso: Como implementar o MVC em PHP" class="container-rel-link_guia rel-link-with-img_guia rel-link-no-list_guia">
+                <div class="container-img-rel-link_guia">
+                    <img src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/curso_como-implementar-o-mvc-em-php_1927.jpg" alt="Curso Como implementar o MVC em PHP" class="img-rel-link_guia">
+                </div>
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Curso</div>
+                    <div class="description-title-link_guia">Como implementar o MVC em PHP</div>
+                </div>
+            </a>
+        </li>
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/curso/primeira-aplicacao-php-utilizando-padroes-mvc/2020" target="_blank" title="Curso Primeira Aplicação PHP utilizando MVC" class="container-rel-link_guia rel-link-with-img_guia">
+                <div class="container-img-rel-link_guia">
+                    <img src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/curso_primeira-aplicacao-php-utilizando-padroes-mvc_2020.png" alt="Curso Primeira Aplicação PHP utilizando MVC" class="img-rel-link_guia">
+                </div>
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Curso</div>
+                    <div class="description-title-link_guia">Primeira Aplicação PHP utilizando MVC</div>
+                </div>
+            </a>
+        </li>
+        <li class="list-item-rel-link_guia">
+            <a href="https://www.devmedia.com.br/curso/curso-crud-php-mvc/2038" target="_blank" title="PHP: Crie uma aplicação MVC com acesso ao banco de dados" class="container-rel-link_guia rel-link-with-img_guia">
+                <div class="container-img-rel-link_guia">
+                    <img src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/curso_como-implementar-um-crud-em-php-com-mvc_2038.png" alt="PHP: Crie uma aplicação MVC com acesso ao banco de dados" class="img-rel-link_guia">
+                </div>
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Curso</div>
+                    <div class="description-title-link_guia">PHP: Crie uma aplicação MVC com acesso ao banco de dados</div>
+                </div>
+            </a>
+        </li>
+        <li class="list-item-rel-link_guia">
+                <a href="http://www.devmedia.com.br/exemplo/paginacao-de-dados-em-php-e-mvc/44" target="_blank" title="Paginação de dados em PHP e MVC" class="container-rel-link_guia rel-link-with-img_guia">
+                    <div class="container-img-rel-link_guia">
+                        <img src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/exemplo_paginacao-de-dados-em-php-e-mvc_44.jpg" alt="Paginação de dados em PHP e MVC" class="img-rel-link_guia">
+                    </div>
+                    <div class="container-title-rel-link_guia">
+                        <div class="tag-title-rel-link_guia">Exemplo</div>
+                        <div class="description-title-link_guia">Paginação de dados em PHP e MVC 
+                    </div></div>
+                </a>
+            </li>
+<li class="list-item-rel-link_guia">
+                <a href="https://www.devmedia.com.br/exemplo/php-criando-uma-aplicacao-com-uma-busca-paginada/37" target="_blank" title="Criando uma aplicação com uma busca paginada" class="container-rel-link_guia rel-link-with-img_guia">
+                    <div class="container-img-rel-link_guia">
+                        <img src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/exemplo_crud-em-php-e-mvc-com-busca-e-paginacao_37.png" alt="Criando uma aplicação com uma busca paginada" class="img-rel-link_guia">
+                    </div>
+                    <div class="container-title-rel-link_guia">
+                        <div class="tag-title-rel-link_guia">Exemplo</div>
+                        <div class="description-title-link_guia">Criando uma aplicação com uma busca paginada</div>
+                    </div>
+                </a>
+            </li>
+<li class="list-item-rel-link_guia">
+                <a href="https://www.devmedia.com.br/curso/php-crie-uma-aplicacao-de-cadastro-de-multiplas-entidades/2095" target="_blank" title="PHP: Crie uma aplicação de cadastro de múltiplas entidades" class="container-rel-link_guia rel-link-with-img_guia">
+                    <div class="container-img-rel-link_guia">
+                        <img src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/curso_php-e-mvc-como-fazer-um-crud-1-n_2095.png" alt="PHP: Crie uma aplicação de cadastro de múltiplas entidades" class="img-rel-link_guia">
+                    </div>
+                    <div class="container-title-rel-link_guia">
+                        <div class="tag-title-rel-link_guia">Curso</div>
+                        <div class="description-title-link_guia">PHP: Crie uma aplicação de cadastro de múltiplas entidades</div>
+                    </div>
+                </a>
+            </li>
+    </ul>
+</section>
+
+<section class="content-area_guia secao-par" id="composer">
+    <h3 class="h3-title_guia">Composer</h3>
+
+    <p class="text-content_guia">O Composer é o gerenciador de 
+dependências da linguagem PHP, que nos auxilia na instalação e 
+atualização de bibliotecas/frameworks nos projetos, como Twig e Laravel.
+ Ele também é usado, por exemplo, para implementar o autoload nos 
+projetos, como você pode ver nos cursos abaixo:</p>
+
+    <ul class="list-rel-link_guia">
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/curso/o-que-e-composer/1948" target="_blank" title="O que é Composer?" class="container-rel-link_guia rel-link-with-img_guia">
+                <div class="container-img-rel-link_guia">
+                    <img src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/curso_o-que-e-composer_1948.jpg" alt="O que é Composer?" class="img-rel-link_guia">
+                </div>
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Curso</div>
+                    <div class="description-title-link_guia">O que é Composer?</div>
+                </div>
+            </a>
+        </li>
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/curso/php-autoload-carregando-classes-automaticamente/2025" target="_blank" title="PHP Autoload: Carregando classes automaticamente" class="container-rel-link_guia rel-link-with-img_guia">
+                <div class="container-img-rel-link_guia">
+                    <img src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/curso_php-autoload-com-composer_2025.png" alt="PHP Autoload: Carregando classes automaticamente" class="img-rel-link_guia">
+                </div>
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Curso</div>
+                    <div class="description-title-link_guia">PHP Autoload: Carregando classes automaticamente</div>
+                </div>
+            </a>
+        </li>
+    </ul>
+</section>
+
+<section class="content-area_guia" id="templates">
+    <h3 class="h3-title_guia">Templates</h3>
+
+    <p class="text-content_guia">Os motores de templates estão presentes em diversos frameworks MVC, permitindo a separação entre lógica e apresentação
+        durante a criação das interfaces. Nos conteúdos a seguir falamos sobre o Smarty e o Twig, dois dos motores
+        de templates mais utilizados:</p>
+
+    <ul class="list-rel-link_guia">
+               <li class="list-item-rel-link_guia">
+            <a href="https://www.devmedia.com.br/curso/curso-twig/2135" target="_blank" title="O que é Twig?" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Curso</div>
+                    <div class="description-title-link_guia">O que é Twig? </div>
+                </div>
+            </a>
+        </li>
+ <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/templates-em-php-utilizando-twig/32193" target="_blank" title="DevCast Templates em PHP utilizando Twig" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">DevCast</div>
+                    <div class="description-title-link_guia">Templates em PHP utilizando Twig</div>
+                </div>
+            </a>
+        </li>
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/smarty-template-instalacao-e-utilizacao/22414" target="_blank" title="Artigo Smarty Template : Instalação e Utilização" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Artigo</div>
+                    <div class="description-title-link_guia">Smarty Template : Instalação e Utilização</div>
+                </div>
+            </a>
+        </li>
+    </ul>
+</section>
+
+<section class="content-area_guia secao-par" id="extra">
+    <h3 class="h3-title_guia">Conteúdo extra</h3>
+    <p class="text-content_guia">A seguir disponibilizamos um conteúdo adicional para você aprofundar seus estudos no PHP:</p>
+
+    <ul class="list-rel-link_guia">
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/phpmailer-envio-de-e-mails-com-php/38784" target="_blank" title="PHPMailer: Envio de e-mails com PHP" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">5 minutos</div>
+                    <div class="description-title-link_guia">PHPMailer: Envio de e-mails com PHP</div>
+                </div>
+            </a>
+        </li>
+<li class="list-item-rel-link_guia">
+            <a href="https://www.devmedia.com.br/exemplo/php-e-bootstrap-cadastro-completo-com-autenticacao-via-e-mail/46" target="_blank" title="PHP e Bootstrap: cadastro completo com autenticação via e-mail" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Exemplo</div>
+                    <div class="description-title-link_guia">PHP e Bootstrap: cadastro completo com autenticação via e-mail</div>
+                </div>
+            </a>
+        </li>
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/publicando-aplicacoes-php-no-iis-8/36780" target="_blank" title="Artigo: Publicando aplicações PHP no IIS 8" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Artigo</div>
+                    <div class="description-title-link_guia">Publicando aplicações PHP no IIS 8</div>
+                </div>
+            </a>
+        </li>
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/expressoes-regulares-em-php/25076" target="_blank" title="Artigo: Expressões regulares em PHP" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Artigo</div>
+                    <div class="description-title-link_guia">Expressões regulares em PHP</div>
+                </div>
+            </a>
+        </li>
+        <li class="list-item-rel-link_guia">
+            <a href="http://www.devmedia.com.br/manipulando-datas-com-php/32966" target="_blank" title="Artigo: Manipulando datas com PHP" class="container-rel-link_guia rel-link-no-img_guia">
+                <div class="container-title-rel-link_guia">
+                    <div class="tag-title-rel-link_guia">Artigo</div>
+                    <div class="description-title-link_guia">Manipulando datas com PHP</div>
+                </div>
+            </a>
+        </li>
+    </ul>
+</section>
+
+<section class="content-area_guia" id="mais">
+    <h3 class="h3-title_guia">Mais sobre PHP</h3>
+    <p class="text-content_guia">Além dos cursos e exemplos sugeridos 
+nesse guia, a DevMedia publica com frequência novos conteúdos sobre PHP,
+ os quais você pode conferir nos Guias de Consulta abaixo:</p>
+
+<div class="container-list-rel-link-with-img_guia">
+		<ul class="list-rel-link_guia list-rel-link-with-img_guia">
+			<li class="list-item-rel-link_guia">
+				<a href="https://www.devmedia.com.br/guia/carreira-programador-php/38193" target="_blank" title="Guia de Carreira Programador de PHP" class="container-rel-link_guia rel-link-with-img_guia">
+					<div class="container-img-rel-link_guia">
+						<img src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/carreira_programador-php_38193.png" alt="Guia de Carreira Programador PHP" class="img-rel-link_guia">
+					</div>
+					<div class="container-title-rel-link_guia">
+						<div class="tag-title-rel-link_guia">Guia de Carreira</div>
+						<div class="description-title-link_guia">Programador PHP <span class="tag-new_guia">Guia</span></div>
+					</div>
+				</a>
+			</li>
+			<li class="list-item-rel-link_guia">
+				<a href="http://www.devmedia.com.br/guia/laravel/38191" target="_blank" title="Guia de Consulta de Laravel" class="container-rel-link_guia rel-link-with-img_guia">
+					<div class="container-img-rel-link_guia">
+						<img src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/guia_laravel_38154.png" alt="Guia de Consulta de Laravel" class="img-rel-link_guia">
+					</div>
+					<div class="container-title-rel-link_guia">
+						<div class="tag-title-rel-link_guia">Guia de Consulta</div>
+						<div class="description-title-link_guia">Laravel <span class="tag-new_guia">Guia</span></div>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+    
+    <p class="text-content_guia">Você também pode conferir todo o conteúdo de PHP <a href="https://www.devmedia.com.br/php/" target="_blank" title="Listar todo o conteúdo de PHP da DevMedia">clicando aqui</a>.</p>
+</section>
+
+
+			<!--<section class="container-saibamais">
+				<h3 class="titulo-saibamais">Mais sobre PHP</h3>
+				<div class="saibamais">
+					<span>Listar todo conteúdo sobre PHP</span>
+					<a class="busca-categoria" href="http://www.devmedia.com.br/busca/?txtsearch=php"><i></i></a>
+				</div>
+			</section> -->
+
+			<!-- <section class="container-saibamais">
+				<h3 class="titulo-saibamais">Mais sobre PHP</h3>
+				<a class="link-busca" href="http://www.devmedia.com.br/busca/?txtsearch=php">
+					<div class="saibamais">
+						<span>Listar todo conteúdo sobre PHP</span>
+						<div class="busca-categoria" href="javascript: void(0);"><i></i></div>
+					</div>
+				</a>
+			</section> -->
+
+			
+
+			<!--
+			<fieldset class="div-saibamais">
+				<legend>Mais Sobre PHP</legend>
+				<div class="saibamais">Listar todo conteúdo sobre PHP
+					<a href="http://www.devmedia.com.br/busca/?txtsearch=PHP"><span class="pesquisar">></span></a>
+				</div>
+			</fieldset>  -->
+
+			<!--<section class="container-saibamais">
+				<h3 class="h3-saibamais">Mais Sobre PHP</h3>
+				<div class="saibamais">Listar todo conteúdo sobre PHP
+					<a href="http://www.devmedia.com.br/busca/?txtsearch=PHP"><i class="pesquisar-saibamais"></i></a>
+				</div>
+			</section> -->
+
+			<div id="comentariosArtigo" class="comentario_viewguia">
+				<style>
+	#carrega-comentarios{ height: 50px; background-image: url(//www.devmedia.com.br/comentarios/img/loading.gif); background-repeat: no-repeat; background-size: contain; background-position: center; margin: 40px 0;}
+	.comentario-load{ opacity:0; transition: opacity 1s; }
+	.comentario-load.active{ opacity:1; }
+	.comentarios_outer { box-sizing: border-box; margin: 30px auto; max-width: 950px; position: relative; width: 100% }
+	.comentarios_outer { box-sizing: border-box; margin: 30px auto; max-width: 950px; position: relative; width: 100% }
+	.comentario_viewaula { width: 950px; margin-left: 24%; margin-bottom: 30px; padding: 0 60px; box-sizing: border-box; }
+	.comentarios_title { font-size: 24px; font-family: lato; color: #494949; background-color: #f5f5f5; padding: 10px 20px; margin-bottom: 30px; }
+	@media screen and (max-width: 1266px) {
+		.comentario_viewaula { width: 76%; }
+	}
+	@media screen and (max-width: 1199px) {
+		.comentario_viewaula { width: 100%; margin-left: 0; margin-right: 0; }
+		.comentarios_outer { box-sizing: border-box; margin: 40px auto 0; width: 100%; }
+	}
+	@media screen and (max-width: 639px) { 
+		.comentario_viewaula { padding: 0 10px; }
+		.comentarios_outer { padding: 0 15px; }
+	}
+</style>
+<div class="comentarios_outer">
+	<link href="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/css_002.css" rel="stylesheet">
+	<div class="comentarios_title">Suporte ao aluno - Deixe a sua dúvida.</div>
+	<div class="comentario-load"></div>
+	<link href="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/css_002.css" rel="stylesheet"><div id="carrega-comentarios">
+		<script>
+			//Comentários
+			var comentariosReadyEvent = document.createEvent('Event');
+			comentariosReadyEvent.initEvent('comentariosReady', true, true);
+			window.comentariosReady = false;
+
+			$(document).ready(function(){
+				var comentarios_status = 0;
+				var comentarioBox = $("#carrega-comentarios");
+
+				$("#carrega-comentarios").before("<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>");
+				
+				$(document).on("scroll",function(){
+					loadComentarios()
+				});
+
+				loadComentarios();
+				
+				function loadComentarios(){
+					if(comentarios_status == 0){
+						if(isOnScreen(comentarioBox)){
+							comentarios_status = 1;
+							
+							var url = "//www.devmedia.com.br/comentarios/index_ajax.php";
+							$.ajax({
+								url: url,
+								method: "get",
+								data: {c:"38780"}
+							}).done(function(response){
+								$(".comentario-load").append(response);
+								comentarioBox.remove();
+								comentarios_status = 2;
+								setTimeout(function(){ $(".comentario-load").addClass("active"); comentarioBox.remove(); $(".comentario-load")[0].dispatchEvent(comentariosReadyEvent); window.comentariosReady = true;}, 200);
+							});
+						}
+					}
+				}
+			});
+
+			function isOnScreen(element){
+				var win = $(window);
+				var screenTop = win.scrollTop();
+				var screenBottom = screenTop + win.height();
+
+				var elementTop = element.offset().top;
+				var elementBottom = elementTop + element.height();
+
+				return elementBottom > screenTop && elementTop < screenBottom;        
+			}
+		</script>
+	</div>
+</div>
+			</div>
+
+		</div>
+		<!-- Fim Container Body -->		
+
+		<!-- Início Coluna da Direita Body -->
+		<div class="col-right-bd_guia">
+
+			<!-- Início Menu de Tópicos Desktop -->
+			<nav class="container-menu-side_guia" id="menu-body-side_guia" style="position: fixed; margin-top: 75px;">
+				<ul class="nav menu-side_guia">
+					<!--<li class="item-menu-side_guia"><a href="#" class="link-menu-side_guia link-menu-side-active_guia">Introdução</a></li>-->
+				<li class="item-menu-side_guia"><a href="#introducao" class="link-menu-side_guia">Introdução</a></li><li class="item-menu-side_guia"><a href="#recursos-basicos" class="link-menu-side_guia">Recursos básicos</a></li><li class="item-menu-side_guia"><a href="#formularios" class="link-menu-side_guia">Formulários</a></li><li class="item-menu-side_guia"><a href="#sessoes" class="link-menu-side_guia">Sessões</a></li><li class="item-menu-side_guia"><a href="#serializacao" class="link-menu-side_guia">Serialização</a></li><li class="item-menu-side_guia"><a href="#banco_dados" class="link-menu-side_guia">Banco de dados</a></li><li class="item-menu-side_guia"><a href="#mvc" class="link-menu-side_guia">MVC</a></li><li class="item-menu-side_guia"><a href="#composer" class="link-menu-side_guia">Composer</a></li><li class="item-menu-side_guia active"><a href="#templates" class="link-menu-side_guia">Templates</a></li><li class="item-menu-side_guia"><a href="#extra" class="link-menu-side_guia">Conteúdo extra</a></li><li class="item-menu-side_guia"><a href="#mais" class="link-menu-side_guia">Mais sobre PHP</a></li></ul>
+			</nav>
+			<!-- Fim Menu de Tópicos Desktop -->
+			</div>
+		<!-- Fim Coluna da Direita Body -->
+
+	</div>
+	<!-- Fim Wrapper Body -->
+	
+	<input id="categoria-guia-valor" value="php" type="hidden">
+	<input id="usuario-mvp" value="0" type="hidden">
+	<link rel="stylesheet" href="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/slick_002.css">
+<link rel="stylesheet" href="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/slick-theme.css">
+<style type="text/css">
+	.banner-mvp {
+		height: 525px;
+	}
+/* BOX 1 */
+	.acesso-ilimitado {
+	    position: absolute;
+	    background-color: rgba(254, 27, 89, 0.9);
+	    text-transform: initial;
+	    padding: 115px 0 0 60px;
+	    box-sizing: border-box;
+	    color: #fff;
+	    top: 0;
+	    left: 0;
+	    font-family: "Montserrat", sans-serif;
+	    font-weight: 400;
+	    height: 100%;
+	    width: 380px;
+	    z-index: 2;
+	}
+	.acesso-ilimitado:after {
+		content: '';
+	}
+	.acesso-ilimitado p.mestre-1, .acesso-ilimitado p.mestre-2, .acesso-ilimitado p.mestre-3 {
+		margin: 0;
+		font-size: 42px;
+	}
+	.acesso-ilimitado p.mestre-2 {
+		font-size: 62px;
+	    padding-left: 50px;
+	    font-weight: 600;
+	}
+	.acesso-ilimitado p.mestre-3 {
+	    padding-left: 25px;
+	    width: 600px;
+	    padding-bottom: 50px;
+	}
+	a.mestre-saiba-mais-mvp {
+	    border: solid 1px rgba(255, 255, 255, 0.95);
+	    padding: 19px 72px;
+	    font-size: 14px;
+	    border-radius: 10px;
+	    text-transform: uppercase;
+	    margin: 0 25px;
+	    text-decoration: none;
+        width: initial !important;
+    	height: initial !important ;
+    	color: #fff;
+	}
+/* BOX AGRUPA */
+	.acesso-boxes {
+		position: absolute;
+	    right: 55%;
+	    top: 60px;
+	}
+/* BOX 2 */
+	.acesso-conteudo-mvp {
+		position: absolute;
+	    background-color: rgba(184, 219, 63, 0.95);
+	    box-sizing: border-box;
+	    border-radius: 10px;
+	    padding: 55px 50px;
+	    width: 350px;
+	    height: 375px;
+  		box-shadow: 12px 15px 20px rgba(0, 0, 0, .1);
+  		z-index: 2;
+	}
+	.acesso-conteudo-mvp p {
+		color: #fff;
+	    font-size: 25px;
+	    font-family: "Montserrat", sans-serif;
+	    font-weight: 500;
+	    margin: 0;
+	    z-index: 2;
+	}
+	.acesso-conteudo-mvp p i {
+	    font-style: inherit;
+	    font-weight: 300;
+	    font-size: 36px;
+	    margin: 0;
+	    position: relative;
+    	top: 5px;
+	}
+/* BOX 3 */
+	.acesso-assine {
+	    position: absolute;
+	    top: 75px;
+	    left: 310px;
+	    width: 380px;
+	    height: 440px;
+	    background-color: rgba(255, 255, 255, 0.97);
+	    border-radius: 10px;
+	    text-align: center;
+	    font-family: "Montserrat", sans-serif;
+	    box-shadow: 12px 15px 20px rgba(0, 0, 0, .1);
+	    z-index: 1;
+	}
+	.acesso-assine .assine-valor {
+		font-family: "Montserrat", sans-serif;
+	    margin: 25px 0 15px;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	}
+	.acesso-assine .assine-valor .assine-valor-big {
+		font-size: 105px;
+		color: #B8DB3F;
+		font-weight: 700;
+	}
+	.acesso-assine .assine-valor .assine-valor-preco {
+		font-size: 40px;
+		color: #B8DB3F;
+		font-weight: 700;
+		text-align: left;
+	}
+	.acesso-assine .assine-valor .assine-valor-preco p {
+		font-size: 16px;
+		color: #8795A2;
+		font-weight: 400;
+		text-transform: uppercase;
+		margin: 5px 0 0;
+	}
+	.acesso-assine .assine-info {
+	    margin-bottom: 30px;
+		font-weight: 500;
+    	line-height: 24px;
+	}
+	.acesso-assine .assine-info:before, .acesso-assine .assine-info:after  {
+	    content: '';
+	    border-top: 2px solid #ECEDED;
+	    width: 230px;
+	    display: block;
+	    margin: auto;
+	    margin-bottom: 20px;
+	}
+	.acesso-assine .assine-info:after {
+	    margin-top: 20px;
+	}
+	.acesso-assine .assine-info:before {
+	    margin-bottom: 20px;
+	}
+	.acesso-assine .assine-info b {
+		font-size: 14px;
+		color: #535353;
+	}
+	.acesso-assine .assine-info p {
+		font-size: 13px;
+		color: #8795A2;
+		margin: 0;
+	}
+	.acesso-assine .assine-agora a.btn-agora {
+	    background-color: #A3C238;
+	    color: #fff;
+	    text-decoration: none;
+	    text-transform: uppercase;
+	    border-radius: 6px;
+	    width: initial !important;
+	    font-size: 19px;
+	    padding: 25px 60px;
+	    font-weight: 500;
+	}
+	.acesso-assine .assine-agora a.sem-cartao {
+		font-size: 12px;
+		text-transform: uppercase;
+		color: #8795A2;
+		font-weight: 600;
+		text-decoration: none;
+    	margin-top: 15px;
+	}
+	.acesso-conteudo-mvp-mobile { display: none; }
+	.tempo-assinatura-info {
+	    background-color: #8795a2;
+	    color: #fff;
+	    padding: 2px 7px;
+	    border-radius: 50%;
+	    font-weight: 500;
+	    position: relative;
+	    top: -10px;
+   		right: -7px;
+	    text-align: center;
+	    cursor: pointer;
+	}
+	.tempo-assinatura-info:before {
+	    content: '';
+	    width: 0;
+	    height: 0;
+	    border-left: 4px solid transparent;
+	    border-right: 4px solid transparent;
+	    border-bottom: 8px solid #8795a2;
+	    position: absolute;
+	    top: 15px;
+	    transform: rotate(220deg);
+	    right: 15px;
+	}
+/* FOOTER - OUTROS  */
+		.main-footer {
+			padding-top: 80px !important;
+		}
+		.div-corte {
+		    position: absolute;
+		    margin-left: 380px;
+		    height: 100%;
+		    width: 80px;
+		    background-color: rgba(254, 27, 89, 0.9);
+		    top: 0;
+		    z-index: 12;
+		    -webkit-clip-path: polygon(0 0, 100% 0%, 10% 100%, 0 100%);
+		    clip-path: polygon(0 0, 100% 0%, 10% 100%, 0 100%);
+		    z-index: 1;
+		}
+/* RESPONSIVO */
+	@media screen and (max-width: 1329px) {
+		.acesso-conteudo-mvp { display: none; }
+		.acesso-boxes { position: relative; right: initial; top: initial; } 
+		.acesso-assine { top: 130px; right: 50px; left: initial; }
+	}
+	@media screen and (max-width: 1023px) {
+		.acesso-ilimitado { padding-left: 25px; }
+		.acesso-assine { right: 10px; }
+	}
+	@media screen and (max-width: 979px) {
+		.banner-mvp { height: 700px; }
+		.acesso-ilimitado {
+		    width: 100%;
+		    height: initial;
+		    padding: 30px 20px;
+		    text-align: center;
+		}
+		.acesso-ilimitado p {
+		    display: inline-block !important;
+		    font-size: 18px !important;
+		    font-weight: 400 !important;
+		    margin: 0 !important;
+		    padding: 0 !important;
+		    text-transform: uppercase;
+		    line-height: 28px;
+		    width: initial !important;
+		}
+		.acesso-conteudo-mvp-mobile { 
+			display: block;
+		    width: 160px;
+		    text-align: left;
+    		margin: 0 auto 10px;
+    	}
+		.acesso-conteudo-mvp-mobile p {
+		    font-weight: 500;
+		    font-size: 15px;
+		    margin: 0px 0;
+		    line-height: 30px;
+		}
+		.acesso-conteudo-mvp-mobile p:before {
+		    content: '+';
+		    font-size: 28px;
+		    font-weight: 300;
+		    color: #a2c238;
+		    line-height: 10px;
+		    margin-right: 8px;
+		    position: relative;
+    		top: 5px;
+		}
+		a.mestre-saiba-mais-mvp { 
+			border: solid 2px rgba(255, 255, 255, 0.95); 
+			font-weight: 500; 
+		    margin: 25px auto 5px;
+		    display: block !important;
+    		width: 85px !important;
+		}
+		.acesso-assine {
+			width: 95%;
+			top: 200px;
+			max-width: 500px;
+			right: calc(50% - 250px);
+			height: 525px;
+		}
+		.acesso-assine .assine-valor { margin: 0; }
+		.acesso-assine .assine-valor .assine-valor-big { font-size: 93px; }
+		.acesso-assine .assine-valor .assine-valor-preco { font-size: 35px; }
+		.acesso-assine .assine-valor .assine-valor-preco p { font-size: 13px; }
+		.acesso-assine .assine-info { margin-bottom: 0; }
+		.acesso-assine .assine-info p { margin: 0 40px; }
+		.acesso-assine .assine-agora a.btn-agora { font-size: 14px; padding: 19px 65px; }
+		.acesso-assine .assine-agora a.sem-cartao { font-weight: 400; text-transform: initial; }
+		.acesso-assine .assine-info:before { display: none; }
+		.acesso-assine .assine-info:after { margin-top: 8px; }
+		.assine-info p:before { 
+			content: '';
+			border-top: 2px solid #ECEDED;
+			width: 230px;
+			display: block;
+			margin: auto;
+			margin-bottom: 10px;
+			margin-top: 10px;
+		}
+		
+		.div-corte { display: none; }
+	}
+	@media screen and (max-width: 579px) {
+		.acesso-assine {
+			max-width: initial;
+			right: 2.5%;
+			padding-bottom: 20px;
+		}
+		.acesso-ilimitado { padding: 25px 20px 20px; }
+		a.mestre-saiba-mais-mvp	{ padding: 10px 28px; border-radius: 6px; }
+		.tempo-assinatura { display: block; }
+		.assine-info p { line-height: 18px; }
+		.acesso-assine .assine-info:after { margin-top: -8px; }
+		.tempo-assinatura-info { top: -30px; right: -100px; }
+	}
+</style>
+
+<div id="modulo-mvp" class="banner-mvp">
+    <!-- <a id="ga-mvp-guias-bot-link" href="https://www.devmedia.com.br/mvp/?utm_source=devmedia.com.br&utm_medium=referral&utm_campaign=Guia%20de%20Linguagem%20PHP"> -->
+        <div class="acesso-ilimitado">
+        	<p class="mestre-1">Tenha acesso</p>
+        	<p class="mestre-2">ILIMITADO</p>
+        	<p class="mestre-3">a todo nosso conteúdo</p>
+        	<a id="ga-mvp-guias-saiba-mais" class="mestre-saiba-mais-mvp" href="https://www.devmedia.com.br/mvp/">Saiba mais</a>
+        </div>
+       	<div class="div-corte"></div>
+       	<section class="acesso-boxes">
+	        <div class="acesso-conteudo-mvp">
+	        	<p><i>+</i> Cursos</p>
+	        	<p><i>+</i> DevCast</p>
+	        	<p><i>+</i> Exemplos</p>
+	        	<p><i>+</i> Artigos</p>
+	        	<p><i>+</i> Videos</p>
+	        	<p><i>+</i> Suporte ao aluno</p>
+	        </div>
+	        <div class="acesso-assine">
+	           <div class="assine-valor">
+	           		<div class="assine-valor-big">69</div>
+	           		<div class="assine-valor-preco">,90<p>/ mensalidade</p></div>
+	           </div>
+	           <div class="assine-info">
+	           		<b>Debitado no seu cartão de crédito</b>
+	           		<p>Tempo mínimo <span class="tempo-assinatura">de assinatura é 12 meses.</span><span class="tempo-assinatura-info">?</span></p>
+	           </div>
+	           <div class="acesso-conteudo-mvp-mobile">
+	           		<p>Cursos</p>
+		        	<p>DevCast</p>
+		        	<p>Exemplos</p>
+		        	<p>Artigos</p>
+		        	<p>Videos</p>
+		        	<p>Suporte ao aluno</p>
+	           </div>
+	           <div class="assine-agora">
+	           		<a id="ga-mvp-guias-assine-agora" class="btn-agora" href="https://www.devmedia.com.br/join/?ret=assine">assine agora</a>
+	           		<a id="ga-mvp-guias-sem-cartao" class="sem-cartao" href="http://marketing.devmedia.com.br/sem-cartao-de-credito">Não tem cartão de crédito?</a>
+	           </div>
+	        </div>
+	    </section>
+    <!-- </a> -->
+</div>
+
+
+<style>
+	.modal-modulo-mvp {
+	    position: fixed;
+	    width: 100%;
+	    height: 100%;
+	    background-color: rgba(0, 0, 0, 0.6);
+	    z-index: 999;
+	    top: 0;
+	    left: 0;
+	    font-family: "Montserrat", sans-serif;
+	    display: none;
+	}
+	.modal-mvp-info {
+		position: fixed;
+	    width: 95%;
+	    height: 95%;
+	    background-color: #fff;
+	    z-index: 999;
+	    top: 2.5%;
+	    left: 2.5%;
+	    border-radius: 10px;
+	}
+	.modal-mvp-close {
+		position: absolute;
+	    top: 25px;
+	    right: 25px;
+	    cursor: pointer;
+	    display: block;
+	    width: 30px;
+	    height: 30px;
+	}
+	.modal-mvp-close:before {
+	    content: '';
+	    transform: rotate(-135deg);
+	    display: block;
+	    width: 35px;
+	    height: 1px;
+	    background-color: #535353;
+	    margin-top: 15px;
+	}
+	.modal-mvp-close:after {
+	    content: '';
+	    transform: rotate(-45deg);
+	    display: block;
+	    width: 35px;
+	    height: 1px;
+	    background-color: #535353;
+	    margin-top: -2px;
+	}
+	.modal-mvp-texto {
+	    margin: 170px 0 0 170px;
+	    width: 45%;
+	    display: block; 
+	}
+	.modal-mvp-texto p strong.modal-titulo-1 { 
+		font-size: 27px;
+		font-weight: 700;
+	}
+	.modal-mvp-texto p strong.modal-titulo-2 { 
+		font-size: 24px;
+		font-weight: 700;
+	}
+	.modal-mvp-texto p.modal-texto-1 {
+		font-size: 22px;
+	}
+	.modal-mvp-texto p.modal-texto-2 {
+		font-size: 21px;
+	}
+	.modal-mvp-box {
+	    background-color: #B8DB3F;
+	    border-radius: 0 0 10px 10px;
+	    width: 550px;
+	    height: 570px;
+	    color: #fff;
+	    font-weight: 600;
+	    font-size: 33px;
+	    text-align: center;
+	    display: flex;
+	    align-items: center;
+	    padding: 0;
+	    box-sizing: border-box;
+	    position: fixed;
+	    top: 0;
+	    right: 13%;
+	    box-shadow: 12px 15px 20px rgba(0, 0, 0, .16)
+	}
+	.modal-mvp-box p {
+		display: block;
+    	width: 100%;
+	}
+	.modal-mvp-slide {
+	    background-color: #EFF1F2;
+	    width: 100%;
+	    height: 295px;
+	    bottom: 0;
+	    position: absolute;
+	    border-radius: 0 0 10px 10px;
+	}
+	.nossos-assinantes {
+	    text-align: center;
+	    position: relative;
+	    top: -25px;
+	    background-color: #8695a2;
+	    color: #fff;
+	    font-size: 16px;
+	    width: 500px;
+	    margin: 0 auto;
+	    box-sizing: border-box;
+	    padding: 5px 16px;
+	    border-radius: 6px;
+	    text-transform: uppercase;
+	    margin-bottom: -35px;
+	}
+	.conteudo-depoimento {
+	    text-align: center;
+	}
+	.lista-depoimentos {
+	    margin: 35px auto;
+	}
+	.depoimento {
+	    width: 500px;
+	} 
+	.conteudo-depoimento .depoimento-img {
+	    display: none !important;
+	    margin-top: -52px;
+
+	}
+	.conteudo-depoimento .depoimento-img img {
+		width: 104px;
+		border-radius: 50%;
+		box-shadow: 2px 3px 6px rgba(0, 0, 0, .2);
+		margin: 0 auto;
+	}
+	.conteudo-depoimento .depoimento-conteudo {
+		font-size: 25px;
+		font-weight: 600;
+		color: #8795A2;
+		padding: 20px 20%;
+	}
+	.conteudo-depoimento .depoimento-autor {
+		font-style: italic;
+   		font-size: 20px;
+   		color: #8795A2
+	}
+	.conteudo-depoimento .depoimento-autor:before, .conteudo-depoimento .depoimento-autor:after {
+		content: '-';
+		margin: 0 10px;
+	}
+	.slick-prev, .slick-next {
+	    font-size: 0;
+	    line-height: 0;
+	    position: absolute;
+	    top: 47%;
+	    width: 40px;
+	    height: 80px;
+	    padding: 0;
+	    -webkit-transform: translate(0, -50%);
+	    -ms-transform: translate(0, -50%);
+	    transform: translate(0, -50%);
+	    cursor: pointer;
+	    color: transparent;
+	    border: none;
+	    outline: none;
+	    background: transparent;
+	    overflow: hidden;
+	    z-index: 9;
+	}
+	.slick-next:before, .slick-prev:before {
+	    content: '';
+	    width: 80px;
+	    height: 80px;
+	    border: 5px solid #8795A2;
+	    position: relative;
+	    box-sizing: border-box;
+	    display: block;
+	    border-left: none;
+	    border-bottom: none;
+	    border-radius: 8px;
+	    transform: rotate(45deg) translate(-35%, 35%) scale(0.7);
+	    z-index: 999;
+	}
+	button.slick-prev.slick-arrow {
+	    left: 40px;
+	    transform: translateY(-50%) scale(-1,1);
+	}
+	button.slick-next.slick-arrow {
+	    right: 40px;
+	    transform: translateY(-50%);
+	}
+	@media screen and (max-width: 1799px) {
+		/* .modal-mvp-info {
+			height: 80%;
+			top: 10%;
+		} */
+		.modal-mvp-box { 
+			font-size: 24px;
+			/*width: 350px;
+			height: 360px;*/
+			width: 30%;
+	    	height: 50%;
+		}
+		.modal-mvp-texto {
+			margin: 10% 0 0 8%;
+   			width: 45%;
+		}
+		.modal-mvp-texto p strong.modal-titulo-1 { 
+			font-size: 23px;
+			font-weight: 700;
+		}
+		.modal-mvp-texto p strong.modal-titulo-2 { 
+			font-size: 20px;
+			font-weight: 700;
+		}
+		.modal-mvp-texto p.modal-texto-1 {
+			font-size: 19px;
+		}
+		.modal-mvp-texto p.modal-texto-2 {
+			font-size: 18px;
+		}
+		.conteudo-depoimento .depoimento-conteudo {
+			font-size: 18px;
+			font-weight: 500;
+			margin: 0;
+		}
+		.conteudo-depoimento .depoimento-img {
+		    display: block;
+		    margin-top: -40px;
+		}
+		.conteudo-depoimento .depoimento-img img {
+			width: 80px;
+		}
+		.conteudo-depoimento .depoimento-autor { 
+			font-size: 16px;
+			margin: 0;
+		}
+		.modal-mvp-slide {
+			height: 195px;
+		}
+	}
+	@media screen and (max-width: 1024px) {
+		.modal-mvp-box {
+		    width: 70%;
+		    height: 20%;
+		    font-size: 22px;
+		    top: 40%;
+		    right: 0;
+		    border-radius: 10px 0 0 10px;
+		}
+		.modal-mvp-texto {
+		    margin: 0;
+		    width: 100%;
+		    text-align: center;
+		    padding: 25px 20px 0px;
+		    box-sizing: border-box;
+		}
+		.lista-depoimentos {
+		    margin: 25px auto 0;
+		}
+		.conteudo-depoimento .depoimento-conteudo {
+    		font-size: 16px;
+		}
+		.slick-prev, .slick-next {
+			width: 40px;
+			height: 40px;
+		}
+		.slick-next:before, .slick-prev:before {
+		    width: 45px;
+		    height: 45px;
+		}
+	}
+	@media screen and (max-width: 676px) {
+		.modal-mvp-texto p strong.modal-titulo-1, 
+		.modal-mvp-texto p strong.modal-titulo-2 { 
+			font-size: 15px;
+		}
+		.modal-mvp-texto p.modal-texto-1, 
+		.modal-mvp-texto p.modal-texto-2 {
+			font-size: 14px;
+		}
+		.modal-mvp-texto br {
+		    display: none;
+		}
+		.modal-mvp-texto p {
+		    margin: 0px 0 10px;
+		}
+		.modal-mvp-box {
+			font-size: 14px;
+			width: 260px;
+    		height: 90px;
+			top: 30%;
+			z-index: 9;
+		}
+		.nossos-assinantes {
+			font-size: 14px;
+    		width: 255px;
+    		padding: 1px 16px;
+    		margin-bottom: -55px;
+		}
+		.conteudo-depoimento .depoimento-autor {
+    		font-size: 14px;
+    	}
+    	.conteudo-depoimento .depoimento-conteudo {
+		    font-size: 14px;
+		}
+    	button.slick-next.slick-arrow {
+    		right: 5px;
+    	}
+    	button.slick-prev.slick-arrow {
+			left: 5px;
+    	}
+    	.modal-mvp-close:after, .modal-mvp-close:before {
+    		width: 25px;
+    	}
+    	.modal-mvp-close {
+    		top: 5px;
+    		right: 0;
+    	}
+    	.big-text {	display: none !important; }
+    }
+    @media screen and (max-width: 359px) {
+		button.slick-next.slick-arrow {
+		    right: -5px;
+		}
+		button.slick-prev.slick-arrow {
+			left: -5px;
+    	}
+	}
+
+	.tempo-assinatura-info {
+	    background-color: #8795a2;
+	    color: #fff;
+	    padding: 2px 7px;
+	    border-radius: 50%;
+	    font-weight: 500;
+	    position: relative;
+	    top: -5px;
+   		right: -7px;
+	    text-align: center;
+		cursor: pointer;
+		font-size: 13px;
+	}
+	.tempo-assinatura-info:before {
+	    content: '';
+	    width: 0;
+	    height: 0;
+	    border-left: 4px solid transparent;
+	    border-right: 4px solid transparent;
+	    border-bottom: 8px solid #8795a2;
+	    position: absolute;
+	    top: 15px;
+	    transform: rotate(220deg);
+	    right: 15px;
+	}
+	.black-screen {
+		opacity: 0;
+		width: 100%;
+		height: 100vh;
+		overflow-y: scroll;
+		padding: 20px 0;
+		justify-content: center;
+		align-items: center;
+		background: rgba(0, 0, 0, .85);
+		font-family: 'Montserrat', sans-serif;
+		position: fixed;
+		top: 0;
+		z-index: 9999;
+		pointer-events: none;
+		transition: all .3s ease;
+	}
+	.show-black-screen {
+		opacity: 1;
+		pointer-events: all;
+	}
+
+	.box-modal {
+		width: 90%;
+		max-width: 883px;
+		background-color: #fff;
+		margin: 0 auto;
+		position: relative;
+	}
+
+	.close-modal-mvp {
+		position: absolute;
+		width: 19px;
+		height: 19px;
+		cursor: pointer;
+		right: 15px;
+		top: 15px;
+	}
+
+	.close-modal-mvp i {
+		width: 25px;
+		height: 2px;
+		display: block;
+		background-color: #C4BEBE;
+		position: absolute;
+		top: 8px;
+		right: -3px;
+	}
+	.close-modal-mvp i:nth-child(1) {
+		transform: rotate(45deg);
+	}
+
+	.close-modal-mvp i:nth-child(2) {
+		transform: rotate(-45deg);
+	}
+
+	.box-modal .title-modal-mvp {
+		font-size: 19px;
+		font-weight: 500;
+		line-height: 28px;
+		color: #282E37;
+		text-transform: uppercase;
+		text-align: center;
+		letter-spacing: 2px;
+		padding: 20px 40px 0;
+	}
+
+	.box-modal .content-modal {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.box-modal .left-modal-mvp {
+		padding: 20px;
+	}
+
+	.box-modal .left-modal-mvp p {
+		font-size: 14px;
+		color: #282E37;
+		text-align: center;
+		line-height: 28px;
+	}
+
+	.box-modal .left-modal-mvp p.red-text {
+		font-size: 16px;
+		color: #FE1B59;
+		font-weight: 700;
+		margin-top: 40px;
+	}
+
+	.box-modal .right-modal-mvp {
+		padding: 10px;
+	}
+
+	.box-modal .right-modal-mvp .box-client-say {
+		background-color: #FE1B59;
+		padding: 40px;
+		text-align: center;
+		box-sizing: border-box;
+	}
+
+	.box-modal .right-modal-mvp .box-client-say .texture-ball {
+		width: 170px;
+		height: 30px;
+		left: 5px;
+		bottom: 0;
+	}
+
+	.box-modal .right-modal-mvp .title-client-say {
+		color: #fff;
+		font-size: 15px;
+		font-weight: 700;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		margin-bottom: 30px;
+		line-height: 25px;
+	}
+
+	.box-modal .right-modal-mvp .box-client-say p {
+		font-size: 14px;
+		color: #fff;
+		line-height: 25px;
+		position: relative;
+	}
+
+	.box-modal .right-modal-mvp .how-client {
+		display: block;
+		color: #282E37;
+		font-weight: 700;
+		font-style: italic;
+		margin-top: 25px;
+	}
+
+	.box-modal .prev-arrow-mvp-modal,
+	.box-modal .next-arrow-mvp-modal {
+		width: 25px;
+		height: 50px;
+		position: absolute;
+		cursor: pointer;
+	}
+
+	.box-modal .prev-arrow-mvp-modal {
+		left: -55px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.box-modal .next-arrow-mvp-modal {
+		right: -55px;
+		bottom: 50%;
+		transform: translateY(50%);
+	}
+
+	@media screen and (min-width: 768px) {
+		.black-screen {
+			display: flex;
+		}
+		.box-modal .content-modal {
+			flex-direction: row;
+		}
+		.box-modal .title-modal-mvp {
+			font-size: 20px;
+		}
+		.box-modal .left-modal-mvp,
+		.box-modal .right-modal-mvp {
+			width: 50%;
+		}
+		.box-modal .left-modal-mvp {
+			padding: 40px;
+		}
+		.box-modal .left-modal-mvp p {
+			font-size: 15px;
+			text-align: right;
+			line-height: 29px;
+		}
+		.box-modal .left-modal-mvp p.red-text {
+			font-size: 17px;
+		}
+		.box-modal .right-modal-mvp {
+			position: relative;
+		}
+		.box-modal .right-modal-mvp .box-client-say {
+			width: 100%;
+			max-width: 460px;
+			position: absolute;
+			bottom: -60px;
+			right: -20px;
+		}
+	}
+
+	@media screen and (min-width: 1024px) {
+		.box-modal .title-modal-mvp {
+			font-size: 25px;
+			padding: 40px 20px 0;
+		}
+		.box-modal .left-modal-mvp p {
+			font-size: 17px;
+			line-height: 30px;
+		}
+		.box-modal .left-modal-mvp p.red-text {
+			font-size: 20px;
+		}
+		.box-modal .left-modal-mvp {
+			padding: 60px 60px 30px;
+		}
+		.box-modal .right-modal-mvp .title-client-say {
+			font-size: 17px;
+		}
+		.box-modal .right-modal-mvp .box-client-say p,
+		.box-modal .right-modal-mvp .how-client {
+			font-size: 15px;
+		}
+		.box-modal .right-modal-mvp .how-client {
+			text-align: right;
+		}
+		.box-modal .right-modal-mvp .box-client-say {
+			bottom: -30px;
+		}
+	}
+</style>
+
+<div class="black-screen">
+	<div class="box-modal">
+		<div class="close-modal-mvp"><i></i><i></i></div>
+		<div class="title-modal-mvp">Achou 12 meses muito tempo?</div>
+		<div class="content-modal">
+			<div class="left-modal-mvp">
+				<p>Programação muda todo dia e cada novidade nos obriga a rever tudo que já sabíamos. Só um estudo contínuo nos leva ao
+					sucesso.</p>
+				<p class="red-text">Apenas 3,5% dos nossos assinantes querem cancelar antes dos 12 meses</p>
+			</div>
+			<div class="right-modal-mvp">
+				<div class="box-client-say">
+					<div class="slide-modal-mvp">
+						<div class="slide-client-mvp">
+							<div class="title-client-say">O que nossos clientes dizem:</div>
+							<p>
+								"Excelente trabalho. É assim que a gente vê que o investimento vale a pena. Parabéns!"
+							</p>
+							<span class="how-client">- Danniery Alves -</span>
+						</div>
+						<div class="slide-client-mvp">
+							<div class="title-client-say">O que nossos clientes dizem:</div>
+							<p>
+								"Prá lá de bom... Está ótimo: com clareza, didática, 
+conhecimento de causa e uma boa dose de humor. "Persistência" é o 
+segredo."
+							</p>
+							<span class="how-client">- Paulo Costa -</span>
+						</div>
+						<div class="slide-client-mvp">
+							<div class="title-client-say">O que nossos clientes dizem:</div>
+							<p>
+								"DevMedia ensina mais do que qualquer faculdade!!!"
+							</p>
+							<span class="how-client">- Mauricio Hartmann -</span>
+						</div>
+					</div>
+					<i class="texture-ball"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/slick.js"></script>
+<script>
+$(document).on('ready', function() {
+	var slickModal = null;
+
+	$(document).on('click', '.modal-mvp-close', function(e) {
+		e.preventDefault();
+		$(".modal-modulo-mvp").fadeOut();
+	});
+
+	$(document).on('click', '.tempo-assinatura-info', function(e) {
+		e.preventDefault();
+		$(".modal-modulo-mvp").fadeIn();
+		
+		if (slickModal == null) {
+			slickModal = $('.lista-depoimentos').slick({
+					        arrows: true,
+					        infinite: true,
+					        dots: false,
+					        slidesToShow: 1,
+					        slidesToScroll: 1,
+					        speed: 700,
+					        fade: true,
+					        cssEase: 'linear',
+					        autoplay: false,
+					        autoplaySpeed: 5000
+					    });
+		}	
+	});
+
+	var slickModal = null;
+		$('.tempo-assinatura-info').on('click', function(){
+			var width = $(window).width();
+
+			$('.black-screen').addClass('show-black-screen');
+			$('html').css({'overflow':'hidden'});
+			
+			if (slickModal == null) {
+				slickModal = $('.slide-modal-mvp').slick({
+					arrows: true,
+					infinite: true,
+					dots: false,
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					speed: 500,
+					fade: true,
+					nextArrow: '<svg class="next-arrow-mvp-modal"> <style type="text/css"> .arrow-mvp{fill: none;stroke:#B7DB3F;stroke-width:2;} </style> <path id="Path_13738" class="arrow-mvp" d="M0.7,49l22.7-24.2L0.7,0.7" /> </svg>',
+					prevArrow: '<svg class="prev-arrow-mvp-modal"> <style type="text/css"> .arrow-mvp{fill: none;stroke:#B7DB3F;stroke-width:2;} </style> <path id="Path_13738" class="arrow-mvp" d="M23.4,0.7L0.7,24.8L23.4,49" /> </svg>'
+				});
+			}
+		});
+		$('.close-modal-mvp').on('click', function() {
+			$('.black-screen').removeClass('show-black-screen');
+			$('html').css({ 'overflow': 'scroll' });
+		});
+
+});
+</script>
+
+	<a class="ancora_guia ancora_guia_topo" href="#guia_container" style="display: inline;"></a>
+
+	<div id="modal-msg" class="">
+                        <p>
+                            <i></i>                            
+                            <span class="msg"></span>                            
+                        </p>
+                  </div>
+
+	</main>
+<footer class="main-footer">
+		<div class="column-footer column-footer-1">
+			<div class="logo-footer-dev">
+				<svg>
+					<path class="path-svg-footer" d="M9.7,15L23.1,1.5C15.7-2,6.7,0.7,2.4,7.8L9.7,15z"></path>
+					<path class="path-svg-footer" d="M17.4,9.7l13.4,13.4c3.6-7.5,0.9-16.4-6.1-20.7L17.4,9.7z"></path>
+					<path class="path-svg-footer" d="M22.7,17.4L9.2,30.8c7.5,3.6,16.4,0.9,20.7-6.1L22.7,17.4z"></path>
+					<path class="path-svg-footer" d="M14.9,22.7L1.6,9.3C-2,16.7,0.7,25.7,7.7,30L14.9,22.7z"></path>
+					<path class="path-svg-footer" d="M41.1,23.4v-14h5.1c1,0,2.1,0.2,3,0.5c1.6,0.7,2.9,2,3.5,3.7c0.3,0.9,0.5,1.8,0.5,2.7 c0,1-0.2,2-0.5,2.9c-0.3,0.8-0.8,1.6-1.4,2.2c-0.6,0.6-1.4,1.1-2.2,1.4c-0.9,0.3-1.9,0.5-2.9,0.5L41.1,23.4z M50.4,16.4 c0-0.6-0.1-1.2-0.3-1.8c-0.2-0.5-0.5-1-0.8-1.4c-0.4-0.4-0.8-0.7-1.3-1c-0.5-0.3-1.1-0.4-1.7-0.4h-2.4V21h2.4c0.6,0,1.2-0.1,1.7-0.4 c0.5-0.2,1-0.5,1.3-1c0.3-0.4,0.6-0.9,0.8-1.4C50.3,17.6,50.4,17,50.4,16.4L50.4,16.4z"></path>
+					<path class="path-svg-footer" d="M65.9,21v2.4H55.2v-14h10.6v2.4H58v3.3h7.9v2.2H58V21L65.9,21L65.9,21z"></path>
+					<path class="path-svg-footer" d="M95.2,23.4V11.2l-5.4,8.3l-5.4-8.3v12.1h-1v-14h1l5.4,8.4l5.4-8.4h1v14H95.2z"></path>
+					<path class="path-svg-footer" d="M109.3,22.5v0.9h-9.8v-14h9.6v0.9h-8.7v5.5h8.8v0.9h-8.8v5.8C100.5,22.5,109.3,22.5,109.3,22.5 z"></path>
+					<path class="path-svg-footer" d="M111.9,23.4v-14h5.2c1,0,2,0.2,2.9,0.5c0.8,0.3,1.5,0.8,2,1.5c0.5,0.7,0.9,1.4,1.2,2.2 c0.3,0.9,0.4,1.8,0.4,2.7c0,1-0.2,2-0.5,2.9c-0.3,0.8-0.8,1.6-1.4,2.2c-0.6,0.6-1.3,1.1-2.1,1.4c-0.9,0.3-1.8,0.5-2.7,0.5 L111.9,23.4z M122.8,16.4c0-0.8-0.1-1.6-0.4-2.4c-0.2-0.7-0.6-1.3-1.1-1.9c-0.5-0.6-1.1-1-1.7-1.3c-0.8-0.3-1.6-0.5-2.4-0.5H113 v12.2h4.2c0.8,0,1.7-0.2,2.4-0.5c0.7-0.3,1.3-0.7,1.7-1.3c0.5-0.6,0.8-1.2,1.1-2C122.7,18,122.8,17.2,122.8,16.4L122.8,16.4z"></path>
+					<path class="path-svg-footer" d="M126.4,23.4v-14h1v14H126.4z"></path>
+					<path class="path-svg-footer" d="M135.5,9.3h0.9l6.1,14h-1.1l-1.4-3.3l-8,0.1l-1.4,3.3h-1.1L135.5,9.3z M139.6,19.1l-3.6-8.4 l-3.7,8.5L139.6,19.1z"></path>
+					<path class="path-svg-footer" d="M78.6,9.3l-4.3,10.9h-0.1L70,9.3h-2.7l5.5,14h3.1l5.5-14H78.6z"></path>
+				</svg>
+			</div>
+			<a href="https://www.porta80.com.br/" target="_blank" rel="nofollow" class="porta80">Hospedagem web por Porta 80 Web Hosting</a>
+		</div>
+		<div class="column-footer column-footer-2">
+			<p class="title-footer-topics">Menu</p>
+			<a href="https://www.devmedia.com.br/revistas/">Revistas</a>
+			<a href="https://www.devmedia.com.br/app/">Baixe o App</a>
+			<a href="https://www.devmedia.com.br/api/">APIs</a>
+			<a href="https://www.devmedia.com.br/jobs/vagas-programacao/">Jobs</a>
+			<a href="https://www.devmedia.com.br/fale-conosco/">Fale conosco</a>
+		</div>
+		<div class="column-footer column-footer-3">
+			<p class="title-footer-topics">Tecnologias
+			</p><div class="tecnology-footer">	
+				<div class="sub-columns">
+					<a href="https://www.devmedia.com.br/front-end/">Front-End</a>
+					<a href="https://www.devmedia.com.br/dotnet/">.NET</a>
+					<a href="https://www.devmedia.com.br/php/">PHP</a>
+					<a href="https://www.devmedia.com.br/java/">Java</a>
+					<a href="https://www.devmedia.com.br/delphi/">Delphi</a>
+				</div>
+				<div class="sub-columns">
+					<a href="https://www.devmedia.com.br/python/">Python</a>
+					<a href="https://www.devmedia.com.br/mobile/">Mobile</a>
+					<a href="https://www.devmedia.com.br/banco-de-dados/">Banco de Dados</a>
+					<a href="https://www.devmedia.com.br/engenharia-de-software/">Eng. de Software</a>
+					<a href="https://www.devmedia.com.br/canal-mais/">Canal mais</a>
+				</div>
+			</div>
+		</div>
+		<div class="column-footer column-footer-4">
+			<a href="https://www.facebook.com/devmedia.com.br/" target="_blank" rel="noopener noreferrer" class="icons-footer">
+				<svg class="facebook-footer">
+					<path class="path-svg-footer" d="M18.6,15h-2.4v8.4h-3.5V15H11v-3h1.7v-1.9c-0.1-1.8,1.2-3.4,3-3.5c0.2,0,3.1,0,3.1,0v2.9H17 c-0.4,0-0.7,0.3-0.7,0.7l0,1.8H19L18.6,15z"></path>
+				</svg>
+			</a>
+			<a href="http://twitter.com/devmedia" target="_blank" rel="noopener noreferrer" class="icons-footer">
+				<svg class="twitter-footer">
+					<path class="path-svg-footer" d="M21.6,11.6V12c0,5.3-4.2,9.7-9.5,9.7c-0.1,0-0.1,0-0.2,0c-1.8,0-3.8-0.6-5.2-1.5 c2.4,0.1,3.8-0.5,5-1.5c-1.5,0-2.8-1-3.2-2.4c0.6,0.2,1.2,0.1,1.5,0C8.4,16,7.3,14.6,7.3,13l0,0c0.5,0.3,1,0.4,1.5,0.4 c-0.9-0.6-1.5-1.7-1.5-2.8c0-0.6,0.2-1.2,0.5-1.7c1.7,2.1,4.3,3.4,7,3.6C14.2,10,16.6,8.3,18,8.3c1.4,0,1.9,0.4,2.6,1.1 c0.8-0.2,1.5-0.4,2.2-0.8c-0.3,0.8-0.8,1.5-1.5,1.9c0.7-0.1,1.3-0.3,2-0.5C22.8,10.5,22.2,11.1,21.6,11.6z"></path>
+				</svg>
+			</a>
+			<a href="https://www.instagram.com/devmedia.com.br/" target="_blank" rel="noopener noreferrer" class="icons-footer">
+				<svg class="instagram-footer">
+					<path class="path-svg-footer" d="M19.9,5H10c-2.8,0-5,2.2-5,5v10c0,2.8,2.2,5,5,5H20c2.8,0,5-2.2,5-5V10C24.9,7.2,22.7,5,19.9,5 z M22.7,20c0,1.6-1.3,2.9-2.9,2.9l0,0H9.9C8.3,22.9,7,21.6,7,20V10C7,8.4,8.3,7.1,10,7.1l0,0h9.9c1.6,0,2.9,1.3,2.9,2.9v0L22.7,20z"></path>
+					<circle class="path-svg-footer" cx="20.3" cy="9.7" r="1.2"></circle>
+					<path class="path-svg-footer" d="M14.9,9.7c-2.9,0-5.3,2.4-5.3,5.3s2.4,5.3,5.3,5.3c2.9,0,5.3-2.4,5.3-5.3S17.8,9.7,14.9,9.7z M14.9,18 c-1.7,0-3-1.4-3-3s1.4-3,3-3c1.7,0,3,1.4,3,3S16.6,18,14.9,18z"></path>
+				</svg>
+			</a>
+			<a href="https://www.youtube.com/c/DevmediaBrasil" target="_blank" rel="noopener noreferrer" class="icons-footer">
+				<svg class="youtube-footer">
+					<path class="path-svg-footer" d="M25.3,9.9C25,8.8,24.1,8,23,7.8c-2.7-0.2-5.3-0.3-8-0.3c-2.7-0.1-5.3,0-8,0.3 C5.9,8,5,8.8,4.7,9.9c-0.3,1.7-0.5,3.4-0.4,5.1c-0.1,1.7,0.1,3.4,0.4,5.1C5,21.2,5.9,22,7,22.2c2.7,0.2,5.3,0.3,8,0.3 c2.7,0.1,5.3,0,8-0.3c1.1-0.1,2.1-1,2.3-2.1c0.3-1.7,0.5-3.4,0.4-5.1C25.8,13.3,25.6,11.6,25.3,9.9z M12.2,18.3v-7.1 c2.3,1.2,4.5,2.4,6.8,3.5C16.7,16,14.5,17.1,12.2,18.3z"></path>
+				</svg>
+			</a>
+			<a href="https://www.devmedia.com.br/feed/" target="_blank" rel="noopener noreferrer" class="icons-footer">
+				<svg class="feed-footer">
+					<circle class="path-svg-footer" cx="9.9" cy="20.1" r="1.9"></circle>
+					<path class="path-svg-footer" d="M16.4,22l-1.9,0c-0.3,0-0.4-0.1-0.4-0.2c-0.1-3.6-2.2-5.7-5.9-5.8c-0.1,0-0.2-0.1-0.2-0.2c0-0.5,0-1.5,0-2 c0-0.1,0.1-0.3,0.3-0.3c5,0.1,8.2,3.3,8.4,8.3C16.7,21.9,16.6,22,16.4,22z"></path>
+					<path class="path-svg-footer" d="M21.8,22l-2,0c-0.3,0-0.3-0.1-0.3-0.2c-0.1-7-4.3-11.2-11.2-11.3c-0.1,0-0.2-0.1-0.2-0.2c0-0.5,0-1.6,0-2.1 C8,8.1,8.1,8,8.3,8c8.4,0.1,13.7,5.3,13.7,13.7C22,21.9,21.9,22,21.8,22z"></path>
+				</svg>
+			</a>
+		</div>
+		<a href="#" class="porta80 porta80-mobile">Hospedagem web por Porta 80 Web Hosting</a>
+
+	</footer>
+	<style>
+		/* * { padding: 0; margin: 0; } */
+		footer.main-footer { font-family: 'Montserrat', sans-serif; display: flex; flex-direction: column; align-items: center; padding: 30px 0; background: #f8fafb; }
+		footer.main-footer a { text-decoration: none; display: block; margin-bottom: 20px; }
+		footer.main-footer .column-footer { display: flex; flex-direction: column; padding: 0 5px; }
+		footer.main-footer .column-footer-2 { text-align: center; margin: 25px 0; }
+		footer.main-footer .column-footer-2 .title-footer-topics { display: none; }
+		footer.main-footer .column-footer-3 { display: none; }
+		footer.main-footer .column-footer-4 { flex-direction: row; }
+		footer.main-footer .column-footer.column-footer-1 { justify-content: space-between; }
+		footer.main-footer .column-footer.column-footer-1 a.porta80 { display: none; }
+		footer.main-footer .tecnology-footer { display: flex; flex-direction: row; }
+		footer.main-footer .tecnology-footer .sub-columns { display: flex; flex-direction: column; }
+		footer.main-footer .tecnology-footer .sub-columns:first-child { margin-right: 65px; }
+		footer.main-footer .logo-footer-dev svg { width: 143px; height: 33px; }
+		footer.main-footer svg .path-svg-footer { fill: #8795A2; transition: all .2s ease; }
+		footer.main-footer a.icons-footer { margin-bottom: 0; margin-right: 20px; }
+		footer.main-footer a.icons-footer:last-child { margin-right: 0; }
+		footer.main-footer a.icons-footer svg { width: 30px; height: 30px; }
+		footer.main-footer .title-footer-topics { font-size: 14px; color: #C6CDD3; font-weight: 500; margin: 0 0 20px; }
+		footer.main-footer a { font-size: 14px; font-weight: 400; color: #8795A2; transition: all .2s ease; }
+		footer.main-footer .porta80 { font-size: 11px; font-weight: 300; }
+		footer.main-footer .porta80-mobile { margin-top: 15px; }
+		footer.main-footer .column-footer:first-child, footer.main-footer .column-footer:last-child { padding: 0px; }
+
+		@media screen and (min-width: 768px){
+			footer.main-footer .column-footer-2 { flex-direction: row; }			
+			footer.main-footer .column-footer-2 a { margin: 0 15px 0 0; }			
+			footer.main-footer .column-footer-2 a:last-child { margin-right: 0; }			
+		}
+	
+		@media screen and (min-width: 1024px){
+			footer.main-footer { flex-direction: row; justify-content: space-between; padding: 30px 60px; align-items: normal; }
+			footer.main-footer .column-footer-2 { text-align: left; margin: 0; flex-direction: column; }
+			footer.main-footer .column-footer-2 a { margin: 0 0 20px 0; }			
+			footer.main-footer .column-footer-2 .title-footer-topics { display: block; }
+			footer.main-footer .column-footer-3 { display: block; }
+			footer.main-footer .column-footer-4 { flex-direction: column; }
+			footer.main-footer .column-footer.column-footer-1 { justify-content: space-between; }
+			footer.main-footer .column-footer.column-footer-1 a.porta80 { display: block; }			
+			footer.main-footer .tecnology-footer { flex-direction: row; }
+			footer.main-footer .tecnology-footer .sub-columns:first-child { margin-right: 65px; }
+			footer.main-footer a.icons-footer { margin-right: 0px; }
+			footer.main-footer .porta80-mobile { display: none; }
+			footer.main-footer a:hover { color: #373737; transform: scale(1.04); }
+			footer.main-footer a.icons-footer:hover .path-svg-footer { fill: #373737; }
+		}
+	</style>
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MCHBV6W"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+</section><script type="text/javascript" id="gtm-hover-listener">(function(k,n){function l(c){var a=c.target;a.__htimer=setTimeout(function(){e(a,"mouseLeave",d);dataLayer.push({event:"hover",attributes:{element:a}})},500);f(a,"mouseleave",d)}function d(a){a=a.target;clearTimeout(a.__htimer);a.__htimer=null;e(a,"mouseleave",d)}var g=["span.link-cadeados"],f=google_tag_manager["GTM-MCHBV6W"].macro(8),e=google_tag_manager["GTM-MCHBV6W"].macro(9),a;for(a=0;a<g.length;a++){try{var h=k.querySelectorAll(g[a])}catch(c){if(google_tag_manager["GTM-MCHBV6W"].macro(10))throw"DOMException: GTM Hover Listener - Invalid Query Selector in variable Constant - Hover Listener CSS Selectors; "+
+c.message;}var b;for(b=0;b<h.length;b++){var m=h[b];f(m,"mouseenter",l)}}})(document,window);</script><div class="pushcrew-side-button pushcrew-chicklet-position-hc" style="background-color: rgb(123, 172, 59) !important; color: rgb(255, 255, 255) !important;"><svg width="14px" height="12px" viewBox="0 0 14 12" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-57.000000, -45.000000)"><g transform="translate(57.000000, 46.000000)"><path d="M0.508701521,0.740161403 L12.8787014,0.542093186 L12.8787014,9.93945338 L4.88268796,9.93945338" stroke="#FFFFFF" stroke-width="2" style="stroke: rgb(255, 255, 255);"></path><rect fill="#FFFFFF" x="1" y="3" width="3" height="1" style="fill: rgb(255, 255, 255);"></rect><rect fill="#FFFFFF" x="3" y="5" width="3" height="1" style="fill: rgb(255, 255, 255);"></rect><rect fill="#FFFFFF" x="5" y="7" width="3" height="1" style="fill: rgb(255, 255, 255);"></rect></g></g></g></svg><div>Notificações :)</div></div><script src="Guia%20Completo%20de%20PHP%20%20Tudo%20o%20que%20voc%C3%AA%20precisa%20para%20aprender%20PHP_arquivos/adsct" type="text/javascript"></script></body></html>

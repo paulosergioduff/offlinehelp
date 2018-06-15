@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html itemscope="" itemtype="http://schema.org/QAPage" class=""><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+        <title>php - Como usar namespace numa Classe? - Stack Overflow em Português</title>
+        <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/br/img/favicon.ico?v=c6678b633455">
+        <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/br/img/apple-touch-icon.png?v=e57f45c9cfaf">
+        <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow em Português" href="https://pt.stackoverflow.com/opensearch.xml">
+
+
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://pt.stackoverflow.com/questions/40051/como-usar-namespace-numa-classe">
+        <meta property="og:site_name" content="Stack Overflow em Português">
+        <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/br/img/apple-touch-icon@2.png?v=2bb2b60be04f">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:domain" content="pt.stackoverflow.com">
+        <meta name="twitter:site" content="@StackOverflowPT">
+        <meta name="twitter:creator" content="@StackOverflowPT">
+        <meta name="twitter:title" property="og:title" itemprop="title name" content="Como usar namespace numa Classe?">
+        <meta name="twitter:description" property="og:description" itemprop="description" content="Eu estou a usar o AWS SDK for PHP da Amazon e para isso eu preciso da classe S3Client.
+
+Eu estava a ver um exemplo de upload para a amazon e fazia assim:
+
+require '../aws/aws-autoloader.php';
+
+use ...">
+        <script src="php%20-%20Como%20usar%20namespace%20numa%20Classe%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/osd.js"></script><script src="php%20-%20Como%20usar%20namespace%20numa%20Classe%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/pubads_impl_rendering_215.js"></script><script src="php%20-%20Como%20usar%20namespace%20numa%20Classe%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/rules-p-c1rF4kxgLUzNc.js" async=""></script><script async="" src="php%20-%20Como%20usar%20namespace%20numa%20Classe%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/quant.js"></script><script async="" src="php%20-%20Como%20usar%20namespace%20numa%20Classe%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/beacon.js"></script><script async="" src="php%20-%20Como%20usar%20namespace%20numa%20Classe%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/analytics.js"></script><script src="php%20-%20Como%20usar%20namespace%20numa%20Classe%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/jquery.js"></script>
+        <script src="php%20-%20Como%20usar%20namespace%20numa%20Classe%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/stub.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="php%20-%20Como%20usar%20namespace%20numa%20Classe%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/stacks.css">
+        <link rel="stylesheet" type="text/css" href="php%20-%20Como%20usar%20namespace%20numa%20Classe%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/primary.css">
+    
+            <link rel="alternate" type="application/atom+xml" title="Feed para a pergunta 'Como usar namespace numa Classe?'" href="https://pt.stackoverflow.com/feeds/question/40051">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://pt.stackoverflow.com/questions/40051/como-usar-namespace-numa-classe">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://pt.stackoverflow.com/questions/40051/como-usar-namespace-numa-classe">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://pt.stackoverflow.com/questions/40051/como-usar-namespace-numa-classe">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+
+            StackExchange.ready(function () {
+                                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:17,shownCommentCount:5,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:40051});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('526', '40051');
+                // TODO: There's a CR for replacing this with inline info on the question for moderators
+                // https://trello.com/c/ynDHhvrB/158-cr-move-the-mod-info-out-of-the-margin-and-into-the-post-estimate-needed
+                // Before we roll out the sidebar everywhere (or at least shortly after that?), we should implement it.
+                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+        
+        
+        
+        
+        
+        
+                <script>
+        StackExchange.ready(function () {
+            StackExchange.realtime.init('wss://qa.sockets.stackexchange.com');
+            StackExchange.realtime.subscribeToReputationNotifications('526');
+                StackExchange.realtime.subscribeToTopBarNotifications('526');
+        });
+    </script>
+    <script>
+        StackExchange.init({"locale":"pt-BR","serverTime":1529059930,"routeName":"Questions/Show","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","site":{"name":"Stack Overflow em Português","description":"Perguntas e respostas para programadores profissionais e entusiastas","isNoticesTabEnabled":true,"enableNewTagCreationWarning":false,"insertSpaceAfterNameTabCompletion":false,"id":526,"childUrl":"https://pt.meta.stackoverflow.com","enableSocialMediaInSharePopup":true,"protocol":"https"},"user":{"fkey":"06429704a6711243a60c2f7d47eaa4aefb56d05fb44bc4ca37b4c5799c4bbad4","tid":"ab5f03d2-4f55-5d32-3185-1a84d3ee3ae6","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true},"realtime":{"newest":true,"active":true,"tagged":true,"staleDisconnectIntervalInHours":0,"workerIframeDomain":"https://cdn.sstatic.net"},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75,"likedTagsMaxLength":300,"dislikedTagsMaxLength":300},"jobPreferences":{"maxNumDeveloperRoles":2,"maxNumIndustries":4}}, {"site":{"allowImageUploads":true,"commentHighlightingWithCSS":true,"enableUserHovercards":true,"styleCode":true,"enableImgurHttps":true,"forceHttpsImages":true},"userMessaging":{},"comments":{},"userProfile":{},"tags":{"allowNonAsciiTags":true},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"snippets":{"snippetsEnabled":true,"renderDomain":"stacksnippets.net"},"paths":{},"markdown":{"asteriskIntraWordEmphasis":true},"monitoring":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000},"slack":{"sidebarAdDismissCookie":"slack-sidebar-ad"}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.pt-BR.js":"ef12e628a1a4","js/moderator.pt-BR.js":"acff7ad8d703","js/full-anon.pt-BR.js":"855cba7281f6","js/full.pt-BR.js":"81f566c07427","js/wmd.pt-BR.js":"2dc870452aa0","js/third-party/jquery.autocomplete.min.js":"bdb258e949a8","js/third-party/jquery.autocomplete.min.pt-BR.js":"","js/mobile.pt-BR.js":"52464677570a","js/help.pt-BR.js":"63e80a40cb21","js/tageditor.pt-BR.js":"5de0718b5d4f","js/tageditornew.pt-BR.js":"36ff750eb4a3","js/inline-tag-editing.pt-BR.js":"7dceffa4e7da","js/revisions.pt-BR.js":"ab84404f813e","js/review.pt-BR.js":"8f566609d845","js/tagsuggestions.pt-BR.js":"98282ebb815a","js/post-validation.pt-BR.js":"47d57b1e5aa6","js/explore-qlist.pt-BR.js":"e2a8178eb759","js/events.pt-BR.js":"8e308b1d3293","js/keyboard-shortcuts.pt-BR.js":"0346e616a99f","js/external-editor.pt-BR.js":"2b6464549022","js/adops.pt-BR.js":"22a9bd59b1e9","js/external-editor.pt-BR.js":"2b6464549022","js/snippet-javascript.pt-BR.js":"4eec60f3b439","js/snippet-javascript-codemirror.pt-BR.js":"17feb73742f7"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    <noscript id="noscript-css"><style>body,.top-bar{margin-top:1.9em}</style></noscript>
+    <script async="" src="php%20-%20Como%20usar%20namespace%20numa%20Classe%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/full-anon.js"></script><script async="" src="php%20-%20Como%20usar%20namespace%20numa%20Classe%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/snippet-javascript.js"></script><script async="" src="php%20-%20Como%20usar%20namespace%20numa%20Classe%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/post-validation.js"></script><script async="" src="php%20-%20Como%20usar%20namespace%20numa%20Classe%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/prettify-full.js"></script><script async="" src="php%20-%20Como%20usar%20namespace%20numa%20Classe%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/external-editor.js"></script><link rel="preload" href="php%20-%20Como%20usar%20namespace%20numa%20Classe%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/integrator.js" as="script"><script type="text/javascript" src="php%20-%20Como%20usar%20namespace%20numa%20Classe%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/integrator.js"></script><link rel="preload" href="php%20-%20Como%20usar%20namespace%20numa%20Classe%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/integrator_002.js" as="script"><script type="text/javascript" src="php%20-%20Como%20usar%20namespace%20numa%20Classe%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/integrator_002.js"></script><script src="php%20-%20Como%20usar%20namespace%20numa%20Classe%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/pubads_impl_215.js" async=""></script></head>
+        <body class="question-page new-topbar">
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+
+
+<header class="top-bar js-top-bar _fixed">
+    <div class="-container">
+        <div class="-main">
+                                <a href="https://pt.stackoverflow.com/" class="-logo js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+                        <span class="-img">Stack Overflow em Português</span>
+                    </a>
+
+
+                <nav class="navigation" role="navigation" aria-label="navegação do site">
+                    <ol class="-list">
+        <li class="-item _current">
+            <a id="nav-questions" href="https://pt.stackoverflow.com/questions" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">Perguntas</a>
+        </li>
+        <li class="-item">
+            <a id="nav-tags" href="https://pt.stackoverflow.com/tags" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">Tags</a>
+        </li>
+        <li class="-item">
+            <a id="nav-users" href="https://pt.stackoverflow.com/users" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">Usuários</a>
+        </li>
+                    </ol>
+                </nav>
+
+        </div>
+
+            <form id="search" action="/search" method="get" class="searchbar js-searchbar " autocomplete="off" role="search">
+                    <div class="ps-relative">
+                        <input name="q" placeholder="Pesquisar..." autocomplete="off" maxlength="240" class="f-input js-search-field" type="text">
+                        <button type="submit" aria-label="Pesquisar..." class="btn-topbar-primary js-search-submit"><svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"></path></svg></button>
+                    </div>
+            </form>
+
+        
+
+
+
+
+
+<ol class="-secondary js-secondary-topbar-links">
+        <li class="-item searchbar-trigger js-searchbar-trigger"><a href="#" class="-link"><svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"></path></svg></a></li>
+            <li class="-item">
+        <a href="https://stackexchange.com/users/?tab=inbox" class="-link js-inbox-button" title="Últimas mensagens no inbox">
+            <svg aria-hidden="true" class="svg-icon iconInbox" width="20" height="18" viewBox="0 0 20 18"><path d="M15.19 1H4.63c-.85 0-1.6.54-1.85 1.35L0 10.79V15c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2v-4.21l-2.87-8.44A2 2 0 0 0 15.19 1zm-.28 10l-2 2h-6l-2-2H1.96L4.4 3.68A1 1 0 0 1 5.35 3h9.12a1 1 0 0 1 .95.68L17.86 11h-2.95z"></path></svg>
+            <span class="indicator-badge js-unread-count _important" style="display: none;"></span>
+        </a>
+    </li>
+    <li class="-item">
+        <a href="https://stackexchange.com/users/?tab=reputation" class="-link js-achievements-button" title="Conquistas recentes: reputação, medalhas e privilégios obtidos" data-unread-class="_highlighted-positive">
+            <svg aria-hidden="true" class="svg-icon iconAchievements" width="18" height="18" viewBox="0 0 18 18"><path d="M15 2V1H3v1H0v4c0 1.6 1.4 3 3 3v1c.4 1.5 3 2.6 5 3v2H5s-1 1.5-1 2h10c0-.4-1-2-1-2h-3v-2c2-.4 4.6-1.5 5-3V9c1.6-.2 3-1.4 3-3V2h-3zM3 7c-.5 0-1-.5-1-1V4h1v3zm8.4 2.5L9 8 6.6 9.4l1-2.7L5 5h3l1-2.7L10 5h2.8l-2.3 1.8 1 2.7h-.1zM16 6c0 .5-.5 1-1 1V4h1v2z"></path></svg>
+            <span class="indicator-badge js-unread-count _positive" style="display: none;"></span>
+        </a>
+    </li>
+
+    <li class="-item help-button-item" data-remove-order="1"><a href="#" class="-link js-help-button" title="Central de ajuda e outros recursos">
+        <svg aria-hidden="true" class="svg-icon iconHelp" width="18" height="18" viewBox="0 0 18 18"><path d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23zM11.77 8a5.8 5.8 0 0 1-1.02.91l-.53.37c-.26.2-.42.43-.5.69a4 4 0 0 0-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.03-.66.12-1.21.4-1.66a5.29 5.29 0 0 1 1.43-1.22c.16-.12.28-.25.38-.39a1.34 1.34 0 0 0 .02-1.71c-.24-.31-.51-.46-1.03-.46-.51 0-.8.26-1.02.6-.21.33-.18.73-.18 1.1H5.75c0-1.38.35-2.25 1.1-2.76.52-.35 1.17-.5 1.93-.5 1 0 1.79.18 2.49.71.64.5.98 1.18.98 2.12 0 .57-.2 1.05-.48 1.44z"></path></svg>
+    </a></li>
+
+    <li class="-item">
+        <a href="https://stackexchange.com/" class="-link js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="Todos os 174 sites do Stack Exchange">
+            <svg aria-hidden="true" class="svg-icon iconStackExchange" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13c0 1.1.9 2 2 2h8v3l3-3h1a2 2 0 0 0 2-2v-2H1v2zM15 1H3a2 2 0 0 0-2 2v2h16V3a2 2 0 0 0-2-2zM1 6h16v4H1V6z"></path></svg>
+        </a>
+    </li>
+
+            <li class="-ctas">
+                        <a href="https://pt.stackoverflow.com/users/login?ssrc=head&amp;returnurl=https%3a%2f%2fpt.stackoverflow.com%2fquestions%2f40051%2fcomo-usar-namespace-numa-classe" class="login-link btn-clear" rel="nofollow">Log-in</a>
+                        <a href="https://pt.stackoverflow.com/users/signup?ssrc=head&amp;returnurl=https%3a%2f%2fpt.stackoverflow.com%2fquestions%2f40051%2fcomo-usar-namespace-numa-classe" class="login-link btn-topbar-primary" rel="nofollow" data-ga="[&quot;sign up&quot;,&quot;Sign Up Navigation&quot;,&quot;Header&quot;,null,null]">Registrar-se</a>
+
+            </li>
+
+    <li class="-dialog-container js-topbar-dialog-corral">
+
+
+    <div class="topbar-dialog siteSwitcher-dialog dno">
+        <div class="header">
+            <h3><a href="https://pt.stackoverflow.com/">comunidade atual</a>
+            </h3>
+        </div>
+        <div class="modal-content current-site-container">
+            <ul class="current-site">
+                    <li class="grid">
+                            <div class="fl1">
+            <a href="https://pt.stackoverflow.com/" class="current-site-link site-link js-gps-track grid gs8 gsx" data-id="526" data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="favicon favicon-br site-icon grid--cell" title="Stack Overflow em Português"></div>
+        <span class="grid--cell fl1">
+            Stack Overflow em Português
+        </span>
+    </a>
+
+    </div>
+    <div class="related-links">
+            <a href="https://pt.stackoverflow.com/help" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:14 })">ajuda</a>
+                    <a href="https://chat.stackexchange.com/?tab=site&amp;host=pt.stackoverflow.com" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+                    </li>
+                    <li class="related-site grid">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                            <a href="https://pt.meta.stackoverflow.com/" class="site-link js-gps-track grid gs8 gsx" data-id="527" data-gps-track="site.switch({ target_site:527, item_type:3 }),site_switcher.click({ item_type:4 })">
+        <div class="favicon favicon-brmeta site-icon grid--cell" title="Stack Overflow em Português Meta"></div>
+        <span class="grid--cell fl1">
+            Stack Overflow em Português Meta
+        </span>
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+suas comunidades            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+Faça <a href="https://pt.stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fpt.stackoverflow.com%2fquestions%2f40051%2fcomo-usar-namespace-numa-classe" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> ou <a href="https://pt.stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fpt.stackoverflow.com%2fquestions%2f40051%2fcomo-usar-namespace-numa-classe" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">registre-se</a> para personalizar suas comunidades
+                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="https://stackexchange.com/sites">mais comunidades stack exchange</a>
+            </h3>
+            <a href="https://stackoverflow.blog/" class="fr">Blog da empresa</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+            <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="https://pt.stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Comece aqui para obter uma visão geral rápida do site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="https://pt.stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Central de ajuda
+                        <span class="item-summary">
+                            Respostas detalhadas a qualquer pergunta que você tiver
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="https://pt.meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discutir o funcionamento e as políticas deste site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                Sobre Nós
+                                <span class="item-summary">
+                                    Saiba mais sobre a empresa Stack Overflow
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Negócios
+                                <span class="item-summary">
+                                    Saiba mais sobre a contratação de desenvolvedores ou publicação de anúncios conosco
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+            </li>
+</ol>
+
+    </div>
+</header>
+    <div id="js-gdpr-consent-banner" class="p16 bg-black-700 fc-white ps-fixed b0 l0 r0 z-banner" role="banner" aria-hidden="false">
+        <div class="wmx10 mx-auto grid grid__center jc-spacebetween gs8 gsx" role="alertdialog" aria-describedby="notice-message">
+            <div class="grid--cell" aria-label="notice-message">
+                <p class="mb0 lh-lg">
+                    This site uses cookies to deliver our services and to show you relevant ads and job listings. 
+By using our site, you acknowledge that you have read and understand our <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/cookie-policy">Cookie Policy</a>, <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/privacy-policy">Privacy Policy</a>, and our <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/terms-of-service/public">Terms of Service</a>.
+ 
+Your use of Stack Overflow’s Products and Services, including the Stack 
+Overflow Network, is subject to these policies and terms.
+                </p>
+            </div>
+            <div class="grid--cell ml-auto" aria-label="notice-dismiss">
+                <button class="s-btn s-btn__inverted fc-white bg-black-700 baw0 p16 js-notice-close" role="status" aria-hidden="true">
+                    <svg aria-hidden="true" class="svg-icon m0 iconClearSm" width="14" height="14" viewBox="0 0 14 14"><path d="M12 3.41L10.59 2 7 5.59 3.41 2 2 3.41 5.59 7 2 10.59 3.41 12 7 8.41 10.59 12 12 10.59 8.41 7z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        StackExchange.ready(function () { StackExchange.topbar.init({ observeSize: false }); });
+        StackExchange.scrollPadding.setPaddingTop(60, 10);     </script>
+
+
+    
+
+
+    <div class="container  ">
+                
+        <div id="content" class="snippet-hidden">
+
+
+            
+
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/br/img/apple-touch-icon.png?v=e57f45c9cfaf">
+
+    <div class="inner-content clearfix">
+            <div id="question-header">
+                    <h1 itemprop="name"><a href="https://pt.stackoverflow.com/questions/40051/como-usar-namespace-numa-classe" class="question-hyperlink">Como usar namespace numa Classe?</a></h1>
+
+            
+
+
+
+<div class="pl8 aside-cta" role="navigation" aria-label="fazer uma nova pergunta">
+            <a href="https://pt.stackoverflow.com/questions/ask" class="ws-nowrap btn-outlined">Faça uma pergunta</a>
+</div>
+
+        </div>
+            <div id="mainbar" role="main" aria-label="pergunta e respostas">
+
+            
+
+<div class="question" data-questionid="40051" id="question">
+
+    <style>.everyoneloves__top-leaderboard:empty,.everyoneloves__mid-leaderboard:empty{                margin-bottom:0;
+}</style>
+        <div id="dfp-tlb" class="everyonelovesstackoverflow everyoneloves__top-leaderboard" style="" data-google-query-id="COHV-pDA1dsCFRIKgQodT8sMZg" data-clc-prefilled="true" data-clc-ready="true"><div id="google_ads_iframe_/248424177/pt.stackoverflow.com/lb/question-pages_0__container__" style="border: 0pt none; display: inline-block; width: 728px; height: 90px;"><iframe style="border: 0px none; vertical-align: bottom;" src="php%20-%20Como%20usar%20namespace%20numa%20Classe%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/container.htm" id="google_ads_iframe_/248424177/pt.stackoverflow.com/lb/question-pages_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" data-is-safeframe="true" width="728" height="90" frameborder="0"></iframe></div></div>
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="vote">
+        <input name="_id_" value="40051" type="hidden">
+        <a class="vote-up-off" title="Esta pergunta mostra esforço de pesquisa; é útil e clara">votar a favor</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">9</span>
+        <a class="vote-down-off" title="Esta pergunta não mostra nenhum esforço de pesquisa; ela não é clara ou não é útil">votar contra</a>
+
+        <a class="star-off" href="#">favorita</a>
+        <div class="favoritecount"><b>1</b></div>
+
+
+</div>
+
+            </div>
+
+            
+<div class="postcell post-layout--right">
+    <div class="post-text" itemprop="text">
+
+<p>Eu estou a usar o <a href="http://docs.aws.amazon.com/aws-sdk-php/guide/latest/service-s3.html" rel="nofollow">AWS SDK for PHP da Amazon</a> e para isso eu preciso da classe <code>S3Client</code>.</p>
+
+<p>Eu estava a ver um exemplo de upload para a amazon e fazia assim:</p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="kwd">require</span><span class="pln"> </span><span class="str">'../aws/aws-autoloader.php'</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">use</span><span class="pln"> </span><span class="typ">Aws</span><span class="pln">\S</span><span class="lit">3</span><span class="pln">\S</span><span class="lit">3Client</span><span class="pun">;</span><span class="pln">
+
+$s3 </span><span class="pun">=</span><span class="pln"> S3Client</span><span class="pun">::</span><span class="pln">factory</span><span class="pun">(</span><span class="pln">$config</span><span class="pun">);</span></code></pre>
+
+<p>Agora queria incluir o <code>S3Client</code> na minha classe de comunicação com a amazon (<code>ConnectionCloud</code>).
+O problema é que dá o seguinte erro:</p>
+
+<blockquote>
+  <p>PHP Fatal error:  Class 'S3Client' not found</p>
+</blockquote>
+
+<p>Como é que eu declaro a classe 
+ 'S3Client' dentro da minha classe <code>ConnectionCloud</code>? </p>
+    </div>
+    <div class="post-taglist">
+        <a href="https://pt.stackoverflow.com/questions/tagged/php" class="post-tag js-gps-track" title="mostrar perguntas com a tag 'php'" rel="tag">php</a> <a href="https://pt.stackoverflow.com/questions/tagged/orienta%c3%a7%c3%a3o-a-objetos" class="post-tag js-gps-track" title="mostrar perguntas com a tag 'orientação-a-objetos'" rel="tag">orientação-a-objetos</a> <a href="https://pt.stackoverflow.com/questions/tagged/aws" class="post-tag js-gps-track" title="mostrar perguntas com a tag 'aws'" rel="tag">aws</a> 
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://pt.stackoverflow.com/q/40051" title="permalink curto para esta pergunta" class="short-link" id="link-post-40051">compartilhar</a><span class="lsep">|</span><a href="https://pt.stackoverflow.com/posts/40051/edit" class="suggest-edit-post" title="">melhorar esta pergunta</a></div>        
+    </div>
+
+    <div class="post-signature grid--cell fl0">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="https://pt.stackoverflow.com/posts/40051/revisions" title="mostrar todas as edições desta publicação">editada <span title="2015-02-21 21:36:15Z" class="relativetime">21/02/15 às 21:36</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://pt.stackoverflow.com/users/101/maniero"><div class="gravatar-wrapper-32"><img src="php%20-%20Como%20usar%20namespace%20numa%20Classe%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/jmxoN.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://pt.stackoverflow.com/users/101/maniero">Maniero</a><span class="mod-flair" title="moderador">♦</span>
+        <div class="-flair">
+            <span class="reputation-score" title="pontos de reputação 273.541" dir="ltr">274mil</span><span title="45 medalhas de ouro"><span class="badge1"></span><span class="badgecount">45</span></span><span title="681 medalhas de prata"><span class="badge2"></span><span class="badgecount">681</span></span><span title="1049 medalhas de bronze"><span class="badge3"></span><span class="badgecount">1049</span></span>
+        </div>
+    </div>
+</div>    </div>
+    <div class="post-signature owner grid--cell fl0">
+        <div class="user-info user-hover">
+    <div class="user-action-time">
+        perguntada <span title="2014-11-11 12:37:50Z" class="relativetime">11/11/14 às 12:37</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://pt.stackoverflow.com/users/7210/jorge-b"><div class="gravatar-wrapper-32"><img src="php%20-%20Como%20usar%20namespace%20numa%20Classe%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/1pNOP.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://pt.stackoverflow.com/users/7210/jorge-b">Jorge B.</a>
+        <div class="-flair">
+            <span class="reputation-score" title="pontos de reputação " dir="ltr">8.143</span><span title="4 medalhas de ouro"><span class="badge1"></span><span class="badgecount">4</span></span><span title="28 medalhas de prata"><span class="badge2"></span><span class="badgecount">28</span></span><span title="66 medalhas de bronze"><span class="badge3"></span><span class="badgecount">66</span></span>
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+</div>
+
+                
+    <div class="post-layout--right">
+	    <div id="comments-40051" class="comments js-comments-container ">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="12" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <li id="comment-78535" class="comment js-comment " data-comment-id="78535">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="número de votos para 'comentários úteis' recebidos" class="cool">4</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Até hoje to tentando entender
+ o funcionamento desses name spaces e autoloader, sempre da algum tipo 
+de erro quando vou usar, se alguem tiver um bom tutorial pra indicar 
+estou aceitando</span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/5818/rodrigoborth" title="2.534 reputation" class="comment-user">RodrigoBorth</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment78535_40051"><span title="2014-11-11 12:59:01Z" class="relativetime-clean">11/11/14 às 12:59</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-78547" class="comment js-comment " data-comment-id="78547">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">vocÊ já tentou remover o use e fazer assim: $s3 = Aws\S3\S3Cliente::factory($config);</span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/14919/jlhertel" title="3.200 reputation" class="comment-user">jlHertel</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment78547_40051"><span title="2014-11-11 13:36:22Z" class="relativetime-clean">11/11/14 às 13:36</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-78567" class="comment js-comment " data-comment-id="78567">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@Kaminary dá:  &gt; PHP Fatal error:  Class 'Aws\\S3\\S3Cliente' not found</span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/7210/jorge-b" title="8.143 reputation" class="comment-user owner">Jorge B.</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment78567_40051"><span title="2014-11-11 14:27:37Z" class="relativetime-clean">11/11/14 às 14:27</span></a></span>
+                        <span class="edited-yes" title="Este comentário foi editado 1 vez"></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-78584" class="comment js-comment " data-comment-id="78584">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Consegue instanciar colocando uma barra no início do namespace? Assim: <code>use \Aws\S3\S3Client;</code></span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/2081/rodrigo-rigotti" title="10.019 reputation" class="comment-user">Rodrigo Rigotti</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment78584_40051"><span title="2014-11-11 15:01:46Z" class="relativetime-clean">11/11/14 às 15:01</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-78592" class="comment js-comment " data-comment-id="78592">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Não porque dentro da minha Classe não sei como instanciar a <code>S3Client</code>.</span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/7210/jorge-b" title="8.143 reputation" class="comment-user owner">Jorge B.</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment78592_40051"><span title="2014-11-11 15:33:50Z" class="relativetime-clean">11/11/14 às 15:33</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+            </ul>
+	    </div>
+
+        <div id="comments-link-40051" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link  dno" title="Use comentários para pedir mais informações ou sugerir melhorias. Evite responder perguntas em comentários."></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link " title="ver todos os comentários desta publicação" href="#" onclick="">mostrar mais <b>12</b> comentários</a>
+        </div>         
+    </div>        </div>
+</div>
+
+
+
+        <div id="answers">
+
+                <a name="tab-top"></a>
+                <div id="answers-header">
+                    <div class="subheader answers-subheader">
+                        <h2 data-answercount="1">
+                                1 Resposta
+                                <span style="display:none;" itemprop="answerCount">1</span>
+                        </h2>
+                        <div>
+                            
+<div id="tabs">
+        <a href="https://pt.stackoverflow.com/questions/40051/como-usar-namespace-numa-classe?answertab=active#tab-top" data-nav-xhref="" title="Respostas com a atividade mais recente primeiro" data-value="active" data-shortcut="A">
+            ativas</a>
+        <a href="https://pt.stackoverflow.com/questions/40051/como-usar-namespace-numa-classe?answertab=oldest#tab-top" data-nav-xhref="" title="Respostas na ordem em que foram fornecidas" data-value="oldest" data-shortcut="O">
+            mais antigas</a>
+        <a class="youarehere " href="https://pt.stackoverflow.com/questions/40051/como-usar-namespace-numa-classe?answertab=votes#tab-top" data-nav-xhref="" title="Respostas com a pontuação mais alta primeiro" data-value="votes" data-shortcut="V">
+            votos</a>
+    </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+  
+<a name="40511"></a>
+<div id="answer-40511" class="answer accepted-answer" data-answerid="40511" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="vote">
+        <input name="_id_" value="40511" type="hidden">
+        <a class="vote-up-off" title="Esta resposta é útil">votar a favor</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">9</span>
+        <a class="vote-down-off" title="Esta resposta não é útil">votar contra</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="carregando quando esta resposta foi aceita...">aceitos</span>
+
+</div>
+
+            </div>
+            
+
+
+<div class="answercell post-layout--right">
+    <div class="post-text" itemprop="text">
+<p>O seu erro provavelmente está na implementação do autoload que não está encontrando a classe solicitada no <code>use</code>.</p>
+
+<p>Utilize o <a href="https://getcomposer.org/" rel="nofollow noreferrer">Composer</a>
+ para gerenciar suas dependências e classes ao trabalhar com namespaces 
+em PHP. Como ele já inclui um autoload que suporta os padrões da 
+comunidade, você não terá maiores problemas ao trabalhar bibliotecas 
+externas:</p>
+
+<p>Arquivo <code>index.php</code></p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="pun">&lt;?</span><span class="pln">php
+
+</span><span class="com">// Autoload do Composer</span><span class="pln">
+</span><span class="kwd">require</span><span class="pln"> </span><span class="str">'vendor/autoload.php'</span><span class="pun">;</span><span class="pln">
+
+</span><span class="com">// Instancio uma classe qualquer</span><span class="pln">
+$cloud </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">MyApp</span><span class="pln">\CloudProvider</span><span class="pun">();</span><span class="pln">
+
+echo $cloud</span><span class="pun">-&gt;</span><span class="pln">getProviderClass</span><span class="pun">();</span></code></pre>
+
+<p>Classe <code>CloudProvider.php</code></p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="pun">&lt;?</span><span class="pln">php </span><span class="kwd">namespace</span><span class="pln"> </span><span class="typ">MyApp</span><span class="pun">;</span><span class="pln">
+
+</span><span class="com">// Minha classe está acessando uma biblioteca externa, localizada na pasta vendor</span><span class="pln">
+</span><span class="kwd">use</span><span class="pln"> </span><span class="typ">Aws</span><span class="pln">\S</span><span class="lit">3</span><span class="pln">\S</span><span class="lit">3Client</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">CloudProvider</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+    </span><span class="kwd">protected</span><span class="pln"> $provider</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> __construct</span><span class="pun">(</span><span class="pln">$config</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        $this</span><span class="pun">-&gt;</span><span class="pln">provider </span><span class="pun">=</span><span class="pln"> S3Client</span><span class="pun">::</span><span class="pln">factory</span><span class="pun">(</span><span class="pln">$config</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> getProviderClass</span><span class="pun">()</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> get_class</span><span class="pun">(</span><span class="pln">$this</span><span class="pun">-&gt;</span><span class="pln">provider</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+</span><span class="pun">}</span></code></pre>
+
+<p><code>composer.json</code>: configuração do Composer</p>
+
+<pre class="lang-php prettyprint prettyprinted" style=""><code><span class="pun">{</span><span class="pln">
+    </span><span class="str">"require"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="str">"aws/aws-sdk-php"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"2.7.*"</span><span class="pln">
+    </span><span class="pun">},</span><span class="pln">
+    </span><span class="str">"autoload"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="str">"psr-4"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="str">"MyApp\\"</span><span class="pun">:</span><span class="pln"> </span><span class="str">""</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>Exemplo: <a href="https://github.com/gmsantos/namespace" rel="nofollow noreferrer">https://github.com/gmsantos/namespace</a></p>
+
+<h2>Explicação</h2>
+
+<p>Para fazer uso de namespaces em PHP de forma automática, sem precisar incluir arquivos via <code>require</code>,  precisamos implementar no PHP um <code>autoload</code> e seguir uma convenção para nomear nossas classes e a estrutura de pastas. <a href="https://pt.stackoverflow.com/a/29088/4751">Nessa resposta</a> temos uma implementação simples de autoload. </p>
+
+<p>Observe que mesmo em um implementação simples, existe um padrão para 
+nomearmos as classes. A comunidade PHP adota alguns padrões com regras 
+específicas conhecidas como PSR-0 e PSR-4 (<a href="https://pt.stackoverflow.com/questions/32295/o-que-significa-psr/32302#32302">mais sobre PSR</a>) para nomearmos classes e pastas.</p>
+
+<p>Para não precisarmos implementar o autoload em todos nosso projetos 
+manualmente, podemos usar uma implementação pronta. A mais utilizada é o
+ <a href="https://getcomposer.org/" rel="nofollow noreferrer">Composer</a>, que além de ser compatível com os padrões acima, é também um <a href="https://pt.wikipedia.org/wiki/Sistema_gestor_de_pacotes" rel="nofollow noreferrer">gerenciador de dependência</a>.</p>
+
+<p>Após instalar o Composer, basta criar um arquivo <code>composer.json</code> e dentro dele configurar o <code>namespace</code> da sua aplicação e o path dos seus arquivos. Ele irá criar uma pasta <code>vendor</code> no seu projeto, que incluí as dependências do seu projeto e um <code>autoload.php</code> pronto pra usar.</p>
+
+<p>Mais informação de como instalar o Composer e utilizá você pode encontrar <a href="http://br.phptherightway.com/#gerenciamento_de_dependencia" rel="nofollow noreferrer">aqui</a> e também na <a href="https://getcomposer.org/doc/00-intro.md" rel="nofollow noreferrer">documentação<sup>en</sup></a>.</p>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://pt.stackoverflow.com/a/40511" title="permalink curto para esta resposta" class="short-link" id="link-post-40511">compartilhar</a><span class="lsep">|</span><a href="https://pt.stackoverflow.com/posts/40511/edit" class="suggest-edit-post" title="">melhorar esta resposta</a></div>                    </div>
+    <div class="post-signature grid--cell fl0">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="https://pt.stackoverflow.com/posts/40511/revisions" title="mostrar todas as edições desta publicação">editada <span title="2017-04-13 12:59:31Z" class="relativetime">13/04/17 às 12:59</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://pt.stackoverflow.com/users/-1/comunidade"><div class="gravatar-wrapper-32"><img src="php%20-%20Como%20usar%20namespace%20numa%20Classe%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/a007be5a61f6aa8f3e85ae2fc18dd66e.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://pt.stackoverflow.com/users/-1/comunidade">Comunidade</a><span class="mod-flair" title="moderador">♦</span>
+        <div class="-flair">
+            <span class="reputation-score" title="pontos de reputação " dir="ltr">1</span>
+        </div>
+    </div>
+</div>    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        respondida <span title="2014-11-14 16:49:47Z" class="relativetime">14/11/14 às 16:49</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://pt.stackoverflow.com/users/4751/gmsantos"><div class="gravatar-wrapper-32"><img src="php%20-%20Como%20usar%20namespace%20numa%20Classe%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/f711447a45702beb73f2033dc260ad58.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://pt.stackoverflow.com/users/4751/gmsantos">gmsantos</a>
+        <div class="-flair">
+            <span class="reputation-score" title="pontos de reputação 13.943" dir="ltr">13,9mil</span><span title="5 medalhas de ouro"><span class="badge1"></span><span class="badgecount">5</span></span><span title="35 medalhas de prata"><span class="badge2"></span><span class="badgecount">35</span></span><span title="66 medalhas de bronze"><span class="badge3"></span><span class="badgecount">66</span></span>
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+</div>
+    
+    <div class="post-layout--right">
+	    <div id="comments-40511" class="comments js-comments-container ">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <li id="comment-79675" class="comment js-comment " data-comment-id="79675">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Eu ainda acho que ele não 
+estava incluindo o arquivo com o mapeamento class/path (que já incluia 
+um autoloader) ou tinha algum outro autoloader, muito provavelmente um 
+definido com a função __autoload(), sobrescrevendo esse um.</span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/250/bruno-augusto" title="7.557 reputation" class="comment-user">Bruno Augusto</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment79675_40511"><span title="2014-11-14 17:40:26Z" class="relativetime-clean">14/11/14 às 17:40</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+            </ul>
+	    </div>
+
+        <div id="comments-link-40511" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comentários para pedir mais informações ou sugerir melhorias. Evite comentários como “+1” ou “obrigado”.">comentar</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="ver todos os comentários desta publicação" href="#" onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+                                    <a name="new-answer"></a>
+                        <form id="post-form" action="/questions/40051/answer/submit" method="post" class="post-form">
+                            <input id="post-id" value="40051" type="hidden">
+                            <input id="qualityBanWarningShown" name="qualityBanWarningShown" value="false" type="hidden">
+                            <input name="referrer" value="https://www.google.com/" type="hidden">
+                            <h2 class="space">Sua resposta</h2>
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        var channelOptions = {
+            tags: "".split(" "),
+            id: "526"
+        };
+        initTagRenderer("".split(" "), "".split(" "), channelOptions);
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.settings.snippets.snippetsEnabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                StackExchange.prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: false,
+                noModals: false,
+                showLowRepImageUploadWarning: true,
+                reputationToPostImages: null,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;"> 
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li><li class="wmd-spacer wmd-spacer-max"></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">rascunho salvo</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">rascunho descartado</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="06429704a6711243a60c2f7d47eaa4aefb56d05fb44bc4ca37b4c5799c4bbad4" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+
+                            <div style="position: relative;">
+                                
+                                            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Registre-se ou faça <a id="login-link" href="https://pt.stackoverflow.com/users/login?ssrc=question_page&amp;returnurl=https%3a%2f%2fpt.stackoverflow.com%2fquestions%2f40051%2fcomo-usar-namespace-numa-classe%23new-answer">log-in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login" data-ga="[&quot;sign up&quot;,&quot;Sign Up Started - Google&quot;,&quot;New Post&quot;,null,null]">
+                            <svg aria-hidden="true" class="svg-icon native iconGoogle" width="18" height="18" viewBox="0 0 18 18"><g><path d="M16.51 8H8.98v3h4.3c-.18 1-.74 1.48-1.6 2.04v2.01h2.6a7.8 7.8 0 0 0 2.38-5.88c0-.57-.05-.66-.15-1.18z" fill="#4285F4"></path><path d="M8.98 17c2.16 0 3.97-.72 5.3-1.94l-2.6-2a4.8 4.8 0 0 1-7.18-2.54H1.83v2.07A8 8 0 0 0 8.98 17z" fill="#34A853"></path><path d="M4.5 10.52a4.8 4.8 0 0 1 0-3.04V5.41H1.83a8 8 0 0 0 0 7.18l2.67-2.07z" fill="#FBBC05"></path><path d="M8.98 4.18c1.17 0 2.23.4 3.06 1.2l2.3-2.3A8 8 0 0 0 1.83 5.4L4.5 7.49a4.77 4.77 0 0 1 4.48-3.3z" fill="#EA4335"></path></g></svg> Registre-se usando o Google
+                        </div>
+                        <div class="preferred-login facebook-login" data-ga="[&quot;sign up&quot;,&quot;Sign Up Started - Facebook&quot;,&quot;New Post&quot;,null,null]">
+                            <svg aria-hidden="true" class="svg-icon iconFacebook" width="18" height="18" viewBox="0 0 18 18"><path d="M1.88 1C1.4 1 1 1.4 1 1.88v14.24c0 .48.4.88.88.88h7.67v-6.2H7.46V8.4h2.09V6.61c0-2.07 1.26-3.2 3.1-3.2.88 0 1.64.07 1.87.1v2.16h-1.29c-1 0-1.19.48-1.19 1.18V8.4h2.39l-.31 2.42h-2.08V17h4.08c.48 0 .88-.4.88-.88V1.88c0-.48-.4-.88-.88-.88H1.88z" fill="#3C5A96"></path></svg> Registre-se usando o Facebook
+                        </div>
+                        <div class="preferred-login stackexchange-login" data-ga="[&quot;sign up&quot;,&quot;Sign Up Navigation&quot;,&quot;New Post&quot;,null,null]">
+                            <svg aria-hidden="true" class="svg-icon native iconLogoGlyphXSm" width="18" height="18" viewBox="0 0 18 18"><g><path fill="#BCBBBB" d="M14 16v-5h2v7H2v-7h2v5z"></path><path d="M5 15v-2h8v2H5zM12.09.72l4.5 6.06-1.2.9-4.51-6.06 1.21-.9zM8.34 4.3l.97-1.16 5.8 4.83-.96 1.16-5.8-4.83zm-1.9 3.36l.64-1.37 6.85 3.19-.63 1.37-6.85-3.2zM5.4 11.39l.38-1.67 7.42 1.48-.22 1.46-7.58-1.27z" fill="#F48024"></path></g></svg> Registre-se usando Email e Senha
+                        </div>
+                    </div>
+                    <input name="manual-openid" class="manual-openid" type="hidden">
+                    <input name="use-facebook" class="use-facebook" value="false" type="hidden">
+                    <input name="use-google" class="use-google" value="false" type="hidden">
+                    <input class="submit-openid" value="Submit" style="display:none" type="button">
+                    <div class="new-login-right">
+                                <h3>Publicar como convidado</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Nome</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">E-mail</label>
+                    <input id="m-address" name="m-address" size="30" maxlength="100" tabindex="106" placeholder="exigido, mas nunca exibido" type="email">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'https%3a%2f%2fpt.stackoverflow.com%2fquestions%2f40051%2fcomo-usar-namespace-numa-classe%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3>Publicar como convidado</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Nome</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">E-mail</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="exigido, mas nunca exibido" />
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+            </noscript>
+
+                            </div>
+
+                                                            <div class="form-submit cbt">
+                                            <input id="submit-button" value="Publique sua resposta" tabindex="110" type="submit">
+                                        <a href="#" class="btn-clear discard-answer dno">descartar</a>
+                                                                            <p class="privacy-policy-agreement">
+                                            
+
+By clicking "Publique sua resposta", you acknowledge that you have read our updated <a href="https://stackoverflow.com/legal/terms-of-service/public" name="tos" target="_blank" class="-link">terms of service</a>, <a href="https://stackoverflow.com/legal/privacy-policy" name="privacy" target="_blank" class="-link">privacy policy</a> and <a href="https://stackoverflow.com/legal/cookie-policy" name="cookie" target="_blank" class="-link">cookie policy</a>, and that your continued use of the website is subject to these policies.
+
+<input name="legalLinksShown" value="1" type="hidden">
+                                        </p>
+                                </div>
+                        </form>
+
+
+
+                        <h2 class="bottom-notice" data-loc="1">
+Esta não é a resposta que você está procurando?                            Pesquise outras perguntas com a tag <a href="https://pt.stackoverflow.com/questions/tagged/php" class="post-tag" title="mostrar perguntas com a tag 'php'" rel="tag">php</a> <a href="https://pt.stackoverflow.com/questions/tagged/orienta%c3%a7%c3%a3o-a-objetos" class="post-tag" title="mostrar perguntas com a tag 'orientação-a-objetos'" rel="tag">orientação-a-objetos</a> <a href="https://pt.stackoverflow.com/questions/tagged/aws" class="post-tag" title="mostrar perguntas com a tag 'aws'" rel="tag">aws</a>  ou <a href="https://pt.stackoverflow.com/questions/ask">faça sua própria pergunta</a>.                        </h2>
+            </div>
+        </div>
+                <div id="sidebar" class="show-votes" role="complementary" aria-label="barra lateral">
+                            <div class="module question-stats">
+                    <table id="qinfo">
+                        <tbody><tr>
+                            <td>
+                                <p class="label-key">perguntada</p>
+                            </td>
+                            <td style="padding-left: 10px">
+                                <p class="label-key" title="2014-11-11 12:37:50Z"><b>3 anos, 7 meses atrás</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="label-key">acessada</p>
+                            </td>
+
+                            <td style="padding-left: 10px">
+                                <p class="label-key">
+                                    <b>2.282 vezes</b>
+                                </p>
+                            </td>
+                        </tr>
+                            <tr>
+                                <td>
+                                    <p class="label-key">ativas</p>
+                                </td>
+                                <td style="padding-left: 10px">
+                                    <p class="label-key"><b><a href="https://pt.stackoverflow.com/questions/40051/como-usar-namespace-numa-classe?lastactivity" class="lastactivity-link" title="2015-10-23 15:51:07Z">2 anos, 7 meses atrás</a></b></p>
+                                </td>
+                            </tr>
+                    </tbody></table>
+                </div>
+            
+            
+<div id="dfp-tsb" class="everyonelovesstackoverflow everyoneloves__top-sidebar" style="display: none;" data-google-query-id="COLV-pDA1dsCFRIKgQodT8sMZg" data-clc-prefilled="true" data-clc-ready="true"><div id="google_ads_iframe_/248424177/pt.stackoverflow.com/sb/question-pages_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/248424177/pt.stackoverflow.com/sb/question-pages_0" title="3rd party ad content" name="google_ads_iframe_/248424177/pt.stackoverflow.com/sb/question-pages_0" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom;" srcdoc="" width="300" height="250" frameborder="0"></iframe></div></div>
+<script>;try{(function(a){function b(a){return'string'==typeof a?document.getElementById(a):a}function c(a){return a=b(a),!!a&&'none'===getComputedStyle(a).display}function d(a){return!c(a)}function e(a){return!!a}function f(a){return /^\s*$/.test(b(a).innerHTML)}function g(a){var b=a.style;b.height=b.maxHeight=b.minHeight='auto',b.display='none',[].forEach.call(a.children,g)}function h(a,b){var c;return function(){return a&&(c=a.call(b||this,arguments),a=null),c}}function i(a){var b=document.createElement('script');b.src=a,document.body.appendChild(b)}function j(a){return k([],a)}function k(a,b){return a.push=function(a){return b(),delete this.push,this.push(a)},a}function l(){try{return!new Function('return async()=>{};')}catch(a){return!0}}function m(){return'undefined'!=typeof googletag&&!!googletag.apiReady}function n(){m()||(googletag={cmd:j(A)})}function o(){var a=document.createElement('div');a.className='adsbox',a.id='clc-abd',a.style.position='absolute',a.style.pointerEvents='none',a.innerHTML='&nbsp;',document.body.appendChild(a)}function p(a){var b=a.serviceName,c=a.slot,d=a.lineItemId;try{var e=c.getSlotElementId(),f=[];e||f.push('id=0');var h=document.getElementById(e);if(!e||h?h.hasAttribute('data-clc-stalled')&&f.push('st=1'):f.push('el=0'),0!==f.length)return void B(f.join('&'));-1===x.dh.indexOf(d)?h.setAttribute('data-clc-prefilled','true'):g(h),h.setAttribute('data-clc-ready','true')}catch(a){var i=document.querySelector('#dfp-tsb, #dfp-isb, #clc-tsb');i&&i.setAttribute('data-clc-ready','true'),B('e=1')}}function q(){return Object.keys(F.ids)}function r(a){var b=F.ids[a],c=F.slots[b];'function'==typeof c&&(c=c(a));return{path:'/'+C+'/'+E+'/'+b+'/'+D,sizes:c,zone:b}}function s(a){return!(clc.collapse&&void 0!==clc.collapse[a])||!!clc.collapse[a]}function t(a,b){'dfp-isb'===a&&b.setTargeting('Sidebar',['Inline']),'dfp-tsb'===a&&b.setTargeting('Sidebar',['Right']);var c=r(a),d=c.path,e=c.sizes,f=c.zone,g=googletag.defineSlot(d,e,a);s(f)&&g.setCollapseEmptyDiv(!0,!0),g.addService(b),!1}function u(b){var c=a.dfp&&a.dfp.targeting||{};Object.keys(c).forEach(function(a){b.setTargeting(a,c[a])})}function v(a){var g=a.map(b).filter(e);return{eligible:g.filter(f).filter(d).map(function(a){return a.id}),ineligible:g.filter(c)}}function w(b){if(void 0===b&&(b=q()),!m())return n(),void googletag.cmd.push(function(){return w(b)});var c=v(b),d=c.eligible,e=c.ineligible;if(e.forEach(g),0!==d.length){o(),googletag.destroySlots();var f=googletag.pubads();f.enableSingleRequest(),a.sreEvent||(f.addEventListener('slotRenderEnded',p),a.sreEvent=!0),u(f),d.forEach(function(a){return t(a,f)}),googletag.enableServices(),d.forEach(function(a){googletag.display(a)})}}var x=function(a){for(var b=[],c=1;c<arguments.length;c++)b[c-1]=arguments[c];for(var d,e=0,f=b;e<f.length;e++)for(var g in d=f[e],d)a[g]=d[g];return a}({"lib":"https://cdn.sstatic.net/clc/clc.min.js?v=04d772c81312","style":"https://cdn.sstatic.net/clc/styles/clc.min.css?v=8a0a093a431f","u":"https://clc.stackoverflow.com/markup.js","wa":true,"kt":2000,"tto":true,"h":"clc.stackoverflow.com","allowed":"^(((talent\\.)?stackoverflow)|(blog\\.codinghorror)|(serverfault|askubuntu)|([^\\.]+\\.stackexchange))\\.com$","wv":true,"al":false,"dh":[4385506061,4386578282,4386579572]},a.options||{}),y=h(function(){i(l()?x.lib.replace(/(\.min)?\.js(\?v=[0-9a-fA-F]+)?$/,'.ie$1.js$2'):x.lib)}),z=a.cmd||[];Array.isArray(z)&&(0<z.length?y():k(z,y));var A=h(function(){i('https://www.googletagservices.com/tag/js/gpt.js')}),B=function(a){new Image().src='https://'+x.h+'/stalled.gif?'+a},C='248424177',D=/^\/tags\//.test(location.pathname)||/^\/questions\/tagged\//.test(location.pathname)?'tag-pages':'question-pages',E=location.hostname;var F={slots:{lb:[[728,90]],mlb:[[728,90]],sb:function(a){return'dfp-tsb'===a?[[300,250],[300,600]]:[[300,250]]},"tag-sponsorship":[[730,135]],"mobile-below-question":[[320,50],[300,250]]},ids:{"dfp-tlb":'lb',"dfp-mlb":'mlb',"dfp-tsb":'sb',"dfp-isb":'sb',"dfp-tag":'tag-sponsorship',"dfp-m-aq":'mobile-below-question',"clc-tlb":'lb',"clc-mlb":'mlb',"clc-tsb":'sb'}};(function(){x.al&&z.push(function(){return a.load()})})(),n();a.cmd=z,a.dfp={load:w},a.options=x})(this.clc=this.clc||{})}catch(a){window.console.error(a)}</script>            <script>
+                var clc = clc || {};
+                clc.collapse = { sb: !0,'tag-sponsorship':!0,lb:!0,mlb:!0,'mobile-below-question':!0};
+                                clc.dfp = clc.dfp || {};
+                clc.dfp.targeting = {Registered:['false'],'pt.so-tag':['php','orientação-a-objetos','aws']};
+                
+                var googletag = googletag || {};
+                googletag.cmd = googletag.cmd || [];
+                googletag.cmd.push(function () { clc.dfp.load(); });
+            </script>
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Vinculado</h4>
+	<div class="linked" data-tracker="lq=1">
+
+<div class="spacer">
+	<a href="https://pt.stackoverflow.com/q/32295?lq=1" title="Contagem de votos (a favor - contra)">
+		<div class="answer-votes answered-accepted default">8</div>
+	</a>
+	<a href="https://pt.stackoverflow.com/questions/32295/o-que-significa-psr?noredirect=1&amp;lq=1" class="question-hyperlink">O que significa PSR?</a>
+</div>
+<div class="spacer">
+	<a href="https://pt.stackoverflow.com/q/149089?lq=1" title="Contagem de votos (a favor - contra)">
+		<div class="answer-votes answered-accepted default">1</div>
+	</a>
+	<a href="https://pt.stackoverflow.com/questions/149089/como-listar-arquivos-em-um-diret%c3%b3rio?noredirect=1&amp;lq=1" class="question-hyperlink">Como listar arquivos em um diretório?</a>
+</div>
+<div class="spacer">
+	<a href="https://pt.stackoverflow.com/q/29086?lq=1" title="Contagem de votos (a favor - contra)">
+		<div class="answer-votes answered-accepted default">1</div>
+	</a>
+	<a href="https://pt.stackoverflow.com/questions/29086/problema-com-namespace-ao-rodar-projeto?noredirect=1&amp;lq=1" class="question-hyperlink">problema com namespace ao rodar projeto</a>
+</div>
+<div class="spacer">
+	<a href="https://pt.stackoverflow.com/q/42609?lq=1" title="Contagem de votos (a favor - contra)">
+		<div class="answer-votes answered-accepted default">2</div>
+	</a>
+	<a href="https://pt.stackoverflow.com/questions/42609/o-meu-sessionhandler-n%c3%a3o-me-permite-iniciar-a-sess%c3%a3o?noredirect=1&amp;lq=1" class="question-hyperlink">O meu SessionHandler não me permite iniciar a sessão</a>
+</div>			</div>
+</div>
+
+                <div class="module sidebar-related">
+                    <h4 id="h-related">Relacionado</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/40352?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes default">0</div></a><a href="https://pt.stackoverflow.com/questions/40352/limite-de-upload-para-aws-s3?rq=1" class="question-hyperlink">Limite de upload para AWS S3</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/105927?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes default">-4</div></a><a href="https://pt.stackoverflow.com/questions/105927/fatal-error-class-mail-not-found-in-xampp-php-pear-mail-mail-php?rq=1" class="question-hyperlink">Fatal error: Class 'Mail' not found in xampp\php\pear\Mail\mail.php</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/121863?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes default">0</div></a><a href="https://pt.stackoverflow.com/questions/121863/problemas-com-o-composer-e-laravel-5-0-no-mac-el-capitan?rq=1" class="question-hyperlink">Problemas com o Composer e Laravel 5.0 no Mac El Capitan</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/142285?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes default">1</div></a><a href="https://pt.stackoverflow.com/questions/142285/fatal-error-class-not-found-namespace-php?rq=1" class="question-hyperlink">Fatal Error Class not found - Namespace PHP</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/163660?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes answered-accepted default">4</div></a><a href="https://pt.stackoverflow.com/questions/163660/namespace-com-php?rq=1" class="question-hyperlink">namespace com php</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/194989?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes answered-accepted default">0</div></a><a href="https://pt.stackoverflow.com/questions/194989/autoload-do-composer-n%c3%a3o-encontra-classe?rq=1" class="question-hyperlink">Autoload do composer não encontra classe</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/211619?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes answered-accepted default">1</div></a><a href="https://pt.stackoverflow.com/questions/211619/instanciar-classe-dentro-do-arquivo-bootstrap-start-php-laravel-4-2?rq=1" class="question-hyperlink">Instanciar classe dentro do arquivo bootstrap/start.php Laravel 4.2?</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/250817?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes default">2</div></a><a href="https://pt.stackoverflow.com/questions/250817/problema-com-namespace-e-pdo?rq=1" class="question-hyperlink">problema com namespace e PDO</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/263480?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes answered-accepted default">0</div></a><a href="https://pt.stackoverflow.com/questions/263480/namespace-n%c3%a3o-funciona-no-php-5-5?rq=1" class="question-hyperlink">Namespace não funciona no php 5.5</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/302253?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes default">1</div></a><a href="https://pt.stackoverflow.com/questions/302253/autoload-do-composer-n%c3%a3o-encontra-classe-2?rq=1" class="question-hyperlink">Autoload do composer não encontra classe 2</a></div>
+                    </div>
+                </div>
+
+
+
+<div id="feed-link">
+    <a href="https://pt.stackoverflow.com/feeds/question/40051" title="feed desta pergunta e suas respostas">
+        <svg aria-hidden="true" class="svg-icon fc-orange-400 iconRss" width="18" height="18" viewBox="0 0 18 18"><path d="M1 3c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3zm14.5 12C15.5 8.1 9.9 2.5 3 2.5V5a10 10 0 0 1 10 10h2.5zm-5 0A7.5 7.5 0 0 0 3 7.5V10a5 5 0 0 1 5 5h2.5zm-5 0A2.5 2.5 0 0 0 3 12.5V15h2.5z"></path></svg>
+        feed da pergunta
+    </a>
+</div>
+        </div>
+    </div>
+<script>StackExchange.ready(function(){$.get('/posts/40051/ivc/de7d');});</script>
+<noscript><div><img src="/posts/40051/ivc/de7d" class="dno" alt="" width="0" height="0"></div></noscript><div style="display:none" id="prettify-lang">lang-php</div></div>
+
+
+        </div>
+    </div><script src="php%20-%20Como%20usar%20namespace%20numa%20Classe%20%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_arquivos/gpt.js"></script>
+
+    <footer id="footer" class="site-footer js-footer" role="contentinfo">
+        <div class="site-footer--container">
+            
+            <nav class="site-footer--nav">
+                    <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+                        <h5 class="-title"><a href="https://pt.stackoverflow.com/">Stack Overflow em Português</a></h5>
+                        <ul class="-list js-primary-footer-links">
+                                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 2 })" href="https://pt.stackoverflow.com/tour">Tour</a></li>
+                                <li class="-item"><a href="https://pt.stackoverflow.com/help" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 3 })">Ajuda</a></li>
+                                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 5 })" href="https://chat.stackexchange.com/?tab=site&amp;host=pt.stackoverflow.com">Chat</a></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 13 })" href="https://pt.stackoverflow.com/contact">Contato</a></li>
+                                <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 14 })" href="https://pt.meta.stackoverflow.com/">Feedback</a></li>
+                                                            <li class="-item"><a onclick='StackExchange.switchMobile("on")' class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 12 })">Móvel</a></li>
+                        </ul>
+                    </div>
+                <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+                    <h5 class="-title"><a class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">Empresa</a></h5>
+                    <ul class="-list">
+                                                    <li class="-item"><a href="https://stackoverflow.com/" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 15})">Stack Overflow</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 19 })">Stack Overflow Business</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 17})">Developer Jobs</a></li>
+                                <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">Sobre</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 27 })" href="https://stackoverflow.com/company/press">Imprensa</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 7 })" href="https://stackoverflow.com/legal">Legal</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 8 })" href="https://stackoverflow.com/legal/privacy-policy">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="site-footer--col site-footer--categories-nav site-footer--col__visible">
+                    <a href="#" class="site-footer--back js-footer-back"><svg aria-hidden="true" class="svg-icon iconArrowLeftAlt" width="18" height="18" viewBox="0 0 18 18"><path d="M10.58 16L12 14.59 6.4 9 12 3.41 10.57 2l-7 7z"></path></svg></a>
+                    <div>
+                        <h5 class="-title"><a href="https://stackexchange.com/">Stack Exchange<br> Network</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Technology">Technology</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Life / Arts">Life / Arts</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Culture / Recreation">Culture / Recreation</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Science">Science</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Other">Other</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="site-footer--categories">
+                    <div class="site-footer--col site-footer--category js-footer-col" data-name="Technology">
+        <ul class="-list">
+                <li class="-item"><a href="https://stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                <li class="-item"><a href="https://serverfault.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="system and network administrators">Server Fault</a></li>
+                <li class="-item"><a href="https://superuser.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="computer enthusiasts and power users">Super User</a></li>
+                <li class="-item"><a href="https://webapps.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of web applications">Web Applications</a></li>
+                <li class="-item"><a href="https://askubuntu.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                <li class="-item"><a href="https://webmasters.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="pro webmasters">Webmasters</a></li>
+                <li class="-item"><a href="https://gamedev.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and independent game developers">Game Development</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://tex.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                <li class="-item"><a href="https://softwareengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professionals, academics, and students working within the systems development life cycle">Software Engineering</a></li>
+                <li class="-item"><a href="https://unix.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                <li class="-item"><a href="https://apple.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                <li class="-item"><a href="https://wordpress.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="WordPress developers and administrators">WordPress Development</a></li>
+                <li class="-item"><a href="https://gis.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                <li class="-item"><a href="https://electronics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://android.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                <li class="-item"><a href="https://security.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="information security professionals">Information Security</a></li>
+                <li class="-item"><a href="https://dba.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                <li class="-item"><a href="https://drupal.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Drupal developers and administrators">Drupal Answers</a></li>
+                <li class="-item"><a href="https://sharepoint.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="SharePoint enthusiasts">SharePoint</a></li>
+                <li class="-item"><a href="https://ux.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="user experience researchers and experts">User Experience</a></li>
+                <li class="-item"><a href="https://mathematica.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Wolfram Mathematica">Mathematica</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://salesforce.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                <li class="-item"><a href="https://expressionengine.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                <li class="-item"><a href="https://pt.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programadores profissionais e entusiastas">Stack Overflow em Português</a></li>
+                <li class="-item"><a href="https://blender.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who use Blender to create 3D graphics, animations, or games">Blender</a></li>
+                <li class="-item"><a href="https://networkengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="network engineers">Network Engineering</a></li>
+                <li class="-item"><a href="https://crypto.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="software developers, mathematicians and others interested in cryptography">Cryptography</a></li>
+                <li class="-item"><a href="https://codereview.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="peer programmer code reviews">Code Review</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://magento.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of the Magento e-Commerce platform">Magento</a></li>
+                <li class="-item"><a href="https://softwarerecs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people seeking specific software recommendations">Software Recommendations</a></li>
+                <li class="-item"><a href="https://dsp.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="practitioners of the art and science of signal, image and video processing">Signal Processing</a></li>
+                <li class="-item"><a href="https://emacs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those using, extending or developing Emacs">Emacs</a></li>
+                <li class="-item"><a href="https://raspberrypi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users and developers of hardware and software for Raspberry Pi">Raspberry Pi</a></li>
+                <li class="-item"><a href="https://ru.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="программистов">Stack Overflow на русском</a></li>
+                <li class="-item"><a href="https://codegolf.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programming puzzle enthusiasts and code golfers">Programming Puzzles &amp; Code Golf</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://es.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programadores y profesionales de la informática">Stack Overflow en español</a></li>
+                <li class="-item"><a href="https://ethereum.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Ethereum, the decentralized application platform and smart contract enabled blockchain">Ethereum</a></li>
+                <li class="-item"><a href="https://datascience.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Data science professionals, Machine Learning specialists, and those interested in learning more about the field">Data Science</a></li>
+                <li class="-item"><a href="https://arduino.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="developers of open-source hardware and software that is compatible with Arduino">Arduino</a></li>
+                <li class="-item"><a href="https://bitcoin.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Bitcoin crypto-currency enthusiasts">Bitcoin</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#technology" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (30)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Life / Arts">
+        <ul class="-list">
+                <li class="-item"><a href="https://photo.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                <li class="-item"><a href="https://scifi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                <li class="-item"><a href="https://graphicdesign.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                <li class="-item"><a href="https://movies.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                <li class="-item"><a href="https://music.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="musicians, students, and enthusiasts">Music: Practice &amp; Theory</a></li>
+                <li class="-item"><a href="https://worldbuilding.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="writers/artists using science, geography and culture to construct imaginary worlds and settings">Worldbuilding</a></li>
+                <li class="-item"><a href="https://cooking.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Life / Arts"><ul class="-list">
+                <li class="-item"><a href="https://diy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="contractors and serious DIYers">Home Improvement</a></li>
+                <li class="-item"><a href="https://money.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                <li class="-item"><a href="https://academia.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="academics and those enrolled in higher education">Academia</a></li>
+                <li class="-item"><a href="https://law.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="legal professionals, students, and others with experience or interest in law">Law</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#lifearts" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (15)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Culture / Recreation">
+        <ul class="-list">
+                <li class="-item"><a href="https://english.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                <li class="-item"><a href="https://skeptics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientific skepticism">Skeptics</a></li>
+                <li class="-item"><a href="https://judaism.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                <li class="-item"><a href="https://travel.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="road warriors and seasoned travelers">Travel</a></li>
+                <li class="-item"><a href="https://christianity.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                <li class="-item"><a href="https://ell.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="speakers of other languages learning English">English Language Learners</a></li>
+                <li class="-item"><a href="https://japanese.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">Japanese Language</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Culture / Recreation"><ul class="-list">
+                <li class="-item"><a href="https://gaming.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                <li class="-item"><a href="https://bicycles.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                <li class="-item"><a href="https://rpg.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                <li class="-item"><a href="https://anime.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="anime and manga fans">Anime &amp; Manga</a></li>
+                <li class="-item"><a href="https://puzzling.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who create, solve, and study puzzles">Puzzling</a></li>
+                <li class="-item"><a href="https://mechanics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles">Motor Vehicle Maintenance &amp; Repair</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#culturerecreation" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (33)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Science">
+        <ul class="-list">
+                <li class="-item"><a href="https://mathoverflow.net/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional mathematicians">MathOverflow</a></li>
+                <li class="-item"><a href="https://math.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                <li class="-item"><a href="https://stats.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                <li class="-item"><a href="https://cstheory.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                <li class="-item"><a href="https://physics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="active researchers, academics and students of physics">Physics</a></li>
+                <li class="-item"><a href="https://chemistry.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientists, academics, teachers and students">Chemistry</a></li>
+                <li class="-item"><a href="https://biology.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="biology researchers, academics, and students">Biology</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Science"><ul class="-list">
+                <li class="-item"><a href="https://cs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, researchers and practitioners of computer science">Computer Science</a></li>
+                <li class="-item"><a href="https://philosophy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those interested in the study of the fundamental nature of knowledge, reality, and existence">Philosophy</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#science" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (10)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Other">
+        <ul class="-list">
+                <li class="-item"><a href="https://meta.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                <li class="-item"><a href="https://stackapps.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                <li class="-item"><a href="https://api.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programmatic interaction with Stack Exchange sites">API</a></li>
+                <li class="-item"><a href="https://data.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="querying Stack Exchange data using SQL">Data</a></li>
+                <li class="-item"><a href="https://area51.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                    </ul>
+    </div>
+                </div>
+            </nav>
+            <div class="site-footer--copyright fs-fine">
+                <ul class="-list">
+                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link:4 })" href="https://stackoverflow.blog/?blb=1">Blog</a></li>
+                    <li class="-item"><a href="https://www.facebook.com/officialstackoverflow/" class="-link">Facebook</a></li>
+                    <li class="-item"><a href="https://twitter.com/stackoverflow" class="-link">Twitter</a></li>
+                    <li class="-item"><a href="https://linkedin.com/company/stack-overflow" class="-link">LinkedIn</a></li>
+                </ul>
+
+                <p class="mt-auto mb24">
+site design / logo © 2018 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a>
+                            with <a href="https://stackoverflow.blog/2009/06/25/attribution-required/" rel="license">attribution required</a>.
+                    <span id="svnrev">rev&nbsp;2018.6.14.30752</span>
+                </p>
+            </div>
+        </div>
+
+            </footer>
+    <noscript>
+        <div id="noscript-warning">Stack Overflow em Portugu&#234;s funciona melhor com o JavaScript ativado
+            <img src="https://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno">
+        </div>
+    </noscript>
+
+<script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+            StackExchange.ready(function () {
+
+                StackExchange.ga.init({
+                    sendTitles: true,
+                    tracker: window.ga,
+                    trackingCodes: [
+                        'UA-108242619-5'
+                    ]
+                });
+
+
+
+                    StackExchange.ga.setDimension('dimension2', '|php|orienta&#231;&#227;o-a-objetos|aws|');
+
+                    StackExchange.ga.setDimension('dimension3', 'Questions/Show');
+
+
+                StackExchange.ga.trackPageView();
+            });
+            
+/**/
+            
+            var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+            (function() {
+                var ssl = 'https:' == document.location.protocol,
+                    s = document.getElementsByTagName('script')[0],
+                    qc = document.createElement('script');
+                 qc.async = true;
+                    qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                    s.parentNode.insertBefore(qc, s);
+                    _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+/**/
+                 var sc = document.createElement('script');
+                    sc.async = true;
+                    sc.src = (ssl ? 'https://sb' : 'http://b') + '.scorecardresearch.com/beacon.js';
+                    s.parentNode.insertBefore(sc, s);
+                    _comscore.push({ c1: "2", c2: "17440561" });
+            })();
+            
+
+</script>
+            
+    
+    
+<div class="adsbox" id="clc-abd" style="position: absolute; pointer-events: none;">&nbsp;</div><iframe id="google_osd_static_frame_1676268040805" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe></body></html>

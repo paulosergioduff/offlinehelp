@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><link type="text/css" rel="stylesheet" href="PHP%205.4%20-%20Traits%20-%20Thiago%20Belem%20_%20Blog_arquivos/gist-embed-87673c31a5b37b5e6556b63e1081ebbc.css">
+  <meta charset="utf-8">
+  <!-- (1) Optimize for mobile versions: http://goo.gl/EOpFl -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- (1) force latest IE rendering engine: bit.ly/1c8EiC9 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>PHP 5.4 - Traits - Thiago Belem / Blog</title>
+  <meta name="description" content="Artigos e tutoriais sobre desenvolvimento WEB">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="canonical" href="PHP%205.4%20-%20Traits%20-%20Thiago%20Belem%20_%20Blog_arquivos/php-5-4-traits.htm">
+
+  <link rel="shortcut icon" href="http://blog.thiagobelem.net/assets/images/favicon.ico">
+
+  <link href="PHP%205.4%20-%20Traits%20-%20Thiago%20Belem%20_%20Blog_arquivos/css.css" rel="stylesheet" type="text/css">
+  <link href="PHP%205.4%20-%20Traits%20-%20Thiago%20Belem%20_%20Blog_arquivos/font-awesome.css" rel="stylesheet" type="text/css">
+
+  <link href="PHP%205.4%20-%20Traits%20-%20Thiago%20Belem%20_%20Blog_arquivos/main.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="PHP%205.4%20-%20Traits%20-%20Thiago%20Belem%20_%20Blog_arquivos/print.css" media="print" rel="stylesheet" type="text/css">
+
+  <div class="fit-vids-style" id="fit-vids-style" style="display: none;">­<style>.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style></div><script src="PHP%205.4%20-%20Traits%20-%20Thiago%20Belem%20_%20Blog_arquivos/osd.js"></script><script src="PHP%205.4%20-%20Traits%20-%20Thiago%20Belem%20_%20Blog_arquivos/ca-pub-0125841350971204.js"></script><script async="" src="PHP%205.4%20-%20Traits%20-%20Thiago%20Belem%20_%20Blog_arquivos/analytics.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-1129256-16', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script type="text/javascript" async="" src="PHP%205.4%20-%20Traits%20-%20Thiago%20Belem%20_%20Blog_arquivos/embed.js"></script><link rel="prefetch" as="style" href="PHP%205.4%20-%20Traits%20-%20Thiago%20Belem%20_%20Blog_arquivos/a_data/lounge.css"><link rel="prefetch" as="script" href="PHP%205.4%20-%20Traits%20-%20Thiago%20Belem%20_%20Blog_arquivos/a_data/common.js"><link rel="prefetch" as="script" href="PHP%205.4%20-%20Traits%20-%20Thiago%20Belem%20_%20Blog_arquivos/a_data/lounge.js"><link rel="prefetch" as="script" href="PHP%205.4%20-%20Traits%20-%20Thiago%20Belem%20_%20Blog_arquivos/a_data/config.js"><link rel="preload" href="PHP%205.4%20-%20Traits%20-%20Thiago%20Belem%20_%20Blog_arquivos/integrator_002.js" as="script"><script type="text/javascript" src="PHP%205.4%20-%20Traits%20-%20Thiago%20Belem%20_%20Blog_arquivos/integrator_002.js"></script><link rel="preload" href="PHP%205.4%20-%20Traits%20-%20Thiago%20Belem%20_%20Blog_arquivos/integrator.js" as="script"><script type="text/javascript" src="PHP%205.4%20-%20Traits%20-%20Thiago%20Belem%20_%20Blog_arquivos/integrator.js"></script><script src="PHP%205.4%20-%20Traits%20-%20Thiago%20Belem%20_%20Blog_arquivos/alfalfa.js" async="" charset="UTF-8"></script></head>
+
+  <body itemscope="" itemtype="http://schema.org/Article">
+    <!-- header start -->
+
+<a href="http://blog.thiagobelem.net/" class="logo-readium"><span class="logo" style="background-image: url(http://gravatar.com/avatar/67a6eb9b43b617b2051b912b8373a156?s=120)"></span></a>
+
+<!-- header end -->
+
+    <main class="content" role="main">
+      <article class="post">
+        
+        <div class="noarticleimage">
+          <div class="post-meta">
+            <h1 class="post-title">PHP 5.4 - Traits</h1>
+            <div class="cf post-meta-text">
+              <div class="author-image" style="background-image: url(http://gravatar.com/avatar/67a6eb9b43b617b2051b912b8373a156?s=120)">Thiago Belem</div>
+              <h4 class="author-name" itemprop="author" itemscope="" itemtype="http://schema.org/Person">Thiago Belem</h4>
+              em
+              <time datetime="2012-10-28T21:05:07-02:00">28 Oct 2012</time>
+              <!-- , tagged on <span class="post-tag-">, <a href="/tag/"></a></span> -->
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        
+        <section class="post-content" style="">
+          <div class="post-reading">
+            leitura de <span class="post-reading-time">7 min</span>
+          </div>
+          <a name="topofpage"></a>
+          
+          <script async="" src="PHP%205.4%20-%20Traits%20-%20Thiago%20Belem%20_%20Blog_arquivos/adsbygoogle.js"></script>
+          <!-- Banner Blog -->
+          <ins class="adsbygoogle" style="display: block; margin-bottom: 1em; height: 60px;" data-ad-client="ca-pub-0125841350971204" data-ad-slot="5658468999" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:640px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:640px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;width:640px;height:60px;" width="640" height="60" frameborder="0"></iframe></ins></ins></ins>
+          <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+
+          <div class="alert"><i class="fa fa-comments-o"></i>Encontrou um problema no conteúdo? Por favor, <a href="#comments">deixe seu comentário</a>!</div>
+
+          <p>Este artigo faz parte de uma série de outros arquivos sobre as <a href="http://blog.thiagobelem.net/php-5-4-novas-funcionalidades">novidades do PHP 5.4</a>.</p>
+
+<p>Documentação oficial:&nbsp;<a href="http://php.net/traits">http://php.net/traits</a></p>
+
+<p>Traits são mecanismos que ajudam (e muito) a&nbsp;<strong>reutilização de código</strong>, e servem perfeitamente para resolver o problema da falta de&nbsp;<strong>herança múltipla</strong>.</p>
+
+<p>Suponhamos que você tenha duas ou mais classes que precisam usar um 
+método/comportamento em comum, antes da versão 5.4 você faria algo do 
+tipo:</p>
+
+<p>Primeiro temos nossa classe Log, que serviria pra salvar mensagens de log (imagine uma classe completa, que faça algo de útil):</p>
+
+<div data-gist-id="3970165" data-gist-show-loading="false" style="display: block;"><div class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-gistfile1-php" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-php">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-gistfile1-php-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-gistfile1-php-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-pse">&lt;?php</span><span class="pl-s1"></span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-gistfile1-php-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"><span class="pl-k">class</span> <span class="pl-en">Log</span> {</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-gistfile1-php-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"></span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-gistfile1-php-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">log</span>(<span class="pl-smi">$message</span>) {</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-gistfile1-php-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">        <span class="pl-c"><span class="pl-c">//</span> Salva $message em um log de alguma forma</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-gistfile1-php-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">    }</span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-gistfile1-php-LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-s1"></span></td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-gistfile1-php-LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">}</span></td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/TiuTalk/3970165/raw/8ef45abccb669ec782fdcd8aef07c83df37d870d/gistfile1.php" style="float:right">view raw</a>
+        <a href="https://gist.github.com/TiuTalk/3970165#file-gistfile1-php">gistfile1.php</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div></div>
+
+<p>E agora você tem outras classes que fazem uso dessa funcionalidade 
+(salvar logs), mas essas classes não podem (e nem deveriam) estender 
+Log, então você faria algo do tipo:</p>
+
+<div data-gist-id="3970168" data-gist-show-loading="false" style="display: block;"><div class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-gistfile1-php" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-php">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-gistfile1-php-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-gistfile1-php-LC1" class="blob-code blob-code-inner js-file-line">class Usuario extends Model {</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-gistfile1-php-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-gistfile1-php-LC3" class="blob-code blob-code-inner js-file-line">    protected $Log;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-gistfile1-php-LC4" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-gistfile1-php-LC5" class="blob-code blob-code-inner js-file-line">    public function __construct() {</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-gistfile1-php-LC6" class="blob-code blob-code-inner js-file-line">        $this-&gt;Log = new Log();</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-gistfile1-php-LC7" class="blob-code blob-code-inner js-file-line">    }</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-gistfile1-php-LC8" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-gistfile1-php-LC9" class="blob-code blob-code-inner js-file-line">    public function save() {</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-gistfile1-php-LC10" class="blob-code blob-code-inner js-file-line">        // Salva o usuário de alguma forma</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-gistfile1-php-LC11" class="blob-code blob-code-inner js-file-line">        // ...</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-gistfile1-php-LC12" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-gistfile1-php-LC13" class="blob-code blob-code-inner js-file-line">        // Salva uma mensagem de log</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-gistfile1-php-LC14" class="blob-code blob-code-inner js-file-line">        $this-&gt;Log-&gt;log('Usuário criado');</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-gistfile1-php-LC15" class="blob-code blob-code-inner js-file-line">    }</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-gistfile1-php-LC16" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-gistfile1-php-LC17" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-gistfile1-php-LC18" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-gistfile1-php-LC19" class="blob-code blob-code-inner js-file-line">class Carrinho extends Produto {</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-gistfile1-php-LC20" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-gistfile1-php-LC21" class="blob-code blob-code-inner js-file-line">    protected $Log;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-gistfile1-php-LC22" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-gistfile1-php-LC23" class="blob-code blob-code-inner js-file-line">    public function __construct() {</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-gistfile1-php-LC24" class="blob-code blob-code-inner js-file-line">        $this-&gt;Log = new Log();</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-gistfile1-php-LC25" class="blob-code blob-code-inner js-file-line">    }</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-gistfile1-php-LC26" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-gistfile1-php-LC27" class="blob-code blob-code-inner js-file-line">    public function clear() {</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-gistfile1-php-LC28" class="blob-code blob-code-inner js-file-line">        // Limpa o carrinho de alguma forma</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-gistfile1-php-LC29" class="blob-code blob-code-inner js-file-line">        // ...</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td id="file-gistfile1-php-LC30" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L31" class="blob-num js-line-number" data-line-number="31"></td>
+        <td id="file-gistfile1-php-LC31" class="blob-code blob-code-inner js-file-line">        // Salva uma mensagem de log</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L32" class="blob-num js-line-number" data-line-number="32"></td>
+        <td id="file-gistfile1-php-LC32" class="blob-code blob-code-inner js-file-line">        $this-&gt;Log-&gt;log('Carrinho de compras limpo');</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L33" class="blob-num js-line-number" data-line-number="33"></td>
+        <td id="file-gistfile1-php-LC33" class="blob-code blob-code-inner js-file-line">    }</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L34" class="blob-num js-line-number" data-line-number="34"></td>
+        <td id="file-gistfile1-php-LC34" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L35" class="blob-num js-line-number" data-line-number="35"></td>
+        <td id="file-gistfile1-php-LC35" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/TiuTalk/3970168/raw/1d784e6d5150e72f1580df2664165d3225a345ab/gistfile1.php" style="float:right">view raw</a>
+        <a href="https://gist.github.com/TiuTalk/3970168#file-gistfile1-php">gistfile1.php</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div></div>
+
+<p>Mais uma vez, o conteúdo ou métodos dessas classes não importa.. o 
+que importa aqui é o trabalho que temos para poder usar o&nbsp;<strong>Log::log()</strong>&nbsp;para salvar mensagens de log.</p>
+
+<p>Já na versão 5.4, podemos transformar a classe Log numa Trait:</p>
+
+<div data-gist-id="3970177" data-gist-show-loading="false" style="display: block;"><div class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-gistfile1-php" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-php">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-gistfile1-php-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-gistfile1-php-LC1" class="blob-code blob-code-inner js-file-line">trait Log {</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-gistfile1-php-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-gistfile1-php-LC3" class="blob-code blob-code-inner js-file-line">    public function log($message) {</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-gistfile1-php-LC4" class="blob-code blob-code-inner js-file-line">        // Salva $message em um log de alguma forma</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-gistfile1-php-LC5" class="blob-code blob-code-inner js-file-line">    }</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-gistfile1-php-LC6" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-gistfile1-php-LC7" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/TiuTalk/3970177/raw/ce6d14bbce72537c8ee31d63f6eaeb798df7c03b/gistfile1.php" style="float:right">view raw</a>
+        <a href="https://gist.github.com/TiuTalk/3970177#file-gistfile1-php">gistfile1.php</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div></div>
+
+<p>E manter o comportamento das nossas classes, de forma bem mais simples:</p>
+
+<div data-gist-id="3970188" data-gist-show-loading="false" style="display: block;"><div class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-gistfile1-php" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-php">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-gistfile1-php-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-gistfile1-php-LC1" class="blob-code blob-code-inner js-file-line">class Usuario extends Model {</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-gistfile1-php-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-gistfile1-php-LC3" class="blob-code blob-code-inner js-file-line">    use Log;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-gistfile1-php-LC4" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-gistfile1-php-LC5" class="blob-code blob-code-inner js-file-line">    public function save() {</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-gistfile1-php-LC6" class="blob-code blob-code-inner js-file-line">        // Salva o usuário de alguma forma</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-gistfile1-php-LC7" class="blob-code blob-code-inner js-file-line">        // ...</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-gistfile1-php-LC8" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-gistfile1-php-LC9" class="blob-code blob-code-inner js-file-line">        // Salva uma mensagem de log</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-gistfile1-php-LC10" class="blob-code blob-code-inner js-file-line">        $this-&gt;log('Usuário criado');</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-gistfile1-php-LC11" class="blob-code blob-code-inner js-file-line">    }</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-gistfile1-php-LC12" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-gistfile1-php-LC13" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/TiuTalk/3970188/raw/c17986c90149e355897562c674b8728831a59257/gistfile1.php" style="float:right">view raw</a>
+        <a href="https://gist.github.com/TiuTalk/3970188#file-gistfile1-php">gistfile1.php</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div></div>
+
+<div data-gist-id="3970189" data-gist-show-loading="false" style="display: block;"><div class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-gistfile1-php" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-php">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-gistfile1-php-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-gistfile1-php-LC1" class="blob-code blob-code-inner js-file-line">class Carrinho extends Produto {</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-gistfile1-php-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-gistfile1-php-LC3" class="blob-code blob-code-inner js-file-line">    use Log;</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-gistfile1-php-LC4" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-gistfile1-php-LC5" class="blob-code blob-code-inner js-file-line">    public function clear() {</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-gistfile1-php-LC6" class="blob-code blob-code-inner js-file-line">        // Limpa o carrinho de alguma forma</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-gistfile1-php-LC7" class="blob-code blob-code-inner js-file-line">        // ...</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-gistfile1-php-LC8" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-gistfile1-php-LC9" class="blob-code blob-code-inner js-file-line">        // Salva uma mensagem de log</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-gistfile1-php-LC10" class="blob-code blob-code-inner js-file-line">        $this-&gt;log('Carrinho de compras limpo');</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-gistfile1-php-LC11" class="blob-code blob-code-inner js-file-line">    }</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-gistfile1-php-LC12" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-gistfile1-php-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-gistfile1-php-LC13" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/TiuTalk/3970189/raw/f53db3ad3e5e8934b7c3dce658627c31567c1c30/gistfile1.php" style="float:right">view raw</a>
+        <a href="https://gist.github.com/TiuTalk/3970189#file-gistfile1-php">gistfile1.php</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div></div>
+
+<p>Podemos usar o método log() diretamente (sem a necessidade 
+de&nbsp;instanciar&nbsp;um objeto de Log) pois nossas classes adquiriram
+ as características (métodos e atributos) de Log! :)</p>
+
+<h3 id="concluso"><a href="#concluso" class="header-anchor"><i class="fa fa-link"></i></a>Conclusão</h3>
+<p>Traits são de fato recursos bem interessantes e muitos <a href="http://blog.thiagobelem.net/o-cakephp-3-0-ja-esta-no-forno">frameworks estão se adaptando</a>&nbsp;à esse poderoso recurso.</p>
+
+<p>Espero que você tenha gostado (e faça um bom uso) desse novo recurso! :)</p>
+
+
+
+          
+
+  
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+
+  
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+
+  
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+        
+        <div class="related-posts">
+        <h4>Leia mais!</h4>
+        <ul>
+        
+        <li class="related-post"><a href="http://blog.thiagobelem.net/instalando-php-5-4-com-homebrew-no-os-x">Instalando PHP 5.4 com Homebrew no OS X</a></li>
+        
+        
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+
+  
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+
+  
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+
+  
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+
+  
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+
+  
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+
+  
+  
+    
+      
+        
+        <li class="related-post"><a href="http://blog.thiagobelem.net/php-5-4-servidor-interno">PHP 5.4 - Servidor interno</a></li>
+        
+        
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+  
+
+  
+  
+    
+      
+        
+        <li class="related-post"><a href="http://blog.thiagobelem.net/php-5-4-novas-funcionalidades">PHP 5.4 - Novidades e novas funcionalidades</a></li>
+        
+        
+      
+    
+      
+    
+  
+
+
+  </ul>
+  </div>
+
+
+
+        </section>
+        <footer class="post-footer">
+          <section class="share">
+            
+              
+                <a class="icon-twitter" href="http://twitter.com/share?text=PHP+5.4+-+Traits&amp;url=http://blog.thiagobelem.net/php-5-4-traits" onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+                <i class="fa fa-twitter"></i><span class="hidden">twitter</span>
+                </a>
+              
+            
+              
+            
+          </section>
+        </footer>
+        <div class="bottom-teaser cf">
+
+          <div class="isLeft">
+            <h5 class="index-headline featured"><span>Escrito por</span></h5>
+            <section class="author">
+              <div class="author-image" style="background-image: url(http://gravatar.com/avatar/67a6eb9b43b617b2051b912b8373a156?s=120)">Thiago Belem / Blog</div>
+              <h4>Thiago Belem</h4>
+              <p class="bio"></p>
+              <hr>
+              <p class="published">Publicado <time datetime="2012-10-28 21:05">28 Oct 2012</time></p>
+            </section>
+          </div>
+
+          
+
+          <div class="isRight">
+            <h5 class="index-headline featured"><span>Acompanhe!</span></h5>
+
+            <footer class="site-footer">
+              <a class="subscribe" href="http://blog.thiagobelem.net/feed.xml"> <span class="tooltip"> <i class="fa fa-rss"></i> Assine o Feed RSS</span></a>
+
+              <div class="inner">
+                <section class="copyright"><br>© 2016 Todos os direitos reservados</section>
+              </div>
+            </footer>
+          </div>
+
+          <div id="comments">
+  <div id="disqus_thread"><iframe id="dsq-app1408" name="dsq-app1408" allowtransparency="true" scrolling="no" tabindex="0" title="Disqus" style="width: 1px !important; min-width: 100% !important; border: medium none !important; overflow: hidden !important; height: 1106px !important;" src="PHP%205.4%20-%20Traits%20-%20Thiago%20Belem%20_%20Blog_arquivos/a.htm" horizontalscrolling="no" verticalscrolling="no" width="100%" frameborder="0"></iframe></div>
+</div>
+
+<script type="text/javascript">
+  var disqus_shortname = 'thiagobelemblog';
+  var disqus_identifier = '/php-5-4-traits';
+  var disqus_title = 'PHP 5.4 - Traits';
+  var disqus_url = 'http://blog.thiagobelem.net/php-5-4-traits';
+
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+        </div>
+      </article>
+    </main>
+    <div class="bottom-closer">
+      <div class="background-closer-image" style="background-image: url(/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg)">
+        Thiago Belem / Blog
+      </div>
+      <div class="inner">
+        <h1 class="blog-title">Thiago Belem / Blog</h1>
+        <h2 class="blog-description">Artigos e tutoriais sobre desenvolvimento WEB</h2>
+        <a href="http://blog.thiagobelem.net/" class="btn">Continue lendo</a>
+      </div>
+    </div>
+    <script src="PHP%205.4%20-%20Traits%20-%20Thiago%20Belem%20_%20Blog_arquivos/jquery-1.js"></script>
+<script src="PHP%205.4%20-%20Traits%20-%20Thiago%20Belem%20_%20Blog_arquivos/jquery.js"></script>
+<script src="PHP%205.4%20-%20Traits%20-%20Thiago%20Belem%20_%20Blog_arquivos/readingTime.js"></script>
+<script src="PHP%205.4%20-%20Traits%20-%20Thiago%20Belem%20_%20Blog_arquivos/index.js"></script>
+<script src="PHP%205.4%20-%20Traits%20-%20Thiago%20Belem%20_%20Blog_arquivos/gist-embed.js"></script>
+
+
+  
+
+<iframe style="display: none;"></iframe><iframe id="google_osd_static_frame_5598987799753" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe></body></html>

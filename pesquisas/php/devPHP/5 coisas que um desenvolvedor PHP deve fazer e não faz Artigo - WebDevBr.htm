@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="pt-br"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>5 coisas que um desenvolvedor PHP deve fazer e não faz Artigo - WebDevBr</title>
+        <link href="https://www.webdevbr.com.br/favicon.ico" type="image/x-icon" rel="icon">
+    <link href="https://www.webdevbr.com.br/favicon.ico" type="image/x-icon" rel="shortcut icon">
+
+    <meta name="copyright" content="WebDevBr">
+    <meta name="robots" content="index,follow">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.webdevbr.com.br/feed.rss">
+    <meta name="google-site-verification" content="rQyjZXhUw9IzkVtEGMvQR7lZwJbRx7xrqKQ_WQz9iVg">
+    <meta name="generator" content="WebDevBr">
+    <meta name="description" content="Existem muitas práticas que melhoram significativamente o desempenho do desenvolvedor e da aplicação, e são, em sua maioria, passos simples e rápidos, mas que vão mudar a sua maneira de ver as coisas.">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="5 coisas que um desenvolvedor PHP deve fazer e não faz Artigo - WebDevBr">
+    <meta property="og:url" content="https://www.webdevbr.com.br/5-coisas-que-um-desenvolvedor-php-deve-fazer-e-nao-faz">
+    <meta property="og:site_name" content="WebDevBr - Cursos e Treinamentos de PHP e Javascript">
+    <link rel="canonical" href="https://www.webdevbr.com.br/5-coisas-que-um-desenvolvedor-php-deve-fazer-e-nao-faz">
+
+    <link href="5%20coisas%20que%20um%20desenvolvedor%20PHP%20deve%20fazer%20e%20n%C3%A3o%20faz%20Artigo%20-%20WebDevBr_arquivos/css.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="5%20coisas%20que%20um%20desenvolvedor%20PHP%20deve%20fazer%20e%20n%C3%A3o%20faz%20Artigo%20-%20WebDevBr_arquivos/rrssb.css">
+    <style>
+        .rrssb-buttons li.small a .rrssb-icon {
+            max-width: 24px;
+        }
+    </style>
+    <!--Rastreamento-->
+        <!-- Facebook Conversion Code for Conclusões de compra - Erik Figueiredo 1 -->
+        <!-- Facebook Conversion Code for Visita WebDevBr -->
+        <script async="" src="5%20coisas%20que%20um%20desenvolvedor%20PHP%20deve%20fazer%20e%20n%C3%A3o%20faz%20Artigo%20-%20WebDevBr_arquivos/analytics.js"></script><script async="" src="5%20coisas%20que%20um%20desenvolvedor%20PHP%20deve%20fazer%20e%20n%C3%A3o%20faz%20Artigo%20-%20WebDevBr_arquivos/fbds.js"></script><script>(function() {
+          var _fbq = window._fbq || (window._fbq = []);
+          if (!_fbq.loaded) {
+            var fbds = document.createElement('script');
+            fbds.async = true;
+            fbds.src = 'https://connect.facebook.net/en_US/fbds.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(fbds, s);
+            _fbq.loaded = true;
+          }
+        })();
+        window._fbq = window._fbq || [];
+        window._fbq.push(['track', '6021418467051', {'value':'0.00','currency':'BRL'}]);
+        </script>
+        <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6021418467051&amp;cd[value]=0.00&amp;cd[currency]=BRL&amp;noscript=1" /></noscript>
+            <!--FimRastreament-->
+    <script></script>
+    <link rel="stylesheet" href="5%20coisas%20que%20um%20desenvolvedor%20PHP%20deve%20fazer%20e%20n%C3%A3o%20faz%20Artigo%20-%20WebDevBr_arquivos/app.css">    <link rel="stylesheet" href="5%20coisas%20que%20um%20desenvolvedor%20PHP%20deve%20fazer%20e%20n%C3%A3o%20faz%20Artigo%20-%20WebDevBr_arquivos/prism.css">
+</head>
+<body>
+    <header id="top">
+        <section>
+	<nav class="navbar navbar-inverse navbar-static-top">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Ver menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    			<ul class="nav navbar-nav navbar-right">
+    				    					<li><a href="https://www.webdevbr.com.br/acesso/login">Cadastro/Login</a></li>
+    				                    <li class="slack dropdown">
+                        <a href="" id="slack-btn" data-toggle="modal" data-target="#slackModal"><span class="label label-danger"><big>Slack!</big></span><span id="float-slack" style="display: none;"><img src="5%20coisas%20que%20um%20desenvolvedor%20PHP%20deve%20fazer%20e%20n%C3%A3o%20faz%20Artigo%20-%20WebDevBr_arquivos/float-slack.png" alt=""></span></a>
+                                            </li>
+        			<li><a href="https://www.webdevbr.com.br/aulas"><span class="label label-primary"><big><span class="glyphicon glyphicon-education"></span> Estudar!</big></span></a></li>
+        			    			</ul>
+                <ul class="nav navbar-nav navbar-right visible-xs">
+                    <li class="active"><a href="https://www.webdevbr.com.br/">Início</a></li>
+
+                    <li><a href="https://www.webdevbr.com.br/php"> PHP</a></li><li><a href="https://www.webdevbr.com.br/frameworks">- Frameworks</a></li><li><a href="https://www.webdevbr.com.br/cakephp">-- CakePHP</a></li><li><a href="https://www.webdevbr.com.br/laravel">-- Laravel</a></li><li><a href="https://www.webdevbr.com.br/zend-framework">-- Zend Framework</a></li><li><a href="https://www.webdevbr.com.br/boas-praticas">- Boas práticas</a></li><li><a href="https://www.webdevbr.com.br/resfult">-- RESTful</a></li><li><a href="https://www.webdevbr.com.br/javascript"> JavaScript</a></li><li><a href="https://www.webdevbr.com.br/angularjs">- AngularJs</a></li><li><a href="https://www.webdevbr.com.br/ionic-framework">- Ionic Framework</a></li>
+                    <li><a href="https://www.webdevbr.com.br/gratis">Grátis</a></li>
+                    <li><a href="https://www.webdevbr.com.br/blog">Blog</a></li>
+                    <li><a href="https://www.webdevbr.com.br/mvc-e-php-entendendo-o-padrao-na-pratica-criando-um-framework-php">Série MVC</a></li>
+                    <li><a href="https://www.webdevbr.com.br/manual-do-type-script">Série Manual do TypeScript</a></li>
+                    <li><a href="https://www.webdevbr.com.br/padroes-de-projeto-no-php">Série Padrões de Projeto no PHP</a></li>
+                    
+                </ul>
+            </div>
+		
+	</nav>
+	<div class="container content">
+		<div class="row row-1">
+			<a class="" href="https://www.webdevbr.com.br/">
+				<img alt="Brand" src="5%20coisas%20que%20um%20desenvolvedor%20PHP%20deve%20fazer%20e%20n%C3%A3o%20faz%20Artigo%20-%20WebDevBr_arquivos/logo.png">
+			</a>
+		</div>
+		<div class="visible-md visible-lg visible-sm">
+			<nav>
+				<ul class="nav nav-pills nav-dark">
+					<li class="active"><a href="https://www.webdevbr.com.br/">Início</a></li>
+
+					<li><a href="https://www.webdevbr.com.br/php">PHP</a><ul class="nav nav-pills nav-dark depth-0"><li><a href="https://www.webdevbr.com.br/frameworks">Frameworks</a><ul class="nav nav-pills nav-dark depth-1"><li><a href="https://www.webdevbr.com.br/cakephp">CakePHP</a></li><li><a href="https://www.webdevbr.com.br/laravel">Laravel</a></li><li><a href="https://www.webdevbr.com.br/zend-framework">Zend Framework</a></li></ul></li><li><a href="https://www.webdevbr.com.br/boas-praticas">Boas práticas</a><ul class="nav nav-pills nav-dark depth-1"><li><a href="https://www.webdevbr.com.br/resfult">RESTful</a></li></ul></li></ul></li><li><a href="https://www.webdevbr.com.br/javascript">JavaScript</a><ul class="nav nav-pills nav-dark depth-0"><li><a href="https://www.webdevbr.com.br/angularjs">AngularJs</a></li><li><a href="https://www.webdevbr.com.br/ionic-framework">Ionic Framework</a></li></ul></li>
+					<li><a href="https://www.webdevbr.com.br/gratis">Grátis</a></li>
+					<li>
+                        <a href="https://www.webdevbr.com.br/blog">Blog</a>
+                        <ul class="nav nav-pills nav-dark depth-0">
+                        <li>
+                            <a href="https://www.webdevbr.com.br/blog">Todos os artigos</a>
+                            <ul class="nav nav-pills nav-dark depth-1">
+                                <li><a href="https://www.webdevbr.com.br/mvc-e-php-entendendo-o-padrao-na-pratica-criando-um-framework-php">Série MVC</a></li>
+                                <li><a href="https://www.webdevbr.com.br/manual-do-type-script">Série Manual do TypeScript</a></li>
+                                <li><a href="https://www.webdevbr.com.br/padroes-de-projeto-no-php">Série Padrões de Projeto no PHP</a></li>
+                            </ul>
+                        </li>
+                        </ul>
+                    </li>
+					<li><a href="https://www.webdevbr.com.br/contato">Contato</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</section>
+    </header>
+    <main>
+        <section id="content">
+            <header id="highlight">
+                	<div class="title title-dark" style="display: table; width: 100%; line-height: initial; height: 200px">
+        <div style="display: table-cell; vertical-align: middle; width: 100%; margin: 0 auto;">
+    		<div class="container">
+    			<h1>5 coisas que um desenvolvedor PHP deve fazer e não faz <small>Artigo</small></h1>
+    		</div>
+    	</div>
+    </div>
+    <div class="title title-dark" style="background-color:#27ae60; height: auto; min-height: 66px;">
+        <div class="container text-center">
+            <h3>Conheça os cursos gratuitos do WebDevBr! - <a href="https://www.webdevbr.com.br/aulas#/cursos" class="btn btn-dark btn-lg">Inscreva-se!</a></h3>
+        </div>
+    </div>
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <ul class="nav navbar-nav navbar-right">
+                <!--<li class="active"><a href="">Teste de conhecimento</a></li>-->
+                <li><p class="navbar-text">Pesquisa:</p>
+                    <form class="navbar-form navbar-left" role="search" action="/busca">
+                        <div class="form-group">
+                          <input name="term" class="form-control" placeholder="Pesquisa..." type="text">
+                        </div>
+                        <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-search"></span></button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+            </header>
+            <div class="container">
+                                <div class="article">
+	<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+          <div class="share">
+    <ul class="rrssb-buttons clearfix rrssb-1">
+      <li class="rrssb-facebook" style="width: calc(100% - 84px);" data-initwidth="33.333333333333336" data-size="86">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.webdevbr.com.br/5-coisas-que-um-desenvolvedor-php-deve-fazer-e-nao-faz" class="popup">
+          <span class="rrssb-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" width="29" height="29" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z" class="cls-2" fill-rule="evenodd"></path></svg>
+          </span>
+          <span class="rrssb-text">compartilhar</span>
+        </a>
+      </li>
+      <li class="rrssb-googleplus small" style="width: 42px;" data-initwidth="33.333333333333336" data-size="51">
+        <!-- Replace href with your meta and URL information.  -->
+        <a href="https://plus.google.com/share?url=https://www.webdevbr.com.br/5-coisas-que-um-desenvolvedor-php-deve-fazer-e-nao-faz" class="popup">
+          <span class="rrssb-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"></path></svg>            </span>
+          <span class="rrssb-text">google+</span>
+        </a>
+      </li>
+      <li class="rrssb-twitter small" style="width: 42px;" data-initwidth="33.333333333333336" data-size="47">
+        <a href="https://twitter.com/intent/tweet?text=Recomendo:%205%20coisas%20que%20um%20desenvolvedor%20PHP%20deve%20fazer%20e%20n%C3%A3o%20faz%20https://www.webdevbr.com.br/5-coisas-que-um-desenvolvedor-php-deve-fazer-e-nao-faz%20@erikfig%20#WebDevBr" class="popup">
+          <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"></path></svg></span>
+          <span class="rrssb-text">twitter</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+    </div>
+    <div class="col-md-12">
+        <hr>
+        <center><small>Este artigo foi publicado a 3 anos, 2 semanas, 4 dias atrás.</small></center>
+        <hr>
+    </div>
+  </div>
+		<div class="article-content">
+		<p>Existem muitas práticas que melhoram significativamente o 
+desempenho do desenvolvedor e da aplicação, e são, em sua maioria, 
+passos simples e rápidos, mas que vão mudar a sua maneira de ver as 
+coisas. Alguns vão te dar novos caminhos pra resolver seus problemas 
+rapidamente, outros serão configurações no php.ini, enfim, vamos as 
+dicas.</p>
+
+<h3>1. Ativar o OPcache</h3>
+
+<p>Muito se ouviu falar sobre a melhora de desempenho no PHP 5.5, muito 
+disso se deve ao&nbsp; cache embutido, em vez de analizar seu código ele
+ apenas pega o resultado gerado anteriormente e parte daí, se você somar
+ isso a um cache do baco de dados, nossa, sua aplicação vai voar.</p>
+
+<p>Mas como ativo isso? É simples e é feito no php.ini, você não meche na sua aplicação. <a href="http://www.webdevbr.com.br/php-cache-opcache-instalando-e-usando/">Siga este passo a passo</a>.</p>
+<div class="alert alert-success">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+  <h3>Gostou deste artigo?</h3>
+  <p>Receba atualizações semanais com novos artigos do WebDevBr e outras dicas!</p>
+
+  <form action="https://webdevbr.us11.list-manage.com/subscribe/post" method="POST">
+    <input name="u" value="4317b163878d6296c93ff715c" type="hidden">
+    <input name="id" value="0475efc612" type="hidden">
+    <div class="form-group">
+      <input class="form-control" placeholder="Nome" name="MERGE1" size="25" type="text">
+    </div>
+    <div class="form-group">
+      <input class="form-control" placeholder="Email" autocapitalize="off" autocorrect="off" name="MERGE0" size="25" type="email">
+    </div>
+    <div style="display:none">
+    <input name="b_4317b163878d6296c93ff715c_0475efc612" tabindex="-1" type="text">
+    </div>
+    <button type="submit" class="btn btn-danger" name="submit">Cadastrar</button>
+  </form>
+</div>
+
+
+<h3>2. Melhorar a exibição de erros</h3>
+
+<p>Essa dica é bacana, muitos devs se perdem simplesmente por não 
+compreender as mensagens de erro, que tal trocar aquele texto preto por 
+um box laranja e com mais informações? Instale o Xdebug, eu mesmo não 
+consigo mais ficar sem...</p>
+
+<p><a href="http://www.webdevbr.com.br/usando-o-xdebug-do-php/">Aqui tem um artigo para saber como instalar o Xdebug</a>, não deve demorar mais que poucos minutos.</p>
+
+<h3>3. Evite trabalhar atoa com componentes</h3>
+
+<p>Precisa de um upload, log em texto, log no banco de dados, sistema de
+ login, gerenciar requests e responses, antes de começar a trabalhar 
+veja se alguém não fez isso pra você antes. Existem ótimos componentes 
+por ai, bem testados, bem contruídos e simples de usar, basta dar uma 
+rápida olhada nestes dois links aqui:</p>
+
+<ul>
+<li><a href="https://github.com/ziadoz/awesome-php">https://github.com/ziadoz/awesome-php</a> -&nbsp; uma das melhores lista de componentes que ja ví</li>
+<li><a href="https://packagist.org/">https://packagist.org</a> - É nesse cara que os pacotes do Composer ficam listados, tem um excelente sistema de busca</li>
+</ul>
+
+<p>Agora se você quer ler mais sobre componentes, que tal dar uma olhada <a href="http://www.webdevbr.com.br/php-desacoplado-e-o-futuro-e-agora/">neste artigo</a> que escreví.</p>
+
+<h3>4. Acompanhe o desempenho das suas aplicações</h3>
+
+<p>Essa é boa! Como você sabe que uma aplicação esta consumindo muito 
+recurso ou não? Coloca no ar e espera que não trave o servidor? Que tal 
+saber quanto tempo e quais recursos (memória e cpu) sua aplicação 
+consome em uma requisição, melhor ainda, com relatórios por processo 
+(métodos, classes...). Com o Xdebug, o profiling de uma aplicação fica 
+muito mais simples.</p>
+
+<p><a href="http://www.webdevbr.com.br/como-identificar-problemas-de-performance-no-php-com-xdebug/">Aqui tem um artigo sobre o assunto</a> são poucas configurações a se fazer.</p>
+
+<h3>5. Use mais de um framework ou micro framework</h3>
+
+<p>É um grande erro achar que você só precisa do seu framework 
+preferido, vejo muita gente defender de unhas e dentes o seu framework 
+(eu mesmo já fiz isso com o CakePHP), mas conhecer as vantagens e 
+limitações do seu framework favorito é importante, conhecendo a fundo 
+vários frameworks você ganha a liberdade de poder escolher o que é 
+melhor para o caso em questão, tem muita gente que nem entende isso de 
+"escolher o framework certo".</p>
+
+<p>O Zend Framework 2 é o meu favorito atualmente (se pudesse usava pra 
+tudo), mas em alguns momentos um framework rápido pode ser melhor, 
+nestes casos escolho entre o Laravel ou o CakePHP, ambos são muito bons 
+no que se prestam a fazer. Também estou numa vibe mais micro, ando 
+testando muito os "menorzinhos". Não citei o Symfony, é incrível como 
+vários "Zords" conseguem formar um poderoso "Megazord", simplesmente amo
+ o <strong>symfony/console</strong>. Forme sua opnião, pegue um projeto 
+(mesmo que para estudo) e vá desenvolver em cada um deles, no final sua 
+visão vai mudar, tenho certeza!</p>
+
+<h4>Frameworks full-stack</h4>
+
+<ul>
+<li><a href="http://laravel.com/">Laravel 5</a></li>
+<li><a href="http://cakephp.org/">CakePHP 3</a></li>
+<li><a href="http://framework.zend.com/">Zend Framework 2</a></li>
+<li><a href="https://symfony.com/">Symfony 2</a></li>
+</ul>
+
+<h4>Micro frameworks</h4>
+
+<ul>
+<li><a href="http://lumen.laravel.com/">Lumem</a></li>
+<li><a href="http://silex.sensiolabs.org/">Silex</a></li>
+<li><a href="http://www.slimframework.com/">Slim Framework</a></li>
+</ul>
+
+<h3>Conclusão</h3>
+
+<p>Estas foram algumas dicas que preparei para vocês, ainda tem muito mais, fique esperto, sempre tem coisa nova por aqui.</p>
+<p></p>	</div>
+    <hr>
+        <h3>Cursos relacionados</h3>
+    
+						<ul class="products-grid row">
+		<li class="col-md-3 col-xs-6">
+			<a href="https://www.webdevbr.com.br/pacote-mestre-php-5-cursos" class="img-flip">
+							<img src="5%20coisas%20que%20um%20desenvolvedor%20PHP%20deve%20fazer%20e%20n%C3%A3o%20faz%20Artigo%20-%20WebDevBr_arquivos/galery_pacote-mestre-php-5-cursos.jpg" alt="" class="img-thumbnail">
+					</a>
+		<h4><a href="https://www.webdevbr.com.br/pacote-mestre-php-5-cursos">[PACOTE] Mestre PHP - 5 cursos</a></h4>
+		<p>R$ 375,00<br>
+			<small>	até 12x R$ 37,65*
+</small>
+		</p>
+		<p>
+												<a href="https://www.webdevbr.com.br/carrinho/add/33" class="btn btn-dark">inscrever-se</a>
+										<a href="https://www.webdevbr.com.br/pacote-mestre-php-5-cursos" class="btn btn-dark">+ detalhes</a>
+		</p>
+		</li>
+    						<li class="col-md-3 col-xs-6">
+			<a href="https://www.webdevbr.com.br/curso-de-atualizacao-para-o-cakephp-3" class="img-flip">
+							<img src="5%20coisas%20que%20um%20desenvolvedor%20PHP%20deve%20fazer%20e%20n%C3%A3o%20faz%20Artigo%20-%20WebDevBr_arquivos/galery_curso-atualizacao-cakephp-3.jpg" alt="" class="img-thumbnail">
+					</a>
+		<h4><a href="https://www.webdevbr.com.br/curso-de-atualizacao-para-o-cakephp-3">Curso de atualização para o CakePHP 3</a></h4>
+		<p>R$ 85,00<br>
+			<small>	até 12x R$ 8,53*
+</small>
+		</p>
+		<p>
+												<a href="https://www.webdevbr.com.br/carrinho/add/8" class="btn btn-dark">inscrever-se</a>
+										<a href="https://www.webdevbr.com.br/curso-de-atualizacao-para-o-cakephp-3" class="btn btn-dark">+ detalhes</a>
+		</p>
+		</li>
+            <div class="clearfix visible-xs-block"></div>
+    						<li class="col-md-3 col-xs-6">
+			<a href="https://www.webdevbr.com.br/curso-php-tdd-basico" class="img-flip">
+							<img src="5%20coisas%20que%20um%20desenvolvedor%20PHP%20deve%20fazer%20e%20n%C3%A3o%20faz%20Artigo%20-%20WebDevBr_arquivos/galery_curso-php-tdd-na-pratica.jpg" alt="" class="img-thumbnail">
+					</a>
+		<h4><a href="https://www.webdevbr.com.br/curso-php-tdd-basico">Curso PHP TDD Básico</a></h4>
+		<p>R$ 125,00<br>
+			<small>	até 12x R$ 12,55*
+</small>
+		</p>
+		<p>
+												<a href="https://www.webdevbr.com.br/carrinho/add/12" class="btn btn-dark">inscrever-se</a>
+										<a href="https://www.webdevbr.com.br/curso-php-tdd-basico" class="btn btn-dark">+ detalhes</a>
+		</p>
+		</li>
+    						<li class="col-md-3 col-xs-6">
+			<a href="https://www.webdevbr.com.br/curso-introducao-a-5-frameworks-php-na-pratica" class="img-flip">
+							<img src="5%20coisas%20que%20um%20desenvolvedor%20PHP%20deve%20fazer%20e%20n%C3%A3o%20faz%20Artigo%20-%20WebDevBr_arquivos/galery_curso-5-frameworks.jpg" alt="" class="img-thumbnail">
+					</a>
+		<h4><a href="https://www.webdevbr.com.br/curso-introducao-a-5-frameworks-php-na-pratica">Curso Introdução a 5 Frameworks PHP na prática</a></h4>
+		<p>R$ 150,00<br>
+			<small>	até 12x R$ 15,06*
+</small>
+		</p>
+		<p>
+												<a href="https://www.webdevbr.com.br/carrinho/add/13" class="btn btn-dark">inscrever-se</a>
+										<a href="https://www.webdevbr.com.br/curso-introducao-a-5-frameworks-php-na-pratica" class="btn btn-dark">+ detalhes</a>
+		</p>
+		</li>
+            <div class="clearfix visible-xs-block"></div>
+    			</ul>
+		
+    <hr>
+        <aside class="author-bio col-md-12 dark-box">
+	<div class="col-md-12">
+		<img src="5%20coisas%20que%20um%20desenvolvedor%20PHP%20deve%20fazer%20e%20n%C3%A3o%20faz%20Artigo%20-%20WebDevBr_arquivos/erik-figueiredo.jpg" alt="" class="author-picture">
+		<h3><author>Erik Figueiredo</author></h3>
+        <p>Erik Figueiredo é desenvolvedor web full stack, apaixonado pela profissão e professor/fundador do WebDevBr.</p>
+        <p><a href="https://plus.google.com/+ErikFigueiredoDs?rel=author" class="btn btn-danger">G+</a>
+        <a href="https://br.linkedin.com/in/erikfigueiredo" class="btn btn-success">Linkedin</a>
+        <a href="https://www.facebook.com/erikfigueiredods" class="btn btn-primary">Facebook</a></p>
+    </div>
+</aside>
+</div>
+
+            </div>
+            <div class="container">
+                <p></p><center>* Parcelamento apenas cartão de crédito! Pode haver uma pequena variação no parcelamento em relação a simulações apresentadas!</center><p></p>
+            </div>
+        </section>
+    </main>
+    <footer id="bottom">
+        <nav class="navbar navbar-inverse navbar-static-bottom">
+	<p class="navbar-text">© 2018 - WebDevBr. All Rights Reserved. by: <a href="https://www.erikfigueiredo.com.br/">Erik Figueiredo</a></p>
+</nav>    </footer>
+    <div class="modal fade" id="slackModal" tabindex="-1" role="dialog" aria-labelledby="slackModalLabel">
+      <div class="modal-dialog" id="slack" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title" id="myModalLabel">Participe do Slack do WebDevBr</h4>
+          </div>
+          <div class="modal-body">
+            <p><img src="5%20coisas%20que%20um%20desenvolvedor%20PHP%20deve%20fazer%20e%20n%C3%A3o%20faz%20Artigo%20-%20WebDevBr_arquivos/slack.png" alt="Slack do WebDevBr" class="img-responsive" width="940"></p>
+            <p>Se você nunca acessou será necessário pegar um convite no formulário logo a baixo.</p>
+            <div class="form-group">
+              <input class="slack-email form-control" placeholder="Seu email..." type="email">
+            </div>
+            <button class="slack-submit btn btn-dark" type="button">Solicitar convite</button>
+            <div class="alert alert-success" style="margin: 0px; display: none;">Verifique seu email</div>
+            <hr>
+            <p>Se você já pegou seu convite e se cadastrou, acesse o Slack usando o botão logo abaixo!</p>
+            <p><a href="https://webdevbrasil.slack.com/" target="_blank" class="btn btn-primary">Ir para o Slack do WebDevBr</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="5%20coisas%20que%20um%20desenvolvedor%20PHP%20deve%20fazer%20e%20n%C3%A3o%20faz%20Artigo%20-%20WebDevBr_arquivos/jquery-1.js"></script>
+    <script src="5%20coisas%20que%20um%20desenvolvedor%20PHP%20deve%20fazer%20e%20n%C3%A3o%20faz%20Artigo%20-%20WebDevBr_arquivos/swiper.js"></script>
+    <script src="5%20coisas%20que%20um%20desenvolvedor%20PHP%20deve%20fazer%20e%20n%C3%A3o%20faz%20Artigo%20-%20WebDevBr_arquivos/bootstrap.js"></script>
+    <script src="5%20coisas%20que%20um%20desenvolvedor%20PHP%20deve%20fazer%20e%20n%C3%A3o%20faz%20Artigo%20-%20WebDevBr_arquivos/rrssb.js"></script>
+    <script>
+	$('pre code').parent().not('[class*="language-"]').addClass('language-php line-numbers');
+</script>
+<script src="5%20coisas%20que%20um%20desenvolvedor%20PHP%20deve%20fazer%20e%20n%C3%A3o%20faz%20Artigo%20-%20WebDevBr_arquivos/prism.js"></script>
+<script>
+$('.slack-submit').click(function() {
+    var email = $('.slack-email').val();
+    $.ajax('/slack/invite/'+email)
+        .success(function (data) {
+            $('#slack div.alert').show();
+        });
+});
+
+$('#float-slack').on('mousemove click', function() {
+    $('#float-slack').hide('slow');
+});
+setTimeout(function() {
+    $('#float-slack').hide('slow');
+}, 5000);
+
+$('body').append('<div id="webdevbr-embed"></div>');
+$('a.webdevbr-embed').click(function(){
+    var url = $(this).attr('href');
+    $.ajax({
+        type: "GET",
+        url: "/modal-embed.html",
+        dataType: "html",
+        success: function(data)
+        {
+          $('#webdevbr-embed').html(data);
+          var modal = $('#webdevbr-embed .modal');
+          modal.find('iframe').attr('src', url);
+          modal.modal('show');
+        }
+    });
+
+    return false;
+});
+</script><div id="webdevbr-embed"></div>
+        <!--Start of Zopim Live Chat Script-->
+        <script type="text/javascript">
+         /* window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+          d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+          _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+          $.src="//v2.zopim.com/?3Jkwn5c4fNYTwzekubPwgvFHd8yzoaIK";z.t=+new Date;$.
+          type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+                */
+        </script>
+        <!--End of Zopim Live Chat Script-->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-41359179-4', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+
+
+</body></html>

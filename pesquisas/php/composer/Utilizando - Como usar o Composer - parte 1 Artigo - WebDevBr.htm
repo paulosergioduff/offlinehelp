@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="pt-br"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Utilizando - Como usar o Composer - parte 1 Artigo - WebDevBr</title>
+        <link href="https://www.webdevbr.com.br/favicon.ico" type="image/x-icon" rel="icon">
+    <link href="https://www.webdevbr.com.br/favicon.ico" type="image/x-icon" rel="shortcut icon">
+
+    <meta name="copyright" content="WebDevBr">
+    <meta name="robots" content="index,follow">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.webdevbr.com.br/feed.rss">
+    <meta name="google-site-verification" content="rQyjZXhUw9IzkVtEGMvQR7lZwJbRx7xrqKQ_WQz9iVg">
+    <meta name="generator" content="WebDevBr">
+    <meta name="description" content="Muito se ouve falar sobre Composer hoje em dia, mas ver na prática o que ele pode te oferecer é algo que só quem busca as coisas certas vai acabar descobrindo sem querer e se maravilhar, e saiba, quem">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Utilizando - Como usar o Composer - parte 1 Artigo - WebDevBr">
+    <meta property="og:url" content="https://www.webdevbr.com.br/utilizando-como-usar-o-composer-parte-1">
+    <meta property="og:site_name" content="WebDevBr - Cursos e Treinamentos de PHP e Javascript">
+    <link rel="canonical" href="https://www.webdevbr.com.br/utilizando-como-usar-o-composer-parte-1">
+
+    <link href="Utilizando%20-%20Como%20usar%20o%20Composer%20-%20parte%201%20Artigo%20-%20WebDevBr_arquivos/css.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="Utilizando%20-%20Como%20usar%20o%20Composer%20-%20parte%201%20Artigo%20-%20WebDevBr_arquivos/rrssb.css">
+    <style>
+        .rrssb-buttons li.small a .rrssb-icon {
+            max-width: 24px;
+        }
+    </style>
+    <!--Rastreamento-->
+        <!-- Facebook Conversion Code for Conclusões de compra - Erik Figueiredo 1 -->
+        <!-- Facebook Conversion Code for Visita WebDevBr -->
+        <script async="" src="Utilizando%20-%20Como%20usar%20o%20Composer%20-%20parte%201%20Artigo%20-%20WebDevBr_arquivos/analytics.js"></script><script async="" src="Utilizando%20-%20Como%20usar%20o%20Composer%20-%20parte%201%20Artigo%20-%20WebDevBr_arquivos/fbds.js"></script><script>(function() {
+          var _fbq = window._fbq || (window._fbq = []);
+          if (!_fbq.loaded) {
+            var fbds = document.createElement('script');
+            fbds.async = true;
+            fbds.src = 'https://connect.facebook.net/en_US/fbds.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(fbds, s);
+            _fbq.loaded = true;
+          }
+        })();
+        window._fbq = window._fbq || [];
+        window._fbq.push(['track', '6021418467051', {'value':'0.00','currency':'BRL'}]);
+        </script>
+        <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6021418467051&amp;cd[value]=0.00&amp;cd[currency]=BRL&amp;noscript=1" /></noscript>
+            <!--FimRastreament-->
+    <script></script>
+    <link rel="stylesheet" href="Utilizando%20-%20Como%20usar%20o%20Composer%20-%20parte%201%20Artigo%20-%20WebDevBr_arquivos/app.css">    <link rel="stylesheet" href="Utilizando%20-%20Como%20usar%20o%20Composer%20-%20parte%201%20Artigo%20-%20WebDevBr_arquivos/prism.css">
+</head>
+<body>
+    <header id="top">
+        <section>
+	<nav class="navbar navbar-inverse navbar-static-top">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Ver menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    			<ul class="nav navbar-nav navbar-right">
+    				    					<li><a href="https://www.webdevbr.com.br/acesso/login">Cadastro/Login</a></li>
+    				                    <li class="slack dropdown">
+                        <a href="" id="slack-btn" data-toggle="modal" data-target="#slackModal"><span class="label label-danger"><big>Slack!</big></span><span id="float-slack" style="display: none;"><img src="Utilizando%20-%20Como%20usar%20o%20Composer%20-%20parte%201%20Artigo%20-%20WebDevBr_arquivos/float-slack.png" alt=""></span></a>
+                                            </li>
+        			<li><a href="https://www.webdevbr.com.br/aulas"><span class="label label-primary"><big><span class="glyphicon glyphicon-education"></span> Estudar!</big></span></a></li>
+        			    			</ul>
+                <ul class="nav navbar-nav navbar-right visible-xs">
+                    <li class="active"><a href="https://www.webdevbr.com.br/">Início</a></li>
+
+                    <li><a href="https://www.webdevbr.com.br/php"> PHP</a></li><li><a href="https://www.webdevbr.com.br/frameworks">- Frameworks</a></li><li><a href="https://www.webdevbr.com.br/cakephp">-- CakePHP</a></li><li><a href="https://www.webdevbr.com.br/laravel">-- Laravel</a></li><li><a href="https://www.webdevbr.com.br/zend-framework">-- Zend Framework</a></li><li><a href="https://www.webdevbr.com.br/boas-praticas">- Boas práticas</a></li><li><a href="https://www.webdevbr.com.br/resfult">-- RESTful</a></li><li><a href="https://www.webdevbr.com.br/javascript"> JavaScript</a></li><li><a href="https://www.webdevbr.com.br/angularjs">- AngularJs</a></li><li><a href="https://www.webdevbr.com.br/ionic-framework">- Ionic Framework</a></li>
+                    <li><a href="https://www.webdevbr.com.br/gratis">Grátis</a></li>
+                    <li><a href="https://www.webdevbr.com.br/blog">Blog</a></li>
+                    <li><a href="https://www.webdevbr.com.br/mvc-e-php-entendendo-o-padrao-na-pratica-criando-um-framework-php">Série MVC</a></li>
+                    <li><a href="https://www.webdevbr.com.br/manual-do-type-script">Série Manual do TypeScript</a></li>
+                    <li><a href="https://www.webdevbr.com.br/padroes-de-projeto-no-php">Série Padrões de Projeto no PHP</a></li>
+                    
+                </ul>
+            </div>
+		
+	</nav>
+	<div class="container content">
+		<div class="row row-1">
+			<a class="" href="https://www.webdevbr.com.br/">
+				<img alt="Brand" src="Utilizando%20-%20Como%20usar%20o%20Composer%20-%20parte%201%20Artigo%20-%20WebDevBr_arquivos/logo.png">
+			</a>
+		</div>
+		<div class="visible-md visible-lg visible-sm">
+			<nav>
+				<ul class="nav nav-pills nav-dark">
+					<li class="active"><a href="https://www.webdevbr.com.br/">Início</a></li>
+
+					<li><a href="https://www.webdevbr.com.br/php">PHP</a><ul class="nav nav-pills nav-dark depth-0"><li><a href="https://www.webdevbr.com.br/frameworks">Frameworks</a><ul class="nav nav-pills nav-dark depth-1"><li><a href="https://www.webdevbr.com.br/cakephp">CakePHP</a></li><li><a href="https://www.webdevbr.com.br/laravel">Laravel</a></li><li><a href="https://www.webdevbr.com.br/zend-framework">Zend Framework</a></li></ul></li><li><a href="https://www.webdevbr.com.br/boas-praticas">Boas práticas</a><ul class="nav nav-pills nav-dark depth-1"><li><a href="https://www.webdevbr.com.br/resfult">RESTful</a></li></ul></li></ul></li><li><a href="https://www.webdevbr.com.br/javascript">JavaScript</a><ul class="nav nav-pills nav-dark depth-0"><li><a href="https://www.webdevbr.com.br/angularjs">AngularJs</a></li><li><a href="https://www.webdevbr.com.br/ionic-framework">Ionic Framework</a></li></ul></li>
+					<li><a href="https://www.webdevbr.com.br/gratis">Grátis</a></li>
+					<li>
+                        <a href="https://www.webdevbr.com.br/blog">Blog</a>
+                        <ul class="nav nav-pills nav-dark depth-0">
+                        <li>
+                            <a href="https://www.webdevbr.com.br/blog">Todos os artigos</a>
+                            <ul class="nav nav-pills nav-dark depth-1">
+                                <li><a href="https://www.webdevbr.com.br/mvc-e-php-entendendo-o-padrao-na-pratica-criando-um-framework-php">Série MVC</a></li>
+                                <li><a href="https://www.webdevbr.com.br/manual-do-type-script">Série Manual do TypeScript</a></li>
+                                <li><a href="https://www.webdevbr.com.br/padroes-de-projeto-no-php">Série Padrões de Projeto no PHP</a></li>
+                            </ul>
+                        </li>
+                        </ul>
+                    </li>
+					<li><a href="https://www.webdevbr.com.br/contato">Contato</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</section>
+    </header>
+    <main>
+        <section id="content">
+            <header id="highlight">
+                	<div class="title title-dark" style="display: table; width: 100%; line-height: initial; height: 200px">
+        <div style="display: table-cell; vertical-align: middle; width: 100%; margin: 0 auto;">
+    		<div class="container">
+    			<h1>Utilizando - Como usar o Composer - parte 1 <small>Artigo</small></h1>
+    		</div>
+    	</div>
+    </div>
+    <div class="title title-dark" style="background-color:#27ae60; height: auto; min-height: 66px;">
+        <div class="container text-center">
+            <h3>Conheça os cursos gratuitos do WebDevBr! - <a href="https://www.webdevbr.com.br/aulas#/cursos" class="btn btn-dark btn-lg">Inscreva-se!</a></h3>
+        </div>
+    </div>
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <ul class="nav navbar-nav navbar-right">
+                <!--<li class="active"><a href="">Teste de conhecimento</a></li>-->
+                <li><p class="navbar-text">Pesquisa:</p>
+                    <form class="navbar-form navbar-left" role="search" action="/busca">
+                        <div class="form-group">
+                          <input name="term" class="form-control" placeholder="Pesquisa..." type="text">
+                        </div>
+                        <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-search"></span></button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+            </header>
+            <div class="container">
+                                <div class="article">
+	<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+          <div class="share">
+    <ul class="rrssb-buttons clearfix rrssb-1">
+      <li class="rrssb-facebook" style="width: calc(100% - 84px);" data-initwidth="33.333333333333336" data-size="86">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.webdevbr.com.br/utilizando-como-usar-o-composer-parte-1" class="popup">
+          <span class="rrssb-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" width="29" height="29" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z" class="cls-2" fill-rule="evenodd"></path></svg>
+          </span>
+          <span class="rrssb-text">compartilhar</span>
+        </a>
+      </li>
+      <li class="rrssb-googleplus small" style="width: 42px;" data-initwidth="33.333333333333336" data-size="51">
+        <!-- Replace href with your meta and URL information.  -->
+        <a href="https://plus.google.com/share?url=https://www.webdevbr.com.br/utilizando-como-usar-o-composer-parte-1" class="popup">
+          <span class="rrssb-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"></path></svg>            </span>
+          <span class="rrssb-text">google+</span>
+        </a>
+      </li>
+      <li class="rrssb-twitter small" style="width: 42px;" data-initwidth="33.333333333333336" data-size="47">
+        <a href="https://twitter.com/intent/tweet?text=Recomendo:%20Utilizando%20-%20Como%20usar%20o%20Composer%20-%20parte%201%20https://www.webdevbr.com.br/utilizando-como-usar-o-composer-parte-1%20@erikfig%20#WebDevBr" class="popup">
+          <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"></path></svg></span>
+          <span class="rrssb-text">twitter</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+    </div>
+    <div class="col-md-12">
+        <hr>
+        <center><small>Este artigo foi publicado a 3 anos, 10 meses, 2 semanas, 6 dias atrás.</small></center>
+        <hr>
+    </div>
+  </div>
+		<div class="article-content">
+		<p>Muito se ouve falar sobre Composer hoje em dia, mas ver na prática o
+ que ele pode te oferecer é algo que só quem busca as coisas certas vai 
+acabar descobrindo sem querer e se maravilhar, e saiba, quem ainda não 
+usa vai começar a usar em breve ou ficar pra traz, e digo isso em 
+relação a frameworks conhecidos como o CakePHP por exemplo, que vai usar
+ na versão 3.x muito mais do que na versão 2.x (você sabia que usava 
+Composer lá?).</p>
+
+<p>Para instalar é muito simples, abrimos o site oficial (<a href="https://getcomposer.org/">https://getcomposer.org/</a>)
+ e na sessão de downloads copiamos um dos comandos e colamos no terminal
+ (vou generalizar aqui, você pode dizer cmd, console, terminal, linha de
+ comando ou como quiser, eu vou chamar terminal não importa o SO que 
+você use) e começar a usar, aqui no blog mesmo tem <a href="https://www.webdevbr.com.br/fazendo-o-php-funcionar-no-console-cmd-do-windows-instalando-o-composer-e-o-git/" title="Fazendo o PHP funcionar no console (CMD) do Windows + Instalando o Composer e o Git">um artigo (atualizado rescentemente) sobre a instalação e configuração do Composer</a>, não vou entrar neste mérito, já tem muita coisa sobre isso por ai.</p>
+
+<h3>Comandos básicos do composer</h3>
+
+<p>Quando você começa com um novo projeto utilizando o Composer ou 
+alterando algo em um já antigo vai precisar saber se o seu composer.phar
+ está atualizado com a última versão, se você já o tem a algum tempo no 
+PC e não baixou agora (o control+c e control+v ou instalou globalmente) 
+comece sempre com um self update (quer dizer atualizar eu mesmo), assim:</p>
+<div class="alert alert-success">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+  <h3>Gostou deste artigo?</h3>
+  <p>Receba atualizações semanais com novos artigos do WebDevBr e outras dicas!</p>
+
+  <form action="https://webdevbr.us11.list-manage.com/subscribe/post" method="POST">
+    <input name="u" value="4317b163878d6296c93ff715c" type="hidden">
+    <input name="id" value="0475efc612" type="hidden">
+    <div class="form-group">
+      <input class="form-control" placeholder="Nome" name="MERGE1" size="25" type="text">
+    </div>
+    <div class="form-group">
+      <input class="form-control" placeholder="Email" autocapitalize="off" autocorrect="off" name="MERGE0" size="25" type="email">
+    </div>
+    <div style="display:none">
+    <input name="b_4317b163878d6296c93ff715c_0475efc612" tabindex="-1" type="text">
+    </div>
+    <button type="submit" class="btn btn-danger" name="submit">Cadastrar</button>
+  </form>
+</div>
+
+
+<pre class=" line-numbers language-php"><code class=" language-php">php composer<span class="token punctuation">.</span>phar self<span class="token operator">-</span>update
+<span class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>Ele vai atualizar se necessário ou avisar que já está atualizado.</p>
+
+<p>A primeira vez que você rodar o Composer ele vai ler um arquivo 
+chamado composer.json (na maioria das vezes, e você vai entender isso 
+depois) e resovler todas as dependências que estiver lá, além de criar 
+autoloads e tudo o que precisar. O primeiro comando a executar sempre 
+que você rodar o Composer pela primeira vez é o install:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php">php composer<span class="token punctuation">.</span>phar install
+<span class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>Ele vai instalar e configurar tudo pra você e isso é incrível quando 
+você começar a entender os bastidores dele (lendo o artigo até o fim).</p>
+
+<p>Agora se você tem um projeto e atualizou algo no seu composer.json o 
+comando a rodar não é mais o install, agora vai precisar do update:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php">php composer<span class="token punctuation">.</span>phar update
+<span class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>Super very easy, no fim do processo (install ou update) ele cria um 
+composer.lock com todas as informações do que foi feito para saber 
+atualizar depois.</p>
+
+<p>Só pra fechar todas as pontas, você pode também querer saber qual a versão do seu composer.phar:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php">php composer<span class="token punctuation">.</span>phar <span class="token operator">--</span>version
+<span class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>Ele traz até a hora em que a atualização foi publicada, pra conhecer os outros comandos do composer visite este link: <a href="https://getcomposer.org/doc/03-cli.md">https://getcomposer.org/doc/03-cli.md</a>.</p>
+
+<h3>E o tal do composer.json</h3>
+
+<p>E é aqui que a mágica acontece, aonde setamos todas as dependências, 
+configurações as informações do nosso projeto e nossas próprias 
+informações, vamos por a mão na massa pra você entender.</p>
+
+<h4>Dependências</h4>
+
+<p>A principal função do Composer é baixar e instalar tudo o que você 
+precisa, para começar isso crie na raiz do seu projeto um arquivo 
+chamado composer.json com o conteúdo:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php"><span class="token punctuation">{</span>
+    <span class="token string">"require"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"php"</span><span class="token punctuation">:</span> <span class="token string">"&gt;=5.5.*"</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Esse bloco diz ao Composer que nossa aplicação precisa do PHP da 
+versão maior ou igual (&gt;=) a 5.5.qualqueruma, você ainda pode usar:</p>
+
+<ul>
+<li>php: Verifica a versão do PHP</li>
+<li>hhvm: Verifica a versão do HHVM</li>
+<li>lib-*: Verifica se a lib informada (no lugar de *) existe e qual versão deve ser utilizada</li>
+<li>ext-*: Verifica se a extenção PHP informada (no lugar de *) existe e qual versão deve ser utilizada</li>
+</ul>
+
+<p>Note que você pode expecificar uma versão exata, por exemplo a 5.5.15
+ do PHP, utilizar o * (asteristico) para casar qualquer número e somar 
+isso aos operadores de comparação (&gt;, &gt;=, &lt;, &lt;= e !=, acho 
+que é isso, se faltou algum poste nos comentários). Para saber mais 
+sobre versões no Composer de uma olhada na documentação oficial: <a href="https://getcomposer.org/doc/02-libraries.md#tags">https://getcomposer.org/doc/02-libraries.md#tags</a>.</p>
+
+<p>Além de verificar se o ambiente é ideal a aplicação você também pode 
+usar o require para informar quais pacotes você quer utilizar, por 
+exemplo o require do esqueleto do Zend Framework 2 com o Doctrine:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php"><span class="token punctuation">{</span>
+    <span class="token string">"require"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"php"</span><span class="token punctuation">:</span> <span class="token string">"&gt;=5.3.3"</span><span class="token punctuation">,</span>
+        <span class="token string">"zendframework/zendframework"</span><span class="token punctuation">:</span> <span class="token string">"2.3.*"</span><span class="token punctuation">,</span>
+        <span class="token string">"doctrine/doctrine-orm-module"</span><span class="token punctuation">:</span> <span class="token string">"0.*"</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Claro que ainda tem mais coisa além disso no arquivo, mas estamos falando do require agora.</p>
+
+<p>Alí ele informa que precisa da versão 2.3 mais recente do Zend 
+Framework e a da versão 0 do Doctrine Orm Module mais recente também.</p>
+
+<p>Tenha em mente que todo projeto também é um pacote e vou mostrar como transformar seu projeto em pacote no próximo artigo.</p>
+
+<h3>Informações sobre seu projeto</h3>
+
+<p>Você ainda pode inserir informações sobre seu projeto no arquivo 
+json, o que fica legal na hora de compartilhar, são dois parametros 
+desta vez, name e description, veja um exemplo com o esqueleto do Zend 
+Framework 2:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php"><span class="token punctuation">{</span>
+    <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"zendframework/skeleton-application"</span><span class="token punctuation">,</span>
+    <span class="token string">"description"</span><span class="token punctuation">:</span> <span class="token string">"Skeleton Application for ZF2"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>O parametro name guarda o nome da sua aplicação ou o nome do pacote e
+ o description é onde colocamos a descrição, bem simples não é. Agora o 
+composer.json ja fica mais interessante de se ver, veja:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php"><span class="token punctuation">{</span>
+    <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"zendframework/skeleton-application"</span><span class="token punctuation">,</span>
+    <span class="token string">"description"</span><span class="token punctuation">:</span> <span class="token string">"Skeleton Application for ZF2"</span><span class="token punctuation">,</span>
+    <span class="token string">"require"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"php"</span><span class="token punctuation">:</span> <span class="token string">"&gt;=5.3.3"</span><span class="token punctuation">,</span>
+        <span class="token string">"zendframework/zendframework"</span><span class="token punctuation">:</span> <span class="token string">"2.3.*"</span><span class="token punctuation">,</span>
+        <span class="token string">"doctrine/doctrine-orm-module"</span><span class="token punctuation">:</span> <span class="token string">"0.*"</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Já sabemos o que é (name), o que faz (description) e o que precisa 
+(require) pra funcionar, ainda podemos acrescentar a licensa de uso 
+(license), um link (homepage) pro usuário visitar e algumas 
+palavras-chave (keywords) pra ajudar o usuário a encontrar outros 
+pacotes que tenham alguma relação com o que você está trabalhando 
+(utilizando o comando <strong>php composer.phar search my keywords</strong>), veja como ficaria:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php"><span class="token punctuation">{</span>
+    <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"zendframework/skeleton-application"</span><span class="token punctuation">,</span>
+    <span class="token string">"description"</span><span class="token punctuation">:</span> <span class="token string">"Skeleton Application for ZF2"</span><span class="token punctuation">,</span>
+    <span class="token string">"license"</span><span class="token punctuation">:</span> <span class="token string">"BSD-3-Clause"</span><span class="token punctuation">,</span>
+    <span class="token string">"keywords"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token string">"framework"</span><span class="token punctuation">,</span>
+        <span class="token string">"zf2"</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">"homepage"</span><span class="token punctuation">:</span> "http<span class="token punctuation">:</span><span class="token comment" spellcheck="true">//framework.zend.com/",</span>
+    <span class="token string">"require"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"php"</span><span class="token punctuation">:</span> <span class="token string">"&gt;=5.3.3"</span><span class="token punctuation">,</span>
+        <span class="token string">"zendframework/zendframework"</span><span class="token punctuation">:</span> <span class="token string">"2.3.*"</span><span class="token punctuation">,</span>
+        <span class="token string">"doctrine/doctrine-orm-module"</span><span class="token punctuation">:</span> <span class="token string">"0.*"</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Bem, este é o arquivo composer.json completo do "Skeleton Application for ZF2", ficou fácil de enteder agora né.</p>
+
+<h3>Informações sobre o autor ou equipe</h3>
+
+<p>E pra completar, que tal falar que foi você que fez o projeto e o seu email:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php"><span class="token punctuation">{</span>
+    <span class="token string">"authors"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Erik Figueiredo"</span><span class="token punctuation">,</span>
+            <span class="token string">"email"</span><span class="token punctuation">:</span> <span class="token string">"falecom@erikfigueiredo.com.br"</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Da até pra inserir os dados de uma equipe inteira:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php"><span class="token punctuation">{</span>
+    <span class="token string">"authors"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Erik Figueiredo"</span><span class="token punctuation">,</span>
+            <span class="token string">"email"</span><span class="token punctuation">:</span> <span class="token string">"falecom@erikfigueiredo.com.br"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Colaborador Dois"</span><span class="token punctuation">,</span>
+            <span class="token string">"email"</span><span class="token punctuation">:</span> <span class="token string">"col2@mportfolio.uk.br"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Colaborador Três"</span><span class="token punctuation">,</span>
+            <span class="token string">"email"</span><span class="token punctuation">:</span> <span class="token string">"col3@antipog.com.br"</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>E se essa equipe tivesse criado o Skeleton Application for ZF2 o composer.json ficaria assim:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php"><span class="token punctuation">{</span>
+    <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"zendframework/skeleton-application"</span><span class="token punctuation">,</span>
+    <span class="token string">"description"</span><span class="token punctuation">:</span> <span class="token string">"Skeleton Application for ZF2"</span><span class="token punctuation">,</span>
+    <span class="token string">"license"</span><span class="token punctuation">:</span> <span class="token string">"BSD-3-Clause"</span><span class="token punctuation">,</span>
+    <span class="token string">"keywords"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token string">"framework"</span><span class="token punctuation">,</span>
+        <span class="token string">"zf2"</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">"homepage"</span><span class="token punctuation">:</span> "http<span class="token punctuation">:</span><span class="token comment" spellcheck="true">//framework.zend.com/",</span>
+    <span class="token string">"authors"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Erik Figueiredo"</span><span class="token punctuation">,</span>
+            <span class="token string">"email"</span><span class="token punctuation">:</span> <span class="token string">"falecom@erikfigueiredo.com.br"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Colaborador Dois"</span><span class="token punctuation">,</span>
+            <span class="token string">"email"</span><span class="token punctuation">:</span> <span class="token string">"col2@mportfolio.uk.br"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Colaborador Três"</span><span class="token punctuation">,</span>
+            <span class="token string">"email"</span><span class="token punctuation">:</span> <span class="token string">"col3@antipog.com.br"</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+    <span class="token string">"require"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"php"</span><span class="token punctuation">:</span> <span class="token string">"&gt;=5.3.3"</span><span class="token punctuation">,</span>
+        <span class="token string">"zendframework/zendframework"</span><span class="token punctuation">:</span> <span class="token string">"2.3.*"</span><span class="token punctuation">,</span>
+        <span class="token string">"doctrine/doctrine-orm-module"</span><span class="token punctuation">:</span> <span class="token string">"0.*"</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3>Intalando o primeiro pacote com Composer</h3>
+
+<p>Agora que sabemos como o composer trabalha vamos instalar um pacote, 
+eu escolhi instalar o CakePHP 3, que no momento em que eu escrevia este 
+artigo estava em desenvolvimento ainda, ou seja, não estável.</p>
+
+<p>Como o Composer só instala pacotes marcados como estáveis, se rodarmos o composer.json a seguir ele vai retornar um erro:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php"><span class="token punctuation">{</span>
+    <span class="token string">"require"</span> <span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"cakephp/app"</span> <span class="token punctuation">:</span> <span class="token string">"dev-master"</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Precisamos então informar para o Composer que ele pode instalar 
+pacotes que estejam em desenvolvimento, ou seja, marcados como dev 
+usando o minimum-stability (ou estabilidade mínima), veja como fica:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php"><span class="token punctuation">{</span>
+    <span class="token string">"minimum-stability"</span><span class="token punctuation">:</span><span class="token string">"dev"</span><span class="token punctuation">,</span>
+    <span class="token string">"require"</span> <span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"cakephp/app"</span> <span class="token punctuation">:</span> <span class="token string">"dev-master"</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Agora ao dar um install neste arquivo ele vai baixar o esqueleto do 
+CakePHP (sim, agora o CakePHP também tem um esqueleto, igual o Zend 
+Framework) e ver que ele também tem um composer.json e vair abrir para 
+baixar todas as dependências dele, se algum pacote dentro deste segundo 
+composer.json tiver outro composer.jso ele vai repetir o processo para 
+este terceiro arquivo, e assim até resolver todas as dependências 
+necessárias para o CakePHP Application Skeleton esteja funcionando.</p>
+
+<p>Claro que o processo acima vai instalar o CakePHP Application 
+Skeleton dentro de um diretório vendor, o que ajudou a entender a 
+didática da coisa mas não configura certinho, pra não sofrer basta rodar
+ o comando abaixo lembrando de colocar o nome do diretório que vai 
+instalar o CakePHP Application Skeleton no lugar de [app_name], ou 
+remova esta parte para criar um diretório app e jogar tudo lá dentro por
+ padrão.</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php">php composer<span class="token punctuation">.</span>phar create<span class="token operator">-</span>project <span class="token operator">-</span>s dev cakephp<span class="token operator">/</span>app <span class="token punctuation">[</span>app_name<span class="token punctuation">]</span>
+<span class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>O parâmetro -s com o valor dev (-s dev) faz o mesmo que o minimum-stability, ou seja, seta minimum-stability como dev.</p>
+
+<p>Simples assim.</p>
+
+<p>Este é o primeiro artigo de uma série curta de 2 artigos sobre o 
+Composer, no próximo vamos falar sobre como criar um repositório para 
+nossos projetos no Composer.</p>
+
+<p>É isso ai e até a próxima.</p>
+<p></p>	</div>
+    <hr>
+        <h3>Cursos relacionados</h3>
+    
+						<ul class="products-grid row">
+		<li class="col-md-3 col-xs-6">
+			<a href="https://www.webdevbr.com.br/curso-conhecendo-servidores-php-na-pratica" class="img-flip">
+							<img src="Utilizando%20-%20Como%20usar%20o%20Composer%20-%20parte%201%20Artigo%20-%20WebDevBr_arquivos/galery_curso-servidores-php-na-pratica.jpg" alt="" class="img-thumbnail">
+					</a>
+		<h4><a href="https://www.webdevbr.com.br/curso-conhecendo-servidores-php-na-pratica">Curso Conhecendo Servidores PHP na Prática</a></h4>
+		<p>R$ 85,00<br>
+			<small>	até 12x R$ 8,53*
+</small>
+		</p>
+		<p>
+												<a href="https://www.webdevbr.com.br/carrinho/add/14" class="btn btn-dark">inscrever-se</a>
+										<a href="https://www.webdevbr.com.br/curso-conhecendo-servidores-php-na-pratica" class="btn btn-dark">+ detalhes</a>
+		</p>
+		</li>
+    						<li class="col-md-3 col-xs-6">
+			<a href="https://www.webdevbr.com.br/curso-zend-framework-2-doctrine-iniciante" class="img-flip">
+							<img src="Utilizando%20-%20Como%20usar%20o%20Composer%20-%20parte%201%20Artigo%20-%20WebDevBr_arquivos/galery_curs-zend-framework-2.jpg" alt="" class="img-thumbnail">
+					</a>
+		<h4><a href="https://www.webdevbr.com.br/curso-zend-framework-2-doctrine-iniciante">Curso Zend Framework 2 + Doctrine - Iniciante</a></h4>
+		<p>R$ 219,00<br>
+			<small>	até 12x R$ 21,99*
+</small>
+		</p>
+		<p>
+												<a href="https://www.webdevbr.com.br/carrinho/add/10" class="btn btn-dark">inscrever-se</a>
+										<a href="https://www.webdevbr.com.br/curso-zend-framework-2-doctrine-iniciante" class="btn btn-dark">+ detalhes</a>
+		</p>
+		</li>
+            <div class="clearfix visible-xs-block"></div>
+    						<li class="col-md-3 col-xs-6">
+			<a href="https://www.webdevbr.com.br/como-criar-um-servidor-restful-e-oauth2-usando-laravel-5" class="img-flip">
+							<img src="Utilizando%20-%20Como%20usar%20o%20Composer%20-%20parte%201%20Artigo%20-%20WebDevBr_arquivos/galery_api-restfull-laravel5.jpg" alt="" class="img-thumbnail">
+					</a>
+		<h4><a href="https://www.webdevbr.com.br/como-criar-um-servidor-restful-e-oauth2-usando-laravel-5">Como criar um servidor RESTful e OAuth2 usando Laravel 5.2</a></h4>
+		<p>R$ 155,00<br>
+			<small>	até 12x R$ 15,56*
+</small>
+		</p>
+		<p>
+												<a href="https://www.webdevbr.com.br/carrinho/add/29" class="btn btn-dark">inscrever-se</a>
+										<a href="https://www.webdevbr.com.br/como-criar-um-servidor-restful-e-oauth2-usando-laravel-5" class="btn btn-dark">+ detalhes</a>
+		</p>
+		</li>
+    						<li class="col-md-3 col-xs-6">
+			<a href="https://www.webdevbr.com.br/curso-introducao-a-5-frameworks-php-na-pratica" class="img-flip">
+							<img src="Utilizando%20-%20Como%20usar%20o%20Composer%20-%20parte%201%20Artigo%20-%20WebDevBr_arquivos/galery_curso-5-frameworks.jpg" alt="" class="img-thumbnail">
+					</a>
+		<h4><a href="https://www.webdevbr.com.br/curso-introducao-a-5-frameworks-php-na-pratica">Curso Introdução a 5 Frameworks PHP na prática</a></h4>
+		<p>R$ 150,00<br>
+			<small>	até 12x R$ 15,06*
+</small>
+		</p>
+		<p>
+												<a href="https://www.webdevbr.com.br/carrinho/add/13" class="btn btn-dark">inscrever-se</a>
+										<a href="https://www.webdevbr.com.br/curso-introducao-a-5-frameworks-php-na-pratica" class="btn btn-dark">+ detalhes</a>
+		</p>
+		</li>
+            <div class="clearfix visible-xs-block"></div>
+    			</ul>
+		
+    <hr>
+        <aside class="author-bio col-md-12 dark-box">
+	<div class="col-md-12">
+		<img src="Utilizando%20-%20Como%20usar%20o%20Composer%20-%20parte%201%20Artigo%20-%20WebDevBr_arquivos/erik-figueiredo.jpg" alt="" class="author-picture">
+		<h3><author>Erik Figueiredo</author></h3>
+        <p>Erik Figueiredo é desenvolvedor web full stack, apaixonado pela profissão e professor/fundador do WebDevBr.</p>
+        <p><a href="https://plus.google.com/+ErikFigueiredoDs?rel=author" class="btn btn-danger">G+</a>
+        <a href="https://br.linkedin.com/in/erikfigueiredo" class="btn btn-success">Linkedin</a>
+        <a href="https://www.facebook.com/erikfigueiredods" class="btn btn-primary">Facebook</a></p>
+    </div>
+</aside>
+</div>
+
+            </div>
+            <div class="container">
+                <p></p><center>* Parcelamento apenas cartão de crédito! Pode haver uma pequena variação no parcelamento em relação a simulações apresentadas!</center><p></p>
+            </div>
+        </section>
+    </main>
+    <footer id="bottom">
+        <nav class="navbar navbar-inverse navbar-static-bottom">
+	<p class="navbar-text">© 2018 - WebDevBr. All Rights Reserved. by: <a href="https://www.erikfigueiredo.com.br/">Erik Figueiredo</a></p>
+</nav>    </footer>
+    <div class="modal fade" id="slackModal" tabindex="-1" role="dialog" aria-labelledby="slackModalLabel">
+      <div class="modal-dialog" id="slack" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title" id="myModalLabel">Participe do Slack do WebDevBr</h4>
+          </div>
+          <div class="modal-body">
+            <p><img src="Utilizando%20-%20Como%20usar%20o%20Composer%20-%20parte%201%20Artigo%20-%20WebDevBr_arquivos/slack.png" alt="Slack do WebDevBr" class="img-responsive" width="940"></p>
+            <p>Se você nunca acessou será necessário pegar um convite no formulário logo a baixo.</p>
+            <div class="form-group">
+              <input class="slack-email form-control" placeholder="Seu email..." type="email">
+            </div>
+            <button class="slack-submit btn btn-dark" type="button">Solicitar convite</button>
+            <div class="alert alert-success" style="margin: 0px; display: none;">Verifique seu email</div>
+            <hr>
+            <p>Se você já pegou seu convite e se cadastrou, acesse o Slack usando o botão logo abaixo!</p>
+            <p><a href="https://webdevbrasil.slack.com/" target="_blank" class="btn btn-primary">Ir para o Slack do WebDevBr</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="Utilizando%20-%20Como%20usar%20o%20Composer%20-%20parte%201%20Artigo%20-%20WebDevBr_arquivos/jquery-1.js"></script>
+    <script src="Utilizando%20-%20Como%20usar%20o%20Composer%20-%20parte%201%20Artigo%20-%20WebDevBr_arquivos/swiper.js"></script>
+    <script src="Utilizando%20-%20Como%20usar%20o%20Composer%20-%20parte%201%20Artigo%20-%20WebDevBr_arquivos/bootstrap.js"></script>
+    <script src="Utilizando%20-%20Como%20usar%20o%20Composer%20-%20parte%201%20Artigo%20-%20WebDevBr_arquivos/rrssb.js"></script>
+    <script>
+	$('pre code').parent().not('[class*="language-"]').addClass('language-php line-numbers');
+</script>
+<script src="Utilizando%20-%20Como%20usar%20o%20Composer%20-%20parte%201%20Artigo%20-%20WebDevBr_arquivos/prism.js"></script>
+<script>
+$('.slack-submit').click(function() {
+    var email = $('.slack-email').val();
+    $.ajax('/slack/invite/'+email)
+        .success(function (data) {
+            $('#slack div.alert').show();
+        });
+});
+
+$('#float-slack').on('mousemove click', function() {
+    $('#float-slack').hide('slow');
+});
+setTimeout(function() {
+    $('#float-slack').hide('slow');
+}, 5000);
+
+$('body').append('<div id="webdevbr-embed"></div>');
+$('a.webdevbr-embed').click(function(){
+    var url = $(this).attr('href');
+    $.ajax({
+        type: "GET",
+        url: "/modal-embed.html",
+        dataType: "html",
+        success: function(data)
+        {
+          $('#webdevbr-embed').html(data);
+          var modal = $('#webdevbr-embed .modal');
+          modal.find('iframe').attr('src', url);
+          modal.modal('show');
+        }
+    });
+
+    return false;
+});
+</script><div id="webdevbr-embed"></div>
+        <!--Start of Zopim Live Chat Script-->
+        <script type="text/javascript">
+         /* window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+          d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+          _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+          $.src="//v2.zopim.com/?3Jkwn5c4fNYTwzekubPwgvFHd8yzoaIK";z.t=+new Date;$.
+          type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+                */
+        </script>
+        <!--End of Zopim Live Chat Script-->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-41359179-4', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+
+
+</body></html>

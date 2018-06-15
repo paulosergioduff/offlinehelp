@@ -1,0 +1,112 @@
+/* comentario_a.css */
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.comentario_sub { display: block; width: 100%; }
+.btn_responder_todos { border: none; display: block; margin: -10px 0 20px 70px; }
+.btn_responder { -webkit-appearance: none; -moz-appearance: none; appearance: none; color: #FFF !important; background: #a0a0a0; border: none; cursor: pointer; display: block; font-size: 14px; min-width: 150px; padding: 10px 15px; text-decoration: none; transition: opacity .3s ease; }
+.btn_responder_pai { color: #FFF !important; float: left; font-size: 14px; margin: 20px 0 0 65px; text-decoration: none; transition: opacity .3s ease  }
+.btn_responder:hover, .btn_responder_pai:hover { opacity: 0.7; }
+.btn_responder a, .btn_responder_pai a { color: #FFF !important; font-size: 14px; text-decoration: none; transition: opacity .3s ease; }
+.btn_responder a:hover, .btn_responder_pai a:hover { opacity: 0.7; }
+.txt_responder { box-sizing: border-box; display: block; height: 40px; margin: 0 0 10px 0; max-width: 100%; padding: 10px; -webkit-animation: fadein .3s; -moz-animation: fadein .3s; -ms-animation: fadein .3s; -o-animation: fadein .3s; animation: fadein .3s; width: 100%; }
+.txt_responder.comentario_ativo { height: 80px; margin: 0 0 20px 0; max-width: 100%; transition: height .3s ease; }
+.box_adicionar_comentario_pai:after, .box_adicionar_comentario_pai:before { clear: both; content: ''; display: table; }
+.box_adicionar_comentario_pai { display: block; margin: 20px 0; }
+.txt_perguntar { box-sizing: border-box; float: left; height: 80px; margin: 0 0 0 20px; max-width: calc(100% - 65px); padding: 10px; width: calc(100% - 65px); }
+.img_usuario { float: left; width: 45px; }
+
+/* artigo_style_2013.css */
+
+span.ver-mais { margin: 0 auto; display: block; position: relative; background: #F4F4F4; padding: 30px 0px; font: normal bold 28px/100% arial; color: #999999; text-align: center; -moz-box-sizing: border-box; box-sizing: border-box; border: 1px solid #ECECEC; cursor: pointer; }
+#botao_duvidas_rodape { font-size: 26px; font-family: sans-serif; margin-left: auto; margin-right: auto; margin-top: 10px; margin-bottom: 10px; width: 100%; background-color: transparent; color: #A9A9A9 !important; padding: 5px 0; white-space: normal; text-align: left !important; border-bottom: 4px solid #a9a9a9; }
+#botao_duvidas_rodape p { color: #A9A9A9; font-size: 32px; line-height: 1.8; margin: 0; text-align: left; }
+.comentario-erro:after,
+.comentario-erro:before { clear: both; content: ""; display: table; }
+.comentario-erro { display: block; margin: 0 0 0 65px; /* width: 100%; */ }
+.comentario-erro p { font: normal 14px/26px verdana, sans-serif; margin: 15px 0 0 0; }
+.comentario-erro a:active, .comentario-erro a:hover, .comentario-erro a:visited, .comentario-erro a { color: #494949; font: normal 14px/26px verdana, sans-serif; text-decoration: none; }
+.comentario-erro a:hover { text-decoration: underline; }
+.btn_responder_todos .comentario-erro { margin: 0 0 10px 0; }
+.btn_responder_todos .comentario-erro p { margin: 0; }
+.box_comentario_sub1 { margin-left: 70px !important; padding-bottom: 25px !important; }
+.foto_comentario_sub { float: left; margin-left: 10px !important; width: 45px; padding-bottom: 25px; }
+.load { display: none; margin: 0 auto; }
+.load > img { left: 49%; margin-bottom: 10px; position: relative; width: 25px; }
+.listar-mais { padding: 10px 0 0 0; }
+
+/* Comentarios.css*/
+
+.mark-mvp { display: inline-block; background-color: #8CC53E; margin-left: 7px; padding: 0 5px; height: 2em; color: #fff; font-weight: normal; font-size: 10px; line-height: 2.1em; border-radius: 3px; text-transform: uppercase; -moz-box-sizing: border-box; box-sizing: border-box; }
+.mark-consultor { background-color:  #8CC53E; border-radius: 3px; color: #ffffff; display: inline-block; font-weight: normal; font-size: 10px; margin: 0 0 8px 8px; padding: 0 5px; text-transform: uppercase; -moz-box-sizing: border-box; box-sizing: border-box; }
+.div_listagem { word-wrap: normal !important; }
+.linkMyComments { text-decoration: none;color: #000; }
+.linkMyComments:hover { text-decoration:underline; }
+.btn_postarDuvida{ float: right; margin-top: -77px; font-family: arial; color: #fff; background-color: rgb(73, 197, 191); padding: 4px 9px 4px 9px; border-radius: 3px; }
+.link_postarDuvida{ color:#fff; text-decoration:none; }
+.link_postarDuvida:after{ content:"Postar dúvida / Comentário"; }
+.dm-comentario-thumb-down { font-size: 16px; color: #f05f5c; border-radius: 4px; position: relative; top: 2px; }
+.comentario-editavel { cursor: pointer; }
+.comentario_sub { border-left: 1px solid #cdcdcd; width: calc(100% - 60px); margin-left: 60px; }
+.box_comentario_sub1 { margin-left: 55px !important; }
+.btn_responder_todos { margin-left: 60px; }
+.txt_responder { border: 1px solid #cdcdcd; }
+.comentarios_outer { box-sizing: border-box; margin: 30px auto; max-width: 950px; position: relative; width: 100% }
+.comentarios_title { font-size: 24px; font-family: lato; color: #494949; background-color: #f5f5f5; padding: 10px 20px; margin-bottom: 30px; }
+
+#div_comentarios_outer{ padding: 30px 60px 50px 60px; }
+#botao_duvidas_rodape{ display: none; }
+
+.margin_left60 { margin-left: 60px; }
+.corpo_comente { padding: 20px 0px 2px 0px; } 
+.foto_comentario1 { float: left; width: 50px; padding: 5px; } 
+.texto_comentario_conteudo { color: #333; width: 100%; word-wrap: break-word; font-size: 13px; font-family: arial,verdana, sans-serif; } 
+.texto_comentario_nome { color: #A9A9A9; font-weight: bold; }
+.texto_comentario { font-family:verdana; font-size:8pt; letter-spacing:.04em; line-height:19px; color:#A9A9A9; }
+.foto_comentario1{ width: 50px; height: 50px; text-align: center; border-radius: 100px; overflow: hidden; display: flex; justify-content: center; align-items: center; padding: 0px; }
+.foto_comentario1 img{ /*min-height: 50px; min-width: 50px; max-width: 100%;*/ height: 100%; width: 100%; object-fit: cover; }
+.foto_comentario_sub{ width: 40px; height: 40px; text-align: center; border-radius: 100px; overflow: hidden; display: flex; justify-content: center; align-items: center; padding: 0px; }
+.foto_comentario_sub img{/* min-height: 40px; min-width: 40px; max-width: 100%;*/ height: 100%; width: 100%; object-fit: cover; }
+.foto_usuario{ width: 50px; height: 50px; text-align: center; border-radius: 100px; overflow: hidden; display: inline-flex; float: left; justify-content: center; align-items: center; padding: 0px; }
+.foto_usuario img{ min-height: 50px; min-width: 50px; max-width: 100%; }
+.txt_perguntar{ margin-left: 15px; }
+.div_listagem { word-wrap: normal !important; }
+.div_listagem { overflow-x: auto; padding-left: 5px; border-left-style: solid; border-left-color: #00545E; border-left-width: 5px; }
+.comentario_viewaula { width: 950px; margin-left: 24%; margin-bottom: 30px; padding: 0 60px; box-sizing: border-box; }
+#div_comentarios { padding-left: 10px; }
+
+.corpo_comente .destaque{ height: 20px; width: 20px; display: inline-block; background-size: cover; vertical-align: middle; margin: 0 5px; cursor: pointer; transition: opacity .5s}
+.corpo_comente .destaque:not(.destacado) { background-image: url("//www.devmedia.com.br/comentarios/img/star.png"); }
+.corpo_comente .destaque.destacado { background-image: url("//www.devmedia.com.br/comentarios/img/star-full.png"); }
+.corpo_comente .destaque.waiting { opacity: .2; cursor: initial;}
+
+#div_comentarios pre.pre_listagem{white-space: pre !important;}
+
+@media screen and (max-width: 1266px) {
+    .comentario_viewaula { width: 76%; }
+}
+
+@media screen and (max-width: 1199px) {
+    .comentarios_outer { box-sizing: border-box; margin: 40px auto 0; width: 100%; }
+    .listar-mais { margin-bottom: 20px; }
+    .comentario_viewaula { width: 100%; margin-left: 0; margin-right: 0; }
+}
+
+@media screen and (max-width: 639px) { 
+    .content_info_aula { padding: 0 15px; }
+    .comentarios_outer { padding: 0 15px; }
+    .comentario_viewaula { padding: 0 10px; }
+}
+
+@media screen and (max-width: 490px) { 
+    .comentario_sub { border-left: none !important; margin-left: 0 !important; width: 100% !important; }
+    .txt_responder { height: 50px; }
+    .btn_responder_todos { margin: 0; }
+}
+
+@media screen and (max-width: 480px){
+    .btn_postarDuvida{ float: right; margin-top: -77px; font-family: arial; color: #fff; background-color: rgb(73, 197, 191); padding: 4px 9px 4px 9px; border-radius: 3px; width: 25%; text-align: center; }
+    .link_postarDuvida:after{ font-size:14px; content:"Postar dúvida Comentário" !important; text-align: center; }
+}
