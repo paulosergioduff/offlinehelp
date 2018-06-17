@@ -1,0 +1,344 @@
+/*-------------------------------------
+    Reset
+---------------------------------------*/
+
+/******Basic settings**********/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+  text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; 
+  -webkit-text-size-adjust: 100%; 
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+img{
+  border: 0px;
+}
+a{
+  text-decoration: none;
+}
+body{
+    font-family: 'Roboto', sans-serif; color: #FFFFFF;
+}
+@font-face {
+	font-family: 'mathilde';
+	src: url('mathilde.woff') format('woff');
+}
+
+.font-preloader{
+  font-family:'Roboto';
+  visibility:hidden;
+  width:0; 
+  height:0;
+}
+#frame_one, #frame_two,#frame_three,#frame_four,#frame_five,#frame_six,#frame_seven {
+  width: 100%;
+  height: 100%;
+}
+
+/*-------------------------------------
+  Layout
+---------------------------------------*/
+
+#ad {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#banner {
+  position: absolute;
+  background: #eeeeee;
+  display: block;
+  width: 160px;
+  height: 600px;
+  overflow: hidden;
+  cursor: pointer;
+  visibility: hidden; 
+  border: 1px solid #444444;
+  -webkit-box-sizing: border-box;  
+          box-sizing: border-box;  
+}
+
+#clickTAG {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+.ie-fallback{
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+}
+
+/*-------------------------------------
+  Frame One frame duration: 3s
+---------------------------------------*/
+.dell-logo {
+  left:54px;
+  top:274px;
+  position: absolute;
+}
+.vendor-logo {
+  position: absolute;
+  bottom:15px;
+  left:33px;
+}
+.vendor-copy {
+  width:100%;
+  font-size: 12px;
+  line-height:15px;
+  text-align:center;
+  bottom:26px;
+  color: #444;
+  position:absolute; 
+}
+
+.bckgrnd {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+}
+
+/*-------------------------------------
+  Frame two  frame duration: 2.2s
+---------------------------------------*/
+
+.title2-1 {
+  width:100%;
+  position: absolute;
+  font-size: 21px;
+  line-height: 23px;
+  text-align:center;
+  color: #444444;
+  top: 139px;
+}
+.product-1 {
+  position: absolute;
+  top: 293px;
+  right: -1px;
+}
+
+/*-------------------------------------
+  Frame Three  frame duration: 2.2s
+---------------------------------------*/
+
+.title3-1 {
+  width:100%;
+  position: absolute;
+  font-size: 21px;
+  line-height: 23px;
+  text-align:center;
+  color: #444444;
+  top: 139px;
+}
+.product-2 {
+  position: absolute;
+  top: 293px;
+  right: -1px;
+}
+
+/*-------------------------------------
+ Frame Four  frame duration: 2.2s
+---------------------------------------*/
+.title4-1 {
+  width:100%;
+  position: absolute;
+  font-size: 21px;
+  line-height: 23px;
+  text-align:center;
+  color: #444444;
+  top: 139px;
+}
+.mat_text {
+  font-family: 'mathilde';
+  font-size: 58px;
+  font-weight: normal;
+  color:#ce1126;
+}
+.product-3 {
+  position: absolute;
+  top: 289px;
+  right: -1px;
+}
+
+/*-------------------------------------
+ Frame Five  frame duration: 2.2s
+---------------------------------------*/
+.title5-1 {
+  width:100%;
+  position: absolute;
+  font-size: 21px;
+  line-height: 23px;
+  text-align:center;
+  color: #444444;
+  top: 139px;
+}
+.mat_text {
+  font-family: 'mathilde';
+  font-size: 58px;
+  font-weight: normal;
+  color:#ce1126;
+}
+.product-4 {
+  position: absolute;
+  top: 293px;
+  right: 12px;
+}
+
+.scrn-size{
+  font-size: 12px;
+  line-height: 14px;
+  top: 280px;
+  left: 10px;
+  color: #444444;
+  z-index: 2;
+  position:absolute;
+
+}
+/*-------------------------------------
+ Frame Six  frame duration: 3.2s
+---------------------------------------*/
+
+.title6-1{
+	width:100%;
+	position: absolute;
+	font-size: 14px;
+	line-height:17px;
+	text-align:center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+	color: #444444;
+    font-weight:400;
+    top: 141px;
+
+}
+.frame-6-text{
+  top: 180px;
+  text-align:center;
+  width: 100%;
+  position:absolute;
+}
+.frame-6-text1 { 
+  font-size: 11px;
+  line-height:13px;
+  color: #444444;
+  display: block;
+  padding-bottom: 1px;
+}
+.frame-6-text2 {
+  font-size: 20px; 
+  color: #444444;
+  display: block;
+  line-height:13px;
+}
+.price {
+  line-height:20px;
+  position: relative;
+  top: -2px;
+}
+.frame-6-text2 sup {
+  font-size:12px;
+  line-height:14px;
+}
+
+.dell_logo_last{
+  left:54px;
+  top:52px;
+  position: absolute;
+}
+.cta{
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 700;
+  vertical-align: middle;
+  color: #fff;
+  text-align: center;
+  background: #ce1126;
+  left: 27px;
+  bottom: 165px;
+  display: block;
+  z-index: 99;
+  padding: 7px 10px 6px 10px;
+  position: absolute;
+}
+
+@-moz-document url-prefix() {
+  .cta {padding: 6px 10px 7px 10px;}
+}
+
+.colors{
+  position: absolute;
+  bottom:210px;
+  right:10px;
+}
+.vendor-logo-last{
+  position: absolute;
+  bottom:15px;
+  left:33px;
+}
+.vendor-copy-last {
+  width:100%;
+  font-size: 12px;
+  line-height:15px;
+  text-align:center;
+  bottom:26px;
+  color: #444;
+  position:absolute; 
+}
+.vendor-copy-last sup {
+  font-size: 10px;
+}
+
+/*Roll over*/
+#roll-cta {
+  position: absolute;
+  color: #444;
+  top: 10px;
+  left: 10px;
+  z-index: 99999;
+  width: 80px;
+  height: 15px;
+
+}
+#legal {
+  position: absolute;
+  width: 160px;
+  height: 150px;
+  background:#fff;
+  top:-1000px;
+  z-index: 999;
+}
+#legal-text {
+  position: absolute;
+  color: #444;
+  width: 158px;
+  height: 117px;
+  font-size: 12px;
+  line-height:13px;
+  text-align: center;    
+  padding: 10px 13px;
+}
+#rolltext {
+  position: absolute;
+  z-index: 9;
+    color: #444;
+  top: 10px;
+  left: 10px;
+  font-size: 11px;
+  font-weight: 700;     
+}
