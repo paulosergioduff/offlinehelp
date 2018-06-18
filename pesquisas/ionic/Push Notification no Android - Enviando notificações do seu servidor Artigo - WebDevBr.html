@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="pt-br"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Push Notification no Android - Enviando notificações do seu servidor Artigo - WebDevBr</title>
+        <link href="https://www.webdevbr.com.br/favicon.ico" type="image/x-icon" rel="icon">
+    <link href="https://www.webdevbr.com.br/favicon.ico" type="image/x-icon" rel="shortcut icon">
+
+    <meta name="copyright" content="WebDevBr">
+    <meta name="robots" content="index,follow">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.webdevbr.com.br/feed.rss">
+    <meta name="google-site-verification" content="rQyjZXhUw9IzkVtEGMvQR7lZwJbRx7xrqKQ_WQz9iVg">
+    <meta name="generator" content="WebDevBr">
+    <meta name="description" content="A algumas semanas eu escrevi um artigo sobre local notifications aqui no WebDevBr, e prometi que traria sobre push notification também, pois bem, promessa cumprida.Para quem não leu o artigo passado, ">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Push Notification no Android - Enviando notificações do seu servidor Artigo - WebDevBr">
+    <meta property="og:url" content="https://www.webdevbr.com.br/push-notification-no-android-enviando-notificacoes-do-seu-servidor">
+    <meta property="og:site_name" content="WebDevBr - Cursos e Treinamentos de PHP e Javascript">
+    <link rel="canonical" href="https://www.webdevbr.com.br/push-notification-no-android-enviando-notificacoes-do-seu-servidor">
+
+    <link href="Push%20Notification%20no%20Android%20-%20Enviando%20notifica%C3%A7%C3%B5es%20do%20seu%20servidor%20Artigo%20-%20WebDevBr_files/css.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="Push%20Notification%20no%20Android%20-%20Enviando%20notifica%C3%A7%C3%B5es%20do%20seu%20servidor%20Artigo%20-%20WebDevBr_files/rrssb.css">
+    <style>
+        .rrssb-buttons li.small a .rrssb-icon {
+            max-width: 24px;
+        }
+    </style>
+    <!--Rastreamento-->
+        <!-- Facebook Conversion Code for Conclusões de compra - Erik Figueiredo 1 -->
+        <!-- Facebook Conversion Code for Visita WebDevBr -->
+        <script async="" src="Push%20Notification%20no%20Android%20-%20Enviando%20notifica%C3%A7%C3%B5es%20do%20seu%20servidor%20Artigo%20-%20WebDevBr_files/analytics.js"></script><script async="" src="Push%20Notification%20no%20Android%20-%20Enviando%20notifica%C3%A7%C3%B5es%20do%20seu%20servidor%20Artigo%20-%20WebDevBr_files/fbds.js"></script><script>(function() {
+          var _fbq = window._fbq || (window._fbq = []);
+          if (!_fbq.loaded) {
+            var fbds = document.createElement('script');
+            fbds.async = true;
+            fbds.src = 'https://connect.facebook.net/en_US/fbds.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(fbds, s);
+            _fbq.loaded = true;
+          }
+        })();
+        window._fbq = window._fbq || [];
+        window._fbq.push(['track', '6021418467051', {'value':'0.00','currency':'BRL'}]);
+        </script>
+        <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6021418467051&amp;cd[value]=0.00&amp;cd[currency]=BRL&amp;noscript=1" /></noscript>
+            <!--FimRastreament-->
+    <script></script>
+    <link rel="stylesheet" href="Push%20Notification%20no%20Android%20-%20Enviando%20notifica%C3%A7%C3%B5es%20do%20seu%20servidor%20Artigo%20-%20WebDevBr_files/app.css">    <link rel="stylesheet" href="Push%20Notification%20no%20Android%20-%20Enviando%20notifica%C3%A7%C3%B5es%20do%20seu%20servidor%20Artigo%20-%20WebDevBr_files/prism.css">
+</head>
+<body>
+    <header id="top">
+        <section>
+	<nav class="navbar navbar-inverse navbar-static-top">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Ver menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    			<ul class="nav navbar-nav navbar-right">
+    				    					<li><a href="https://www.webdevbr.com.br/acesso/login">Cadastro/Login</a></li>
+    				                    <li class="slack dropdown">
+                        <a href="" id="slack-btn" data-toggle="modal" data-target="#slackModal"><span class="label label-danger"><big>Slack!</big></span><span id="float-slack" style="display: none;"><img src="Push%20Notification%20no%20Android%20-%20Enviando%20notifica%C3%A7%C3%B5es%20do%20seu%20servidor%20Artigo%20-%20WebDevBr_files/float-slack.png" alt=""></span></a>
+                                            </li>
+        			<li><a href="https://www.webdevbr.com.br/aulas"><span class="label label-primary"><big><span class="glyphicon glyphicon-education"></span> Estudar!</big></span></a></li>
+        			    			</ul>
+                <ul class="nav navbar-nav navbar-right visible-xs">
+                    <li class="active"><a href="https://www.webdevbr.com.br/">Início</a></li>
+
+                    <li><a href="https://www.webdevbr.com.br/php"> PHP</a></li><li><a href="https://www.webdevbr.com.br/frameworks">- Frameworks</a></li><li><a href="https://www.webdevbr.com.br/cakephp">-- CakePHP</a></li><li><a href="https://www.webdevbr.com.br/laravel">-- Laravel</a></li><li><a href="https://www.webdevbr.com.br/zend-framework">-- Zend Framework</a></li><li><a href="https://www.webdevbr.com.br/boas-praticas">- Boas práticas</a></li><li><a href="https://www.webdevbr.com.br/resfult">-- RESTful</a></li><li><a href="https://www.webdevbr.com.br/javascript"> JavaScript</a></li><li><a href="https://www.webdevbr.com.br/angularjs">- AngularJs</a></li><li><a href="https://www.webdevbr.com.br/ionic-framework">- Ionic Framework</a></li>
+                    <li><a href="https://www.webdevbr.com.br/gratis">Grátis</a></li>
+                    <li><a href="https://www.webdevbr.com.br/blog">Blog</a></li>
+                    <li><a href="https://www.webdevbr.com.br/mvc-e-php-entendendo-o-padrao-na-pratica-criando-um-framework-php">Série MVC</a></li>
+                    <li><a href="https://www.webdevbr.com.br/manual-do-type-script">Série Manual do TypeScript</a></li>
+                    <li><a href="https://www.webdevbr.com.br/padroes-de-projeto-no-php">Série Padrões de Projeto no PHP</a></li>
+                    
+                </ul>
+            </div>
+		
+	</nav>
+	<div class="container content">
+		<div class="row row-1">
+			<a class="" href="https://www.webdevbr.com.br/">
+				<img alt="Brand" src="Push%20Notification%20no%20Android%20-%20Enviando%20notifica%C3%A7%C3%B5es%20do%20seu%20servidor%20Artigo%20-%20WebDevBr_files/logo.png">
+			</a>
+		</div>
+		<div class="visible-md visible-lg visible-sm">
+			<nav>
+				<ul class="nav nav-pills nav-dark">
+					<li class="active"><a href="https://www.webdevbr.com.br/">Início</a></li>
+
+					<li><a href="https://www.webdevbr.com.br/php">PHP</a><ul class="nav nav-pills nav-dark depth-0"><li><a href="https://www.webdevbr.com.br/frameworks">Frameworks</a><ul class="nav nav-pills nav-dark depth-1"><li><a href="https://www.webdevbr.com.br/cakephp">CakePHP</a></li><li><a href="https://www.webdevbr.com.br/laravel">Laravel</a></li><li><a href="https://www.webdevbr.com.br/zend-framework">Zend Framework</a></li></ul></li><li><a href="https://www.webdevbr.com.br/boas-praticas">Boas práticas</a><ul class="nav nav-pills nav-dark depth-1"><li><a href="https://www.webdevbr.com.br/resfult">RESTful</a></li></ul></li></ul></li><li><a href="https://www.webdevbr.com.br/javascript">JavaScript</a><ul class="nav nav-pills nav-dark depth-0"><li><a href="https://www.webdevbr.com.br/angularjs">AngularJs</a></li><li><a href="https://www.webdevbr.com.br/ionic-framework">Ionic Framework</a></li></ul></li>
+					<li><a href="https://www.webdevbr.com.br/gratis">Grátis</a></li>
+					<li>
+                        <a href="https://www.webdevbr.com.br/blog">Blog</a>
+                        <ul class="nav nav-pills nav-dark depth-0">
+                        <li>
+                            <a href="https://www.webdevbr.com.br/blog">Todos os artigos</a>
+                            <ul class="nav nav-pills nav-dark depth-1">
+                                <li><a href="https://www.webdevbr.com.br/mvc-e-php-entendendo-o-padrao-na-pratica-criando-um-framework-php">Série MVC</a></li>
+                                <li><a href="https://www.webdevbr.com.br/manual-do-type-script">Série Manual do TypeScript</a></li>
+                                <li><a href="https://www.webdevbr.com.br/padroes-de-projeto-no-php">Série Padrões de Projeto no PHP</a></li>
+                            </ul>
+                        </li>
+                        </ul>
+                    </li>
+					<li><a href="https://www.webdevbr.com.br/contato">Contato</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</section>
+    </header>
+    <main>
+        <section id="content">
+            <header id="highlight">
+                	<div class="title title-dark" style="display: table; width: 100%; line-height: initial; height: 200px">
+        <div style="display: table-cell; vertical-align: middle; width: 100%; margin: 0 auto;">
+    		<div class="container">
+    			<h1>Push Notification no Android - Enviando notificações do seu servidor <small>Artigo</small></h1>
+    		</div>
+    	</div>
+    </div>
+    <div class="title title-dark" style="background-color:#27ae60; height: auto; min-height: 66px;">
+        <div class="container text-center">
+            <h3>Conheça os cursos gratuitos do WebDevBr! - <a href="https://www.webdevbr.com.br/aulas#/cursos" class="btn btn-dark btn-lg">Inscreva-se!</a></h3>
+        </div>
+    </div>
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <ul class="nav navbar-nav navbar-right">
+                <!--<li class="active"><a href="">Teste de conhecimento</a></li>-->
+                <li><p class="navbar-text">Pesquisa:</p>
+                    <form class="navbar-form navbar-left" role="search" action="/busca">
+                        <div class="form-group">
+                          <input name="term" class="form-control" placeholder="Pesquisa..." type="text">
+                        </div>
+                        <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-search"></span></button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+            </header>
+            <div class="container">
+                                <div class="article">
+	<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+          <div class="share">
+    <ul class="rrssb-buttons clearfix rrssb-1">
+      <li class="rrssb-facebook" style="width: calc(50% - 21px);" data-initwidth="33.333333333333336" data-size="89">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.webdevbr.com.br/push-notification-no-android-enviando-notificacoes-do-seu-servidor" class="popup">
+          <span class="rrssb-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" width="29" height="29" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z" class="cls-2" fill-rule="evenodd"></path></svg>
+          </span>
+          <span class="rrssb-text">compartilhar</span>
+        </a>
+      </li>
+      <li class="rrssb-googleplus" style="width: calc(50% - 21px);" data-initwidth="33.333333333333336" data-size="56">
+        <!-- Replace href with your meta and URL information.  -->
+        <a href="https://plus.google.com/share?url=https://www.webdevbr.com.br/push-notification-no-android-enviando-notificacoes-do-seu-servidor" class="popup">
+          <span class="rrssb-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"></path></svg>            </span>
+          <span class="rrssb-text">google+</span>
+        </a>
+      </li>
+      <li class="rrssb-twitter small" style="width: 42px;" data-initwidth="33.333333333333336" data-size="49">
+        <a href="https://twitter.com/intent/tweet?text=Recomendo:%20Push%20Notification%20no%20Android%20-%20Enviando%20notifica%C3%A7%C3%B5es%20do%20seu%20servidor%20https://www.webdevbr.com.br/push-notification-no-android-enviando-notificacoes-do-seu-servidor%20@erikfig%20#WebDevBr" class="popup">
+          <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"></path></svg></span>
+          <span class="rrssb-text">twitter</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+    </div>
+    <div class="col-md-12">
+        <hr>
+        <center><small>Este artigo foi publicado a 2 anos, 1 mês, 2 semanas atrás.</small></center>
+        <hr>
+    </div>
+  </div>
+		<div class="article-content">
+		<p>A algumas semanas eu escrevi um artigo sobre local notifications 
+aqui no WebDevBr, e prometi que traria sobre push notification também, 
+pois bem, promessa cumprida.</p>
+
+<p>Para quem não leu o artigo passado, notifications são aquelas 
+notificações que você recebe no celular quando alguma coisa acontece ou 
+quando tem alguma promoção naquele joguinho que atrapalha sua vida de 
+tão divertido. Por exemplo, quando você me manda uma mensagem via 
+WhatsApp (quando ele não está bloqueado pela justiça) um alerta é 
+disparado e fica lá no topo do celular, avisando que você tem mensagens,
+ essa é uma notificação.</p>
+
+<p>Existem dois tipos de notificações, as que são agendadas pela sua 
+aplicação e as que são enviadas pelo servidor, o primeiro caso é chamado
+ de local notification e o segundo são as push notifications.</p>
+<div class="alert alert-success">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+  <h3>Gostou deste artigo?</h3>
+  <p>Receba atualizações semanais com novos artigos do WebDevBr e outras dicas!</p>
+
+  <form action="https://webdevbr.us11.list-manage.com/subscribe/post" method="POST">
+    <input name="u" value="4317b163878d6296c93ff715c" type="hidden">
+    <input name="id" value="0475efc612" type="hidden">
+    <div class="form-group">
+      <input class="form-control" placeholder="Nome" name="MERGE1" size="25" type="text">
+    </div>
+    <div class="form-group">
+      <input class="form-control" placeholder="Email" autocapitalize="off" autocorrect="off" name="MERGE0" size="25" type="email">
+    </div>
+    <div style="display:none">
+    <input name="b_4317b163878d6296c93ff715c_0475efc612" tabindex="-1" type="text">
+    </div>
+    <button type="submit" class="btn btn-danger" name="submit">Cadastrar</button>
+  </form>
+</div>
+
+
+<p>Local notifications são ideais para você setar alertas com base em 
+"gatilhos" que você definiu no seu aplicativo, por exemplo, para lembrar
+ o usuário que ele deve ler um artigo que o interessou ou para avisar 
+que determinada tarefa (a construção de uma casinha no seu jogo, por 
+exemplo) chegou ao fim, elas partem do aplicativo, por isso o nome 
+"local".</p>
+
+<p>Push notifications partem do servidor e são ideais para alertas 
+diversos e que não estão "pré-engatilhados" na sua aplicação, por 
+exemplo, você tem uma loja virtual com um sistema de troca de status do 
+pedido e envia um email sempre que este é alterado e informa que o 
+pagamento foi concluido, que o produto foi enviado e qual o código de 
+rastreamento, não da pra saber quando isso vai acontecer exatamente, com
+ push notifications você pode incluir também um alerta no celular da 
+pessoa e configurar a aplicação para tomar uma ação com base nas 
+informações enviadas pela notificação, por exemplo, ao enviar o código 
+de rastreio dos Correios você pode abrir uma página para mostrar aonde o
+ produto está de acordo com o site dos correios.</p>
+
+<p>Claro que estes são exemplos e a realidade vai muito além disso, Vamos por as mãos na massa.</p>
+
+<h2>Conseguindo permissões para o Push Notifications</h2>
+
+<p>Neste ponto você vai precisar de um aplicativo no Google Play configurado, mesmo que seja apenas um rascunho.</p>
+
+<h3>Criando uma conta no Google Cloud Messaging (GCM)</h3>
+
+<p>Vamos precisar configurar o serviço no Google e integrar com o 
+aplicativo no Google Play, o processo é simples e rápido, mas um pouco 
+burocrático como você vai ver.</p>
+
+<p>Primeramente acesse o site (https://developers.google.com/mobile/add) e clique o botão <strong>Pick a platform</strong> e escolha Android App.</p>
+
+<p>Na tela que se segue você deve ver dois campos, <strong>App Name</strong> e <strong>Android Package name</strong>.</p>
+
+<p>O <strong>App name</strong> nada tem haver com o aplicativo no Google Play, então de um nome para criar ou escolha na lista, caso você já tenha.</p>
+
+<p>O <strong>Android Package name</strong> é o aplicativo que você quer enviar a notificação, para conseguir isso é simples, vá ao seu <code>config.xml</code> (fica na raiz do projeto) e localize logo no começo (segunda linha, provavelmente) o seguinte:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php"><span class="token operator">&lt;</span>widget id<span class="token operator">=</span><span class="token string">"com.ionicframework.pushnotifications242424"</span> <span class="token operator">/</span><span class="token operator">*</span><span class="token operator">*</span>restante da linha<span class="token operator">*</span><span class="token operator">*</span>
+<span class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>Você vai copiar este id (<code>com.ionicframework.pushnotifications242424</code> no exemplo acima) e colar no campo Android Package name.</p>
+
+<p>Escolha o pais e clique em <code>Choose ad configure services</code>.</p>
+
+<p>O serviço a escolher é o Cloud Messaging (ele que envia a notificação).</p>
+
+<p>Neste ponto o site vai te fornece duas informações, Server API key e Sender Id, guarde as duas, vamos usar muito isso.</p>
+
+<h3>Integrando com o Google Play</h3>
+
+<p>Para integrar o app faça o seguinte:</p>
+
+<ol>
+<li>Faça login no Console do desenvolvedor do Google Play.</li>
+<li>Selecione um app.</li>
+<li>No menu à esquerda, clique em Serviços e APIs.</li>
+<li>Clique no botão Vincular um código de remetente.</li>
+<li>Digite sua chave da GCM API ou o token de login do cliente do C2DM.</li>
+<li>Clique em Vincular.</li>
+</ol>
+
+<p>Este passo-a-passo a cima foi retirado daqui: (https://support.google.com/googleplay/android-developer/answer/2663268?hl=pt-BR).</p>
+
+<h2>Instalando o plugin push-notification</h2>
+
+<p>Para garantir que este projeto seja o mais compatível possível com a 
+maior quantidade de projetos possíveis eu vou criar um novo app usando 
+template blank.</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php">ionic start PushNotification blank
+cd PushNotification
+ionic platform add android
+<span class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>Note que eu já inclui uma plataforma, isso é importante!</p>
+
+<p>Em seguida vamos instalar o plugin:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php">ionic plugin add phonegap<span class="token operator">-</span>plugin<span class="token operator">-</span>push <span class="token operator">--</span>variable <span class="token constant">SENDER_ID</span><span class="token operator">=</span><span class="token string">"XXXXXXX"</span>
+<span class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>Não esqueça de configurar o SENDER_ID trocando o <code>XXXXXXX</code> pelo valor que pegamos no passo anterior.</p>
+
+<p>E por fim o ng-cordova:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php">bower install ngCordova <span class="token operator">-</span>s
+<span class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>O <code>-s</code> é para adicionar ao arquivo <code>bower.json</code>, não é obrigatório, mas eu sempre registre o que uso.</p>
+
+<p>E por fim atualize o <code>index.html</code> (dentro de <code>www</code>) com o <code>ng-cordova.js</code>, ele precisa ficar antes do arquivo que vai fazer as notificações, aqui vou colocar acima do app.js:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>lib/ngCordova/dist/ng-cordova.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></span>
+<span class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>O ngCordova é o cara que vai integrar o plugin de notificações do Cordova com o AngularJs que o Ionic usa.</p>
+
+<p>Por fim, dentro do seu app.js (www/js/app.js) adicione o seguinte (certifique-se de estar dentro de <code>$ionicPlatform.ready(function() {/*aqui*/}</code>):</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php"><span class="token comment" spellcheck="true">// Configura a notificação, altere o senderID</span>
+<span class="token keyword">var</span> push <span class="token operator">=</span> PushNotification<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token string">"android"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token string">"senderID"</span><span class="token punctuation">:</span> <span class="token string">"XXXXXX"</span><span class="token punctuation">,</span> icon <span class="token punctuation">:</span> <span class="token string">"icon"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">"ios"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token string">"alert"</span><span class="token punctuation">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span> <span class="token string">"badge"</span><span class="token punctuation">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span> <span class="token string">"sound"</span><span class="token punctuation">:</span> <span class="token string">"true"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">"windows"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// veja a explicação seguir</span>
+push<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'registration'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>registrationId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// O que fazer quando clicar em uma notificação</span>
+push<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'notification'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'Notificação acionada, agora deve-se implementar a navegação no app de acordo com os dados: '</span> <span class="token operator">+</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// erro caso não possa registrar (veja a explicação seguir)</span>
+push<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'registration error: '</span> <span class="token operator">+</span> e<span class="token punctuation">.</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>O primeiro bloco configura o plugin, note que eu passei um parâmetro <code>icon</code>,
+ ele configura o icone que deve aparecer, da pra trocar a cor do icone, 
+som da notificação, se vai vibrar o celular ou não e algumas outras 
+configurações legais, da uma <a href="https://github.com/phonegap/phonegap-plugin-push/blob/master/docs/API.md#android">olhada aqui</a> pra mais informações.</p>
+
+<p>O segundo bloco de código é referente ao momento do registro no Cloud Messaging. O campo <code>data.registrationId</code> é retornado elo GCM e é usado ao enviar uma notificação, ele é como o "email" do celular.</p>
+
+<p>Minha dica é você armazenar o código para um futuro cadastro do 
+usuário ou enviar para o servidor e guardar isso, talvez como um 
+"pré-cadastro" do usuário, você só vai poder enviar uma notificação para
+ este dispositivo se tiver este código, como eu uso o chrome:inspect 
+para trabalhar vou pegar a saída no console do navegador desta vez.</p>
+
+<p>O terceiro bloco é disparado quando o usuário tocar na notificação, 
+como veremos mais a frente é possível personalizar este resultado (ou 
+apenas ignorar isso e somente abrir o aplicativo, você que sabe).</p>
+
+<p>E o quarto bloco é executado caso o registro do aplicativo não possa acontecer, também é opcional.</p>
+
+<h2>Enviando uma notificação</h2>
+
+<p>Para alegria geral da galera, as notificações são usadas com uma 
+requisição POST para o Cloud Messaging, então qualquer coisa que você 
+use que faz requisições HTTP (Postman, PHP, Javascript, Node, escrever o
+ código em um papel e fazer um aviãozinho...) vai ser compatível, a 
+requisição deve se parecer com:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php"><span class="token constant">POST</span> <span class="token operator">/</span>gcm<span class="token operator">/</span>send <span class="token constant">HTTP</span><span class="token operator">/</span><span class="token number">1.1</span>
+Host<span class="token punctuation">:</span> android<span class="token punctuation">.</span>googleapis<span class="token punctuation">.</span>com
+Authorization<span class="token punctuation">:</span> key<span class="token operator">=</span>Server_API_Key
+Content<span class="token operator">-</span>Type<span class="token punctuation">:</span> application<span class="token operator">/</span>json
+Cache<span class="token operator">-</span>Control<span class="token punctuation">:</span> no<span class="token operator">-</span>cache
+
+<span class="token punctuation">{</span><span class="token string">"to"</span><span class="token punctuation">:</span><span class="token string">"NUMERO_DE_REGISTRO_DO_APP"</span><span class="token punctuation">,</span><span class="token string">"data"</span><span class="token punctuation">:</span><span class="token punctuation">{</span><span class="token string">"message"</span><span class="token punctuation">:</span><span class="token string">"Mensagem de teste de notifica\u00e7\u00e3o"</span><span class="token punctuation">,</span><span class="token string">"title"</span><span class="token punctuation">:</span><span class="token string">"T\u00edtulo de teste"</span><span class="token punctuation">,</span><span class="token string">"image"</span><span class="token punctuation">:</span><span class="token string">"www\/img\/icon\/imac-icon.png"</span><span class="token punctuation">,</span><span class="token string">"soundname"</span><span class="token punctuation">:</span><span class="token string">"olha_a_mensagem"</span><span class="token punctuation">,</span><span class="token string">"action"</span><span class="token punctuation">:</span><span class="token string">"Chama o Erik"</span><span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Se esse código acima não é problema pra você (e não deveria ser), apenas lembre-se de trocar o <code>Server_API_Key</code> pelo código que você guardou lá no painel do Google e o <code>NUMERO_DE_REGISTRO_DO_APP</code> pelo código enorme gerado pelo registro do celular (lembra do <code>data.registrationId</code>)</p>
+
+<p>Se você não entendeu muito vou te dar uma força.</p>
+
+<p>Você deve enviar uma requisição POST para a URL <code>https://android.googleapis.com/gcm/send</code> com dois cabeçalhos:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php">Authorization<span class="token punctuation">:</span> key<span class="token operator">=</span>Server_API_Key
+Content<span class="token operator">-</span>Type<span class="token punctuation">:</span> application<span class="token operator">/</span>json
+<span class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>Aonde Server<em>API</em>Key é o código que você guardou lá do painel do Google.</p>
+
+<p>O conteúdo deve ser um json no seguinte formato:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php"><span class="token punctuation">{</span>
+    <span class="token string">"to"</span><span class="token punctuation">:</span><span class="token string">"NUMERO_DE_REGISTRO_DO_DISPOSITIVO"</span><span class="token punctuation">,</span>
+    <span class="token string">"data"</span><span class="token punctuation">:</span><span class="token punctuation">{</span>
+        <span class="token string">"message"</span><span class="token punctuation">:</span><span class="token string">"Mensagem de teste de notifica\u00e7\u00e3o"</span><span class="token punctuation">,</span>
+        <span class="token string">"title"</span><span class="token punctuation">:</span><span class="token string">"T\u00edtulo de teste"</span><span class="token punctuation">,</span>
+        <span class="token string">"image"</span><span class="token punctuation">:</span><span class="token string">"www\/img\/icon\/imac-icon.png"</span><span class="token punctuation">,</span>
+        <span class="token string">"soundname"</span><span class="token punctuation">:</span><span class="token string">"olha_a_mensagem"</span><span class="token punctuation">,</span>
+        <span class="token string">"action"</span><span class="token punctuation">:</span><span class="token string">"Chama o Erik"</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>O campo <code>to</code> recebe o número de identificação do 
+dispositivo que deve receber a mensagem, opicionalmente você pode trocar
+ por um array de ids e alterar o nome para <code>registration_ids</code>:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php"><span class="token punctuation">{</span>
+    <span class="token string">"registration_ids"</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">"NUMERO_DE_REGISTRO_DO_DISPOSITIVO_1"</span><span class="token punctuation">,</span> <span class="token string">"NUMERO_DE_REGISTRO_DO_DISPOSITIVO_2"</span><span class="token punctuation">,</span> <span class="token string">"NUMERO_DE_REGISTRO_DO_DISPOSITIVO_3"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">"data"</span><span class="token punctuation">:</span><span class="token punctuation">{</span>
+        <span class="token string">"message"</span><span class="token punctuation">:</span><span class="token string">"Mensagem de teste de notifica\u00e7\u00e3o"</span><span class="token punctuation">,</span>
+        <span class="token string">"title"</span><span class="token punctuation">:</span><span class="token string">"T\u00edtulo de teste"</span><span class="token punctuation">,</span>
+        <span class="token string">"image"</span><span class="token punctuation">:</span><span class="token string">"www\/img\/icon\/imac-icon.png"</span><span class="token punctuation">,</span>
+        <span class="token string">"soundname"</span><span class="token punctuation">:</span><span class="token string">"olha_a_mensagem"</span><span class="token punctuation">,</span>
+        <span class="token string">"action"</span><span class="token punctuation">:</span><span class="token string">"Chama o Erik"</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>O campo data é o corpo da notificação, eu setei 5 campos para a notificação:</p>
+
+<ul>
+<li>message: O texto da notificação</li>
+<li>title: O título da notificação</li>
+<li>image: O icone</li>
+<li>soundname: O som da notificação</li>
+<li>action: Este é um campo adicional que eu vou usar apenas para decidir o que fazer dentro do app (lembra do <code>push.on('notification', function(data)</code>?), ele não tem nenhum efeito na notificação ou seja, fui eu que coloquei ali.</li>
+</ul>
+
+<h3>Exemplo com PHP</h3>
+
+<p>Se você usa Composer ou autoloads compatíveis com PSR-4 você pode usar o Guzzle, é bem simples:</p>
+
+<pre class=" line-numbers language-php"><code class=" language-php"><span class="token variable">$serverApiKey</span> <span class="token operator">=</span> <span class="token string">'XXX'</span><span class="token punctuation">;</span>
+<span class="token variable">$to</span> <span class="token operator">=</span> <span class="token string">'NUMERO_DE_REGISTRO_DO_DISPOSITIVO'</span><span class="token punctuation">;</span>
+<span class="token variable">$subject</span> <span class="token operator">=</span> <span class="token string">'Título de teste'</span><span class="token punctuation">;</span>
+<span class="token variable">$message</span> <span class="token operator">=</span> <span class="token string">'Mensagem de teste de notificação'</span><span class="token punctuation">;</span>
+
+<span class="token variable">$messages</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token string">'title'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$subject</span><span class="token punctuation">,</span>
+    <span class="token string">'message'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$message</span><span class="token punctuation">,</span>
+    <span class="token comment" spellcheck="true">//os outros que você qusier</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token variable">$headers</span> <span class="token operator">=</span> <span class="token punctuation">[</span> 
+    <span class="token string">'Authorization'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'key='</span> <span class="token punctuation">.</span> <span class="token variable">$serverApiKey</span><span class="token punctuation">,</span>
+    <span class="token string">'Content-Type'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'application/json'</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//monta a estrutura do futuro json</span>
+<span class="token variable">$body</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+        <span class="token string">'to'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$to</span><span class="token punctuation">,</span>
+        <span class="token string">'data'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$messages</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//envia a requisição</span>
+<span class="token variable">$guzzle</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name"><span class="token punctuation">\</span>GuzzleHttp<span class="token punctuation">\</span>Client</span><span class="token punctuation">;</span>
+<span class="token variable">$request</span> <span class="token operator">=</span> <span class="token variable">$guzzle</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">post</span><span class="token punctuation">(</span>'https<span class="token punctuation">:</span><span class="token comment" spellcheck="true">//android.googleapis.com/gcm/send',</span>
+<span class="token punctuation">[</span>
+    <span class="token string">'headers'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$headers</span><span class="token punctuation">,</span>
+    <span class="token string">'json'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$body</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//mostra o retorno</span>
+<span class="token variable">$json</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">getBody</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$data</span> <span class="token operator">=</span> <span class="token function">json_decode</span><span class="token punctuation">(</span><span class="token variable">$json</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Claro que iria preferir uma estrutura orientada a objetos com o 
+Guzzle devidamente encapsulado e com uma interface, caso eu queisa ou 
+precise usar outro recurso no futuro (cURL, por exemplo), mas enfim.</p>
+
+<h3>Outros exemplos</h3>
+
+<p>Se você quiser compartilhar seu próprio código de exemplo é só me 
+procurar, eu coloco aqui, claro que eu mesmo quero enriquecer esta 
+página no futuro.</p>
+
+<h3>Conclusão</h3>
+
+<p>Claro que eu não raspei nem a superficie de possibilidades, existem 
+serviços inteiros baseados nesta ideia de push notifications, afinal de 
+contas, quem não le as notificações do celular! Este é um excelente 
+canal de divulgação e engajamento e você ou seu cliente com certeza vão 
+se beneficiar.</p>
+<p></p>	</div>
+    <hr>
+        <h3>Cursos relacionados</h3>
+    
+						<ul class="products-grid row">
+		<li class="col-md-3 col-xs-6">
+			<a href="https://www.webdevbr.com.br/curso-angular-2-essencial" class="img-flip">
+							<img src="Push%20Notification%20no%20Android%20-%20Enviando%20notifica%C3%A7%C3%B5es%20do%20seu%20servidor%20Artigo%20-%20WebDevBr_files/galery_curso-angular-2.gif" alt="" class="img-thumbnail">
+					</a>
+		<h4><a href="https://www.webdevbr.com.br/curso-angular-2-essencial">Curso Angular 2 Essencial</a></h4>
+		<p>R$ 155,00<br>
+			<small>	até 12x R$ 15,56*
+</small>
+		</p>
+		<p>
+												<a href="https://www.webdevbr.com.br/carrinho/add/35" class="btn btn-dark">inscrever-se</a>
+										<a href="https://www.webdevbr.com.br/curso-angular-2-essencial" class="btn btn-dark">+ detalhes</a>
+		</p>
+		</li>
+    						<li class="col-md-3 col-xs-6">
+			<a href="https://www.webdevbr.com.br/curso-de-angularjs-essencial" class="img-flip">
+							<img src="Push%20Notification%20no%20Android%20-%20Enviando%20notifica%C3%A7%C3%B5es%20do%20seu%20servidor%20Artigo%20-%20WebDevBr_files/galery_curso-angularjs.jpg" alt="" class="img-thumbnail">
+					</a>
+		<h4><a href="https://www.webdevbr.com.br/curso-de-angularjs-essencial">Curso de AngularJs Essencial</a></h4>
+		<p>R$ 155,00<br>
+			<small>	até 12x R$ 15,56*
+</small>
+		</p>
+		<p>
+												<a href="https://www.webdevbr.com.br/carrinho/add/15" class="btn btn-dark">inscrever-se</a>
+										<a href="https://www.webdevbr.com.br/curso-de-angularjs-essencial" class="btn btn-dark">+ detalhes</a>
+		</p>
+		</li>
+            <div class="clearfix visible-xs-block"></div>
+    						<li class="col-md-3 col-xs-6">
+			<a href="https://www.webdevbr.com.br/curso-aplicativos-para-android-com-ionic" class="img-flip">
+							<img src="Push%20Notification%20no%20Android%20-%20Enviando%20notifica%C3%A7%C3%B5es%20do%20seu%20servidor%20Artigo%20-%20WebDevBr_files/galery_curso-ionic.jpg" alt="" class="img-thumbnail">
+					</a>
+		<h4><a href="https://www.webdevbr.com.br/curso-aplicativos-para-android-com-ionic">Curso aplicativos para Android com Ionic</a></h4>
+		<p>R$ 155,00<br>
+			<small>	até 12x R$ 15,56*
+</small>
+		</p>
+		<p>
+												<a href="https://www.webdevbr.com.br/carrinho/add/24" class="btn btn-dark">inscrever-se</a>
+										<a href="https://www.webdevbr.com.br/curso-aplicativos-para-android-com-ionic" class="btn btn-dark">+ detalhes</a>
+		</p>
+		</li>
+    						<li class="col-md-3 col-xs-6">
+			<a href="https://www.webdevbr.com.br/curso-aplicativos-para-android-com-ionic-curso-angularjs-essencial" class="img-flip">
+							<img src="Push%20Notification%20no%20Android%20-%20Enviando%20notifica%C3%A7%C3%B5es%20do%20seu%20servidor%20Artigo%20-%20WebDevBr_files/galery_curso-ionic-angularjs.jpg" alt="" class="img-thumbnail">
+					</a>
+		<h4><a href="https://www.webdevbr.com.br/curso-aplicativos-para-android-com-ionic-curso-angularjs-essencial">[Pacote] aplicativos para Android com Ionic + Curso AngularJs Essencial</a></h4>
+		<p>R$ 235,00<br>
+			<small>	até 12x R$ 23,59*
+</small>
+		</p>
+		<p>
+												<a href="https://www.webdevbr.com.br/carrinho/add/25" class="btn btn-dark">inscrever-se</a>
+										<a href="https://www.webdevbr.com.br/curso-aplicativos-para-android-com-ionic-curso-angularjs-essencial" class="btn btn-dark">+ detalhes</a>
+		</p>
+		</li>
+            <div class="clearfix visible-xs-block"></div>
+    			</ul>
+		
+    <hr>
+        <aside class="author-bio col-md-12 dark-box">
+	<div class="col-md-12">
+		<img src="Push%20Notification%20no%20Android%20-%20Enviando%20notifica%C3%A7%C3%B5es%20do%20seu%20servidor%20Artigo%20-%20WebDevBr_files/erik-figueiredo.jpg" alt="" class="author-picture">
+		<h3><author>Erik Figueiredo</author></h3>
+        <p>Erik Figueiredo é desenvolvedor web full stack, apaixonado pela profissão e professor/fundador do WebDevBr.</p>
+        <p><a href="https://plus.google.com/+ErikFigueiredoDs?rel=author" class="btn btn-danger">G+</a>
+        <a href="https://br.linkedin.com/in/erikfigueiredo" class="btn btn-success">Linkedin</a>
+        <a href="https://www.facebook.com/erikfigueiredods" class="btn btn-primary">Facebook</a></p>
+    </div>
+</aside>
+</div>
+
+            </div>
+            <div class="container">
+                <p></p><center>* Parcelamento apenas cartão de crédito! Pode haver uma pequena variação no parcelamento em relação a simulações apresentadas!</center><p></p>
+            </div>
+        </section>
+    </main>
+    <footer id="bottom">
+        <nav class="navbar navbar-inverse navbar-static-bottom">
+	<p class="navbar-text">© 2018 - WebDevBr. All Rights Reserved. by: <a href="https://www.erikfigueiredo.com.br/">Erik Figueiredo</a></p>
+</nav>    </footer>
+    <div class="modal fade" id="slackModal" tabindex="-1" role="dialog" aria-labelledby="slackModalLabel">
+      <div class="modal-dialog" id="slack" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title" id="myModalLabel">Participe do Slack do WebDevBr</h4>
+          </div>
+          <div class="modal-body">
+            <p><img src="Push%20Notification%20no%20Android%20-%20Enviando%20notifica%C3%A7%C3%B5es%20do%20seu%20servidor%20Artigo%20-%20WebDevBr_files/slack.png" alt="Slack do WebDevBr" class="img-responsive" width="940"></p>
+            <p>Se você nunca acessou será necessário pegar um convite no formulário logo a baixo.</p>
+            <div class="form-group">
+              <input class="slack-email form-control" placeholder="Seu email..." type="email">
+            </div>
+            <button class="slack-submit btn btn-dark" type="button">Solicitar convite</button>
+            <div class="alert alert-success" style="margin: 0px; display: none;">Verifique seu email</div>
+            <hr>
+            <p>Se você já pegou seu convite e se cadastrou, acesse o Slack usando o botão logo abaixo!</p>
+            <p><a href="https://webdevbrasil.slack.com/" target="_blank" class="btn btn-primary">Ir para o Slack do WebDevBr</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="Push%20Notification%20no%20Android%20-%20Enviando%20notifica%C3%A7%C3%B5es%20do%20seu%20servidor%20Artigo%20-%20WebDevBr_files/jquery-1.js"></script>
+    <script src="Push%20Notification%20no%20Android%20-%20Enviando%20notifica%C3%A7%C3%B5es%20do%20seu%20servidor%20Artigo%20-%20WebDevBr_files/swiper.js"></script>
+    <script src="Push%20Notification%20no%20Android%20-%20Enviando%20notifica%C3%A7%C3%B5es%20do%20seu%20servidor%20Artigo%20-%20WebDevBr_files/bootstrap.js"></script>
+    <script src="Push%20Notification%20no%20Android%20-%20Enviando%20notifica%C3%A7%C3%B5es%20do%20seu%20servidor%20Artigo%20-%20WebDevBr_files/rrssb.js"></script>
+    <script>
+	$('pre code').parent().not('[class*="language-"]').addClass('language-php line-numbers');
+</script>
+<script src="Push%20Notification%20no%20Android%20-%20Enviando%20notifica%C3%A7%C3%B5es%20do%20seu%20servidor%20Artigo%20-%20WebDevBr_files/prism.js"></script>
+<script>
+$('.slack-submit').click(function() {
+    var email = $('.slack-email').val();
+    $.ajax('/slack/invite/'+email)
+        .success(function (data) {
+            $('#slack div.alert').show();
+        });
+});
+
+$('#float-slack').on('mousemove click', function() {
+    $('#float-slack').hide('slow');
+});
+setTimeout(function() {
+    $('#float-slack').hide('slow');
+}, 5000);
+
+$('body').append('<div id="webdevbr-embed"></div>');
+$('a.webdevbr-embed').click(function(){
+    var url = $(this).attr('href');
+    $.ajax({
+        type: "GET",
+        url: "/modal-embed.html",
+        dataType: "html",
+        success: function(data)
+        {
+          $('#webdevbr-embed').html(data);
+          var modal = $('#webdevbr-embed .modal');
+          modal.find('iframe').attr('src', url);
+          modal.modal('show');
+        }
+    });
+
+    return false;
+});
+</script><div id="webdevbr-embed"></div>
+        <!--Start of Zopim Live Chat Script-->
+        <script type="text/javascript">
+         /* window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+          d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+          _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+          $.src="//v2.zopim.com/?3Jkwn5c4fNYTwzekubPwgvFHd8yzoaIK";z.t=+new Date;$.
+          type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+                */
+        </script>
+        <!--End of Zopim Live Chat Script-->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-41359179-4', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+
+
+</body></html>
