@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MACP - Compilador Portugol</title>
+<link rel="stylesheet" href="MACP%20-%20Compilador%20Portugol_files/styles.css" type="text/css">
+<meta name="description" content="MACP - Compilador Portugol">
+<meta name="keywords" content="MACP, MA, CP, compilador, portugol, maranhão, brasil, programação, programacao, desenvolvimento, algoritmo">
+<meta name="robots" content="INDEX,FOLLOW">
+<link href="http://portugol.sourceforge.net/favicon.ico" rel="shortcut icon" type="image/x-icon">
+</head>
+<body>
+<div id="wrap">
+	
+	<div id="header">
+		<div id="innerheader">
+			<div id="title">
+			  <table width="350" cellspacing="0" cellpadding="0" border="0">
+			    <tbody><tr>
+			      <td width="10">&nbsp;</td>
+			      <td width="100%">&nbsp;</td>
+		        </tr>
+			    <tr>
+			      <td><img src="MACP%20-%20Compilador%20Portugol_files/icon.png" alt="" width="42" height="42"></td>
+			      <td><h1>MACP - <span class="texto_branco">C</span><span class="texto_cinza">ompilador</span> <span class="texto_branco">P</span><span class="texto_cinza">ortugol</span></h1></td>
+		        </tr>
+		      </tbody></table>
+			</div>
+		</div>
+	</div>
+	
+	<div id="content">
+		<div id="page">
+		<div class="innerpage">
+			<h3><strong>Sobre o projeto</strong></h3>
+				<p>Este projeto visa o desenvolvimento e produção de uma ferramenta 
+de compilação da pseudo-linguagem português estruturado (portugol) para 
+auxliar estudantes brasileiros iniciando em atividades de programação.</p>
+		  <p>O Projeto pretende possibilitar a geração de códigos em Pascal, 
+C, C+ e Java a partir do código elaborado pelos alunos em Português 
+Estruturado (Portugol) com o objetivo de facilitar o aprendizado nestas 
+novas linguagens, que provavelmente serão as próximas linguagens a serem
+ aprendidas nos cursos na área de Computação e Programação.		  </p>
+		  <p>&nbsp;</p>
+<h3><strong>Breve Histórico</strong></h3>
+<p>Este projeto foi idealizado e iniciado em 2006 na Universidade 
+Federal do Maranhão e desenvolvido durante a disciplina de Compiladores 
+no curso de Graduação em Ciência da Computação pelos alunos na época:</p>
+<ul>
+  <li>Daniel Lima Gomes Júnior </li>
+  <li>Leandro de Sousa Marques</li>
+  <li>Ulysses Santos Sousa </li>
+</ul>
+<p>Os professores	que participaram para a construção da versão inicial do projeto:</p>
+<ul>
+  <li>Prof. Dr.  Carlos de Salles Soares Neto (orientador) <br>
+      <span class="texto_cinzaescuro"><em>Disciplina: Compiladores (versão inicial)</em>;</span></li>
+  <li>Prof. Dr. Luciano Reis Coutinho<br>
+      <span class="texto_cinzaescuro"><em>Disciplina: Projeto de Compiladores</em> (melhoria da ferramenta);</span> </li>
+  <li>Prof. Dr. Alexandre César Tavares Vidal<br>
+      <span class="texto_cinzaescuro"><em>Disciplina: Padrões de Projeto</em> (Refatoração com padrões de Projeto)  </span></li>
+</ul>
+<p>Desde o ano de 2007, após a publicação de um pequeno site que 
+permitia o download da ferramenta temos recebido e-mails de alunos de 
+outras partes do país que estavam com dúvidas na utilização do programa e
+ por conta de outras atividades, resolvemos criar somente agora um 
+projeto no SourceForge para a melhoria da versão existente e extensão 
+para criação de uma ferramenta que possa melhorar o ensino de 
+programação.</p>
+<p>A partir de 2011 foi criado o grupo de pesquisa utilizando o SVN para
+ controlar as versões de desenvolvimento do projeto. Atualmente 
+participam do projeto os membros abaixo:</p>
+<p><strong>Coordenação e Colaboração do Projeto</strong></p>
+<ul>
+  <li>Prof. Dr.  Carlos de Salles Soares Neto 
+    (UFMA), <strong>Coordenador</strong></li>
+  <li>Prof. MSc. Daniel Lima Gomes Jr. (IFMA), <strong>Coordenador</strong></li>
+  <li>Prof. MSc. Ulysses Santos Sousa (IFMA), Colaborador</li>
+  <li>Prof. MSc. Gilvan de Oliveira Vilarim (IFRJ), Colaborador</li>
+  <li>Leandro Sousa Marques, Colaborador </li>
+  </ul>
+<p><strong>Alunos:
+</strong></p>
+<ul>
+  <li>Hedvan Fernandes Pinto (UFMA-PPGEE), 2012-Atual</li>
+  <li>Leonardo W. M. Silva (Graduando, UFMA), 2012-2012</li>
+  <li>Welyab Silva Paula (Graduando, UFMA), 2011-2011</li>
+  <li>Rafaela Cristina Neri Magalhães (PIBIC-Jr, IFMA), 2011-2011</li>
+</ul>
+<h3>&nbsp;</h3>
+<h3><strong>Exemplo de Código Portugol</strong></h3>
+<p>
+	<code>
+<strong>variaveis </strong><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;senha:<strong class="texto_azul">cadeia</strong>; <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;senha_correta: <strong class="texto_azul">cadeia</strong>; <br>
+    <strong>inicio </strong><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong class="texto_azul">escrever</strong> <span class="textovermelho">'Digite a senha?'</span>; <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong class="texto_azul">ler</strong> senha; <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;senha_correta &lt;- <span class="textovermelho">'12345'</span>; <br>
+	<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong class="texto_azul">se </strong>senha=senha_correta <strong class="texto_azul">entao </strong><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong class="texto_azul">escrever </strong><strong></strong><span class="textovermelho">'Voce digitou a senha CORRETA!'</span><br>
+	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong class="texto_azul">senao</strong><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="texto_azul"><strong>escrever</strong></span><strong> </strong><span class="textovermelho">'Voce digitou a senha ERRADA!'</span>; <br>
+        <strong>fim. </strong></code>
+</p>
+<p>Mais informações podem ser encontradas na página do projeto: <br>
+  <a href="http://sourceforge.net/projects/portugol/">http://sourceforge.net/projects/portugol/</a>
+  </p>
+<p></p>
+<h3>&nbsp;</h3>
+</div>
+		</div>
+		<div id="sidebar">
+			<ul>
+				<li><a href="http://portugol.sourceforge.net/index.html" class="selected">Sobre o projeto</a></li>
+    <li><a href="https://sourceforge.net/projects/portugol/files/">Downloads</a></li>
+				<li><a href="https://sourceforge.net/projects/portugol/files/manual/">Manuais</a></li>                
+    <li><a href="https://sourceforge.net/projects/portugol/forums/">Fóruns</a></li>
+				<li><a href="http://sourceforge.net/projects/portugol/develop">Desenvolvimento (SVN)</a></li>
+                <li><a href="http://sourceforge.net/projects/portugol/files/stats/timeline">Estatísticas </a>
+                </li><li><a href="http://portugol.sourceforge.net/contato.html">Contato</a></li>
+			</ul>
+	  </div>
+		<div class="clear"></div>
+	</div>
+	
+	<div id="footer">
+	  <p>&nbsp;&nbsp;© 2006-2012 Projeto <strong>MACP</strong> - Compilador Portugol. 
+Última atualização: 26/03/2012. <br>
+&nbsp;&nbsp;Página do Projeto: <strong></strong><a href="http://portugol.sourceforge.net/"><strong>portugol.sourceforge.net</strong></a>. Template por: <a href="http://www.spyka.net/" target="_blank">spyka</a></p>
+	</div>
+</div>
+
+
+
+</body></html>
