@@ -3,31 +3,31 @@
 
 
 int numeroTotalMercadoria;
-int valorMercadoria;
-int valorTotalEmEstoque;
-int mediaValorMercadoria;
+ 	double valorMercadoria;
+    double valorTotalEmEstoque = 0;
+    double mediaValorMercadoria =0;
+
 int soma;
 int i;
 
 void main(){
-    printf("informe o total de estoque\n");
+    printf("informe o numero total de mercadoria no estoque\n");
 	scanf("%destoque:\n", &numeroTotalMercadoria);
-	scanf("%dValor: ", &valorMercadoria);
 
-			int contador; //variável de controle do loop
-			  for(i = 1; contador <= numeroTotalMercadoria; contador++)
+			//int contador; //variável de controle do loop
+			  for(i = 1; i <= numeroTotalMercadoria; i++)
 			  {
 			      printf("informe o valor de cada mercadoria");
-        		  scanf("%d",&valorMercadoria );
+        		  scanf("%lf",&valorMercadoria );
 			  }
 
 			  soma = soma +i;
         valorTotalEmEstoque = numeroTotalMercadoria * valorMercadoria;
         mediaValorMercadoria = valorTotalEmEstoque / soma;
 
-        printf("O valor total em estoque é de %d:", valorTotalEmEstoque);
+        printf("O valor total em estoque é de %lf:", valorTotalEmEstoque);
         
-        printf("A media de valor da mercadoria é de %d ", mediaValorMercadoria);
+        printf("A media de valor da mercadoria é de %lf ", mediaValorMercadoria);
 
 
 }

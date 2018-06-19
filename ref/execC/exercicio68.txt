@@ -13,6 +13,7 @@ int main(){
     double mediaValorMercadoria =0;
     
     int soma=0;
+    int i;
     
     
     printf("informe o numero total de mercadoria no estoque");
