@@ -1,43 +1,35 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-/*
- * A jornada de trabalho semanal de um funcionário é de 40 horas. 
- * O funcionário que trabalhar mais de 40 horas receberá hora extra, cujo cálculo é o valor da hora regular com um acréscimo de 50%. 
- * Escreva um algoritmo que leia o número de horas trabalhadas em um mês, o salário por hora e escreva o salário total do 
- * funcionário, que deverá ser acrescido das horas extras, caso tenham sido trabalhadas (considere que o mês possua 4 semanas exatas). 
- */
+/*Uma loja está levantando o valor total 
+de todas as mercadorias em estoque. 
+Escreva um algoritmo que permita a entrada das seguintes informações: 
+a) o número total de mercadorias no estoque; 
+b) o valor de cada mercadoria. Ao final imprimir o valor 
+total em estoque e a média de valor das mercadorias.*/
 
 
-int horasTrabalho,horasExtras;
-    float hora, salario, extra;
-
-int jornada(){ // Falta passar parametro e retorno
-       
-    if(horasTrabalho <= 40){
-        horasExtras =0;
+int main(){
+    int numeroTotalMercadoria;
+    double valorMercadoria;
+    double valorTotalEmEstoque = 0;
+    double mediaValorMercadoria =0;
+    
+    int soma=0;
+    
+    
+    printf("informe o numero total de mercadoria no estoque");
+    scanf("%f", &numeroTotalMercadoria);
+    
+    for(int i=1; i = numeroTotalMercadoria ; i++){
+        printf("informe o valor de cada mercadoria");
+        scanf("%f",&valorMercadoria );
         
-    }else{
-        horasExtras = horasTrabalho - 40;
-        horasTrabalho = 40;
+        soma = soma +i;
+        valorTotalEmEstoque = numeroTotalMercadoria * valorMercadoria;
+        mediaValorMercadoria = valorTotalEmEstoque / soma;
+        
+        
+        printf("O valor total em estoque é de %f:", valorTotalEmEstoque);
+        
+        printf("A media de valor da mercadoria é de %f ", mediaValorMercadoria);
     }
     
-    salario = hora * horasTrabalho;
-    extra = hora * horasExtras;
-    extra *= 1.5;
-    
-    printf(" Base: %f \t Extra %f \n Total %f", salario, extra, salario + extra);
-    printf("\nconsole\n");
-    
-    
-    
-}
-
-void main(){
-
-printf("informe o total de horas e o valor da hora");
-    scanf("%d", &horasTrabalho);
-    scanf("%f", &hora);
-
-    jornada();
 }
