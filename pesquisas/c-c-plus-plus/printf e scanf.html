@@ -1,0 +1,737 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word 10">
+<meta name="Originator" content="Microsoft Word 10">
+<link rel="File-List" href="http://homepages.dcc.ufmg.br/~rodolfo/aedsi-2-10/printf_scanf/printfscanf_files/filelist.xml">
+<link rel="Edit-Time-Data" href="http://homepages.dcc.ufmg.br/~rodolfo/aedsi-2-10/printf_scanf/printfscanf_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>printf e scanf</title>
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>150</w:Zoom>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h2
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+tt
+	{font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]-->
+<meta name="Template" content="C:\Program Files\Microsoft Office\Office\html.dot">
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="21506"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body style="tab-interval:.5in" vlink="purple" link="blue" lang="EN-US">
+
+<div class="Section1">
+
+<h2><span style="mso-ansi-language:PT-BR" lang="PT-BR">
+
+
+
+Universidade Federal de Minas Gerais<br>
+Instituto de Ciências Exatas<br>
+Departamento de Ciência da Computação<o:p></o:p></span></h2>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">Algoritmos e Estruturas de
+Dados I <o:p></o:p></span></p>
+
+<h2><span style="mso-ansi-language:PT-BR" lang="PT-BR">printf e scanf<o:p></o:p></span></h2>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">A linguagem C define duas
+funções que podem ser usadas para escrever e ler valores. Os valores são escritos
+em um chamado “fluxo de saída” que normalmente corresponde a um dispositivo
+referido como tela ou console (isso será discutido mais à frente na
+disciplina). Os valores são lidos de um chamado “fluxo de entrada” que
+normalmente corresponde a um dispositivo referido como teclado.<o:p></o:p></span></p>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">O primeiro argumento é
+obrigatório para ambas funções. Se o programador invocar a função printf<span style="mso-spacerun:yes">&nbsp; </span>ou scanf sem argumentos ( </span><tt><span style="font-size:10.0pt;color:blue;mso-ansi-language:PT-BR" lang="PT-BR">printf()</span></tt><span style="mso-ansi-language:PT-BR" lang="PT-BR">ou </span><tt><span style="font-size:10.0pt;color:blue;mso-ansi-language:PT-BR" lang="PT-BR"><span style="mso-spacerun:yes">&nbsp;</span>scanf()</span></tt><span style="mso-ansi-language:PT-BR" lang="PT-BR">) uma mensagem de erro é emitida:<br>
+</span><tt><span style="font-size:10.0pt;color:blue;mso-ansi-language:
+PT-BR" lang="PT-BR">too few arguments to function 'printf' </span></tt><span style="mso-ansi-language:PT-BR" lang="PT-BR">ou<o:p></o:p></span></p>
+
+<p><span class="GramE"><tt><span style="font-size:10.0pt;color:blue">too</span></tt></span><tt><span style="font-size:10.0pt;color:blue"> few arguments to function '<span class="SpellE">scanf</span>'<o:p></o:p></span></tt></p>
+
+<p><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+color:blue;mso-ansi-language:PT-BR" lang="PT-BR"><br>
+</span><span style="mso-ansi-language:PT-BR" lang="PT-BR"><span style="mso-spacerun:yes">&nbsp;</span>O primeiro argumento da função printf
+corresponde ao endereço de uma cadeia de caracteres, (uma instância de
+“string”, um string de especificação de conversão ou<span style="mso-spacerun:yes">&nbsp; </span>string de formato). Esta cadeia de caracteres
+será lida e os caracteres serão escritos no terminal (ou console) a menos que
+estes caracteres sejam identificados como sendo especificações de conversão. As
+especificações de conversão em geral descrevem como escrever os demais
+argumentos da função<o:p></o:p></span></p>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">O seguinte trecho não
+especifica nenhuma conversão:<o:p></o:p></span></p>
+
+<p><tt><span style="font-size:10.0pt;color:blue;mso-ansi-language:
+PT-BR" lang="PT-BR">printf("exemplo de formato sem conversao\n");<o:p></o:p></span></tt></p>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">O trecho abaixo, conforme
+discutido à frente, especifica a conversão de um argumento do tipo int. serão
+escritos na tela os caracteres </span><tt><span style="font-size:
+10.0pt;color:blue;mso-ansi-language:PT-BR" lang="PT-BR">media=</span></tt><span style="mso-ansi-language:PT-BR" lang="PT-BR"> seguidos de caracteres correspondentes ao
+valor associado à expressão </span><tt><span style="font-size:10.0pt;
+color:blue;mso-ansi-language:PT-BR" lang="PT-BR">contaX/contaY</span></tt><span style="mso-ansi-language:PT-BR" lang="PT-BR">.<o:p></o:p></span></p>
+
+<p><tt><span style="font-size:10.0pt;color:blue;mso-ansi-language:
+PT-BR" lang="PT-BR">printf("media=%d\n", contaX/contaY);<o:p></o:p></span></tt></p>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">Observe que uma
+característica interessante destas funções é a possibilidade delas serem
+invocadas com 1, 2, ..., n argumentos!<o:p></o:p></span></p>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR"><span style="mso-spacerun:yes">&nbsp;</span>A seguinte tabela mostra as conversões
+possíveis:<o:p></o:p></span></p>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR"><img id="_x0000_i1025" src="printf%20e%20scanf_files/conversaoPrintf.gif" width="801" height="478"><o:p></o:p></span></p>
+
+<p><o:p>&nbsp;</o:p></p>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">A função scanf deve ter
+como primeiro argumento um string (denominado string de especificação de
+conversão ou string de formato) que descreve como deve ser convertida a
+seqüência de caracteres da entrada. A seguinte tabela mostra algumas
+conversões:<o:p></o:p></span></p>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR"><img id="_x0000_i1026" src="printf%20e%20scanf_files/conversaoScanf.gif" width="798" height="531"><o:p></o:p></span></p>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">Na parte inicial da
+disciplina vamos considerar as funções printf e scanf de forma isolada, mais à
+frente no material de entrada e saída veremos que estas funções têm relação com
+fprintf, sprintf, fscanf dentre outras.<o:p></o:p></span></p>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">A função printf tem como
+primeiro argumento um arranjo de caracteres (string) e pode ter zero ou mais
+argumentos seguindo este primeiro. Como parte do aprendizado de programação é
+importante elaborar vários programas lidando com os diferentes tipos de
+conversão que podem ser feitos.<o:p></o:p></span></p>
+
+<p><span class="SpellE"><span class="GramE">Considere</span></span><span class="GramE"> o <span class="SpellE">programa</span> <span class="SpellE">abaixo</span>.</span><br>
+<tt><span style="font-size:10.0pt;color:blue">#include &lt;<span class="SpellE">stdio.h</span>&gt;</span></tt><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:blue"><br>
+<tt>#include &lt;<span class="SpellE">stdlib.h</span>&gt;</tt><br>
+<br>
+<span class="SpellE"><tt>int</tt></span><tt> main(<span class="SpellE">int</span> <span class="SpellE">argc</span>, char *<span class="SpellE">argv</span>[]){</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span><span class="SpellE">int</span> <span class="SpellE">i</span>;</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span><span class="SpellE">i</span>=123;</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span><span class="SpellE">printf</span>("%d\n",
+<span class="SpellE">i</span>);</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>system("PAUSE");</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>return 0;</tt><br>
+<tt>}</tt><br style="mso-special-character:line-break">
+<!--[if !supportLineBreakNewLine]--><br style="mso-special-character:line-break">
+<!--[endif]--></span></p>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">O fluxo de controle do
+programa acima corresponde a (i) definição da variável de tipo int com nome i,
+(ii) atribuição do valor 123 à variável i, (iii) invocação ou chamada da função
+printf com dois argumentos. O Objetivo básico do programador ao usar a função
+printf é exibir valores na tela ou em uma janela de um monitor, mas a função
+printf na verdade envia caracteres para uma entidade denominada “fluxo de
+saída” (output stream). Nos ambientes de desenvolvimento de programas em C o
+fluxo de saída da printf normalmente está <u>conectado</u> a uma tela ou
+janela.<o:p></o:p></span></p>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">O primeiro argumento da
+função printf deve corresponder a um arranjo de caracteres (string) e estes
+caracteres serão tratados da seguinte forma: (i) caracteres ordinários que são
+copiados para o fluxo de saída (ii) caracteres de especificação de conversões.
+A distinção entre estes dois tipo relaciona-se com o caractere ‘%’ (percento).
+Os caracteres que seguem o percento devem obedecer a várias regras e se estas
+regras não forem obedecidas o comportamento não é definido na linguagem C. No
+programa acima os caracteres ‘%’ e ‘d’ correspondem a uma especificação de
+conversão. Umas das regras da função printf é que, além do primeiro argumento,
+deve haver tantos argumentos quanto o número de especificações de conversão. O
+caractere ‘d’ após o percento no programa acima especifica que deve haver um
+argumento que será convertido como um valor do tipo int na base 10. Os
+caracteres ‘\’ e ‘n’ correspondem a caracteres ordinários e especificam o envio
+de um caractere “funcional” correspondente a uma “nova linha” (new line, daí o
+uso do n).<o:p></o:p></span></p>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">Substituindo a chamada da
+função printf acima, por esta outra:<br>
+</span><tt><span style="font-size:10.0pt;color:blue;mso-ansi-language:
+PT-BR" lang="PT-BR"><span style="mso-spacerun:yes">&nbsp; </span>printf("%x\n", i);</span></tt><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:blue;
+mso-ansi-language:PT-BR" lang="PT-BR"><br>
+</span><span style="mso-ansi-language:PT-BR" lang="PT-BR">ocorre a especificação
+de conversão do argumento como um valor do tipo int mas na base 16.<o:p></o:p></span></p>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">Considere o programa
+abaixo.<br>
+</span><tt><span style="font-size:10.0pt;color:blue;mso-ansi-language:
+PT-BR" lang="PT-BR">#include &lt;stdio.h&gt;</span></tt><span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;color:blue;mso-ansi-language:PT-BR" lang="PT-BR"><br>
+<tt>#include &lt;stdlib.h&gt;</tt><br>
+<br>
+<tt>int main(int argc, char *argv[]){</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>double d;</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>d=3.14;</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>printf("%e\n", d);</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>system("PAUSE");</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>return 0;</tt><br>
+<tt>}</tt><br>
+</span><span style="mso-ansi-language:PT-BR" lang="PT-BR">Este programa é similar
+ao programa anterior mas agora é utilizada uma variável do tipo double e é
+especificada uma conversão de um tipo double para o formato [-]m.dddddde+/-xx Os
+dois programas podem ser combinados:<o:p></o:p></span></p>
+
+<p><tt><span style="font-size:10.0pt;color:blue;mso-ansi-language:
+PT-BR" lang="PT-BR">#include &lt;stdio.h&gt;</span></tt><span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;color:blue;mso-ansi-language:PT-BR" lang="PT-BR"><br>
+<tt>#include &lt;stdlib.h&gt;</tt><br>
+<br>
+<tt>int main(int argc, char *argv[]){</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>int i; double d;</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>i=123; d=3.14;</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>printf("%i %d\n", i, d);</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>system("PAUSE");</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>return 0;</tt><br>
+<tt>}</tt><br>
+</span><span style="mso-ansi-language:PT-BR" lang="PT-BR">As duas especificações
+de conversão (correspondente aos dois caracteres percento) exigem dois
+argumentos.<o:p></o:p></span></p>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">O formato geral da
+especificação de conversão é:<br>
+%[flags][width][.prec][hlL]type<o:p></o:p></span></p>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">Os campos opcionais estão
+entre colchetes mas devem estar na ordem especificada acima. A tabela abaixo
+descreve os “flags”<o:p></o:p></span></p>
+
+<table class="MsoTableGrid" style="border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext" cellspacing="0" cellpadding="0" border="1">
+ <tbody><tr style="mso-yfti-irow:0">
+  <td style="border:solid windowtext 1.0pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt" valign="top">
+  <p><span style="mso-ansi-language:PT-BR" lang="PT-BR">Flag<o:p></o:p></span></p>
+  </td>
+  <td style="border:solid windowtext 1.0pt;border-left:none;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt" valign="top">
+  <p><span style="mso-ansi-language:PT-BR" lang="PT-BR">Significado<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1">
+  <td style="border:solid windowtext 1.0pt;border-top:none;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt" valign="top">
+  <p><span style="mso-ansi-language:PT-BR" lang="PT-BR">-<o:p></o:p></span></p>
+  </td>
+  <td style="border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt" valign="top">
+  <p><span style="mso-ansi-language:PT-BR" lang="PT-BR">posicione o valor à
+  esquerda<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:2">
+  <td style="border:solid windowtext 1.0pt;border-top:none;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt" valign="top">
+  <p><span style="mso-ansi-language:PT-BR" lang="PT-BR">+<o:p></o:p></span></p>
+  </td>
+  <td style="border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt" valign="top">
+  <p><span style="mso-ansi-language:PT-BR" lang="PT-BR">o valor deve ser
+  precedido de + ou -<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:3">
+  <td style="border:solid windowtext 1.0pt;border-top:none;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt" valign="top">
+  <p><span style="mso-ansi-language:PT-BR" lang="PT-BR">espaço/branco<o:p></o:p></span></p>
+  </td>
+  <td style="border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt" valign="top">
+  <p><span style="mso-ansi-language:PT-BR" lang="PT-BR">o valor positivo deve ser
+  precedido de 1 caractere em branco <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:4">
+  <td style="border:solid windowtext 1.0pt;border-top:none;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt" valign="top">
+  <p><span style="mso-ansi-language:PT-BR" lang="PT-BR">0<o:p></o:p></span></p>
+  </td>
+  <td style="border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt" valign="top">
+  <p><span style="mso-ansi-language:PT-BR" lang="PT-BR">preencha o valor com
+  zeros<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:5;mso-yfti-lastrow:yes">
+  <td style="border:solid windowtext 1.0pt;border-top:none;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt" valign="top">
+  <p><span style="mso-ansi-language:PT-BR" lang="PT-BR">#<o:p></o:p></span></p>
+  </td>
+  <td style="border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt" valign="top">
+  <p><span style="mso-ansi-language:PT-BR" lang="PT-BR">preceder octais com 0, hex
+  com 0x; <br>
+  mostrar ponto decimal...<o:p></o:p></span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">A tabela abaixo descreve
+“width.prec”:<o:p></o:p></span></p>
+
+<table class="MsoTableGrid" style="border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext" cellspacing="0" cellpadding="0" border="1">
+ <tbody><tr style="mso-yfti-irow:0">
+  <td style="border:solid windowtext 1.0pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt" valign="top">
+  <p><span style="mso-ansi-language:PT-BR" lang="PT-BR">número<o:p></o:p></span></p>
+  </td>
+  <td style="border:solid windowtext 1.0pt;border-left:none;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt" valign="top">
+  <p><span style="mso-ansi-language:PT-BR" lang="PT-BR">tamanho mínimo da largura
+  ou precisão<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1">
+  <td style="border:solid windowtext 1.0pt;border-top:none;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt" valign="top">
+  <p><span style="mso-ansi-language:PT-BR" lang="PT-BR">*<o:p></o:p></span></p>
+  </td>
+  <td style="border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt" valign="top">
+  <p><span style="mso-ansi-language:PT-BR" lang="PT-BR">o próximo argumento da
+  printf é a largura<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:2">
+  <td style="border:solid windowtext 1.0pt;border-top:none;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt" valign="top">
+  <p><span style="mso-ansi-language:PT-BR" lang="PT-BR">.numero<o:p></o:p></span></p>
+  </td>
+  <td style="border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt" valign="top">
+  <p><span style="mso-ansi-language:PT-BR" lang="PT-BR">numero minimo de digitos
+  para int;<br>
+  numero de casas decimais para e ou f<br>
+  numero max de dig significativos para g<br>
+  numero max de caracteres para s<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:3;mso-yfti-lastrow:yes">
+  <td style="border:solid windowtext 1.0pt;border-top:none;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt" valign="top">
+  <p><span style="mso-ansi-language:PT-BR" lang="PT-BR">.*<o:p></o:p></span></p>
+  </td>
+  <td style="border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt" valign="top">
+  <p><span style="mso-ansi-language:PT-BR" lang="PT-BR">o próximo argumento da
+  printf é o valor da precisão<br>
+  (interpretado como acima)<o:p></o:p></span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">Um h especifica short int, um
+l (letra l minúscula) especifica long int.<o:p></o:p></span></p>
+
+<h2><span style="mso-ansi-language:PT-BR" lang="PT-BR">scanf()<o:p></o:p></span></h2>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">A função scanf opera, de
+forma similar à printf, sobre um fluxo de caracteres, mas agora trata-se de um
+“fluxo de entrada”. Os caracteres obtidos na “entrada” (em geral a scanf opera
+sobre um fluxo de caracteres oriundo do teclado) devem ser tratados (ou
+convertidos e atribuidos aos demais argumentos) de acordo com os caracteres do
+primeiro argumento. No caso da printf os argumentos são expressões e estamos
+interessados no”right-value”, mas no caso da scanf estamos interessados em
+atribuir os valores obtidos do fluxo de entrada para variáveis e a
+especificação e implementação da scanf() espera que sejam fornecidos como
+parâmetros o endereço das variáveis onde devem ser armazenados os valores
+obtidos no fluxo de entrada (devemos usar “left-values”). Este assunto está
+relacionado com “ponteiros” e será detalhado em outra parte da disciplina. A
+forma mais simples de especificar que queremos atribuir um certo valor à
+variável X é usar a expressão &amp;X (E comercial X, ou no jargão da linguagem
+C: endereço de X):<o:p></o:p></span></p>
+
+<p><tt><span style="font-size:10.0pt;color:blue">#include &lt;<span class="SpellE">stdio.h</span>&gt;</span></tt><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:blue"><br>
+<tt>#include &lt;<span class="SpellE">stdlib.h</span>&gt;</tt><br>
+<br>
+<span class="SpellE"><tt>int</tt></span><tt> main(<span class="SpellE">int</span> <span class="SpellE">argc</span>, char *<span class="SpellE">argv</span>[]){</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span><span class="SpellE">int</span> <span class="SpellE">i</span>;</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span><span class="SpellE">scanf</span>("%<span class="SpellE">i</span>", &amp;<span class="SpellE">i</span>);</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span><span class="SpellE">printf</span>("%<span class="SpellE">i</span>\n", <span class="SpellE">i</span>);</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>system("PAUSE");</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>return 0;</tt><br>
+<tt>}<o:p></o:p></tt></span></p>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">Um erro muito comum de programadores
+que usam a função scanf é esquecer de utilizar o caractere “E comercial”
+(&amp;) antes do nome da variável que deve receber o valor convertido a partir
+dos caracteres do fluxo de entrada!</span><span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;color:blue;mso-ansi-language:PT-BR" lang="PT-BR"><br>
+</span><span style="mso-ansi-language:PT-BR" lang="PT-BR">O programa acima usa a
+função scanf para obter um valor para a variável i a partir dos caracteres do
+teclado. Quando o programa acima é executado é invocada a função scanf (que
+fica aguardando os caracteres no fluxo de entrada , no caso o teclado). O
+programa acima aguarda uma ação do usuário sem avisá-lo... este tipo de
+programa não é considerado adequado e a boa disciplina de programação prescreve
+que os desenvolvedores de programas devem planejar a<u> <b style="mso-bidi-font-weight:
+normal">interação</b></u> do programa com o “usuário” (<b style="mso-bidi-font-weight:
+normal"><u>em nossa disciplina vamos considerar que o “usuário” é sempre o
+próprio programador o que pode desculpar muitas coisas indevidas</u></b>). O
+tema “interação” é tratado em outras disciplinas e aqui faremos uso da
+“intuição”, por enquanto deve ser explicitado apenas que este não é um tema
+simples e que existem muitas diretrizes sobre como tratar a “<b style="mso-bidi-font-weight:normal">interação</b>” do programa com o usuário.
+Um programa mais adequado é aquele onde o desenvolvedor (programador) informa
+ao usuário o que é esperado dele:<br>
+</span><tt><span style="font-size:10.0pt;color:blue;mso-ansi-language:
+PT-BR" lang="PT-BR">#include &lt;stdio.h&gt;</span></tt><span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;color:blue;mso-ansi-language:PT-BR" lang="PT-BR"><br>
+<tt>#include &lt;stdlib.h&gt;</tt><br>
+<br>
+<tt>int main(int argc, char *argv[]){</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>int i;</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>printf(“Entre com um valor do tipo
+int na base 10:”);</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>scanf("%i", &amp;i);</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>printf("%i\n", i);</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>system("PAUSE");</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>return 0;</tt><br>
+<tt>}<o:p></o:p></tt></span></p>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">A função scanf lê uma ou
+mais linhas para obter caracteres a serem usados nas conversões. Um possível
+problema para entender o funcionamento da função scanf()<span style="mso-spacerun:yes">&nbsp; </span>é um certo tratamento desigual para as
+diferentes conversões. Quando é especificado no primeiro parâmetro uma
+conversão do tipo %d a função scanf() irá ignorar diversos caracteres para
+poder encontrar uma sequência de caracteres entre ‘0’ e ‘9’; mas com relação a
+conversão %c a função scanf() não ignora nenhum caractere (nem mesmo o
+caractere correspondente ao momento em que o usuário teclou “enter” (sim existe
+um caractere denotando “enter”)!!! A função scanf retorna ao ponto de chamada
+somente após ter processado toda a especificação de conversão dada pelo
+primeiro argumento. O caractere de mudança de linha é tratado como caractere em
+branco exceto na conversão %c. Podemos combinar os programas acima em um programa
+onde duas variáveis são definidas, é usada a função scanf para obter valores
+para serem usados em atribuições e a função printf exibe os valores lidos:<o:p></o:p></span></p>
+
+<p><tt><span style="font-size:10.0pt;color:blue;mso-ansi-language:
+PT-BR" lang="PT-BR">#include &lt;stdio.h&gt;</span></tt><span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;color:blue;mso-ansi-language:PT-BR" lang="PT-BR"><br>
+<tt>#include &lt;stdlib.h&gt;</tt><br>
+<br>
+<tt>int main(int argc, char *argv[]){</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>int i=123456; double d=123.456;</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>printf("entre com um valor do
+tipo int e um valor do tipo double\n");</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>scanf("%i%Le", &amp;i,
+&amp;d);</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>printf("valor de i:%d valor de
+d:%e\n", i, d);<span style="mso-spacerun:yes">&nbsp; </span></tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>system("PAUSE");<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>return 0;</tt><br>
+<tt>}</tt><br style="mso-special-character:line-break">
+<!--[if !supportLineBreakNewLine]--><br style="mso-special-character:line-break">
+<!--[endif]--><tt><o:p></o:p></tt></span></p>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">Observe no programa acima o
+uso do modificador ‘L’ junto com a especificação de conversão %e (“%Le”). Sem
+este modificador a função scanf trata o parâmetro como sendo float (</span><tt><span style="font-size:10.0pt;color:blue;mso-ansi-language:PT-BR" lang="PT-BR">e</span></tt><span style="mso-ansi-language:PT-BR" lang="PT-BR">, </span><tt><span style="font-size:10.0pt;color:blue;mso-ansi-language:PT-BR" lang="PT-BR">f</span></tt><span style="mso-ansi-language:PT-BR" lang="PT-BR"> e </span><tt><span style="font-size:10.0pt;color:blue;mso-ansi-language:PT-BR" lang="PT-BR">g</span></tt><span style="mso-ansi-language:PT-BR" lang="PT-BR"> correspondem a float!)<o:p></o:p></span></p>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">O programa abaixo usa as
+características de análise da entrada da função scanf para elaborar um programa
+onde o usuário pode especificar de forma interativa dois operandos e uma de
+quatro operações. Observe que tanto a printf quanto a scanf são funções que
+retornam um valor do tipo int. O valor retornado se relaciona ao número de
+conversões feitas. No caso da scanf ela retorna a constante EOF quando não
+consegue fazer todas as conversões especificadas.<o:p></o:p></span></p>
+
+<p><tt><span style="font-size:10.0pt;color:blue;mso-ansi-language:
+PT-BR" lang="PT-BR">#include &lt;stdio.h&gt;</span></tt><span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;color:blue;mso-ansi-language:PT-BR" lang="PT-BR"><br>
+<tt>#include &lt;stdlib.h&gt;</tt><br>
+<br>
+<tt>int main(int argc, char *argv[]){</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>double op1, op2;</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>char operador;</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>printf("Entre com (i)operando (ii)operacao
+(iii)operando\n");</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>while(scanf("%Le %c %Le",
+&amp;op1, &amp;operador, &amp;op2)==3){</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>switch(operador){</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>case '+':
+printf("%g\n", op1+op2); break;</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>case '-':
+printf("%g\n", op1-op2); break;</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>case '*':
+printf("%g\n", op1*op2); break;</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;</span>case '/': printf("%g\n",
+op1/op2); break;</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>default: printf("operador
+invalido!\n"); </tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>printf("Entre com
+(i)operando (ii)operacao (iii)operando\n");</tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>}<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+</span></tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>system("PAUSE");<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></tt><br>
+<tt><span style="mso-spacerun:yes">&nbsp; </span>return 0;</tt><br>
+<tt>}</tt><br style="mso-special-character:line-break">
+<!--[if !supportLineBreakNewLine]--><br style="mso-special-character:line-break">
+<!--[endif]--></span><span style="mso-ansi-language:PT-BR" lang="PT-BR"><o:p></o:p></span></p>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">aqui estão algumas
+interações:<o:p></o:p></span></p>
+
+<p><tt><span style="font-size:10.0pt;color:blue;mso-ansi-language:
+PT-BR" lang="PT-BR">Entre com (i)operando (ii)operacao (iii)operando</span></tt><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:blue;
+mso-ansi-language:PT-BR" lang="PT-BR"><br>
+<tt>1/2</tt><br>
+<tt>0.5</tt><br>
+<tt>Entre com (i)operando (ii)operacao (iii)operando</tt><br>
+<tt>1*3</tt><br>
+<tt>3</tt><br>
+<tt>Entre com (i)operando (ii)operacao (iii)operando</tt><br>
+<tt>10e10*10e20</tt><br>
+<tt>1e+032</tt><br>
+<tt>Entre com (i)operando (ii)operacao (iii)operando</tt><br>
+<tt>123+456</tt><br>
+<tt>579</tt><br>
+<tt>Entre com (i)operando (ii)operacao (iii)operando<o:p></o:p></tt></span></p>
+
+<div style="border:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:
+solid windowtext .75pt;padding:0in 0in 1.0pt 0in">
+
+<p style="border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:
+0in;mso-padding-alt:0in 0in 1.0pt 0in"><span style="mso-ansi-language:
+PT-BR" lang="PT-BR">Para terminar o programa basta causar um fim de fluxo (ou fim de
+arquivo) digitando um ou mais caracteres adequados ao “mapeamento de teclas” da
+sua plataforma (usualmente Ctrl Z ou Ctrl D).<o:p></o:p></span></p>
+
+<p style="border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:
+0in;mso-padding-alt:0in 0in 1.0pt 0in"><span style="mso-ansi-language:
+PT-BR" lang="PT-BR">A conversão </span><tt><span style="font-size:10.0pt;
+color:blue;mso-ansi-language:PT-BR" lang="PT-BR">%s</span></tt><span style="mso-ansi-language:PT-BR" lang="PT-BR"> corresponde a atribuir uma sequência de
+caracteres da entrada a uma sequência de posições de memória. Este tipo de
+conversão tem sentido depois de estudar o material de arranjos, emparticular o
+assunto arranjo de caracteres. Um trecho típico é:<br>
+</span><tt><span style="font-size:10.0pt;color:blue">char ac[300];<br>
+printf(“Digite uma sequencia de caracteres para ser lida:”);<br>
+scanf(“%s”, ac);<o:p></o:p></span></tt></p>
+
+<p style="border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:
+0in;mso-padding-alt:0in 0in 1.0pt 0in"><span style="mso-ansi-language:
+PT-BR" lang="PT-BR">A função scanf lê os caracteres da entrada e coloca na área de memória
+correspondente a </span><tt><span style="font-size:10.0pt;
+color:blue;mso-ansi-language:PT-BR" lang="PT-BR">ac</span></tt><span style="mso-ansi-language:PT-BR" lang="PT-BR"> até encontrar (i) um espaço ou (ii) caractere
+de tabulação ou (iii) caracteres de delimitação de linha ou (iv) indicação de
+fim de arquivo.<o:p></o:p></span></p>
+
+<p style="border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:
+0in;mso-padding-alt:0in 0in 1.0pt 0in"><span style="mso-ansi-language:
+PT-BR" lang="PT-BR"><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">A função printf é do tipo
+int e retorna o número de caracteres escritos no fluxo (ou um número negativo
+se ocorreu um erro). O seguinte trecho de programa é tão “válido” quanto
+qualquer outro trecho de programa na linguagem C que ignora o valor retornado
+por uma função:<o:p></o:p></span></p>
+
+<p><tt><span style="font-size:10.0pt;color:blue;mso-ansi-language:
+PT-BR" lang="PT-BR"><span style="mso-spacerun:yes">&nbsp; </span>printf("%d\n",
+printf("abc\n"));<o:p></o:p></span></tt></p>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">Execute o trecho acima e
+veja se o que é impresso é o que você espera.<o:p></o:p></span></p>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">A função scanf é do tipo
+int e retorna o número de itens de entrada convertidos e atribuidos. O trecho <br>
+</span><tt><span style="font-size:10.0pt;color:blue;mso-ansi-language:
+PT-BR" lang="PT-BR"><span style="mso-spacerun:yes">&nbsp; </span>printf("%d\n",
+scanf("%i%i%i",&amp;k1,&amp;k2,&amp;k3 ));<o:p></o:p></span></tt></p>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">imprime o valor 3 caso a
+execução da função scanf seja “normal” envolvendo a leitura e atribuição de
+três valores. <o:p></o:p></span></p>
+
+<p><span style="mso-ansi-language:PT-BR" lang="PT-BR">Apêndices:<o:p></o:p></span></p>
+
+<div style="border:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:
+solid windowtext .75pt;padding:0in 0in 1.0pt 0in">
+
+<p style="border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:
+0in;mso-padding-alt:0in 0in 1.0pt 0in"><span style="mso-ansi-language:
+PT-BR" lang="PT-BR">Sobre a impressão de long long no DEV-C++<o:p></o:p></span></p>
+
+</div>
+
+<p><span style="mso-ansi-language:EN" lang="EN">long long on
+Windows/Dev-C++/MinGW<o:p></o:p></span></p>
+
+<p><span style="mso-ansi-language:EN" lang="EN">[sarcasm on]<o:p></o:p></span></p>
+
+<p><span style="mso-ansi-language:EN" lang="EN">(because Moldova is probably the
+last country where programming competitions are still held on Windows)<o:p></o:p></span></p>
+
+<p><span style="mso-ansi-language:EN" lang="EN">[sarcasm off]<o:p></o:p></span></p>
+
+<p><span style="mso-ansi-language:EN" lang="EN">The long long data type has been
+introduced in C as part of the C99 standard. On 32-bit machines it is a 64-bit
+signed integer data type. The printf/scanf formatting string for this type is %lld.<o:p></o:p></span></p>
+
+<p><span style="mso-ansi-language:EN" lang="EN">Using Dev-C++ and the MinGW port
+of the GNU C Compiler on Windows, one would expect programs to run the same way
+they do with GCC on Linux. But no! Apparently MinGW calls the Windows
+libraries, so every time you call printf or scanf you’ll end up using
+Microsoft’s version of the functions!<o:p></o:p></span></p>
+
+<p><span style="mso-ansi-language:EN" lang="EN">And of course Microsoft cares
+about backwards compatibility, so when C99 was published they didn’t switch to
+the standard, keeping their non-standard <o:p></o:p></span></p>
+
+<p><span style="mso-ansi-language:EN" lang="EN">%I64d<span style="mso-spacerun:yes">&nbsp;
+</span>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;<o:p></o:p></span></p>
+
+<p><span style="mso-ansi-language:EN" lang="EN"><span style="mso-spacerun:yes">&nbsp;</span>formatting string instead!<o:p></o:p></span></p>
+
+<div style="border:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:
+solid windowtext .75pt;padding:0in 0in 1.0pt 0in">
+
+<p style="border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:
+0in;mso-padding-alt:0in 0in 1.0pt 0in"><span style="mso-ansi-language:
+EN" lang="EN">[subsides into an angry stream of unintelligible muttering]<o:p></o:p></span></p>
+
+</div>
+
+<p><span style="mso-ansi-language:EN" lang="EN"><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+
+
+
+</body></html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+
+<link rel="stylesheet" type="text/css" media="all" href="a-estrutura-de-repeticao-for-em-c_files/bootstrap-theme.css">
+<link rel="stylesheet" type="text/css" media="all" href="a-estrutura-de-repeticao-for-em-c_files/bootstrap.css">
+<link rel="stylesheet" type="text/css" media="all" href="a-estrutura-de-repeticao-for-em-c_files/style.css">
+
+<link rel="pingback" href="http://linguagemc.com.br/wordpress/xmlrpc.php">
+
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.4.22 - http://yoast.com/wordpress/seo/ -->
+<meta name="description" content="Apresenta a Estrutura de repetição for em C. Entenda como fazer um looping.">
+<link rel="canonical" href="http://linguagemc.com.br/a-estrutura-de-repeticao-for-em-c/">
+<link rel="author" href="https://plus.google.com/u/0/114780100952641968651">
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Feed para Linguagem C »" href="http://linguagemc.com.br/feed/">
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para Linguagem C »" href="http://linguagemc.com.br/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para Linguagem C » O comando for em C" href="http://linguagemc.com.br/a-estrutura-de-repeticao-for-em-c/feed/">
+		<script src="a-estrutura-de-repeticao-for-em-c_files/cbgapi.loaded_1" async=""></script><script src="a-estrutura-de-repeticao-for-em-c_files/cbgapi.loaded_0" async=""></script><script type="text/javascript" async="" src="a-estrutura-de-repeticao-for-em-c_files/platform.js" gapi_processed="true"></script><script id="twitter-wjs" src="a-estrutura-de-repeticao-for-em-c_files/widgets.js"></script><script id="facebook-jssdk" src="a-estrutura-de-repeticao-for-em-c_files/sdk.js"></script><script type="text/javascript" async="" src="a-estrutura-de-repeticao-for-em-c_files/ga.js"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/linguagemc.com.br\/wordpress\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.11"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="a-estrutura-de-repeticao-for-em-c_files/wp-emoji-release.js" type="text/javascript"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="contact-form-7-css" href="a-estrutura-de-repeticao-for-em-c_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="rs-settings-css" href="a-estrutura-de-repeticao-for-em-c_files/settings.css" type="text/css" media="all">
+<link rel="stylesheet" id="rs-captions-css" href="a-estrutura-de-repeticao-for-em-c_files/dynamic-captions.css" type="text/css" media="all">
+<link rel="stylesheet" id="rs-plugin-static-css" href="a-estrutura-de-repeticao-for-em-c_files/static-captions.css" type="text/css" media="all">
+<script type="text/javascript" src="a-estrutura-de-repeticao-for-em-c_files/jquery.js"></script>
+<script type="text/javascript" src="a-estrutura-de-repeticao-for-em-c_files/jquery-migrate.js"></script>
+<script type="text/javascript" src="a-estrutura-de-repeticao-for-em-c_files/jquery_002.js"></script>
+<script type="text/javascript" src="a-estrutura-de-repeticao-for-em-c_files/jquery_004.js"></script>
+<link rel="https://api.w.org/" href="http://linguagemc.com.br/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://linguagemc.com.br/wordpress/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://linguagemc.com.br/wordpress/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.6.11">
+<link rel="shortlink" href="http://linguagemc.com.br/?p=702">
+<link rel="alternate" type="application/json+oembed" href="http://linguagemc.com.br/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flinguagemc.com.br%2Fa-estrutura-de-repeticao-for-em-c%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://linguagemc.com.br/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flinguagemc.com.br%2Fa-estrutura-de-repeticao-for-em-c%2F&amp;format=xml">
+<link type="text/css" rel="stylesheet" href="a-estrutura-de-repeticao-for-em-c_files/wp_cat_rss_style.css">
+<link rel="stylesheet" type="text/css" href="a-estrutura-de-repeticao-for-em-c_files/shCore.css"><link rel="stylesheet" type="text/css" href="a-estrutura-de-repeticao-for-em-c_files/shThemeDefault.css"><style type="text/css" id="syntaxhighlighteranchor"></style>
+<script src="a-estrutura-de-repeticao-for-em-c_files/bootstrap.js"></script>
+<script src="a-estrutura-de-repeticao-for-em-c_files/template.js"></script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31433128-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<script src="a-estrutura-de-repeticao-for-em-c_files/secureAnonymousFramework"></script><script type="text/javascript" charset="utf-8" async="" src="a-estrutura-de-repeticao-for-em-c_files/button.js"></script><style type="text/css">* html #li_ui_li_gen_1529400713984_0 a#li_ui_li_gen_1529400713984_0-link{height:1% !important;}#li_ui_li_gen_1529400713984_0{position:relative !important;overflow:visible !important;display:block !important;}#li_ui_li_gen_1529400713984_0 span{-webkit-box-sizing:content-box !important;-moz-box-sizing:content-box !important;box-sizing:content-box !important;}#li_ui_li_gen_1529400713984_0 a#li_ui_li_gen_1529400713984_0-link{border:0 !important;height:20px !important;text-decoration:none !important;padding:0 !important;margin:0 !important;display:inline-block !important;}#li_ui_li_gen_1529400713984_0 a#li_ui_li_gen_1529400713984_0-link:link, #li_ui_li_gen_1529400713984_0 a#li_ui_li_gen_1529400713984_0-link:visited, #li_ui_li_gen_1529400713984_0 a#li_ui_li_gen_1529400713984_0-link:hover, #li_ui_li_gen_1529400713984_0 a#li_ui_li_gen_1529400713984_0-link:active{border:0 !important;text-decoration:none !important;}#li_ui_li_gen_1529400713984_0 a#li_ui_li_gen_1529400713984_0-link:after{content:"." !important;display:block !important;clear:both !important;visibility:hidden !important;line-height:0 !important;height:0 !important;}#li_ui_li_gen_1529400713984_0 #li_ui_li_gen_1529400713984_0-logo{background-image:url(https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-position:0px -593px !important;background-repeat:no-repeat !important;background-color:#0077b5 !important;background-size:initial !important;cursor:pointer !important;border:0 !important;border-right:1px solid #066094 !important;text-indent:-9999em !important;overflow:hidden !important;padding:0 !important;margin:0 !important;position:absolute !important;left:0px !important;top:0px !important;display:block !important;width:20px !important;height:20px !important;float:right !important;border-radius:2px !important;-moz-border-radius:2px !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-moz-border-radius-topright:2px !important;-moz-border-radius-bottomright:2px !important;}#li_ui_li_gen_1529400713984_0 #li_ui_li_gen_1529400713984_0-title{color:#fff !important;cursor:pointer !important;display:block !important;white-space:nowrap !important;float:left !important;margin-left:1px !important;vertical-align:top !important;overflow:hidden !important;text-align:center !important;height:18px !important;padding:0 4px 0 23px !important;border:1px solid #000 !important;border-top-color:#0077b5 !important;border-right-color:#0077b5 !important;border-bottom-color:#0077b5 !important;border-left-color:#0077b5 !important;text-shadow:0 -1px #005887 !important;line-height:20px !important;border-radius:2px !important;-moz-border-radius:2px !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-moz-border-radius-topright:2px !important;-moz-border-radius-bottomright:2px !important;background-color:#0077b5 !important;background-image:-moz-linear-gradient(top, #0077b5 0%, #0077b5 100%) !important;}#li_ui_li_gen_1529400713984_0.hovered #li_ui_li_gen_1529400713984_0-title{border:1px solid #000 !important;border-top-color:#0369a0 !important;border-right-color:#0369a0 !important;border-bottom-color:#0369a0 !important;border-left-color:#0369a0 !important;background-color:#0369a0 !important;background-image:-moz-linear-gradient(top, #0369a0 0%, #0369a0 100%) !important;}#li_ui_li_gen_1529400713984_0.clicked #li_ui_li_gen_1529400713984_0-title, #li_ui_li_gen_1529400713984_0.down #li_ui_li_gen_1529400713984_0-title{color:#fff !important;border:1px solid #000 !important;border-top-color:#066094 !important;border-right-color:#066094 !important;border-bottom-color:#066094 !important;border-left-color:#066094 !important;background-color:#066094 !important;background-image:-moz-linear-gradient(top, #066094 0%, #066094 100%) !important;}.IN-shadowed #li_ui_li_gen_1529400713984_0 #li_ui_li_gen_1529400713984_0-title{}.IN-shadowed #li_ui_li_gen_1529400713984_0.hovered #li_ui_li_gen_1529400713984_0-title{}.IN-shadowed #li_ui_li_gen_1529400713984_0.clicked #li_ui_li_gen_1529400713984_0-title, .IN-shadowed #li_ui_li_gen_1529400713984_0.down #li_ui_li_gen_1529400713984_0-title{}#li_ui_li_gen_1529400713984_0 #li_ui_li_gen_1529400713984_0-title-text, #li_ui_li_gen_1529400713984_0 #li_ui_li_gen_1529400713984_0-title-text *{color:#fff !important;font-size:11px !important;font-family:Arial, sans-serif !important;font-weight:bold !important;font-style:normal !important;-webkit-font-smoothing:antialiased !important;display:inline-block !important;background:transparent none !important;vertical-align:top !important;height:18px !important;line-height:20px !important;float:none !important;}#li_ui_li_gen_1529400713984_0 #li_ui_li_gen_1529400713984_0-title-text strong{font-weight:bold !important;}#li_ui_li_gen_1529400713984_0 #li_ui_li_gen_1529400713984_0-title-text em{font-style:italic !important;}#li_ui_li_gen_1529400713984_0.hovered #li_ui_li_gen_1529400713984_0-title-text, #li_ui_li_gen_1529400713984_0.hovered #li_ui_li_gen_1529400713984_0-title-text *{color:#fff !important;}#li_ui_li_gen_1529400713984_0.clicked #li_ui_li_gen_1529400713984_0-title-text, #li_ui_li_gen_1529400713984_0.down #li_ui_li_gen_1529400713984_0-title-text, #li_ui_li_gen_1529400713984_0.clicked #li_ui_li_gen_1529400713984_0-title-text *, #li_ui_li_gen_1529400713984_0.down #li_ui_li_gen_1529400713984_0-title-text *{color:#fff !important;}#li_ui_li_gen_1529400713984_0 #li_ui_li_gen_1529400713984_0-title #li_ui_li_gen_1529400713984_0-mark{display:inline-block !important;width:0px !important;overflow:hidden !important;}.success #li_ui_li_gen_1529400713984_0 #li_ui_li_gen_1529400713984_0-title{color:#fff !important;border-top-color:#0077b5 !important;border-right-color:#0077b5 !important;border-bottom-color:#0077b5 !important;border-left-color:#0077b5 !important;background-color:#0077b5 !important;background-image:-moz-linear-gradient(top, #0077b5 0%, #0077b5 100%) !important;}.success #li_ui_li_gen_1529400713984_0 #li_ui_li_gen_1529400713984_0-title-text, .success #li_ui_li_gen_1529400713984_0 #li_ui_li_gen_1529400713984_0-title-text *{color:#fff !important;}.IN-shadowed .success #li_ui_li_gen_1529400713984_0 #li_ui_li_gen_1529400713984_0-title{}.success #li_ui_li_gen_1529400713984_0.hovered #li_ui_li_gen_1529400713984_0-title{color:#fff !important;border-top-color:#0369a0 !important;border-right-color:#0369a0 !important;border-bottom-color:#0369a0 !important;border-left-color:#0369a0 !important;background-color:#0369a0 !important;background-image:-moz-linear-gradient(top, #0369a0 0%, #0369a0 100%) !important;}.success #li_ui_li_gen_1529400713984_0.hovered #li_ui_li_gen_1529400713984_0-title-text, .success #li_ui_li_gen_1529400713984_0.hovered #li_ui_li_gen_1529400713984_0-title-text *{color:#fff !important;}.success #li_ui_li_gen_1529400713984_0.clicked #li_ui_li_gen_1529400713984_0-title, .success #li_ui_li_gen_1529400713984_0.down #li_ui_li_gen_1529400713984_0-title{color:#fff !important;border-top-color:#066094 !important;border-right-color:#066094 !important;border-bottom-color:#066094 !important;border-left-color:#066094 !important;background-color:#066094 !important;background-image:-moz-linear-gradient(top, #066094 0%, #066094 100%) !important;}.success #li_ui_li_gen_1529400713984_0.clicked #li_ui_li_gen_1529400713984_0-title-text, .success #li_ui_li_gen_1529400713984_0.down #li_ui_li_gen_1529400713984_0-title-text, .success #li_ui_li_gen_1529400713984_0.clicked #li_ui_li_gen_1529400713984_0-title-text *, .success #li_ui_li_gen_1529400713984_0.down #li_ui_li_gen_1529400713984_0-title-text *{color:#fff !important;}.IN-shadowed .success #li_ui_li_gen_1529400713984_0.clicked #li_ui_li_gen_1529400713984_0-title, .IN-shadowed .success #li_ui_li_gen_1529400713984_0.down #li_ui_li_gen_1529400713984_0-title{}* html #li_ui_li_gen_1529400714032_1 a#li_ui_li_gen_1529400714032_1-link{height:1% !important;}#li_ui_li_gen_1529400714032_1{position:relative !important;overflow:visible !important;display:block !important;}#li_ui_li_gen_1529400714032_1 span{-webkit-box-sizing:content-box !important;-moz-box-sizing:content-box !important;box-sizing:content-box !important;}#li_ui_li_gen_1529400714032_1 a#li_ui_li_gen_1529400714032_1-link{border:0 !important;height:20px !important;text-decoration:none !important;padding:0 !important;margin:0 !important;display:inline-block !important;}#li_ui_li_gen_1529400714032_1 a#li_ui_li_gen_1529400714032_1-link:link, #li_ui_li_gen_1529400714032_1 a#li_ui_li_gen_1529400714032_1-link:visited, #li_ui_li_gen_1529400714032_1 a#li_ui_li_gen_1529400714032_1-link:hover, #li_ui_li_gen_1529400714032_1 a#li_ui_li_gen_1529400714032_1-link:active{border:0 !important;text-decoration:none !important;}#li_ui_li_gen_1529400714032_1 a#li_ui_li_gen_1529400714032_1-link:after{content:"." !important;display:block !important;clear:both !important;visibility:hidden !important;line-height:0 !important;height:0 !important;}#li_ui_li_gen_1529400714032_1 #li_ui_li_gen_1529400714032_1-logo{background-image:url(https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-position:0px -593px !important;background-repeat:no-repeat !important;background-color:#0077b5 !important;background-size:initial !important;cursor:pointer !important;border:0 !important;border-right:1px solid #066094 !important;text-indent:-9999em !important;overflow:hidden !important;padding:0 !important;margin:0 !important;position:absolute !important;left:0px !important;top:0px !important;display:block !important;width:20px !important;height:20px !important;float:right !important;border-radius:2px !important;-moz-border-radius:2px !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-moz-border-radius-topright:2px !important;-moz-border-radius-bottomright:2px !important;}#li_ui_li_gen_1529400714032_1 #li_ui_li_gen_1529400714032_1-title{color:#fff !important;cursor:pointer !important;display:block !important;white-space:nowrap !important;float:left !important;margin-left:1px !important;vertical-align:top !important;overflow:hidden !important;text-align:center !important;height:18px !important;padding:0 4px 0 23px !important;border:1px solid #000 !important;border-top-color:#0077b5 !important;border-right-color:#0077b5 !important;border-bottom-color:#0077b5 !important;border-left-color:#0077b5 !important;text-shadow:0 -1px #005887 !important;line-height:20px !important;border-radius:2px !important;-moz-border-radius:2px !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-moz-border-radius-topright:2px !important;-moz-border-radius-bottomright:2px !important;background-color:#0077b5 !important;background-image:-moz-linear-gradient(top, #0077b5 0%, #0077b5 100%) !important;}#li_ui_li_gen_1529400714032_1.hovered #li_ui_li_gen_1529400714032_1-title{border:1px solid #000 !important;border-top-color:#0369a0 !important;border-right-color:#0369a0 !important;border-bottom-color:#0369a0 !important;border-left-color:#0369a0 !important;background-color:#0369a0 !important;background-image:-moz-linear-gradient(top, #0369a0 0%, #0369a0 100%) !important;}#li_ui_li_gen_1529400714032_1.clicked #li_ui_li_gen_1529400714032_1-title, #li_ui_li_gen_1529400714032_1.down #li_ui_li_gen_1529400714032_1-title{color:#fff !important;border:1px solid #000 !important;border-top-color:#066094 !important;border-right-color:#066094 !important;border-bottom-color:#066094 !important;border-left-color:#066094 !important;background-color:#066094 !important;background-image:-moz-linear-gradient(top, #066094 0%, #066094 100%) !important;}.IN-shadowed #li_ui_li_gen_1529400714032_1 #li_ui_li_gen_1529400714032_1-title{}.IN-shadowed #li_ui_li_gen_1529400714032_1.hovered #li_ui_li_gen_1529400714032_1-title{}.IN-shadowed #li_ui_li_gen_1529400714032_1.clicked #li_ui_li_gen_1529400714032_1-title, .IN-shadowed #li_ui_li_gen_1529400714032_1.down #li_ui_li_gen_1529400714032_1-title{}#li_ui_li_gen_1529400714032_1 #li_ui_li_gen_1529400714032_1-title-text, #li_ui_li_gen_1529400714032_1 #li_ui_li_gen_1529400714032_1-title-text *{color:#fff !important;font-size:11px !important;font-family:Arial, sans-serif !important;font-weight:bold !important;font-style:normal !important;-webkit-font-smoothing:antialiased !important;display:inline-block !important;background:transparent none !important;vertical-align:top !important;height:18px !important;line-height:20px !important;float:none !important;}#li_ui_li_gen_1529400714032_1 #li_ui_li_gen_1529400714032_1-title-text strong{font-weight:bold !important;}#li_ui_li_gen_1529400714032_1 #li_ui_li_gen_1529400714032_1-title-text em{font-style:italic !important;}#li_ui_li_gen_1529400714032_1.hovered #li_ui_li_gen_1529400714032_1-title-text, #li_ui_li_gen_1529400714032_1.hovered #li_ui_li_gen_1529400714032_1-title-text *{color:#fff !important;}#li_ui_li_gen_1529400714032_1.clicked #li_ui_li_gen_1529400714032_1-title-text, #li_ui_li_gen_1529400714032_1.down #li_ui_li_gen_1529400714032_1-title-text, #li_ui_li_gen_1529400714032_1.clicked #li_ui_li_gen_1529400714032_1-title-text *, #li_ui_li_gen_1529400714032_1.down #li_ui_li_gen_1529400714032_1-title-text *{color:#fff !important;}#li_ui_li_gen_1529400714032_1 #li_ui_li_gen_1529400714032_1-title #li_ui_li_gen_1529400714032_1-mark{display:inline-block !important;width:0px !important;overflow:hidden !important;}.success #li_ui_li_gen_1529400714032_1 #li_ui_li_gen_1529400714032_1-title{color:#fff !important;border-top-color:#0077b5 !important;border-right-color:#0077b5 !important;border-bottom-color:#0077b5 !important;border-left-color:#0077b5 !important;background-color:#0077b5 !important;background-image:-moz-linear-gradient(top, #0077b5 0%, #0077b5 100%) !important;}.success #li_ui_li_gen_1529400714032_1 #li_ui_li_gen_1529400714032_1-title-text, .success #li_ui_li_gen_1529400714032_1 #li_ui_li_gen_1529400714032_1-title-text *{color:#fff !important;}.IN-shadowed .success #li_ui_li_gen_1529400714032_1 #li_ui_li_gen_1529400714032_1-title{}.success #li_ui_li_gen_1529400714032_1.hovered #li_ui_li_gen_1529400714032_1-title{color:#fff !important;border-top-color:#0369a0 !important;border-right-color:#0369a0 !important;border-bottom-color:#0369a0 !important;border-left-color:#0369a0 !important;background-color:#0369a0 !important;background-image:-moz-linear-gradient(top, #0369a0 0%, #0369a0 100%) !important;}.success #li_ui_li_gen_1529400714032_1.hovered #li_ui_li_gen_1529400714032_1-title-text, .success #li_ui_li_gen_1529400714032_1.hovered #li_ui_li_gen_1529400714032_1-title-text *{color:#fff !important;}.success #li_ui_li_gen_1529400714032_1.clicked #li_ui_li_gen_1529400714032_1-title, .success #li_ui_li_gen_1529400714032_1.down #li_ui_li_gen_1529400714032_1-title{color:#fff !important;border-top-color:#066094 !important;border-right-color:#066094 !important;border-bottom-color:#066094 !important;border-left-color:#066094 !important;background-color:#066094 !important;background-image:-moz-linear-gradient(top, #066094 0%, #066094 100%) !important;}.success #li_ui_li_gen_1529400714032_1.clicked #li_ui_li_gen_1529400714032_1-title-text, .success #li_ui_li_gen_1529400714032_1.down #li_ui_li_gen_1529400714032_1-title-text, .success #li_ui_li_gen_1529400714032_1.clicked #li_ui_li_gen_1529400714032_1-title-text *, .success #li_ui_li_gen_1529400714032_1.down #li_ui_li_gen_1529400714032_1-title-text *{color:#fff !important;}.IN-shadowed .success #li_ui_li_gen_1529400714032_1.clicked #li_ui_li_gen_1529400714032_1-title, .IN-shadowed .success #li_ui_li_gen_1529400714032_1.down #li_ui_li_gen_1529400714032_1-title{}</style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_customer_chat_bounce_in_v1{animation-duration:250ms;animation-name:fb_bounce_in_v1}.fb_customer_chat_bounce_out_v1{animation-duration:250ms;animation-name:fb_bounce_out_v1}.fb_customer_chat_bounce_in_v2{animation-duration:300ms;animation-name:fb_bounce_in_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2{animation-duration:300ms;animation-name:fb_bounce_out_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_v2_mobile_chat_started{animation-duration:300ms;animation-name:fb_bounce_in_v2_mobile_chat_started;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2_mobile_chat_started{animation-duration:300ms;animation-name:fb_bounce_out_v2_mobile_chat_started;transition-timing-function:ease-in}.fb_customer_chat_bubble_pop_in{animation-duration:250ms;animation-name:fb_customer_chat_bubble_bounce_in_animation}.fb_customer_chat_bubble_animated_no_badge{box-shadow:0 3px 12px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_no_badge:hover{box-shadow:0 5px 24px rgba(0, 0, 0, .3)}.fb_customer_chat_bubble_animated_with_badge{box-shadow:-5px 4px 14px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_with_badge:hover{box-shadow:-5px 8px 24px rgba(0, 0, 0, .2)}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}.fb_mobile_overlay_active{background-color:#fff;height:100%;overflow:hidden;position:fixed;visibility:hidden;width:100%}@keyframes fb_bounce_in_v1{0%{opacity:0;transform:scale(.8, .8);transform-origin:bottom right}80%{opacity:.8;transform:scale(1.03, 1.03)}100%{opacity:1;transform:scale(1, 1)}}@keyframes fb_bounce_in_v2{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}50%{transform:scale(1.03, 1.03);transform-origin:bottom right}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}}@keyframes fb_bounce_in_v2_mobile_chat_started{0%{opacity:0;top:20px}100%{opacity:1;top:0}}@keyframes fb_bounce_out_v1{from{opacity:1}to{opacity:0}}@keyframes fb_bounce_out_v2{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}}@keyframes fb_bounce_out_v2_mobile_chat_started{0%{opacity:1;top:0}100%{opacity:0;top:20px}}@keyframes fb_customer_chat_bubble_bounce_in_animation{0%{bottom:6pt;opacity:0;transform:scale(0, 0);transform-origin:center}70%{bottom:18pt;opacity:1;transform:scale(1.2, 1.2)}100%{transform:scale(1, 1)}}</style></head><body class="single single-post postid-702 single-format-standard"><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border: medium none;" src="http://staticxx.facebook.com/connect/xd_arbiter/r/qMnGlIs-JNW.js?version=42#channel=f2cebb6eafe2e2&amp;origin=http%3A%2F%2Flinguagemc.com.br" frameborder="0"></iframe><iframe name="fb_xdm_frame_https" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border: medium none;" src="a-estrutura-de-repeticao-for-em-c_files/qMnGlIs-JNW_002.html" frameborder="0"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script src="a-estrutura-de-repeticao-for-em-c_files/in.js" type="text/javascript">
+  lang: pt_BR
+</script>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+
+
+
+
+
+
+
+
+
+<header id="topo">
+	<div class="container">
+        <div class="container widthFull" id="header">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <a href="http://linguagemc.com.br/"><img src="a-estrutura-de-repeticao-for-em-c_files/logo.png"></a> 
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 aling-right">
+                <div id="telefone"><aside id="text-7" class="widget-container widget_text">			<div class="textwidget"><span>Tel. (11)</span> 3477-5176<br><span>(11)</span> 3508-1923 
+
+ </div>
+		</aside></div>                <div id="email"><aside id="text-8" class="widget-container widget_text">			<div class="textwidget">treinamento@intellectuale.com.br</div>
+		</aside></div>                <div id="busca"><aside id="search-3" class="widget-container widget_search"><form role="search" method="get" id="searchform" class="searchform" action="http://linguagemc.com.br/">
+	<div> 
+	<input name="s" id="s" class="form-control" placeholder="Pesquisar..." type="text">
+	<input id="searchsubmit" class="btn btn-primary" value="Pesquisar" type="submit">
+	</div>
+	</form></aside></div>            </div>    
+        </div>
+        <div class="container widthFull" id="menuTopo">
+            <div id="menu" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="menu-header"><ul id="menu-topo" class="nav nav-pills"><li id="menu-item-1963" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1963"><a href="http://linguagemc.com.br/">Home</a></li>
+<li id="menu-item-2164" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2164"><a href="http://www.cursosdeprogramacao.com.br/turmas">Nossa Escola</a></li>
+<li id="menu-item-2163" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2163"><a href="http://www.cursosdeprogramacao.com.br/">Curso Presencial</a></li>
+<li id="menu-item-1967" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1967"><a href="http://linguagemc.com.br/fale-conosco/">Contato</a></li>
+</ul></div>            </div>
+        </div>
+        
+                    </div>
+</header>
+<div class="container">
+<div id="main">
+	<div class="container widthFull">
+<div id="container" class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+
+			
+
+				
+
+				<article id="post-702" class="post-702 post type-post status-publish format-standard hentry category-estruturas-de-repeticao">
+					<h1 class="entry-title">O comando for em C</h1>
+ 					<div class="redes">
+
+     <div class="facebook"><div class="fb-like fb_iframe_widget" data-href="http://linguagemc.com.br/a-estrutura-de-repeticao-for-em-c/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=208&amp;href=http%3A%2F%2Flinguagemc.com.br%2Fa-estrutura-de-repeticao-for-em-c%2F&amp;layout=button_count&amp;locale=pt_BR&amp;sdk=joey&amp;share=true&amp;show_faces=false"><span style="vertical-align: bottom; width: 157px; height: 20px;"><iframe name="ff5b29fdbb263e" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:like Facebook Social Plugin" style="border: medium none; visibility: visible; width: 157px; height: 20px;" src="a-estrutura-de-repeticao-for-em-c_files/like.html" class="" width="1000px" height="1000px" frameborder="0"></iframe></span></div></div>
+   
+    <div class="twitter"><iframe id="twitter-widget-0" scrolling="no" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 70px; height: 20px;" title="Twitter Tweet Button" src="a-estrutura-de-repeticao-for-em-c_files/tweet_button.html" frameborder="0"></iframe>
+</div>
+
+    <div class="google"><div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 32px; height: 20px;" id="___plusone_0"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 32px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" id="I0_1529400713473" name="I0_1529400713473" src="a-estrutura-de-repeticao-for-em-c_files/fastbutton.html" data-gapiattached="true" title="G+" width="100%" frameborder="0"></iframe></div></div>
+   
+    <div class="linkedin"><span style="line-height: 1; vertical-align: baseline; display: inline-block; text-align: center;" class="IN-widget"><span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: baseline !important; font-size: 1px !important;"><span id="li_ui_li_gen_1529400713984_0"><a id="li_ui_li_gen_1529400713984_0-link" href="javascript:void(0);"><span id="li_ui_li_gen_1529400713984_0-logo">in</span><span id="li_ui_li_gen_1529400713984_0-title"><span id="li_ui_li_gen_1529400713984_0-mark"></span><span id="li_ui_li_gen_1529400713984_0-title-text">Compartilhar</span></span></a></span></span></span><script type="IN/Share+init" data-counter="right"></script></div>
+
+</div>					<div class="entry-content">
+						<p><em>Por: Eduardo Casavella</em><br>
+&nbsp;</p>
+<p><strong>Estrutura de repetição for</strong></p>
+<p><strong></strong><br>
+Denominamos “laço” (loop em inglês) a uma estrutura de repetição.</p>
+<p>As estruturas de repetição, executam a repetição de um conjunto de instruções enquanto uma determinada condição é verdadeira.</p>
+<p>Em linguagem C, existem três estruturas de repetição, são elas: for, while e do…while.</p>
+<p>Cada uma destas estruturas tem a sua particularidade em termos de funcionamento.</p>
+<p>Veremos cada uma delas em artigos separados no blog, iniciando pelo for.</p>
+<p>&nbsp;</p>
+<p><strong>Pseudocódigo – Estrutura de repetição Para</strong></p>
+<p>Em pseudocódigo o laço for da linguagem C é equivalente ao comando Para.</p>
+<p>Seu funcionamento é simples, como veremos.</p>
+<p>&nbsp;<br>
+<strong>Pseudocódigo:</strong></p>
+<pre>Para (valor inicial até condição_final passo n)faça
+Inicio
+&nbsp; &nbsp; Instruções;
+Fim;</pre>
+<p>&nbsp;</p>
+<p>onde:</p>
+<ul>
+<li>valor_inicial é uma instrução de atribuição do valor inicial do laço para a variável de controle.</li>
+<li>condição final é uma condição que controla o laço.</li>
+<li>passo é o incremento do laço.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Utilização do comando for</strong><br>
+&nbsp;</p>
+<p>O laço for é uma estrutura de repetição muito utilizada nos programas em C.</p>
+<p>É muito útil quando se sabe de antemão quantas vezes a repetição deverá ser executada.</p>
+<p>Este laço utiliza uma variável para controlar a contagem do loop, bem como seu incremento.</p>
+<p>Trata-se de um comando bem enxuto, já que própria estrutura faz a inicialização, incremento e encerramento do laço.</p>
+<p>&nbsp;<br>
+<strong>Sintaxe:</strong></p>
+<pre>for(valor_inicial; condição_final; valor_incremento)
+ {
+    instruções;
+ }</pre>
+<p>&nbsp;</p>
+<div><div id="highlighter_559450" class="syntaxhighlighter  cpp"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp comments">//Exemplo1: Programa usando loop for em C</code></div><div class="line number2 index1 alt1"><code class="cpp preprocessor">#include &lt;stdio.h&gt;</code></div><div class="line number3 index2 alt2"><code class="cpp preprocessor">#include &lt;conio.h&gt;</code></div><div class="line number4 index3 alt1"><code class="cpp color1 bold">int</code> <code class="cpp plain">main(</code><code class="cpp keyword bold">void</code><code class="cpp plain">)</code></div><div class="line number5 index4 alt2"><code class="cpp plain">{</code></div><div class="line number6 index5 alt1"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp color1 bold">int</code> <code class="cpp plain">contador; </code><code class="cpp comments">//variável de controle do loop</code></div><div class="line number7 index6 alt2"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp keyword bold">for</code><code class="cpp plain">(contador = 1; contador &lt;= 10; contador++)</code></div><div class="line number8 index7 alt1"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp plain">{</code></div><div class="line number9 index8 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp functions bold">printf</code><code class="cpp plain">(</code><code class="cpp string">"%d "</code><code class="cpp plain">, contador);</code></div><div class="line number10 index9 alt1"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp plain">}</code></div><div class="line number11 index10 alt2"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp plain">getch();</code></div><div class="line number12 index11 alt1"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp keyword bold">return</code><code class="cpp plain">(0);</code></div><div class="line number13 index12 alt2"><code class="cpp plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p>&nbsp;</p>
+<p><strong>Explicação:</strong><br>
+&nbsp;<br>
+Neste primeiro exemplo podemos observar três coisas sobre o funcionamento da estrutura de repetição for:</p>
+<ul>
+<li>Primeiramente o contador foi inicializado com um valor determinado</li>
+<li>Depois testamos se a condição que envolve o contador é verdadeira 
+(ou seja &nbsp;se contador &lt;= 10), em caso afirmativo, a repetição 
+continua; caso – contrário, &nbsp;ela será encerrada.</li>
+<li>A cada nova repetição a variável do contador foi incrementada</li>
+</ul>
+<p>&nbsp;<br>
+<strong>Laço for decrescente</strong><br>
+&nbsp;<br>
+Em certos casos, ao invés de incrementar, podemos decrementar a variável
+ de controle e construir um laço com contagem decrescente. Para tanto, 
+devemos inicializar a variável de controle com um valor adequado e 
+construir a condição necessária para&nbsp;que o laço seja finalizado.<br>
+&nbsp;</p>
+<div><div id="highlighter_912393" class="syntaxhighlighter  cpp"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp comments">//Exemplo 2 Laço com contagem decrescente</code></div><div class="line number2 index1 alt1"><code class="cpp preprocessor">#include &lt;stdio.h&gt;</code></div><div class="line number3 index2 alt2"><code class="cpp preprocessor">#include &lt;conio.h&gt;</code></div><div class="line number4 index3 alt1"><code class="cpp color1 bold">int</code> <code class="cpp plain">main(</code><code class="cpp keyword bold">void</code><code class="cpp plain">)</code></div><div class="line number5 index4 alt2"><code class="cpp plain">{</code></div><div class="line number6 index5 alt1"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp color1 bold">int</code> <code class="cpp plain">contador;</code></div><div class="line number7 index6 alt2"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp keyword bold">for</code> <code class="cpp plain">(contador = 10; contador &gt;= 1; contador--)</code></div><div class="line number8 index7 alt1"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp plain">{</code></div><div class="line number9 index8 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp functions bold">printf</code><code class="cpp plain">(</code><code class="cpp string">"%d "</code><code class="cpp plain">, contador);</code></div><div class="line number10 index9 alt1"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp plain">}</code></div><div class="line number11 index10 alt2"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp plain">getch();</code></div><div class="line number12 index11 alt1"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp keyword bold">return</code><code class="cpp plain">(0);</code></div><div class="line number13 index12 alt2"><code class="cpp plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p>&nbsp;</p>
+<p>Exemplo de utilização de laço que repete um comando determinado número de vezes.</p>
+<div><div id="highlighter_680328" class="syntaxhighlighter  cpp"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp comments">//Exemplo 3 Repetindo uma frase</code></div><div class="line number2 index1 alt1"><code class="cpp preprocessor">#include &lt;stdio.h&gt;</code></div><div class="line number3 index2 alt2"><code class="cpp preprocessor">#include &lt;conio.h&gt;</code></div><div class="line number4 index3 alt1"><code class="cpp color1 bold">int</code> <code class="cpp plain">main(</code><code class="cpp keyword bold">void</code><code class="cpp plain">)</code></div><div class="line number5 index4 alt2"><code class="cpp plain">{</code></div><div class="line number6 index5 alt1"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp color1 bold">int</code> <code class="cpp plain">I;</code><code class="cpp comments">//variável de controle do loop</code></div><div class="line number7 index6 alt2"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp keyword bold">for</code> <code class="cpp plain">(I = 1; I &lt;= 3; I++)</code></div><div class="line number8 index7 alt1"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp plain">{</code></div><div class="line number9 index8 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp functions bold">printf</code><code class="cpp plain">(</code><code class="cpp string">"Aprendendo Linguagem C\n"</code><code class="cpp plain">);</code></div><div class="line number10 index9 alt1"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp plain">}</code></div><div class="line number11 index10 alt2"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp plain">getch();</code></div><div class="line number12 index11 alt1"><code class="cpp spaces">&nbsp;&nbsp;</code><code class="cpp keyword bold">return</code><code class="cpp plain">(0);</code></div><div class="line number13 index12 alt2"><code class="cpp plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p>&nbsp;</p>
+<p><strong>Conclusão:</strong><br>
+&nbsp;<br>
+Neste artigo, vimos que o comando for executa um conjunto de instruções,
+ um determinado número de vezes de acordo com uma condição enquanto uma 
+variável de controle é incrementada ou decrementada a cada passagem pelo
+ “laço”.</p>
+<p>&nbsp;</p>
+<p>Até a próxima!</p>
+						 
+					</div>
+<div class="redes">
+
+     <div class="facebook"><div class="fb-like fb_iframe_widget" data-href="http://linguagemc.com.br/a-estrutura-de-repeticao-for-em-c/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=208&amp;href=http%3A%2F%2Flinguagemc.com.br%2Fa-estrutura-de-repeticao-for-em-c%2F&amp;layout=button_count&amp;locale=pt_BR&amp;sdk=joey&amp;share=true&amp;show_faces=false"><span style="vertical-align: bottom; width: 157px; height: 20px;"><iframe name="f38728a3abcdb38" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:like Facebook Social Plugin" style="border: medium none; visibility: visible; width: 157px; height: 20px;" src="a-estrutura-de-repeticao-for-em-c_files/like_002.html" class="" width="1000px" height="1000px" frameborder="0"></iframe></span></div></div>
+   
+    <div class="twitter"><iframe id="twitter-widget-1" scrolling="no" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 70px; height: 20px;" title="Twitter Tweet Button" src="a-estrutura-de-repeticao-for-em-c_files/tweet_button_002.html" frameborder="0"></iframe>
+</div>
+
+    <div class="google"><div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 32px; height: 20px;" id="___plusone_1"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 32px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" id="I1_1529400713494" name="I1_1529400713494" src="a-estrutura-de-repeticao-for-em-c_files/fastbutton_002.html" data-gapiattached="true" title="G+" width="100%" frameborder="0"></iframe></div></div>
+   
+    <div class="linkedin"><span style="line-height: 1; vertical-align: baseline; display: inline-block; text-align: center;" class="IN-widget"><span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: baseline !important; font-size: 1px !important;"><span id="li_ui_li_gen_1529400714032_1"><a id="li_ui_li_gen_1529400714032_1-link" href="javascript:void(0);"><span id="li_ui_li_gen_1529400714032_1-logo">in</span><span id="li_ui_li_gen_1529400714032_1-title"><span id="li_ui_li_gen_1529400714032_1-mark"></span><span id="li_ui_li_gen_1529400714032_1-title-text">Compartilhar</span></span></a></span></span></span><script type="IN/Share+init" data-counter="right"></script></div>
+
+</div> 
+ 
+ 				</article>
+
+				
+			<div id="comments" class="panel panel-default">
+ 
+
+
+
+
+<div class="panel-footer">
+				<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title">Deixe uma resposta <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://linguagemc.com.br/a-estrutura-de-repeticao-for-em-c/#respond" style="display:none;">Cancel Reply</a></small></h3>				<form action="http://linguagemc.com.br/wordpress/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+					<p class="comment-notes">O seu endereço de e-mail não será publicado.</p><p class="comment-form-comment"><label for="comment">Comentário</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" class="form-control"></textarea></p><p></p><p class="comment-form-author"><label for="author">Name</label> <span class="required">*</span><input id="author" name="author" class="form-control" size="30" type="text"></p>
+<p class="comment-form-email"><label for="email">Email</label> <span class="required">*</span><input id="email" class="form-control" name="email" size="30" type="text"></p>
+<p class="comment-form-url"><label for="url">Website</label><input id="url" class="form-control" name="url" size="30" type="text"></p>
+<p class="form-submit"><input name="submit" id="submit" class="submit btn btn-primary btn-lg" value="Publicar comentário" type="submit"> <input name="comment_post_ID" value="702" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+</p><p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="d58d9f748f" type="hidden"></p><p style="display: none;"></p>				<input id="ak_js" name="ak_js" value="1529400713142" type="hidden"></form>
+					</div><!-- #respond -->
+		</div> 
+
+</div>
+
+</div>
+
+ 
+
+		<div id="sidebar" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			 
+				<aside id="text-12" class="widget-container widget_text">			<div class="textwidget"><iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fcursosdeprogramacao&amp;width=222&amp;height=378&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=false&amp;appId=126546507426281" scrolling="no" style="border:none; overflow:hidden; width:222px; height:378px;" allowtransparency="true" frameborder="0"></iframe></div>
+		</aside>		<aside id="recent-posts-3" class="widget-container widget_recent_entries">		<h3 class="widget-title">Tópicos recentes</h3>		<ul class="list-group">
+					<li class="list-group-item">
+				<a href="http://linguagemc.com.br/instalando-o-code-blocks-ubuntu-14-04-lts/">Instalando o Code-Blocks para Linguagem C no Ubuntu</a>
+						</li>
+					<li class="list-group-item">
+				<a href="http://linguagemc.com.br/instalando-o-eclipse-cdt-windows-8/">Instalando o Eclipse CDT para C/C++ no Windows 8.1</a>
+						</li>
+					<li class="list-group-item">
+				<a href="http://linguagemc.com.br/instalando-o-netbeans-para-cc/">Instalando o Netbeans  para C/C++:</a>
+						</li>
+					<li class="list-group-item">
+				<a href="http://linguagemc.com.br/obrigado/">Obrigado!</a>
+						</li>
+					<li class="list-group-item">
+				<a href="http://linguagemc.com.br/localizacao-de-programas-com-locale-h/">Acentuação de caracteres em C com locale.h</a>
+						</li>
+				</ul>
+		</aside>		<aside id="categories-3" class="widget-container widget_categories"><h3 class="widget-title">Categorias</h3>		<ul class="list-group">
+	<li class="cat-item cat-item-21 list-group-item"><a href="http://linguagemc.com.br/basico-para-iniciantes-1/">Basico para Iniciantes 1</a>
+</li>
+	<li class="cat-item cat-item-11 list-group-item"><a href="http://linguagemc.com.br/bibliotecas/">Bibliotecas</a>
+</li>
+	<li class="cat-item cat-item-23 list-group-item"><a href="http://linguagemc.com.br/constantes/">Constantes</a>
+</li>
+	<li class="cat-item cat-item-22 list-group-item"><a href="http://linguagemc.com.br/curso-de-c-online/">Curso de C Online</a>
+</li>
+	<li class="cat-item cat-item-12 list-group-item"><a href="http://linguagemc.com.br/desvio-incondicional/">Desvio Incondicional</a>
+</li>
+	<li class="cat-item cat-item-24 list-group-item"><a href="http://linguagemc.com.br/enum/">Enum</a>
+</li>
+	<li class="cat-item cat-item-19 list-group-item"><a href="http://linguagemc.com.br/estrutura-de-decisao/">Estruturas de decisão</a>
+</li>
+	<li class="cat-item cat-item-5 list-group-item"><a href="http://linguagemc.com.br/estruturas-de-repeticao/" title="Descreve as estruturas de repetição em linguagem C">Estruturas de repetição</a>
+</li>
+	<li class="cat-item cat-item-14 list-group-item"><a href="http://linguagemc.com.br/funcoes/">Funções</a>
+</li>
+	<li class="cat-item cat-item-10 list-group-item"><a href="http://linguagemc.com.br/historico/">Histórico</a>
+</li>
+	<li class="cat-item cat-item-3 list-group-item"><a href="http://linguagemc.com.br/ides-e-compiladores-c/">IDEs e Compiladores C</a>
+</li>
+	<li class="cat-item cat-item-13 list-group-item"><a href="http://linguagemc.com.br/loop-infinito/">Loop infinito</a>
+</li>
+	<li class="cat-item cat-item-7 list-group-item"><a href="http://linguagemc.com.br/operadores/" title="Operadores da linguagem C.">Operadores</a>
+</li>
+	<li class="cat-item cat-item-15 list-group-item"><a href="http://linguagemc.com.br/palavras-reservadas/">Palavras Reservadas</a>
+</li>
+	<li class="cat-item cat-item-17 list-group-item"><a href="http://linguagemc.com.br/ponteiros/">Ponteiros</a>
+</li>
+	<li class="cat-item cat-item-4 list-group-item"><a href="http://linguagemc.com.br/programando-em-c/">Programando em C</a>
+</li>
+	<li class="cat-item cat-item-1 list-group-item"><a href="http://linguagemc.com.br/sem-categoria/">Sem categoria</a>
+</li>
+	<li class="cat-item cat-item-8 list-group-item"><a href="http://linguagemc.com.br/strings/">Strings</a>
+</li>
+	<li class="cat-item cat-item-20 list-group-item"><a href="http://linguagemc.com.br/structs/">Structs</a>
+</li>
+	<li class="cat-item cat-item-25 list-group-item"><a href="http://linguagemc.com.br/usando-arquivos/">Usando arquivos</a>
+</li>
+	<li class="cat-item cat-item-16 list-group-item"><a href="http://linguagemc.com.br/variaveis/">Variaveis</a>
+</li>
+	<li class="cat-item cat-item-6 list-group-item"><a href="http://linguagemc.com.br/vetores/" title="Vetores e Matrizes em linguagem C">Vetores</a>
+</li>
+		</ul>
+</aside>			 
+		</div><!-- #secondary .widget-area -->
+
+
+	</div>
+</div>
+<footer>
+	<div class="container widthFull">
+    	
+        	<aside id="calendar-3" class="widget-container col-xs-12 col-sm-6 col-md-3 col-lg-3"><div id="calendar_wrap" class="calendar_wrap"><table id="wp-calendar">
+	<caption>junho 2018</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="segunda-feira">S</th>
+		<th scope="col" title="terça-feira">T</th>
+		<th scope="col" title="quarta-feira">Q</th>
+		<th scope="col" title="quinta-feira">Q</th>
+		<th scope="col" title="sexta-feira">S</th>
+		<th scope="col" title="sábado">S</th>
+		<th scope="col" title="domingo">D</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="http://linguagemc.com.br/2015/05/">« maio</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next" class="pad">&nbsp;</td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="4" class="pad">&nbsp;</td><td>1</td><td>2</td><td>3</td>
+	</tr>
+	<tr>
+		<td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+	</tr>
+	<tr>
+		<td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td>
+	</tr>
+	<tr>
+		<td>18</td><td id="today">19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td>
+	</tr>
+	<tr>
+		<td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+		<td class="pad" colspan="1">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></aside>        	<aside id="text-9" class="widget-container col-xs-12 col-sm-6 col-md-3 col-lg-3">			<div class="textwidget"><p>Av. Paulista, 2.202 – Cj. 31,  São Paulo&nbsp;,&nbsp;SP&nbsp;,&nbsp;04304-010&nbsp;Brasil</p>
+<h3 class="widget-title">Tel. (11) 3477-5176<br>
+3508-1923  </h3>
+</div>
+		</aside>        	<aside id="text-10" class="widget-container col-xs-12 col-sm-6 col-md-3 col-lg-3"><h3 class="widget-title">Siga-nos!</h3>			<div class="textwidget"><table border="0">
+  <tbody>
+    <tr>
+      <td width="30%">
+<a target="_blank" title="@Intellectuale" href="http://twitter.com/Intellectuale"><img rel="nofollow" src="a-estrutura-de-repeticao-for-em-c_files/social_balloon-05.png" alt="@intellectuale"></a></td>
+      <td width="30%"><a target="_blank" href="http://www.facebook.com/cursosdeprogramacao"><img rel="nofollow" src="a-estrutura-de-repeticao-for-em-c_files/social_balloon-14.png"></a></td>
+<td><a href="http://cursosdeprogramacao.com.br/" target="_blank" rel="nofollow"><img src="a-estrutura-de-repeticao-for-em-c_files/site-map_basic_blue.png"></a></td>
+    </tr>
+    <tr>
+      <td colspan="3">Siga-nos pelo Twitter, Facebook ou &nbsp;Blog e fique ligado(a) nas diversas dicas de programação e gestão de projetos. <strong>Participe, comente, compartilhe!</strong></td>
+    </tr>
+  </tbody>
+</table></div>
+		</aside>        	<aside id="linkcat-2" class="widget-container col-xs-12 col-sm-6 col-md-3 col-lg-3"><h3 class="widget-title">Lista de Links</h3>
+	<ul class="xoxo blogroll">
+<li><a href="http://cursosdeprogramacao.com.br/blog">Blog Intellectuale</a></li>
+<li><a href="http://www.edukee.com/pt/curso/linguagem-c-para-iniciantes" rel="me" target="_blank">Curso de C online</a></li>
+<li><a href="http://www.cursosdeprogramacao.com.br/" target="_blank">Cursos de Programação</a></li>
+
+	</ul>
+</aside>
+<aside id="search-4" class="widget-container col-xs-12 col-sm-6 col-md-3 col-lg-3"><form role="search" method="get" id="searchform" class="searchform" action="http://linguagemc.com.br/">
+	<div> 
+	<input name="s" id="s" class="form-control" placeholder="Pesquisar..." type="text">
+	<input id="searchsubmit" class="btn btn-primary" value="Pesquisar" type="submit">
+	</div>
+	</form></aside>    </div>
+	<div class="container widthFull"> 
+        	<div id="text-11" class="widget-container assinatura col-xs-12 col-sm-12 col-md-12 col-lg-12">			<div class="textwidget">©  <strong><a href="http://www.cursosdeprogramacao.com.br/" target="_blank">Escola de Programação</a></strong> Intellectuale Tecnologia e Treinamento Ltda.&nbsp; • &nbsp;Todos os direitos reservados&nbsp; • &nbsp;Oibe <a href="http://www.oibe.com.br/" target="_blank">Assessoria de Comunicação</a></div>
+		</div>            <a class="logoFooter" href="http://linguagemc.com.br/"><img src="a-estrutura-de-repeticao-for-em-c_files/logo.png"></a> 
+    </div>
+</footer> 
+
+
+
+
+<script type="text/javascript">
+  window.___gcfg = {lang: 'pt-BR'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+
+<script type="text/javascript" src="a-estrutura-de-repeticao-for-em-c_files/form.js"></script>
+<script type="text/javascript" src="a-estrutura-de-repeticao-for-em-c_files/shCore.js"></script>
+<script type="text/javascript" src="a-estrutura-de-repeticao-for-em-c_files/shBrushCpp.js"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://linguagemc.com.br/wordpress/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.83c";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://linguagemc.com.br/wordpress/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.83c";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type="text/javascript" src="a-estrutura-de-repeticao-for-em-c_files/jquery_003.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/linguagemc.com.br\/wordpress\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Enviando ..."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="a-estrutura-de-repeticao-for-em-c_files/scripts.js"></script>
+<script type="text/javascript" src="a-estrutura-de-repeticao-for-em-c_files/wp-embed.js"></script>
+</div>
+
+
+
+<iframe name="oauth2relay278251221" id="oauth2relay278251221" src="a-estrutura-de-repeticao-for-em-c_files/postmessageRelay.html" style="width: 1px; height: 1px; position: absolute; top: -100px;" tabindex="-1" aria-hidden="true"></iframe><iframe scrolling="no" allowtransparency="true" src="a-estrutura-de-repeticao-for-em-c_files/widget_iframe.html" title="Twitter settings iframe" style="display: none;" frameborder="0"></iframe><iframe id="rufous-sandbox" scrolling="no" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: medium none;" title="Twitter analytics iframe" frameborder="0"></iframe></body></html>

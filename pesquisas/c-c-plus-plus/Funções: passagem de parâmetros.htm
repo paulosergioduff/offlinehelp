@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<!-- saved from url=(0216)http://mail4.uol.com.br/cgi-bin/webmail.exe/Fun��es__passagem_de_par�metros.html?ID=IvEgNFIexkM93Q8OGpelHlQ5c1SoF1iNbKkA1Rs&Act_View=1&R_Folder=aW5ib3g=&msgID=259&Body=10&filename=Fun��es__passagem_de_par�metros.html -->
+  <title>Funções: passagem de parâmetros</title>
+
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+  <meta content="MSHTML 6.00.2900.2963" name="GENERATOR">
+</head>
+
+
+<body>
+<hr style="width: 100%; height: 2px;">
+<h1><strong>Funções: passagem de parâmetros</strong></h1>
+
+<hr style="width: 100%; height: 2px;">
+<h2>Resumo:</h2>
+
+<p>A linguagem de programação C permite que os parâmetros sejam passados para as 
+funções de duas maneiras, por valor e por referência. Na <b>passagem por 
+valor</b>, como o próprio nome diz, uma expressão pode ser utilizada na chamada. 
+O valor da expressão é calculada, e o valor resultante é passado para a execução 
+da função. Na <b>passagem por referência</b>, o endereço de uma variável deve 
+ser passado na chamada da função. Dessa forma, a função pode modificar a 
+variável diretamente, o que em geral não é recomendável, mas há situações onde 
+esse recurso é necessário, por exemplo, para a criação de funções que devolvem 
+mais de um valor. </p>
+
+
+<h2>Descrição:</h2>
+
+<p>Até o momento, vimos apenas uma forma de passagem de parâmetros, conhecida 
+como passagem por valor. Essa forma permite que as variáveis de uma função sejam 
+protegidas, ou seja, apenas a função onde as variáveis foram declaradas pode 
+modificar seu conteúdo. Permitir que uma função modifique o conteúdo de outra 
+pode ser muito perigoso, mas há situações onde isso é necessário. Vamos primeiro 
+lembrar como funciona a passagem por valor e depois introduzir o conceito de 
+passagem por refência. </p>
+
+
+<h2>Passagem por Valor</h2>
+
+<p>É a forma mais comum utilizada para passagem de parâmetros. Por exemplo, 
+considere a família de funções trigonométricas, como seno, cosseno, etc. A 
+função seno, por exemplo, recebe o valor de um ângulo (um número real) e devolve 
+o seno desse ângulo. Se tivermos as funções seno e cosseno, podemos facilmente 
+definir uma função tangente. Em projetos grandes de desenvolvimento de software, 
+grupos de programadores podem trabalhar no desenvolvimento de funções distintas 
+e juntar os seus trabalhos uma vez que tenham suas funções prontas. Para isso, 
+basta que cada grupo conheça o protótipo das funções que precisa utilizar, e ao 
+final, um programa chamodo "linker" é responsável por juntar os pedaços e 
+construir um programa executável. Por exemplo, considere que nós temos 
+disponíveis os seguintes protótipos para as funções <tt>seno</tt> e 
+<tt>cosseno</tt>: </p>
+
+<pre class="saida">float seno (float angulo);<br>float cosseno (float angulo);<br></pre>
+
+<p>Conhecendo esses protótipos, podemos escrever a função <tt>tangente</tt> da 
+seguinte forma: </p>
+
+<pre class="saida">float tangente (float angulo) <br>{<br>   float s, c;<br>   s = seno(angulo);<br>   c = cosseno(angulo);<br>   return s/c;<br>}<br></pre>
+Essa 
+função claramente calcula o <tt>seno</tt> antes de calcular o <tt>cosseno</tt>. 
+Imagine se a função <tt>seno</tt> pudesse modificar o valor do parâmetro 
+<tt>angulo</tt>. Nesse caso, o valor passado para a função <tt>cosseno</tt> 
+seria diferente do valor original usado para o <tt>seno</tt>, e o resultado da 
+função <tt>tangente</tt> estaria incorreto. A passagem por valor consegue evitar 
+esse tipo de "efeito colateral" através da criação de variáveis locais para os 
+parâmetros. Quando uma função é chamada, essas variáveis são carregadas, como em 
+atribuições, antes do início da execução do corpo da função. Vamos falar um 
+pouco mais do escopo de variáveis a seguir. 
+<h2>Escopo de variáveis</h2>
+
+<p>O escopo de uma variável é definido pelas regiões (blocos) onde a variável 
+pode ser utilizada. Por exemplo, as variáveis declaradas no início do corpo da 
+função <tt>main</tt> podem ser utilizadas em qualquer lugar dentro da função 
+<tt>main</tt>, porém apenas DENTRO da <tt>main</tt>, ou seja, não podem ser 
+utilizadas em outra função. Variáveis declaradas no mesmo escopo precisam ter 
+nomes diferentes, mas nomes podem ser "reaproveitados" em outros escopos. 
+Vejamos o exemplo abaixo: </p>
+<pre class="saida">#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;<br><br>int fat (int n) <br>{<br>   int res = 1;<br>   while (n &gt; 1) {<br>      res = res * n;<br>      n--;<br>   }<br>   return res;<br>}<br><br>int main () <br>{<br>   int n, res;<br>   printf("Entre com o valor de n: ");<br>   scanf("%d", &amp;n);<br>   res = fat(n+1) / (n+1);<br>   printf("Fatorial de %d = %d\n", n, res );<br>   system("pause");<br>   return 0;<br>}<br></pre>
+Observe 
+que a função <tt>main</tt> e <tt>fat</tt> possuem ambas variáveis com o nome 
+<tt>res</tt>, e que <tt>main</tt> possui uma variável chamada <tt>n</tt>, que é 
+o nome do parâmetro da função <tt>fat</tt>. Procure não se confundir, pois 
+apesar do mesmo nome, elas são variáveis diferentes. Para a função <tt>fat</tt>, 
+o parâmetro <tt>n</tt> funciona como uma variável local (ou seja, válida dentro 
+da função apenas), juntamente com a variável <tt>res</tt>. A diferença é que o 
+parâmetro <tt>n</tt> recebe seu valor no instante da chamada. Vamos simular esse 
+programa para a entrada 2. 
+<div class="indent" style="margin-left: 15px;"></div>
+
+<p>O programa sempre inicia sua execução pela função <tt>main</tt>, que solicita 
+a entrada de um valor para <tt>n</tt>. A linha <tt>res = fat(n+1)/(n+1);</tt> 
+chama a função <tt>fat</tt>. Como <tt>n</tt>=2 (entrada do programa), então o 
+valor 3 (<a title="TeX" href="http://mac2166.ime.usp.br/filter/tex/displaytex.php?n%2B1" target="popup" xonclick="return openpopup('/filter/tex/displaytex.php?n%2B1', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=300,height=240', 0);"><img class="texrender" title="n+1" style="vertical-align: middle;" alt="" src="Fun%C3%A7%C3%B5es:%20passagem%20de%20par%C3%A2metros_files/40b85027598d87611b1c8d5d11e46812.html" border="0"></a> é passado para a função, ou seja, esse valor é atribuido ao 
+parâmetro <tt>n</tt> e a função <tt>fat</tt> começa a executar seu corpo. O 
+fatorial de 3 é calculado e o valor 6 é atribuido à variável <tt>res</tt>. 
+Observe que o parâmetro <tt>n</tt> é utilizado como variável, o que é permitido 
+pela linguagem C. Esse parâmetro é decrementado até 1, porém, como são variáveis 
+diferentes, o valor de <tt>n</tt> dentro de <tt>main</tt> continua sendo 2. Ao 
+terminar o chamado, a função <tt>fat</tt> devolve o valor 6 ao lugar onde foi 
+chamado dentro da função <tt>main</tt>, e o programa continua para calcular o 
+valor da expressão <tt>fat(n+1)/(n+1)</tt>. Como o valor de <tt>n</tt> continua 
+2, o resultado da divisão é <a title="TeX" href="http://mac2166.ime.usp.br/filter/tex/displaytex.php?6%2F%282%2B1%29%3D+6%2F3+%3D+2" target="popup" xonclick="return openpopup('/filter/tex/displaytex.php?6%2F%282%2B1%29%3D+6%2F3+%3D+2', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=300,height=240', 0);"><img class="texrender" title="6/(2+1)= 6/3 = 2" style="vertical-align: middle;" alt="" src="Fun%C3%A7%C3%B5es:%20passagem%20de%20par%C3%A2metros_files/466b533ace930fb040c39caf8db78609.html" border="0"></a>. Esse valor é atribuído à variável <tt>res</tt>. O último 
+<tt>printf</tt> imprime o valor de <tt>n</tt> e <tt>res</tt>, que correspondem 
+aos valores 2 e 2, respectivamente.<br>
+</p>
+
+<h2>Passagem por Referência </h2>
+
+<p>Sempre que possível é recomendável utilizar a forma de passagem por valor, 
+para evitar "efeitos colaterais", mas há situações onde esses efeitos são 
+desejáveis, por exemplo, quando desejamos criar uma função que retorne mais de 
+um valor. As funções que vimos até agora, seno, cosseno, potencia, fatorial, 
+etc, só devolvem um valor, mas que outras funções, que trabalhem com números 
+imaginários por exemplo, precisam retornar 2 valores. Por exemplo, tente 
+escrever uma função que retorne o quadrado de um número imaginário. </p>
+
+<p>Sabemos que um número imaginário (ou complexo) <a title="TeX" href="http://mac2166.ime.usp.br/filter/tex/displaytex.php?c" target="popup" xonclick="return openpopup('/filter/tex/displaytex.php?c', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=300,height=240', 0);"><img class="texrender" title="c" style="vertical-align: middle;" alt="" src="Fun%C3%A7%C3%B5es:%20passagem%20de%20par%C3%A2metros_files/4a8a08f09d37b73795649038408b5f33.html" border="0"></a> possui uma parte real <a title="TeX" href="http://mac2166.ime.usp.br/filter/tex/displaytex.php?r" target="popup" xonclick="return openpopup('/filter/tex/displaytex.php?r', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=300,height=240', 0);"><img class="texrender" title="r" style="vertical-align: middle;" alt="" src="Fun%C3%A7%C3%B5es:%20passagem%20de%20par%C3%A2metros_files/4b43b0aee35624cd95b910189b3dc231.html" border="0"></a> e outra complexa <a title="TeX" href="http://mac2166.ime.usp.br/filter/tex/displaytex.php?t" target="popup" xonclick="return openpopup('/filter/tex/displaytex.php?t', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=300,height=240', 0);"><img class="texrender" title="t" style="vertical-align: middle;" alt="" src="Fun%C3%A7%C3%B5es:%20passagem%20de%20par%C3%A2metros_files/e358efa489f58062f10dd7316b65649e.html" border="0"></a>, e podemos escrever esse número como <a title="TeX" href="http://mac2166.ime.usp.br/filter/tex/displaytex.php?c+%3D+r+%2B+i+t" target="popup" xonclick="return openpopup('/filter/tex/displaytex.php?c+%3D+r+%2B+i+t', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=300,height=240', 0);"><img class="texrender" title="c = r + i t" style="vertical-align: middle;" alt="" src="Fun%C3%A7%C3%B5es:%20passagem%20de%20par%C3%A2metros_files/a8ce15268057f74ae53be102ea44170d.html" border="0"></a>, onde <a title="TeX" href="http://mac2166.ime.usp.br/filter/tex/displaytex.php?i+%2A+i+%3D+-1" target="popup" xonclick="return openpopup('/filter/tex/displaytex.php?i+%2A+i+%3D+-1', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=300,height=240', 0);"><img class="texrender" title="i * i = -1" style="vertical-align: middle;" alt="" src="Fun%C3%A7%C3%B5es:%20passagem%20de%20par%C3%A2metros_files/78d208ddd05a7a2dbb8ce57cc5d01f00.html" border="0"></a>, e o quadrado de <a title="TeX" href="http://mac2166.ime.usp.br/filter/tex/displaytex.php?c" target="popup" xonclick="return openpopup('/filter/tex/displaytex.php?c', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=300,height=240', 0);"><img class="texrender" title="c" style="vertical-align: middle;" alt="" src="Fun%C3%A7%C3%B5es:%20passagem%20de%20par%C3%A2metros_files/4a8a08f09d37b73795649038408b5f33.html" border="0"></a> como <a title="TeX" href="http://mac2166.ime.usp.br/filter/tex/displaytex.php?c%5E%7B2%7D+%3D+%28r%5E%7B2%7D+-+t%5E%7B2%7D%29+%2B+i+%282+r+t%29" target="popup" xonclick="return openpopup('/filter/tex/displaytex.php?c%5E%7B2%7D+%3D+%28r%5E%7B2%7D+-+t%5E%7B2%7D%29+%2B+i+%282+r+t%29', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=300,height=240', 0);"><img class="texrender" title="c^{2} = (r^{2} - t^{2}) + i (2 r t)" style="vertical-align: middle;" alt="" src="Fun%C3%A7%C3%B5es:%20passagem%20de%20par%C3%A2metros_files/70334176d77cafec73636dbcecb22cf7.html" border="0"></a>. Assim, a variável complexa <a title="TeX" href="http://mac2166.ime.usp.br/filter/tex/displaytex.php?c%5E%7B2%7D" target="popup" xonclick="return openpopup('/filter/tex/displaytex.php?c%5E%7B2%7D', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=300,height=240', 0);"><img class="texrender" title="c^{2}" style="vertical-align: middle;" alt="" src="Fun%C3%A7%C3%B5es:%20passagem%20de%20par%C3%A2metros_files/d1361fe8d9cd3d38c0919846ab0d3d8e.html" border="0"></a> tem parte real <a title="TeX" href="http://mac2166.ime.usp.br/filter/tex/displaytex.php?r%5E%7B2%7D-t%5E%7B2%7D" target="popup" xonclick="return openpopup('/filter/tex/displaytex.php?r%5E%7B2%7D-t%5E%7B2%7D', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=300,height=240', 0);"><img class="texrender" title="r^{2}-t^{2}" style="vertical-align: middle;" alt="" src="Fun%C3%A7%C3%B5es:%20passagem%20de%20par%C3%A2metros_files/cd4515cd008364e87b96e7dd5b88e0ba.html" border="0"></a> e parte complexa <a title="TeX" href="http://mac2166.ime.usp.br/filter/tex/displaytex.php?2+r+t" target="popup" xonclick="return openpopup('/filter/tex/displaytex.php?2+r+t', 'popup', 'menubar=0,location=0,scrollbars,resizable,width=300,height=240', 0);"><img class="texrender" title="2 r t" style="vertical-align: middle;" alt="" src="Fun%C3%A7%C3%B5es:%20passagem%20de%20par%C3%A2metros_files/a756aa7df4241401677568e809683fbc.html" border="0"></a>. </p>
+
+<p>Poderíamos fazer uma função para retornar apenas a parte real, e outra para 
+retornar apenas a parte imaginária. Mas o C permite criar uma função que retorne 
+os dois valores simultaneamente. Observe a seguinte função: </p>
+
+<pre class="saida">void complexo2 (float *r, float *t)<br>{<br>   float real;<br><br>   real = (*r * *r) - (*t * *t);<br>   *t = 2 * *r * *t;<br>   *r = real;<br>}<br></pre>
+
+<p>Funções do tipo <tt>void</tt> como definidas acima correspondem a funções que 
+não retornam um valor. No entanto, o símbolo '*' na definição dos parâmetros 
+real e imaginário da função <tt>complexo2</tt> indicam que esses parâmetros 
+PODEM ser modificados dentro da função, ou seja, alterações que esses parâmetros 
+sofrerem serão sentidas FORA da função, que correspondem aos efeitos colaterais 
+que NÃOO OCORREM quando os parâmetros são passados por valor (sem o uso do 
+caractere '*'). </p>
+
+<p>Note ainda que essa notação pode ser confusa, pois como o parâmetro de 
+entrada é <tt>*r</tt> e <tt>*t</tt>, dentro da função você precisa utilizar 
+esses mesmos "nomes", e isso pode ficar confuso quando utilizamos esses 
+parâmetros para realizar multiplicações. </p>
+
+<p>Vamos agora ver um programa que utiliza essa função: <br>
+</p>
+<pre class="saida">#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;<br><font color="red"><br>/* definicao do prototipo */</font><br>void complexo2 (float *r, float *t);<br><br>int main () <br>{<br>   float a, b;<br><br>   printf ("Entre com um numero complexo (2 numeros inteiros): ");<br>   scanf("%f %f", &amp;a, &amp;b);<br>   complexo2 ( &amp;a, &amp;b);<br>   printf("O quadrado do número complexo é %f + i %f\n", a, b);<br><br>   system("pause");<br>   return 0;<br>}<br></pre>
+
+<p>Observe que no main são declaradas apenas duas variáveis reais <tt>a</tt> e 
+<tt>b</tt>. Observe também que tanto na chamada da função <tt>scanf</tt> quanto 
+na chamada da função <tt>complexo2</tt>, as variáveis <tt>a</tt> e <tt>b</tt> 
+são precedidas pelo caractere '&amp;'. Nesse caso, esse caractere indica que 
+queremos que esses parâmetros sejam modificados pela função, e retornem os 
+valores apropriados. No caso da função <tt>scanf</tt>, esses valores 
+correspondem aos valores digitados pelo usuário, mas no caso da função 
+<tt>complexo2</tt>, esses valores são computados pela função. Finalmente, 
+observe também que os próprios valores armazenados nas variáveis <tt>a</tt> e 
+<tt>b</tt> são utilizados como entrada da função <tt>complexo2</tt>, ou seja, 
+esses valores são utilizados como parte real e imaginária para calcular o valor 
+do quadrado do número complexo, e ao mesmo tempo são utilizados para devolver o 
+resultado. Assim, no caso da <tt>scanf</tt>, os parâmetros <tt>a</tt> e 
+<tt>b</tt> são utilizados apenas para saída, e no caso da <tt>complexo2</tt>, os 
+parâmetros <tt>a</tt> e <tt>b</tt> são utilizados como entrada E saída da 
+função. </p>
+
+<p>Já na função printf, as variáveis <tt>a</tt> e <tt>b</tt> não são precedidas 
+pelo caractere '&amp;', e portanto NÃO SÃO modificadas pela função 
+<tt>printf</tt>. </p>
+
+<p>RESUMINDO, quando desejamos criar uma função que devolva mais de um valor, 
+precisamos definir esses parâmetros com um caractere '*' no protótipo da função, 
+e ao chamar a função, os parâmetros utilizados na chamada correspondentes à 
+saída precisam ser precedidos pelo caractere '&amp;' para indicar que eles podem 
+ser modificados pela função chamada. </p>
+
+<h2>Ponteiros ou Apontadores </h2>
+
+<p>Se você entendeu como criar funções que modificam os parâmetros (usando '*') 
+e como chamar essas funções em seus programas (usando '&amp;'), você não precisa 
+saber o que são ponteiros ou apontadores por enquanto, mas se você quiser saber 
+como isso é implementado na linguagem C, então continue com a sua leitura. </p>
+
+<p>Um apontador ou ponteiro é um tipo de variável que não contém um valor, mas 
+um endereço. Lembre-se que a memória do computador é organizada na forma de uma 
+tabela. Cada linha da tabela possui um endereço, e em cada endereço podemos 
+armazenar um valor. Cada variável, ao ser criada, é associada a um endereço. 
+Quando uma variável é utilizada em uma expressão do lado direito de uma 
+atribuição, seu endereço é utilizado para buscar seu valor, e esse valor é 
+utilizado para calcular o resultado da expressão. Quando uma variável é 
+utilizada do lado esquerdo, seu endereço é utilizado para armazenar o resultado 
+da expressão correspondente na memória. Assim, cada variável possui um endereço 
+diferente e único, e os apontadores são variáveis capazes de manipular 
+endereços. </p>
+
+<p>Para declarar uma variável do tipo ponteiro utilizamos a seguinte estrutura: 
+</p>
+<pre class="saida">tipo *nome;<br></pre>
+
+<p>O asterisco ('*') é a indicação que a variável <tt>nome</tt> é um apontador, 
+e o endereço apontado é interpretado como um valor do tipo <tt>tipo</tt>. 
+Portanto, os parâmetros de entrada da função <tt>complexo2</tt> são na verdade 
+apontadores. O uso de variáveis de tipo apontador é bastante simples: </p>
+
+<pre class="saida">int x,y;     <font color="red">/* duas variáveis inteiras */</font><br>int *px,*py; <font color="red">/* dois apontadores para inteiros */</font><br>x = 1;  <font color="red">/* atribui à variável x o valor 1. */</font><br>y = 2;  <font color="red">/* atribui à variável y o valor 2. */</font><br>px= &amp;x; <font color="red">/* atribui ao apontador px o endereco da variavel x. */</font><br>py= &amp;y; <font color="red">/* atribui ao apontador py o endereco da variavel y. */</font>
+</pre>
+O significado das atribuições acima é o seguinte. O operador '&amp;' é um 
+operador unário (de dereferência) que retorna o endereço de seu operando. Assim, 
+podemos manipular o endereço apontado por uma variável de tipo ponteiro. 
+
+<p>Um outro operador importante é o operador '*' (operador unário de referência) 
+que devolve o valor contido em uma posição de memória apontada por uma variável 
+de tipo ponteiro. </p>
+
+<p>Por exemplo: </p>
+<pre class="saida">int x,y;<br>int *px,*py;<br>x = 1; <font color="red">/* atribui à variável x o valor 1. */</font><br>y = 2; <font color="red">/* atribui à variável y o valor 2. */</font><br>px= &amp;x; <font color="red">/* atribui ao ponteiro px o endereco da variavel x. */</font><br>py= &amp;y; <font color="red">/* atribui ao ponteiro py o endereco da variavel y. */</font><br>printf("O endereco de x eh %d e o valor de x eh %d",px,*px);<br></pre>
+onde 
+o *px significa, literalmente, o valor da posição de memória apontado por px. 
+<div class="indent" style="margin-left: 15px;"></div>
+Vamos examinar um outro 
+exemplo de funções utilizando apontadores: 
+<pre class="saida">void Troca(int *px, int *py); /* Prototipo. */<br><br>int main() {<br>   int x=4,y=7;<br><br>   <font color="red">/** Ao chamar a funcao passamos o endereco<br>    * das variaveis x e y como parametro.<br>   */</font><br>   Troca(&amp;x,&amp;y);<br>   printf("Troca: x vale %d e y vale %d",x,y);<br>   Troca(&amp;x,&amp;y);<br>   printf("Destroca: x vale %d e y vale %d",x,y);<br><br>   system("pause");<br>  &nbsp;return 0;<br>}<br><br>void Troca(int *px, int *py)<br><font color="red">/* Troca os valores das variaveis apontadas por px e py. */</font><br>{<br>   int n;<br><br>   n= *py;<br>   *py= *px;<br>   *px= n;<br>}<br></pre>
+Ao 
+examinarmos a função <tt>Troca</tt>, verificamos que houve manipulação nos 
+valores das posições cujos endereços foram passados como parâmetro. Deste modo é 
+que conseguimos implementar funções cuja ação é estendida a mais de uma variável 
+(ou seja, retorna mais de um valor). 
+
+<p>Vamos ver mais um exemplo, usando agora a função <tt>Troca</tt> em um 
+programa para ordenar 3 inteiros em ordem crescente, como abaixo:<br>
+</p>
+
+<pre class="saida">#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;<font color="red"><br><br>/* prototipo */</font><br>void Troca(int *px, int *py);<br><br>int main () <br>{<br>   int a, b, c;<br><br>   printf ("Digite 3 numeros inteiros: ");<br>   scanf("%d %d %d", &amp;a, &amp;b, &amp;c);<br>   if (a &gt; b) Troca (&amp;a, &amp;b);<br>   if (b &gt; c) Troca (&amp;b, &amp;c);<br>   if (a &gt; b) Troca (&amp;a, &amp;b);<br>   printf("Em ordem crescente: %d %d %d\n", a, b, c);<br><br>   system("pause");<br>   return 0;<br>}<br></pre>
+
+<p>Por exemplo, para a seqüência 3 2 1, teríamos: </p>
+
+
+<table cellpadding="3" border="1">
+
+  <tbody>
+
+  <tr>
+
+    <td align="left"><br>
+      </td>
+
+    <td align="right">a </td>
+
+    <td align="right">b </td>
+
+    <td align="right">c </td>
+    </tr>
+
+  <tr>
+
+    <td align="left">início: </td>
+
+    <td align="right">3 </td>
+
+    <td align="right">2 </td>
+
+    <td align="right">1 </td>
+    </tr>
+
+  <tr>
+
+    <td align="left">1o if : </td>
+
+    <td align="right">2 </td>
+
+    <td align="right">3 </td>
+
+    <td align="right">1 </td>
+    </tr>
+
+  <tr>
+
+    <td align="left">2o if : </td>
+
+    <td align="right">2 </td>
+
+    <td align="right">1 </td>
+
+    <td align="right">3 </td>
+    </tr>
+
+  <tr>
+
+    <td align="left">3o if : </td>
+
+    <td align="right">1 </td>
+
+    <td align="right">2 </td>
+
+    <td align="right">3 </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>e portanto a saída seria <br>
+<tt>Em ordem crescente: 1 2 3</tt> </p>
+
+
+<h2>Erros comuns com funções </h2>
+
+<p>A seguir listamos alguns erros comuns cometidos quando se começa a aprender 
+funções. Procure evita-los: </p>
+
+<ul>
+
+  <li><b>usar scanf dentro de funções para ler os parâmetros</b> <br>
+Lembre-se 
+  que os parâmetros são passados para a função, por valor ou referência, na hora 
+  da sua chamada. Esses valores não devem ser lidos novamente através da 
+  <tt>scanf</tt>. 
+  </li>
+  <li><b>esquecer o '&amp;' na passagem de parâmetros por referência</b> 
+  <br>
+Nesse caso, o valor da variável é interpretado como um endereço, e a 
+  função vai tentar modificar uma área da memória que pode estar sendo usada por 
+  outro programa. Nos sistemas modernos há proteções que impedem que esses erros 
+  aconteçam. 
+  </li>
+  <li><b>esquecer o '*' no uso de um parâmetro passado por referência</b> 
+  <br>
+Nesse caso, o valor da variável é um endereço e não um valor, e os 
+  cálculos serão portanto inválidos. 
+  </li>
+  <li><b>usar um apontador sem inicializar</b> <br>
+usar variáveis sem 
+  inicialização já causam problemas, mas usar um apontadores sem inicialização 
+  pode causar problemas ainda mais sérios, pois você pode alterar endereços da 
+  memória que não foram reservados ao seu programa, mas já estão sendo 
+  utilizados por outros programas. 
+  </li>
+  <li><b>confundir o escopo de variáveis com mesmo nome</b> <br>
+é impressionante 
+  que não tenhamos paciência para escrever nomes de variáveis que correspondam a 
+  sua função, e ao invés utilizemos letras como i, j, k, etc. Assim não é 
+  difícil confundir variáveis com mesmo nome mas em escopos diferentes.</li>
+</ul>
+<hr style="width: 100%; height: 2px;">
+<div style="text-align: right;">Eloiza Sonoda</div>
+
+
+</body></html>

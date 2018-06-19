@@ -1,0 +1,217 @@
+/*
+Theme Name: Intellectuale
+*/
+* { position:relative; border-radius:0 !important; -moz-border-radius:0!important; -ms-border-radius:0!important; -o-border-radius:0!important; -webkit-border-radius:0!important; box-shadow:none !important;}
+
+div:after, ul:after, footer:after, header:after, aside:after { content:""; display:block; width:100%; clear:both; height:0px; line-height:0; border:none; background:none;}
+
+body { background:url(images/back.png);}
+iframe, img { max-width:100% !important;}
+#topo { background:url(images/linha1.png);padding-top: 40px;}
+.paddingNone { padding:0;}
+.paddingNoneLeft { padding-left:0;}
+.aling-right *,
+.aling-right { text-align:right;}
+.searchform label { display:none;}
+.imagemWidthFull img { width:100%; height:auto;}
+.entry-title { padding-top:0; margin-top:0;}
+hr {clear: both;
+margin: 0 0 10px;
+padding: 10px 0px 0;
+border-bottom: 1px solid #eee;
+border-top: none;}
+#header {background: #003366; padding-top:20px; padding-bottom:20px;}
+#header * { color:#fff;}
+#menuTopo { background:#171717;}
+#menuTopo > div { padding:10px 0;}
+#menuTopo .nav-pills>li+li {margin-left: 10px;}
+#menuTopo .nav-pills>li>a {color: #fff;
+font-size: 17px;}
+#menuTopo .nav>li.current-menu-item>a,
+#menuTopo .nav>li>a:hover, 
+#menuTopo .nav>li>a:focus {
+text-decoration: none;
+background-color: #333;
+}
+
+#main > div {
+background: #fafafa;
+border-top: 3px solid #cc9900;
+padding-bottom: 40px;
+padding-top:30px;
+}
+
+#telefone p,
+#telefone { font-size:20px;}
+#telefone span { font-size:14px;}
+
+#busca { margin-top:10px;}
+footer #s,
+#busca #s { max-width:300px; float:right; text-align:left;padding-right: 96px;color: #333;}
+footer #searchsubmit,
+#busca #searchsubmit { position:absolute; top:0; right:0; z-index:9;}
+
+footer { margin-bottom:40px;}
+footer ,
+footer * { color:#fff;}
+footer .container {
+border-top: 5px solid #3b5869;
+padding-top: 30px;
+background: #003366;
+padding-bottom: 30px;
+}
+
+#comments .panel-body > ul {}
+#comments .panel-body > ul > li {background: rgba(0,0,0,0.01);
+padding: 20px;}
+#comments .panel-body > ul > li+li {border-top: 1px solid #eee;} 
+#comments .panel-body > ul > li   {} 
+#comments .panel-body > ul > li   .comment-author {width: 50%;
+float: left;
+background: #666; z-index:99;
+color: #fff; height:40px ; display:block;} 
+#comments .panel-body > ul > li   .comment-meta a { color: #fff;
+font-size: 10px;
+position: absolute;
+top: 20px;
+right: 20px;}
+#comments .panel-body > ul > li   .comment-meta {width: 50%;
+float: right; text-align:right;
+background: #666; z-index:99;
+color: #fff; height:40px; display:block;} 
+#comments .panel-body > ul > li   .comment-body {clear: both;
+padding-top: 14px;
+display: block;} 
+#comments .panel-body > ul > li   .reply {min-height: 42px;} 
+#comments .panel-body > ul > li   .comment-reply-link {display: block;
+float: left;
+border: 1px solid #666;
+color: #666;
+padding: 2px 6px;
+border-radius: 30px !important;} 
+
+#comments .panel-body > ul > li ul { list-style:none;}
+#comments .panel-body > ul > li ul li { clear:both;}
+
+
+
+
+#autor {background: #fff;
+padding: 20px;
+margin-bottom: 30px;
+margin-top: 20px;
+position: relative;
+left: 0;
+width: 100%;
+margin-left: 0;
+}
+#autor #foto {
+	float: left;
+	width: 90px;
+	overflow: hidden;
+	margin: 0 15px 15px 0;
+}
+#autor #foto img {
+}
+#autor #conteudoAuto {
+	float: left;
+	width: 75%;
+}
+#autor #conteudoAuto h3,  #autor #conteudoAuto h1,  #autor #conteudoAuto h1 a,  #autor #conteudoAuto h3 a {
+ 
+	text-decoration: none;
+text-transform: uppercase;
+font-size: 25px;
+font-weight: normal;
+margin-bottom: 12px;
+display: block;
+margin-top: 0;
+color: #333;
+}
+#autor #conteudoAuto > p {
+	 
+	font-size: 13px;
+	opacity: 0.9;
+	line-height: 130%;
+}
+#autor #conteudoAuto #redes_autor {
+	padding-top: 15px;
+}
+#autor #conteudoAuto #redes_autor p {
+float: left;
+display: block;
+position: relative; 
+margin: 0 10px 0 0;
+padding: 0;
+border-radius: 30px;
+}
+ 
+#autor #conteudoAuto #redes_autor p img { width:25px;}
+
+
+.redes {padding: 7px 0px;}
+.redes > div {float: left;}
+.redes .facebook {min-width: 208px;}
+.redes .twitter {}
+.redes .google {}
+.redes .linkedin {}
+.redes .linkedin span { z-index:99;}
+.redes .linkedin span+span { z-index:9;}
+
+.widthFull { width:100%;}
+
+.logoFooter {position: absolute;
+top: 21px;
+right: 20px;
+z-index: 9;}
+.logoFooter img {width: 145px;}
+
+#banner:before {content: "";
+width: 0;
+height: 0;
+border: 15px solid transparent;
+border-top: 15px solid #121212;
+border-right: 15px solid #121212;
+position: absolute;
+top: -15px;
+left: -15px;
+z-index: 99;}
+#banner:after {content: "";
+width: 0;
+height: 0;
+border: 15px solid transparent;
+border-top: 15px solid #121212;
+border-left: 15px solid #121212;
+position: absolute;
+top: -15px;
+right: -15px;
+z-index: 99;}
+
+
+#banner aside:before {content: "";
+width: 0;
+height: 0;
+border: 15px solid transparent;
+border-bottom: 15px solid #cc9900;
+border-right: 15px solid #cc9900;
+position: absolute;
+bottom: -30px;
+left: -30px;
+z-index: 99;}
+#banner aside:after {content: "";
+width: 0;
+height: 0;
+border: 15px solid transparent;
+border-bottom: 15px solid #cc9900;
+border-left: 15px solid #cc9900;
+position: absolute;
+bottom: -30px;
+right: -30px;
+z-index: 99;}
+
+
+#banner {border-bottom: 15px solid #cc9900;
+border-top: 15px solid #121212;}
+
+#banner aside {border-bottom: 15px solid #cc9900;
+border-top: 15px solid #121212;}
