@@ -1,0 +1,3080 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  <meta content="text/html; charset=windows-1252" http-equiv="content-type"><title>Programação em C/C++ - Ponteiros</title></head><body style="background-color: white; color: rgb(0, 0, 0);" vlink="#551a8b" link="#0000ee" alink="#ee0000">
+<table style="text-align: left; width: 100%; font-family: Arial;" cellspacing="2" cellpadding="2" border="0">
+
+
+
+<tbody><tr>
+      <td style="vertical-align: top;"><a href="http://www.pucrs.br/"><img style="border: 0px solid ; width: 127px; height: 180px;" alt="" src="Programa%C3%A7%C3%A3o%20em%20C_C++%20-%20Ponteiros_files/SomenteBrasao.png"></a><a href="http://www.pucrs.br/politecnica/"><img style="border: 0px solid ; width: 376px; height: 180px;" alt="" src="Programa%C3%A7%C3%A3o%20em%20C_C++%20-%20Ponteiros_files/SomentePoliAzul.png"></a><br>
+      </td>
+      <td style="vertical-align: top; text-align: right;"><a href="http://grv.inf.pucrs.br/"><img style="border: 0px solid ; width: 408px; height: 180px;" alt="" src="Programa%C3%A7%C3%A3o%20em%20C_C++%20-%20Ponteiros_files/logo_grv_low3.png"></a></td>
+    </tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+<div style="text-align: center;">
+
+
+</div>
+<div style="font-weight: bold; color: rgb(51, 51, 255); font-family: Arial; text-align: center;">
+<p><small style="color: rgb(51, 51, 255);"><span style="font-weight: bold;"></span></small></p>
+<hr style="width: 100%; height: 2px;">
+<a style="font-family: Arial Unicode MS;" href="http://www.inf.pucrs.br/pinho"><big style="font-weight: bold; color: rgb(51, 51, 255);"><big><big>Programação C/C++<br>
+</big></big></big></a><a style="font-family: Arial Unicode MS;" href="http://www.inf.pucrs.br/pinho"><big><big><span style="color: rgb(51, 51, 255);">Prof. Márcio Sarroglia Pinho</span></big></big></a></div>
+<h1 style="color: rgb(51, 51, 255);"></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+<hr style="width: 100%; height: 2px;">
+<h1 style="text-align: center; font-family: Arial;">Apontadores/ Ponteiros/
+Pointers</h1>
+<div style="text-align: right; font-family: Arial;"><span style="font-style: italic;">Página diagramada&nbsp;pelo Estagiário de Docência Rafael Rieder</span><big><br>
+
+</big></div>
+
+
+
+
+
+
+
+
+<big><span style="font-family: Arial;"></span></big>
+<big>
+
+
+
+
+  </big><big>
+
+
+
+
+    </big><big>
+
+
+
+
+      </big><big>
+
+
+
+
+      </big><big>
+
+
+
+
+      </big><big>
+
+
+
+
+    </big><big>
+
+
+
+
+    </big><big>
+
+
+
+
+      </big><big>
+
+
+
+
+      </big><big>
+
+
+
+
+      </big><big>
+
+
+
+
+    </big><big>
+
+
+
+
+    </big><big>
+
+
+
+
+      </big><big>
+
+
+
+
+      </big><big>
+
+
+
+
+      </big><big>
+
+
+
+
+    </big><big>
+
+
+
+
+    </big><big>
+
+
+
+
+      </big><big>
+
+
+
+
+      </big><big>
+
+
+
+
+      </big><big>
+
+
+
+
+    </big><big>
+
+
+
+
+    </big><big>
+
+
+
+
+      </big><big>
+
+
+
+
+      </big><big>
+
+
+
+
+      </big><big>
+
+
+
+
+    </big><big>
+
+
+
+
+  
+  
+  
+  
+  </big><big>
+  </big><table style="text-align: left; width: 100%; font-family: Arial;" cellspacing="2" cellpadding="2" border="1"><tbody><tr><td style="width: 325px;"><big><a href="#Impressao_de_Ponteiros"><small>Impressão de Ponteiros</small></a></big></td><td style="width: 300px;"><a href="#Alocacao_Dinamica_de_Structs">Alocação Dinâmica de <span style="font-style: italic;">Structs</span></a></td><td style="width: 315px;"><a href="#Ponteiros_para_Objetos">Ponteiros para Objetos</a></td></tr><tr><td style="width: 325px;"><a href="#Acessando_o_Conteudo_de_uma_Posicao">Acessando o Conteúdo de uma Posição de Memória</a></td><td style="width: 300px;"><a href="#Realocacao_de_Memoria">Realocação de Memória</a></td><td style="width: 315px;"><big>&nbsp; </big></td></tr><tr><td style="width: 325px;"><a href="#Alocacao_Dinamica_de_Memoria">Alocação Dinâmica de Memória</a></td><td style="width: 300px;"><a href="#Testes_de_Alocacao">Testes de Alocação</a></td><td style="width: 315px;"><big>&nbsp;</big></td></tr><tr><td style="width: 325px;"><a href="#Alocacao_de_Vetores">Alocação de Vetores</a></td><td style="width: 300px;"><a href="#Estruturas_Encadeadas">Estruturas Encadeadas</a></td><td style="width: 315px;"><big> &nbsp;</big></td></tr><tr><td style="width: 325px;"><a href="#Aritmetica_de_Ponteiros">Aritmética de Ponteiros</a></td><td style="width: 300px;"><a href="#Vetor_de_Ponteiros">Vetor de Ponteiros</a></td><td style="width: 315px;"><big>&nbsp;</big></td></tr></tbody></table>
+
+
+
+
+<small><br>
+
+
+
+
+</small><big><span style="font-family: Arial;">Um ponteiro é
+uma variável capaz de armazenar um endereço de
+memória ou o endereço de outra
+variável.</span><br style="font-family: Arial;">
+<br>
+<span style="font-family: monospace;"></span><span style="font-family: monospace;">#include &lt;stdio.h&gt;<br>
+
+
+
+
+
+</span><span style="font-family: monospace;">void main()</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp; int a;<br>
+
+
+
+
+
+&nbsp; int b;<br>
+
+
+
+
+
+&nbsp; int c;<br>
+
+
+
+
+
+</span><span style="font-family: monospace;">&nbsp; int *ptr;
+&nbsp;// declara um ponteiro para um inteiro</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// um
+ponteiro para uma variável do tipo inteiro</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp; a = 90;<br>
+
+
+
+
+
+&nbsp; b = 2;<br>
+
+
+
+
+
+&nbsp; c = 3;<br>
+
+
+
+
+
+</span><span style="font-family: monospace;">&nbsp; ptr =
+&amp;a;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;
+printf("Valor de ptr: %p, Conteúdo de ptr: %d\n", ptr, *ptr);<br>
+
+
+
+
+
+&nbsp; printf("B: %d, C: %d"), b, c);<br>
+
+
+
+
+
+
+
+}</span></big>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+
+<br>
+
+
+
+
+
+<span style="font-weight: bold;"></span><img style="border: 1px solid ; width: 116px; height: 121px;" alt="" src="Programa%C3%A7%C3%A3o%20em%20C_C++%20-%20Ponteiros_files/ponteiros1.png"><br>
+
+
+
+
+<div style="text-align: right;"><a href="#PUCRS_Top"><img style="border: 0px solid ; width: 20px; height: 20px;" alt="" src="Programa%C3%A7%C3%A3o%20em%20C_C++%20-%20Ponteiros_files/top.gif"></a><br>
+
+
+
+
+
+</div>
+
+
+
+
+<hr style="width: 100%; height: 2px;">
+<h2 style="font-family: Arial;"><a name="Impressao_de_Ponteiros"></a>Impressão de Ponteiros</h2>
+
+
+
+
+
+<big><span style="font-family: Arial;">Em C, pode-se imprimir o valor armazenado no ponteiro (um endereço), usando-se a função </span><span style="font-family: monospace; font-weight: bold;">printf</span><span style="font-family: Arial;"> com o formatador </span><span style="font-family: monospace; font-weight: bold;">%p</span><span style="font-family: Arial;"> na string de formato. Por exemplo:<br>
+
+
+
+
+
+<br>
+
+
+
+
+
+</span><span style="font-family: monospace;"></span><span style="font-family: monospace;">#include &lt;stdio.h&gt;<br>
+
+
+
+
+
+void main()</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp; int x;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp; int *ptr;<br>
+
+
+
+
+
+&nbsp; ptr = &amp;x;<br>
+
+
+
+
+
+</span><span style="font-family: monospace;">&nbsp; printf("O endereço de X é:&nbsp;%p\n",&nbsp;ptr);<br>
+
+
+
+
+
+</span><span style="font-family: Arial;"></span><span style="font-family: monospace;">}</span><br>
+<span style="font-family: monospace;"></span><span style="font-family: Arial;"><br>
+
+
+
+
+
+Em C++, usa-se o objeto </span><span style="font-weight: bold; font-family: monospace;">cout</span><span style="font-family: Arial;"> normalmente. Por exemplo:</span><br>
+<br>
+<span style="font-family: monospace;"></span><span style="font-family: monospace;">#include &lt;iostream&gt;<br>
+
+
+
+
+
+using namespace std;<br>
+
+
+
+
+
+void main()</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp; int x;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp; int *ptr;<br>
+
+
+
+
+
+&nbsp; ptr = &amp;x;<br>
+
+
+
+
+
+</span></big>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="font-family: monospace;"><big>&nbsp; cout &lt;&lt; "O endereço de X é: " &lt;&lt; ptr &lt;&lt; endl;</big><br>
+
+
+
+
+
+</span><span style="font-family: Arial;"></span><span style="font-family: monospace;">}</span><br>
+
+
+
+
+<div style="text-align: right;"><a href="https://www.inf.pucrs.br/~pinho/PRGSWB/Ponteiros/ponteiros.html#PUCRS_Top"><img style="border: 0px solid ; width: 20px; height: 20px;" alt="" src="Programa%C3%A7%C3%A3o%20em%20C_C++%20-%20Ponteiros_files/top.gif"></a>
+
+</div>
+
+
+
+
+
+<hr style="width: 100%; height: 2px; font-family: Arial;">
+<h2 style="font-family: Arial;"><a name="Acessando_o_Conteudo_de_uma_Posicao"></a>Acessando o Conteúdo de uma Posição de Memória através de um Ponteiro<br>
+</h2>
+
+
+
+
+
+<big><span style="font-family: Arial;">Para acessar o conteúdo de uma
+posição de memória, cujo endereço
+está armazenado em um ponteiro, usa-se o operador de <span style="font-weight: bold;">derreferência</span> (*). Por exemplo:</span><br style="font-family: Arial;">
+<span style="font-family: Arial; font-weight: bold;"><br>
+
+
+
+
+</span><span style="font-family: monospace;">#include &lt;stdio.h&gt;<br>
+
+
+
+
+
+void main()</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp; int x;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp; int *ptr;<br>
+
+
+
+
+&nbsp; x = 5;<br>
+
+
+
+
+
+&nbsp; ptr = &amp;x;<br>
+
+
+
+
+
+</span><span style="font-family: monospace;">&nbsp; printf("O valor da variável&nbsp;X é:&nbsp;%d\n", *ptr); &nbsp;// derreferenciando um ponteiro<br>
+
+
+
+
+&nbsp; *ptr = 10; &nbsp;</span><span style="font-family: monospace;">// usando derreferencia no "lado esquerdo" de uma atribuição</span><br>
+<span style="font-family: monospace;">&nbsp; printf("Agora, X vale: %d\n", *ptr);</span><span style="font-family: monospace;"><br>
+
+
+
+
+
+</span><span style="font-family: Arial;"></span><span style="font-family: monospace;">}</span><br>
+<span style="font-family: monospace;"></span><span style="font-family: Arial;"><br>
+
+
+
+
+Um ponteiro derrefenciado também pode ser usado à esquerda de uma atribuição, para receber um valor.<br>
+
+
+
+
+O mesmo exemplo, em&nbsp;C++ é apresentado abaixo:</span><span style="font-family: Arial;"></span><br>
+<br>
+<span style="font-family: monospace;"></span><span style="font-family: monospace;">#include &lt;iostream&gt;<br>
+
+
+
+
+
+using namespace std;<br>
+
+
+
+
+
+void main()</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp; int x;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp; int *ptr;<br>
+
+
+
+
+&nbsp; x = 5;<br>
+
+
+
+
+
+&nbsp; ptr = &amp;x;<br>
+
+
+
+
+
+</span><span style="font-family: monospace;"></span><span style="font-family: monospace;">&nbsp; cout &lt;&lt; "</span><span style="font-family: monospace;">O valor da variável&nbsp;X é</span><span style="font-family: monospace;">: " &lt;&lt; *ptr &lt;&lt; endl;<br>
+
+
+
+
+&nbsp; *ptr = 10;<br>
+
+
+
+
+&nbsp; </span><span style="font-family: monospace;">cout &lt;&lt; "</span><span style="font-family: monospace;">Agora, X vale:&nbsp;</span><span style="font-family: monospace;">" &lt;&lt; *ptr &lt;&lt; endl;</span><br>
+<span style="font-family: Arial;"></span><span style="font-family: monospace;">}</span></big>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="font-family: Arial; font-weight: bold;"><br>
+
+
+
+
+</span>
+<div style="text-align: right;"><a href="https://www.inf.pucrs.br/~pinho/PRGSWB/Ponteiros/ponteiros.html#PUCRS_Top"><img style="border: 0px solid ; width: 20px; height: 20px;" alt="" src="Programa%C3%A7%C3%A3o%20em%20C_C++%20-%20Ponteiros_files/top.gif"></a><br>
+</div><hr style="width: 100%; height: 2px; font-family: Arial;">
+<h2 style="font-family: Arial;"><a name="Alocacao_Dinamica_de_Memoria"></a>Alocação
+Dinâmica de Memória</h2>
+
+
+
+
+
+
+
+
+<big><span style="font-family: Arial;">Durante a execução de
+um programa, pode-se alocar dinamicamente memória para usar como
+variáveis&nbsp;do programa. Em C, a
+alocação é feita com a função </span><span style="font-weight: bold; font-family: monospace;">malloc</span><span style="font-family: Arial;"> (e, para liberar memória, usa-se a função </span><span style="font-weight: bold; font-family: monospace;">free</span><span style="font-family: Arial;">). Em C++, faz-se o mesmo tipo de alocação usando o operador </span><span style="font-family: monospace; font-weight: bold;">new</span><span style="font-family: Arial;"> (para liberar memória, operador </span><span style="font-weight: bold; font-family: monospace;">delete</span><span style="font-family: Arial;">). No exemplo a seguir, pode-se observar o uso das funções </span><span style="font-family: monospace; font-weight: bold;">malloc</span><span style="font-family: Arial;"> e </span><span style="font-weight: bold; font-family: monospace;">free</span><span style="font-family: Arial;">:<br>
+
+
+
+
+
+</span><span style="font-family: monospace;"><br>
+
+
+
+
+
+#include
+&lt;stdlib.h&gt;</span><span style="font-family: Arial; font-weight: bold;"><br>
+
+
+
+
+</span><span style="font-family: monospace;">#include &lt;stdio.h&gt;<br>
+
+
+
+<br style="font-family: monospace;">
+
+
+
+</span><span style="font-family: monospace;">void main()</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">{<br>
+
+
+
+
+
+
+
+      </span><span style="font-family: monospace;">&nbsp;int
+*ptr_a;<br>
+
+
+
+
+
+
+
+      </span><span style="font-family: monospace;"><br>
+
+
+
+
+
+
+
+&nbsp;ptr_a =&nbsp;</span><span style="font-family: monospace;"></span><span style="font-family: monospace;">malloc(sizeof(int));</span><span style="font-family: monospace;"><br>
+
+
+
+
+
+
+
+&nbsp;// cria a área necessária para 01
+inteiro e</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;//&nbsp;coloca
+em 'ptr_a' o endereço desta área.<br>
+
+
+
+
+
+
+
+      <br>
+
+
+
+
+
+
+
+      </span><span style="font-family: monospace;">&nbsp;
+if (ptr_a == NULL)<br>
+
+
+
+
+
+
+
+&nbsp; {<br style="font-family: monospace;">
+
+
+
+
+
+
+
+      </span><span style="font-family: monospace;">&nbsp;
+&nbsp; printf("Memória insuficiente!\n");<br>
+
+
+
+
+
+
+
+&nbsp; &nbsp; exit(1);<br>
+
+
+
+
+
+
+
+&nbsp; }</span><br>
+<span style="text-decoration: underline;"><span style="font-family: Arial;"></span></span><span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><br>
+<span style="font-family: monospace;">&nbsp;
+printf("Endereço de ptr_a: %p\n",&nbsp; ptr_a);</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;
+*ptr_a = 90;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;
+printf("Conteúdo de ptr_a: %d\n", *ptr_a); &nbsp;//
+imprime 90</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;
+free(ptr_a); &nbsp;// Libera a área alocada</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">}</span></big>
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      <br style="font-family: monospace;">
+
+
+
+
+
+
+
+<span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><br>
+
+
+
+
+
+<img style="border: 1px solid ; width: 586px; height: 263px;" alt="" src="Programa%C3%A7%C3%A3o%20em%20C_C++%20-%20Ponteiros_files/ponteiros2.png"><br>
+
+
+
+
+
+<span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><br>
+
+
+
+
+
+<img style="border: 1px solid ; width: 171px; height: 66px;" alt="" src="Programa%C3%A7%C3%A3o%20em%20C_C++%20-%20Ponteiros_files/ponteiros3.png"><br>
+
+
+
+
+
+<br>
+
+
+
+
+
+<big><span style="font-family: Arial;">Conforme citado acima, em C++ pode-se usar o operador </span><big><span style="font-family: monospace; font-weight: bold;">new</span></big><span style="font-family: Arial;"><big>.</big> O exemplo abaixo faz o mesmo que o exemplo utilizando&nbsp;</span><span style="font-family: Arial;"></span><span style="font-family: monospace; font-weight: bold;">malloc</span><span style="font-family: Arial;"></span><span style="font-family: Arial;">:<br>
+
+
+
+
+
+<br>
+
+
+
+
+
+</span><span style="font-family: monospace;"></span><span style="font-family: monospace;">#include &lt;iostream&gt;<br>
+
+
+
+
+
+using namespace std;<br>
+
+
+
+
+
+<br>
+
+
+
+
+
+</span><span style="font-family: monospace;">
+
+void main()</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">{<br>
+
+
+
+
+
+
+
+      </span><span style="font-family: monospace;">&nbsp;int
+*ptr_a;<br>
+
+
+
+
+
+
+
+      </span><span style="font-family: monospace;"><br>
+
+
+
+
+
+
+
+&nbsp;ptr_a = new int;<br>
+
+
+
+
+
+</span><span style="font-family: monospace;"></span><span style="font-family: monospace;">&nbsp;// cria a área necessária para 01
+inteiro e</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;//&nbsp;coloca
+em 'ptr_a' o endereço desta área.<br>
+
+
+
+
+
+
+
+      <br>
+
+
+
+
+
+
+
+      </span><span style="font-family: monospace;">&nbsp;
+if (ptr_a == NULL)<br>
+
+
+
+
+
+
+
+&nbsp; {<br style="font-family: monospace;">
+
+
+
+
+
+
+
+      </span><span style="font-family: monospace;">&nbsp;
+&nbsp; cout &lt;&lt;&nbsp;"Memória insuficiente!" &lt;&lt; endl;<br>
+
+
+
+
+
+
+
+&nbsp; &nbsp; exit(1);<br>
+
+
+
+
+
+
+
+&nbsp; }<br>
+
+
+
+
+
+&nbsp; cout &lt;&lt;&nbsp;</span><span style="font-family: monospace;">"Endereço de ptr_a:&nbsp;" &lt;&lt; &nbsp;ptr_a &lt;&lt; endl;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;
+*ptr_a = 90;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp; cout &lt;&lt;&nbsp;</span><span style="font-family: monospace;">"</span><span style="font-family: monospace;">Conteúdo </span><span style="font-family: monospace;">de ptr_a:&nbsp;" &lt;&lt; *ptr_a &lt;&lt; endl;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><span style="font-family: monospace;">&nbsp;
+delete&nbsp;ptr_a;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">}<br>
+
+
+
+
+
+</span></big>
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+<div style="text-align: right;"><a href="https://www.inf.pucrs.br/~pinho/PRGSWB/Ponteiros/ponteiros.html#PUCRS_Top"><img style="border: 0px solid ; width: 20px; height: 20px;" alt="" src="Programa%C3%A7%C3%A3o%20em%20C_C++%20-%20Ponteiros_files/top.gif"></a>
+
+
+
+
+</div>
+
+
+
+
+<hr style="width: 100%; height: 2px;">
+<h2 style="font-family: Arial;"><a name="Alocacao_de_Vetores"></a>Alocação
+de Vetores</h2>
+
+
+
+
+
+<big><span style="font-family: Arial;">Nos exemplos anteriores,&nbsp;foi alocado </span><span style="font-family: Arial;">um espaço</span><span style="font-family: Arial;"> para armazenar apenas um dado do tipo </span><span style="font-family: monospace; font-weight: bold;">int</span><span style="font-family: Arial;">.
+Entretanto, é mais comum utilizar ponteiros para
+alocação de vetores. Para tanto, basta especificar o
+tamanho desse vetor no momento da alocação. Nos exemplos
+abaixo, apresenta-se a alocação de vetores com </span><span style="font-weight: bold; font-family: monospace;">malloc</span><span style="font-family: Arial;"> e </span><span style="font-weight: bold; font-family: monospace;">new</span></big><span style="font-family: Arial;"><big>.
+Após a alocação de uma área com
+vários elementos, ela pode ser acessada exatamente como se fosse
+um vetor.<br>
+<br>
+
+
+
+
+
+
+Exemplo em C: </big>
+
+
+
+
+
+<br>
+
+
+
+
+
+<big><br>
+</big>
+
+
+
+
+
+</span>
+
+  
+
+    
+
+      <big><span style="font-family: monospace;">#include
+&lt;stdlib.h&gt;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">void main()</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp; int
+i;<br>
+
+
+
+
+
+
+
+&nbsp; int *v;</span><br>
+<span style="font-family: monospace;">&nbsp; v</span><span style="font-family: monospace;"> =
+(int*)malloc(sizeof(int)*10); &nbsp;// 'v' é um ponteiro
+para uma área que<br>
+
+
+
+
+
+
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;//&nbsp;tem 10 inteiros.<br>
+
+
+
+
+
+
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;// 'v' funciona exatamente como um vetor</span><span style="font-family: monospace;"><br>
+
+
+
+
+
+
+
+&nbsp; v[0] = 10;<br>
+
+
+
+
+
+
+
+&nbsp; v[1] = 11;<br>
+
+
+
+
+
+
+
+&nbsp; v[2] = 12;<br>
+
+
+
+
+
+
+
+&nbsp; // continua...<br>
+
+
+
+
+
+
+
+&nbsp; v[9] = 19;<br>
+
+
+
+
+
+
+
+      <br>
+
+
+
+
+
+
+
+&nbsp; for(i = 0; i &lt; 10; i++)<br>
+
+
+
+
+
+
+
+&nbsp; &nbsp; printf("v[%d]: %d\n", i, v[i]);<br>
+
+
+
+
+
+
+
+      <br>
+
+
+
+
+
+
+
+      </span><span style="font-family: monospace;">&nbsp;
+printf("Endereço de 'v': %p", v); &nbsp;// imprime o
+endereço da área alocada para 'v'<br>
+
+
+
+
+
+
+
+&nbsp; free(v);<br>
+
+
+
+
+
+
+
+}</span><span style="font-family: Arial;"></span>
+
+<span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><br>
+<img style="border: 1px solid ; width: 248px; height: 318px;" alt="" src="Programa%C3%A7%C3%A3o%20em%20C_C++%20-%20Ponteiros_files/ponteiros4.png"><br>
+<span style="font-family: Arial;"><br>
+
+
+
+
+
+Exemplo em C++:<br>
+
+
+
+
+
+&nbsp;</span><br>
+<span style="font-family: monospace;">#include &lt;iostream&gt;<br>
+
+
+
+
+
+using namespace std;<br>
+
+
+
+
+
+<br>
+
+
+
+
+
+</span><span style="font-family: monospace;">void main()</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp; int
+i;<br>
+
+
+
+
+
+
+
+&nbsp; int *v;</span><br>
+<span style="font-family: monospace;">&nbsp; v</span><span style="font-family: monospace;"> =
+new int[10]; &nbsp;// 'v' é um ponteiro
+para uma área que<br>
+
+
+
+
+
+
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; //&nbsp;tem 10 inteiros.<br>
+
+
+
+
+
+
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;// 'v' funciona exatamente como um vetor</span><span style="font-family: monospace;"><br>
+
+
+
+
+
+
+
+&nbsp; v[0] = 10;<br>
+
+
+
+
+
+
+
+&nbsp; v[1] = 11;<br>
+
+
+
+
+
+
+
+&nbsp; v[2] = 12;<br>
+
+
+
+
+
+
+
+&nbsp; // continua...<br>
+
+
+
+
+
+
+
+&nbsp; v[9] = 19;<br>
+
+
+
+
+
+
+
+      <br>
+
+
+
+
+
+
+
+&nbsp; for(i = 0; i &lt; 10; i++)<br>
+
+
+
+
+
+&nbsp; &nbsp; cout &lt;&lt; "v[" &lt;&lt; i &lt;&lt; "]: " &lt;&lt; v[i] &lt;&lt; endl;<br>
+
+
+
+
+
+<br>
+
+
+
+
+
+&nbsp; cout &lt;&lt; "Endereço de 'v': " &lt;&lt; v &lt;&lt; endl; </span><span style="font-family: monospace;">// imprime o
+endereço da área alocada para 'v'</span><br>
+<span style="font-family: monospace;">&nbsp; delete[] v;<br>
+
+
+
+
+
+
+
+}</span><span style="font-family: Arial;"></span>
+
+<span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><br style="font-family: Arial;">
+<span style="font-weight: bold; font-family: Arial;"></span></big>
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="text-align: right;">
+
+<div style="text-align: right;"><a href="https://www.inf.pucrs.br/~pinho/PRGSWB/Ponteiros/ponteiros.html#PUCRS_Top"><img style="border: 0px solid ; width: 20px; height: 20px;" alt="" src="Programa%C3%A7%C3%A3o%20em%20C_C++%20-%20Ponteiros_files/top.gif"></a>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<hr style="width: 100%; height: 2px;">
+
+
+<span style="text-decoration: underline; font-family: Arial;"></span>
+<h2 style="font-family: Arial;"><a name="Aritmetica_de_Ponteiros"></a><big>Aritmética de Ponteiros</big></h2>
+
+
+<big><span style="font-family: Arial;">Além
+de acessar os dados de uma área alocada dinâmicamente como
+se fosse um vetor, é possível acessá-los
+através do próprio ponteiro, utilizando a técnica
+chamada <span style="font-weight: bold;">aritmética de ponteiros.</span> </span><span style="text-decoration: underline; font-family: Arial;"></span><br>
+<br>
+<span style="font-family: monospace;">#include
+&lt;stdlib.h&gt;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">void main()</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp; </span><span style="font-family: monospace;"></span><span style="font-family: monospace;">int *vet;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp; </span><span style="font-family: monospace;">int *ptr;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;"></span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp; </span><span style="font-family: monospace;">vet =
+(int*)malloc(sizeof(int)*10);</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp; </span><span style="font-family: monospace;">vet[4] = 44; &nbsp;//
+'vet' funciona como um <span style="font-weight: bold; text-decoration: underline;">vetor</span>,
+depois de <span style="font-weight: bold; text-decoration: underline;">malloc</span></span><br style="font-family: monospace;">
+<span style="font-family: monospace;"><br>
+
+
+
+
+
+
+
+&nbsp; </span><span style="font-family: monospace;">ptr
+= vet;&nbsp; // 'ptr' &nbsp;aponta para o início da<br>
+
+
+
+
+
+
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; // área alocada por 'vet<br style="font-family: monospace;">
+
+
+
+
+
+
+
+      </span><span style="font-family: monospace;"><br>
+
+
+
+
+
+
+
+&nbsp; </span><span style="font-family: monospace;">*ptr
+= 11; &nbsp;// vet[0] = 11<br>
+
+
+
+
+
+
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; // coloca 11 na primeira posição da
+área alocada<br style="font-family: monospace;">
+
+
+
+
+
+
+
+      </span><span style="font-family: monospace;"><br>
+
+
+
+
+
+
+
+&nbsp; </span><span style="font-family: monospace;">ptr++;
+&nbsp; &nbsp;&nbsp; // avança o apontador</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp; </span><span style="font-family: monospace;">*ptr = 12; &nbsp;//
+vet[1] = 12</span><br style="font-family: monospace;">
+<span style="font-family: monospace;"><br>
+
+
+
+
+
+
+
+&nbsp; </span><span style="font-family: monospace;">printf("%p\n",&nbsp;
+ptr);</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp; </span><span style="font-family: monospace;">printf("%d\n", *ptr);</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp; <br>
+
+
+
+
+
+
+
+      </span><span style="font-family: monospace;">&nbsp;
+// free(ptr); &nbsp;// Liberar 'ptr' direto causa&nbsp;NULL
+POINTER ASSIGNMENT</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;</span><span style="font-family: monospace;"> // Corrigindo, a forma
+correta é:</span><br>
+<span style="font-family: monospace;">&nbsp;
+ptr--;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;
+free(ptr);<br>
+
+
+
+
+
+
+
+}<br>
+
+
+
+
+
+<br>
+
+
+
+
+
+</span><span style="font-family: monospace;"></span><img style="border: 1px solid ; width: 339px; height: 308px;" alt="" src="Programa%C3%A7%C3%A3o%20em%20C_C++%20-%20Ponteiros_files/ponteiros5.png"></big>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+    
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+      
+
+<br>
+
+
+
+
+<div style="text-align: right;"><span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><span style="font-weight: bold;"></span><a href="https://www.inf.pucrs.br/~pinho/PRGSWB/Ponteiros/ponteiros.html#PUCRS_Top"><img style="border: 0px solid ; width: 20px; height: 20px;" alt="" src="Programa%C3%A7%C3%A3o%20em%20C_C++%20-%20Ponteiros_files/top.gif"></a>
+
+
+
+
+
+</div>
+
+
+
+
+<hr style="width: 100%; height: 2px;">
+<h2 style="font-family: Arial;"><a name="Alocacao_Dinamica_de_Structs"></a><big>Alocação
+Dinâmica de <span style="font-style: italic;">Structs</span></big></h2>
+
+
+
+
+
+
+
+<big><span style="text-decoration: underline; font-family: Arial;">
+
+
+
+</span><span style="font-weight: bold; font-family: Arial;"><img style="border: 1px solid ; width: 236px; height: 190px;" alt="" src="Programa%C3%A7%C3%A3o%20em%20C_C++%20-%20Ponteiros_files/ponteiros6.png"></span><span style="font-family: Arial;">&nbsp;&nbsp;&nbsp; Quantos
+funcionários eu terei?</span><br style="font-family: Arial;">
+<br style="font-family: Arial;">
+<span style="font-family: Arial;">Para casos em que
+não se sabe quantos elementos se tem em uma lista, usa-se </span><span style="font-weight: bold; font-family: Arial; text-decoration: underline;">alocação
+dinâmica</span><span style="font-family: Arial;">.</span><br>
+<br style="font-family: monospace;">
+<span style="font-family: monospace;">typedef struct P</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;
+char&nbsp;nome[30];</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;
+char&nbsp;endereco[40];</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;
+char&nbsp;telefone[10];</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">} TPESSOA;<br>
+
+
+
+
+
+
+
+</span></big>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="text-align: right;"><a href="https://www.inf.pucrs.br/~pinho/PRGSWB/Ponteiros/ponteiros.html#PUCRS_Top"><img style="border: 0px solid ; width: 20px; height: 20px;" alt="" src="Programa%C3%A7%C3%A3o%20em%20C_C++%20-%20Ponteiros_files/top.gif"></a>
+
+
+
+
+
+</div>
+
+
+
+
+<hr style="width: 100%; height: 2px; font-family: Arial;">
+<h2 style="font-family: Arial;"><a name="Realocacao_de_Memoria"></a><big>Realocação
+de Memória</big></h2>
+
+
+
+
+
+
+
+<big><span style="font-family: Arial;">Se for preciso aumentar
+o tamanho do vetor, use:</span><br>
+<span style="font-family: monospace;"><br>
+
+
+
+
+
+
+
+realloc(ptr, novo_tam);</span><br>
+<br style="font-family: Arial;">
+<span style="font-family: Arial;">Exemplo:<br>
+
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+
+</span><span style="font-family: monospace;">//
+código (...)</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">cadastro =
+(TPESSOA*)realloc(cadastro, 20);</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">ptr = cadastro;</span><br style="font-family: monospace;">
+</big>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="font-family: monospace;"><big>// a área
+de memória é <span style="text-decoration: underline; font-weight: bold;">realocada</span>,
+e todos os dados são copiados da área antiga&nbsp;para a área nova.</big><br>
+
+
+
+<br>
+
+
+
+</span>
+
+
+
+<div style="text-align: right;"><a href="https://www.inf.pucrs.br/~pinho/PRGSWB/Ponteiros/ponteiros.html#PUCRS_Top"><img style="border: 0px solid ; width: 20px; height: 20px;" alt="" src="Programa%C3%A7%C3%A3o%20em%20C_C++%20-%20Ponteiros_files/top.gif"></a>
+
+
+
+
+
+</div>
+
+
+
+
+<hr style="width: 100%; height: 2px; font-family: Arial;">
+<h2 style="font-family: Arial;"><a name="Testes_de_Alocacao"></a>Testes de
+Alocação</h2>
+
+
+
+<big><span style="font-family: Arial;">Para verificar se foi possível
+alcar a memória solicitada, pode-se testar o valor do ponteito
+usado&nbsp;para armazenar a área alocada. Se o valor deste
+ponteiro for NULL, não foi possível alocar a
+memória.<br>
+
+
+
+</span><span style="font-family: monospace;"><br>
+
+
+int *ptr;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">ptr =
+(int*)malloc(sizeof(int)*10);</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">if (ptr == NULL)<br>
+
+
+
+
+
+
+
+{<br style="font-family: monospace;">
+
+
+
+
+
+
+
+</span><span style="font-family: monospace;">&nbsp;
+printf("Não foi possível alocar
+memória!\n");<br>
+
+
+
+
+
+
+
+&nbsp; exit(1);<br>
+
+
+
+
+
+
+
+}<br style="font-family: monospace;">
+
+
+
+
+
+
+
+</span><span style="font-family: monospace;"></span><br style="font-family: Arial;">
+<span style="font-family: Arial;">Em
+operações de realocação de
+memória,&nbsp;também é
+necessário realizar este procedimento.</span></big>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br style="font-family: Arial;">
+
+
+
+
+
+
+
+<div style="text-align: right;"><a href="https://www.inf.pucrs.br/~pinho/PRGSWB/Ponteiros/ponteiros.html#PUCRS_Top"><img style="border: 0px solid ; width: 20px; height: 20px;" alt="" src="Programa%C3%A7%C3%A3o%20em%20C_C++%20-%20Ponteiros_files/top.gif"></a>
+
+
+
+
+
+</div>
+
+
+
+
+<hr style="width: 100%; height: 2px; font-family: Arial;">
+<h2 style="font-family: Arial;"><a name="Estruturas_Encadeadas"></a>Estruturas Encadeadas</h2>
+<big><span style="font-family: Arial;">Para crira estruturas encadeadas em C ou C++ costuma-se utilizar variáveis do tipo ponteiro. Em um struct, coloca-se um <span style="font-weight: bold;">ponteiro</span> para o próximo (ou anterior) elemento da lista da seguinte forma:<br>
+<br>
+</span><span style="font-family: monospace;">typedef struct temp</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; string nome;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; int idade;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; int rg;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; temp *prox; // apontador para o próximo elemento</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">}TPESSOA;</span></big>
+
+
+
+
+
+<span style="font-family: Arial;"><br>
+<br>
+&nbsp;</span>
+
+
+
+
+
+
+<span style="font-weight: bold;"></span><img style="border: 1px solid ; width: 485px; height: 289px;" alt="" src="Programa%C3%A7%C3%A3o%20em%20C_C++%20-%20Ponteiros_files/ponteiros7.png"><br style="font-weight: bold;">
+
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<img style="border: 1px solid ; width: 710px; height: 267px;" alt="" src="Programa%C3%A7%C3%A3o%20em%20C_C++%20-%20Ponteiros_files/ponteiros8.png"><br>
+
+
+
+
+
+
+<span style="font-family: monospace;"><br style="font-family: monospace;">
+
+</span>
+<h3><big>Exemplo 1:&nbsp;Inserção
+no Início da Lista</big></h3>
+
+
+
+
+
+
+
+<big><span style="font-family: monospace;">// (...)<br>
+
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+
+TPESSOA *inicio, *ptr;<br>
+
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+
+ptr</span><span style="font-family: monospace;"> = (TPESSOA*)malloc(sizeof(TPESSOA));</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">
+
+
+
+
+
+
+// Teste de alocação<br>
+</span><span style="font-family: monospace;">if (ptr == NULL)</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;
+printf("Não foi possível alocar
+memória!\n");<br>
+
+
+
+
+
+
+
+&nbsp; exit(1);<br>
+
+
+
+
+
+
+
+}<br>
+<br>
+// Lê os dados&nbsp;<br>
+cin &gt;&gt;idade;<br>
+cin &gt;&gt;nome;<br>
+<br>
+</span><span style="font-family: monospace;">// Coloca os dados lidos na struct</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">P-&gt;idade = idade;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">strcpy(P-&gt;nome, nome);<br>
+<br style="font-family: monospace;">
+</span><span style="font-family: monospace;">// Marca o nodo como último da lista&nbsp;
+<br>
+P-&gt;prox = NULL;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;"></span><span style="font-family: monospace;"><br style="font-family: monospace;">
+
+
+
+
+
+
+
+</span><span style="font-family: monospace;"></span><span style="font-family: monospace;">//Insere no início da lista<br>
+inicio =&nbsp;ptr;<br>
+
+
+
+
+
+
+
+</span><span style="font-family: monospace;"><br>
+</span><span style="font-family: monospace;"><br>
+
+</span></big>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3><big>Exemplo 2:&nbsp;Busca de um Elemento na
+Lista</big></h3>
+
+
+
+
+
+
+
+<big><span style="font-weight: bold;"></span><img style="border: 1px solid ; width: 514px; height: 123px;" alt="" src="Programa%C3%A7%C3%A3o%20em%20C_C++%20-%20Ponteiros_files/ponteiros10.png"><br>
+<span style="font-family: monospace;"><br>
+if (inicio == NULL)<br>
+&nbsp;&nbsp;&nbsp; return; // lista vazia<br>
+
+
+
+
+
+
+aux = inicio;<br style="font-family: monospace;">
+</span><span style="font-family: monospace;">do</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+<span style="font-family: monospace;"></span><span style="font-family: monospace;">&nbsp; if
+(aux-&gt;</span><span style="font-family: monospace;">nome</span><span style="font-family: monospace;"> == dado)<br>
+
+
+
+
+
+
+
+&nbsp; {<br style="font-family: monospace;">
+
+
+
+
+
+
+
+</span><span style="font-family: monospace;">&nbsp;
+&nbsp; achou = 1;<br>
+
+
+
+
+
+
+
+&nbsp; }<br style="font-family: monospace;">
+
+
+
+
+
+
+
+</span><span style="font-family: monospace;">&nbsp;
+else</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp; {</span><br style="font-family: monospace;">
+<span style="font-family: monospace;"></span><span style="font-family: monospace;">&nbsp; &nbsp; aux =
+aux-&gt;prox;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp; }</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">} while( (achou ==
+0) &amp;&amp; (aux != NULL) );<br>
+
+
+
+
+
+
+
+// 'aux' aponta para o nodo que tem a informação<br>
+
+
+
+
+
+
+
+</span></big>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="text-align: right;"><big><a href="https://www.inf.pucrs.br/~pinho/PRGSWB/Ponteiros/ponteiros.html#PUCRS_Top"><img style="border: 0px solid ; width: 20px; height: 20px;" alt="" src="Programa%C3%A7%C3%A3o%20em%20C_C++%20-%20Ponteiros_files/top.gif"></a>
+
+
+
+
+
+</big></div>
+<big><br>
+</big>
+
+<h3><big>Exemplo 3:&nbsp;Retirada de um Elemento no
+Meio da Lista</big></h3>
+
+
+
+
+
+
+
+<big><span style="font-weight: bold;"></span><img style="border: 1px solid ; width: 512px; height: 98px;" alt="" src="Programa%C3%A7%C3%A3o%20em%20C_C++%20-%20Ponteiros_files/ponteiros9.png"><br>
+<span style="font-family: monospace;"><br>
+<br>
+// Verifica se o elemento buscado está no início da lista<br>
+<br>
+if(inicio-&gt;nome==dado)<br>
+&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; inicio=inicio-&gt;prox;<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; aux-&gt;prox=NULL;<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; free (aux);<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return 1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<br>
+// Se não estiver no início, busca no restante <br>
+//&nbsp;da lista<br>
+<br>
+antes = inicio;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">do</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp; aux =
+antes-&gt;prox;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp; if
+(aux-&gt;nome == dado)<br>
+
+
+
+
+
+
+
+&nbsp; {<br style="font-family: monospace;">
+
+
+
+
+
+
+
+</span><span style="font-family: monospace;">&nbsp;
+&nbsp; achou = 1;<br>
+
+
+
+
+
+
+
+&nbsp; }<br style="font-family: monospace;">
+
+
+
+
+
+
+
+</span><span style="font-family: monospace;">&nbsp;
+else</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp; {</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;
+&nbsp; antes = aux;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;
+&nbsp; aux = aux-&gt;prox;</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp; }</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">} while( (achou ==
+0) &amp;&amp; (aux != NULL) );<br>
+</span><span style="font-family: monospace;"><br>
+</span><span style="font-family: monospace;">if (achou == 0)<br>
+&nbsp;&nbsp;&nbsp; return 0; &nbsp;// não achou ....</span><br>
+<span style="font-family: monospace;"><br>
+// Se achou == 1, então 'aux' aponta para o nodo que tem a informação<br>
+// e antes, aponta para o nodo anterior<br>
+
+
+
+
+
+
+
+</span></big>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="text-align: right;"><big>
+</big><big>
+
+
+
+
+
+
+</big></div>
+<span style="font-family: monospace;"><big>antes-&gt;prox = aux-&gt;prox; // retira o aux da lista<br>
+
+free(aux);<br>
+
+return 1;</big><br>
+<br>
+</span>
+<div style="text-align: right;"><a href="https://www.inf.pucrs.br/~pinho/PRGSWB/Ponteiros/ponteiros.html#PUCRS_Top"><img style="border: 0px solid ; width: 20px; height: 20px;" alt="" src="Programa%C3%A7%C3%A3o%20em%20C_C++%20-%20Ponteiros_files/top.gif"></a>
+
+
+
+
+
+</div>
+
+
+
+
+<hr style="width: 100%; height: 2px; font-family: Arial;">
+<h2 style="font-family: Arial;"><a name="Vetor_de_Ponteiros"></a>Vetor de Ponteiros</h2>
+
+
+
+
+
+
+  
+    
+      <big><span style="font-family: monospace;">typedef
+struct temp</span><br style="font-family: monospace;">
+<span style="font-family: monospace;"></span><span style="font-family: monospace;">{<br>
+
+
+
+
+
+
+
+&nbsp; int dado;<br>
+
+
+
+
+
+
+
+&nbsp; struct temp *prox;<br>
+
+
+
+
+
+
+
+      </span></big>
+
+
+
+
+
+
+
+      <span style="font-family: monospace;"><big>} TNODO;</big><br>
+
+
+
+
+
+<br>
+
+
+
+
+
+<img style="border: 1px solid ; width: 150px; height: 141px;" alt="" src="Programa%C3%A7%C3%A3o%20em%20C_C++%20-%20Ponteiros_files/ponteiros11.png"><br>
+
+
+
+
+
+<br>
+
+
+
+
+
+</span><big><span style="font-family: monospace;">TNODO *listas[5];<br>
+
+
+
+
+
+
+
+      <br>
+
+
+
+
+
+
+
+listas[0] = new TNODO;<br>
+
+
+
+
+
+
+
+listas[0]-&gt;prox = NULL;<br>
+
+
+
+
+
+
+
+aux = listas[0];<br>
+
+
+
+
+
+
+
+aux-&gt;prox = NULL;</span></big><br>
+
+
+
+
+<div style="text-align: right;"><a href="https://www.inf.pucrs.br/~pinho/PRGSWB/Ponteiros/ponteiros.html#PUCRS_Top"><img style="border: 0px solid ; width: 20px; height: 20px;" alt="" src="Programa%C3%A7%C3%A3o%20em%20C_C++%20-%20Ponteiros_files/top.gif"></a></div>
+
+
+
+
+<hr style="width: 100%; height: 2px; font-family: Arial;">
+<h2 style="font-family: Arial;"><a name="Ponteiros_para_Objetos"></a>Ponteiros para Objetos</h2><big><span style="font-family: Arial;">Consulte a página sobre <a href="http://www.inf.pucrs.br/%7Epinho/PRGSWB/OO/oocpp.html">Orientação a Objetos</a>, para maiores detalhes.</span></big><br>
+<br>
+
+
+
+
+
+
+
+
+<span style="font-weight: bold;"></span><big><span style="font-family: monospace;">class CPessoa<br>
+
+
+
+
+
+
+
+{<br>
+
+
+
+
+
+
+
+&nbsp; // ...<br>
+
+
+
+
+
+
+
+&nbsp; void setNome(char *dado);<br style="font-family: monospace;">
+
+
+
+
+
+
+
+</span>&nbsp; <span style="font-family: monospace;"></span></big><span style="font-family: monospace;"><big>// ...<br>
+
+
+
+
+
+
+
+
+}<br>
+<br>
+
+
+
+
+
+
+
+
+CPessoa *Fulano;<br>
+<br>
+
+
+
+
+
+
+
+
+Fulano = new CPessoa;<br>
+
+
+
+
+
+
+
+
+Fulano-&gt;setNome("Fulano de Tal");</big>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+
+</span>
+<div style="text-align: right;"><a href="https://www.inf.pucrs.br/~pinho/PRGSWB/Ponteiros/ponteiros.html#PUCRS_Top"><img style="border: 0px solid ; width: 20px; height: 20px;" alt="" src="Programa%C3%A7%C3%A3o%20em%20C_C++%20-%20Ponteiros_files/top.gif"></a>
+
+
+
+
+
+</div>
+
+
+
+
+<hr style="width: 100%; height: 2px;">
+</body></html>

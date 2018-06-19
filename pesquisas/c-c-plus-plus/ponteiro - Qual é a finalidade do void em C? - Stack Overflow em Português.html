@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html itemscope="" itemtype="http://schema.org/QAPage" class=""><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+        <title>ponteiro - Qual é a finalidade do void em C? - Stack Overflow em Português</title>
+        <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/br/img/favicon.ico?v=c6678b633455">
+        <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/br/img/apple-touch-icon.png?v=e57f45c9cfaf">
+        <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow em Português" href="https://pt.stackoverflow.com/opensearch.xml">
+
+
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://pt.stackoverflow.com/questions/97138/qual-é-a-finalidade-do-void-em-c">
+        <meta property="og:site_name" content="Stack Overflow em Português">
+        <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/br/img/apple-touch-icon@2.png?v=2bb2b60be04f">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:domain" content="pt.stackoverflow.com">
+        <meta name="twitter:site" content="@StackOverflowPT">
+        <meta name="twitter:creator" content="@StackOverflowPT">
+        <meta name="twitter:title" property="og:title" itemprop="title name" content="Qual é a finalidade do void em C?">
+        <meta name="twitter:description" property="og:description" itemprop="description" content="Tenho dúvidas a respeito do uso do void em funções.
+
+1° Exemplo:
+
+int somaV(int valor_1, int valor_2)
+{
+    return valor_1 + valor_2;
+}
+Eu sei que esta função irá me retornar um inteiro que é a so...">
+        <script src="ponteiro%20-%20Qual%20%C3%A9%20a%20finalidade%20do%20void%20em%20C%3F%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_files/pubads_impl_rendering_216.js"></script><script src="ponteiro%20-%20Qual%20%C3%A9%20a%20finalidade%20do%20void%20em%20C%3F%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_files/rules-p-c1rF4kxgLUzNc.js" async=""></script><script async="" src="ponteiro%20-%20Qual%20%C3%A9%20a%20finalidade%20do%20void%20em%20C%3F%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_files/quant.js"></script><script async="" src="ponteiro%20-%20Qual%20%C3%A9%20a%20finalidade%20do%20void%20em%20C%3F%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_files/beacon.js"></script><script async="" src="ponteiro%20-%20Qual%20%C3%A9%20a%20finalidade%20do%20void%20em%20C%3F%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_files/analytics.js"></script><script src="ponteiro%20-%20Qual%20%C3%A9%20a%20finalidade%20do%20void%20em%20C%3F%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_files/jquery.js"></script>
+        <script src="ponteiro%20-%20Qual%20%C3%A9%20a%20finalidade%20do%20void%20em%20C%3F%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_files/stub.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="ponteiro%20-%20Qual%20%C3%A9%20a%20finalidade%20do%20void%20em%20C%3F%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_files/stacks.css">
+        <link rel="stylesheet" type="text/css" href="ponteiro%20-%20Qual%20%C3%A9%20a%20finalidade%20do%20void%20em%20C%3F%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_files/primary.css">
+    
+            <link rel="alternate" type="application/atom+xml" title="Feed para a pergunta 'Qual é a finalidade do void em C?'" href="https://pt.stackoverflow.com/feeds/question/97138">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://pt.stackoverflow.com/questions/97138/qual-%C3%A9-a-finalidade-do-void-em-c">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://pt.stackoverflow.com/questions/97138/qual-%C3%A9-a-finalidade-do-void-em-c">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://pt.stackoverflow.com/questions/97138/qual-%C3%A9-a-finalidade-do-void-em-c">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+
+            StackExchange.ready(function () {
+                                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:97138});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('526', '97138');
+                // TODO: There's a CR for replacing this with inline info on the question for moderators
+                // https://trello.com/c/ynDHhvrB/158-cr-move-the-mod-info-out-of-the-margin-and-into-the-post-estimate-needed
+                // Before we roll out the sidebar everywhere (or at least shortly after that?), we should implement it.
+                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+        
+        
+        
+        
+        
+        
+                <script>
+        StackExchange.ready(function () {
+            StackExchange.realtime.init('wss://qa.sockets.stackexchange.com');
+            StackExchange.realtime.subscribeToReputationNotifications('526');
+                StackExchange.realtime.subscribeToTopBarNotifications('526');
+        });
+    </script>
+    <script>
+        StackExchange.init({"locale":"pt-BR","serverTime":1529389780,"routeName":"Questions/Show","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","site":{"name":"Stack Overflow em Português","description":"Perguntas e respostas para programadores profissionais e entusiastas","isNoticesTabEnabled":true,"enableNewTagCreationWarning":false,"insertSpaceAfterNameTabCompletion":false,"id":526,"childUrl":"https://pt.meta.stackoverflow.com","enableSocialMediaInSharePopup":true,"protocol":"https"},"user":{"fkey":"06429704a6711243a60c2f7d47eaa4aefb56d05fb44bc4ca37b4c5799c4bbad4","tid":"54f01a26-a3bc-115f-65fb-b6f3663425fb","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true},"realtime":{"newest":true,"active":true,"tagged":true,"staleDisconnectIntervalInHours":0,"workerIframeDomain":"https://cdn.sstatic.net"},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75,"likedTagsMaxLength":300,"dislikedTagsMaxLength":300},"jobPreferences":{"maxNumDeveloperRoles":2,"maxNumIndustries":4}}, {"site":{"allowImageUploads":true,"commentHighlightingWithCSS":true,"enableUserHovercards":true,"styleCode":true,"enableImgurHttps":true,"forceHttpsImages":true},"userMessaging":{},"comments":{},"userProfile":{},"tags":{"allowNonAsciiTags":true},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"snippets":{"snippetsEnabled":true,"renderDomain":"stacksnippets.net"},"paths":{},"markdown":{"asteriskIntraWordEmphasis":true},"monitoring":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000},"slack":{"sidebarAdDismissCookie":"slack-sidebar-ad"}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.pt-BR.js":"f58da898fc59","js/moderator.pt-BR.js":"15c14e8d0814","js/full-anon.pt-BR.js":"bea0638c57bd","js/full.pt-BR.js":"88fd9426e12c","js/wmd.pt-BR.js":"b1056b68c072","js/third-party/jquery.autocomplete.min.js":"bdb258e949a8","js/third-party/jquery.autocomplete.min.pt-BR.js":"","js/mobile.pt-BR.js":"9b9ea5f99172","js/help.pt-BR.js":"4ef76120cf0f","js/tageditor.pt-BR.js":"4da27161ba52","js/tageditornew.pt-BR.js":"30985fd114a5","js/inline-tag-editing.pt-BR.js":"597ada70b71d","js/revisions.pt-BR.js":"b82dcc645042","js/review.pt-BR.js":"af7d89f82905","js/tagsuggestions.pt-BR.js":"98282ebb815a","js/post-validation.pt-BR.js":"644783f95d27","js/explore-qlist.pt-BR.js":"e2a8178eb759","js/events.pt-BR.js":"378a0eaf6aa8","js/keyboard-shortcuts.pt-BR.js":"1d35f2875e53","js/external-editor.pt-BR.js":"43fc5e42a913","js/adops.pt-BR.js":"9a6a7812a212","js/external-editor.pt-BR.js":"43fc5e42a913","js/snippet-javascript.pt-BR.js":"c6bcc53e9ad6","js/snippet-javascript-codemirror.pt-BR.js":"c3e99cacb42d"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    <noscript id="noscript-css"><style>body,.top-bar{margin-top:1.9em}</style></noscript>
+    <script async="" src="ponteiro%20-%20Qual%20%C3%A9%20a%20finalidade%20do%20void%20em%20C%3F%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_files/full-anon.js"></script><script async="" src="ponteiro%20-%20Qual%20%C3%A9%20a%20finalidade%20do%20void%20em%20C%3F%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_files/snippet-javascript.js"></script><script async="" src="ponteiro%20-%20Qual%20%C3%A9%20a%20finalidade%20do%20void%20em%20C%3F%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_files/post-validation.js"></script><script async="" src="ponteiro%20-%20Qual%20%C3%A9%20a%20finalidade%20do%20void%20em%20C%3F%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_files/prettify-full.js"></script><script async="" src="ponteiro%20-%20Qual%20%C3%A9%20a%20finalidade%20do%20void%20em%20C%3F%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_files/external-editor.js"></script><link rel="preload" href="ponteiro%20-%20Qual%20%C3%A9%20a%20finalidade%20do%20void%20em%20C%3F%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_files/integrator.js" as="script"><script type="text/javascript" src="ponteiro%20-%20Qual%20%C3%A9%20a%20finalidade%20do%20void%20em%20C%3F%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_files/integrator.js"></script><link rel="preload" href="ponteiro%20-%20Qual%20%C3%A9%20a%20finalidade%20do%20void%20em%20C%3F%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_files/integrator_002.js" as="script"><script type="text/javascript" src="ponteiro%20-%20Qual%20%C3%A9%20a%20finalidade%20do%20void%20em%20C%3F%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_files/integrator_002.js"></script><script src="ponteiro%20-%20Qual%20%C3%A9%20a%20finalidade%20do%20void%20em%20C%3F%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_files/pubads_impl_216.js" async=""></script><link rel="prefetch" href="https://tpc.googlesyndication.com/safeframe/1-0-29/html/container.html"></head>
+        <body class="question-page new-topbar">
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+
+
+<header class="top-bar js-top-bar _fixed">
+    <div class="-container">
+        <div class="-main">
+                                <a href="https://pt.stackoverflow.com/" class="-logo js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+                        <span class="-img">Stack Overflow em Português</span>
+                    </a>
+
+
+                <nav class="navigation" role="navigation" aria-label="navegação do site">
+                    <ol class="-list">
+        <li class="-item _current">
+            <a id="nav-questions" href="https://pt.stackoverflow.com/questions" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">Perguntas</a>
+        </li>
+        <li class="-item">
+            <a id="nav-tags" href="https://pt.stackoverflow.com/tags" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">Tags</a>
+        </li>
+        <li class="-item">
+            <a id="nav-users" href="https://pt.stackoverflow.com/users" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">Usuários</a>
+        </li>
+                    </ol>
+                </nav>
+
+        </div>
+
+            <form id="search" action="/search" method="get" class="searchbar js-searchbar " autocomplete="off" role="search">
+                    <div class="ps-relative">
+                        <input name="q" placeholder="Pesquisar..." autocomplete="off" maxlength="240" class="f-input js-search-field" type="text">
+                        <button type="submit" aria-label="Pesquisar..." class="btn-topbar-primary js-search-submit"><svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"></path></svg></button>
+                    </div>
+            </form>
+
+        
+
+
+
+
+
+<ol class="-secondary js-secondary-topbar-links">
+        <li class="-item searchbar-trigger js-searchbar-trigger"><a href="#" class="-link"><svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"></path></svg></a></li>
+            <li class="-item">
+        <a href="https://stackexchange.com/users/?tab=inbox" class="-link js-inbox-button" title="Últimas mensagens no inbox">
+            <svg aria-hidden="true" class="svg-icon iconInbox" width="20" height="18" viewBox="0 0 20 18"><path d="M15.19 1H4.63c-.85 0-1.6.54-1.85 1.35L0 10.79V15c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2v-4.21l-2.87-8.44A2 2 0 0 0 15.19 1zm-.28 10l-2 2h-6l-2-2H1.96L4.4 3.68A1 1 0 0 1 5.35 3h9.12a1 1 0 0 1 .95.68L17.86 11h-2.95z"></path></svg>
+            <span class="indicator-badge js-unread-count _important" style="display: none;"></span>
+        </a>
+    </li>
+    <li class="-item">
+        <a href="https://stackexchange.com/users/?tab=reputation" class="-link js-achievements-button" title="Conquistas recentes: reputação, medalhas e privilégios obtidos" data-unread-class="_highlighted-positive">
+            <svg aria-hidden="true" class="svg-icon iconAchievements" width="18" height="18" viewBox="0 0 18 18"><path d="M15 2V1H3v1H0v4c0 1.6 1.4 3 3 3v1c.4 1.5 3 2.6 5 3v2H5s-1 1.5-1 2h10c0-.4-1-2-1-2h-3v-2c2-.4 4.6-1.5 5-3V9c1.6-.2 3-1.4 3-3V2h-3zM3 7c-.5 0-1-.5-1-1V4h1v3zm8.4 2.5L9 8 6.6 9.4l1-2.7L5 5h3l1-2.7L10 5h2.8l-2.3 1.8 1 2.7h-.1zM16 6c0 .5-.5 1-1 1V4h1v2z"></path></svg>
+            <span class="indicator-badge js-unread-count _positive" style="display: none;"></span>
+        </a>
+    </li>
+
+    <li class="-item help-button-item" data-remove-order="1"><a href="#" class="-link js-help-button" title="Central de ajuda e outros recursos">
+        <svg aria-hidden="true" class="svg-icon iconHelp" width="18" height="18" viewBox="0 0 18 18"><path d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23zM11.77 8a5.8 5.8 0 0 1-1.02.91l-.53.37c-.26.2-.42.43-.5.69a4 4 0 0 0-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.03-.66.12-1.21.4-1.66a5.29 5.29 0 0 1 1.43-1.22c.16-.12.28-.25.38-.39a1.34 1.34 0 0 0 .02-1.71c-.24-.31-.51-.46-1.03-.46-.51 0-.8.26-1.02.6-.21.33-.18.73-.18 1.1H5.75c0-1.38.35-2.25 1.1-2.76.52-.35 1.17-.5 1.93-.5 1 0 1.79.18 2.49.71.64.5.98 1.18.98 2.12 0 .57-.2 1.05-.48 1.44z"></path></svg>
+    </a></li>
+
+    <li class="-item">
+        <a href="https://stackexchange.com/" class="-link js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="Todos os 174 sites do Stack Exchange">
+            <svg aria-hidden="true" class="svg-icon iconStackExchange" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13c0 1.1.9 2 2 2h8v3l3-3h1a2 2 0 0 0 2-2v-2H1v2zM15 1H3a2 2 0 0 0-2 2v2h16V3a2 2 0 0 0-2-2zM1 6h16v4H1V6z"></path></svg>
+        </a>
+    </li>
+
+            <li class="-ctas">
+                        <a href="https://pt.stackoverflow.com/users/login?ssrc=head&amp;returnurl=https%3a%2f%2fpt.stackoverflow.com%2fquestions%2f97138%2fqual-%25c3%25a9-a-finalidade-do-void-em-c" class="login-link btn-clear" rel="nofollow">Log-in</a>
+                        <a href="https://pt.stackoverflow.com/users/signup?ssrc=head&amp;returnurl=https%3a%2f%2fpt.stackoverflow.com%2fquestions%2f97138%2fqual-%25c3%25a9-a-finalidade-do-void-em-c" class="login-link btn-topbar-primary" rel="nofollow" data-ga="[&quot;sign up&quot;,&quot;Sign Up Navigation&quot;,&quot;Header&quot;,null,null]">Registrar-se</a>
+
+            </li>
+
+    <li class="-dialog-container js-topbar-dialog-corral">
+
+
+    <div class="topbar-dialog siteSwitcher-dialog dno">
+        <div class="header">
+            <h3><a href="https://pt.stackoverflow.com/">comunidade atual</a>
+            </h3>
+        </div>
+        <div class="modal-content current-site-container">
+            <ul class="current-site">
+                    <li class="grid">
+                            <div class="fl1">
+            <a href="https://pt.stackoverflow.com/" class="current-site-link site-link js-gps-track grid gs8 gsx" data-id="526" data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="favicon favicon-br site-icon grid--cell" title="Stack Overflow em Português"></div>
+        <span class="grid--cell fl1">
+            Stack Overflow em Português
+        </span>
+    </a>
+
+    </div>
+    <div class="related-links">
+            <a href="https://pt.stackoverflow.com/help" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:14 })">ajuda</a>
+                    <a href="https://chat.stackexchange.com/?tab=site&amp;host=pt.stackoverflow.com" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+                    </li>
+                    <li class="related-site grid">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                            <a href="https://pt.meta.stackoverflow.com/" class="site-link js-gps-track grid gs8 gsx" data-id="527" data-gps-track="site.switch({ target_site:527, item_type:3 }),site_switcher.click({ item_type:4 })">
+        <div class="favicon favicon-brmeta site-icon grid--cell" title="Stack Overflow em Português Meta"></div>
+        <span class="grid--cell fl1">
+            Stack Overflow em Português Meta
+        </span>
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+suas comunidades            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+Faça <a href="https://pt.stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fpt.stackoverflow.com%2fquestions%2f97138%2fqual-%25c3%25a9-a-finalidade-do-void-em-c" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> ou <a href="https://pt.stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fpt.stackoverflow.com%2fquestions%2f97138%2fqual-%25c3%25a9-a-finalidade-do-void-em-c" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">registre-se</a> para personalizar suas comunidades
+                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="https://stackexchange.com/sites">mais comunidades stack exchange</a>
+            </h3>
+            <a href="https://stackoverflow.blog/" class="fr">Blog da empresa</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+            <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="https://pt.stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Comece aqui para obter uma visão geral rápida do site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="https://pt.stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Central de ajuda
+                        <span class="item-summary">
+                            Respostas detalhadas a qualquer pergunta que você tiver
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="https://pt.meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discutir o funcionamento e as políticas deste site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                Sobre Nós
+                                <span class="item-summary">
+                                    Saiba mais sobre a empresa Stack Overflow
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Negócios
+                                <span class="item-summary">
+                                    Saiba mais sobre a contratação de desenvolvedores ou publicação de anúncios conosco
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+            </li>
+</ol>
+
+    </div>
+</header>
+    <div id="js-gdpr-consent-banner" class="p16 bg-black-700 fc-white ps-fixed b0 l0 r0 z-banner" role="banner" aria-hidden="false">
+        <div class="wmx10 mx-auto grid grid__center jc-spacebetween gs8 gsx" role="alertdialog" aria-describedby="notice-message">
+            <div class="grid--cell" aria-label="notice-message">
+                <p class="mb0 lh-lg">
+                    This site uses cookies to deliver our services and to show you relevant ads and job listings. 
+By using our site, you acknowledge that you have read and understand our <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/cookie-policy">Cookie Policy</a>, <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/privacy-policy">Privacy Policy</a>, and our <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/terms-of-service/public">Terms of Service</a>.
+ 
+Your use of Stack Overflow’s Products and Services, including the Stack 
+Overflow Network, is subject to these policies and terms.
+                </p>
+            </div>
+            <div class="grid--cell ml-auto" aria-label="notice-dismiss">
+                <button class="s-btn s-btn__inverted fc-white bg-black-700 baw0 p16 js-notice-close" role="status" aria-hidden="true">
+                    <svg aria-hidden="true" class="svg-icon m0 iconClearSm" width="14" height="14" viewBox="0 0 14 14"><path d="M12 3.41L10.59 2 7 5.59 3.41 2 2 3.41 5.59 7 2 10.59 3.41 12 7 8.41 10.59 12 12 10.59 8.41 7z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        StackExchange.ready(function () { StackExchange.topbar.init({ observeSize: false }); });
+        StackExchange.scrollPadding.setPaddingTop(60, 10);     </script>
+
+
+    
+
+
+    <div class="container  ">
+                
+        <div id="content" class="snippet-hidden">
+
+
+            
+
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/br/img/apple-touch-icon.png?v=e57f45c9cfaf">
+
+    <div class="inner-content clearfix">
+            <div id="question-header">
+                    <h1 itemprop="name"><a href="https://pt.stackoverflow.com/questions/97138/qual-%c3%a9-a-finalidade-do-void-em-c" class="question-hyperlink">Qual é a finalidade do void em C?</a></h1>
+
+            
+
+
+
+<div class="pl8 aside-cta" role="navigation" aria-label="fazer uma nova pergunta">
+            <a href="https://pt.stackoverflow.com/questions/ask" class="ws-nowrap btn-outlined">Faça uma pergunta</a>
+</div>
+
+        </div>
+            <div id="mainbar" role="main" aria-label="pergunta e respostas">
+
+            
+
+<div class="question" data-questionid="97138" id="question">
+
+    <style>.everyoneloves__top-leaderboard:empty,.everyoneloves__mid-leaderboard:empty{                margin-bottom:0;
+}</style>
+        <div id="dfp-tlb" class="everyonelovesstackoverflow everyoneloves__top-leaderboard" style="display: none;" data-google-query-id="CPHlsfWM39sCFcPT4QodT9MAJQ" data-clc-prefilled="true" data-clc-ready="true"><div id="google_ads_iframe_/248424177/pt.stackoverflow.com/lb/question-pages_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/248424177/pt.stackoverflow.com/lb/question-pages_0" title="3rd party ad content" name="google_ads_iframe_/248424177/pt.stackoverflow.com/lb/question-pages_0" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom;" srcdoc="" width="728" height="90" frameborder="0"></iframe></div></div>
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="vote">
+        <input name="_id_" value="97138" type="hidden">
+        <a class="vote-up-off" title="Esta pergunta mostra esforço de pesquisa; é útil e clara">votar a favor</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">27</span>
+        <a class="vote-down-off" title="Esta pergunta não mostra nenhum esforço de pesquisa; ela não é clara ou não é útil">votar contra</a>
+
+        <a class="star-off" href="#">favorita</a>
+        <div class="favoritecount"><b>6</b></div>
+
+
+</div>
+
+            </div>
+
+            
+<div class="postcell post-layout--right">
+    <div class="post-text" itemprop="text">
+
+<p>Tenho dúvidas a respeito do uso do <code>void</code> em funções.</p>
+
+<p>1° Exemplo:</p>
+
+<pre class="lang-c prettyprint prettyprinted" style=""><code><span class="typ">int</span><span class="pln"> somaV</span><span class="pun">(</span><span class="typ">int</span><span class="pln"> valor_1</span><span class="pun">,</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> valor_2</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> valor_1 </span><span class="pun">+</span><span class="pln"> valor_2</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>Eu sei que esta função irá me retornar um inteiro que é a soma dos dois parâmetros na função <code>valor_1</code> e <code>valor_2</code>.</p>
+
+<p>2° Exemplo:</p>
+
+<pre class="lang-c prettyprint prettyprinted" style=""><code><span class="kwd">void</span><span class="pun">*</span><span class="pln"> soma</span><span class="pun">(</span><span class="typ">int</span><span class="pln"> valor_1</span><span class="pun">,</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> valor_2</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">(</span><span class="typ">int</span><span class="pun">)</span><span class="pln"> valor_1 </span><span class="pun">+</span><span class="pln"> valor_2</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>Eu vi em um programa que continha uma implementação parecida como a 
+do segundo exemplo acima que usei para ilustrar a situação que 
+testemunhei do uso do <code>void</code>. Eu testei a função <code>soma()</code> e ela retorna a soma dos dois parâmetros mesmo tendo o <code>void</code> especificado como retorno ou seja vazio.</p>
+
+<p>Isto me deixou confuso em relação ao uso do <code>void</code>, eu 
+pensava que servia somente para dizer que uma função não vai ter retorno
+ nenhum ou não irá receber nenhum parâmetro como este exemplo <code>soma(void)</code>.</p>
+
+<p>Afinal de contas qual é a finalidade deste comando em C? O uso do <code>void*</code> especificado como ponteiro pode retornar valores mesmo sendo <code>void</code>?</p>
+    </div>
+    <div class="post-taglist">
+        <a href="https://pt.stackoverflow.com/questions/tagged/c" class="post-tag js-gps-track" title="mostrar perguntas com a tag 'c'" rel="tag">c</a> <a href="https://pt.stackoverflow.com/questions/tagged/ponteiro" class="post-tag js-gps-track" title="mostrar perguntas com a tag 'ponteiro'" rel="tag">ponteiro</a> <a href="https://pt.stackoverflow.com/questions/tagged/tipagem" class="post-tag js-gps-track" title="mostrar perguntas com a tag 'tipagem'" rel="tag">tipagem</a> <a href="https://pt.stackoverflow.com/questions/tagged/void" class="post-tag js-gps-track" title="mostrar perguntas com a tag 'void'" rel="tag">void</a> 
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://pt.stackoverflow.com/q/97138" title="permalink curto para esta pergunta" class="short-link" id="link-post-97138">compartilhar</a><span class="lsep">|</span><a href="https://pt.stackoverflow.com/posts/97138/edit" class="suggest-edit-post" title="">melhorar esta pergunta</a></div>        
+    </div>
+
+    <div class="post-signature grid--cell fl0">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="https://pt.stackoverflow.com/posts/97138/revisions" title="mostrar todas as edições desta publicação">editada <span title="2016-12-05 12:43:29Z" class="relativetime">5/12/16 às 12:43</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://pt.stackoverflow.com/users/101/maniero"><div class="gravatar-wrapper-32"><img src="ponteiro%20-%20Qual%20%C3%A9%20a%20finalidade%20do%20void%20em%20C%3F%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_files/jmxoN.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://pt.stackoverflow.com/users/101/maniero">Maniero</a><span class="mod-flair" title="moderador">♦</span>
+        <div class="-flair">
+            <span class="reputation-score" title="pontos de reputação 274.139" dir="ltr">274mil</span><span title="45 medalhas de ouro"><span class="badge1"></span><span class="badgecount">45</span></span><span title="681 medalhas de prata"><span class="badge2"></span><span class="badgecount">681</span></span><span title="1049 medalhas de bronze"><span class="badge3"></span><span class="badgecount">1049</span></span>
+        </div>
+    </div>
+</div>    </div>
+    <div class="post-signature owner grid--cell fl0">
+        <div class="user-info user-hover">
+    <div class="user-action-time">
+        perguntada <span title="2015-11-09 14:54:14Z" class="relativetime">9/11/15 às 14:54</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://pt.stackoverflow.com/users/27190/gato"><div class="gravatar-wrapper-32"><img src="ponteiro%20-%20Qual%20%C3%A9%20a%20finalidade%20do%20void%20em%20C%3F%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_files/hpVKv.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://pt.stackoverflow.com/users/27190/gato">gato</a>
+        <div class="-flair">
+            <span class="reputation-score" title="pontos de reputação " dir="ltr">8.789</span><span title="7 medalhas de ouro"><span class="badge1"></span><span class="badgecount">7</span></span><span title="38 medalhas de prata"><span class="badge2"></span><span class="badgecount">38</span></span><span title="107 medalhas de bronze"><span class="badge3"></span><span class="badgecount">107</span></span>
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+</div>
+
+                
+    <div class="post-layout--right">
+	    <div id="comments-97138" class="comments js-comments-container  dno">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+            </ul>
+	    </div>
+
+        <div id="comments-link-97138" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comentários para pedir mais informações ou sugerir melhorias. Evite responder perguntas em comentários.">comentar</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="ver todos os comentários desta publicação" href="#" onclick=""></a>
+        </div>         
+    </div>        </div>
+</div>
+
+
+
+        <div id="answers">
+
+                <a name="tab-top"></a>
+                <div id="answers-header">
+                    <div class="subheader answers-subheader">
+                        <h2 data-answercount="3">
+                                3 Respostas
+                                <span style="display:none;" itemprop="answerCount">3</span>
+                        </h2>
+                        <div>
+                            
+<div id="tabs">
+        <a href="https://pt.stackoverflow.com/questions/97138/qual-%c3%a9-a-finalidade-do-void-em-c?answertab=active#tab-top" data-nav-xhref="" title="Respostas com a atividade mais recente primeiro" data-value="active" data-shortcut="A">
+            ativas</a>
+        <a href="https://pt.stackoverflow.com/questions/97138/qual-%c3%a9-a-finalidade-do-void-em-c?answertab=oldest#tab-top" data-nav-xhref="" title="Respostas na ordem em que foram fornecidas" data-value="oldest" data-shortcut="O">
+            mais antigas</a>
+        <a class="youarehere " href="https://pt.stackoverflow.com/questions/97138/qual-%c3%a9-a-finalidade-do-void-em-c?answertab=votes#tab-top" data-nav-xhref="" title="Respostas com a pontuação mais alta primeiro" data-value="votes" data-shortcut="V">
+            votos</a>
+    </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+  
+<a name="97148"></a>
+<div id="answer-97148" class="answer accepted-answer" data-answerid="97148" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="vote">
+        <input name="_id_" value="97148" type="hidden">
+        <a class="vote-up-off" title="Esta resposta é útil">votar a favor</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">27</span>
+        <a class="vote-down-off" title="Esta resposta não é útil">votar contra</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="carregando quando esta resposta foi aceita...">aceitos</span>
+
+</div>
+
+            </div>
+            
+
+
+<div class="answercell post-layout--right">
+    <div class="post-text" itemprop="text">
+<p>O retorno <code>void</code> significa ausência de retorno. Já um tipo <code>void *</code>
+ significa um ponteiro genérico, um ponteiro de um tipo desconhecido ou 
+não especificado, um ponteiro para qualquer coisa, um endereço de 
+memória qualquer.</p>
+
+<p>Eles aparecem bastante na linguagem C, embora nem sempre o programador os perceba. Por exemplo, a função <code>malloc</code> retorna um ponteiro do tipo <code>void *</code>:</p>
+
+<pre class="lang-c prettyprint prettyprinted" style=""><code><span class="typ">int</span><span class="pln"> </span><span class="pun">*</span><span class="pln">meu_numero </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="typ">int</span><span class="pln"> </span><span class="pun">*)</span><span class="pln"> malloc</span><span class="pun">(</span><span class="kwd">sizeof</span><span class="pun">(</span><span class="typ">int</span><span class="pun">));</span></code></pre>
+
+<p>Aqui, o retorno de <code>malloc</code> é do tipo <code>void *</code>. O cast para <code>int *</code>
+ é necessário para que você diga ao verificador de tipos do compilador 
+para considerar que o valor retornado (que o compilador vai saber ser <code>void *</code>) deve ser considerado como sendo um <code>int *</code>.
+ Neste caso, você recebe um ponteiro de tipo desconhecido e depois diz 
+para o compilador qual é o tipo. Uma prova disso, é que esse mesmo 
+código pode ser escrito de outra forma equivalente, denunciando o <code>void *</code>:</p>
+
+<pre class="lang-c prettyprint prettyprinted" style=""><code><span class="kwd">void</span><span class="pln"> </span><span class="pun">*</span><span class="pln">algum_ponteiro </span><span class="pun">=</span><span class="pln"> malloc</span><span class="pun">(</span><span class="kwd">sizeof</span><span class="pun">(</span><span class="typ">int</span><span class="pun">));</span><span class="pln">
+</span><span class="typ">int</span><span class="pln"> </span><span class="pun">*</span><span class="pln">meu_numero </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="typ">int</span><span class="pln"> </span><span class="pun">*)</span><span class="pln"> algum_ponteiro</span><span class="pun">;</span></code></pre>
+
+<p>O <code>void *</code> também pode aparecer como um parâmetro, tal como na função <code>free</code>. A função <code>free</code>
+ pode receber qualquer tipo de ponteiro, não importando qual é o tipo 
+exato do objeto que é apontado. Por causa disso o tipo do seu parâmetro 
+também é <code>void *</code>.</p>
+
+<p>Outras funções também usam ou produzem ponteiros do tipo <code>void *</code>,
+ em especial aquelas que trabalham com coisas na memória sem querer 
+saber exatamente que coisas são essas, e sim apenas que se trata de 
+alguma região na memória. Exemplo de funções como essa são a <code>fread</code>, <code>fwrite</code>, <code>memset</code>, entre muitas outras.</p>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://pt.stackoverflow.com/a/97148" title="permalink curto para esta resposta" class="short-link" id="link-post-97148">compartilhar</a><span class="lsep">|</span><a href="https://pt.stackoverflow.com/posts/97148/edit" class="suggest-edit-post" title="">melhorar esta resposta</a></div>                    </div>
+    <div class="post-signature grid--cell fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="https://pt.stackoverflow.com/posts/97148/revisions" title="mostrar todas as edições desta publicação">editada <span title="2015-11-30 02:13:36Z" class="relativetime">30/11/15 às 2:13</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        respondida <span title="2015-11-09 15:16:46Z" class="relativetime">9/11/15 às 15:16</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://pt.stackoverflow.com/users/132/victor-stafusa"><div class="gravatar-wrapper-32"><img src="ponteiro%20-%20Qual%20%C3%A9%20a%20finalidade%20do%20void%20em%20C%3F%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_files/526d2a72f963ccc832e565e7e1043e9b.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://pt.stackoverflow.com/users/132/victor-stafusa">Victor Stafusa</a>
+        <div class="-flair">
+            <span class="reputation-score" title="pontos de reputação 45.687" dir="ltr">45,7mil</span><span title="6 medalhas de ouro"><span class="badge1"></span><span class="badgecount">6</span></span><span title="66 medalhas de prata"><span class="badge2"></span><span class="badgecount">66</span></span><span title="129 medalhas de bronze"><span class="badge3"></span><span class="badgecount">129</span></span>
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+</div>
+    
+    <div class="post-layout--right">
+	    <div id="comments-97148" class="comments js-comments-container ">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <li id="comment-196954" class="comment js-comment " data-comment-id="196954">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="número de votos para 'comentários úteis' recebidos" class="cool">4</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">+1. Apenas um detalhe: não é 
+uma boa prática fazer cast do retorno do malloc em C, apesar de ser 
+obrigatório em C++. Uma boa argumentação aqui (em inglês): <a href="http://stackoverflow.com/a/605858/1796236">stackoverflow.com/a/605858/1796236</a></span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/26404/pablo-almeida" title="4.633 reputation" class="comment-user">Pablo Almeida</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment196954_97148"><span title="2015-11-09 15:22:35Z" class="relativetime-clean">9/11/15 às 15:22</span></a></span>
+                        <span class="edited-yes" title="Este comentário foi editado 1 vez"></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-196958" class="comment js-comment " data-comment-id="196958">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@Pablo Sim, excelente observação.</span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/132/victor-stafusa" title="45.687 reputation" class="comment-user">Victor Stafusa</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment196958_97148"><span title="2015-11-09 15:25:50Z" class="relativetime-clean">9/11/15 às 15:25</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-197008" class="comment js-comment " data-comment-id="197008">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="número de votos para 'comentários úteis' recebidos" class="cool">1</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Obrigado pela explicação, vou ter muita informação boa a respeito do void.</span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/27190/gato" title="8.789 reputation" class="comment-user owner">gato</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment197008_97148"><span title="2015-11-09 16:50:12Z" class="relativetime-clean">9/11/15 às 16:50</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+            </ul>
+	    </div>
+
+        <div id="comments-link-97148" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comentários para pedir mais informações ou sugerir melhorias. Evite comentários como “+1” ou “obrigado”.">comentar</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="ver todos os comentários desta publicação" href="#" onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+<div id="dfp-mlb" class="everyonelovesstackoverflow everyoneloves__mid-leaderboard" style="display: none;" data-google-query-id="CPLlsfWM39sCFcPT4QodT9MAJQ" data-clc-prefilled="true" data-clc-ready="true"><div id="google_ads_iframe_/248424177/pt.stackoverflow.com/mlb/question-pages_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/248424177/pt.stackoverflow.com/mlb/question-pages_0" title="3rd party ad content" name="google_ads_iframe_/248424177/pt.stackoverflow.com/mlb/question-pages_0" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom;" srcdoc="" width="728" height="90" frameborder="0"></iframe></div></div>
+  
+<a name="97143"></a>
+<div id="answer-97143" class="answer" data-answerid="97143" itemscope="" itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="vote">
+        <input name="_id_" value="97143" type="hidden">
+        <a class="vote-up-off" title="Esta resposta é útil">votar a favor</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">16</span>
+        <a class="vote-down-off" title="Esta resposta não é útil">votar contra</a>
+
+
+
+
+</div>
+
+            </div>
+            
+
+
+<div class="answercell post-layout--right">
+    <div class="post-text" itemprop="text">
+<p>O <code>void *</code> estritamente significa um ponteiro para nada. 
+Mas ele é melhor interpretado como ponteiro para qualquer coisa. Ou 
+seja, esta é uma forma de generalizar um tipo, de deixar de especificar o
+ tipo.</p>
+
+<p>Quando usa ele, significa que você pode trabalhar com qualquer tipo 
+de dado ali. Ele simplesmente aponta para um endereço de memória e é 
+problema do programador que receberá isto saber tratar de forma adequada
+ e provavelmente fazer um <em>cast</em> para o tipo desejado, de forma 
+compatível com o que tem lá. Obviamente tragédias podem acontecer se 
+tentar acessar de forma inadequada.</p>
+
+<p>É preciso cuidado quando usa ele porque perde uma das vantagens do C.
+ É uma forma de criar dinamismo em uma linguagem estaticamente tipada. 
+Também é uma forma de polimorfismo.</p>
+
+<p>Note que você está retornando um ponteiro.</p>
+
+<pre class="lang-c prettyprint prettyprinted" style=""><code><span class="typ">int</span><span class="pln"> x</span><span class="pun">;</span><span class="pln">
+</span><span class="typ">float</span><span class="pln"> y</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">char</span><span class="pln"> </span><span class="pun">*</span><span class="pln"> z</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">void</span><span class="pln"> </span><span class="pun">*</span><span class="pln"> var</span><span class="pun">;</span><span class="pln">
+var </span><span class="pun">=</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln">x</span><span class="pun">;</span><span class="pln">
+var </span><span class="pun">=</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln">y</span><span class="pun">;</span><span class="pln">
+var </span><span class="pun">=</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln">z</span><span class="pun">;</span><span class="pln"> </span><span class="com">//ou dependo da intenção: var = z;</span></code></pre>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://pt.stackoverflow.com/a/97143" title="permalink curto para esta resposta" class="short-link" id="link-post-97143">compartilhar</a><span class="lsep">|</span><a href="https://pt.stackoverflow.com/posts/97143/edit" class="suggest-edit-post" title="">melhorar esta resposta</a></div>                    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        respondida <span title="2015-11-09 15:05:27Z" class="relativetime">9/11/15 às 15:05</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://pt.stackoverflow.com/users/101/maniero"><div class="gravatar-wrapper-32"><img src="ponteiro%20-%20Qual%20%C3%A9%20a%20finalidade%20do%20void%20em%20C%3F%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_files/jmxoN.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://pt.stackoverflow.com/users/101/maniero">Maniero</a><span class="mod-flair" title="moderador">♦</span>
+        <div class="-flair">
+            <span class="reputation-score" title="pontos de reputação 274.139" dir="ltr">274mil</span><span title="45 medalhas de ouro"><span class="badge1"></span><span class="badgecount">45</span></span><span title="681 medalhas de prata"><span class="badge2"></span><span class="badgecount">681</span></span><span title="1049 medalhas de bronze"><span class="badge3"></span><span class="badgecount">1049</span></span>
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+</div>
+    
+    <div class="post-layout--right">
+	    <div id="comments-97143" class="comments js-comments-container ">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <li id="comment-197009" class="comment js-comment " data-comment-id="197009">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Obrigado pela explicação @bigown.</span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/27190/gato" title="8.789 reputation" class="comment-user owner">gato</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment197009_97143"><span title="2015-11-09 16:50:38Z" class="relativetime-clean">9/11/15 às 16:50</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+            </ul>
+	    </div>
+
+        <div id="comments-link-97143" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comentários para pedir mais informações ou sugerir melhorias. Evite comentários como “+1” ou “obrigado”.">comentar</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="ver todos os comentários desta publicação" href="#" onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+
+  
+<a name="97150"></a>
+<div id="answer-97150" class="answer" data-answerid="97150" itemscope="" itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="vote">
+        <input name="_id_" value="97150" type="hidden">
+        <a class="vote-up-off" title="Esta resposta é útil">votar a favor</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">10</span>
+        <a class="vote-down-off" title="Esta resposta não é útil">votar contra</a>
+
+
+
+
+</div>
+
+            </div>
+            
+
+
+<div class="answercell post-layout--right">
+    <div class="post-text" itemprop="text">
+<p>Ponteiros <code>void*</code> precedem C++ e <em>templates</em> como um mecanismo para lidar com tipos "genéricos" em C. Para ser mais específico <code>void</code> representa a ausência de tipo, que pode ser entendida como a presença de qualquer tipo. 
+Como você já descobriu, é possível atribuir um <code>int</code>, <code>char</code> ou qualquer outro tipo a um <code>void*</code>. </p>
+
+<p>Com <code>void*</code> funções que não precisam saber os detalhes do tipo podem fazer seu trabalho. O programador, que conhece o tipo, pode fazer os <em>casts</em>
+ necessários quando necessário... Veja que ausência de tipos basicamente
+ coloca a responsabilidade sobre tipagem nas costas do programador .</p>
+
+<h1>Por que isso é útil?</h1>
+
+<p>Um dos melhores exemplos de uso de <code>void*</code> é a função <code>qsort</code>, cuja assinatura é:</p>
+
+<pre class="lang-c prettyprint prettyprinted" style=""><code><span class="kwd">void</span><span class="pln"> qsort </span><span class="pun">(</span><span class="kwd">void</span><span class="pun">*</span><span class="pln"> base</span><span class="pun">,</span><span class="pln"> </span><span class="typ">size_t</span><span class="pln"> num</span><span class="pun">,</span><span class="pln"> </span><span class="typ">size_t</span><span class="pln"> size</span><span class="pun">,</span><span class="pln">
+            </span><span class="typ">int</span><span class="pln"> </span><span class="pun">(*</span><span class="pln">compar</span><span class="pun">)(</span><span class="kwd">const</span><span class="pln"> </span><span class="kwd">void</span><span class="pun">*,</span><span class="kwd">const</span><span class="pln"> </span><span class="kwd">void</span><span class="pun">*));</span></code></pre>
+
+<p>Com o <code>qsort</code> podemos ordenar um array <code>base</code> de qualquer tipo. Você só precisa definir uma função do tipo <code>int compar (const void* p1, const void* p2)</code> capaz de comparar os tipos do array <code>base</code>.</p>
+
+<p>Exemplo:</p>
+
+<pre class="lang-c prettyprint prettyprinted" style=""><code><span class="typ">int</span><span class="pln"> compare </span><span class="pun">(</span><span class="kwd">const</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> </span><span class="pun">*</span><span class="pln"> a</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">const</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> </span><span class="pun">*</span><span class="pln"> b</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> </span><span class="pun">*(</span><span class="typ">int</span><span class="pun">*)</span><span class="pln">a </span><span class="pun">-</span><span class="pln"> </span><span class="pun">*(</span><span class="typ">int</span><span class="pun">*)</span><span class="pln">b </span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="com">//...</span><span class="pln">
+</span><span class="typ">int</span><span class="pln"> values</span><span class="pun">[]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="lit">40</span><span class="pun">,</span><span class="pln"> </span><span class="lit">10</span><span class="pun">,</span><span class="pln"> </span><span class="lit">100</span><span class="pun">,</span><span class="pln"> </span><span class="lit">90</span><span class="pun">,</span><span class="pln"> </span><span class="lit">20</span><span class="pun">,</span><span class="pln"> </span><span class="lit">25</span><span class="pln"> </span><span class="pun">};</span><span class="pln">
+qsort </span><span class="pun">(</span><span class="pln">values</span><span class="pun">,</span><span class="pln"> </span><span class="lit">6</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">sizeof</span><span class="pun">(</span><span class="typ">int</span><span class="pun">),</span><span class="pln"> compare</span><span class="pun">);</span></code></pre>
+
+<p>Você poderia ter um método para comparar <code>char*</code>, ou quem sabe para um tipo específico de <code>struct</code> ou qualquer outra coisa. Graças a ponteiros <code>void</code> a função <code>qsort</code> é "genérica".</p>
+
+<h1>Mas e funções que retornam ponteiros void*?</h1>
+
+<p>A ideia é a mesma. APIs genéricas podem funcionar com múltiplos tipos de retorno. Um bom exemplo são o par de funções <code>int pthread_setspecific(pthread_key_t key, const void *value)</code> e <code>void *pthread_getspecific(pthread_key_t key)</code> do <a href="http://pubs.opengroup.org/onlinepubs/007908799/xsh/pthread.h.html"><code>pthreads.h</code></a>. Você pode armazenar e recuperar qualquer tipo de valor graças ao uso de <code>void*</code>.</p>
+
+<p>Outro bons exemplos são as funções **alloc* como bem mencionado nas 
+respostas anteriores. Em c você não precisa e nem deve fazer <em>cast</em> do resultado de <code>malloc</code> (isso mudou no C++):</p>
+
+<pre class="lang-c prettyprint prettyprinted" style=""><code><span class="com">// C</span><span class="pln">
+</span><span class="typ">int</span><span class="pln"> </span><span class="pun">*</span><span class="pln">arr</span><span class="pun">=</span><span class="pln"> malloc</span><span class="pun">(</span><span class="kwd">sizeof</span><span class="pun">(</span><span class="typ">int</span><span class="pun">)*</span><span class="pln">length</span><span class="pun">);</span><span class="pln">
+</span><span class="com">// C++ escrito para ser compatível com C</span><span class="pln">
+</span><span class="typ">int</span><span class="pln"> </span><span class="pun">*</span><span class="pln">arr</span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="typ">int</span><span class="pln"> </span><span class="pun">*)</span><span class="pln">malloc</span><span class="pun">(</span><span class="kwd">sizeof</span><span class="pun">(</span><span class="typ">int</span><span class="pun">)*</span><span class="pln">length</span><span class="pun">);</span><span class="pln">
+</span><span class="com">// C++ "de verdade"</span><span class="pln">
+</span><span class="typ">int</span><span class="pln"> </span><span class="pun">*</span><span class="pln">arr</span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">int</span><span class="pun">[</span><span class="pln">length</span><span class="pun">];</span><span class="pln">
+</span><span class="com">// C++11 - Melhor ainda, esqueça o delete</span><span class="pln">
+std</span><span class="pun">::</span><span class="pln">unique_ptr</span><span class="pun">&lt;</span><span class="typ">int</span><span class="pun">[]&gt;</span><span class="pln"> arr</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">int</span><span class="pun">[</span><span class="lit">10</span><span class="pun">]);</span></code></pre>
+
+<hr>
+
+<ul>
+<li><a href="http://www.cplusplus.com/reference/cstdlib/qsort/">http://www.cplusplus.com/ - qsort</a></li>
+<li><a href="http://pubs.opengroup.org/onlinepubs/007908799/xsh/pthread_getspecific.html">Open Group - pthread_setspecific</a></li>
+</ul>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://pt.stackoverflow.com/a/97150" title="permalink curto para esta resposta" class="short-link" id="link-post-97150">compartilhar</a><span class="lsep">|</span><a href="https://pt.stackoverflow.com/posts/97150/edit" class="suggest-edit-post" title="">melhorar esta resposta</a></div>                    </div>
+    <div class="post-signature grid--cell fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="https://pt.stackoverflow.com/posts/97150/revisions" title="mostrar todas as edições desta publicação">editada <span title="2015-11-09 16:16:20Z" class="relativetime">9/11/15 às 16:16</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        respondida <span title="2015-11-09 15:44:50Z" class="relativetime">9/11/15 às 15:44</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://pt.stackoverflow.com/users/100/anthony-accioly"><div class="gravatar-wrapper-32"><img src="ponteiro%20-%20Qual%20%C3%A9%20a%20finalidade%20do%20void%20em%20C%3F%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_files/2e1542fe164f8abf326960e219127ac9.jpeg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://pt.stackoverflow.com/users/100/anthony-accioly">Anthony Accioly</a>
+        <div class="-flair">
+            <span class="reputation-score" title="pontos de reputação 15.647" dir="ltr">15,6mil</span><span title="2 medalhas de ouro"><span class="badge1"></span><span class="badgecount">2</span></span><span title="30 medalhas de prata"><span class="badge2"></span><span class="badgecount">30</span></span><span title="82 medalhas de bronze"><span class="badge3"></span><span class="badgecount">82</span></span>
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+</div>
+    
+    <div class="post-layout--right">
+	    <div id="comments-97150" class="comments js-comments-container ">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <li id="comment-197012" class="comment js-comment " data-comment-id="197012">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Obrigado pela explicação, assim que eu chegar da faculdade eu vou analisar melhor o conteúdo.</span>
+                    –&nbsp;<a href="https://pt.stackoverflow.com/users/27190/gato" title="8.789 reputation" class="comment-user owner">gato</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment197012_97150"><span title="2015-11-09 16:51:55Z" class="relativetime-clean">9/11/15 às 16:51</span></a></span>
+                        <span class="edited-yes" title="Este comentário foi editado 1 vez"></span>
+                                                                            </div>
+        </div>
+    </li>
+            </ul>
+	    </div>
+
+        <div id="comments-link-97150" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comentários para pedir mais informações ou sugerir melhorias. Evite comentários como “+1” ou “obrigado”.">comentar</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="ver todos os comentários desta publicação" href="#" onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+                                    <a name="new-answer"></a>
+                        <form id="post-form" action="/questions/97138/answer/submit" method="post" class="post-form">
+                            <input id="post-id" value="97138" type="hidden">
+                            <input id="qualityBanWarningShown" name="qualityBanWarningShown" value="false" type="hidden">
+                            <input name="referrer" value="https://www.google.com/" type="hidden">
+                            <h2 class="space">Sua resposta</h2>
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        var channelOptions = {
+            tags: "".split(" "),
+            id: "526"
+        };
+        initTagRenderer("".split(" "), "".split(" "), channelOptions);
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.settings.snippets.snippetsEnabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                StackExchange.prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: false,
+                noModals: false,
+                showLowRepImageUploadWarning: true,
+                reputationToPostImages: null,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor wz-element" data-wz-state="3,4,5,6,7,8">
+
+    <div style="position: relative;"> 
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li><li class="wmd-spacer wmd-spacer-max"></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input wz-element" name="post-text" cols="92" rows="15" tabindex="101" data-wz-state="8" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">rascunho salvo</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">rascunho descartado</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="06429704a6711243a60c2f7d47eaa4aefb56d05fb44bc4ca37b4c5799c4bbad4" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+
+                            <div style="position: relative;">
+                                
+                                            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Registre-se ou faça <a id="login-link" href="https://pt.stackoverflow.com/users/login?ssrc=question_page&amp;returnurl=https%3a%2f%2fpt.stackoverflow.com%2fquestions%2f97138%2fqual-%25c3%25a9-a-finalidade-do-void-em-c%23new-answer">log-in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login" data-ga="[&quot;sign up&quot;,&quot;Sign Up Started - Google&quot;,&quot;New Post&quot;,null,null]">
+                            <svg aria-hidden="true" class="svg-icon native iconGoogle" width="18" height="18" viewBox="0 0 18 18"><g><path d="M16.51 8H8.98v3h4.3c-.18 1-.74 1.48-1.6 2.04v2.01h2.6a7.8 7.8 0 0 0 2.38-5.88c0-.57-.05-.66-.15-1.18z" fill="#4285F4"></path><path d="M8.98 17c2.16 0 3.97-.72 5.3-1.94l-2.6-2a4.8 4.8 0 0 1-7.18-2.54H1.83v2.07A8 8 0 0 0 8.98 17z" fill="#34A853"></path><path d="M4.5 10.52a4.8 4.8 0 0 1 0-3.04V5.41H1.83a8 8 0 0 0 0 7.18l2.67-2.07z" fill="#FBBC05"></path><path d="M8.98 4.18c1.17 0 2.23.4 3.06 1.2l2.3-2.3A8 8 0 0 0 1.83 5.4L4.5 7.49a4.77 4.77 0 0 1 4.48-3.3z" fill="#EA4335"></path></g></svg> Registre-se usando o Google
+                        </div>
+                        <div class="preferred-login facebook-login" data-ga="[&quot;sign up&quot;,&quot;Sign Up Started - Facebook&quot;,&quot;New Post&quot;,null,null]">
+                            <svg aria-hidden="true" class="svg-icon iconFacebook" width="18" height="18" viewBox="0 0 18 18"><path d="M1.88 1C1.4 1 1 1.4 1 1.88v14.24c0 .48.4.88.88.88h7.67v-6.2H7.46V8.4h2.09V6.61c0-2.07 1.26-3.2 3.1-3.2.88 0 1.64.07 1.87.1v2.16h-1.29c-1 0-1.19.48-1.19 1.18V8.4h2.39l-.31 2.42h-2.08V17h4.08c.48 0 .88-.4.88-.88V1.88c0-.48-.4-.88-.88-.88H1.88z" fill="#3C5A96"></path></svg> Registre-se usando o Facebook
+                        </div>
+                        <div class="preferred-login stackexchange-login" data-ga="[&quot;sign up&quot;,&quot;Sign Up Navigation&quot;,&quot;New Post&quot;,null,null]">
+                            <svg aria-hidden="true" class="svg-icon native iconLogoGlyphXSm" width="18" height="18" viewBox="0 0 18 18"><g><path fill="#BCBBBB" d="M14 16v-5h2v7H2v-7h2v5z"></path><path d="M5 15v-2h8v2H5zM12.09.72l4.5 6.06-1.2.9-4.51-6.06 1.21-.9zM8.34 4.3l.97-1.16 5.8 4.83-.96 1.16-5.8-4.83zm-1.9 3.36l.64-1.37 6.85 3.19-.63 1.37-6.85-3.2zM5.4 11.39l.38-1.67 7.42 1.48-.22 1.46-7.58-1.27z" fill="#F48024"></path></g></svg> Registre-se usando Email e Senha
+                        </div>
+                    </div>
+                    <input name="manual-openid" class="manual-openid" type="hidden">
+                    <input name="use-facebook" class="use-facebook" value="false" type="hidden">
+                    <input name="use-google" class="use-google" value="false" type="hidden">
+                    <input class="submit-openid" value="Submit" style="display:none" type="button">
+                    <div class="new-login-right">
+                                <h3>Publicar como convidado</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Nome</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">E-mail</label>
+                    <input id="m-address" name="m-address" size="30" maxlength="100" tabindex="106" placeholder="exigido, mas nunca exibido" type="email">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'https%3a%2f%2fpt.stackoverflow.com%2fquestions%2f97138%2fqual-%25c3%25a9-a-finalidade-do-void-em-c%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3>Publicar como convidado</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Nome</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">E-mail</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="exigido, mas nunca exibido" />
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+            </noscript>
+
+                            </div>
+
+                                                            <div class="form-submit cbt">
+                                            <input id="submit-button" value="Publique sua resposta" tabindex="110" type="submit">
+                                        <a href="#" class="btn-clear discard-answer dno">descartar</a>
+                                                                            <p class="privacy-policy-agreement">
+                                            
+
+By clicking "Publique sua resposta", you acknowledge that you have read our updated <a href="https://stackoverflow.com/legal/terms-of-service/public" name="tos" target="_blank" class="-link">terms of service</a>, <a href="https://stackoverflow.com/legal/privacy-policy" name="privacy" target="_blank" class="-link">privacy policy</a> and <a href="https://stackoverflow.com/legal/cookie-policy" name="cookie" target="_blank" class="-link">cookie policy</a>, and that your continued use of the website is subject to these policies.
+
+<input name="legalLinksShown" value="1" type="hidden">
+                                        </p>
+                                </div>
+                        </form>
+
+
+
+                        <h2 class="bottom-notice" data-loc="1">
+Esta não é a resposta que você está procurando?                            Pesquise outras perguntas com a tag <a href="https://pt.stackoverflow.com/questions/tagged/c" class="post-tag" title="mostrar perguntas com a tag 'c'" rel="tag">c</a> <a href="https://pt.stackoverflow.com/questions/tagged/ponteiro" class="post-tag" title="mostrar perguntas com a tag 'ponteiro'" rel="tag">ponteiro</a> <a href="https://pt.stackoverflow.com/questions/tagged/tipagem" class="post-tag" title="mostrar perguntas com a tag 'tipagem'" rel="tag">tipagem</a> <a href="https://pt.stackoverflow.com/questions/tagged/void" class="post-tag" title="mostrar perguntas com a tag 'void'" rel="tag">void</a>  ou <a href="https://pt.stackoverflow.com/questions/ask">faça sua própria pergunta</a>.                        </h2>
+            </div>
+        </div>
+                <div id="sidebar" class="show-votes" role="complementary" aria-label="barra lateral">
+                            <div class="module question-stats">
+                    <table id="qinfo">
+                        <tbody><tr>
+                            <td>
+                                <p class="label-key">perguntada</p>
+                            </td>
+                            <td style="padding-left: 10px">
+                                <p class="label-key" title="2015-11-09 14:54:14Z"><b>2 anos, 7 meses atrás</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="label-key">acessada</p>
+                            </td>
+
+                            <td style="padding-left: 10px">
+                                <p class="label-key">
+                                    <b>18.634 vezes</b>
+                                </p>
+                            </td>
+                        </tr>
+                            <tr>
+                                <td>
+                                    <p class="label-key">ativas</p>
+                                </td>
+                                <td style="padding-left: 10px">
+                                    <p class="label-key"><b><a href="https://pt.stackoverflow.com/questions/97138/qual-%C3%A9-a-finalidade-do-void-em-c?lastactivity" class="lastactivity-link" title="2016-12-05 12:43:29Z">1 ano, 6 meses atrás</a></b></p>
+                                </td>
+                            </tr>
+                    </tbody></table>
+                </div>
+            
+            
+<div id="dfp-tsb" class="everyonelovesstackoverflow everyoneloves__top-sidebar" style="display: none;" data-google-query-id="CPPlsfWM39sCFcPT4QodT9MAJQ" data-clc-prefilled="true" data-clc-ready="true"><div id="google_ads_iframe_/248424177/pt.stackoverflow.com/sb/question-pages_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/248424177/pt.stackoverflow.com/sb/question-pages_0" title="3rd party ad content" name="google_ads_iframe_/248424177/pt.stackoverflow.com/sb/question-pages_0" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom;" srcdoc="" width="300" height="250" frameborder="0"></iframe></div></div>
+<script>;try{(function(a){function b(a){return'string'==typeof a?document.getElementById(a):a}function c(a){return a=b(a),!!a&&'none'===getComputedStyle(a).display}function d(a){return!c(a)}function e(a){return!!a}function f(a){return /^\s*$/.test(b(a).innerHTML)}function g(a){var b=a.style;b.height=b.maxHeight=b.minHeight='auto',b.display='none',[].forEach.call(a.children,g)}function h(a,b){var c;return function(){return a&&(c=a.call(b||this,arguments),a=null),c}}function i(a){var b=document.createElement('script');b.src=a,document.body.appendChild(b)}function j(a){return k([],a)}function k(a,b){return a.push=function(a){return b(),delete this.push,this.push(a)},a}function l(){try{return!new Function('return async()=>{};')}catch(a){return!0}}function m(){return'undefined'!=typeof googletag&&!!googletag.apiReady}function n(){m()||(googletag={cmd:j(A)})}function o(){var a=document.createElement('div');a.className='adsbox',a.id='clc-abd',a.style.position='absolute',a.style.pointerEvents='none',a.innerHTML='&nbsp;',document.body.appendChild(a)}function p(a){var b=a.serviceName,c=a.slot,d=a.lineItemId;try{var e=c.getSlotElementId(),f=[];e||f.push('id=0');var h=document.getElementById(e);if(!e||h?h.hasAttribute('data-clc-stalled')&&f.push('st=1'):f.push('el=0'),0!==f.length)return void B(f.join('&'));-1===x.dh.indexOf(d)?h.setAttribute('data-clc-prefilled','true'):g(h),h.setAttribute('data-clc-ready','true')}catch(a){var i=document.querySelector('#dfp-tsb, #dfp-isb, #clc-tsb');i&&i.setAttribute('data-clc-ready','true'),B('e=1')}}function q(){return Object.keys(F.ids)}function r(a){var b=F.ids[a],c=F.slots[b];'function'==typeof c&&(c=c(a));return{path:'/'+C+'/'+E+'/'+b+'/'+D,sizes:c,zone:b}}function s(a){return!(clc.collapse&&void 0!==clc.collapse[a])||!!clc.collapse[a]}function t(a,b){'dfp-isb'===a&&b.setTargeting('Sidebar',['Inline']),'dfp-tsb'===a&&b.setTargeting('Sidebar',['Right']);var c=r(a),d=c.path,e=c.sizes,f=c.zone,g=googletag.defineSlot(d,e,a);s(f)&&g.setCollapseEmptyDiv(!0,!0),g.addService(b),!1}function u(b){var c=a.dfp&&a.dfp.targeting||{};Object.keys(c).forEach(function(a){b.setTargeting(a,c[a])})}function v(a){var g=a.map(b).filter(e);return{eligible:g.filter(f).filter(d).map(function(a){return a.id}),ineligible:g.filter(c)}}function w(b){if(void 0===b&&(b=q()),!m())return n(),void googletag.cmd.push(function(){return w(b)});var c=v(b),d=c.eligible,e=c.ineligible;if(e.forEach(g),0!==d.length){o(),googletag.destroySlots();var f=googletag.pubads();f.enableSingleRequest(),a.sreEvent||(f.addEventListener('slotRenderEnded',p),a.sreEvent=!0),u(f),d.forEach(function(a){return t(a,f)}),googletag.enableServices(),d.forEach(function(a){googletag.display(a)})}}var x=function(a){for(var b=[],c=1;c<arguments.length;c++)b[c-1]=arguments[c];for(var d,e=0,f=b;e<f.length;e++)for(var g in d=f[e],d)a[g]=d[g];return a}({"lib":"https://cdn.sstatic.net/clc/clc.min.js?v=04d772c81312","style":"https://cdn.sstatic.net/clc/styles/clc.min.css?v=8a0a093a431f","u":"https://clc.stackoverflow.com/markup.js","wa":true,"kt":2000,"tto":true,"h":"clc.stackoverflow.com","allowed":"^(((talent\\.)?stackoverflow)|(blog\\.codinghorror)|(serverfault|askubuntu)|([^\\.]+\\.stackexchange))\\.com$","wv":true,"al":false,"dh":[4385506061,4386578282,4386579572]},a.options||{}),y=h(function(){i(l()?x.lib.replace(/(\.min)?\.js(\?v=[0-9a-fA-F]+)?$/,'.ie$1.js$2'):x.lib)}),z=a.cmd||[];Array.isArray(z)&&(0<z.length?y():k(z,y));var A=h(function(){i('https://www.googletagservices.com/tag/js/gpt.js')}),B=function(a){new Image().src='https://'+x.h+'/stalled.gif?'+a},C='248424177',D=/^\/tags\//.test(location.pathname)||/^\/questions\/tagged\//.test(location.pathname)?'tag-pages':'question-pages',E=location.hostname;var F={slots:{lb:[[728,90]],mlb:[[728,90]],sb:function(a){return'dfp-tsb'===a?[[300,250],[300,600]]:[[300,250]]},"tag-sponsorship":[[730,135]],"mobile-below-question":[[320,50],[300,250]]},ids:{"dfp-tlb":'lb',"dfp-mlb":'mlb',"dfp-tsb":'sb',"dfp-isb":'sb',"dfp-tag":'tag-sponsorship',"dfp-m-aq":'mobile-below-question',"clc-tlb":'lb',"clc-mlb":'mlb',"clc-tsb":'sb'}};(function(){x.al&&z.push(function(){return a.load()})})(),n();a.cmd=z,a.dfp={load:w},a.options=x})(this.clc=this.clc||{})}catch(a){window.console.error(a)}</script>            <script>
+                var clc = clc || {};
+                clc.collapse = { sb: !0,'tag-sponsorship':!0,lb:!0,mlb:!0,'mobile-below-question':!0};
+                                clc.dfp = clc.dfp || {};
+                clc.dfp.targeting = {Registered:['false'],'pt.so-tag':['c','ponteiro','tipagem','void']};
+                
+                var googletag = googletag || {};
+                googletag.cmd = googletag.cmd || [];
+                googletag.cmd.push(function () { clc.dfp.load(); });
+            </script>
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Vinculado</h4>
+	<div class="linked" data-tracker="lq=1">
+
+<div class="spacer">
+	<a href="https://pt.stackoverflow.com/q/158549?lq=1" title="Contagem de votos (a favor - contra)">
+		<div class="answer-votes  default">1</div>
+	</a>
+	<a href="https://pt.stackoverflow.com/questions/158549/diferen%c3%a7a-entre-void-e-void?noredirect=1&amp;lq=1" class="question-hyperlink">Diferença entre void e void*</a>
+</div>
+<div class="spacer">
+	<a href="https://pt.stackoverflow.com/q/21508?lq=1" title="Contagem de votos (a favor - contra)">
+		<div class="answer-votes answered-accepted default">75</div>
+	</a>
+	<a href="https://pt.stackoverflow.com/questions/21508/qual-a-diferen%c3%a7a-entre-uma-linguagem-de-programa%c3%a7%c3%a3o-est%c3%a1tica-e-din%c3%a2mica?noredirect=1&amp;lq=1" class="question-hyperlink">Qual a diferença entre uma linguagem de programação estática e dinâmica?</a>
+</div>
+<div class="spacer">
+	<a href="https://pt.stackoverflow.com/q/138582?lq=1" title="Contagem de votos (a favor - contra)">
+		<div class="answer-votes answered-accepted default">12</div>
+	</a>
+	<a href="https://pt.stackoverflow.com/questions/138582/qual-a-finalidade-do-parametro-void-em-fun%c3%a7%c3%b5es-na-linguagem-c?noredirect=1&amp;lq=1" class="question-hyperlink">Qual a finalidade do parametro void em funções na linguagem C?</a>
+</div>
+<div class="spacer">
+	<a href="https://pt.stackoverflow.com/q/156278?lq=1" title="Contagem de votos (a favor - contra)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="https://pt.stackoverflow.com/questions/156278/operador-e-nas-fun%c3%a7%c3%b5es?noredirect=1&amp;lq=1" class="question-hyperlink">Operador &amp; e * nas funções</a>
+</div>
+<div class="spacer">
+	<a href="https://pt.stackoverflow.com/q/210482?lq=1" title="Contagem de votos (a favor - contra)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="https://pt.stackoverflow.com/questions/210482/como-passar-esse-par%c3%a2metro-para-um-fun%c3%a7%c3%a3o-void?noredirect=1&amp;lq=1" class="question-hyperlink">Como passar esse parâmetro para um função void?</a>
+</div>			</div>
+</div>
+
+                <div class="module sidebar-related">
+                    <h4 id="h-related">Relacionado</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/16474?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes answered-accepted default">7</div></a><a href="https://pt.stackoverflow.com/questions/16474/significado-de-void?rq=1" class="question-hyperlink">Significado de (void *)</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/77418?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes answered-accepted default">13</div></a><a href="https://pt.stackoverflow.com/questions/77418/qual-finalidade-do-unsigned-no-c?rq=1" class="question-hyperlink">Qual finalidade do unsigned no C++</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/135880?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes answered-accepted default">5</div></a><a href="https://pt.stackoverflow.com/questions/135880/remo%c3%a7%c3%a3o-de-n%c3%bameros-aleat%c3%b3rios-em-%c3%a1rvore-avl?rq=1" class="question-hyperlink">Remoção de números aleatórios em árvore AVL</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/137773?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes default">0</div></a><a href="https://pt.stackoverflow.com/questions/137773/fun%c3%a7%c3%a3o-intcmpvoid-void?rq=1" class="question-hyperlink">Função int(*cmp)(void*,void*)</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/138582?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes answered-accepted default">12</div></a><a href="https://pt.stackoverflow.com/questions/138582/qual-a-finalidade-do-parametro-void-em-fun%c3%a7%c3%b5es-na-linguagem-c?rq=1" class="question-hyperlink">Qual a finalidade do parametro void em funções na linguagem C?</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/153483?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes answered-accepted default">0</div></a><a href="https://pt.stackoverflow.com/questions/153483/problema-quanto-ao-tipo-em-fun%c3%a7%c3%a3o-com-par%c3%a2metros-vari%c3%a1veis-em-c?rq=1" class="question-hyperlink">Problema quanto ao tipo em função com parâmetros variáveis em C</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/164705?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes answered-accepted default">2</div></a><a href="https://pt.stackoverflow.com/questions/164705/retornar-vari%c3%a1veis-locais-da-fun%c3%a7%c3%a3o?rq=1" class="question-hyperlink">Retornar variáveis locais da função</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/189566?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes default">0</div></a><a href="https://pt.stackoverflow.com/questions/189566/ponteiro-retornando-valor-de-memoria?rq=1" class="question-hyperlink">Ponteiro retornando valor de memoria</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/204532?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes answered-accepted default">5</div></a><a href="https://pt.stackoverflow.com/questions/204532/como-dividir-corretamente-um-n%c3%bamero-at%c3%a9-somente-um-digito-em-c?rq=1" class="question-hyperlink">Como dividir corretamente um número até somente um digito em C?</a></div><div class="spacer js-gps-track"><a href="https://pt.stackoverflow.com/q/266831?rq=1" title="Contagem de votos (a favor - contra)"><div class="answer-votes default">0</div></a><a href="https://pt.stackoverflow.com/questions/266831/cast-em-ponteiro-void?rq=1" class="question-hyperlink">Cast em ponteiro void</a></div>
+                    </div>
+                </div>
+
+
+
+<div id="feed-link">
+    <a href="https://pt.stackoverflow.com/feeds/question/97138" title="feed desta pergunta e suas respostas">
+        <svg aria-hidden="true" class="svg-icon fc-orange-400 iconRss" width="18" height="18" viewBox="0 0 18 18"><path d="M1 3c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3zm14.5 12C15.5 8.1 9.9 2.5 3 2.5V5a10 10 0 0 1 10 10h2.5zm-5 0A7.5 7.5 0 0 0 3 7.5V10a5 5 0 0 1 5 5h2.5zm-5 0A2.5 2.5 0 0 0 3 12.5V15h2.5z"></path></svg>
+        feed da pergunta
+    </a>
+</div>
+        </div>
+    </div>
+<script>StackExchange.ready(function(){$.get('/posts/97138/ivc/4d49');});</script>
+<noscript><div><img src="/posts/97138/ivc/4d49" class="dno" alt="" width="0" height="0"></div></noscript><div style="display:none" id="prettify-lang">lang-c</div></div>
+
+
+        </div>
+    </div><script src="ponteiro%20-%20Qual%20%C3%A9%20a%20finalidade%20do%20void%20em%20C%3F%20-%20Stack%20Overflow%20em%20Portugu%C3%AAs_files/gpt.js"></script>
+
+    <footer id="footer" class="site-footer js-footer" role="contentinfo">
+        <div class="site-footer--container">
+            
+            <nav class="site-footer--nav">
+                    <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+                        <h5 class="-title"><a href="https://pt.stackoverflow.com/">Stack Overflow em Português</a></h5>
+                        <ul class="-list js-primary-footer-links">
+                                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 2 })" href="https://pt.stackoverflow.com/tour">Tour</a></li>
+                                <li class="-item"><a href="https://pt.stackoverflow.com/help" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 3 })">Ajuda</a></li>
+                                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 5 })" href="https://chat.stackexchange.com/?tab=site&amp;host=pt.stackoverflow.com">Chat</a></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 13 })" href="https://pt.stackoverflow.com/contact">Contato</a></li>
+                                <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 14 })" href="https://pt.meta.stackoverflow.com/">Feedback</a></li>
+                                                            <li class="-item"><a onclick='StackExchange.switchMobile("on")' class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 12 })">Móvel</a></li>
+                        </ul>
+                    </div>
+                <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+                    <h5 class="-title"><a class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">Empresa</a></h5>
+                    <ul class="-list">
+                                                    <li class="-item"><a href="https://stackoverflow.com/" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 15})">Stack Overflow</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 19 })">Stack Overflow Business</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 17})">Developer Jobs</a></li>
+                                <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">Sobre</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 27 })" href="https://stackoverflow.com/company/press">Imprensa</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 7 })" href="https://stackoverflow.com/legal">Legal</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 8 })" href="https://stackoverflow.com/legal/privacy-policy">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="site-footer--col site-footer--categories-nav site-footer--col__visible">
+                    <a href="#" class="site-footer--back js-footer-back"><svg aria-hidden="true" class="svg-icon iconArrowLeftAlt" width="18" height="18" viewBox="0 0 18 18"><path d="M10.58 16L12 14.59 6.4 9 12 3.41 10.57 2l-7 7z"></path></svg></a>
+                    <div>
+                        <h5 class="-title"><a href="https://stackexchange.com/">Stack Exchange<br> Network</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Technology">Technology</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Life / Arts">Life / Arts</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Culture / Recreation">Culture / Recreation</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Science">Science</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Other">Other</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="site-footer--categories">
+                    <div class="site-footer--col site-footer--category js-footer-col" data-name="Technology">
+        <ul class="-list">
+                <li class="-item"><a href="https://stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                <li class="-item"><a href="https://serverfault.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="system and network administrators">Server Fault</a></li>
+                <li class="-item"><a href="https://superuser.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="computer enthusiasts and power users">Super User</a></li>
+                <li class="-item"><a href="https://webapps.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of web applications">Web Applications</a></li>
+                <li class="-item"><a href="https://askubuntu.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                <li class="-item"><a href="https://webmasters.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="pro webmasters">Webmasters</a></li>
+                <li class="-item"><a href="https://gamedev.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and independent game developers">Game Development</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://tex.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                <li class="-item"><a href="https://softwareengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professionals, academics, and students working within the systems development life cycle">Software Engineering</a></li>
+                <li class="-item"><a href="https://unix.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                <li class="-item"><a href="https://apple.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                <li class="-item"><a href="https://wordpress.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="WordPress developers and administrators">WordPress Development</a></li>
+                <li class="-item"><a href="https://gis.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                <li class="-item"><a href="https://electronics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://android.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                <li class="-item"><a href="https://security.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="information security professionals">Information Security</a></li>
+                <li class="-item"><a href="https://dba.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                <li class="-item"><a href="https://drupal.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Drupal developers and administrators">Drupal Answers</a></li>
+                <li class="-item"><a href="https://sharepoint.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="SharePoint enthusiasts">SharePoint</a></li>
+                <li class="-item"><a href="https://ux.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="user experience researchers and experts">User Experience</a></li>
+                <li class="-item"><a href="https://mathematica.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Wolfram Mathematica">Mathematica</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://salesforce.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                <li class="-item"><a href="https://expressionengine.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                <li class="-item"><a href="https://pt.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programadores profissionais e entusiastas">Stack Overflow em Português</a></li>
+                <li class="-item"><a href="https://blender.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who use Blender to create 3D graphics, animations, or games">Blender</a></li>
+                <li class="-item"><a href="https://networkengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="network engineers">Network Engineering</a></li>
+                <li class="-item"><a href="https://crypto.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="software developers, mathematicians and others interested in cryptography">Cryptography</a></li>
+                <li class="-item"><a href="https://codereview.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="peer programmer code reviews">Code Review</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://magento.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of the Magento e-Commerce platform">Magento</a></li>
+                <li class="-item"><a href="https://softwarerecs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people seeking specific software recommendations">Software Recommendations</a></li>
+                <li class="-item"><a href="https://dsp.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="practitioners of the art and science of signal, image and video processing">Signal Processing</a></li>
+                <li class="-item"><a href="https://emacs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those using, extending or developing Emacs">Emacs</a></li>
+                <li class="-item"><a href="https://raspberrypi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users and developers of hardware and software for Raspberry Pi">Raspberry Pi</a></li>
+                <li class="-item"><a href="https://ru.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="программистов">Stack Overflow на русском</a></li>
+                <li class="-item"><a href="https://codegolf.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programming puzzle enthusiasts and code golfers">Programming Puzzles &amp; Code Golf</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://es.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programadores y profesionales de la informática">Stack Overflow en español</a></li>
+                <li class="-item"><a href="https://ethereum.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Ethereum, the decentralized application platform and smart contract enabled blockchain">Ethereum</a></li>
+                <li class="-item"><a href="https://datascience.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Data science professionals, Machine Learning specialists, and those interested in learning more about the field">Data Science</a></li>
+                <li class="-item"><a href="https://arduino.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="developers of open-source hardware and software that is compatible with Arduino">Arduino</a></li>
+                <li class="-item"><a href="https://bitcoin.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Bitcoin crypto-currency enthusiasts">Bitcoin</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#technology" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (30)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Life / Arts">
+        <ul class="-list">
+                <li class="-item"><a href="https://photo.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                <li class="-item"><a href="https://scifi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                <li class="-item"><a href="https://graphicdesign.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                <li class="-item"><a href="https://movies.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                <li class="-item"><a href="https://music.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="musicians, students, and enthusiasts">Music: Practice &amp; Theory</a></li>
+                <li class="-item"><a href="https://worldbuilding.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="writers/artists using science, geography and culture to construct imaginary worlds and settings">Worldbuilding</a></li>
+                <li class="-item"><a href="https://cooking.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Life / Arts"><ul class="-list">
+                <li class="-item"><a href="https://diy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="contractors and serious DIYers">Home Improvement</a></li>
+                <li class="-item"><a href="https://money.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                <li class="-item"><a href="https://academia.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="academics and those enrolled in higher education">Academia</a></li>
+                <li class="-item"><a href="https://law.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="legal professionals, students, and others with experience or interest in law">Law</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#lifearts" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (15)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Culture / Recreation">
+        <ul class="-list">
+                <li class="-item"><a href="https://english.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                <li class="-item"><a href="https://skeptics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientific skepticism">Skeptics</a></li>
+                <li class="-item"><a href="https://judaism.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                <li class="-item"><a href="https://travel.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="road warriors and seasoned travelers">Travel</a></li>
+                <li class="-item"><a href="https://christianity.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                <li class="-item"><a href="https://ell.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="speakers of other languages learning English">English Language Learners</a></li>
+                <li class="-item"><a href="https://japanese.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">Japanese Language</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Culture / Recreation"><ul class="-list">
+                <li class="-item"><a href="https://gaming.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                <li class="-item"><a href="https://bicycles.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                <li class="-item"><a href="https://rpg.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                <li class="-item"><a href="https://anime.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="anime and manga fans">Anime &amp; Manga</a></li>
+                <li class="-item"><a href="https://puzzling.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who create, solve, and study puzzles">Puzzling</a></li>
+                <li class="-item"><a href="https://mechanics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles">Motor Vehicle Maintenance &amp; Repair</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#culturerecreation" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (33)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Science">
+        <ul class="-list">
+                <li class="-item"><a href="https://mathoverflow.net/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional mathematicians">MathOverflow</a></li>
+                <li class="-item"><a href="https://math.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                <li class="-item"><a href="https://stats.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                <li class="-item"><a href="https://cstheory.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                <li class="-item"><a href="https://physics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="active researchers, academics and students of physics">Physics</a></li>
+                <li class="-item"><a href="https://chemistry.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientists, academics, teachers and students">Chemistry</a></li>
+                <li class="-item"><a href="https://biology.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="biology researchers, academics, and students">Biology</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Science"><ul class="-list">
+                <li class="-item"><a href="https://cs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, researchers and practitioners of computer science">Computer Science</a></li>
+                <li class="-item"><a href="https://philosophy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those interested in the study of the fundamental nature of knowledge, reality, and existence">Philosophy</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#science" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (10)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Other">
+        <ul class="-list">
+                <li class="-item"><a href="https://meta.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                <li class="-item"><a href="https://stackapps.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                <li class="-item"><a href="https://api.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programmatic interaction with Stack Exchange sites">API</a></li>
+                <li class="-item"><a href="https://data.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="querying Stack Exchange data using SQL">Data</a></li>
+                <li class="-item"><a href="https://area51.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                    </ul>
+    </div>
+                </div>
+            </nav>
+            <div class="site-footer--copyright fs-fine">
+                <ul class="-list">
+                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link:4 })" href="https://stackoverflow.blog/?blb=1">Blog</a></li>
+                    <li class="-item"><a href="https://www.facebook.com/officialstackoverflow/" class="-link">Facebook</a></li>
+                    <li class="-item"><a href="https://twitter.com/stackoverflow" class="-link">Twitter</a></li>
+                    <li class="-item"><a href="https://linkedin.com/company/stack-overflow" class="-link">LinkedIn</a></li>
+                </ul>
+
+                <p class="mt-auto mb24">
+site design / logo © 2018 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a>
+                            with <a href="https://stackoverflow.blog/2009/06/25/attribution-required/" rel="license">attribution required</a>.
+                    <span id="svnrev">rev&nbsp;2018.6.18.30779</span>
+                </p>
+            </div>
+        </div>
+
+            </footer>
+    <noscript>
+        <div id="noscript-warning">Stack Overflow em Portugu&#234;s funciona melhor com o JavaScript ativado
+            <img src="https://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno">
+        </div>
+    </noscript>
+
+<script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+            StackExchange.ready(function () {
+
+                StackExchange.ga.init({
+                    sendTitles: true,
+                    tracker: window.ga,
+                    trackingCodes: [
+                        'UA-108242619-5'
+                    ]
+                });
+
+
+
+                    StackExchange.ga.setDimension('dimension2', '|c|ponteiro|tipagem|void|');
+
+                    StackExchange.ga.setDimension('dimension3', 'Questions/Show');
+
+
+                StackExchange.ga.trackPageView();
+            });
+            
+/**/
+            
+            var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+            (function() {
+                var ssl = 'https:' == document.location.protocol,
+                    s = document.getElementsByTagName('script')[0],
+                    qc = document.createElement('script');
+                 qc.async = true;
+                    qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                    s.parentNode.insertBefore(qc, s);
+                    _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+/**/
+                 var sc = document.createElement('script');
+                    sc.async = true;
+                    sc.src = (ssl ? 'https://sb' : 'http://b') + '.scorecardresearch.com/beacon.js';
+                    s.parentNode.insertBefore(sc, s);
+                    _comscore.push({ c1: "2", c2: "17440561" });
+            })();
+            
+
+</script>
+            
+    
+    
+<div class="adsbox" id="clc-abd" style="position: absolute; pointer-events: none;">&nbsp;</div></body></html>

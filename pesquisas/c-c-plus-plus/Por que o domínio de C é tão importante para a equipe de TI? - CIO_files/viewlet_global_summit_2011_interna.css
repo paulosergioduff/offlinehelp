@@ -1,0 +1,20 @@
+/*  */
+* {border:none; margin:0; padding:0; outline:none;}
+.viewletGlobalSummitInt {background:#FFF; border:solid 1px #F9D1D9; font:normal 11px Arial; width:298px; *width:300px; clear:both; margin:0 0 15px 0;}
+.viewletGlobalSummitInt .contViewGlobalSummitInt {border:solid 1px #ED1D3D;}
+.viewletGlobalSummitInt h2 {background:url(http://cio.uol.com.br/imagens/tit_view_globalsummit.jpg) no-repeat top left; border:none; font:bold 17px Arial !important; text-align:right; line-height:18px; height:116px; margin:0;}
+.viewletGlobalSummitInt h2 a {border:none; display:block; font-size:17px; height:96px; padding:10px 15px 10px 195px;}
+.viewletGlobalSummitInt h2 a:link,
+.viewletGlobalSummitInt h2 a:visited,
+.viewletGlobalSummitInt h2 a:hover,
+.viewletGlobalSummitInt h2 a:active {color:#ED1D3D !important; text-decoration:none;}
+.listGlobalSummit a:link, .listGlobalSummit a:visited, .listGlobalSummit a:hover, .listGlobalSummit a:active {text-decoration:none; color:#FFF;}
+.listGlobalSummit {background:#ED1D3D url(http://cio.uol.com.br/imagens/datas_globalsummit.gif) no-repeat; height:65px; position:relative;}
+.viewletGlobalSummit .itemEvento {position:absolute; height:22px;}
+.viewletGlobalSummit .itemEvento a {display:block; text-indent:-9999px; height:22px;}
+.viewletGlobalSummit .dataEvento01 {width:86px; top:7px; left:6px;}
+.viewletGlobalSummit .dataEvento02 {width:79px; top:7px; left:108px;}
+.viewletGlobalSummit .dataEvento03 {width:91px; top:7px; left:201px;}
+.viewletGlobalSummit .dataEvento04 {width:91px; top:38px; left:47px;}
+.viewletGlobalSummit .dataEvento05 {width:96px; top:38px; left:163px;}
+/**/

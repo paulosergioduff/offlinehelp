@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"></head><body>
+<script type="text/javascript">
+(function() {
+    function getDomains(asList) {
+        if (asList) {
+            return ["rayados.com", "invertia.com", "idgnow.com.br", "www.idgnow.com.br", "www.istoedinheiro.com.br", "www.istoe.com.br", "istoedinheiro.com.br", "istoe.com.br", "www.plasticaebeleza.com.br", "filmow.com", "vamosfalardecomida.com.br", "correo.terrabancomer.com", "thesummerhunter.com", "doutissima.com.br", "webmail.speedy.com.pe", "webmail.speedy.com.ar", "spfc.net", "rd1.com.br", "bloginoff.siteoficial.ws", "tecnoblog.net", "bloginoff.com.br", "www.spfc.net", "ffw.com.br", "aparecidaliberato.com.br", "www.papodemae.com.br", "revistacarro.com.br", "razoesparaacreditar.com", "blogdamimis.com.br", "www.kboing.com.br", "www.jb.com.br", "www.dinheirorural.com.br", "www.boasaude.com.br", "famosidades.com.br", "tudotimao.com.br", "www.gowhere.com.br", "www.jogosdemeninas.net", "minhaseconomias.com.br", "www.tatame.com.br", "www.billboard.com.br", "www.torcidaflamengo.com.br", "www.areah.com.br", "www.gremioavalanche.net", "correo.terraempresas.com.mx", "www.gremioavalanche.com.br", "billboard.com.br", "www.booby.com.br", "showlivre.com", "catve.com", "waves.terra.com.br", "www.cruzeiroweb.com.br", "fortissima.com.br", "www.cruzeiroweb.net", "www.ofuxico.com.br", "verdaoweb.com.br", "www.verdaoweb.com.br", "carroonline.terra.com.br", "www.entendaoshomens.com.br", "www.padremarcelorossi.com.br", "www.casalsemvergonha.com.br", "eoh.com.br", "www.revistamenu.com.br", "supclub.waves.com.br", "motorshow.com.br", "www.hypeness.com.br", "www.revistaplaneta.com.br", "hypeness.com.br", "br.motorsport.com", "www.istoe.com.br", "webmail.terraempresas.com.br", "melhorescidadesdobrasil.com.br", "terraempresas.com.br"];
+        } else {
+            return /^https?:\/\/(([\w\-_]+\.)*terra(\.[a-z]{2,3}){1,2}|([sp][1-4]|hlg)\.trrsf\.com(\.br)?|([\w\-_]+\.)*rayados\.com|([\w\-_]+\.)*invertia\.com|([\w\-_]+\.)*idgnow\.com\.br|([\w\-_]+\.)*www\.idgnow\.com\.br|([\w\-_]+\.)*www\.istoedinheiro\.com\.br|([\w\-_]+\.)*www\.istoe\.com\.br|([\w\-_]+\.)*istoedinheiro\.com\.br|([\w\-_]+\.)*istoe\.com\.br|([\w\-_]+\.)*www\.plasticaebeleza\.com\.br|([\w\-_]+\.)*filmow\.com|([\w\-_]+\.)*vamosfalardecomida\.com\.br|([\w\-_]+\.)*correo\.terrabancomer\.com|([\w\-_]+\.)*thesummerhunter\.com|([\w\-_]+\.)*doutissima\.com\.br|([\w\-_]+\.)*webmail\.speedy\.com\.pe|([\w\-_]+\.)*webmail\.speedy\.com\.ar|([\w\-_]+\.)*spfc\.net|([\w\-_]+\.)*rd1\.com\.br|([\w\-_]+\.)*bloginoff\.siteoficial\.ws|([\w\-_]+\.)*tecnoblog\.net|([\w\-_]+\.)*bloginoff\.com\.br|([\w\-_]+\.)*www\.spfc\.net|([\w\-_]+\.)*ffw\.com\.br|([\w\-_]+\.)*aparecidaliberato\.com\.br|([\w\-_]+\.)*www\.papodemae\.com\.br|([\w\-_]+\.)*revistacarro\.com\.br|([\w\-_]+\.)*razoesparaacreditar\.com|([\w\-_]+\.)*blogdamimis\.com\.br|([\w\-_]+\.)*www\.kboing\.com\.br|([\w\-_]+\.)*www\.jb\.com\.br|([\w\-_]+\.)*www\.dinheirorural\.com\.br|([\w\-_]+\.)*www\.boasaude\.com\.br|([\w\-_]+\.)*famosidades\.com\.br|([\w\-_]+\.)*tudotimao\.com\.br|([\w\-_]+\.)*www\.gowhere\.com\.br|([\w\-_]+\.)*www\.jogosdemeninas\.net|([\w\-_]+\.)*minhaseconomias\.com\.br|([\w\-_]+\.)*www\.tatame\.com\.br|([\w\-_]+\.)*www\.billboard\.com\.br|([\w\-_]+\.)*www\.torcidaflamengo\.com\.br|([\w\-_]+\.)*www\.areah\.com\.br|([\w\-_]+\.)*www\.gremioavalanche\.net|([\w\-_]+\.)*correo\.terraempresas\.com\.mx|([\w\-_]+\.)*www\.gremioavalanche\.com\.br|([\w\-_]+\.)*billboard\.com\.br|([\w\-_]+\.)*www\.booby\.com\.br|([\w\-_]+\.)*showlivre\.com|([\w\-_]+\.)*catve\.com|([\w\-_]+\.)*waves\.terra\.com\.br|([\w\-_]+\.)*www\.cruzeiroweb\.com\.br|([\w\-_]+\.)*fortissima\.com\.br|([\w\-_]+\.)*www\.cruzeiroweb\.net|([\w\-_]+\.)*www\.ofuxico\.com\.br|([\w\-_]+\.)*verdaoweb\.com\.br|([\w\-_]+\.)*www\.verdaoweb\.com\.br|([\w\-_]+\.)*carroonline\.terra\.com\.br|([\w\-_]+\.)*www\.entendaoshomens\.com\.br|([\w\-_]+\.)*www\.padremarcelorossi\.com\.br|([\w\-_]+\.)*www\.casalsemvergonha\.com\.br|([\w\-_]+\.)*eoh\.com\.br|([\w\-_]+\.)*www\.revistamenu\.com\.br|([\w\-_]+\.)*supclub\.waves\.com\.br|([\w\-_]+\.)*motorshow\.com\.br|([\w\-_]+\.)*www\.hypeness\.com\.br|([\w\-_]+\.)*www\.revistaplaneta\.com\.br|([\w\-_]+\.)*hypeness\.com\.br|([\w\-_]+\.)*br\.motorsport\.com|([\w\-_]+\.)*www\.istoe\.com\.br|([\w\-_]+\.)*webmail\.terraempresas\.com\.br|([\w\-_]+\.)*melhorescidadesdobrasil\.com\.br|([\w\-_]+\.)*terraempresas\.com\.br|127\.0\.0\.1|localhost(:\d+)?)$/;
+        }
+    };
+
+    function checkPermission(origin) {
+        var allowedDomains = getDomains(false);
+        return allowedDomains.test(origin.replace(/:\d+$/, ''));
+    };
+
+    function parseStorage(data, source, origin) {
+
+        if (!data.action) {
+            return;
+        }
+
+        switch (data.action) {
+            case 'set':
+                try {
+                    window.localStorage.setItem(data.key, data.val);
+                } catch(e) {
+                    data.e = e.message || e.name || 'unknown';
+                    if (e.name === 'QUOTA_EXCEEDED_ERR' || e.name === 'NS_ERROR_DOM_QUOTA_REACHED') {
+                    }
+                }
+                break;
+            case 'get':
+                try {
+                    data.val = window.localStorage.getItem(data.key);
+                } catch(e) {
+                    data.e = e.message || 'unknown';
+                }
+                break;
+            case 'del':
+                try {
+                    window.localStorage.removeItem(data.key);
+                } catch(e) {
+                    data.e = e.message || 'unknown';
+                }
+                break;
+            case 'all':
+                try {
+                    data.val = {};
+                    for (var i=0, sKey; sKey = window.localStorage.key(i); i++) {
+                        data.val[sKey] = window.localStorage.getItem(sKey);
+                    }
+                } catch(e) {
+                    data.e = e.message || 'unknown';
+                }
+                break;
+            case 'allowed':
+                data.val = getDomains(true);
+                break;
+        }
+        source.postMessage(JSON.stringify(data), origin);
+    };
+
+    window.addEventListener('message', function(event) {
+        
+        var data = event.data;
+        
+        if (!window.localStorage) {
+            return;
+        }
+        
+        try {
+            if (typeof data == 'string') {
+                data = JSON.parse(data);
+            }
+
+            if (!/^\[object/.test(Object.prototype.toString.call(data))) {
+                throw new Error('Invalid value type: ' + Object.prototype.toString.call(data));
+            }
+
+            if (!/^set|get|del|all|allowed|domainList/.test(data.action)) {
+                return; // ignoring message
+            }
+
+            if ((data.action === 'domainList' && data.key === '.') || checkPermission(event.origin)) {
+                parseStorage(data, event.source, event.origin);
+            } else {
+                throw new Error('Access denied for domain: ' + event.origin);
+            }
+        } catch (e) {
+
+            if (window.console && typeof window.console == 'object') {
+                
+                 if (typeof window.console.error == 'function') {
+                    window.console.error('[GlobalStorageError] Invalid data passed from ' + e.source + '.\n' + e.message + '\n' + Object.prototype.toString.call(data) + '\n' + data, e);
+                 } else {
+                    window.console.log('[GlobalStorageError] ' + e.message, e);
+                 }
+
+            }
+        }
+    },false);
+})();
+</script>
+
+
+</body></html>

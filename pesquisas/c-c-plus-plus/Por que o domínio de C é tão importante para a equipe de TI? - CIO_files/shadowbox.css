@@ -1,0 +1,65 @@
+b-title-inner,#sb-info-inner,#sb-loading-inner,div.sb-message{font-family:"HelveticaNeue-Light","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:200;color:#f6f6f6;}
+#sb-container{position:absolute;margin:0;padding:0;top:0;left:0;z-index:999;text-align:left;visibility:hidden;display:none;}
+#sb-overlay{position:relative;height:100%;width:100%;}
+#sb-wrapper{position:absolute;visibility:hidden;width:100px;}
+#sb-wrapper-inner{position:relative;overflow:hidden;height:100px;}
+#sb-body{position:relative;height:100%;}
+#sb-body-inner{position:absolute;height:100%;width:100%;}
+#sb-player.html{height:100%;overflow:auto; text-align: center;}
+#sb-body img{border:none;}
+#sb-loading{position:relative;height:100%;}
+#sb-loading-inner{position:absolute;font-size:14px;line-height:24px;height:24px;top:50%;margin-top:-12px;width:100%;text-align:center;}
+#sb-loading-inner span{padding-left:34px;display:inline-block;}
+#sb-body,#sb-loading{background-color:#f6f6f6;padding:20px 0;}
+#sb-title {background-color: #f6f6f6;}
+#sb-title,#sb-info{position:relative;margin:0;padding:0;overflow:hidden;}
+#sb-title,#sb-title-inner{height:54px;line-height:16px;}
+#sb-title-inner{font-size:16px; text-align: center; font-weight: bold;}
+#sb-info { background-color: #f6f6f6; }
+#sb-info,#sb-info-inner{height:0px;line-height:0px;}
+#sb-info-inner{font-size:12px;}
+#sb-nav{float:right;height:16px;padding:0;width:45%;}
+#sb-nav a{display:block;float:right;height:1px;width:16px;margin-left:3px;cursor:pointer;background-repeat:no-repeat;}
+#sb-nav-close{}
+#sb-nav-next{}
+#sb-nav-previous{}
+#sb-nav-play{}
+#sb-nav-pause{}
+#sb-counter{float:left;width:45%;}
+#sb-counter a{padding:0 4px 0 0;text-decoration:none;cursor:pointer;color:#fff;}
+#sb-counter a.sb-counter-current{text-decoration:underline;}
+div.sb-message{font-size:12px;padding:1px;text-align:center;}
+div.sb-message a:link,div.sb-message a:visited{color:#fff;text-decoration:underline;}
+
+/* DFP MODAL */
+.modal-open { overflow: hidden; }
+.modal { display: none; overflow: hidden; position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 1000002; -webkit-overflow-scrolling: touch; outline: 0; }
+.modal.fade .modal-dialog { -webkit-transform: translate3d(0, -25%, 0); transform: translate3d(0, -25%, 0); -webkit-transition: -webkit-transform 0.3s ease-out; -moz-transition: -moz-transform 0.3s ease-out; -o-transition: -o-transform 0.3s ease-out; transition: transform 0.3s ease-out; }
+.modal.in .modal-dialog { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+.modal-open .modal { overflow-x: hidden; overflow-y: auto; }
+.modal-dialog { position: relative; width: 860px; margin: 0px auto; padding-top:10px }
+.modal-content { position: relative; background-color: transparent; border: 0; background-clip: padding-box; outline: 0; }
+.modal-backdrop { position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 1000001; background-color: #000000; }
+.modal-backdrop.fade { opacity: 0; filter: alpha(opacity=0); }
+.modal-backdrop.in { opacity: 0.5; filter: alpha(opacity=50); }
+.modal-header { padding: 15px; min-height: 16.42857143px; }
+.modal-header .close { margin-top: -2px; }
+.modal-title { margin: 0; line-height: 1.42857143; }
+.modal-body { position: relative; padding: 15px; }
+.modal-footer { padding: 15px; text-align: right; }
+.modal-footer .btn + .btn { margin-left: 5px; margin-bottom: 0; }
+.modal-footer .btn-group .btn + .btn { margin-left: -1px; }
+.modal-footer .btn-block + .btn-block { margin-left: 0; }
+.modal-scrollbar-measure { position: absolute; top: -9999px; width: 50px; height: 50px; overflow: scroll; }
+#banner-inter {background: transparent;}
+#banner-inter div.banner-inters{background:transparent;padding:0 0 15px 0; margin:0;width:100%;height:100%;min-height: 100%;}
+div.barra-publicidademodal {width:100%; background: transparent; height:62px; padding-bottom: 15px; margin: 0 0 15px 0;}
+div.barra-publicidademodal ul {float:left; clear:left; width:100%; height:auto; margin:0; padding:0; list-style:none;}
+div.barra-publicidademodal ul li {display:inline;}
+div.barra-publicidademodal ul li img {float:left;margin:5px 0 0 20px;}
+div.barra-publicidademodal ul li a {font-family:Arial;font-size:18px;color:#ffffff;text-decoration:underline;}
+div.barra-publicidademodal ul li a:hover {color:#ffffff;}
+.fecharintermodal{ color:#ffffff;margin:100px 0 5px 0; float:right;}
+.linkfecharintermodal{color:#ffffff !important;}
+#nd-interstitial2{width: 750px;}
+
