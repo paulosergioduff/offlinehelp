@@ -11,6 +11,8 @@ git push origin SDN0005_20180601
 
 03:52:51
 
+git clone -b master https://paulosergioduff@bitbucket.org/paulosergioduff/duffprolab.git
+
 
 SDN0003_20180527 #38
 
