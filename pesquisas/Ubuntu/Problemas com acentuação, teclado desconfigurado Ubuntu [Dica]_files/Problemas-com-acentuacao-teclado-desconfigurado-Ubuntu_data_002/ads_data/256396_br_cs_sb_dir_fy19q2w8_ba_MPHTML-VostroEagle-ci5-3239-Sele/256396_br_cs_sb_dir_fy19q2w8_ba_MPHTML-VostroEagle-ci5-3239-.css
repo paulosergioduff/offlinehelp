@@ -1,0 +1,660 @@
+/*-------------------------------------
+    Reset
+---------------------------------------*/
+
+/******Basic settings**********/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+  text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; 
+  -webkit-text-size-adjust: 100%; 
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+img{
+  border: 0px;
+}
+a{
+  text-decoration: none;
+}
+body{
+    font-family: 'Roboto', sans-serif; color: #444444;
+}
+.font-preloader{
+  font-family:'Roboto';
+  visibility:hidden;
+  width:0; 
+  height:0;
+}
+#frame_one, #frame_two,#frame_three,#frame_four,#frame_five {
+  width: 100%;
+  height: 100%;
+}
+
+/*-------------------------------------
+  Layout
+---------------------------------------*/
+
+#ad {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#banner {
+  position: absolute;
+  background: #eeeeee;
+  display: block;
+  width: 160px;
+  height: 600px;
+  overflow: hidden;
+  cursor: pointer;
+  visibility: hidden; 
+  border: 1px solid #666666;
+  -webkit-box-sizing: border-box;  
+          box-sizing: border-box;  
+}
+
+#clickTAG {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+.ie-fallback{
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+}
+
+/*-------------------------------------
+  Frame One frame duration: 3.5s
+---------------------------------------*/
+.bg{
+  display: block;
+  width: 160px;
+  height: 600px;
+  top: 0px;
+  left: 0px;
+  background: #6ea204;
+  position: absolute;
+}
+
+.dell-logo-w {
+  top: 15px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  position:absolute;
+}
+
+.dell-text-1{
+  width:160px;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  color: #fff;
+  text-align:center;
+  top: 90px;
+  right:0px;
+  text-transform: uppercase;
+  position: absolute;
+}
+
+.dell-text-1 span{
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.vendor-logo {
+  bottom:45px;
+  left: 50px;
+  position:absolute;
+}
+
+.frame-1-text-1{
+  font-size: 16px;
+  line-height: 25px; 
+  font-weight: 300;
+  letter-spacing: 0.13em;
+  color: #fff;
+  text-align:center;
+  top: 220px;
+  left:0px;
+  width: 100%;
+  text-transform: uppercase;
+  position: absolute;
+
+}
+
+.frame-1-text-1 span{
+  font-size: 60px;
+  font-weight: 300;
+  letter-spacing: 0.11em;
+  color: #fff;
+}
+
+.frame-1-text-2{
+  font-size: 42px;
+  line-height: 46px;
+  color: #007db8;
+  text-align:center;
+  letter-spacing: -2px;
+  font-weight: 300;
+  top: 257px;
+  left:0px;
+  color: #fff;
+  width: 100%;
+  text-transform: uppercase;
+  position: relative;
+
+}
+.frame-1-text-2-up1 {
+  font-size: 25px;
+  line-height: 28px;
+  font-weight: 300;
+  text-transform: uppercase;
+  top: 245px;
+  left:7px;
+  color: #fff;
+  position: absolute;
+}
+.frame-1-text-2-up1 span{
+  font-size: 70px;
+  font-weight: 300;
+  color: #fff;
+  text-transform: uppercase;
+  top: 13px;
+  left: 30px;
+  position: absolute;
+}
+.frame-1-text-2-up {
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 300;
+  text-transform: uppercase;
+  top: 240px;
+  left: 99px;
+  color: #fff;
+  position: absolute;
+}
+.frame-1-text-3{
+  font-size:18px;
+  line-height:23px;
+  font-weight: 300;
+  top: 257px;
+  left: 99px;
+  width: 158px;
+  color: #fff;
+  text-transform: uppercase;
+  position: absolute;
+
+}
+
+.cta{
+  position: absolute;
+  color: #6ea204;
+  text-align: center;
+  background:#fff;
+  bottom: 115px;
+  left: 25px;
+  display: block;
+  z-index: 99;
+  padding: 7px 10px 6px 10px;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: bolder;
+  vertical-align: middle;
+
+}
+@-moz-document url-prefix() {
+  .cta {padding: 6px 10px 7px 10px;}
+}
+
+.cta2{
+  position: absolute;
+  color: #fff;
+  text-align: center;
+  background:#6ea204;
+  bottom: 115px;
+  left: 25px;
+  display: block;
+  z-index: 99;
+  padding: 7px 10px 6px 10px;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: bolder;
+  vertical-align: middle;
+
+}
+@-moz-document url-prefix() {
+  .cta2 {padding: 6px 10px 7px 10px;}
+}
+
+.funding-text{
+  width:100%;
+  text-align:center;
+  font-size: 12px;
+  line-height: 14px;
+  bottom:12px;
+  color: #fff;
+  z-index: 2;
+  position:absolute;
+
+}
+
+.funding-text sup{
+  font-size: 8px;
+  line-height: 10px;
+}
+
+/*-------------------------------------
+  Frame two  frame duration: 2.3s
+---------------------------------------*/
+.dell-logo {
+  top: 25px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  position:absolute;
+}
+
+.vendor-logo {
+  bottom:45px;
+  left: 50px;
+  position:absolute;
+}
+
+.main-badge{
+  top:116px;
+  left: 4px;
+  position:absolute;
+}
+.frame-2-pname{
+  top: 385px;
+  width:100%;
+  font-size: 12px;
+  line-height:14px;
+  text-align:center;
+  color: #444444;
+  position:absolute;
+}
+.product1{
+   top: 175px;
+  left: 18px;
+  position:absolute;
+
+}
+
+.touchicon{
+  left: 10px;
+  top: 165px;
+  position: absolute;
+}
+
+
+/*-------------------------------------
+  Frame Three  frame duration: 2.8s
+---------------------------------------*/
+
+.frame-3-text-1{
+  width: 100%;
+  font-size: 16px;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  top: 113px;
+  position: absolute;
+}
+
+.frame-3-pname{
+  top: 385px;
+  width:100%;
+  font-size: 12px;
+  line-height:14px;
+  text-align:center;
+  color: #444444;
+  position:absolute;
+}
+
+.product2{
+   top: 185px;
+  left: 25px;
+  position:absolute;
+}
+
+/*-------------------------------------
+ Frame Four  frame duration: 3.2s
+---------------------------------------*/
+
+.product3{
+  top: 145px;
+  left: 22px;
+  position:absolute;
+}
+
+.frame-4-text-1{
+  width: 100%;
+  font-size: 16px;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  top: 93px;
+  position: absolute;
+}
+
+
+.frame-4-text{
+  top: 340px;
+  text-align: center;
+  width: 100%;
+  position:absolute;
+}
+
+.frame-4-text1 { 
+  font-size: 12px;
+  color: #444444;
+  display: block;
+}
+
+.frame-4-text2 {
+  font-size: 10px; 
+  color: #444444;
+  display: block;
+  line-height:12px;
+  font-weight: 400;
+}
+.frame-4-text2 span {
+  font-size: 16px; 
+  color: #6ea204;
+  line-height:18px;
+  font-weight: 700;
+}
+.frame-4-text3 {
+  font-size: 12px;
+  font-weight: 700;
+  color: #444444;
+  margin-top: 3px;
+  margin-bottom:2px;  
+  display: block;
+}
+
+.frame-4-text4{
+  font-size: 10px;
+  font-weight: 400;
+  color: #444444;
+  margin-bottom:3px;
+  display: block;
+
+}
+.frame-4-text4 span{
+  font-size: 16px; 
+  color:  #6ea204;
+  line-height:15px;
+  font-weight: bold;
+}
+.price {
+  line-height:15px;
+}
+
+.frame-4-text2 sup {
+  font-size:10px;
+  line-height:12px;
+}
+
+.funding-text2{
+  width: 100%;
+  font-size: 12px;
+  line-height: 14px;
+  bottom:12px;
+  text-align:center;
+  color: #444444;
+  z-index: 2;
+  position:absolute;
+
+}
+
+.funding-text2 sup{
+  font-size: 8px;
+  line-height: 10px;
+}
+
+
+/*-------------------------------------
+  Frame Five  frame duration: 3.2s
+---------------------------------------*/
+.product4{
+  top: 160px;
+  left: 40px;
+  position:absolute;
+}
+
+.scrn-size{
+  font-size: 12px;
+  line-height: 14px;
+  top:180px;
+  left: 5px;
+  color: #444444;
+  z-index: 2;
+  position:absolute;
+
+}
+.violator{
+  top: 165px;
+  left: 5px;
+  /*-webkit-transform: rotate(5deg);
+  transform: rotate(5deg);*/       
+  position:absolute;
+}
+.vialator1-1 {
+  width: 98px;
+  background-color: #6ea204;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: #ffffff;
+  padding: 0px 5px 0px 5px;
+  top: 174px;
+  left: 50px;
+  text-align: center;
+  font-weight: 400;
+  display: block;
+  position:absolute;
+
+-webkit-transform: rotate(5deg);  
+    -ms-transform: rotate(5deg);  
+        transform: rotate(5deg);
+
+}
+
+.vialator1-2 {
+  width: 98px;
+  background-color: #6ea204;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: #ffffff;
+  padding: 0px 2px 0px 2px;
+  top: 190px;
+  left: 49px;
+  text-align: center;
+  font-weight: 400;
+  display: block;
+  position:absolute;
+
+-webkit-transform: rotate(5deg);  
+    -ms-transform: rotate(5deg);  
+        transform: rotate(5deg);  
+
+}
+
+.badge-last{
+  top:95px;
+  left: 5px;
+  position:absolute;
+}
+
+
+.frame-5-text-1{
+  width: 100%;
+  font-size: 17px;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  line-height: 20px;  
+  top: 120px;
+  left:1px;
+  position: absolute;
+}
+
+.frame-5-text-1 span{
+  color: #6ea204;    
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.funding-text3{
+  width:100%;
+	text-align:center;
+  font-size: 12px;
+  line-height: 14px;
+  bottom:12px;
+  color: #444444;
+  z-index: 2;
+  position:absolute;
+
+}
+
+.funding-text3 sup{
+  font-size: 8px;
+  line-height: 10px;
+}
+
+.frame-5-text{
+  top: 303px;
+  text-align: center;
+  width: 100%;
+  position:absolute;
+}
+
+.frame-5-text1 { 
+  font-size: 12px;
+  color: #444444;
+  display: block;
+}
+
+.frame-5-text2 {
+  font-size: 20px; 
+  color: #007db8;
+  display: block;
+  line-height:13px;
+  font-weight: bold;
+}
+
+.frame-5-text3 {
+  font-size: 12px;
+  font-weight: 700;
+  color: #444444;
+  margin-top: 5px;
+  display: block;
+}
+
+.frame-5-text4{
+  font-size: 10px;
+  font-weight: 400;
+  color: #444444;
+  margin-bottom:5px;
+  display: block;
+
+}
+
+.price {
+  line-height:15px;
+}
+
+.frame-5-text2 sup {
+  font-size:10px;
+  line-height:12px;
+}
+.shipping{
+  font-size: 12px;
+  line-height: 14px;
+  bottom:150px;
+  right: 48px;
+  color: #444444;
+  z-index: 2;
+  position:absolute;
+
+}
+
+/*Roll over*/
+#roll-cta {
+  position: absolute;
+  color: #444;
+  bottom: 164px;
+  right: 42px;
+  z-index: 99999;
+  width: 80px;
+  height: 15px;
+
+
+}
+#legal {
+  position: absolute;
+  width: 160px;
+  height: 600px;
+  background:#fff;
+  top:-1000px;
+  z-index: 999;
+}
+#legal-text {
+  position: absolute;
+  color: #444;
+  width: 158px;
+  height: 117px;
+  font-size: 10px;
+  line-height:13px;
+  padding: 10px 13px;
+}
+#rolltext {
+  position: absolute;
+  z-index: 9;
+  bottom: 164px;
+  right: 42px;
+  font-size: 9px;
+}
+
+#flex_bg{
+  background: #ff7fff;
+  padding: 8px 10px;
+  top: 0px;
+  left: 15px;
+  position: absolute;
+}
+
+.temp-text{
+  font-size: 22px;
+  font-weight: 300;
+  text-align: center;
+  color: #444;
+  text-transform: uppercase;
+}
