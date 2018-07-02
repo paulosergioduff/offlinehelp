@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html><head>
+    <title>Removendo uma pasta inteira de um repositório GitHub - Desenvolvimento</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="NetForce Framework">
+    <meta name="author" content="Leiame.org">
+    <!-- base href="http://code.leiame.org/master/github/removendo-pasta" -->
+
+    <link rel="shortcut icon" href="http://cdn.rawgit.com/brunogoncalves/docs/master/theme/favicon.png?up=c26a6940a82cce197c37ac23183429ddfb4aa605">
+
+    <link rel="stylesheet" href="Removendo%20uma%20pasta%20inteira%20de%20um%20reposit%C3%B3rio%20GitHub%20-%20Desenvolvimento_files/reset.css">
+
+    <!-- Carrega jQuery -->
+    <script src="Removendo%20uma%20pasta%20inteira%20de%20um%20reposit%C3%B3rio%20GitHub%20-%20Desenvolvimento_files/jquery-2.js"></script>
+
+    <!-- Carrega Bootstrap -->
+    <link rel="stylesheet" href="Removendo%20uma%20pasta%20inteira%20de%20um%20reposit%C3%B3rio%20GitHub%20-%20Desenvolvimento_files/bootstrap.css">
+    <link rel="stylesheet" href="Removendo%20uma%20pasta%20inteira%20de%20um%20reposit%C3%B3rio%20GitHub%20-%20Desenvolvimento_files/bootstrap-theme.css">
+    <script src="Removendo%20uma%20pasta%20inteira%20de%20um%20reposit%C3%B3rio%20GitHub%20-%20Desenvolvimento_files/bootstrap.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="Removendo%20uma%20pasta%20inteira%20de%20um%20reposit%C3%B3rio%20GitHub%20-%20Desenvolvimento_files/font-awesome.css">
+
+    <!-- Controle de acesso pelo Mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Carrega CSS -->
+    <link rel="stylesheet" href="Removendo%20uma%20pasta%20inteira%20de%20um%20reposit%C3%B3rio%20GitHub%20-%20Desenvolvimento_files/master.css">
+
+    <!-- Carrega JS -->
+    <script src="Removendo%20uma%20pasta%20inteira%20de%20um%20reposit%C3%B3rio%20GitHub%20-%20Desenvolvimento_files/jquery.js"></script>
+    <script src="Removendo%20uma%20pasta%20inteira%20de%20um%20reposit%C3%B3rio%20GitHub%20-%20Desenvolvimento_files/base.js"></script>
+
+    <!-- code highlight -->
+    <link rel="stylesheet" href="Removendo%20uma%20pasta%20inteira%20de%20um%20reposit%C3%B3rio%20GitHub%20-%20Desenvolvimento_files/default.css">
+    <link rel="stylesheet" href="Removendo%20uma%20pasta%20inteira%20de%20um%20reposit%C3%B3rio%20GitHub%20-%20Desenvolvimento_files/github.css">
+    <link rel="stylesheet" href="Removendo%20uma%20pasta%20inteira%20de%20um%20reposit%C3%B3rio%20GitHub%20-%20Desenvolvimento_files/github-custom.css">
+    <script src="Removendo%20uma%20pasta%20inteira%20de%20um%20reposit%C3%B3rio%20GitHub%20-%20Desenvolvimento_files/highlight.js"></script>
+    <script src="Removendo%20uma%20pasta%20inteira%20de%20um%20reposit%C3%B3rio%20GitHub%20-%20Desenvolvimento_files/highlight_002.js"></script>
+
+    <link rel="stylesheet" href="Removendo%20uma%20pasta%20inteira%20de%20um%20reposit%C3%B3rio%20GitHub%20-%20Desenvolvimento_files/style.css">
+
+    </head><body>
+    <header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <a href="http://code.leiame.org/" title="Desenvolvimento">
+                    <div id="logo" style="background-image: url('http://rawgit.com/brunogoncalves/docs/master/theme/logo.png?up=c26a6940a82cce197c37ac23183429ddfb4aa605');"></div>
+                </a>
+            </div>
+            <div class="col-md-9 col-sm-9">
+
+                <ul class="nav nav-pills pull-right" id="login">
+                                    </ul>
+            </div>
+        </div>
+    </div>
+</header>    <section id="interna">
+        <div class="container">
+
+        <div class="col-md-3 sidebar">
+        <p><strong>Linux</strong></p>
+<ul>
+<li><a href="http://code.leiame.org/master/linux/pacotes" "="">Pacotes</a></li>
+<li><a href="http://code.leiame.org/master/linux/hd-externo" "="">HD externo</a></li>
+<li><a href="http://code.leiame.org/master/linux/mapear-pasta" "="">Mapear pasta compartilhada</a></li>
+<li><a href="http://code.leiame.org/master/linux/usuarios" "="">Usuários</a></li>
+<li><a href="http://code.leiame.org/master/linux/console-colorido" "="">Console, vim e scripts coloridos</a></li>
+<li><a href="http://code.leiame.org/master/linux/datahora-fuso" "="">Data, hora e fuso</a></li>
+<li><a href="http://code.leiame.org/master/linux/comandos-uteis" "="">Outros comandos úteis</a></li>
+<li><a href="http://code.leiame.org/master/linux/gitesubsplit" "="">Instalando Git e Subsplit</a></li>
+<li><a href="http://code.leiame.org/master/linux/ip" "="">Configurando Rede</a></li>
+</ul>
+<p><strong>Apache</strong></p>
+<ul>
+<li><a href="http://code.leiame.org/master/apache/instalando" "="">Instalando</a></li>
+<li><a href="http://code.leiame.org/master/apache/virtualhost" "="">Virtual Host</a></li>
+<li><a href="http://code.leiame.org/master/apache/loadbalance" "="">Load Balance</a></li>
+<li><a href="http://code.leiame.org/master/apache/ssl" "="">SSL</a></li>
+</ul>
+<p><strong>PHP</strong></p>
+<ul>
+<li><a href="http://code.leiame.org/master/php/instalando" "="">Instalando</a></li>
+<li><a href="http://code.leiame.org/master/php/versao-cinco-quatro" "="">Versão 54</a></li>
+<li><a href="http://code.leiame.org/master/php/versao-cinco-seis" "="">Versão 56</a></li>
+</ul>
+<p><strong>MySQL</strong></p>
+<ul>
+<li><a href="http://code.leiame.org/master/mysql/instalando-mysql" "="">Instalando</a></li>
+<li><a href="http://code.leiame.org/master/mysql/comandos-uteis" "="">Outros comandos úteis</a></li>
+</ul>
+<p><strong>MongoDB</strong></p>
+<ul>
+<li><a href="http://code.leiame.org/master/mongodb/dump" "="">Backup de uma base</a></li>
+<li><a href="http://code.leiame.org/master/mongodb/boaspraticas" "="">Boas práticas com MongoDB</a></li>
+<li><a href="http://code.leiame.org/master/mongodb/exportcsv" "="">Exportar coleção para arquivo .csv</a></li>
+<li><a href="http://code.leiame.org/master/mongodb/exportjson" "="">Exportar coleção para arquivo .json</a></li>
+<li><a href="http://code.leiame.org/master/mongodb/importcsv" "="">Importar arquivo .csv para coleção</a></li>
+<li><a href="http://code.leiame.org/master/mongodb/importjson" "="">Importar arquivo .json para coleção</a></li>
+<li><a href="http://code.leiame.org/master/mongodb/importtsv" "="">Importar arquivo .txt para coleção</a></li>
+<li><a href="http://code.leiame.org/master/mongodb/instalacao" "="">Instalando</a></li>
+<li><a href="http://code.leiame.org/master/mongodb/monitoracao" "="">Monitoração</a></li>
+<li><a href="http://code.leiame.org/master/mongodb/restore" "="">Restore de uma base</a></li>
+<li><a href="http://code.leiame.org/master/mongodb/update-array" "="">Update em Arrays</a></li>
+</ul>
+<p><strong>VsFTP</strong></p>
+<ul>
+<li><a href="http://code.leiame.org/master/ftp/instalando" "="">Instalando</a></li>
+</ul>
+<p><strong>Samba</strong></p>
+<ul>
+<li><a href="http://code.leiame.org/master/samba/instalando" "="">Instalando</a></li>
+</ul>
+<p><strong>Composer</strong></p>
+<ul>
+<li><a href="http://code.leiame.org/master/composer/instalando" "="">Instalando</a></li>
+<li><a href="http://code.leiame.org/master/composer/repo-privado" "="">Repositórios privados</a></li>
+</ul>
+<p><strong>GitHub</strong></p>
+<ul>
+<li><a href="http://code.leiame.org/master/github/add-branch" "="">Add nova branch</a></li>
+<li><a href="http://code.leiame.org/master/github/instalar-repositorio" "="">Baixando e instalando Repositório</a></li>
+<li><a href="http://code.leiame.org/master/github/criando-tag" "="">Criando uma liberação TAG</a></li>
+<li><a href="http://code.leiame.org/master/github/removendo-pasta" "="">Removendo uma pasta</a></li>
+<li><a href="http://code.leiame.org/master/github/sincronizando-fork" "="">Sincronizando um Fork</a></li>
+</ul>
+<p><strong>PhpStorm</strong></p>
+<ul>
+<li><a href="http://code.leiame.org/master/phpstorm/github" "="">GitHub</a></li>
+<li><a href="http://code.leiame.org/master/phpstorm/less" "="">LESS</a></li>
+<li><a href="http://code.leiame.org/master/phpstorm/phpunit" "="">PhpUnit</a></li>
+</ul>
+<p><strong>Bower</strong></p>
+<ul>
+<li><a href="http://code.leiame.org/master/bower/instalando" "="">Instalando</a></li>
+<li><a href="http://code.leiame.org/master/bower/iniciando-em-projeto" "="">Iniciando em um Projeto</a></li>
+<li><a href="http://code.leiame.org/master/bower/alterando-diretorio-padrao" "="">Alterando diretório padrão</a></li>
+<li><a href="http://code.leiame.org/master/bower/pesquisando-pacotes" "="">Pesquisando pacotes</a></li>
+<li><a href="http://code.leiame.org/master/bower/adicionando-pacote" "="">Adicionando um pacote no Projeto</a></li>
+</ul>    </div>
+    
+    <div class="col-md-9 page com-sidebar">
+        <h1>Removendo uma pasta inteira de um repositório GitHub</h1>
+<p>Algumas vezes é enviado a pasta <code>.idea</code> (pasta oculta) de controle do PhpStorm para o projeto e agora é preciso remove-la. Mas o próprio PhpStrom não exibe esta pasta.</p>
+<p>Então é preciso executar o comando abaixo para marcar a pasta <code>.idea</code> como removida do projeto.</p>
+<pre><code class="hljs css"><span class="hljs-selector-tag">git</span> <span class="hljs-selector-tag">rm</span> <span class="hljs-selector-tag">-r</span> <span class="hljs-selector-class">.idea</span></code></pre>
+<p>Pronto, agora a pasta roi removida, basta fazer um commit e push para que a alteração vá para o github.</p>    </div>
+</div>
+    </section>
+    <footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <h3>Desenvolvimento</h3>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+            </div>
+
+            <div class="col-md-3 col-sm-6 powered">
+                POWERED BY
+                <a href="http://leiame.org/">
+                    <img src="Removendo%20uma%20pasta%20inteira%20de%20um%20reposit%C3%B3rio%20GitHub%20-%20Desenvolvimento_files/powered_logo.png">
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+</body></html>
