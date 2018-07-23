@@ -1,0 +1,3 @@
+;(function($,_,undefined){"use strict";ips.controller.register('forums.front.topic.nbmentionsPostLink',{initialize:function(){this.on('click','[data-action="nbMentionMember"]',this.nbMentionMember);},nbMentionMember:function(e){e.preventDefault();var scope=this.scope;var editorID=$('[data-role="contentEditor"]').attr('name');var mention='<a href="'+$(scope).attr('data-mentionhref')+'" contenteditable="false" data-ipshover="" data-ipshover-target="'
++$(scope).attr('data-mentionhover')+'" data-mentionid="'+$(scope).attr('data-mentionid')
++'">@'+$(scope).attr('data-mentionname')+'</a>';if(editorID){this.trigger('replyToTopic');$('textarea[name="'+editorID+'"]').closest('[data-ipsEditor]').data('_editor').insertHtml(mention);}},});}(jQuery,_));;

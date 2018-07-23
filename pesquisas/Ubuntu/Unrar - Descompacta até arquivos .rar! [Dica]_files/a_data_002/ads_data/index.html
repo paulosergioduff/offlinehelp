@@ -1,0 +1,70 @@
+<html><head>
+<title>GoDaddy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="ad.size" content="width=160,height=600">
+<link rel="stylesheet" type="text/css" href="index_data/style.css">
+<script type="text/javascript">var clickTag = "http://www.google.com";</script>
+<script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script></head>
+<body onload="document.getElementById('banner').className='play';">
+<a href="javascript:window.open(window.clickTag)" id="banner" class="play">
+	<div id="dunga"><img src="index_data/dunga.png"></div>
+	<div id="txt1"><img src="index_data/txt1.png"></div>
+	<div id="bg2"><img src="index_data/bg2.jpg"></div>
+	<div id="txt2"><img src="index_data/txt2.png"></div>
+	<div id="bg3"></div>
+	<div id="txt3"><img src="index_data/txt3.png"></div>
+	<div id="txt4"><img src="index_data/txt4.png"></div>
+	<div id="cta"><img src="index_data/cta.png"></div>
+	<div id="logo"><img src="index_data/logo.png"></div>
+</a>	
+
+</body></html>

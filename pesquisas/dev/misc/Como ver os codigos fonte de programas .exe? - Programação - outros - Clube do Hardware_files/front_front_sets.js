@@ -1,0 +1,10 @@
+;(function($,_,undefined){"use strict";ips.controller.register('nbmentions.front.sets.nbMentionSet',{initialize:function(){this.scope.parent('li').addClass("nbMentionSetMenu");this.scope.parent('li').addClass(ips.getSetting("nbmentions_ddmenu_css"));this.on('change','select',this.nbMentionsSetsSelect);},nbMentionsSetsSelect:function(e){e.preventDefault();var scope=this.scope;var editorID=$('[data-role="contentEditor"]').attr('name');var target=$(e.target);var formUrl=target.parents('form').attr('action');var set=target.val();if(set==0)
+{return false;}
+var checkfids=scope.attr('data-checkfids');var checkgrs=scope.attr('data-checkgrs');var forumId=scope.attr('data-forumId');var response={};var offset=0;target.prop('disabled',true);var _nbMentionsSetsAjax;_nbMentionsSetsAjax=function(response){if(_.isObject(response)&&response['formUrl']){formUrl=response['formUrl'];}
+if(_.isObject(response)&&response['checkfids']){checkfids=response['checkfids'];}
+if(_.isObject(response)&&response['checkgrs']){checkgrs=response['checkgrs'];}
+if(_.isObject(response)&&response['forumId']){forumId=response['forumId'];}
+if(_.isObject(response)&&response['set']){set=response['set'];}
+if(_.isObject(response)&&response['offset']){offset=response['offset'];}
+ips.getAjax()(ips.getSetting('baseURL')+'?app=nbmentions&module=sets&controller=ajax&do=mentionsUsers',{'data':{formUrl:formUrl,checkfids:checkfids,checkgrs:checkgrs,forumId:forumId,offset:offset,set:set},showLoading:true}).done(function(response){if(response['type']=='error'){var error=response['message'];ips.ui.alert.show({type:'alert',icon:'warn',message:error,callbacks:{}});target.prop('disabled',false);target.prop('selectedIndex',0);}
+else if(editorID){$('textarea[name="'+editorID+'"]').closest('[data-ipsEditor]').data('_editor').insertHtml(response['html']);if(parseInt(response['offset'])!=0&&(parseInt(response['offset'])<parseInt(response['count']))){setTimeout(function(){_nbMentionsSetsAjax(response);},2000)}else{target.prop('disabled',false);target.prop('selectedIndex',0);}}}).fail(function(){});};_nbMentionsSetsAjax();},});}(jQuery,_));;

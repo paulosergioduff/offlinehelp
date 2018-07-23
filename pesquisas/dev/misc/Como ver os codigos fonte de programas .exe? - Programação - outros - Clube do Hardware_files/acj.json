@@ -1,0 +1,29 @@
+OX_3909766436({
+  "ads":{
+    "chain":1,
+    "medium":"w",
+    "record_tmpl":"https://delivery-us-west-1.openx.net/{medium}/1.0/{rtype}?ph=94ef58655625200a8cfc5b15afcd0b94ad52d590&ts={txn_state}",
+    "pixels":"https://us-u.openx.net/w/1.0/pd?plm=10&ph=94ef58655625200a8cfc5b15afcd0b94ad52d590&gdpr=0",
+    "oxt": 93.902,
+    "adunits" : [
+      {
+        "auid":"537197064",
+        "chain_timeout":"",
+        "chain":[
+          {
+            "is_fallback":1,
+            "ad_id":"0",
+            "adv_acct_id":"",
+            "width":"728",
+            "height":"90",
+            "html":"<script async type='text/javascript' src='//s.clickiocdn.com/t/common_258.js'></script>\n<script class='__lxGc__' type='text/javascript'>\n((__lxGc__=window.__lxGc__||{'s':{},'b':0})['s']['_203571']=__lxGc__['s']['_203571']||{'b':{}})['b']['_591615']={'i':__lxGc__.b++};\n</script>",
+            "target":"_blank",
+            "ts":"2DAABBgABAAECAAIBAAsAAgAAAGUcGApYa08wcGpMVEFPHBavzs2zoKGdzJcBFrHBv7a2s7WPtwEAHBbsroL5hsHls-oBFsuI5JbVm_PT6AEAFuD_qLMLFQIALBwVAgAAHCaQ6KeABBUEFQQmkKufgAQWkKObgAQAAAA",
+            "type":"html",
+            "ad_url":"<script async type='text/javascript' src='//s.clickiocdn.com/t/common_258.js'></script>\n<script class='__lxGc__' type='text/javascript'>\n((__lxGc__=window.__lxGc__||{'s':{},'b':0})['s']['_203571']=__lxGc__['s']['_203571']||{'b':{}})['b']['_591615']={'i':__lxGc__.b++};\n</script>"
+          }
+        ]
+      }
+    ]
+  }
+});

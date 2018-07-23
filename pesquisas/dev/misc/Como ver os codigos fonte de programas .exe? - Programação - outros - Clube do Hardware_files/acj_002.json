@@ -1,0 +1,29 @@
+OX_9960892377({
+  "ads":{
+    "chain":1,
+    "medium":"w",
+    "record_tmpl":"https://delivery-us-west-1.openx.net/{medium}/1.0/{rtype}?ph=94ef58655625200a8cfc5b15afcd0b94ad52d590&ts={txn_state}",
+    "pixels":"https://us-u.openx.net/w/1.0/pd?plm=10&ph=94ef58655625200a8cfc5b15afcd0b94ad52d590&gdpr=0",
+    "oxt": 98.212,
+    "adunits" : [
+      {
+        "auid":"537197070",
+        "chain_timeout":"",
+        "chain":[
+          {
+            "is_fallback":1,
+            "ad_id":"0",
+            "adv_acct_id":"",
+            "width":"728",
+            "height":"90",
+            "html":"<script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script>\n<!-- CDH - 728x90 - Stack #2 -->\n<ins class=\"adsbygoogle\"\n     style=\"display:inline-block;width:728px;height:90px\"\n     data-ad-client=\"ca-pub-3467305779079226\"\n     data-ad-slot=\"2158170315\"></ins>\n<script>\n(adsbygoogle = window.adsbygoogle || []).push({});\n</script>",
+            "target":"_blank",
+            "ts":"2DAABBgABAAECAAIBAAsAAgAAAGQcGApBaG1jMHVMeUxyHBaClerzsKSn5xMWxc_NnvK_9IqbAQAcFu373aDA2qbctQEW_5WG2L3C8f3mAQAW4P-oswsVAgAsHBUCAAAcJpzop4AEFQQVBCaQq5-ABBaQo5uABAAAAA",
+            "type":"html",
+            "ad_url":"<script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script>\n<!-- CDH - 728x90 - Stack #2 -->\n<ins class=\"adsbygoogle\"\n     style=\"display:inline-block;width:728px;height:90px\"\n     data-ad-client=\"ca-pub-3467305779079226\"\n     data-ad-slot=\"2158170315\"></ins>\n<script>\n(adsbygoogle = window.adsbygoogle || []).push({});\n</script>"
+          }
+        ]
+      }
+    ]
+  }
+});

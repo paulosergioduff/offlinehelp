@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+@keyframes 			fadeIn { 0% { opacity:0; } 100% { opacity:1; } }
+@-webkit-keyframes 	fadeIn { 0% { opacity:0; } 100% { opacity:1; } }
+@keyframes 			fadeOut { 0% { opacity:1; } 100% { opacity:0; } }
+@-webkit-keyframes 	fadeOut { 0% { opacity:1; } 100% { opacity:0; } }
+@keyframes 			txtIn { 0% { left:-200px; } 100% { left:0; } }
+@-webkit-keyframes 	txtIn { 0% { left:-200px; } 100% { left:0; } }
+@keyframes 			txtUp { 0% { top:170px; } 100% { top:127px; } }
+@-webkit-keyframes 	txtUp { 0% { top:170px; } 100% { top:127px; } }
+@keyframes 			slideRight { 0% { left:-200px; } 100% { left:0; } }
+@-webkit-keyframes 	slideRight { 0% { left:-200px; } 100% { left:0; } }
+@keyframes 			dunga { 0% { left:300px; } 100% { left:123px; } }
+@-webkit-keyframes 	dunga { 0% { left:300px; } 100% { left:123px; } }
+@keyframes 			logo { 0% { left:9px; } 100% { left:181px; } }
+@-webkit-keyframes 	logo { 0% { left:9px; } 100% { left:181px; } }
+
+#banner { position:absolute; left:0; top:0; width:300px; height:250px; overflow:hidden; text-align:left; font-size:0; background:url('bg1.jpg'); }
+#banner * { text-decoration:none; border:none; }
+#banner div { position:absolute; left:-2000px; }
+#banner img { position:relative; margin:0; padding:0; }
+
+#banner.play #logo { left:9px; top:207px; }
+#banner.play #dunga { top:0; }
+#banner.play #txt1 { left:12px; top:31px; width:100%; height:97px; border-left:solid 3px #ffffff !important; overflow:hidden; }
+#banner.play #bg2 { left:0; top:0; }
+#banner.play #txt2 { left:157px; top:149px; width:100%; height:89px; border-left:solid 3px #ffffff !important; overflow:hidden; }
+#banner.play #bg3 { left:0; top:0; width:100%; height:100%; background:#02c54b; }
+#banner.play #txt3 { left:12px; top:21px; width:100%; height:92px; border-left:solid 3px #ffffff !important; overflow:hidden; }
+#banner.play #txt4 { left:15px; top:135px; }
+#banner.play #cta { left:11px; top:206px; }
+
+#banner.play #logo {	-webkit-animation:fadeIn 400ms ease-out 300ms 1 both, logo 600ms cubic-bezier(.4,.75,.7,1) 8800ms 1 both;
+								animation:fadeIn 400ms ease-out 300ms 1 both, logo 600ms cubic-bezier(.4,.75,.7,1) 8800ms 1 both; }
+#banner.play #dunga {	-webkit-animation:dunga 2000ms cubic-bezier(.4,0,.6,1) 600ms 1 both;
+								animation:dunga 2000ms cubic-bezier(.4,0,.6,1) 600ms 1 both; }
+#banner.play #txt1 {	-webkit-animation:fadeIn 400ms ease-out 200ms 1 both;
+								animation:fadeIn 400ms ease-out 200ms 1 both; }
+#banner.play #txt1 img {	-webkit-animation:txtIn 600ms cubic-bezier(.4,.75,.7,1) 200ms 1 both;
+									animation:txtIn 600ms cubic-bezier(.4,.75,.7,1) 200ms 1 both; }
+#banner.play #bg2 {	-webkit-animation:fadeIn 1000ms ease-out 3800ms 1 both;
+							animation:fadeIn 1000ms ease-out 3800ms 1 both; }
+#banner.play #txt2 {	-webkit-animation:fadeIn 400ms ease-out 4500ms 1 both;
+								animation:fadeIn 400ms ease-out 4500ms 1 both; }
+#banner.play #txt2 img {	-webkit-animation:txtIn 600ms cubic-bezier(.4,.75,.7,1) 4500ms 1 both;
+									animation:txtIn 600ms cubic-bezier(.4,.75,.7,1) 4500ms 1 both; }
+#banner.play #bg3 {	-webkit-animation:fadeIn 1000ms ease-out 7300ms 1 both;
+							animation:fadeIn 1000ms ease-out 7300ms 1 both; }
+#banner.play #txt3 {	-webkit-animation:fadeIn 400ms ease-out 8000ms 1 both;
+								animation:fadeIn 400ms ease-out 8000ms 1 both; }
+#banner.play #txt3 img {	-webkit-animation:txtIn 600ms cubic-bezier(.4,.75,.7,1) 8000ms 1 both;
+									animation:txtIn 600ms cubic-bezier(.4,.75,.7,1) 8000ms 1 both; }
+#banner.play #txt4 img {	-webkit-animation:slideRight 400ms ease-out 8500ms 1 both;
+								animation:slideRight 400ms ease-out 8500ms 1 both; }
+#banner.play #cta img {	-webkit-animation:slideRight 600ms cubic-bezier(.4,.75,.7,1) 9000ms 1 both;
+								animation:slideRight 600ms cubic-bezier(.4,.75,.7,1) 9000ms 1 both; }

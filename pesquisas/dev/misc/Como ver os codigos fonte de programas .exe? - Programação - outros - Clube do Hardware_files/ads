@@ -1,0 +1,77 @@
+(function() {
+    SmartIntxt = {
+        config : {
+            site_name : 'br_clubedohardware',
+            playerHTML5 : "clubedohardware.br.intxt.html5.smartclip",
+            elementContainer : '',
+            Intext_management_script : 'https://a482323.storage.oraclecloud.com/v1/Storage-a482323/smartclip-services/ava/ava.js',
+            minAdWidth : 320,
+            maxAdWidth : 900,
+            customLocation: true,
+            customLocationQuery: "article",
+            customLocationParent: "body",
+            positioning: function() {
+                function getElements(sc_element) {return top.window.document.querySelectorAll(sc_element);}
+                if (SmartIntxt.config.elementContainer != "" && (getElements("#"+SmartIntxt.config.elementContainer).length || getElements("."+SmartIntxt.config.elementContainer).length)) return;
+                SmartIntxt.config.elementContainer = "smartIntxt";
+                var position = Math.floor(getElements(SmartIntxt.config.customLocationQuery).length / 2);
+                if (position) {
+                    var selectedNode = getElements(SmartIntxt.config.customLocationQuery)[position];
+                    var positionSelector = "afterend";
+                } else {
+                    var selectedNode = getElements(SmartIntxt.config.customLocationParent)[0];
+                    var positionSelector = "beforeend";
+                }
+                var mandanga = '<div id="' + SmartIntxt.config.elementContainer + '"></div>';
+                selectedNode.insertAdjacentHTML(positionSelector, mandanga);
+            }
+        },
+        "init": function(){
+            var sc_date = new Date();
+            var sc_day = sc_date.getDate();
+            var sc_hour = sc_date.getHours();
+            var sc_pixel = document.createElement("script");
+            var url = SmartAva.config.smartclipConfig;
+            sc_pixel.type = "text/javascript";
+            sc_pixel.src = url;
+            document.body.appendChild(sc_pixel);
+            var sc = document.createElement('script');
+            sc.type = 'text/javascript';
+            sc.async = 'true';
+            sc.src='//dco.smartclip.net/?plc=82104',
+            sc.onload = sc.onreadystatechange = function() {
+                var rs = this.readyState;
+                if (rs && rs != 'complete' && rs != 'loaded') return;
+                try {
+                    SmartPlay(SmartIntxt.config.elementContainer, {
+                        adRequest: '//ad.sxp.smartclip.net/select?type=dyn&ple=' + SmartIntxt.config.playerHTML5 + '~~400x320&cu_smar_cors=1&smar_cors=1&fwd_dt1=&fwd_dt2=&fwd_sz=400x320&&ang_contxt=1&inswipe=[ALLOWINSWIPE]&optout=&consent=&rnd=6391530&ang_ref=',
+                        minAdWidth: SmartIntxt.config.minAdWidth,
+                        maxAdWidth: SmartIntxt.config.maxAdWidth,
+                        elementLocator: {
+                            allowInViewport: false,
+                            minimumElementWidth: 320,
+                            scanPixelsBelowViewport: 800
+                        },
+                        skipText: Site_conf.ava_desk.skipText,
+                        skipOffset: Site_conf.ava_desk.skipOffset, // overriden by VAST3 skipoffset, value of 0 will not show a skip button 0.1 will immediately show a ckip button
+                        behaviourMatrix: {
+                            'offScreen': {
+                                paused: false,
+                                muted: true
+                            }
+                        },
+                        onStartCallback: (function() {try {SmartAva.utils.ava_sc_smartIntxtStart();sc_smartIntxtStart();} catch (f) {}}),
+                        onCappedCallback: (function() {try {SmartAva.utils.ava_sc_smartIntxtNoad();sc_smartIntxtNoad();} catch (f) {}}),
+                        onEndCallback: (function() {try {SmartAva.utils.ava_sc_smartIntxtEnd();sc_smartIntxtEnd();} catch (f) {}})
+                    });
+                } catch (e) {console.warn('error caught : ' + e);}
+            };
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(sc, s);
+        }
+    }
+    var sc_pixel = document.createElement("script");
+    sc_pixel.type = "text/javascript";
+    sc_pixel.src = SmartIntxt.config.Intext_management_script;
+    document.body.appendChild(sc_pixel);
+})();
