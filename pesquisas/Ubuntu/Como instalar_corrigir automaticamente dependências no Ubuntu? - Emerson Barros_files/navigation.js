@@ -1,0 +1,5 @@
+(function(){var nav=document.getElementById('access'),button,menu;if(!nav){return;}
+button=nav.getElementsByTagName('button')[0];menu=nav.getElementsByTagName('ul')[0];if(!button){return;}
+if(!menu||!menu.childNodes.length){button.style.display='none';return;}
+button.onclick=function(){if(-1===menu.className.indexOf('menu')){menu.className='menu';}
+if(-1!==button.className.indexOf('toggled-on')){button.className=button.className.replace(' toggled-on','');menu.className=menu.className.replace(' toggled-on','');}else{button.className+=' toggled-on';menu.className+=' toggled-on';}};})();(function($){$('.menu-focus').find('a').on('focus.catchbox blur.catchbox',function(){$(this).parents('.menu-item, .page_item').toggleClass('focus');});if('ontouchstart'in window){$('.menu-item-has-children > a').on('touchstart.catchbox',function(e){var el=$(this).parent('li');if(!el.hasClass('focus')){e.preventDefault();el.toggleClass('focus');el.siblings('.focus').removeClass('focus');}});}})(jQuery);

@@ -1,0 +1,1 @@
+window['_ttq_tt_idg'].push(['_setTTProfile','E:4|S:18.3.1531087200|A:4|X:4|U:56.1.15308,10.1.15308,11.1.15308_belford roxo_rio de janeiro_br_1532386994558_2970399042']);window['_ttq_tt_idg'].push(['_setProfile','']);window['_ttq_tt_idg'].push(['_cm']);window['_ttq_tt_idg'].push(['_cm']);

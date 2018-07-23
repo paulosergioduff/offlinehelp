@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html><head><script src="index_data/tweenmax_1.js"></script><script src="index_data/exitapi-impl.js" type="text/javascript"></script><script src="index_data/addata.js" type="text/javascript"></script><meta content="text/html; charset=UTF-8" http-equiv="content-type"><title></title><script>
+(function(tweenui) {
+var timeline;
+var loop=1;
+var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+var firefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+function startPlaying() { if (g('tui-t')) {timeline.seek(parseFloat(g('tui-t')));window.tuidone = 1; } else { if (loop<0) timeline.play(0); else { if (loop>0){loop--;timeline.play(0)}}}}
+function g(name) { name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]"); var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"); var results = regex.exec(window.location.search); if(results == null) return ""; else return decodeURIComponent(results[1].replace(/\+/g, " ")); }
+function gl(a){for(var i=0;i<a.length;++i){var x=g(a[i]);if (x!='')return x;}return '';}
+var res = function() { var bd = document.getElementsByTagName('body')[0];if (firefox) {bd.style.mozTransform = 'scale(' + window.innerWidth/300 + ')';bd.style.transform = 'scale(' + window.innerWidth/300 + ')';} else {bd.style.zoom = window.innerWidth/300;}if (iOS) { setTimeout(function() {window.onresize = ires},100) } else { window.onresize = res }bd.style.display = '';}
+var ires = function() { if (window.onresize) { window.onresize = null; var bd = document.getElementsByTagName('body')[0]; bd.style.display = 'none'; setTimeout(res, 500); }}
+var loadcnt = 3;
+function tui_go() {
+--loadcnt; if (loadcnt==0) {
+var l = gl(["l","clickTAG"]); var ctl = document.getElementById("tui-ctl");
+if (l!="" && ctl) { if (g('a')==1) { l = l + encodeURIComponent(ctl.href) } ctl.href=l; ctl.style.pointerEvents="auto"}
+if (typeof(tweenui.exp) == "function") { tweenui.exp(); }
+if (g('s')==1) { res();if (iOS) { window.addEventListener('orientationchange', ires, false) }}
+document.getElementsByTagName('body')[0].style.opacity=1;
+startPlaying();
+}
+}
+tweenui.init = function() {
+timeline = new TimelineLite({paused:true, onComplete:startPlaying});
+TweenLite.defaultOverwrite = "none";
+timeline.insert(new TweenLite({}, 0.0, {}), 15.0);
+var layer_1 = document.getElementById("tui-27");
+timeline.insert(TweenLite.to(layer_1, 0, {css:{display: "block"}, immediateRender:false}), 12.2);
+timeline.insert(TweenLite.to(layer_1, 0.77, {css: {autoAlpha: 1.0}, ease: Power1.easeOut}), 12.42);
+timeline.insert(TweenLite.to(layer_1, 0.5, {css: {autoAlpha: 0.0}, ease: Power1.easeOut}), 14.35);
+TweenLite.set(layer_1, {css: {autoAlpha: 0.0, x: 50, y: 25, scale: 0.59, rotationX: 0.0, rotationY: 0.0, rotationZ: 0.0}});
+var layer_2 = document.getElementById("tui-26");
+timeline.insert(TweenLite.to(layer_2, 0, {css:{display: "block"}, immediateRender:false}), 11.74);
+timeline.insert(TweenLite.to(layer_2, 0.5, {css: {y: 0, x: 0}, ease: Power1.easeOut}), 11.84);
+timeline.insert(TweenLite.to(layer_2, 0.5, {css: {autoAlpha: 0.0}, ease: Power1.easeOut}), 14.5);
+TweenLite.set(layer_2, {css: {autoAlpha: 1.0, x: 0, y: 281, scale: 1.0, rotationX: 0.0, rotationY: 0.0, rotationZ: 0.0}});
+var layer_3 = document.getElementById("tui-24");
+timeline.insert(TweenLite.to(layer_3, 0, {css:{display: "block"}, immediateRender:false}), 8.75);
+timeline.insert(TweenLite.to(layer_3, 0, {css:{display: "none"}, immediateRender:false}), 12.06);
+timeline.insert(TweenLite.to(layer_3, 0.5, {css: {y: 181, x: 23}, ease: Power1.easeOut}), 9.26);
+timeline.insert(TweenLite.to(layer_3, 0.5, {css: {y: -27, x: 23}, ease: Power1.easeIn}), 11.47);
+TweenLite.set(layer_3, {css: {autoAlpha: 1.0, x: 23, y: 274, scale: 1.0, rotationX: 0.0, rotationY: 0.0, rotationZ: 0.0}});
+var layer_4 = document.getElementById("tui-21");
+timeline.insert(TweenLite.to(layer_4, 0, {css:{display: "block"}, immediateRender:false}), 8.48);
+timeline.insert(TweenLite.to(layer_4, 0, {css:{display: "none"}, immediateRender:false}), 12.06);
+timeline.insert(TweenLite.to(layer_4, 0.5, {css: {y: -47, x: 23}, ease: Power1.easeIn}), 11.34);
+timeline.insert(TweenLite.to(layer_4, 0.5, {css: {y: 113, x: 23}, ease: Power1.easeOut}), 9.0);
+TweenLite.set(layer_4, {css: {autoAlpha: 1.0, x: 23, y: 361, scale: 1.0, rotationX: 0.0, rotationY: 0.0, rotationZ: 0.0}});
+var layer_5 = document.getElementById("tui-19");
+timeline.insert(TweenLite.to(layer_5, 0, {css:{display: "block"}, immediateRender:false}), 8.48);
+timeline.insert(TweenLite.to(layer_5, 0, {css:{display: "none"}, immediateRender:false}), 12.11);
+timeline.insert(TweenLite.to(layer_5, 0.5, {css: {y: -87, x: 23}, ease: Power1.easeIn}), 11.31);
+timeline.insert(TweenLite.to(layer_5, 0.5, {css: {y: 81, x: 23}, ease: Power1.easeOut}), 9.0);
+TweenLite.set(layer_5, {css: {autoAlpha: 1.0, x: 23, y: 294, scale: 1.0, rotationX: 0.0, rotationY: 0.0, rotationZ: 0.0}});
+var layer_6 = document.getElementById("tui-17");
+timeline.insert(TweenLite.to(layer_6, 0, {css:{display: "block"}, immediateRender:false}), 8.74);
+timeline.insert(TweenLite.to(layer_6, 0, {css:{display: "none"}, immediateRender:false}), 12.55);
+timeline.insert(TweenLite.to(layer_6, 0.5, {css: {y: 0, x: 0}, ease: Power1.easeOut}), 8.77);
+TweenLite.set(layer_6, {css: {autoAlpha: 1.0, x: 0, y: 281, scale: 1.0, rotationX: 0.0, rotationY: 0.0, rotationZ: 0.0}});
+var layer_7 = document.getElementById("tui-14");
+timeline.insert(TweenLite.to(layer_7, 0, {css:{display: "block"}, immediateRender:false}), 5.96);
+timeline.insert(TweenLite.to(layer_7, 0, {css:{display: "none"}, immediateRender:false}), 9.04);
+timeline.insert(TweenLite.to(layer_7, 0.5, {css: {y: -27, x: 33}, ease: Power1.easeIn}), 8.4);
+timeline.insert(TweenLite.to(layer_7, 0.5, {css: {y: 185, x: 33}, ease: Power1.easeOut}), 6.1);
+TweenLite.set(layer_7, {css: {autoAlpha: 1.0, x: 33, y: 421, scale: 1.0, rotationX: 0.0, rotationY: 0.0, rotationZ: 0.0}});
+var layer_8 = document.getElementById("tui-15");
+timeline.insert(TweenLite.to(layer_8, 0, {css:{display: "block"}, immediateRender:false}), 5.96);
+timeline.insert(TweenLite.to(layer_8, 0, {css:{display: "none"}, immediateRender:false}), 9.04);
+timeline.insert(TweenLite.to(layer_8, 0.5, {css: {y: 45, x: 33}, ease: Power1.easeOut}), 6.1);
+timeline.insert(TweenLite.to(layer_8, 0.5, {css: {y: -167, x: 33}, ease: Power1.easeIn}), 8.4);
+TweenLite.set(layer_8, {css: {autoAlpha: 1.0, x: 33, y: 281, scale: 1.0, rotationX: 0.0, rotationY: 0.0, rotationZ: 0.0}});
+var layer_9 = document.getElementById("tui-11");
+timeline.insert(TweenLite.to(layer_9, 0, {css:{display: "block"}, immediateRender:false}), 5.86);
+timeline.insert(TweenLite.to(layer_9, 0, {css:{display: "none"}, immediateRender:false}), 9.870000000000001);
+timeline.insert(TweenLite.to(layer_9, 0.5, {css: {y: 0, x: 0}, ease: Power1.easeOut}), 5.87);
+TweenLite.set(layer_9, {css: {autoAlpha: 1.0, x: 0, y: 281, scale: 1.0, rotationX: 0.0, rotationY: 0.0, rotationZ: 0.0}});
+var layer_10 = document.getElementById("tui-8");
+timeline.insert(TweenLite.to(layer_10, 0, {css:{display: "block"}, immediateRender:false}), 3.06);
+timeline.insert(TweenLite.to(layer_10, 0, {css:{display: "none"}, immediateRender:false}), 6.21);
+timeline.insert(TweenLite.to(layer_10, 0.5, {css: {y: 193, x: 23}, ease: Power1.easeOut}), 3.2);
+timeline.insert(TweenLite.to(layer_10, 0.5, {css: {y: -27, x: 23}, ease: Power1.easeIn}), 5.5);
+TweenLite.set(layer_10, {css: {autoAlpha: 1.0, x: 23, y: 481, scale: 1.0, rotationX: 0.0, rotationY: 0.0, rotationZ: 0.0}});
+var layer_11 = document.getElementById("tui-9");
+timeline.insert(TweenLite.to(layer_11, 0, {css:{display: "block"}, immediateRender:false}), 3.1);
+timeline.insert(TweenLite.to(layer_11, 0, {css:{display: "none"}, immediateRender:false}), 6.21);
+timeline.insert(TweenLite.to(layer_11, 0.5, {css: {y: -201, x: 23}, ease: Power1.easeIn}), 5.5);
+timeline.insert(TweenLite.to(layer_11, 0.5, {css: {y: 37, x: 23}, ease: Power1.easeOut}), 3.2);
+TweenLite.set(layer_11, {css: {autoAlpha: 1.0, x: 23, y: 281, scale: 1.0, rotationX: 0.0, rotationY: 0.0, rotationZ: 0.0}});
+var layer_12 = document.getElementById("tui-5");
+timeline.insert(TweenLite.to(layer_12, 0, {css:{display: "block"}, immediateRender:false}), 2.92);
+timeline.insert(TweenLite.to(layer_12, 0, {css:{display: "none"}, immediateRender:false}), 7.93);
+timeline.insert(TweenLite.to(layer_12, 0.5, {css: {y: 0, x: 0}, ease: Power1.easeOut}), 2.95);
+TweenLite.set(layer_12, {css: {autoAlpha: 1.0, x: 0, y: 281, scale: 1.0, rotationX: 0.0, rotationY: 0.0, rotationZ: 0.0}});
+var layer_13 = document.getElementById("tui-3");
+timeline.insert(TweenLite.to(layer_13, 0, {css:{display: "none"}, immediateRender:false}), 3.2);
+timeline.insert(TweenLite.to(layer_13, 0.5, {css: {y: 185, x: 33}, ease: Power1.easeOut}), 0.3);
+timeline.insert(TweenLite.to(layer_13, 0.5, {css: {y: -27, x: 33}, ease: Power1.easeIn}), 2.5);
+TweenLite.set(layer_13, {css: {autoAlpha: 1.0, x: 33, y: 421, scale: 1.0, rotationX: 0.0, rotationY: 0.0, rotationZ: 0.0}});
+var layer_14 = document.getElementById("tui-2");
+timeline.insert(TweenLite.to(layer_14, 0, {css:{display: "none"}, immediateRender:false}), 3.2);
+timeline.insert(TweenLite.to(layer_14, 0.5, {css: {y: -167, x: 33}, ease: Power1.easeIn}), 2.5);
+timeline.insert(TweenLite.to(layer_14, 0.5, {css: {y: 45, x: 33}, ease: Power1.easeOut}), 0.3);
+TweenLite.set(layer_14, {css: {autoAlpha: 1.0, x: 33, y: 281, scale: 1.0, rotationX: 0.0, rotationY: 0.0, rotationZ: 0.0}});
+var layer_15 = document.getElementById("tui-1");
+timeline.insert(TweenLite.to(layer_15, 0, {css:{display: "none"}, immediateRender:false}), 4.31);
+timeline.insert(TweenLite.to(layer_15, 0.5, {css: {autoAlpha: 1.0}, ease: Power1.easeOut}), 0.0);
+TweenLite.set(layer_15, {css: {autoAlpha: 0.0, x: 0, y: 0, scale: 1.0, rotationX: 0.0, rotationY: 0.0, rotationZ: 0.0}});
+tui_go();
+}
+tui_go();
+var imgcnt = 1;
+tweenui.imgcntd = function(e) { var id = e.id.replace(/[^0-9.]/g, "");e.parentNode.removeChild(e);document.getElementById('tui-' + id).appendChild(e); --imgcnt; if (imgcnt==0) { tui_go(); }}
+}(window.tweenui = window.tweenui || {}));</script><style type="text/css">body {
+-webkit-transform-origin: 0 0; transform-origin: 0 0;margin:0px;padding:0px;position:fixed;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing:grayscale;}#tui-animation {
+overflow: hidden;
+position: relative;
+background: #ffffff;
+width: 300px;
+height: 250px;
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+-webkit-perspective: 500px;
+perspective: 500px;
+}#tui-animation div {
+-webkit-transform-style: preserve-3d;
+transform-style: preserve-3d;
+}#tui-animation img {
+display: block;
+}
+#tui-ct {
+position: absolute;
+width: 300px;
+height: 250px;
+border: 1px solid transparent;
+box-sizing: border-box;
+z-index: 16;
+}
+#tui-27 {
+display: none;position: absolute;
+z-index: 15;
+}
+#tui-26 {
+height: 250px;
+width: 300px;
+background: #fcc32d;
+display: none;position: absolute;
+z-index: 14;
+}
+#tui-24 {
+font-weight: normal;
+line-height: 22px;
+text-decoration: none;
+color: #ffffff;
+text-align: left;
+font-style: normal;
+font-family: 've4077';
+font-size: 20px;
+white-space: nowrap;
+display: none;position: absolute;
+z-index: 13;
+}
+#tui-21 {
+font-weight: normal;
+text-decoration: none;
+color: #ffffff;
+font-style: normal;
+text-align: left;
+font-family: '6j53v2';
+font-size: 30px;
+white-space: nowrap;
+display: none;position: absolute;
+z-index: 12;
+}
+#tui-19 {
+font-weight: normal;
+text-decoration: none;
+color: #ffffff;
+font-style: normal;
+text-align: left;
+font-family: 've4077';
+font-size: 30px;
+white-space: nowrap;
+display: none;position: absolute;
+z-index: 11;
+}
+#tui-17 {
+height: 250px;
+background: #000000;
+width: 300px;
+display: none;position: absolute;
+z-index: 10;
+}
+#tui-14 {
+font-weight: normal;
+text-decoration: none;
+color: #414042;
+text-align: left;
+font-style: normal;
+font-family: 've4077';
+font-size: 20px;
+white-space: nowrap;
+display: none;position: absolute;
+z-index: 9;
+}
+#tui-15 {
+font-weight: normal;
+line-height: 43px;
+text-decoration: none;
+color: #414042;
+font-style: normal;
+text-align: left;
+font-family: '6j53v2';
+font-size: 40px;
+white-space: nowrap;
+display: none;position: absolute;
+z-index: 8;
+}
+#tui-11 {
+height: 250px;
+width: 300px;
+background: #f8b42b;
+display: none;position: absolute;
+z-index: 7;
+}
+#tui-8 {
+font-weight: normal;
+text-decoration: none;
+color: #ffc425;
+text-align: left;
+font-style: normal;
+font-family: 've4077';
+font-size: 20px;
+white-space: nowrap;
+display: none;position: absolute;
+z-index: 6;
+}
+#tui-9 {
+font-weight: normal;
+line-height: 38px;
+text-decoration: none;
+color: #ffc425;
+text-align: left;
+font-style: normal;
+font-family: '6j53v2';
+font-size: 35px;
+white-space: nowrap;
+display: none;position: absolute;
+z-index: 5;
+}
+#tui-5 {
+height: 250px;
+width: 300px;
+background: #000000;
+display: none;position: absolute;
+z-index: 4;
+}
+#tui-3 {
+font-weight: normal;
+text-decoration: none;
+color: #414042;
+text-align: left;
+font-style: normal;
+font-family: 've4077';
+font-size: 20px;
+white-space: nowrap;
+position: absolute;
+z-index: 3;
+}
+#tui-2 {
+font-weight: normal;
+line-height: 43px;
+text-decoration: none;
+color: #414042;
+text-align: left;
+font-style: normal;
+font-family: '6j53v2';
+font-size: 40px;
+white-space: nowrap;
+position: absolute;
+z-index: 2;
+}
+#tui-1 {
+height: 250px;
+width: 300px;
+background: #ffc425;
+position: absolute;
+z-index: 1;
+}
+@font-face {
+font-family: 've4077';
+src: url(data:application/font-woff;charset=utf-8;base64,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) format('woff');
+}
+@font-face {
+font-family: '6j53v2';
+src: url(data:application/font-woff;charset=utf-8;base64,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) format('woff');
+}</style><meta content="width=300,height=250" name="ad.size"></head><body onclick="ExitApi.exit();" style="opacity: 1; cursor: pointer;">
+
+
+
+<div id="tui-animation"><div id="tui-ct"></div>
+<div id="tui-27" style="visibility: hidden; opacity: 0; transform: matrix(0.59, 0, 0, 0.59, 50, 25); display: block;"><img id="tui-img-27" onload="tweenui.imgcntd(this)" src="index_data/fb780bf0387baafc3a0d57452d59f0b4.png"></div>
+<div id="tui-26" style="visibility: hidden; opacity: 0; transform: matrix(1, 0, 0, 1, 0, 0); display: block;"><div class="tuirect"></div></div>
+<div id="tui-24" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 23, -27); display: none;"><div>Matrículas abertas</div><div>deaaz.com.br</div></div>
+<div id="tui-21" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 23, -47); display: none;"><div>Intensivo de A a Z</div></div>
+<div id="tui-19" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 23, -87); display: none;"><div>Pré-vestibular</div></div>
+<div id="tui-17" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); display: none;"><div class="tuirect"></div></div>
+<div id="tui-14" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 33, -27); display: none;"><div>Carolina de Oliveira Fecha</div></div>
+<div id="tui-15" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 33, -167); display: none;"><div>1º LUGAR<br>DIREITO</div><div>UFRJ</div></div>
+<div id="tui-11" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); display: none;"><div class="tuirect"></div></div>
+<div id="tui-8" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 23, -27); display: none;"><div>Gabriel Andrade Barroso</div></div>
+<div id="tui-9" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 23, -201); display: none;"><div>1º LUGAR<br>ENGENHARIA</div><div>DE PRODUÇÃO</div><div>UFRJ</div></div>
+<div id="tui-5" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); display: none;"><div class="tuirect"></div></div>
+<div id="tui-3" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 33, -27); display: none;"><div>Antonio Pedro Fortuna</div></div>
+<div id="tui-2" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 33, -167); display: none;"><div>1º LUGAR<br>MEDICINA</div><div>UFRJ</div></div>
+<div id="tui-1" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); display: none;"><div class="tuirect"></div></div>
+</div>
+
+<script>
+(function(d, t) {
+var s = d.createElement(t);
+s.src = 'https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_1.18.0_499ba64a23378545748ff12d372e59e9_min.js';
+s.onload = s.onreadystatechange = function() {
+var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+tweenui.init();
+};
+var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+})(document, 'script');
+</script>
+
+
+
+</body></html>

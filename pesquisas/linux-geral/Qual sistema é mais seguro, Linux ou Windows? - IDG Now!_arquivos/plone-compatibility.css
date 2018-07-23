@@ -1,0 +1,44 @@
+/* <!-- compression status: disabled --> (this is for http compression) */
+/*  */
+/*  (do not remove this :) */
+/*  (not this either :) */
+
+a.activeTabDestaque:link, a.activeTabDestaque:visited, a.activeTabDestaque:hover, a.activeTabDestaque:active {color:#000; border-bottom:0;}
+
+/* MENU COMPOSITE (viewlets) */
+div.context-menu {
+    display: block;
+    height: 200px !important;
+    overflow: auto;
+}
+
+div.slot_element_body {
+display:table; padding-left: 0px !important;
+}
+
+.slot_element .contentActions,
+.slot_element_highlighted .contentActions {
+margin: 1px 0px 1px 0px;
+}
+
+/* PLONE edit block */
+#content {margin:0 !important; padding:0 !important;}
+.contentViews {margin-top:2px;}
+
+#kupu-librarydrawer { z-index: 999 !important; }
+div.kupu-resource, div.kupu-collection {
+    padding: 0; text-align:left;
+}
+div.kupu-libsource, div.kupu-libsource-selected, div.kupu-resource, div.kupu-collection {
+    text-align:left;
+}
+
+.documentContent li a:link,.documentContent li a:visited,.documentContent li a:hover,.documentContent li a:active {text-decoration:none; color:#1A3650; border-bottom:0;}
+
+/* Link transform */
+.link-mailto, .link-https {
+    background: none !important; padding: 0;
+}
+
+/*  */
+/*  */

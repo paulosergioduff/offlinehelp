@@ -1,0 +1,21 @@
+/*  */
+
+.tickerPatrocinioHome {background:url(http://idgnow.uol.com.br/imagens/bg_ticker.gif) no-repeat center center; font:normal 15px Arial; font-style:italic; line-height:47px; color:#000; height:47px; margin:10px 0 0 5px; padding-left:160px; position:relative;}
+.tickerPatrocinioHome ul {list-style:none;}
+.tickerPatrocinioHome .logoTicker {background:#FFF; border:solid 1px #E1E1E1; box-shadow:3px 3px 3px #E1E1E1; -moz-box-shadow:3px 3px 3px #E1E1E1; -webkit-box-shadow:3px 3px 3px #E1E1E1; text-align:center; line-height:30px; width:120px; height:40px; position:absolute; top:2px; left:28px; z-index:0;}
+.tickerPatrocinioHome .scrollText {float:left; width:830px; height:40px; overflow:hidden;}
+
+.tickerPatrocinioHome #ticker-wrapper.has-js {display:block;}
+.tickerPatrocinioHome #ticker {line-height:47px; width:830px; height:47px; display:block; float:left; position:relative; overflow:hidden !important;}
+.tickerPatrocinioHome #ticker-title {padding-top:7px; float:left; color:#900; text-transform:uppercase;}
+.tickerPatrocinioHome #ticker-content {line-height:normal !important; position:absolute; left:0 !important; width:830px; height:47px; margin:0; overflow:hidden;}
+.tickerPatrocinioHome #ticker-content a {border:none; display:block; line-height:47px; height:47px;}
+.tickerPatrocinioHome #ticker-content a:link,
+.tickerPatrocinioHome #ticker-content a:visited,
+.tickerPatrocinioHome #ticker-content a:hover,
+.tickerPatrocinioHome #ticker-content a:active {text-decoration:none; color:#000;}
+.tickerPatrocinioHome #ticker-swipe {padding-top:7px; position:absolute; top:7px; left:80px; background:url(http://idgnow.uol.com.br/imagens/bg_ticker_efeito_v04.gif) no-repeat 0 6px; display:block; width:750px; height:23px}
+.tickerPatrocinioHome #ticker-swipe span {margin-left:1px; height:12px; width:7px; display:block}
+.tickerPatrocinioHome .js-hidden{display:none}
+
+/**/

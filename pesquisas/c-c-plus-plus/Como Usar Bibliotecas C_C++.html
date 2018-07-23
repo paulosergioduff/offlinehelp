@@ -1,0 +1,1792 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br"><head>
+<link href="Como%20Usar%20Bibliotecas%20C_C++_arquivos/shCore.css" type="text/css" rel="stylesheet">
+<link href="Como%20Usar%20Bibliotecas%20C_C++_arquivos/shThemeDefault.css" type="text/css" rel="stylesheet" id="shTheme">
+  <!-- base href="http://www.pontov.com.br/site/cpp/46-conceitos-basicos/155-como-usar-bibliotecas-cc" -->
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="como, funciona, compila, programas, agora, vamos, ver, organizadas, bibliotecas, diferentes">
+  <meta name="og:title" content="Como Usar Bibliotecas C/C++">
+  <meta name="og:site_name" content="Ponto V!">
+  <meta name="og:image" content="http://www.pontov.com.br/site/http://www.pontov.com.br/site/images/stories/artigos/drawing_si8MpHmoPOxCpASjpX_N3g_46_23f94b64beff3f1180e0bd6a04989fac.png">
+  <meta name="title" content="Como Usar Bibliotecas C/C++">
+  <meta name="author" content="Bruno Crivelari Sanches">
+  <meta name="description" content="No artigo “Compilação de progr">
+  <meta name="generator" content="Joomla! 1.5 - Open Source Content Management">
+  <title>Como Usar Bibliotecas C/C++</title>
+  <link href="http://www.pontov.com.br/site/templates/ja_purity/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="http://www.pontov.com.br/site/index.php/component/bca-rss-syndicator/?feed_id=12" rel="alternate" type="application/rss+xml" title="Ponto V - Arquitetura de Jogos">
+  <link href="http://www.pontov.com.br/site/index.php/component/bca-rss-syndicator/?feed_id=7" rel="alternate" type="application/rss+xml" title="Ponto V - C++">
+  <link href="http://www.pontov.com.br/site/index.php/component/bca-rss-syndicator/?feed_id=9" rel="alternate" type="application/rss+xml" title="Ponto V - Game Design">
+  <link href="http://www.pontov.com.br/site/index.php/component/bca-rss-syndicator/?feed_id=13" rel="alternate" type="application/rss+xml" title="Ponto V - Geral">
+  <link href="http://www.pontov.com.br/site/index.php/component/bca-rss-syndicator/?feed_id=11" rel="alternate" type="application/rss+xml" title="Ponto V - Java">
+  <link href="http://www.pontov.com.br/site/index.php/component/bca-rss-syndicator/?feed_id=15" rel="alternate" type="application/rss+xml" title="Ponto V! - Mercado">
+  <link href="http://www.pontov.com.br/site/index.php/component/bca-rss-syndicator/?feed_id=14" rel="alternate" type="application/rss+xml" title="Ponto V! - XNA">
+  <link rel="stylesheet" href="Como%20Usar%20Bibliotecas%20C_C++_arquivos/standard.css" type="text/css">
+  <link rel="stylesheet" href="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar.css" type="text/css">
+  <link rel="stylesheet" href="Como%20Usar%20Bibliotecas%20C_C++_arquivos/jTweet.css" type="text/css">
+  <style type="text/css">
+    <!--
+#toTop {width:100px;z-index: 10;border: 1px solid #eee; background:#f7f7f7; text-align:center; padding:5px; position:fixed; bottom:0px; right:0px; cursor:pointer; display:none;  color:#333;text-transform: lowercase; font-size: 0.9em;}
+    -->
+  </style>
+  <script src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/osd.js"></script><script src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/ca-pub-7126712752176094.js"></script><script type="text/javascript" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/mootools.js"></script>
+  <script type="text/javascript" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/jquery-1.js"></script>
+  <script type="text/javascript" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/caption.js"></script>
+  <script type="text/javascript" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/topsy.js"></script>
+  <script type="text/javascript" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/jquery.js"></script>
+  <script type="text/javascript">
+jQuery.noConflict();
+ var JOSC_postCSS=2;
+jQuery.noConflict();jQuery(document).ready(function(){jQuery('.tweet52').tweet({avatar_size: 24,count: 3,popup_intro: 'Ponto V no twitter!',popup_info: 'no',tweet_source: 'no',twitter_name: 'yes',suppress_replies: 'yes',tweet_template: '1',twitter_action: 'tweeted',source_pre: 'from',query: 'pontov OR empregojogos',join_text: 'auto',auto_join_text_default: '1',auto_join_text_ed: '1',auto_join_text_ing: '1',auto_join_text_reply: '1',auto_join_text_url: '1',loading_text: '1'});})
+  </script>
+  <!--[if lte IE 6]>
+	   			<script type="text/javascript" src="/site/media/plg_jblibrary/jquery/jquery.badBrowser.js"></script> 
+	   			 <![endif]-->
+  <script type="text/javascript">
+ var _JOOMLACOMMENT_MSG_DELETE 	= "Você tem certeza que quer remover este comentário?"; var _JOOMLACOMMENT_MSG_DELETEALL = "Você tem certeza que quer remover todos comentários?"; var _JOOMLACOMMENT_WRITECOMMENT 	= "Escrever um comentário"; var _JOOMLACOMMENT_SENDFORM 		= "Enviar"; var _JOOMLACOMMENT_EDITCOMMENT 	= "Editar um comentário"; var _JOOMLACOMMENT_EDIT 			= "Editar"; var _JOOMLACOMMENT_FORMVALIDATE 	= "Por favor insira pelo menos um comentário."; var _JOOMLACOMMENT_FORMVALIDATE_CAPTCHA = "Por favor coloque o código anti-spam que você lê na imagem."; var _JOOMLACOMMENT_FORMVALIDATE_CAPTCHA_FAILED = "O código anti-spam não está correto. Por favor coloque o código anti-spam que você lê na imagem."; var _JOOMLACOMMENT_FORMVALIDATE_EMAIL = "Para ser notificado, por favor coloque seu e-mail"; var _JOOMLACOMMENT_ANONYMOUS 	= "Anônimo"; var _JOOMLACOMMENT_BEFORE_APPROVAL = "Seu comentário foi enviado para os administradores do site, para que seja revisado e publicado."; var _JOOMLACOMMENT_REQUEST_ERROR = "Request failed"; var _JOOMLACOMMENT_MSG_NEEDREFRESH = "";
+</script>
+  <script type="text/javascript" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/client.js"></script>
+
+
+<link rel="stylesheet" href="Como%20Usar%20Bibliotecas%20C_C++_arquivos/system.css" type="text/css">
+<link rel="stylesheet" href="Como%20Usar%20Bibliotecas%20C_C++_arquivos/general.css" type="text/css">
+<link rel="stylesheet" href="Como%20Usar%20Bibliotecas%20C_C++_arquivos/template.css" type="text/css">
+
+<script language="javascript" type="text/javascript" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/ja.js"></script>
+
+<script language="javascript" type="text/javascript">
+var rightCollapseDefault='show';
+var excludeModules='38';
+</script>
+<script language="javascript" type="text/javascript" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/ja_002.js"></script>
+
+<link rel="stylesheet" href="Como%20Usar%20Bibliotecas%20C_C++_arquivos/menu.css" type="text/css">
+
+
+<link rel="stylesheet" href="Como%20Usar%20Bibliotecas%20C_C++_arquivos/style.css" type="text/css">
+<link rel="stylesheet" href="Como%20Usar%20Bibliotecas%20C_C++_arquivos/style_002.css" type="text/css">
+
+<!--[if IE 7.0]>
+<style type="text/css">
+.clearfix {display: inline-block;}
+</style>
+<![endif]-->
+
+<style type="text/css">
+#ja-header,#ja-mainnav,#ja-container,#ja-botsl,#ja-footer {width: 97%;margin: 0 auto;}
+#ja-wrapper {min-width: 100%;}
+</style>
+<link rel="preload" href="Como%20Usar%20Bibliotecas%20C_C++_arquivos/integrator_002.js" as="script"><script type="text/javascript" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/integrator_002.js"></script><link rel="preload" href="Como%20Usar%20Bibliotecas%20C_C++_arquivos/integrator.js" as="script"><script type="text/javascript" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/integrator.js"></script><script src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/search.js"></script></head>
+
+<body id="bd" class="fs3 FF">
+<a name="Top" id="Top"></a>
+<ul class="accessibility">
+	<li><a href="#ja-content" title="Skip to content">Skip to content</a></li>
+	<li><a href="#ja-mainnav" title="Skip to main navigation">Skip to main navigation</a></li>
+	<li><a href="#ja-col1" title="Skip to first column">Skip to first column</a></li>
+	<li><a href="#ja-col2" title="Skip to second column">Skip to second column</a></li>
+</ul>
+
+<div id="ja-wrapper">
+
+<!-- BEGIN: HEADER -->
+<div id="ja-headerwrap">
+			<h1 class="logo">
+			<a href="http://www.pontov.com.br/site/index.php" title="Ponto V!"><span>Ponto V!</span></a>
+		</h1>
+	
+			<ul class="ja-usertools-font">
+	      <li><img style="cursor: pointer;" title="Increase font size" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/user-increase.png" alt="Increase font size" id="ja-tool-increase" onclick="switchFontSize('ja_purity_ja_font','inc'); return false;"></li>
+		  <li><img style="cursor: pointer;" title="Default font size" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/user-reset.png" alt="Default font size" id="ja-tool-reset" onclick="switchFontSize('ja_purity_ja_font',3); return false;"></li>
+		  <li><img style="cursor: pointer;" title="Decrease font size" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/user-decrease.png" alt="Decrease font size" id="ja-tool-decrease" onclick="switchFontSize('ja_purity_ja_font','dec'); return false;"></li>
+		</ul>
+		<script type="text/javascript">var CurrentFontSize=parseInt('3');</script>
+		
+	
+	</div>
+</div>
+<!-- END: HEADER -->
+
+<!-- BEGIN: MAIN NAVIGATION -->
+<!-- END: MAIN NAVIGATION -->
+
+<div id="ja-containerwrap-fr">
+<div id="ja-containerwrap2">
+	<div id="ja-container">
+	<div id="ja-container2" class="clearfix">
+
+		<div id="ja-mainbody-fr" class="clearfix">
+
+		<!-- BEGIN: CONTENT -->
+		<div id="ja-contentwrap">
+		<div id="ja-content">
+
+			
+
+						<div id="ja-pathway">
+				<span class="breadcrumbs pathway">
+<a href="http://www.pontov.com.br/site/" class="pathway">Home</a> <img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/arrow.png" alt=""> <a href="http://www.pontov.com.br/site/index.php/cpp" class="pathway">C/C++</a> <img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/arrow.png" alt=""> <a href="http://www.pontov.com.br/site/index.php/cpp/46-conceitos-basicos" class="pathway">Conceitos Básicos</a> <img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/arrow.png" alt=""> Como Usar Bibliotecas C/C++</span>
+
+			</div>
+			
+			
+
+
+
+
+<div class="article-content">
+<table class="avatar_header" style="width:100%; border:none; vertical-align:middle;"><tbody><tr><td rowspan="5" class="avatar" width="80" height="80"><a href="http://www.pontov.com.br/site/index.php/colaboradores/53-bcsanches" title="Bruno Crivelari Sanches"><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/47c683ae448001e8b767f74210aa3fd8.png" style="border:1px solid gray; padding:0px; margin:4px; width:80px; height:80px;" alt="Bruno Crivelari Sanches"></a></td><td><table style="width:100%; vertical-align:middle;"><tbody><tr class="avatar_article"><td class="contentheading"><a href="http://www.pontov.com.br/site/index.php/cpp/46-conceitos-basicos/155-como-usar-bibliotecas-cc" class="contentpagetitle">Como Usar Bibliotecas C/C++</a></td><td class="buttonheading" align="right"><a href="http://www.pontov.com.br/site/index.php/cpp/46-conceitos-basicos/155-como-usar-bibliotecas-cc?tmpl=component&amp;print=1&amp;page=" title="Imprimir" onclick="window.open(this.href,'win2','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no'); return false;" rel="nofollow"><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/printButton.png" alt="Imprimir"></a></td></tr><tr><td><span class="small">Escrito por Bruno Crivelari Sanches</span></td></tr></tbody></table></td></tr></tbody></table><div style="margin-top:5px;margin-bottom:5px;display: inline;"><div class="topsy_widget_data" style="float: left; margin-right: 0.75em;"><script type="text/javascript">topsyWidgetPreload({ "url":"http://www.pontov.com.br/site/index.php/cpp/46-conceitos-basicos/155-como-usar-bibliotecas-cc","title":"Como Usar Bibliotecas C/C++","theme": "blue", "nick":"pontov" });</script></div><iframe src="http://www.facebook.com/plugins/like.php?href=http://www.pontov.com.br/site/index.php/cpp/46-conceitos-basicos/155-como-usar-bibliotecas-cc&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light&amp;height=20" scrolling="no" style="border:none; overflow:hidden; width:450px; height:20px;" allowtransparency="true" frameborder="0"></iframe></div>
+<!-- google_ad_section_start -->
+<p>No artigo “<a href="http://www.pontov.com.br/site/index.php/cpp/46-conceitos-basicos/95-compilacao-de-programas-cc">Compilação de programas C/C++</a>”
+ vimos como funciona a compilação de programas C/C++, agora vamos ver 
+como são organizadas as bibliotecas, os diferentes tipos de bibliotecas e
+ por fim um exemplo de como utilizar uma biblioteca.</p> 
+
+  <h3>Visão Geral</h3>  <p>O termo biblioteca é utilizado para 
+definirmos coleções de códigos e estruturas de dados que podem ser 
+utilizados na construção de um software. No caso da linguagem C 
+bibliotecas definem funções que podem ser utilizadas pelo programa 
+cliente (ou até mesmo outras bibliotecas) e estruturas de dados, já para
+ C++, além disso uma biblioteca pode definir classes, <em>templates</em>, etc. Existem casos também onde uma biblioteca pode ser apenas arquivos de cabeçalho com macros e/ou funções e classes <em>inline.</em></p>  <p>No artigo de <a href="http://www.pontov.com.br/site/index.php/cpp/46-conceitos-basicos/95-compilacao-de-programas-cc" target="_blank">compilação</a> vimos que os diversos arquivo c/cpp de um programa C/C++ geram arquivos objeto que são unidos e ligados pelo <em>linker</em> para geração do arquivo executável. No caso das bibliotecas, os arquivos são apenas unidos (não necessariamente pelo <em>linker</em>)
+ e é então gerado um arquivo de biblioteca. No caso do Visual C++ são 
+gerados arquivos com extensão ".lib" e ambientes Linux costumam utilizar
+ arquivos com extensão ".a" e com nome começando por "lib". Exemplos:</p>  <ul>   <li>SDL.lib: biblioteca <a id="x.gw" title="SDL" href="http://www.libsdl.org/">SDL</a> para Visual C++       <br></li>    <li>libSDL.a: biblioteca SDL para compilador gcc. </li> </ul>  <br>Existe aqui uma sutil diferença entre arquivos "ligados" (<i>linkados</i>) e arquivos unidos. Bibliotecas são apenas arquivos <i>objeto </i>unidos,
+ ou seja, caso uma biblioteca X tenha sido construída utilizando a 
+biblioteca Y, o programador vai precisar de ambas bibliotecas para poder
+ utilizar a biblioteca X, pois o arquivo de biblioteca não inclui as 
+dependências desta.   <br>  <br>Além dos arquivos ".lib" ou ".a" as bibliotecas costumar fornecer arquivos <i>header</i>,
+ que são os arquivos ".h" do C/C++. Nestes arquivos os desenvolvedores 
+costumam declarar as funções e as estruturas de dados que a biblioteca 
+fornece ao programador, assim, para utilizar uma biblioteca o 
+programador não precisa re-declarar as funções e estruturas a serem 
+usadas.   <br>  <br>Estes dois arquivos são os gerados pelos métodos 
+mais comuns de criação de bibliotecas estáticas (veremos mais a frente 
+bibliotecas dinâmicas). Com o arquivo lib (ou .a, dependendo da 
+plataforma) já é possível utilizar as funções de uma biblioteca, para 
+tal, na hora de <i>linkar </i>nosso programa devemos informar ao <em>linker</em> todos os arquivos lib que o programa precisa.   <br>  <h3>Bibliotecas Estáticas </h3>  <p>Vimos
+ que bibliotecas estáticas são criadas a partir da união de arquivos 
+objeto. Quando um programa utiliza este tipo de biblioteca o programador
+ informa ao <i>linker </i>que este deve utilizar também o arquivo lib quando for procurar pelos símbolos. Lembre-se que durante a ligação, o <i>linker </i>vai procurar em todos arquivos objeto e em todos arquivos "lib" todas as funções e variáveis globais utilizadas pelo programa.</p>  <p><img style="border-right-width: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto" title="Fluxo de criação de uma biblioteca estática" alt="Fluxo de criação de uma biblioteca estática" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/drawing_si8MpHmoPOxCpASjpX_N3g_46_23f94b64beff3f1180e0bd6a04.png" width="600" height="41" border="0">     <br></p>
+ Vamos imaginar aqui uma biblioteca chamada jogo.lib e que esta possua 
+uma função chamada "CriaJogo", quando colocamos no programa uma chamada 
+para "CriaJogo", o <i>linker </i>procura em todos arquivos objeto do seu programa e nos arquivos <i>lib</i>
+ pela implementação da função. Cedo ou tarde, ele acaba encontrando a 
+definição no arquivo jogo.lib (caso não encontre em lugar nenhum, temos o
+ famoso "<i>linker error</i>"), encontrada a função, o <i>linker</i> 
+copia o código da função e suas dependências para seu arquivo 
+executável. Ele repete isso para todas as funções utilizadas pelo 
+programa e no final terá copiado quase todo (ou todo) o conteúdo do 
+arquivo lib para o programa executável. Podemos perceber então que o 
+programa incorporou o conteúdo da biblioteca e após a geração do 
+executável o arquivo lib já não é mais necessário. A vantagem desse 
+processo é que não é preciso copiar o arquivo "lib" quando se deseja 
+distribuir o executável, mas por outro lado, caso a biblioteca seja 
+atualizada, será preciso gerar um novo executável, dessa forma não é 
+possível atualizar apenas a biblioteca, pois ela foi ligada de forma 
+estática.   <br>  <h3>Bibiotecas Dinâmicas </h3> As bibliotecas dinâmicas são no caso do Windows as DLLs (<i>Dynamic Link Library</i>) ou os arquivos so (<i>Shared Lbraries</i>)
+ do Linux. As bibliotecas dinâmicas são quase como arquivos executáveis,
+ a diferença mais relevante é que eles não podem ser executados 
+diretamente, mas precisam de que algum outro programe os carregue e 
+invoque suas funções. A geração de uma biblioteca dinâmica requer um "<i>linker</i>", que vai fazer quase o mesmo trabalho que é feito com um executável comum, note então que é preciso informar ao <i>linker</i>
+ todas as bibliotecas que a biblioteca dinâmica requer (sendo estas 
+estáticas ou não) pois a biblioteca dinâmica precisa estar ligada, assim
+ como um executável comum.   <br>  <br>A forma mais simples de se 
+utilizar uma biblioteca dinâmica é através de "ligação estática" (sim, 
+bibliotecas dinâmicas podem ser ligadas de forma estática). Neste modo 
+utilizamos no caso do Visual C++ uma "<i>import library</i>" (biblioteca
+ de importação) que é um arquivo lib que contém apenas a lista de 
+funções que uma determinada DLL contém. No caso do Linux, não existe a "<i>import library" </i>ou
+ podemos "assumir" que esta esta dentro do arquivo so, ou seja, fazemos a
+ ligação diretamente com o arquivo "so". Em ambos os casos, o <i>linker </i>vai
+ incluir no executável uma referência para a biblioteca dinâmica e todas
+ as funções que o executável utiliza da biblioteca estarão apenas com <i>stubs, </i>que servem apenas para indicar ao sistema operacional que estas devem ser trocadas por chamadas a bibliotecas dinâmicas.   <br>  <br><img style="border-right-width: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto" title="Fluxo de criação de uma biblioteca dinâmica" alt="Fluxo de criação de uma biblioteca dinâmica" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/drawing_sS3OPOrRG2Uvd3nvRdBLRtQ_12.png" width="600" height="102" border="0">   <br>  <br>Neste
+ modo, quando um programa é executado, o sistema operacional se 
+encarrega de checar quais bibliotecas dinâmicas o programa necessita 
+(utilizando as informações que o <i>linker</i> colocou no executável) e 
+cuida de carregar as bibliotecas dinâmicas. Após ter carregado as 
+bibliotecas o sistema operacional termina o processo de ligação e troca 
+todo os <i>stubs </i>pelos endereços das funções reais. O interessante é
+ que mesmo a ligação ter sido estática, o uso da biblioteca continua 
+sendo dinâmico, permitindo assim trocar a versão de uma biblioteca sem 
+modificar o programa executável.   <br>  <br>É possível também utilizar 
+bibliotecas dinâmicas usando uma ligação dinâmica, neste modelo, o 
+programa em tempo de execução chama uma função do sistema operacional (<i>syscall</i>)
+ e pede a este que carregue uma biblioteca dinâmica. Caso a operação 
+ocorra com sucesso, o programa recebe um identificador da biblioteca e 
+pode usar este identificador para requisitar endereços de funções e 
+variáveis globais da biblioteca, podendo assim usar ponteiros para 
+chamar ou acessar esses itens.   <br>  <h3>Examinando a SDL </h3> Nesta seção, vamos ver um passo a passo de como a SDL é montada, para tal faça o download da SDL 1.2 neste <a id="evw-" title="link" href="http://www.libsdl.org/download-1.2.php">link</a>, o resto deste artigo vai ser baseado no arquivo <a id="sgft" title="SDL-devel-1.2.14-VC8.zip" href="http://www.libsdl.org/release/SDL-devel-1.2.14-VC8.zip">SDL-devel-1.2.14-VC8.zip</a>. Extraia o arquivo para o diretório de sua preferência e abra o diretório, o conteúdo deve ser semelhante ao abaixo:   <br>  <div style="text-align: left" id="oapr"><img style="border-right-width: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto" title="Arquivos da SDL" alt="Arquivos da SDL" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/ah8qvpmjk23z_45dhbfh3cr_b.png" width="211" height="209" border="0">     <br>Note
+ que temos três diretórios e alguns arquivos. Os arquivos trazem algumas
+ informações sobre a biblioteca e informações sobre a licença da mesma 
+(que deve ser lida pelo desenvolvedor para certificar-se que esta usando
+ a biblioteca de acordo com as regras desta).     <br>    <br>O diretório "<i>docs</i>"
+ inclui a documentação da SDL que serve de referência para o 
+desenvolvedor, já no diretório include temos os arquivos de cabeçalho 
+com a declaração das funções, macros, estruturas de dados e etc, que a 
+biblioteca define.     <br>    <br>No diretório lib temos o arquivo 
+SDL.lib e o arquivo SDL.dll, como a SDL se trata de uma biblioteca 
+dinâmica, já podemos deduzir aqui que o arquivo SDL.lib se trata da <i>import library</i>
+ de SDL.dll. Existe também o arquivo SDLmain.lib que é especifico para 
+Windows, este arquivo é uma biblioteca estática que inclui a função 
+WinMain que é usada para que programas compilados no Windows possam 
+apenas definir a função main ao invés da função WinMain. </div>  <p>Esta
+ estrutura de diretórios usado pela SDL é bem comum em bibliotecas 
+C/C++, um diretório chamado “include” com os arquivos de cabeçalho e um 
+diretório “lib” com arquivos lib, as vezes encontra-se também um 
+diretório “bin” onde são colocados dlls e até mesmo arquivos “lib”.</p>  <h3>Utilizando a SDL </h3>  <p>Nesta
+ seção iremos abordar um exemplo de como configurar o uso da SDL no 
+Visual C++, apesar do exemplo ser baseado em SDL e Visual C++, o 
+processo é similar para outras bibliotecas e o tipo de configuração a 
+ser feito é o mesmo que deve ser feito em outros ambientes.</p>  <p>Vamos então implementar o programa abaixo no Visual C++: </p>  <pre class="brush: cpp;">#include &lt;SDL.h&gt;
+
+int main(int, char **)
+{
+    SDL_Init(SDL_INIT_VIDEO);
+
+    SDL_Quit();
+
+    return 0;
+}</pre>
+
+<p>
+  <br>Caso não possua o Visual C++, veja neste artigo como instalar: "<a id="r6gg" title="Como Utilizar o Visual Studio C++" href="http://www.pontov.com.br/site/index.php/cpp/41-visual-c/59-como-utilizar-o-visual-c-parte-1">Como Utilizar o Visual Studio C++</a>". 
+
+  <br>
+
+  <br>Primeiramente, vamos criar uma nova solução, no Visual C++, para 
+tal basta acessarmos "File -&gt; New -&gt; Project", selecione "Win32" 
+na caixa "<i>Project Types</i>" e "<i>Win32 Console Application</i>" na caixa "<i>Template</i>". Entre com "<i>Hello</i>SDL<i>" </i>no nome do projeto e clique em Ok: </p>
+
+<div style="text-align: left" id="pdlz"><img style="border-right-width: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto" title="Criando novo projeto no Visual" alt="Criando novo projeto no Visual" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/ah8qvpmjk23z_46xs5hrdcm_b_bc3f90bdf539b57e5a1980360ecae3e2.png" width="687" height="468" border="0"> 
+
+  <br>
+
+  <br>Na próxima tela, desligue a opção "<i>Precompiled header</i>", em seguida clique em "<i>Application Settings</i>", marque a opção "<i>Empty project</i>" e selecione "<i>Console application</i>" na área "<i>Application Type</i>", por fim clique em "<i>Finish":</i> 
+
+  <br>
+
+  <div style="text-align: left" id="hklx"><img style="border-right-width: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto" title="Configurando o novo projeto" alt="Configurando o novo projeto" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/ah8qvpmjk23z_47hmc9m84w_b_553f766009aa8342904e9add3010f34b.png" width="619" height="521" border="0"> </div>
+
+  <br>O projeto deve ter sido criado, agora clique com o botão direito no nome do projeto ("HelloSDL") no "<i>Solution Explorer" </i>e selecione "<i>Add -&gt; New Item", </i>na janela que se abrir, selecione "<i>C++ File(.cpp)</i>" e entre com um nome para o arquivo: 
+
+  <br>
+
+  <div style="text-align: left" id="xloj"><img style="border-right-width: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto" title="Criando novo arquivo de codigo fonte" alt="Criando novo arquivo de codigo fonte" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/ah8qvpmjk23z_48fjjrjbc8_b_a6350d8b15b0a40bfed43dae8893374f.png" width="687" height="444" border="0"> </div>
+
+  <br>Agora que o arquivo foi criado, se tentarmos compilar este 
+programa teremos um erro de compilação que informa que o arquivo SDL.h 
+não foi encontrado, vamos ver como corrigir isso na próximo item. 
+
+  <br>
+
+  <h3>Configurando o Ambiente </h3>
+Vamos ver então como podemos informar ao compilador do Visual C++ onde 
+este pode encontrar os arquivos de cabeçalho e os arquivos lib da SDL. 
+Para os arquivos de cabeçalho, acesse "<i>Tools -&gt; Options", </i>expanda a opção "<i>Projects and Solutions</i>" e selecione VC++ Directories. Na opção "<i>Show Directories for:</i>" selecione "<i>Include Directories" </i>e será mostrada a lista de diretórios onde o <i>Visual</i> procura por arquivos h para <u><strong>todos</strong></u>
+ os projetos. No meu computador a biblioteca foi instalada no diretório 
+"Z:\libs\SDL-1.2.14\", então é preciso entrar com: 
+"Z:\libs\SDL-1.2.14\include": 
+
+  <br>
+
+  <div style="text-align: left" id="evrs"><img style="border-right-width: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto" title="Adicionando um diretório de include ao Visual" alt="Adicionando um diretório de include ao Visual" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/ah8qvpmjk23z_49fqpcrghs_b_896d72b3baa59fd915f7d5e5b52a9d42.png" width="648" height="379" border="0"> </div>
+  
+  <p><b>Atenção, caso esteja utilizando o Visual C++ 2010</b>, este 
+processo não irá funcionar, pois esta tela se tornou obsoleto e a forma 
+de configurar o diretório é diferente. Para maiores detalhes, veja o 
+artigo: <a href="http://pontov.com.br/site/cpp/41-visual-c/292-configurando-o-uso-de-bibliotecas-no-visual-2010">Configurando o uso de Bibliotecas no Visual 2010</a>.</p>
+
+  <p>Com este passo o <i>Visual</i> já vai saber onde procurar os 
+arquivos de h da SDL e se tentarmos compilar o programa novamente 
+teremos agora um erro de ligação informando que as funções da SDL não 
+foram encontradas: </p>
+
+  
+  <div style="text-align: left" id="dl1y"><a href="http://www.pontov.com.br/site/images/stories/artigos/ah8qvpmjk23z_50dt6nb3f6_b.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="Erros de ligação" alt="Erros de ligação" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/ah8qvpmjk23z_50dt6nb3f6_b_thumb.png" width="849" height="64" border="0"></a> </div>
+</div>
+
+<p>Isto é porque o <i>linker </i>ainda não sabe onde encontrar estas 
+funções, então precisamos informar a este onde elas estão. Para tal 
+clicamos novamente no nome do projeto com o botão direito do mouse e 
+selecionamos "<i>Properties"</i>, na tela que se abriu expanda a opção "<i>Linker"</i> e selecione "<i>Input</i>", finalmente entre com SDL.lib e SDLmain.lib na opção "<i>Additional Dependencies"</i>, como mostrado abaixo:</p>
+
+<p><img style="border-right-width: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto" title="Adicionando biblioteca ao projeto" alt="Adicionando biblioteca ao projeto" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/libs_457f8c85e625de2f1e009087bf106746.png" width="763" height="535" border="0"> </p>
+
+<p>
+  <br>Agora se tentarmos compilar temos um novo erro, informando que o 
+arquivo SDL.lib e/ou SDLmain.lib não foram encontrados, isso ocorre 
+porque o <i>linker</i> não sabe onde procurar por ele, para corrigir isso acesse "<i>Tools -&gt; Options", </i>expanda a opção "<i>Projects and Solutions</i>" e selecione “<em>VC++ Directories”</em>. Na opção "<i>Show Directories for:</i>" selecione "<i>Libraries Directories" </i>e será mostrada a lista de diretórios onde o <i>Visual</i>
+ procura por arquivos de biblioteca para todos os projetos. Entre com o 
+diretório lib da SDL (novamente, no meu computador esta foi instalada no
+ diretório Z:\libs\SDL-1.2.14\): 
+
+  <br></p>
+
+<div style="text-align: left" id="k5xp"><img style="border-right-width: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto" title="Configurando os diretórios de bibliotecas" alt="Configurando os diretórios de bibliotecas" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/ah8qvpmjk23z_52g3h5fbgb_b_16d13013e6021068f2af9da402812c15.png" width="648" height="379" border="0"> 
+
+  <p><b>Atenção, caso esteja utilizando o Visual C++ 2010</b>, este 
+processo não irá funcionar, pois esta tela se tornou obsoleto e a forma 
+de configurar o diretório é diferente. Para maiores detalhes, veja o 
+artigo: <a href="http://pontov.com.br/site/cpp/41-visual-c/292-configurando-o-uso-de-bibliotecas-no-visual-2010">Configurando o uso de Bibliotecas no Visual 2010</a>.</p>
+
+  <br>Por fim, clique em Ok e agora o programa deve compilar sem problemas, apenas com um <em>warning</em>. Este aviso (<em>warning</em>)
+ ocorre que por questões de otimizações o Visual C++ vem com diversas 
+implementações da biblioteca padrão, uma para programas que não usam 
+DLLs, outra para programas que usam DLLs e versões de cada uma para 
+programas <em>single thread e multi-thread. </em>Mais informações podem ser vistas no artigo: “<a href="http://www.pontov.com.br/site/index.php/cpp/41-visual-c/72-como-utilizar-o-visual-studio-c-parte-2">Como Utilizar o Visual Studio C++ – Parte 2</a>”.</div>
+
+<div style="text-align: left"></div>
+
+<div style="text-align: left">Para corrigir o problema, precisamos clicar com o botão direito no projeto, selecionar “<em>Properties”, </em>então na janela que se abre expandir a opção “<em>Configuration Properties</em>”, depois “C/C++” e selecionar “<em>Code Generation”</em>, na caixa “<em>Runtime Library” </em>escolha “<em>Multi-threaded DLL (/MD)”</em>, que é a forma com o a SDL é compilada:</div>
+
+<div style="text-align: left"><img style="border-right-width: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto" title="Modificando o tipo de runtime" alt="Modificando o tipo de runtime" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/libs2_72c6cb60b5f1b4fb7502b67cfdfd559b.png" width="763" height="535" border="0"> </div>
+
+<div style="text-align: left"></div>
+
+<div style="text-align: left">Agora finalmente o programa compila sem qualquer erro ou aviso. Observe que configurar o diretório de <em>include </em>e
+ o diretório de bibliotecas do Visual C++ é necessário apenas um vez, 
+pois as configurações são do ambiente a podem ser criados quantos 
+projetos forem necessários sem que seja preciso repetir essas operações.
+ Apenas a configuração das bibliotecas que o projeto utiliza é que 
+precisa ser repetido a cada novo projeto (que precise das mesmas), mas 
+este é um passo feito apenas durante a configuração inicial do projeto.</div>
+
+<br>
+
+<h3>Considerações Finais</h3>
+
+<p>Como foi dito, não existe uma regra sobre organização de bilbliotecas
+ e diferentes plataformas adotam diferentes métodos, neste artigos vimos
+ os meios mais comuns e um exemplo de como utilizar uma biblioteca no 
+Visual C++. Apesar do exemplo ser baseado em SDL e no Visual C++ os 
+conceitos são os mesmos para quase todas plataformas, sendo estes:</p>
+
+<ul>
+  <li>Configurar diretório de arquivos cabeçalho na IDE, <em>makefile</em>, etc </li>
+
+  <li>Configurar diretório de arquivos de biblioteca na IDE, <em>makefile</em>, etc </li>
+
+  <li>Informar ao <em>linker </em>quais arquivos de biblioteca usar </li>
+</ul>
+
+<p>Espero assim que este artigo ajude a entender como funciona a utilização de bibliotecas em programas C/C++.</p>
+<!-- google_ad_section_end -->
+<br><p>
+<script type="text/javascript"><!--
+google_ad_client = "pub-7126712752176094";
+/* 728x90, largo, para a parte de baixo */
+google_ad_slot = "2436390033";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/show_ads.js">
+</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;width:728px;height:90px;" width="728" height="90" frameborder="0"></iframe></ins></ins><!-- START of joscomment --></p><div id="comment">
+<div class="josc_clear"></div>
+
+
+<a name="JOSC_TOP"></a>
+
+<div id="CommentMenu">
+     <div class="josc_buttons">
+	 <ul>
+	     
+		<li>
+		<a id="JOOMLACOMMENT_ADDNEW" onclick="javascript:JOSC_addNew()" title="Adicionar novo">Adicionar novo</a>
+		</li>
+		
+		
+		
+		
+
+	 </ul>
+
+    </div>
+    <div id="comments_info">
+        Comentários (33)
+        <span id="JOSC_busypage"></span>
+    </div>
+   
+</div>
+<div class="josc_clear"></div>
+
+
+<span id="JOSC_busypage"></span>
+<div id="joscPageNav"></div>
+
+<div id="Comments">
+<ul id="post306" style="margin-left:0px;">
+    <li class="post">
+        <a name="josc306"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">07/06/2010 02:11:04</span>
+                
+				<span class="postnotify0" title="não notificar se tiver novo comentário"></span>
+            	|<span class="postusertype">187.22.95.xxx</span>|
+            </span>
+                <span class="username">bruno</span>
+            &nbsp;-&nbsp;<span class="posttitle">incrivel</span>
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar_009.jpeg" alt="avatar"></span><div class="comment_content"><p>Muito boa a qualidade do post claro e simples</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(306)">Responder</a><a href="javascript:JOSC_quote(306)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post308" style="margin-left:20px;">
+    <li class="post">
+        <a name="josc308"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">07/06/2010 11:22:05</span>
+                
+				<span class="postnotify0" title="não notificar se tiver novo comentário"></span>
+            	|
+            </span>
+                <span class="username">Bruno Crivelari Sanches</span>
+            
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar.png" alt="avatar"></span><div class="comment_content"><p>Obrigado Bruno!</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(308)">Responder</a><a href="javascript:JOSC_quote(308)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post4820" style="margin-left:40px;">
+    <li class="post">
+        <a name="josc4820"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">23/09/2014 15:30:35</span>
+                
+				<span class="postnotify0" title="não notificar se tiver novo comentário"></span>
+            	|<span class="postusertype">105.172.11.xxx</span>|
+            </span>
+                <span class="username">Dionisio Mauricio</span>
+            
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar_005.jpeg" alt="avatar"></span><div class="comment_content"><p>Ola,
+ Bruno..vi o seu post e gostei mt das suas dicas cara, sera que vocepode
+ me ensinar a programar em c#, e que esto com algumas dificuldades com 
+relacao a matéria..<br>
+</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(4820)">Responder</a><a href="javascript:JOSC_quote(4820)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post624" style="margin-left:0px;">
+    <li class="post">
+        <a name="josc624"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">28/09/2010 00:57:20</span>
+                
+				<span class="postnotify1" title="notificar se tiver novo comentário"></span>
+            	|<span class="postusertype">187.59.65.xxx</span>|
+            </span>
+                <span class="username">Victor</span>
+            &nbsp;-&nbsp;<span class="posttitle">Bom.</span>
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar_008.jpeg" alt="avatar"></span><div class="comment_content"><p>Ajudou muito, os tutoriais são muito bons. Pena que só use para desenvolvimento de jogos no Visual Studio.</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(624)">Responder</a><a href="javascript:JOSC_quote(624)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post625" style="margin-left:20px;">
+    <li class="post">
+        <a name="josc625"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">28/09/2010 01:08:03</span>
+                
+				<span class="postnotify0" title="não notificar se tiver novo comentário"></span>
+            	|
+            </span>
+                <span class="username">Bruno Crivelari Sanches</span>
+            
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar.png" alt="avatar"></span><div class="comment_content"><p>Na
+ verdade boa parte dos conceitos mostrados aqui são os mesmos em outros 
+compiladores e ambientes, apenas as instruções passo a passo que são 
+totalmente especificas ao Visual.</p>
+<p>Sem falar que no desenvolvimento profissional de jogos no Windows o Visual reina absoluto <img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/smile.png" alt=":)" title=":)" class="postemoticon" border="0">.</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(625)">Responder</a><a href="javascript:JOSC_quote(625)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post626" style="margin-left:20px;">
+    <li class="post">
+        <a name="josc626"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">28/09/2010 11:15:03</span>
+                
+				<span class="postnotify0" title="não notificar se tiver novo comentário"></span>
+            	|
+            </span>
+                <span class="username">Vinícius Godoy de Mendonça</span>
+            
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar.jpeg" alt="avatar"></span><div class="comment_content"><p>Dê uma olhada nesse tutorial também: <a href="http://www.pontov.com.br/site/index.php/cpp/56-opengl/137-criand%20o-um-ambiente-para-jogos-com-sdlopengl" rel="external nofollow" title="Ponto V! - Um ambiente para desenvolver jogos com a SDL e a OpenGL">Ponto V! - Um ambiente para desenvolver jogos com a SDL e a OpenGL</a>. Ele ensina a configurar um ambiente para o Code::Blocks.</p>
+<p>O conceito de biblioteca apresentado nesse artigo, no C::B, é o 
+mesmo. Muda apenas a forma de configurar. Como o bruno falou, usamos o 
+visual de exemplo pois ele é a IDE mais comum, e mais poderosa também.</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(626)">Responder</a><a href="javascript:JOSC_quote(626)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post666" style="margin-left:0px;">
+    <li class="post">
+        <a name="josc666"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">11/10/2010 21:22:32</span>
+                
+				<span class="postnotify1" title="notificar se tiver novo comentário"></span>
+            	|<span class="postusertype">200.181.252.xxx</span>|
+            </span>
+                <span class="username">Ataides Marques</span>
+            &nbsp;-&nbsp;<span class="posttitle">Biblitecas</span>
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar_015.jpeg" alt="avatar"></span><div class="comment_content"><p>estamos precisando de duas bibliotecas ou libs para a linguagem C:</p>
+<p><u><b>cstdlib<br>
+iostream</b></u><span style="font-size: large"></span><span style="color:blue"></span></p>
+<p><br>
+muito obrigado por vossa atenção</p>
+<p><br>
+meu email é tyde_mar@hotmail.com</p>
+<p>abraços</p>
+<p>Ataides</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(666)">Responder</a><a href="javascript:JOSC_quote(666)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post669" style="margin-left:0px;">
+    <li class="post">
+        <a name="josc669"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">11/10/2010 23:15:03</span>
+                
+				<span class="postnotify0" title="não notificar se tiver novo comentário"></span>
+            	|
+            </span>
+                <span class="username">Bruno Crivelari Sanches</span>
+            
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar.png" alt="avatar"></span><div class="comment_content"><p>Se
+ estiver falando dos arquivos cstdlib.h e iostream (que são apenas 
+arquivos de include e não bibliotecas) eles já vem com o seu compilador.
+ Qual compilador você esta usando?</p>
+<p>Detalhe que iostream é apenas para C++ e não funciona com C.</p>
+<p>T+</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(669)">Responder</a><a href="javascript:JOSC_quote(669)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post761" style="margin-left:0px;">
+    <li class="post">
+        <a name="josc761"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">09/11/2010 21:19:59</span>
+                
+				<span class="postnotify1" title="notificar se tiver novo comentário"></span>
+            	|<span class="postusertype">200.162.81.xxx</span>|
+            </span>
+                <span class="username">Henrique Lobo Weissmann (Kico)</span>
+            
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar_002.jpeg" alt="avatar"></span><div class="comment_content"><p>Maravilhoso este post.</p>
+<p>Um dos pontos mais nebulosos pra mim no uso do C++ era justamente 
+como usar as bibliotecas, e você conseguiu expor como isto é feito de 
+uma forma maravilhosamente clara.</p>
+<p>Parabéns!</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(761)">Responder</a><a href="javascript:JOSC_quote(761)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post762" style="margin-left:20px;">
+    <li class="post">
+        <a name="josc762"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">10/11/2010 12:56:11</span>
+                
+				<span class="postnotify0" title="não notificar se tiver novo comentário"></span>
+            	|
+            </span>
+                <span class="username">Bruno Crivelari Sanches</span>
+            
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar.png" alt="avatar"></span><div class="comment_content"><p>Obrigado Henrique!</p>
+<p>Fico feliz em saber que tem sido facil entender esses conceitos.</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(762)">Responder</a><a href="javascript:JOSC_quote(762)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post763" style="margin-left:40px;">
+    <li class="post">
+        <a name="josc763"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">10/11/2010 12:57:47</span>
+                
+				<span class="postnotify1" title="notificar se tiver novo comentário"></span>
+            	|<span class="postusertype">200.251.219.xxx</span>|
+            </span>
+                <span class="username">Henrique Lobo Weissmann (Kico)</span>
+            
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar_002.jpeg" alt="avatar"></span><div class="comment_content"><p>Sim, aliás, eu to achando o conteúdo de C++ do Ponto V maravilhoso.</p>
+<p>Absurdamente do caralho.</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(763)">Responder</a><a href="javascript:JOSC_quote(763)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post799" style="margin-left:0px;">
+    <li class="post">
+        <a name="josc799"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">22/11/2010 01:22:34</span>
+                
+				<span class="postnotify0" title="não notificar se tiver novo comentário"></span>
+            	|<span class="postusertype">189.110.92.xxx</span>|
+            </span>
+                <span class="username">Marcelo ( muito bom )</span>
+            &nbsp;-&nbsp;<span class="posttitle">bom</span>
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar_007.jpeg" alt="avatar"></span><div class="comment_content"><p>eu
+ uso o C++ para criação de programas , assim como o c# , mais para a 
+area de desenvolvimento ... mas achei muito interessante o post. o 
+iostream realmente só se usa na plataforma c++ .<br>
+</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(799)">Responder</a><a href="javascript:JOSC_quote(799)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post1666" style="margin-left:0px;">
+    <li class="post">
+        <a name="josc1666"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">31/07/2011 05:54:25</span>
+                
+				<span class="postnotify1" title="notificar se tiver novo comentário"></span>
+            	|<span class="postusertype">201.27.169.xxx</span>|
+            </span>
+                <span class="username">Reinaldo Deprera</span>
+            &nbsp;-&nbsp;<span class="posttitle">Muito bom</span>
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar_003.jpeg" alt="avatar"></span><div class="comment_content"><p>Artigo
+ muito bem escrito, bem didático. Além de ser um dos poucos artigos que 
+abordam a questão (a documentação do visual c++ é ruim na minha opinião,
+ não tem uma sequencia didática).<br>
+No meu caso programo para a web apesar de no passado ter trabalhado com 
+clipper e vb/vba. Com c/c++ tive pouca dificuldade com compiladores no 
+linux, mas o quando decidi usar uma IDE no Windows.... o Visual c++ 9...
+ enfim..... este artigo me mostrou o que eu queria.</p>
+<p>Excelente conteúdo, não somente este artigo. Recomendo a todos.</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(1666)">Responder</a><a href="javascript:JOSC_quote(1666)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post1668" style="margin-left:0px;">
+    <li class="post">
+        <a name="josc1668"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">31/07/2011 11:17:21</span>
+                
+				<span class="postnotify0" title="não notificar se tiver novo comentário"></span>
+            	|
+            </span>
+                <span class="username">Bruno Crivelari Sanches</span>
+            
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar.png" alt="avatar"></span><div class="comment_content"><p>Obrigado pessoal! Em breve espero adicionar mais artigos de C++!</p>
+<p>T+</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(1668)">Responder</a><a href="javascript:JOSC_quote(1668)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post2397" style="margin-left:0px;">
+    <li class="post">
+        <a name="josc2397"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">24/02/2012 08:39:23</span>
+                
+				<span class="postnotify0" title="não notificar se tiver novo comentário"></span>
+            	|<span class="postusertype">189.127.166.xxx</span>|
+            </span>
+                <span class="username">Rafael Nunes</span>
+            &nbsp;-&nbsp;<span class="posttitle">Erro de execução</span>
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar_010.jpeg" alt="avatar"></span><div class="comment_content"><p>Olá.</p>
+<p>Sou programador formado em C++ .<br>
+não posso dizer que tenho muita experiencia pois tenho apenas 15 anos!<br>
+mas já fiz cursos de treinamento e de linguagem de programação, estou a 
+entrar na carreira de produção de jogos. Peguei a SDL instalei, coloquei
+ em um diretório especifico, configurei tudo corretamente ! Quando 
+executo o programa, ele executa sem erros, compila sem erros ! Quando 
+ele vai executar, da um erro de execução, falando que a SDL.dll não pode
+ ser encontrada, e eu '-' kkk...fui no diretório lib da SDL vi a SDL.dll
+ e falei, esse computador só pode estar louco  <img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/sick.png" alt=":X" title=":X" class="postemoticon" border="0">  !<br>
+tentei ,tentei e tentei, não consegui executar, mesmo com outro código. 
+Não entendo oque pode ser isso, até porque sou inexperiente em libs hehe
+  <img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/grin.png" alt=":lol:" title=":lol:" class="postemoticon" border="0"> . </p>
+<p>Obrigado.<br>
+Att. Rafael Nunes</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(2397)">Responder</a><a href="javascript:JOSC_quote(2397)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post2398" style="margin-left:0px;">
+    <li class="post">
+        <a name="josc2398"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">24/02/2012 11:37:02</span>
+                
+				<span class="postnotify0" title="não notificar se tiver novo comentário"></span>
+            	|
+            </span>
+                <span class="username">Vinícius Godoy de Mendonça</span>
+            
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar.jpeg" alt="avatar"></span><div class="comment_content"><p>Oi.</p>
+<p>Configurar o ambiente é realmente uma das partes mais difíceis. Dê uma lida nesse post:<br>
+http://pontov.com.br/site/opengl/137-criando-um-ambiente-para-jogos-co m-sdlopengl</p>
+<p>Mas basicamente, o que está faltando é criar uma pasta no path, e 
+jogar as dlls lá dentro (isso é explicado bem no começo do post).</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(2398)">Responder</a><a href="javascript:JOSC_quote(2398)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post2403" style="margin-left:0px;">
+    <li class="post">
+        <a name="josc2403"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">24/02/2012 16:40:39</span>
+                
+				<span class="postnotify0" title="não notificar se tiver novo comentário"></span>
+            	|<span class="postusertype">189.127.166.xxx</span>|
+            </span>
+                <span class="username">Rafael Nunes</span>
+            &nbsp;-&nbsp;<span class="posttitle">Obrigado</span>
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar_010.jpeg" alt="avatar"></span><div class="comment_content"><p>ah,
+ sim, tinha esquecido desse recurso xD ! Já fiz isso em C::B com 
+allegro, mas agora vou mudar pra SDL, acho melhor, mais estável. <br>
+Obrigado, aliás já tinha lido esse post <img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/wink.png" alt=";)" title=";)" class="postemoticon" border="0">' eu leio tudo kkk...</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(2403)">Responder</a><a href="javascript:JOSC_quote(2403)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post2676" style="margin-left:0px;">
+    <li class="post">
+        <a name="josc2676"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">08/05/2012 06:23:04</span>
+                
+				<span class="postnotify0" title="não notificar se tiver novo comentário"></span>
+            	|<span class="postusertype">200.20.121.xxx</span>|
+            </span>
+                <span class="username">Átila</span>
+            
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar_013.jpeg" alt="avatar"></span><div class="comment_content"><p>Tive
+ o mesmo problema. Fui em Configurações Avançadas do sistema e editei um
+ path. Devo ter feito errado. Enfim poderia explicar melhor?E teria como
+ recuperar o path anterior, o padrão.</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(2676)">Responder</a><a href="javascript:JOSC_quote(2676)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post2678" style="margin-left:20px;">
+    <li class="post">
+        <a name="josc2678"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">08/05/2012 12:51:05</span>
+                
+				<span class="postnotify0" title="não notificar se tiver novo comentário"></span>
+            	|
+            </span>
+                <span class="username">Bruno Crivelari Sanches</span>
+            
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar.png" alt="avatar"></span><div class="comment_content"><p>Explicar melhor o que? Qual parte você não entendeu?</p>
+<p>Recuperar o path anterior? Talvez com restauração do sistema? Tem que ver na documentação do windows.</p>
+<p>T+</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(2678)">Responder</a><a href="javascript:JOSC_quote(2678)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post2681" style="margin-left:0px;">
+    <li class="post">
+        <a name="josc2681"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">09/05/2012 04:19:40</span>
+                
+				<span class="postnotify0" title="não notificar se tiver novo comentário"></span>
+            	|<span class="postusertype">200.20.121.xxx</span>|
+            </span>
+                <span class="username">Átila</span>
+            
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar_007.jpeg" alt="avatar"></span><div class="comment_content"><p>Consegui consertar o meu problema, acho. Só uma coisa, o que o programa faz?</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(2681)">Responder</a><a href="javascript:JOSC_quote(2681)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post2682" style="margin-left:20px;">
+    <li class="post">
+        <a name="josc2682"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">09/05/2012 12:36:20</span>
+                
+				<span class="postnotify0" title="não notificar se tiver novo comentário"></span>
+            	|
+            </span>
+                <span class="username">Bruno Crivelari Sanches</span>
+            
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar.png" alt="avatar"></span><div class="comment_content"><p>O
+ objetivo do artigo é mostrar o processo de usar uma biblioteca C/C++ em
+ um programa C, esse processo é basicamente o mesmo para qualquer 
+biblioteca e qualquer ambiente (as vezes com alguma peculiaridade do 
+ambiente e/ou biblioteca).</p>
+<p>Por isso o programa não faz nada além de inicializar e finalizar a 
+SDL. Tem outros artigos aqui no portal que mostram mais recursos da SDL.</p>
+<p>T+</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(2682)">Responder</a><a href="javascript:JOSC_quote(2682)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post3238" style="margin-left:0px;">
+    <li class="post">
+        <a name="josc3238"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">01/11/2012 13:17:48</span>
+                
+				<span class="postnotify0" title="não notificar se tiver novo comentário"></span>
+            	|<span class="postusertype">187.19.195.xxx</span>|
+            </span>
+                <span class="username">maria antônia</span>
+            &nbsp;-&nbsp;<span class="posttitle">analise</span>
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar_007.jpeg" alt="avatar"></span><div class="comment_content"><p><b> <img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/cheerful.png" alt=":cheer:" title=":cheer:" class="postemoticon" border="0"> hum gostei muitoo,ajudou bastante para o meu trabalho de montar um sistema para  biblioteca da minha escola<i></i></b><i></i></p>
+<div class="quote"><div class="genmed"><b>Citou:</b></div><div class="quotebody"></div></div><div class="code"><div class="genmed"><b>Código:</b></div><div class="quotebody"></div></div><p><span style="color:green"></span><span style="font-size: small"></span></p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(3238)">Responder</a><a href="javascript:JOSC_quote(3238)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post3239" style="margin-left:0px;">
+    <li class="post">
+        <a name="josc3239"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">01/11/2012 13:20:38</span>
+                
+				<span class="postnotify0" title="não notificar se tiver novo comentário"></span>
+            	|<span class="postusertype">187.19.195.xxx</span>|
+            </span>
+                <span class="username">josefa Maria</span>
+            &nbsp;-&nbsp;<span class="posttitle">Trabalho de avaliação</span>
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar_007.jpeg" alt="avatar"></span><div class="comment_content"><p>bastante proveitoso para o meu sucesso<br>
+obrigado aos colaboradoresss!!!!!!!!!<br>
+</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(3239)">Responder</a><a href="javascript:JOSC_quote(3239)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post3240" style="margin-left:20px;">
+    <li class="post">
+        <a name="josc3240"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">01/11/2012 13:24:15</span>
+                
+				<span class="postnotify0" title="não notificar se tiver novo comentário"></span>
+            	|<span class="postusertype">201.92.90.xxx</span>|
+            </span>
+                <span class="username">Anônimo</span>
+            
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar.png" alt="avatar"></span><div class="comment_content"><p>Obrigado!</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(3240)">Responder</a><a href="javascript:JOSC_quote(3240)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post3256" style="margin-left:0px;">
+    <li class="post">
+        <a name="josc3256"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">05/11/2012 12:11:43</span>
+                
+				<span class="postnotify0" title="não notificar se tiver novo comentário"></span>
+            	|<span class="postusertype">177.131.188.xxx</span>|
+            </span>
+                <span class="username">Marcelo Romeu Gonçalves</span>
+            
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar_006.jpeg" alt="avatar"></span><div class="comment_content"><p>Valeu aí pelo post Bruno... Foi de excelente qualidade e muito esclarecedor!</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(3256)">Responder</a><a href="javascript:JOSC_quote(3256)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post3257" style="margin-left:20px;">
+    <li class="post">
+        <a name="josc3257"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">05/11/2012 12:26:25</span>
+                
+				<span class="postnotify0" title="não notificar se tiver novo comentário"></span>
+            	|<span class="postusertype">177.68.81.xxx</span>|
+            </span>
+                <span class="username">Anônimo</span>
+            
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar.png" alt="avatar"></span><div class="comment_content"><p>Obrigado Marcelo!<br>
+</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(3257)">Responder</a><a href="javascript:JOSC_quote(3257)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post3985" style="margin-left:0px;">
+    <li class="post">
+        <a name="josc3985"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">17/06/2013 14:12:48</span>
+                
+				<span class="postnotify1" title="notificar se tiver novo comentário"></span>
+            	|<span class="postusertype">200.19.190.xxx</span>|
+            </span>
+                <span class="username">MARCOS R PINNTO</span>
+            &nbsp;-&nbsp;<span class="posttitle">Erro na execução</span>
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar_014.jpeg" alt="avatar"></span><div class="comment_content"><p>O que poderia estar causando esses erros:</p>
+<p>'HelloSDL.exe' (Win32): Loaded 'C:\Users\MRP\Documents\Visual Studio 2012\Projects\HelloSDL\Debug\HelloSDL.exe'. Symbols loaded.<br>
+'HelloSDL.exe' (Win32): Loaded 'C:\Windows\SysWOW64\ntdll.dll'. Cannot find or open the PDB file.<br>
+'HelloSDL.exe' (Win32): Loaded 'C:\Windows\SysWOW64\kernel32.dll'. Cannot find or open the PDB file.<br>
+'HelloSDL.exe' (Win32): Loaded 'C:\Windows\SysWOW64\KernelBase.dll'. Cannot find or open the PDB file.<br>
+The program '[7840] HelloSDL.exe' has exited with code -1073741515 (0xc0000135) 'A dependent dll was not found'.</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(3985)">Responder</a><a href="javascript:JOSC_quote(3985)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post3986" style="margin-left:20px;">
+    <li class="post">
+        <a name="josc3986"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">17/06/2013 14:43:39</span>
+                
+				<span class="postnotify0" title="não notificar se tiver novo comentário"></span>
+            	|<span class="postusertype">200.206.253.xxx</span>|
+            </span>
+                <span class="username">Anônimo</span>
+            
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar.png" alt="avatar"></span><div class="comment_content"><p>O
+ principal erro é o final: The program '[7840] HelloSDL.exe' has exited 
+with code -1073741515 (0xc0000135) 'A dependent dll was not found'.</p>
+<p>Tenha certeza que a SDL.dll esteja no path ou em algum lugar que o Windows possa localizar.</p>
+<p>Se você copiar ela para C:\Users\MRP\Documents\Visual Studio 
+2012\Projects\HelloSDL\Debug\ deve resolver, mas não gosto dessa 
+solução.</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(3986)">Responder</a><a href="javascript:JOSC_quote(3986)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post3987" style="margin-left:40px;">
+    <li class="post">
+        <a name="josc3987"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">17/06/2013 16:21:30</span>
+                
+				<span class="postnotify1" title="notificar se tiver novo comentário"></span>
+            	|<span class="postusertype">200.19.190.xxx</span>|
+            </span>
+                <span class="username">Marcos R Pinnto</span>
+            
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar_014.jpeg" alt="avatar"></span><div class="comment_content"><p>Bom, saiu daquele erro e agora executa até certo ponto. Em seguida mostra</p>
+<p>'HelloSDL.exe' (Win32): Loaded 'C:\Users\MRP\Documents\Visual Studio 2012\Projects\HelloSDL\Debug\HelloSDL.exe'. Symbols loaded.<br>
+'HelloSDL.exe' (Win32): Loaded 'C:\Windows\SysWOW64\ntdll.dll'. Cannot find or open the PDB file.<br>
+'HelloSDL.exe' (Win32): Loaded 'C:\Windows\SysWOW64\kernel32.dll'. Cannot find or open the PDB file.<br>
+'HelloSDL.exe' (Win32): Loaded 'C:\Windows\SysWOW64\KernelBase.dll'. Cannot find or open the PDB file.<br>
+'HelloSDL.exe' (Win32): Loaded 'C:\Users\MRP\Documents\Visual Studio 
+2012\Projects\HelloSDL\Debug\SDL.dll'. Module was built without symbols.<br>
+'HelloSDL.exe' (Win32): Loaded 'C:\Windows\SysWOW64\advapi32.dll'. Cannot find or open the PDB file.<br>
+'HelloSDL.exe' (Win32): Loaded 'C:\Windows\SysWOW64\msvcrt.dll'. Cannot find or open the PDB file.<br>
+'HelloSDL.exe' (Win32): Loaded 'C:\Windows\SysWOW64\sechost.dll'. Cannot find or open the PDB file.<br>
+'HelloSDL.exe' (Win32): Loaded 'C:\Windows\SysWOW64\rpcrt4.dll'. Cannot find or open the PDB file.<br>
+'HelloSDL.exe' (Win32): Loaded 'C:\Windows\SysWOW64\sspicli.dll'. Cannot find or open the PDB file.<br>
+'HelloSDL.exe' (Win32): Loaded 'C:\Windows\SysWOW64\cryptbase.dll'. Cannot find or open the PDB file.<br>
+'HelloSDL.exe' (Win32): Loaded 'C:\Windows\SysWOW64\gdi32.dll'. Cannot find or open the PDB file.<br>
+'HelloSDL.exe' (Win32): Loaded 'C:\Windows\SysWOW64\user32.dll'. Cannot find or open the PDB file.<br>
+'HelloSDL.exe' (Win32): Loaded 'C:\Windows\SysWOW64\lpk.dll'. Cannot find or open the PDB file.<br>
+'HelloSDL.exe' (Win32): Loaded 'C:\Windows\SysWOW64\usp10.dll'. Cannot find or open the PDB file.<br>
+'HelloSDL.exe' (Win32): Loaded 'C:\Windows\SysWOW64\winmm.dll'. Cannot find or open the PDB file.<br>
+'HelloSDL.exe' (Win32): Loaded 'C:\Windows\SysWOW64\msvcr110.dll'. Symbols loaded.<br>
+'HelloSDL.exe' (Win32): Loaded 'C:\Windows\SysWOW64\imm32.dll'. Cannot find or open the PDB file.<br>
+'HelloSDL.exe' (Win32): Loaded 'C:\Windows\SysWOW64\msctf.dll'. Cannot find or open the PDB file.<br>
+'HelloSDL.exe' (Win32): Loaded 'C:\Windows\SysWOW64\uxtheme.dll'. Cannot find or open the PDB file.<br>
+'HelloSDL.exe' (Win32): Loaded 'C:\Windows\SysWOW64\dwmapi.dll'. Cannot find or open the PDB file.<br>
+'HelloSDL.exe' (Win32): Loaded 'C:\Windows\SysWOW64\KBDUS.DLL'. Cannot find or open the PDB file.<br>
+'HelloSDL.exe' (Win32): Unloaded 'C:\Windows\SysWOW64\KBDUS.DLL'<br>
+'HelloSDL.exe' (Win32): Loaded 'C:\Windows\SysWOW64\KBDBR.DLL'. Cannot find or open the PDB file.<br>
+'HelloSDL.exe' (Win32): Unloaded 'C:\Windows\SysWOW64\KBDBR.DLL'<br>
+The program '[2068] HelloSDL.exe' has exited with code 0 (0x0).<br>
+</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(3987)">Responder</a><a href="javascript:JOSC_quote(3987)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post3988" style="margin-left:60px;">
+    <li class="post">
+        <a name="josc3988"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">17/06/2013 17:39:57</span>
+                
+				<span class="postnotify0" title="não notificar se tiver novo comentário"></span>
+            	|<span class="postusertype">200.206.253.xxx</span>|
+            </span>
+                <span class="username">Anônimo</span>
+            
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar.png" alt="avatar"></span><div class="comment_content"><p>Aparentemente seu programa executou e finalizou normalmente.</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(3988)">Responder</a><a href="javascript:JOSC_quote(3988)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post4830" style="margin-left:0px;">
+    <li class="post">
+        <a name="josc4830"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">04/10/2014 17:21:55</span>
+                
+				<span class="postnotify1" title="notificar se tiver novo comentário"></span>
+            	|<span class="postusertype">186.213.201.xxx</span>|
+            </span>
+                <span class="username">Victor Cortes</span>
+            
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar_012.jpeg" alt="avatar"></span><div class="comment_content"><p>Olá! Realmente é muito bom o conteúdo que foi mostrado. Muito claro e proveitoso.</p>
+<p>Eu tenho uma pequena dúvida, se trata de um "joguinho" que eu estou 
+fazendo. Eu estou usando SDL_Image, SDL_ttf e o SDL_Mixer. A minha 
+grande preocupação foi a quantidade enorme de dll's que vou ter que 
+distribuir com minha aplicação (7 dll's!), o que eu não vejo acontecendo
+ em vários jogos que usam a SDL. O que eu devo fazer para resolver este 
+"problema"? Teria como incorporar dll's como se fossem lib estática?</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(4830)">Responder</a><a href="javascript:JOSC_quote(4830)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post5217" style="margin-left:0px;">
+    <li class="post">
+        <a name="josc5217"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">23/05/2016 13:35:00</span>
+                
+				<span class="postnotify0" title="não notificar se tiver novo comentário"></span>
+            	|<span class="postusertype">88.157.128.xxx</span>|
+            </span>
+                <span class="username">vai te foder</span>
+            &nbsp;-&nbsp;<span class="posttitle">vaite foder</span>
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar_011.jpeg" alt="avatar"></span><div class="comment_content"><p>viciado<br>
+</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(5217)">Responder</a><a href="javascript:JOSC_quote(5217)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+
+<ul id="post5236" style="margin-left:0px;">
+    <li class="post">
+        <a name="josc5236"></a>
+        <div class="posthead">
+            <span class="postinfo">
+                <span class="postdate">05/10/2016 18:47:45</span>
+                
+				<span class="postnotify0" title="não notificar se tiver novo comentário"></span>
+            	|<span class="postusertype">201.33.194.xxx</span>|
+            </span>
+                <span class="username">Rick</span>
+            &nbsp;-&nbsp;<span class="posttitle">Entusiasta</span>
+        </div>
+        <div class="postcontent">
+            <span class="username"><img class="avatar" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/avatar_004.jpeg" alt="avatar"></span><div class="comment_content"><p>Olá! tudo bom.. sabe, eu não sou programador em nenhuma linguagem.<br>
+Gosto de pegar sources para compilar em c++ e c#<br>
+Peguei recentemente muitos projetos de um jogo mmorpg para compilar.. <br>
+o autor ate nos passa as libs (ABI) que ele usa e desse jeito fica mais fácil para compilação.<br>
+Tenho noção de tudo sobre o programa visual studio c++ e c#, mas não sei
+ programar ainda... a parte de programação, algarismos, isso me confunde
+ e me estressa.. acabo desistindo..</p>
+<p>Queria aprender, mas não tenho mais paciência para aprender lendo, 
+então estou tentando aprender na marra usando os códigos ja pronto e 
+compilando-os e olhando os erros e tentando decifrar e pesquisando o que
+ seja e arrumar.</p>
+<p>A pergunto que não quer calar.. como aprender de um modo menos cansativo? voce sabe?<br>
+</p>
+</div>
+        </div>
+        
+        <div class="postfooter">
+            
+                <span>
+                    <a href="javascript:JOSC_reply(5236)">Responder</a><a href="javascript:JOSC_quote(5236)">Citar</a>
+                </span>    
+        </div>     
+        
+        <div class="josc_clear"></div>
+    </li>
+</ul>
+</div>
+
+
+<form name="joomlacommentform" id="joomlacommentform" method="post" action="index.php">
+    <a name="CommentForm"></a>
+    <fieldset>
+        <legend id="CommentFormTitle">Escrever um comentário</legend>
+        <fieldset>
+            <legend>Your Contact Details:</legend>
+            <div>
+                <label for="tname">Nome:</label>
+                <input name="tname" id="tname" tabindex="1" type="text">
+                   </div>
+            
+            <div>
+                <label for="temail">E-mail:</label>
+                <input name="temail" id="temail" tabindex="2" type="text">
+                <select name="tnotify" id="tnotify" class="inputbox" tabindex="3"><option value="0" selected="selected">não notificar</option><option value="1">notificar</option></select>
+				<span id="gravatar"><a href="http://gravatar.com/" target="_blank">Gravatar</a> enabled</span>
+            </div>
+            
+            
+            <div>
+                <label for="twebsite">Website:</label>
+                <input name="twebsite" id="twebsite" tabindex="3" type="text">
+            </div>
+            
+        </fieldset>
+        <fieldset>
+            <legend>Comentário:</legend>
+            <div>
+                <label for="ttitle">Título:</label>
+                <input name="ttitle" id="ttitle" tabindex="4" type="text">
+            </div>
+            
+            <div id="ubbcontainer">
+                <label>UBBCode:</label>
+                <a href='javascript:JOSC_insertUBBTag("b")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/ubb_bold.gif" class="buttonBB" name="bb" alt="[b]"></a>&nbsp;<a href='javascript:JOSC_insertUBBTag("i")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/ubb_italicize.gif" class="buttonBB" name="bi" alt="[i]"></a>&nbsp;<a href='javascript:JOSC_insertUBBTag("u")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/ubb_underline.gif" class="buttonBB" name="bu" alt="[u]"></a>&nbsp;<a href='javascript:JOSC_insertUBBTag("url")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/ubb_url.gif" class="buttonBB" name="burl" alt="[url]"></a>&nbsp;<a href='javascript:JOSC_insertUBBTag("quote")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/ubb_quote.gif" class="buttonBB" name="bquote" alt="[quote]"></a>&nbsp;<a href='javascript:JOSC_insertUBBTag("code")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/ubb_code.gif" class="buttonBB" name="bcode" alt="[code]"></a>&nbsp;<a href='javascript:JOSC_insertUBBTag("img")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/ubb_image.gif" class="buttonBB" name="bimg" alt="[img]"></a>&nbsp;
+                <select name="menuColor" class="select" onchange="JOSC_fontColor()"><option selected="selected">-cor-</option><option>aqua</option><option>black</option><option>blue</option><option>fuchsia</option><option>gray</option><option>green</option><option>lime</option><option>maroon</option><option>navy</option><option>olive</option><option>purple</option><option>red</option><option>silver</option><option>teal</option><option>white</option><option>yellow</option></select>&nbsp;<select name="menuSize" class="select" onchange="JOSC_fontSize()"><option selected="selected">-tamanho-</option><option>minúsculo</option><option>pequeno</option><option>médio</option><option>grande</option><option>muito grande</option></select>
+            </div>
+            
+            
+            <div id="emoticons">
+                 <div><div class="emoticoncontainer"><div class="emoticonseparator"></div><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":angry:")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/angry.png" alt=":angry:" title=":angry:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":0")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/blink.png" alt=":0" title=":0" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":confused:")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/blush.png" alt=":confused:" title=":confused:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":cheer:")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/cheerful.png" alt=":cheer:" title=":cheer:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon("B)")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/cool.png" alt="B)" title="B)" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":evil:")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/devil.png" alt=":evil:" title=":evil:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":silly:")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/silly.png" alt=":silly:" title=":silly:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":dry:")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/ermm.png" alt=":dry:" title=":dry:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":lol:")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/grin.png" alt=":lol:" title=":lol:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":kiss:")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/kissing.png" alt=":kiss:" title=":kiss:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":D")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/laughing.png" alt=":D" title=":D" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":pinch:")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/pinch.png" alt=":pinch:" title=":pinch:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":(")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/sad.png" alt=":(" title=":(" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":shock:")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/shocked.png" alt=":shock:" title=":shock:" border="0"></a></span></span><div class="emoticonseparator"></div><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":X")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/sick.png" alt=":X" title=":X" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":side:")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/sideways.png" alt=":side:" title=":side:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":)")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/smile.png" alt=":)" title=":)" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":P")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/tongue.png" alt=":P" title=":P" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":unsure:")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/unsure.png" alt=":unsure:" title=":unsure:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":woohoo:")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/w00t.png" alt=":woohoo:" title=":woohoo:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":huh:")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/wassat.png" alt=":huh:" title=":huh:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":whistle:")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/whistling.png" alt=":whistle:" title=":whistle:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(";)")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/wink.png" alt=";)" title=";)" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":S")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/dizzy.png" alt=":S" title=":S" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":!:")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/icon_exclaim.gif" alt=":!:" title=":!:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":?:")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/icon_question.gif" alt=":?:" title=":?:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":idea:")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/icon_idea.gif" alt=":idea:" title=":idea:" border="0"></a></span></span><span class="emoticonseparator"><span class="emoticon"><a href='javascript:JOSC_emoticon(":arrow:")'><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/icon_arrow.gif" alt=":arrow:" title=":arrow:" border="0"></a></span></span><div class="emoticonseparator"></div></div></div>
+            </div>
+            
+            <div>
+                <label for="tcomment">Message:</label>
+                <textarea name="tcomment" id="tcomment" cols="40" tabindex="5" rows="10"></textarea>
+            </div>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Security</legend>
+            <div id="security">
+                <div id="captcha"><a title="clique para uma nova imagem" href="javascript:JOSC_reloadCaptcha()"><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/captcha.png" alt="Security Image">
+<input name="security_refid" value="4ddbcb75a33516efb63da8052f17fc33" type="hidden"></a></div>
+                <input name="security_try" id="security_try" size="15" maxlength="10" tabindex="6" class="captchainput" type="text">
+            </div>
+            <div class="josc_clear"></div>
+            Por favor coloque o código anti-spam que você lê na imagem.
+        </fieldset>
+        
+        <input name="content_id" value="155" type="hidden"><input name="component" value="" type="hidden"><input name="joscsectionid" value="9" type="hidden">
+        <input class="button" tabindex="7" name="bsend" value="Enviar" onclick="JOSC_editPost(-1,-1)" type="button">
+        <div id="JOSC_busy"></div>
+    </fieldset>
+</form>
+
+
+<div id="poweredby" class="small" align="center"><a target="_blank" href="http://compojoom.com/" title="Joomla components"> Joomla components </a> by Compojoom</div>
+<!-- <div class="backbutton" align="center">
+		<a href="javascript:JOSC_goToAnchor('JOSC_TOP');">^^^</a>
+</div> -->
+</div>
+<script type="text/javascript">
+var JOSC_ajaxEnabled=1;if (!JOSC_http) JOSC_ajaxEnabled=false;var JOSC_sortDownward='0';var JOSC_captchaEnabled=true;var JOSC_template='http://www.pontov.com.br/site/components/com_comment/joscomment/templates/modern';var JOSC_liveSite='http://www.pontov.com.br/site/components/com_comment/joscomment';var JOSC_ConfigLiveSite='http://www.pontov.com.br/site/';var JOSC_linkToContent='http://www.pontov.com.br/site/index.php/cpp/46-conceitos-basicos/155-como-usar-bibliotecas-cc';var JOSC_autopublish='1';
+</script>
+<!-- END of joscomment --></div>
+
+	<span class="modifydate">
+		LAST_UPDATED2	</span>
+
+<span class="article_separator">&nbsp;</span>
+
+
+			
+		</div>
+		</div>
+		<!-- END: CONTENT -->
+
+				<!-- BEGIN: LEFT COLUMN -->
+		<div id="ja-col1">
+					<div class="moduletable">
+					<h3>Busca</h3>
+					<!-- SiteSearch Google CSE --><form method="get" action="http://www.pontov.com.br/site/index.php" id="mod_googleSearch_cse"><input name="option" value="com_googlesearch_cse" type="hidden"><input name="n" value="30" type="hidden"><div class="mod_googleSearch_cse"><input name="cx" value="partner-pub-7126712752176094:k52cwx-63ve" type="hidden"><input name="cof" value="FORID:11" type="hidden"><input name="ie" value="ISO-8859-1" type="hidden"><input name="q" class="inputbox" size="50" maxlength="255" style="color: rgb(170, 170, 170); background: rgb(255, 255, 255) url(&quot;http://www.google.com/coop/intl/en/images/google_custom_search_watermark.gif&quot;) no-repeat scroll left center;" type="text"><input name="hl" value="pt" type="hidden"><input name="cr" value="countryBR" type="hidden"></div></form><script type="text/javascript"><!--
+(function() {var f = document.getElementById('mod_googleSearch_cse');if (f && f.q) {var q = f.q;var b = function(){if (q.value == '') {q.style.color = '#AAAAAA';q.style.background = '#FFFFFF url(http://www.google.com/coop/intl/en/images/google_custom_search_watermark.gif) left no-repeat';}};	var f = function() {q.style.color = '#000000';q.style.background = '#ffffff';};q.onfocus = f;q.onblur = b;b();}})();
+//-->
+</script>		</div>
+			<div class="moduletable_menu">
+					<h3>Principal</h3>
+					<ul class="menu"><li class="item1"><a href="http://www.pontov.com.br/site/"><span>Home</span></a></li><li class="item64"><a href="http://www.pontov.com.br/site/index.php/novidades"><span>Novidades</span></a></li><li class="item55"><a href="http://www.pontov.com.br/site/index.php/colaboradores"><span>Colaboradores</span></a></li><li class="item70"><a href="http://www.pontov.com.br/site/index.php/livrosv"><span>Livraria virtual</span></a></li><li class="item71"><a href="http://www.pontov.com.br/site/index.php/emprego"><span>Emprego</span></a></li><li class="item60"><a href="http://www.pontov.com.br/site/index.php/sobre"><span>Sobre</span></a></li><li class="item61"><a href="http://www.pontov.com.br/site/index.php/contate-nos"><span>Contate-nos</span></a></li></ul>		</div>
+			<div class="moduletable">
+					<h3>Produção</h3>
+					<ul class="menu"><li class="item67"><a href="http://www.pontov.com.br/site/index.php/mercado"><span>Mercado</span></a></li><li class="item59"><a href="http://www.pontov.com.br/site/index.php/game-design"><span>Game Design</span></a></li><li class="item65"><a href="http://www.pontov.com.br/site/index.php/arquitetura"><span>Arquitetura</span></a></li><li class="item76"><a href="http://www.pontov.com.br/site/index.php/matematica-e-fisica"><span>Matemática e Física</span></a></li></ul>		</div>
+			<div class="moduletable">
+					<h3>Linguagens</h3>
+					<ul class="menu"><li id="current" class="active item57"><a href="http://www.pontov.com.br/site/index.php/cpp"><span>C/C++</span></a></li><li class="item58"><a href="http://www.pontov.com.br/site/index.php/java"><span>Java</span></a></li></ul>		</div>
+			<div class="moduletable">
+					<h3>Engines e libs</h3>
+					<ul class="menu"><li class="item73"><a href="http://www.pontov.com.br/site/index.php/android"><span>Android</span></a></li><li class="item75"><a href="http://www.pontov.com.br/site/index.php/ethanon"><span>Ethanon</span></a></li><li class="item68"><a href="http://www.pontov.com.br/site/index.php/ogre3d"><span>Ogre 3D</span></a></li><li class="item69"><a href="http://www.pontov.com.br/site/index.php/opengl"><span>OpenGL</span></a></li><li class="item74"><a href="http://www.pontov.com.br/site/index.php/webgl"><span>WebGL</span></a></li><li class="item72"><a href="http://www.pontov.com.br/site/index.php/unity"><span>Unity</span></a></li><li class="item66"><a href="http://www.pontov.com.br/site/index.php/xna"><span>XNA</span></a></li></ul>		</div>
+			<div class="moduletable">
+					<h3>Twitter</h3>
+					<script type="text/javascript">
+	jQuery(document).ready(function () {
+	  jQuery('.bubbleInfo').each(function () {
+		// options
+		var distance = 10;
+		var time = 250;
+		var hideDelay = 500;
+		var hideDelayTimer = null;
+		// tracker
+		var beingShown = false;
+		var shown = false;
+		var trigger = jQuery('.trigger', this);
+		var popup = jQuery('.popup', this).css('opacity', 0);
+		// set the mouseover and mouseout on both element
+		jQuery([trigger.get(0), popup.get(0)]).mouseover(function () {
+		  // stops the hide event if we move from the trigger to the popup element
+		  if (hideDelayTimer) clearTimeout(hideDelayTimer);
+		  // don't trigger the animation again if we're being shown, or already visible
+		  if (beingShown || shown) {
+			return;
+		  } else {
+			beingShown = true;
+			// reset position of popup box
+			popup.css({
+			  top: -20,
+			  left: 90,
+			  display: 'block' // brings the popup back in to view
+			})
+			// (we're using chaining on the popup) now animate it's opacity and position
+			.animate({
+			  top: '-=' + distance + 'px',
+			  opacity: 1
+			}, time, 'swing', function() {
+			  // once the animation is complete, set the tracker variables
+			  beingShown = false;
+			  shown = true;
+			});
+		  }
+		}).mouseout(function () {
+		  // reset the timer if we get fired again - avoids double animations
+		  if (hideDelayTimer) clearTimeout(hideDelayTimer);
+		  // store the timer so that it can be cleared in the mouseover if required
+		  hideDelayTimer = setTimeout(function () {
+			hideDelayTimer = null;
+			popup.animate({
+			  top: '-=' + distance + 'px',
+			  opacity: 0
+			}, time, 'swing', function () {
+			  // once the animate is complete, set the tracker variables
+			  shown = false;
+			  // hide the popup entirely after the effect (opacity alone doesn't do the job)
+			  popup.css('display', 'none');
+			});
+		  }, hideDelay);
+		});
+	  });
+	});
+</script>
+<!-- Start Joomla Bamboo jTweet -->
+<div class="jTweet">
+        <div class="tweet tweet52"> <ul class="tweet_list"></ul><p class="loading">1</p></div>
+        <div class="noPopup">
+                <img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/bird3.png" alt="twitter Bird">
+                        <span class="triggerDetail"><a target="_blank" href="http://twitter.com/pontov/">Siga-nos no twitter</a></span>
+            </div>
+    </div>
+<div class="jTweetClear"></div>
+<!-- End Joomla Bamboo jTweet -->		</div>
+	
+		</div><br>
+		<!-- END: LEFT COLUMN -->
+		
+		</div>
+
+		
+	</div>
+	</div>
+</div>
+</div>
+
+
+<!-- BEGIN: FOOTER -->
+<div id="ja-footerwrap">
+<div id="ja-footer" class="clearfix">
+
+	<div id="ja-footnav">
+		
+	</div>
+
+	<div class="copyright">
+		<div style="text-align:left" class="bcarss">
+	<div style="text-align:left" class="bcarss_message">
+		    </div>
+<div style="text-align:left" class="bcarss_feed"><a href="http://www.pontov.com.br/site/index.php/component/bca-rss-syndicator/?feed_id=12"><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/-arquitetura-1258720185.png" alt="Ponto V - Arquitetura de Jogos" title="Ponto V - Arquitetura de Jogos"></a></div><div style="text-align:left" class="bcarss_feed"><a href="http://www.pontov.com.br/site/index.php/component/bca-rss-syndicator/?feed_id=7"><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/-cpp-1254365126.png" alt="Ponto V - C++" title="Ponto V - C++"></a></div><div style="text-align:left" class="bcarss_feed"><a href="http://www.pontov.com.br/site/index.php/component/bca-rss-syndicator/?feed_id=9"><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/-game%2520design-1258720197.png" alt="Ponto V - Game Design" title="Ponto V - Game Design"></a></div><div style="text-align:left" class="bcarss_feed"><a href="http://www.pontov.com.br/site/index.php/component/bca-rss-syndicator/?feed_id=13"><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/-geral-1258722126.png" alt="Ponto V - Geral" title="Ponto V - Geral"></a></div><div style="text-align:left" class="bcarss_feed"><a href="http://www.pontov.com.br/site/index.php/component/bca-rss-syndicator/?feed_id=11"><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/-java-1254365134.png" alt="Ponto V - Java" title="Ponto V - Java"></a></div><div style="text-align:left" class="bcarss_feed"><a href="http://www.pontov.com.br/site/index.php/component/bca-rss-syndicator/?feed_id=15"><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/-mercado-1289219896.png" alt="Ponto V! - Mercado" title="Ponto V! - Mercado"></a></div><div style="text-align:left" class="bcarss_feed"><a href="http://www.pontov.com.br/site/index.php/component/bca-rss-syndicator/?feed_id=14"><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/-xna-1267360427.png" alt="Ponto V! - XNA" title="Ponto V! - XNA"></a></div></div>
+
+	</div>
+
+	<div class="ja-cert">
+		<div class="advs bannergroup_text">
+
+<div class="banneritem_text"><a href="http://www.pontov.com.br/site/index.php/component/banners/click/10" target="_blank"><img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/banner_agit.jpg" alt="Banner"></a>	</div>
+
+</div>
+
+    <a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank" title="Our site is valid CSS" style="text-decoration: none;">
+		<img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/but-css.gif" alt="Our site is valid CSS" border="none">
+		</a>
+		<a href="http://validator.w3.org/check/referer" target="_blank" title="Our site is valid XHTML 1.0 Transitional" style="text-decoration: none;">
+		<img src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/but-xhtml10.gif" alt="Our site is valid XHTML 1.0 Transitional" border="none">
+		</a>
+	</div>
+
+	<br>
+</div>
+</div>
+<!-- END: FOOTER -->
+
+
+
+
+
+
+			<script type="text/javascript">
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+			</script><script src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/ga.js" type="text/javascript"></script><iframe id="google_osd_static_frame_3861668242392" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe>
+			<script type="text/javascript">
+			try {
+			var pageTracker = _gat._getTracker("UA-10847110-1");
+			pageTracker._trackPageview();
+			} catch(err) {}</script>
+			<script type="text/javascript" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/shCore.js"></script>
+<script type="text/javascript" src="Como%20Usar%20Bibliotecas%20C_C++_arquivos/shBrushCpp.js"></script>
+<script type="text/javascript">
+SyntaxHighlighter.config.clipboardSwf = 'http://www.pontov.com.br/site/plugins/system/easysyntaxhighlighter/scripts/clipboard.swf';
+SyntaxHighlighter.config.strings.expandSource = "+ expandir";
+SyntaxHighlighter.config.strings.viewSource = "ver fontes";
+SyntaxHighlighter.config.strings.copyToClipboard = "copiar";
+SyntaxHighlighter.config.strings.copyToClipboardConfirmation = "O código já está na área de transferência";
+SyntaxHighlighter.config.strings.print = "imprimir";
+SyntaxHighlighter.config.bloggerMode = true;
+SyntaxHighlighter.all();</script>
+
+			<script type="text/javascript">
+			jQuery(document).ready(function(){
+				jQuery(function () {
+				var scrollDiv = document.createElement("div");
+				jQuery(scrollDiv).attr("id", "toTop").html("^ Voltar ao topo").appendTo("body");    
+				jQuery(window).scroll(function () {
+						if (jQuery(this).scrollTop() != 0) {
+							jQuery("#toTop").fadeIn();
+						} else {
+							jQuery("#toTop").fadeOut();
+						}
+					});
+					jQuery("#toTop").click(function () {
+						jQuery("body,html").animate({
+							scrollTop: 0
+						},
+						800);
+					});
+				});
+			});
+			</script>
+			
+
+<div id="toTop" style="display: none;">^ Voltar ao topo</div></body></html>

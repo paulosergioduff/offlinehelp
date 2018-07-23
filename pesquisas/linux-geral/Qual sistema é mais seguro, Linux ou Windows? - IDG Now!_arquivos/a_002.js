@@ -1,0 +1,1 @@
+/**/skimlinksBeaconAuxCallback({"country":"BR","ts":1532386995,"sessid":"dcd2c49fb877979f08ff1dd5f056ceb1","csp":"captify:1530774610|lotame:1530936074|pbin:1530062471","consent":null,"guid":"b70f2bd8cfb739719d95d1eae92eecfe","merchant_domains":[]});

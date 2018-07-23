@@ -1,0 +1,1 @@
+document.write('<scr'+'ipt type="text/javascript">var site="br.terra.idgnow.cobranded";var zone="articles";var OutOfPage="false";var prebid="true";</scr'+'ipt>');

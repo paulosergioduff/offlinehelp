@@ -1,0 +1,25 @@
+/*  */
+#post-rodape{ border:0px; font:normal 12px Palatino Linotype, serif !important; float:left; width:630px; margin-bottom:10px;}
+
+#post-rodape hr{ color:#7b7b7b; background-color: #7b7b7b; height:1px; border:0px;  margin:0;}
+
+#post-rodape hr.hr-strong { height: 7px !important; margin:0;}
+
+#post-rodape h2{ background: url('http://idgnow.com.br/imagens/plus.png') no-repeat left center; font-weight: bold; font-size: 20px !important; font-family: Palatino Linotype, serif !important; color:#7b7b7b !important; padding-left: 24px !important; margin:12px 0 0 0 !important; *margin:6px 0 0 0 !important; text-transform: none !important; width:100%}
+#post-rodape h2.down{ background: url('http://idgnow.com.br/imagens/down.png') no-repeat left center; }
+#post-rodape h3{ font: normal 16px Arial Narrow !important; color:#9c9c9c !important; margin: 15px 0 5px !important; *margin: 12px 0 5px !important;}
+
+#post-rodape p.titulo{ font:bold 14px Arial !important; color:#263ed6 !important; margin:0 !important;}
+#post-rodape p.titulo a:link, #post-rodape p.titulo a:visited, #post-rodape p.titulo a:hover, #post-rodape p.titulo a:active{ font:bold 14px Arial !important; color:#263ed6;border-bottom:0; }
+#post-rodape p.resumo, .link{ font:normal 14px Arial !important; color:#000; margin:0 0 5px 0 !important;}
+#post-rodape p.link { margin:0 0 20px 0 !important;}
+#post-rodape p.link a{ font: 14px Arial !important; color:#253ed6 !important; text-decoration:none;border-bottom:0;}
+
+section.download-fisrt {margin:10px 0 0 0;}
+section.download {margin:0 0 0 0;}
+section.download-last {margin:0 0 15px 0;}
+
+#post-rodape ul.rodapenb, #post-rodape ul.rodapenb li{ list-style-image: url('http://idgnow.com.br/imagens/down-item.png') !important; list-style-position:outside !important; margin-left: 0 !important; }
+#post-rodape ul.rodapenb li{ margin-left: 22px !important; *margin-left: 16px !important;} 
+#post-rodape ul.rodapenb li a{ color:#d30505 !important; text-decoration:underline !important; font:bold 14px Arial !important;border-bottom:0; }
+/**/

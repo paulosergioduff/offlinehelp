@@ -1,0 +1,43 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script>var inDapIF=true,inGptIF=true;</script></head><body topmargin="0" marginwidth="0" marginheight="0" leftmargin="0"><!-- Account: IDG Brasil Site: IDGNow Video Outstream Zone: Outstream_ROS Format: OutStream -->
+<script type="text/javascript">
+ (function() {
+   function loadIt() {
+     console.log("DOM fully loaded and parsed");
+
+     // Enter OutStream configuration options HERE //
+     var configParams = {
+       "width": 640,
+       "height": 360,
+       "k_pos": "before",
+       "k_placement": "a/middle",
+       "k_adImp": "https://securepubads.g.doubleclick.net/pcs/view?xai=AKAOjsslYK6SoWk2EURWKRlvwryP6Mqsb1_dHmLhJ5IPaVQ3W2ZcQ2_sfX-lY8_qJjuT0lL26DbmaQsI8u3ITlE_4_eFE6Vqspu59wBhnj1qOyj7395PXjqvzQ2aJj4IVIuQcy-L2u8dWOQScQmtSUMfK69XLxTnuTONn7lC2cjX3wvMRrIaBIduPQWfftKimLfABDHaDd5pHrs77u_l1eSoq1yuvApN7Njse378Rf9GkQP8g-G8aRI7iJXUGjLKh_fY7dEN&sai=AMfl-YQDq6g6xLwEC7CenfQzM8wb8u20eOOuwJCQJi7HF8JY2fSO0YCIjnxdr8BBDWkuqm_tCFosTbdL4OdRr4vhAwM3QpWQCQGb7yr207FpkjF_eEPCr41-gJ0saG4&sig=Cg0ArKJSzBg0KX5Jo8inEAE&urlfix=1&adurl=",
+       "k_adClick": "https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjstIPvoS7hdE9np68lAXrixXxpEKmXMwXGkpgLV1agwKk80auz7iD-K8VT2nNTcBBzAvJMZg7J2gZXw6GAvXhJlsMWn_TwiafXABlRG1KYxJ-iGGRyhxkg6DJpz_HixHeZqwwgRYuPABjLIxBtcHsSPpnco808Xujy2J7z8LUPY9f3re2sGOIZxRqd0rRzvR-Nmci0J64w0YSMgSiZqryePbXMQZHdzGEUv_upLFdx9D1kW5dEDtuUf_5US6f5vn&sai=AMfl-YSIvvY-VgLUwiPqM0dagp_DdLQ6lfw_eXOYPg_m8oDD-FenuRxASa9UF3a-dpY61iDdnl-7wP8cz2HVnntOZgLI4rv6iqAgINmgoWONbDG-zfQh3cjVmXIzr6U&sig=Cg0ArKJSzEzvH3NoirPZEAE&urlfix=1&adurl=",
+       "k_align": "center"
+     };
+
+     // End OutStream configuration options //
+
+     var doc = top.window.document;
+
+     var as = doc.createElement('script'),
+       aT = '//video-ads-apex.rubiconproject.com/apex/15316/94704/672862/203/apex.js?r=' + Math.random() * 10000000000000000;
+
+     as.type = 'text/javascript';
+     as.src = aT;
+     as.async = true;
+
+     if (as.textContent) {
+       as.textContent = JSON.stringify(configParams);
+     } else {
+       as.innerText = JSON.stringify(configParams);
+     }
+     doc.body.appendChild(as);
+   }
+   if (document.readyState === "complete" || (document.readyState !== "loading" && !document.documentElement.doScroll)) {
+     loadIt();
+   } else {
+     document.addEventListener("DOMContentLoaded", loadIt);
+   }
+ }());
+</script><script>if (window.top && window.top.postMessage) {window.top.postMessage('{"googMsgType":"adpnt"}','*');}</script><div style="bottom:0;right:0;width:100px;height:100px;background:initial !important;position:absolute !important;max-width:100% !important;max-height:100% !important;pointer-events:none !important;image-rendering:-moz-crisp-edges !important;z-index:2147483647;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAWBAMAAACrl3iAAAAABlBMVEUAAAD+AciWmZzWAAAAAnRSTlMAApidrBQAAAB1SURBVBjTbZALCsAwCEPjDXL/0xai8TPmoE76tA+B/4iM/FsVdevTOZKaT5UIiiJW1fc+mq7Zonp2vd2Ty8QxLLatRst/OAtYyKSQwPQkWJm2P1tBN44J3bjZxZ0N5lgqsDeYOfDdoKWwaLvgbpDTyGMih+x7EWgFtYZGRCEAAAAASUVORK5CYII=') !important"></div></body></html>

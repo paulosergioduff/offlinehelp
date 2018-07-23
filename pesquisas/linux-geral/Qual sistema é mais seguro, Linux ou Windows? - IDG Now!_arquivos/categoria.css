@@ -1,0 +1,90 @@
+/* <!-- compression status: disabled --> (this is for http compression) */
+/*  */
+/*  (do not remove this :) */
+/*  (not this either :) */
+
+.topCategoria {border-bottom:solid 3px #818181; text-align:center; height:47px; margin:-10px 0 25px; position:relative;}
+.topCategoria h1, .topCategoria h2 {font-size:34px; font-family:Palatino Linotype, Palatino, Times New Roman, Serif; line-height:40px; color:#1A3650; width:auto; margin:0 auto;}
+span.txtPatrocinio {font:normal 9px "Lucida Grande", "Lucida Sans", Verdana, Sans-Serif; color:#333;}
+
+a.icoRss {width:22px; height:23px; margin:10px 0 0 10px;}
+
+/* Destaque Principal Categoria */
+.destaquePrincipalCategoria {float:left; width:290px; margin:0 5px 20px 0; padding:0 5px 0 10px;}
+.destaquePrincipalCategoria h1, .destaquePrincipalCategoria h2 {font-size:24px; font-family:Palatino Linotype, Palatino, Times New Roman, Serif; line-height:24px; margin-bottom:10px;}
+.destaquePrincipalCategoria h1 a:link, .itemListagemNoticia h1 a:visited, .itemListagemNoticia h1 a:hover, .itemListagemNoticia h1 a:active {color:#1A3650;}
+.destaquePrincipalCategoria h2 a:link, .itemListagemNoticia h2 a:visited, .itemListagemNoticia h2 a:hover, .itemListagemNoticia h2 a:active {color:#1A3650;}
+.destaquePrincipalCategoria p {font-size:14px; line-height:15px; color:#000; margin-bottom:5px;}
+.destaquePrincipalCategoria a.linkLeiaDest {border:none; font-weight:bold; font-family:Palatino Linotype, Palatino, Times New Roman, Serif; color:#1A3650; white-space:nowrap;}
+.destaquePrincipalCategoria a.linkLeiaDest:link,
+.destaquePrincipalCategoria a.linkLeiaDest:visited,
+.destaquePrincipalCategoria a.linkLeiaDest:hover,
+.destaquePrincipalCategoria a.linkLeiaDest:active {color:#1A3650;}
+.ilustraDestPrincCategoria {float:left; margin:0 10px 5px 0;}
+.ilustraDestPrincCategoria img {display:block;}
+.infoDestPrincCategoria {height:16px; margin-bottom:3px; clear:both;}
+.infoDestPrincCategoria h3 {background:#4D4D4D; font-weight:normal; font-size:9x; text-transform:lowercase; line-height:16px; float:left; height:16px; margin-right:3px; padding-right:4px;}
+.infoDestPrincCategoria h3 span {background:#000; display:block; text-align:center; color:#FFF; float:left; width:16px; height:16px; margin-right:3px;}
+.infoDestPrincCategoria h3 a:link, .infoDestPrincCategoria h3 a:visited, .infoDestPrincCategoria h3 a:hover, .infoDestPrincCategoria h3 a:active {color:#FFF;}
+.infoDestPrincCategoria .dataHora {font-size:11px; line-height:16px; float:left;}
+.wrapTweetButton {float:right;}
+/* // Destaque Principal Categoria */
+
+/* Destaque Secundário Categoria */
+.destaqueSecundarioCategoria {border-top:solid 1px #000; margin-bottom:20px; padding-top:15px; clear:both;}
+.destaqueSecundarioCategoria h1, .destaqueSecundarioCategoria h2 {font-size:20px; line-height:20px; margin-bottom:10px;}
+.destaqueSecundarioCategoria h1 a:link, .destaqueSecundarioCategoria h1 a:active, .destaqueSecundarioCategoria h1 a:hover, .destaqueSecundarioCategoria h1 a:active {color:#000;}
+.destaqueSecundarioCategoria h2 a:link, .destaqueSecundarioCategoria h2 a:active, .destaqueSecundarioCategoria h2 a:hover, .destaqueSecundarioCategoria h2 a:active {color:#000;}
+.destaqueSecundarioCategoria p {font-size:14px; position:relative;}
+.ilustraDestSecCategoria {float:right; margin-left:10px;}
+.ilustraDestSecCategoria2 {float:left; margin-right:14px;}
+.infoDestSecCategoria, .infoDestSecCategoria2 {height:20px; margin-bottom:10px; clear:both;}
+.infoDestSecCategoria2 {clear:right;}
+.infoDestSecCategoria h3, .infoDestSecCategoria2 h3 {background:#4D4D4D; font-weight:normal; font-size:9x; text-transform:lowercase; line-height:16px; float:left; height:16px; margin-right:3px; padding-right:4px;}
+.infoDestSecCategoria h3 span, .infoDestSecCategoria2 h3 span {background:#000; display:block; text-align:center; color:#FFF; float:left; width:16px; height:16px; margin-right:3px;}
+.infoDestSecCategoria h3 a:link, .infoDestSecCategoria h3 a:visited, .infoDestSecCategoria h3 a:hover, .infoDestSecCategoria h3 a:active,
+.infoDestSecCategoria2 h3 a:link, .infoDestSecCategoria2 h3 a:visited, .infoDestSecCategoria2 h3 a:hover, .infoDestSecCategoria2 h3 a:active {color:#FFF;}
+.infoDestSecCategoria .dataHora, .infoDestSecCategoria2 .dataHora {font-size:11px; line-height:16px; float:left;}
+
+.infoDestSecCategoria h3.tagBlog, .infoDestSecCategoria2 h3.tagBlog {background:#B90717;}
+/* // Destaque Secundário Categoria */
+
+/* Box IDG Mídia */
+.boxIdgMidia {border:solid 1px #6E6E6E; margin-bottom:20px; clear:both;}
+.boxIdgMidia h2 {background:#4D4D4D; font-size:13px; line-height:19px; color:#C3C3C3; padding:0 5px;}
+.contBoxIdgMidia {padding:15px 0 0 18px;}
+.itemBoxIdgMidia {float:left; width:275px; margin:0 24px 18px 0;}
+.itemBoxIdgMidia h1 {font-size:17px; font-family:Palatino Linotype, Palatino, Times New Roman, Serif; line-height:17px; float:left;}
+.itemBoxIdgMidia h1 a:link, .itemBoxIdgMidia h1 a:visited, .itemBoxIdgMidia h1 a:hover, .itemBoxIdgMidia h1 a:active {color:#6C1718;}
+.contItemBoxIdgMidia {clear:both; padding-top:5px;}
+.contItemBoxIdgMidia p {font-size:14px; line-height:16px; color:#818181; float:right; width:140px; height:78px; overflow:hidden;}
+.ilustraIdgMidia {float:left; width:125px; height:78px; overflow:hidden;}
+.ilustraIdgMidia img {width:125px; height:78px;}
+/* Box // IDG Mídia */
+
+/* Item Lista Categoria */
+.itemListaCategoria {border-bottom:solid 1px #6E6E6E; margin-bottom:15px; padding-bottom:15px;}
+.itemListaCategoria h1, .itemListaCategoria h2 {font-size:19px; line-height:19px; margin-bottom:5px;}
+.itemListaCategoria h1 a:link, .itemListaCategoria h1 a:visited, .itemListaCategoria h1 a:hover, .itemListaCategoria h1 a:active {color:#000;}
+.itemListaCategoria h2 a:link, .itemListaCategoria h2 a:visited, .itemListaCategoria h2 a:hover, .itemListaCategoria h2 a:active {color:#000;}
+.itemListaCategoria p {font-size:14px;}
+.ilustraItemListaCategoria {float:left; margin-right:10px; padding:5px 0 6px;}
+.infoListaNotCategoria {height:16px; margin-bottom:8px; clear:both;}
+.infoListaNotCategoria h3 {background:#4D4D4D; font-weight:normal; font-size:9x; text-transform:lowercase; line-height:16px; float:left; height:16px; margin-right:3px; padding-right:4px;}
+.infoListaNotCategoria h3.tagBlog {background:#B90717;}
+.infoListaNotCategoria h3 span {background:#000; display:block; text-align:center; color:#FFF; float:left; width:16px; height:16px; margin-right:3px;}
+.infoListaNotCategoria h3 a:link, .infoListaNotCategoria h3 a:visited, .infoListaNotCategoria h3 a:hover, .infoListaNotCategoria h3 a:active {color:#FFF;}
+.infoListaNotCategoria .dataHora {font-size:11px; line-height:16px; float:left;}
+/* // Item Lista Categoria */
+
+/* Box Categoria Web */
+.boxGuiaCategoria {background:#E4E3E3; margin-bottom:20px; padding:6px;}
+.boxGuiaCategoria h2 {text-transform:uppercase; color:#4D4D4D; margin-bottom:15px;}
+.boxGuiaCategoria h2 span {display:block; font-size:22px; font-family:Palatino Linotype, Palatino, Times New Roman, Serif; text-align:center; line-height:22px; color:#1A3650;}
+.boxGuiaCategoria ul {font-size:14px; font-family:Palatino Linotype, Palatino, Times New Roman, Serif;}
+.boxGuiaCategoria li {background:url(http://idgnow.com.br/imagens/bullet_vermelho.gif) no-repeat 0 6px; line-height:17px; margin-bottom:15px; padding-left:15px;}
+.boxGuiaCategoria a:link, .boxGuiaCategoria a:visited, .boxGuiaCategoria a:hover, .boxGuiaCategoria a:active {color:#000; font-size:14px;}
+/* // Box Categoria Web */
+
+/*  */
+/*  */
