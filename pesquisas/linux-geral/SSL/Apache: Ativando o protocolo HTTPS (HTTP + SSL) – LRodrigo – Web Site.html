@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="pt-BR">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="pt-BR">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html class="js js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" style="" lang="pt-BR"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="profile" href="http://gmpg.org/xfn/11">
+  <link rel="pingback" href="http://lrodrigo.sgs.lncc.br/wp/xmlrpc.php">
+  <!-- scripts for IE8 and less  -->
+  <!--[if lt IE 9]>
+    <script src="http://lrodrigo.sgs.lncc.br/wp/wp-content/themes/customizr/assets/front/js/vendors/html5.js"></script>
+  <![endif]-->
+<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>Apache: Ativando o  protocolo HTTPS (HTTP + SSL) – LRodrigo – Web Site</title>
+<!-- Jetpack Site Verification Tags -->
+<meta name="google-site-verification" content="xAvEfKg2PaKIDs4kFzUL305YrlyTpFK4F6sxuGBJurU">
+<meta name="msvalidate.01" content="D7C5CD3D070A0B1AD741E39FE20CA149">
+<link rel="dns-prefetch" href="http://s0.wp.com/">
+<link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Feed para LRodrigo - Web Site »" href="http://lrodrigo.sgs.lncc.br/wp/feed/">
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para LRodrigo - Web Site »" href="http://lrodrigo.sgs.lncc.br/wp/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para LRodrigo - Web Site » Apache: Ativando o  protocolo HTTPS (HTTP + SSL)" href="http://lrodrigo.sgs.lncc.br/wp/dicas/apache-ativando-o-protocolo-https-http-ssl/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/lrodrigo.sgs.lncc.br\/wp\/wp-includes\/js\/wp-emoji-release.min.js?ver=892e68151807419e8d768af0e9b9d119"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56794,8205,9794,65039],[55358,56794,8203,9794,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/wp-emoji-release.js" type="text/javascript" defer="defer"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="fbw-css" href="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/widget.css" type="text/css" media="screen">
+<link rel="stylesheet" id="crayon-css" href="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/crayon.css" type="text/css" media="all">
+<link rel="stylesheet" id="czr-gfonts-css" href="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/css.css" type="text/css" media="all">
+<link rel="stylesheet" id="customizr-fa-css" href="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/fontawesome-all.css" type="text/css" media="all">
+<link rel="stylesheet" id="customizr-main-css" href="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/style.css" type="text/css" media="all">
+<style id="customizr-main-inline-css" type="text/css">
+@media (min-width: 540px){ .czr-boxed-layout .container{ padding-right: 30px; padding-left:  30px; } }@media (min-width: 576px){ .czr-boxed-layout .container{ width: 570px } }@media (min-width: 768px){ .czr-boxed-layout .container{ width: 750px } }@media (min-width: 992px){ .czr-boxed-layout .container{ width: 990px } }@media (min-width: 1200px){ .czr-boxed-layout .container{ width: 1170px } }
+              body {
+                font-size : 0.73em!important;
+                line-height : 1.5em;
+              }
+              @media (min-width: 20em) and (max-width: 60em) {
+                body {
+                  font-size: calc( 0.73em + 0.1045 * ( ( 100vw - 20em) / 40 ))!important;
+                }
+              }
+              @media (min-width: 60em) {
+                body {
+                  font-size: 0.82em!important;
+                }
+              }
+
+.tc-header.border-top { border-top-width: 5px; border-top-style: solid }
+#czr-push-footer { display: none; visibility: hidden; }
+        .czr-sticky-footer #czr-push-footer.sticky-footer-enabled { display: block; }
+        
+</style>
+<link rel="stylesheet" id="customizr-ms-respond-css" href="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/style-modular-scale.css" type="text/css" media="all">
+<link rel="stylesheet" id="instag-slider-css" href="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/instag-slider.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack-widget-social-icons-styles-css" href="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/social-icons.css" type="text/css" media="all">
+<link rel="stylesheet" id="social-logos-css" href="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/social-logos.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/jetpack.css" type="text/css" media="all">
+<script type="text/javascript" src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/jquery_002.js"></script>
+<script type="text/javascript" src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/jquery-migrate.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/related-posts.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/lrodrigo.sgs.lncc.br\/wp\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Pressione %s para Copiar, %s para Colar","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/crayon.js"></script>
+<script type="text/javascript" src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/modernizr.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var CZRParams = {"assetsPath":"http:\/\/lrodrigo.sgs.lncc.br\/wp\/wp-content\/themes\/customizr\/assets\/front\/","_disabled":[],"centerSliderImg":"1","isLightBoxEnabled":"1","SmoothScroll":{"Enabled":true,"Options":{"touchpadSupport":false}},"isAnchorScrollEnabled":"","anchorSmoothScrollExclude":{"simple":["[class*=edd]",".carousel-control","[data-toggle=\"modal\"]","[data-toggle=\"dropdown\"]","[data-toggle=\"tooltip\"]","[data-toggle=\"popover\"]","[data-toggle=\"collapse\"]","[data-toggle=\"tab\"]","[class*=upme]","[class*=um-]"],"deep":{"classes":[],"ids":[]}},"timerOnScrollAllBrowsers":"1","centerAllImg":"1","HasComments":"","LoadModernizr":"1","stickyHeader":"","extLinksStyle":"","extLinksTargetExt":"","extLinksSkipSelectors":{"classes":["btn","button"],"ids":[]},"dropcapEnabled":"","dropcapWhere":{"post":"","page":""},"dropcapMinWords":"","dropcapSkipSelectors":{"tags":["IMG","IFRAME","H1","H2","H3","H4","H5","H6","BLOCKQUOTE","UL","OL"],"classes":["btn"],"id":[]},"imgSmartLoadEnabled":"","imgSmartLoadOpts":{"parentSelectors":["[class*=grid-container], .article-container",".__before_main_wrapper",".widget-front",".post-related-articles",".tc-singular-thumbnail-wrapper"],"opts":{"excludeImg":[".tc-holder-img"]}},"imgSmartLoadsForSliders":"1","pluginCompats":[],"isWPMobile":"","menuStickyUserSettings":{"desktop":"stick_up","mobile":"stick_up"},"adminAjaxUrl":"http:\/\/lrodrigo.sgs.lncc.br\/wp\/wp-admin\/admin-ajax.php","ajaxUrl":"http:\/\/lrodrigo.sgs.lncc.br\/wp\/?czrajax=1","frontNonce":{"id":"CZRFrontNonce","handle":"7549bfce05"},"isDevMode":"","isModernStyle":"1","i18n":{"Permanently dismiss":"Permanently dismiss"},"frontNotifications":{"welcome":{"enabled":false,"content":"","dismissAction":"dismiss_welcome_note_front"}}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/tc-scripts.js"></script>
+<script type="text/javascript" src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/jquery.js"></script>
+<link rel="https://api.w.org/" href="http://lrodrigo.sgs.lncc.br/wp/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://lrodrigo.sgs.lncc.br/wp/xmlrpc.php?rsd">
+<link rel="prev" title="Instalando o Komodo Edit no Ubuntu" href="http://lrodrigo.sgs.lncc.br/wp/dicas/instalando-o-komodo-edit-no-ubuntu/">
+<link rel="next" title="Apache: Redirecionando as conexões HTTP para o HTTPS" href="http://lrodrigo.sgs.lncc.br/wp/dicas/apache-redirecionando-as-conexoes-http-para-o-https/">
+
+<link rel="canonical" href="http://lrodrigo.sgs.lncc.br/wp/dicas/apache-ativando-o-protocolo-https-http-ssl/">
+<link rel="shortlink" href="http://lrodrigo.sgs.lncc.br/wp/?p=2073">
+<link rel="alternate" type="application/json+oembed" href="http://lrodrigo.sgs.lncc.br/wp/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flrodrigo.sgs.lncc.br%2Fwp%2Fdicas%2Fapache-ativando-o-protocolo-https-http-ssl%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://lrodrigo.sgs.lncc.br/wp/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flrodrigo.sgs.lncc.br%2Fwp%2Fdicas%2Fapache-ativando-o-protocolo-https-http-ssl%2F&amp;format=xml">
+
+<link rel="dns-prefetch" href="http://v0.wordpress.com/">
+<link rel="dns-prefetch" href="http://widgets.wp.com/">
+<link rel="dns-prefetch" href="http://s0.wp.com/">
+<link rel="dns-prefetch" href="http://0.gravatar.com/">
+<link rel="dns-prefetch" href="http://1.gravatar.com/">
+<link rel="dns-prefetch" href="http://2.gravatar.com/">
+<link rel="dns-prefetch" href="http://i0.wp.com/">
+<link rel="dns-prefetch" href="http://i1.wp.com/">
+<link rel="dns-prefetch" href="http://i2.wp.com/">
+<style type="text/css">#zflickr-2 ul li {margin:0 5px 5px 0;}</style>
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Apache: Ativando o  protocolo HTTPS (HTTP + SSL)">
+<meta property="og:url" content="http://lrodrigo.sgs.lncc.br/wp/dicas/apache-ativando-o-protocolo-https-http-ssl/">
+<meta property="og:description" content="Por padrão, a instalação básica do Apache não contempla a ativação do protocolo HTTPS, somente o HTTP é suportado. Entretanto, muitas vezes, necessitamos utilizar, por medida de segurança, o protoc…">
+<meta property="article:published_time" content="2015-02-26T19:55:25+00:00">
+<meta property="article:modified_time" content="2015-02-26T19:55:25+00:00">
+<meta property="article:author" content="https://www.facebook.com/lrodrigo.papagaio">
+<meta property="og:site_name" content="LRodrigo - Web Site">
+<meta property="og:image" content="https://i0.wp.com/lrodrigo.sgs.lncc.br/wp/wp-content/uploads/2014/10/cropped-Papagaio-direita.gif?fit=512%2C512">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:site" content="@luisrodrigoog">
+<meta name="twitter:text:title" content="Apache: Ativando o  protocolo HTTPS (HTTP + SSL)">
+<meta name="twitter:image" content="https://i0.wp.com/lrodrigo.sgs.lncc.br/wp/wp-content/uploads/2014/10/cropped-Papagaio-direita.gif?fit=240%2C240">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@luisrodrigoog">
+
+<!-- End Jetpack Open Graph Tags -->
+<link rel="stylesheet" type="text/css" href="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/shCore.css"><link rel="stylesheet" type="text/css" href="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/shThemeMidnight.css"><style type="text/css" id="syntaxhighlighteranchor"></style>
+<link rel="icon" href="https://i0.wp.com/lrodrigo.sgs.lncc.br/wp/wp-content/uploads/2014/10/cropped-Papagaio-direita.gif?fit=32%2C32" sizes="32x32">
+<link rel="icon" href="https://i0.wp.com/lrodrigo.sgs.lncc.br/wp/wp-content/uploads/2014/10/cropped-Papagaio-direita.gif?fit=192%2C192" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://i0.wp.com/lrodrigo.sgs.lncc.br/wp/wp-content/uploads/2014/10/cropped-Papagaio-direita.gif?fit=180%2C180">
+<meta name="msapplication-TileImage" content="https://i0.wp.com/lrodrigo.sgs.lncc.br/wp/wp-content/uploads/2014/10/cropped-Papagaio-direita.gif?fit=270%2C270">
+<link rel="stylesheet" id="czr-magnific-popup" type="text/css" href="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/magnific-popup.css"><style></style></head>
+
+  <body class="post-template-default single single-post postid-2073 single-format-standard czr-link-hover-underline header-skin-light footer-skin-dark czr-l-sidebar tc-center-images czr-boxed-layout czr-sticky-footer mozilla is-scrolled" itemscope="" itemtype="http://schema.org/WebPage">
+    
+    
+    <div id="tc-page-wrap" class="container czr-boxed">
+
+      <header class="tpnav-header__header tc-header sl-logo_left sticky-brand-shrink-on sticky-transparent border-top czr-submenu-fade czr-submenu-move" role="banner" style="height: 85.2333px;">
+                    <div class="primary-navbar__wrapper hidden-md-down has-horizontal-menu desktop-sticky" style="transform: translate(0px, -79.2333px);">
+  <div class="container">
+    <div class="row align-items-center flex-row primary-navbar__row">
+      <div class="branding__container col col-auto">
+  <div class="branding align-items-center flex-column tagline-below">
+  <h1 class="navbar-brand align-self-start ">
+  <a class="navbar-brand-sitename  czr-underline" href="http://lrodrigo.sgs.lncc.br/wp/" title="LRodrigo – Web Site | Dicas para o dia a dia">
+    <span>LRodrigo – Web Site</span>
+  </a>
+</h1>
+
+  </div>
+</div>
+      <div class="primary-nav__container justify-content-lg-around col col-lg-auto flex-lg-column">
+  <div class="primary-nav__wrapper flex-lg-row align-items-center justify-content-end">
+              <nav class="primary-nav__nav col" id="primary-nav">
+          <div class="nav__menu-wrapper primary-nav__menu-wrapper justify-content-end czr-open-on-hover">
+  <ul id="primary-nav" class="primary-nav__menu regular-nav nav__menu nav"><li id="menu-item-1598" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children czr-dropdown menu-item-1598"><a data-toggle="czr-dropdown" aria-haspopup="true" aria-expanded="false" href="http://lrodrigo.sgs.lncc.br/wp/cursos/" class="nav__link"><span class="nav__title">Cursos</span><span class="caret__dropdown-toggler"><i class="icn-down-small"></i></span></a>
+<ul class="dropdown-menu czr-dropdown-menu">
+	<li id="menu-item-2381" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-2381"><a href="http://lrodrigo.sgs.lncc.br/wp/cursos/104639-logica-em-computacao/" class="nav__link"><span class="nav__title">Lógica em Computação</span></a></li>
+	<li id="menu-item-3101" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-3101"><a href="http://lrodrigo.sgs.lncc.br/wp/cursos/curso-de-programacao-web/" class="nav__link"><span class="nav__title">Programação Web</span></a></li>
+	<li id="menu-item-2877" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-2877"><a href="http://lrodrigo.sgs.lncc.br/wp/cursos/104605-programacao-ii/" class="nav__link"><span class="nav__title">Programação II</span></a></li>
+	<li id="menu-item-3348" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-3348"><a href="http://lrodrigo.sgs.lncc.br/wp/cursos/ucp-101359-matematica/" class="nav__link"><span class="nav__title">Matemática para Biomedicina</span></a></li>
+	<li id="menu-item-2370" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-2370"><a href="http://lrodrigo.sgs.lncc.br/wp/cursos/104621-arquitetura-de-computadores/" class="nav__link"><span class="nav__title">Arquitetura de Comp.</span></a></li>
+	<li id="menu-item-2864" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-2864"><a href="http://lrodrigo.sgs.lncc.br/wp/cursos/105319-estatistica-aplicada-para-pesquisas-em-marketing-e-comunicacao/" class="nav__link"><span class="nav__title">Estatística – Marketing e Comunicação</span></a></li>
+	<li id="menu-item-2641" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-2641"><a href="http://lrodrigo.sgs.lncc.br/wp/cursos/ucp105047-informatica-aplicada-a-gestao/" class="nav__link"><span class="nav__title">Informática Aplicada à Gestão</span></a></li>
+	<li id="menu-item-2541" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-2541"><a href="http://lrodrigo.sgs.lncc.br/wp/cursos/1119640-matematica-i/" class="nav__link"><span class="nav__title">Matemática I</span></a></li>
+	<li id="menu-item-2625" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-2625"><a href="http://lrodrigo.sgs.lncc.br/wp/cursos/cct0108-projeto-de-tcc-em-sistemas-de-informacao/" class="nav__link"><span class="nav__title">Projeto de TCC</span></a></li>
+	<li id="menu-item-1602" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1602"><a href="http://lrodrigo.sgs.lncc.br/wp/cursos/projeto-final/" class="nav__link"><span class="nav__title">Projeto Final</span></a></li>
+	<li id="menu-item-2306" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-2306"><a href="http://lrodrigo.sgs.lncc.br/wp/cursos/seguranca-da-informacao/" class="nav__link"><span class="nav__title">Seg. Informação</span></a></li>
+	<li id="menu-item-1599" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1599"><a href="http://lrodrigo.sgs.lncc.br/wp/cursos/sistemas-operacionais/" class="nav__link"><span class="nav__title">Sistemas Operacionais</span></a></li>
+	<li id="menu-item-2920" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-2920"><a href="http://lrodrigo.sgs.lncc.br/wp/ucp-modulo-xiii-tecnologia-da-informacao/" class="nav__link"><span class="nav__title">POS-Tecnologia da Informação</span></a></li>
+	<li id="menu-item-1993" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1993"><a href="http://lrodrigo.sgs.lncc.br/wp/cursos/" class="nav__link"><span class="nav__title">Outros</span></a></li>
+</ul>
+</li>
+<li id="menu-item-1610" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children czr-dropdown menu-item-1610"><a data-toggle="czr-dropdown" aria-haspopup="true" aria-expanded="false" href="http://lrodrigo.sgs.lncc.br/wp/pesquisa/" class="nav__link"><span class="nav__title">Pesquisa</span><span class="caret__dropdown-toggler"><i class="icn-down-small"></i></span></a>
+<ul class="dropdown-menu czr-dropdown-menu">
+	<li id="menu-item-1611" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1611"><a href="http://lrodrigo.sgs.lncc.br/wp/pesquisa/projeto-sgs/" class="nav__link"><span class="nav__title">Projeto SGS</span></a></li>
+	<li id="menu-item-1612" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1612"><a href="http://lrodrigo.sgs.lncc.br/wp/pesquisa/seguranca-da-informacao/" class="nav__link"><span class="nav__title">Segurança da  Informação</span></a></li>
+	<li id="menu-item-1613" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1613"><a href="http://lrodrigo.sgs.lncc.br/wp/pesquisa/sistema-distribuido/" class="nav__link"><span class="nav__title">Sistema Distribuido</span></a></li>
+	<li id="menu-item-1618" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children czr-dropdown-submenu dropdown-item menu-item-1618"><a data-toggle="czr-dropdown" aria-haspopup="true" aria-expanded="false" href="http://lrodrigo.sgs.lncc.br/wp/publicacoes/" class="nav__link"><span class="nav__title">Publicações</span><span class="caret__dropdown-toggler"><i class="icn-down-small"></i></span></a>
+<ul class="dropdown-menu czr-dropdown-menu">
+		<li id="menu-item-1619" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1619"><a href="http://lrodrigo.sgs.lncc.br/wp/publicacoes/artigos/" class="nav__link"><span class="nav__title">Artigos</span></a></li>
+		<li id="menu-item-1620" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1620"><a href="http://lrodrigo.sgs.lncc.br/wp/publicacoes/monografias/" class="nav__link"><span class="nav__title">Monografias</span></a></li>
+		<li id="menu-item-1621" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1621"><a href="http://lrodrigo.sgs.lncc.br/wp/publicacoes/tccs/" class="nav__link"><span class="nav__title">TCCs</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-1605" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children czr-dropdown menu-item-1605"><a data-toggle="czr-dropdown" aria-haspopup="true" aria-expanded="false" href="http://lrodrigo.sgs.lncc.br/wp/dicas/" class="nav__link"><span class="nav__title">Dicas</span><span class="caret__dropdown-toggler"><i class="icn-down-small"></i></span></a>
+<ul class="dropdown-menu czr-dropdown-menu">
+	<li id="menu-item-1606" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1606"><a href="http://lrodrigo.sgs.lncc.br/wp/dicas/gerencia-de-redes/" class="nav__link"><span class="nav__title">Gerência de Redes</span></a></li>
+	<li id="menu-item-1646" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1646"><a href="http://lrodrigo.sgs.lncc.br/wp/dicas/dicaslinux/" class="nav__link"><span class="nav__title">Linux</span></a></li>
+	<li id="menu-item-1607" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1607"><a href="http://lrodrigo.sgs.lncc.br/wp/dicas/mac-os-x/" class="nav__link"><span class="nav__title">Mac OS X</span></a></li>
+	<li id="menu-item-1608" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1608"><a href="http://lrodrigo.sgs.lncc.br/wp/dicas/rede/" class="nav__link"><span class="nav__title">Rede</span></a></li>
+	<li id="menu-item-1609" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1609"><a href="http://lrodrigo.sgs.lncc.br/wp/dicas/seguranca/" class="nav__link"><span class="nav__title">Segurança</span></a></li>
+	<li id="menu-item-1614" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children czr-dropdown-submenu dropdown-item menu-item-1614"><a data-toggle="czr-dropdown" aria-haspopup="true" aria-expanded="false" href="http://lrodrigo.sgs.lncc.br/wp/programacao/" class="nav__link"><span class="nav__title">Programação</span><span class="caret__dropdown-toggler"><i class="icn-down-small"></i></span></a>
+<ul class="dropdown-menu czr-dropdown-menu">
+		<li id="menu-item-2052" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-2052"><a href="http://lrodrigo.sgs.lncc.br/wp/programacao/css/" class="nav__link"><span class="nav__title">CSS</span></a></li>
+		<li id="menu-item-1615" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1615"><a href="http://lrodrigo.sgs.lncc.br/wp/programacao/html/" class="nav__link"><span class="nav__title">HTML</span></a></li>
+		<li id="menu-item-1616" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1616"><a href="http://lrodrigo.sgs.lncc.br/wp/programacao/js/" class="nav__link"><span class="nav__title">JS</span></a></li>
+		<li id="menu-item-1644" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1644"><a href="http://lrodrigo.sgs.lncc.br/wp/programacao/latex/" class="nav__link"><span class="nav__title">Latex</span></a></li>
+		<li id="menu-item-1645" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1645"><a href="http://lrodrigo.sgs.lncc.br/wp/programacao/python/" class="nav__link"><span class="nav__title">Python</span></a></li>
+		<li id="menu-item-2057" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-2057"><a href="http://lrodrigo.sgs.lncc.br/wp/programacao/python-server-pages-psp/" class="nav__link"><span class="nav__title">Python Server Pages</span></a></li>
+		<li id="menu-item-2058" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-2058"><a href="http://lrodrigo.sgs.lncc.br/wp/programacao/shell-script/" class="nav__link"><span class="nav__title">Shell Script</span></a></li>
+		<li id="menu-item-1617" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1617"><a href="http://lrodrigo.sgs.lncc.br/wp/programacao/web2py/" class="nav__link"><span class="nav__title">Web2Py</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-1643" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children czr-dropdown menu-item-1643"><a data-toggle="czr-dropdown" aria-haspopup="true" aria-expanded="false" href="http://lrodrigo.sgs.lncc.br/wp/fotografia/" class="nav__link"><span class="nav__title">Fotografia</span><span class="caret__dropdown-toggler"><i class="icn-down-small"></i></span></a>
+<ul class="dropdown-menu czr-dropdown-menu">
+	<li id="menu-item-1647" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1647"><a href="http://lrodrigo.sgs.lncc.br/wp/fotografia/galeria-arraial-do-cabo/" class="nav__link"><span class="nav__title">Galeria: Arraial do Cabo</span></a></li>
+	<li id="menu-item-1648" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1648"><a href="http://lrodrigo.sgs.lncc.br/wp/fotografia/galeria-folhas-e-frutos/" class="nav__link"><span class="nav__title">Galeria: Folhas e Frutos</span></a></li>
+	<li id="menu-item-1649" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1649"><a href="http://lrodrigo.sgs.lncc.br/wp/fotografia/galeria-paqueta/" class="nav__link"><span class="nav__title">Galeria: Paqueta</span></a></li>
+	<li id="menu-item-1653" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1653"><a href="http://lrodrigo.sgs.lncc.br/wp/fotografia/galeria-preto-e-branco/" class="nav__link"><span class="nav__title">Galeria: Preto e Branco</span></a></li>
+	<li id="menu-item-1650" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1650"><a href="http://lrodrigo.sgs.lncc.br/wp/fotografia/galeria-luz-e-sombra/" class="nav__link"><span class="nav__title">Galeria: Luz e Sombra</span></a></li>
+	<li id="menu-item-1651" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1651"><a href="http://lrodrigo.sgs.lncc.br/wp/fotografia/galeria-crepusculos/" class="nav__link"><span class="nav__title">Galeria: Crepusculos</span></a></li>
+	<li id="menu-item-1654" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1654"><a href="http://lrodrigo.sgs.lncc.br/wp/fotografia/galeria-flores/" class="nav__link"><span class="nav__title">Galeria: Flores</span></a></li>
+	<li id="menu-item-1655" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1655"><a href="http://lrodrigo.sgs.lncc.br/wp/fotografia/" class="nav__link"><span class="nav__title">Todas as Galerias</span></a></li>
+	<li id="menu-item-1652" class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1652"><a href="http://lrodrigo.sgs.lncc.br/wp/fotografia/galeria-baloes/" class="nav__link"><span class="nav__title">Galeria: Baloes</span></a></li>
+</ul>
+</li>
+<li id="menu-item-2173" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2173"><a href="http://lrodrigo.sgs.lncc.br/wp/curiosidades/" class="nav__link"><span class="nav__title">Curiosidades</span></a></li>
+</ul></div>        </nav>
+    <div class="primary-nav__utils nav__utils col-auto">
+    <ul class="nav utils flex-row flex-nowrap regular-nav">
+      <li class="nav__search ">
+  <a href="#" class="search-toggle_btn icn-search czr-overlay-toggle_btn" aria-expanded="false"><span class="sr-only">Search</span></a>
+  </li>
+    </ul>
+</div>  </div>
+</div>
+    </div>
+  </div>
+</div>          <div class="mobile-navbar__wrapper hidden-lg-up mobile-sticky">
+    <div class="branding__container justify-content-between align-items-center container">
+  <div class="branding flex-column">
+    <h1 class="navbar-brand align-self-start ">
+  <a class="navbar-brand-sitename  czr-underline" href="http://lrodrigo.sgs.lncc.br/wp/" title="LRodrigo – Web Site | Dicas para o dia a dia">
+    <span>LRodrigo – Web Site</span>
+  </a>
+</h1>
+
+  </div>
+  <div class="mobile-utils__wrapper nav__utils regular-nav">
+    <ul class="nav utils row flex-row flex-nowrap">
+      <li class="nav__search ">
+  <a href="#" class="search-toggle_btn icn-search czr-dropdown" data-aria-haspopup="true" aria-expanded="false"><span class="sr-only">Search</span></a>
+      <ul class="dropdown-menu czr-dropdown-menu">
+      <li class="header-search__container container">
+  <div class="search-form__container ">
+  <form action="http://lrodrigo.sgs.lncc.br/wp/" method="get" class="czr-form search-form">
+    <div class="form-group czr-focus">
+            <label for="s-5b59af340eb79" id="lsearch-5b59af340eb79"><span>Search</span><i class="icn-search"></i><i class="icn-close"></i></label>
+      <input id="s-5b59af340eb79" class="form-control czr-search-field czr-focusable" name="s" aria-describedby="lsearch-5b59af340eb79" title="Search …" type="text">
+    </div>
+  </form>
+</div></li>    </ul>
+  </li>
+<li class="hamburger-toggler__container ">
+  <a href="#" class="ham-toggler-menu czr-collapsed" data-toggle="czr-collapse" data-target="#mobile-nav"><div class="ham__toggler-span-wrapper"><span class="line line-1"></span><span class="line line-2"></span><span class="line line-3"></span></div></a>
+</li>
+    </ul>
+  </div>
+</div>
+<div class="mobile-nav__container ">
+   <nav class="mobile-nav__nav flex-column czr-collapse" id="mobile-nav">
+      <div class="mobile-nav__inner container">
+      <div class="nav__menu-wrapper mobile-nav__menu-wrapper czr-open-on-click">
+  <ul id="mobile-nav-menu" class="mobile-nav__menu vertical-nav nav__menu flex-column nav"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children czr-dropdown menu-item-1598"><span class="display-flex nav__link-wrapper align-items-start"><a href="http://lrodrigo.sgs.lncc.br/wp/cursos/" class="nav__link"><span class="nav__title">Cursos</span></a><button data-toggle="czr-dropdown" aria-haspopup="true" aria-expanded="false" class="caret__dropdown-toggler czr-btn-link"><i class="icn-down-small"></i></button></span>
+<ul class="dropdown-menu czr-dropdown-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-2381"><a href="http://lrodrigo.sgs.lncc.br/wp/cursos/104639-logica-em-computacao/" class="nav__link"><span class="nav__title">Lógica em Computação</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-3101"><a href="http://lrodrigo.sgs.lncc.br/wp/cursos/curso-de-programacao-web/" class="nav__link"><span class="nav__title">Programação Web</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-2877"><a href="http://lrodrigo.sgs.lncc.br/wp/cursos/104605-programacao-ii/" class="nav__link"><span class="nav__title">Programação II</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-3348"><a href="http://lrodrigo.sgs.lncc.br/wp/cursos/ucp-101359-matematica/" class="nav__link"><span class="nav__title">Matemática para Biomedicina</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-2370"><a href="http://lrodrigo.sgs.lncc.br/wp/cursos/104621-arquitetura-de-computadores/" class="nav__link"><span class="nav__title">Arquitetura de Comp.</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-2864"><a href="http://lrodrigo.sgs.lncc.br/wp/cursos/105319-estatistica-aplicada-para-pesquisas-em-marketing-e-comunicacao/" class="nav__link"><span class="nav__title">Estatística – Marketing e Comunicação</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-2641"><a href="http://lrodrigo.sgs.lncc.br/wp/cursos/ucp105047-informatica-aplicada-a-gestao/" class="nav__link"><span class="nav__title">Informática Aplicada à Gestão</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-2541"><a href="http://lrodrigo.sgs.lncc.br/wp/cursos/1119640-matematica-i/" class="nav__link"><span class="nav__title">Matemática I</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-2625"><a href="http://lrodrigo.sgs.lncc.br/wp/cursos/cct0108-projeto-de-tcc-em-sistemas-de-informacao/" class="nav__link"><span class="nav__title">Projeto de TCC</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1602"><a href="http://lrodrigo.sgs.lncc.br/wp/cursos/projeto-final/" class="nav__link"><span class="nav__title">Projeto Final</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-2306"><a href="http://lrodrigo.sgs.lncc.br/wp/cursos/seguranca-da-informacao/" class="nav__link"><span class="nav__title">Seg. Informação</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1599"><a href="http://lrodrigo.sgs.lncc.br/wp/cursos/sistemas-operacionais/" class="nav__link"><span class="nav__title">Sistemas Operacionais</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-2920"><a href="http://lrodrigo.sgs.lncc.br/wp/ucp-modulo-xiii-tecnologia-da-informacao/" class="nav__link"><span class="nav__title">POS-Tecnologia da Informação</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1993"><a href="http://lrodrigo.sgs.lncc.br/wp/cursos/" class="nav__link"><span class="nav__title">Outros</span></a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children czr-dropdown menu-item-1610"><span class="display-flex nav__link-wrapper align-items-start"><a href="http://lrodrigo.sgs.lncc.br/wp/pesquisa/" class="nav__link"><span class="nav__title">Pesquisa</span></a><button data-toggle="czr-dropdown" aria-haspopup="true" aria-expanded="false" class="caret__dropdown-toggler czr-btn-link"><i class="icn-down-small"></i></button></span>
+<ul class="dropdown-menu czr-dropdown-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1611"><a href="http://lrodrigo.sgs.lncc.br/wp/pesquisa/projeto-sgs/" class="nav__link"><span class="nav__title">Projeto SGS</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1612"><a href="http://lrodrigo.sgs.lncc.br/wp/pesquisa/seguranca-da-informacao/" class="nav__link"><span class="nav__title">Segurança da  Informação</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1613"><a href="http://lrodrigo.sgs.lncc.br/wp/pesquisa/sistema-distribuido/" class="nav__link"><span class="nav__title">Sistema Distribuido</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children czr-dropdown-submenu dropdown-item menu-item-1618"><span class="display-flex nav__link-wrapper align-items-start"><a href="http://lrodrigo.sgs.lncc.br/wp/publicacoes/" class="nav__link"><span class="nav__title">Publicações</span></a><button data-toggle="czr-dropdown" aria-haspopup="true" aria-expanded="false" class="caret__dropdown-toggler czr-btn-link"><i class="icn-down-small"></i></button></span>
+<ul class="dropdown-menu czr-dropdown-menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1619"><a href="http://lrodrigo.sgs.lncc.br/wp/publicacoes/artigos/" class="nav__link"><span class="nav__title">Artigos</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1620"><a href="http://lrodrigo.sgs.lncc.br/wp/publicacoes/monografias/" class="nav__link"><span class="nav__title">Monografias</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1621"><a href="http://lrodrigo.sgs.lncc.br/wp/publicacoes/tccs/" class="nav__link"><span class="nav__title">TCCs</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children czr-dropdown menu-item-1605"><span class="display-flex nav__link-wrapper align-items-start"><a href="http://lrodrigo.sgs.lncc.br/wp/dicas/" class="nav__link"><span class="nav__title">Dicas</span></a><button data-toggle="czr-dropdown" aria-haspopup="true" aria-expanded="false" class="caret__dropdown-toggler czr-btn-link"><i class="icn-down-small"></i></button></span>
+<ul class="dropdown-menu czr-dropdown-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1606"><a href="http://lrodrigo.sgs.lncc.br/wp/dicas/gerencia-de-redes/" class="nav__link"><span class="nav__title">Gerência de Redes</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1646"><a href="http://lrodrigo.sgs.lncc.br/wp/dicas/dicaslinux/" class="nav__link"><span class="nav__title">Linux</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1607"><a href="http://lrodrigo.sgs.lncc.br/wp/dicas/mac-os-x/" class="nav__link"><span class="nav__title">Mac OS X</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1608"><a href="http://lrodrigo.sgs.lncc.br/wp/dicas/rede/" class="nav__link"><span class="nav__title">Rede</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1609"><a href="http://lrodrigo.sgs.lncc.br/wp/dicas/seguranca/" class="nav__link"><span class="nav__title">Segurança</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children czr-dropdown-submenu dropdown-item menu-item-1614"><span class="display-flex nav__link-wrapper align-items-start"><a href="http://lrodrigo.sgs.lncc.br/wp/programacao/" class="nav__link"><span class="nav__title">Programação</span></a><button data-toggle="czr-dropdown" aria-haspopup="true" aria-expanded="false" class="caret__dropdown-toggler czr-btn-link"><i class="icn-down-small"></i></button></span>
+<ul class="dropdown-menu czr-dropdown-menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-2052"><a href="http://lrodrigo.sgs.lncc.br/wp/programacao/css/" class="nav__link"><span class="nav__title">CSS</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1615"><a href="http://lrodrigo.sgs.lncc.br/wp/programacao/html/" class="nav__link"><span class="nav__title">HTML</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1616"><a href="http://lrodrigo.sgs.lncc.br/wp/programacao/js/" class="nav__link"><span class="nav__title">JS</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1644"><a href="http://lrodrigo.sgs.lncc.br/wp/programacao/latex/" class="nav__link"><span class="nav__title">Latex</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1645"><a href="http://lrodrigo.sgs.lncc.br/wp/programacao/python/" class="nav__link"><span class="nav__title">Python</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-2057"><a href="http://lrodrigo.sgs.lncc.br/wp/programacao/python-server-pages-psp/" class="nav__link"><span class="nav__title">Python Server Pages</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-2058"><a href="http://lrodrigo.sgs.lncc.br/wp/programacao/shell-script/" class="nav__link"><span class="nav__title">Shell Script</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1617"><a href="http://lrodrigo.sgs.lncc.br/wp/programacao/web2py/" class="nav__link"><span class="nav__title">Web2Py</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children czr-dropdown menu-item-1643"><span class="display-flex nav__link-wrapper align-items-start"><a href="http://lrodrigo.sgs.lncc.br/wp/fotografia/" class="nav__link"><span class="nav__title">Fotografia</span></a><button data-toggle="czr-dropdown" aria-haspopup="true" aria-expanded="false" class="caret__dropdown-toggler czr-btn-link"><i class="icn-down-small"></i></button></span>
+<ul class="dropdown-menu czr-dropdown-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1647"><a href="http://lrodrigo.sgs.lncc.br/wp/fotografia/galeria-arraial-do-cabo/" class="nav__link"><span class="nav__title">Galeria: Arraial do Cabo</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1648"><a href="http://lrodrigo.sgs.lncc.br/wp/fotografia/galeria-folhas-e-frutos/" class="nav__link"><span class="nav__title">Galeria: Folhas e Frutos</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1649"><a href="http://lrodrigo.sgs.lncc.br/wp/fotografia/galeria-paqueta/" class="nav__link"><span class="nav__title">Galeria: Paqueta</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1653"><a href="http://lrodrigo.sgs.lncc.br/wp/fotografia/galeria-preto-e-branco/" class="nav__link"><span class="nav__title">Galeria: Preto e Branco</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1650"><a href="http://lrodrigo.sgs.lncc.br/wp/fotografia/galeria-luz-e-sombra/" class="nav__link"><span class="nav__title">Galeria: Luz e Sombra</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1651"><a href="http://lrodrigo.sgs.lncc.br/wp/fotografia/galeria-crepusculos/" class="nav__link"><span class="nav__title">Galeria: Crepusculos</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1654"><a href="http://lrodrigo.sgs.lncc.br/wp/fotografia/galeria-flores/" class="nav__link"><span class="nav__title">Galeria: Flores</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1655"><a href="http://lrodrigo.sgs.lncc.br/wp/fotografia/" class="nav__link"><span class="nav__title">Todas as Galerias</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page dropdown-item menu-item-1652"><a href="http://lrodrigo.sgs.lncc.br/wp/fotografia/galeria-baloes/" class="nav__link"><span class="nav__title">Galeria: Baloes</span></a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2173"><a href="http://lrodrigo.sgs.lncc.br/wp/curiosidades/" class="nav__link"><span class="nav__title">Curiosidades</span></a></li>
+</ul></div>      </div>
+  </nav>
+</div></div></header>
+
+
+  
+    <div id="main-wrapper" class="section">
+
+                      
+
+          <div class="czr-hot-crumble container page-breadcrumbs" role="navigation">
+  <div class="row">
+        <nav class="breadcrumbs col-12" itemprop="breadcrumb"><span class="trail-begin"><a href="http://lrodrigo.sgs.lncc.br/wp" title="LRodrigo - Web Site" rel="home" class="trail-begin">Home</a></span> <span class="sep">»</span> <a href="http://lrodrigo.sgs.lncc.br/wp/category/dicas/" title="Dicas">Dicas</a> <span class="sep">»</span> <a href="http://lrodrigo.sgs.lncc.br/wp/category/dicas/linux/" title="Linux">Linux</a> <span class="sep">»</span> <a href="http://lrodrigo.sgs.lncc.br/wp/category/dicas/linux/apache-linux/" title="Apache">Apache</a> <span class="sep">»</span> <span class="trail-end">Apache: Ativando o  protocolo HTTPS (HTTP + SSL)</span></nav>  </div>
+</div>
+          <div class="container" role="main">
+
+            
+            <div class="flex-row row column-content-wrapper">
+
+                
+                <div id="content" class="col-12 col-md-9 article-container">
+
+                  <article id="post-2073" class="post-2073 post type-post status-publish format-standard hentry category-apache-linux category-dicas category-dicas-linux tag-apache tag-http tag-https tag-linux">
+    <header class="entry-header ">
+  <div class="entry-header-inner">
+                <div class="tax__container post-info entry-meta">
+          <a class="tax__link" href="http://lrodrigo.sgs.lncc.br/wp/category/dicas/linux/apache-linux/" title="Ver todos os posts em Apache"> <span>Apache</span> </a><a class="tax__link" href="http://lrodrigo.sgs.lncc.br/wp/category/dicas/" title="Ver todos os posts em Dicas"> <span>Dicas</span> </a><a class="tax__link" href="http://lrodrigo.sgs.lncc.br/wp/category/dicas/dicas-linux/" title="Ver todos os posts em Dicas - Linux"> <span>Dicas - Linux</span> </a>        </div>
+        <h1 class="entry-title">Apache: Ativando o  protocolo HTTPS (HTTP + SSL)</h1>
+        <div class="header-bottom">
+      <div class="post-info">
+                  <span class="entry-meta">
+        <span class="author-meta">por <span class="author vcard author_name"><a class="url fn n" href="http://lrodrigo.sgs.lncc.br/wp/author/l-rodrigo/" title="Ver todos posts por Luis Rodrigo de Oliveira Gonçalves" rel="author">Luis Rodrigo de Oliveira Gonçalves</a></span></span><span class="v-separator">|</span>Publicado <a href="http://lrodrigo.sgs.lncc.br/wp/2015/02/26/" title="4:55 pm" rel="bookmark"><time class="entry-date published updated" datetime="2015-02-26T16:55:25+00:00">26 de Fevereiro de 2015</time></a></span>      </div>
+    </div>
+  </div>
+</header>  <div class="post-entry tc-content-inner">
+    <section class="post-content entry-content ">
+            <div class="czr-wp-the-content">
+        <p><img class="alignleft size-thumbnail wp-image-2074" src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/apache-logo-trans.png" alt="" srcset="https://i0.wp.com/lrodrigo.sgs.lncc.br/wp/wp-content/uploads/2015/02/apache-logo-trans.png?resize=150%2C150 150w, https://i0.wp.com/lrodrigo.sgs.lncc.br/wp/wp-content/uploads/2015/02/apache-logo-trans.png?resize=300%2C300 300w, https://i0.wp.com/lrodrigo.sgs.lncc.br/wp/wp-content/uploads/2015/02/apache-logo-trans.png?w=350 350w" sizes="(max-width: 150px) 100vw, 150px" width="150" height="150">Por padrão, a instalação básica do <em>Apache</em> não contempla a ativação do protocolo <em>HTTPS</em>, somente o HTTP é suportado. Entretanto, muitas vezes, necessitamos utilizar, por medida de segurança, o protocolo HTTPS.</p>
+<p>O protocolo <em>HTTPS</em>, “adiciona” uma camada extra de segurança por meio da criptografia fornecida pelo <em>SSL, </em>que
+ faz uso de criptografia assimétrica e requer a utilização de um par de 
+chaves (Pública e Privada). Desta forma, para habilitar o modulo <em>ssl,</em> e consequentemente o protocolo HHPS, execute passos descritos a seguir</p>
+<p><span id="more-2073"></span></p>
+<h3>Primeiro Passo: Ativando o suporte ao SSL</h3>
+<p>Para ativar o modulo <em>SSL</em> do <em>Apache podemos utilizar o comando:</em></p>
+<div id="highlighter_59443" class="syntaxhighlighter  "><div class="bar   "><div class="toolbar"><a href="#viewSource" title="view source" style="width: 16px; height: 16px;" class="item viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_59443_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_59443" menu="false" src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/clipboard.swf" width="16" height="16"></div><a href="#printSource" title="print" style="width: 16px; height: 16px;" class="item printSource">print</a><a href="#about" title="?" style="width: 16px; height: 16px;" class="item about">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="plain">sudo a2enmod ssl</code></td></tr></tbody></table></div></div></div>
+<p>Em seguida precisamos reiniciar&nbsp; o <em>Daemon</em> do <em>Apache</em></p>
+<div id="highlighter_224557" class="syntaxhighlighter  "><div class="bar         "><div class="toolbar"><a href="#viewSource" title="view source" style="width: 16px; height: 16px;" class="item viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_224557_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_224557" menu="false" src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/clipboard.swf" width="16" height="16"></div><a href="#printSource" title="print" style="width: 16px; height: 16px;" class="item printSource">print</a><a href="#about" title="?" style="width: 16px; height: 16px;" class="item about">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="plain">sudo service apache2 restart</code></td></tr></tbody></table></div></div></div>
+<p>Para verificarmos se o o suporte foi habilitado, podemos executar o comando:</p>
+<div id="highlighter_332208" class="syntaxhighlighter  "><div class="bar  "><div class="toolbar"><a href="#viewSource" title="view source" style="width: 16px; height: 16px;" class="item viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_332208_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_332208" menu="false" src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/clipboard.swf" width="16" height="16"></div><a href="#printSource" title="print" style="width: 16px; height: 16px;" class="item printSource">print</a><a href="#about" title="?" style="width: 16px; height: 16px;" class="item about">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="plain">sudo lsof&nbsp; -i | grep apache | grep -i https</code></td></tr></tbody></table></div></div></div>
+<p>Caso o procedimento tenha funcionado corretamente, o ultimo comando deve gerar uma saída semelhante a apresentada a baixo:</p>
+<div id="highlighter_793881" class="syntaxhighlighter  "><div class="bar                    "><div class="toolbar"><a href="#viewSource" title="view source" style="width: 16px; height: 16px;" class="item viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_793881_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_793881" menu="false" src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/clipboard.swf" width="16" height="16"></div><a href="#printSource" title="print" style="width: 16px; height: 16px;" class="item printSource">print</a><a href="#about" title="?" style="width: 16px; height: 16px;" class="item about">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="plain">apache2
+ 13197&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+root&nbsp;&nbsp;&nbsp; 6u&nbsp; IPv6 
+2667199&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0t0&nbsp; TCP *:https (LISTEN)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">apache2
+ 13205&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; www-data&nbsp;&nbsp;&nbsp; 6u&nbsp;
+ IPv6 2667199&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0t0&nbsp; TCP *:https 
+(LISTEN)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="plain">apache2
+ 13206&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; www-data&nbsp;&nbsp;&nbsp; 6u&nbsp;
+ IPv6 2667199&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0t0&nbsp; TCP *:https 
+(LISTEN)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="plain">apache2
+ 13207&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; www-data&nbsp;&nbsp;&nbsp; 6u&nbsp;
+ IPv6 2667199&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0t0&nbsp; TCP *:https 
+(LISTEN)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="plain">apache2
+ 13208&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; www-data&nbsp;&nbsp;&nbsp; 6u&nbsp;
+ IPv6 2667199&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0t0&nbsp; TCP *:https 
+(LISTEN)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="plain">apache2
+ 13209&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; www-data&nbsp;&nbsp;&nbsp; 6u&nbsp;
+ IPv6 2667199&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0t0&nbsp; TCP *:https 
+(LISTEN)</code></td></tr></tbody></table></div></div></div>
+<p>Ou seja, o <em>daemon</em> do <em>Apache</em> já está “escutando” nas porta associada do protocolo<em> HTTPS (443/TCP)</em></p>
+<h3>Segundo Passo: Gerar e ativar as chaves públicas e privadas</h3>
+<p>O serviço associado ao protocolo <em>HTTPS</em> só irá funcionar, no <em>Apache</em>,
+ depois que (i) gerarmos o par de chaves (privada e pública) utilizada 
+na criptografia assimétrica, (ii) habilitarmos o arquivo de configuração
+ do site <strong><em>“default-ssl”</em></strong> e finalmente recarregarmos as configurações do <em>Apache</em>. Para executar estes procedimentos execute os comandos abaixo:</p>
+<div id="highlighter_571311" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="#viewSource" title="view source" style="width: 16px; height: 16px;" class="item viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_571311_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_571311" menu="false" src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/clipboard.swf" width="16" height="16"></div><a href="#printSource" title="print" style="width: 16px; height: 16px;" class="item printSource">print</a><a href="#about" title="?" style="width: 16px; height: 16px;" class="item about">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="plain">sudo make-ssl-cert generate-default-snakeoil --force-overwrite</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">sudo a2ensite default-ssl</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="plain">sudo service apache2 reload</code></td></tr></tbody></table></div></div></div>
+<p>Para verificar se o procedimento foi executado com sucesso, podemos utilizar o comando:</p>
+<div id="highlighter_187287" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="#viewSource" title="view source" style="width: 16px; height: 16px;" class="item viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_187287_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_187287" menu="false" src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/clipboard.swf" width="16" height="16"></div><a href="#printSource" title="print" style="width: 16px; height: 16px;" class="item printSource">print</a><a href="#about" title="?" style="width: 16px; height: 16px;" class="item about">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="plain">sudo lsof -i | grep apache</code></td></tr></tbody></table></div></div></div>
+<p>O qual deve apresentar uma saída semelhante à:</p>
+<div id="highlighter_126954" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="#viewSource" title="view source" style="width: 16px; height: 16px;" class="item viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_126954_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_126954" menu="false" src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/clipboard.swf" width="16" height="16"></div><a href="#printSource" title="print" style="width: 16px; height: 16px;" class="item printSource">print</a><a href="#about" title="?" style="width: 16px; height: 16px;" class="item about">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>01</code></td><td class="content"><code class="plain">apache2
+ 8772&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+root&nbsp;&nbsp;&nbsp; 3u&nbsp; IPv6&nbsp; 
+36901&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TCP *:www (LISTEN)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>02</code></td><td class="content"><code class="plain">apache2
+ 8772&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+root&nbsp;&nbsp;&nbsp; 5r&nbsp; IPv6&nbsp; 
+37310&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TCP *:https (LISTEN)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>03</code></td><td class="content"><code class="plain">apache2
+ 8828&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; www-data&nbsp;&nbsp;&nbsp; 3u&nbsp; 
+IPv6&nbsp; 36901&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TCP *:www (LISTEN)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>04</code></td><td class="content"><code class="plain">apache2
+ 8828&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; www-data&nbsp;&nbsp;&nbsp; 5u&nbsp; 
+IPv6&nbsp; 37310&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TCP *:https 
+(LISTEN)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>05</code></td><td class="content"><code class="plain">apache2
+ 8829&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; www-data&nbsp;&nbsp;&nbsp; 3u&nbsp; 
+IPv6&nbsp; 36901&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TCP *:www (LISTEN)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>06</code></td><td class="content"><code class="plain">apache2
+ 8829&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; www-data&nbsp;&nbsp;&nbsp; 5u&nbsp; 
+IPv6&nbsp; 37310&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TCP *:https 
+(LISTEN)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>07</code></td><td class="content"><code class="plain">apache2
+ 8830&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; www-data&nbsp;&nbsp;&nbsp; 3u&nbsp; 
+IPv6&nbsp; 36901&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TCP *:www (LISTEN)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>08</code></td><td class="content"><code class="plain">apache2
+ 8830&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; www-data&nbsp;&nbsp;&nbsp; 5u&nbsp; 
+IPv6&nbsp; 37310&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TCP *:https 
+(LISTEN)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>09</code></td><td class="content"><code class="plain">apache2
+ 8831&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; www-data&nbsp;&nbsp;&nbsp; 3u&nbsp; 
+IPv6&nbsp; 36901&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TCP *:www (LISTEN)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content"><code class="plain">apache2
+ 8831&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; www-data&nbsp;&nbsp;&nbsp; 5u&nbsp; 
+IPv6&nbsp; 37310&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TCP *:https 
+(LISTEN)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>11</code></td><td class="content"><code class="plain">apache2
+ 8832&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; www-data&nbsp;&nbsp;&nbsp; 3u&nbsp; 
+IPv6&nbsp; 36901&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TCP *:www (LISTEN)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>12</code></td><td class="content"><code class="plain">apache2
+ 8832&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; www-data&nbsp;&nbsp;&nbsp; 5u&nbsp; 
+IPv6&nbsp; 37310&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TCP *:https 
+(LISTEN)</code></td></tr></tbody></table></div></div></div>
+<p>Finalmente, para verificar se o serviço está funcionamento corretamente, abra um navegador e tente acessar o serviço “<em>https</em>” na máquina que acaba de ser configurada.</p>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing"><h3 class="sd-title">Compartilhe isso:</h3><div class="sd-content"><ul><li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-2073" class="share-facebook sd-button share-icon no-text" href="http://lrodrigo.sgs.lncc.br/wp/dicas/apache-ativando-o-protocolo-https-http-ssl/?share=facebook&amp;nb=1" target="_blank" title="Clique para compartilhar no Facebook"><span></span><span class="sharing-screen-reader-text">Clique para compartilhar no Facebook(abre em nova janela)</span></a></li><li class="share-google-plus-1"><a rel="nofollow" data-shared="sharing-google-2073" class="share-google-plus-1 sd-button share-icon no-text" href="http://lrodrigo.sgs.lncc.br/wp/dicas/apache-ativando-o-protocolo-https-http-ssl/?share=google-plus-1&amp;nb=1" target="_blank" title="Compartilhe no Google+"><span></span><span class="sharing-screen-reader-text">Compartilhe no Google+(abre em nova janela)</span></a></li><li class="share-linkedin"><a rel="nofollow" data-shared="sharing-linkedin-2073" class="share-linkedin sd-button share-icon no-text" href="http://lrodrigo.sgs.lncc.br/wp/dicas/apache-ativando-o-protocolo-https-http-ssl/?share=linkedin&amp;nb=1" target="_blank" title="Clique para compartilhar no LinkedIn"><span></span><span class="sharing-screen-reader-text">Clique para compartilhar no LinkedIn(abre em nova janela)</span></a></li><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-2073" class="share-twitter sd-button share-icon no-text" href="http://lrodrigo.sgs.lncc.br/wp/dicas/apache-ativando-o-protocolo-https-http-ssl/?share=twitter&amp;nb=1" target="_blank" title="Clique para compartilhar no Twitter"><span></span><span class="sharing-screen-reader-text">Clique para compartilhar no Twitter(abre em nova janela)</span></a></li><li class="share-jetpack-whatsapp"><a rel="nofollow" data-shared="" class="share-jetpack-whatsapp sd-button share-icon no-text" href="https://api.whatsapp.com/send?text=Apache%3A%20Ativando%20o%20%20protocolo%20HTTPS%20%28HTTP%20%2B%20SSL%29%20http%3A%2F%2Flrodrigo.sgs.lncc.br%2Fwp%2Fdicas%2Fapache-ativando-o-protocolo-https-http-ssl%2F" target="_blank" title="Clique para compartilhar no WhatsApp"><span></span><span class="sharing-screen-reader-text">Clique para compartilhar no WhatsApp(abre em nova janela)</span></a></li><li class="share-skype"><a rel="nofollow" data-shared="sharing-skype-2073" class="share-skype sd-button share-icon no-text" href="http://lrodrigo.sgs.lncc.br/wp/dicas/apache-ativando-o-protocolo-https-http-ssl/?share=skype&amp;nb=1" target="_blank" title="Clique para compartilhar no Skype"><span></span><span class="sharing-screen-reader-text">Clique para compartilhar no Skype(abre em nova janela)</span></a></li><li class="share-print"><a rel="nofollow" data-shared="" class="share-print sd-button share-icon no-text" href="http://lrodrigo.sgs.lncc.br/wp/dicas/apache-ativando-o-protocolo-https-http-ssl/#print" target="_blank" title="Clique para imprimir"><span></span><span class="sharing-screen-reader-text">Clique para imprimir(abre em nova janela)</span></a></li><li class="share-email share-service-visible"><a rel="nofollow" data-shared="" class="share-email sd-button share-icon no-text" href="http://lrodrigo.sgs.lncc.br/wp/dicas/apache-ativando-o-protocolo-https-http-ssl/?share=email&amp;nb=1" target="_blank" title="Clique para enviar por e-mail a um amigo"><span></span><span class="sharing-screen-reader-text">Clique para enviar por e-mail a um amigo(abre em nova janela)</span></a></li><li class="share-end"></li></ul></div></div></div>
+<div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">
+	<h3 class="jp-relatedposts-headline"><em>Relacionado</em></h3>
+<div class="jp-relatedposts-items jp-relatedposts-items-visual jp-relatedposts-grid "><div class="jp-relatedposts-post jp-relatedposts-post0 jp-relatedposts-post-nothumbs" data-post-id="1691" data-post-format="false"><a class="jp-relatedposts-post-a jp-relatedposts-post-aoverlay" href="http://lrodrigo.sgs.lncc.br/wp/dicas/dicas-linux/lamp-instalando-o-apache-o-mysql-e-o-php/" title="LAMP - Instalando o Apache, o Mysql e o PHP
+
+Esta já é uma combinação conhecida entre os usuários de Linux. O mix do Apache, com o Mysql e o PHP é uma das receitas mais utilizadas na construção de servidores WEB. Esta combinação nos permite construir um servidor com suporte aos protocolos HTTP e HTTPS, além, é claro, de…" rel="nofollow" data-origin="2073" data-position="0"></a><h4 class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="http://lrodrigo.sgs.lncc.br/wp/dicas/dicas-linux/lamp-instalando-o-apache-o-mysql-e-o-php/" title="LAMP - Instalando o Apache, o Mysql e o PHP
+
+Esta já é uma combinação conhecida entre os usuários de Linux. O mix do Apache, com o Mysql e o PHP é uma das receitas mais utilizadas na construção de servidores WEB. Esta combinação nos permite construir um servidor com suporte aos protocolos HTTP e HTTPS, além, é claro, de…" rel="nofollow" data-origin="2073" data-position="0">LAMP - Instalando o Apache, o Mysql e o PHP</a></h4><p class="jp-relatedposts-post-excerpt" style="max-height: 7.14286em;">Esta
+ já é uma combinação conhecida entre os usuários de Linux. O mix do 
+Apache, com o Mysql e o PHP é uma das receitas mais utilizadas na 
+construção de servidores WEB. Esta combinação nos permite construir um 
+servidor com suporte aos protocolos HTTP e HTTPS, além, é claro, de…</p><p class="jp-relatedposts-post-date" style="display: block;">7 de Janeiro de 2015</p><p class="jp-relatedposts-post-context">Em "Dicas - Linux"</p></div><div class="jp-relatedposts-post jp-relatedposts-post1 jp-relatedposts-post-nothumbs" data-post-id="2081" data-post-format="false"><a class="jp-relatedposts-post-a jp-relatedposts-post-aoverlay" href="http://lrodrigo.sgs.lncc.br/wp/dicas/apache-redirecionando-as-conexoes-http-para-o-https/" title="Apache: Redirecionando as conexões HTTP para o HTTPS
+
+O Apache, um dos servidores WEB, de código aberto, mais utilizado e pode ser configurado para faz com que as conexões direcionadas à porta 80/tcp, ou seja ao HTTP, sejam automaticamente redirecionadas para a porta 443/tcp (HTTPS). Uma das&nbsp; vantagens&nbsp; deste&nbsp; tipo de configuração é evitar que uma determinada aplicação,…" rel="nofollow" data-origin="2073" data-position="1"></a><h4 class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="http://lrodrigo.sgs.lncc.br/wp/dicas/apache-redirecionando-as-conexoes-http-para-o-https/" title="Apache: Redirecionando as conexões HTTP para o HTTPS
+
+O Apache, um dos servidores WEB, de código aberto, mais utilizado e pode ser configurado para faz com que as conexões direcionadas à porta 80/tcp, ou seja ao HTTP, sejam automaticamente redirecionadas para a porta 443/tcp (HTTPS). Uma das&nbsp; vantagens&nbsp; deste&nbsp; tipo de configuração é evitar que uma determinada aplicação,…" rel="nofollow" data-origin="2073" data-position="1">Apache: Redirecionando as conexões HTTP para o HTTPS</a></h4><p class="jp-relatedposts-post-excerpt" style="max-height: 7.14286em;">O
+ Apache, um dos servidores WEB, de código aberto, mais utilizado e pode 
+ser configurado para faz com que as conexões direcionadas à porta 
+80/tcp, ou seja ao HTTP, sejam automaticamente redirecionadas para a 
+porta 443/tcp (HTTPS). Uma das&nbsp; vantagens&nbsp; deste&nbsp; tipo de
+ configuração é evitar que uma determinada aplicação,…</p><p class="jp-relatedposts-post-date" style="display: block;">4 de Março de 2015</p><p class="jp-relatedposts-post-context">Em "Apache"</p></div><div class="jp-relatedposts-post jp-relatedposts-post2 jp-relatedposts-post-nothumbs" data-post-id="715" data-post-format="false"><a class="jp-relatedposts-post-a jp-relatedposts-post-aoverlay" href="http://lrodrigo.sgs.lncc.br/wp/dicas/linux/apache-web-server-etag-header-information-disclosure-weakness/" title="Apache Web Server ETag Header Information Disclosure Weakness
+
+Os servidores Apache que possuem a diretiva FileETag habilitada estão sujeitos uma vulnerabilidade, que permite ao atacante obter informações confidenciais a respeito do servidor. Ao desabilitar os cabeçalhos ETag, os servidores de Cache e os Navegadores não conseguem validar os arquivos. Desta forma eles são obrigados a confiar em seus…" rel="nofollow" data-origin="2073" data-position="2"></a><h4 class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="http://lrodrigo.sgs.lncc.br/wp/dicas/linux/apache-web-server-etag-header-information-disclosure-weakness/" title="Apache Web Server ETag Header Information Disclosure Weakness
+
+Os servidores Apache que possuem a diretiva FileETag habilitada estão sujeitos uma vulnerabilidade, que permite ao atacante obter informações confidenciais a respeito do servidor. Ao desabilitar os cabeçalhos ETag, os servidores de Cache e os Navegadores não conseguem validar os arquivos. Desta forma eles são obrigados a confiar em seus…" rel="nofollow" data-origin="2073" data-position="2">Apache Web Server ETag Header Information Disclosure Weakness</a></h4><p class="jp-relatedposts-post-excerpt" style="max-height: 7.14286em;">Os
+ servidores Apache que possuem a diretiva FileETag habilitada estão 
+sujeitos uma vulnerabilidade, que permite ao atacante obter informações 
+confidenciais a respeito do servidor. Ao desabilitar os cabeçalhos ETag,
+ os servidores de Cache e os Navegadores não conseguem validar os 
+arquivos. Desta forma eles são obrigados a confiar em seus…</p><p class="jp-relatedposts-post-date" style="display: block;">24 de Fevereiro de 2014</p><p class="jp-relatedposts-post-context">Em "Daemons"</p></div></div></div>      </div>
+      <footer class="post-footer clearfix">
+                <div class="row entry-meta justify-content-between align-items-center">
+                    <div class="post-tags col-xs-12 col-sm-auto col-sm">
+            <ul class="tags">
+              <li><a class="tag__link btn btn-skin-dark-oh inverted" href="http://lrodrigo.sgs.lncc.br/wp/tag/apache/" title="Ver todos os posts em Apache"> <span>Apache</span> </a></li><li><a class="tag__link btn btn-skin-dark-oh inverted" href="http://lrodrigo.sgs.lncc.br/wp/tag/http/" title="Ver todos os posts em HTTP"> <span>HTTP</span> </a></li><li><a class="tag__link btn btn-skin-dark-oh inverted" href="http://lrodrigo.sgs.lncc.br/wp/tag/https/" title="Ver todos os posts em HTTPS"> <span>HTTPS</span> </a></li><li><a class="tag__link btn btn-skin-dark-oh inverted" href="http://lrodrigo.sgs.lncc.br/wp/tag/linux/" title="Ver todos os posts em Linux"> <span>Linux</span> </a></li>            </ul>
+          </div>
+                          </div>
+      </footer>
+    </section><!-- .entry-content -->
+  </div><!-- .post-entry -->
+  </article><section class="post-related-articles czr-carousel ">
+  <header class="row flex-row">
+    <h3 class="related-posts_title col">You may also like</h3>
+          <div class="related-posts_nav col col-auto">
+        <span class="btn btn-skin-dark inverted czr-carousel-prev slider-control czr-carousel-control disabled icn-left-open-big" title="Previous related articles" tabindex="0"></span>
+        <span class="btn btn-skin-dark inverted czr-carousel-next slider-control czr-carousel-control icn-right-open-big" title="Next related articles" tabindex="0"></span>
+      </div>
+      </header>
+  <div class="row grid-container__square-mini carousel-inner">
+  <article id="post-1691_related_posts" class="col-6 grid-item czr-related-post post-1691 post type-post status-publish format-standard hentry category-dicas-linux category-linux tag-apache tag-lamp tag-linux tag-mysql tag-php">
+  <div class="grid__item flex-wrap flex-lg-nowrap flex-row">
+    <section class="tc-thumbnail entry-media__holder col-12 col-lg-6 czr__r-w1by1">
+  <div class="entry-media__wrapper czr__r-i js-centering" data-img-centered-in-container="1">
+        <a class="bg-link" rel="bookmark" title="Permalink to:&nbsp;LAMP – Instalando o Apache, o Mysql e o PHP" href="http://lrodrigo.sgs.lncc.br/wp/dicas/dicas-linux/lamp-instalando-o-apache-o-mysql-e-o-php/"></a>
+  <img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/LAMP007.png" class="attachment-tc-sq-thumb tc-thumb-type-attachment czr-img opacity-forced h-centered" alt="" srcset="https://i2.wp.com/lrodrigo.sgs.lncc.br/wp/wp-content/uploads/2015/01/LAMP007.png?zoom=2&amp;resize=510%2C222 1020w, https://i2.wp.com/lrodrigo.sgs.lncc.br/wp/wp-content/uploads/2015/01/LAMP007.png?zoom=3&amp;resize=510%2C222 1530w" sizes="(max-width: 510px) 100vw, 510px" style="height: 173px; width: auto; left: -113px; top: 0px;" data-img-centered="1" width="510" height="222"><div class="post-action btn btn-skin-dark-shaded inverted"><a href="http://lrodrigo.sgs.lncc.br/wp/wp-content/uploads/2015/01/LAMP007.png" class="expand-img icn-expand"></a></div>  </div>
+</section>      <section class="tc-content entry-content__holder col-12 col-lg-6 czr__r-w1by1">
+        <div class="entry-content__wrapper">
+        <header class="entry-header ">
+  <div class="entry-header-inner ">
+          <div class="entry-meta post-info">
+          Publicado <a href="http://lrodrigo.sgs.lncc.br/wp/dicas/dicas-linux/lamp-instalando-o-apache-o-mysql-e-o-php/" title="Permalink to:&nbsp;LAMP – Instalando o Apache, o Mysql e o PHP" rel="bookmark"><time class="entry-date published updated" datetime="2015-01-07T10:54:42+00:00">7 de Janeiro de 2015</time></a>      </div>
+        <h2 class="entry-title ">
+      <a class="czr-title" href="http://lrodrigo.sgs.lncc.br/wp/dicas/dicas-linux/lamp-instalando-o-apache-o-mysql-e-o-php/" title="Permalink to LAMP – Instalando o Apache, o Mysql e o PHP" rel="bookmark">LAMP – Instalando o Apache, o Mysql e o PHP</a>
+    </h2>
+      </div>
+</header><div class="tc-content-inner entry-summary">
+            <div class="czr-wp-the-content">
+              <p>Esta já é uma combinação conhecida entre os usuários de Linux. O mix do Apache, com o Mysql e o PHP é […]</p>
+          </div>
+      </div>        </div>
+      </section>
+  </div>
+</article><article id="post-1947_related_posts" class="col-6 grid-item czr-related-post post-1947 post type-post status-publish format-standard hentry category-dicas category-dicas-linux category-gerencia-de-rede tag-cacti tag-gerencia tag-linux tag-snmp tag-ubuntu">
+  <div class="grid__item flex-wrap flex-lg-nowrap flex-row">
+    <section class="tc-thumbnail entry-media__holder col-12 col-lg-6 czr__r-w1by1">
+  <div class="entry-media__wrapper czr__r-i js-centering" data-img-centered-in-container="1">
+        <a class="bg-link" rel="bookmark" title="Permalink to:&nbsp;Instalando o Cacti no Ubuntu 14.04" href="http://lrodrigo.sgs.lncc.br/wp/dicas/instalando-o-cacti-no-ubuntu-14-04/"></a>
+  <img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/cacti.png" class="attachment-tc-sq-thumb tc-thumb-type-attachment czr-img opacity-forced v-centered" alt="Cacti - Logo" style="width: 173px; height: auto; top: -42px; left: 0px;" data-img-centered="1" width="100" height="149"><div class="post-action btn btn-skin-dark-shaded inverted"><a href="http://lrodrigo.sgs.lncc.br/wp/wp-content/uploads/2015/02/cacti.png" class="expand-img icn-expand"></a></div>  </div>
+</section>      <section class="tc-content entry-content__holder col-12 col-lg-6 czr__r-w1by1">
+        <div class="entry-content__wrapper">
+        <header class="entry-header ">
+  <div class="entry-header-inner ">
+          <div class="entry-meta post-info">
+          Publicado <a href="http://lrodrigo.sgs.lncc.br/wp/dicas/instalando-o-cacti-no-ubuntu-14-04/" title="Permalink to:&nbsp;Instalando o Cacti no Ubuntu 14.04" rel="bookmark"><time class="entry-date published updated" datetime="2015-02-09T09:38:18+00:00">9 de Fevereiro de 2015</time></a>      </div>
+        <h2 class="entry-title ">
+      <a class="czr-title" href="http://lrodrigo.sgs.lncc.br/wp/dicas/instalando-o-cacti-no-ubuntu-14-04/" title="Permalink to Instalando o Cacti no Ubuntu 14.04" rel="bookmark">Instalando o Cacti no Ubuntu 14.04</a>
+    </h2>
+      </div>
+</header><div class="tc-content-inner entry-summary">
+            <div class="czr-wp-the-content">
+              <p>Cacti é uma ferramenta de gerência de rede que utiliza o
+ protocolo SNMP para coletar&nbsp; informações sobre os host, 
+principalmente aquelas relacionadas […]</p>
+          </div>
+      </div>        </div>
+      </section>
+  </div>
+</article><article id="post-3037_related_posts" class="col-6 grid-item czr-related-post post-3037 post type-post status-publish format-standard hentry category-dicas category-dicas-linux category-linux category-rede category-seguranca tag-apt tag-hardening tag-linux tag-log tag-ntp tag-postfix tag-security tag-seguranca tag-source-list tag-ssh tag-sysctl tag-syslog tag-ubuntu">
+  <div class="grid__item flex-wrap flex-lg-nowrap flex-row">
+    <section class="tc-thumbnail entry-media__holder col-12 col-lg-6 czr__r-w1by1">
+  <div class="entry-media__wrapper czr__r-i js-centering" data-img-centered-in-container="1">
+        <a class="bg-link" rel="bookmark" title="Permalink to:&nbsp;Ubuntu – Procedimentos de segurança (hardening) pós instalação" href="http://lrodrigo.sgs.lncc.br/wp/dicas/ubuntu-procedimentos-de-seguranca-hardening-pos-instalacao/"></a>
+  <img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/ubuntu-logo-8651_960_720.png" class="attachment-tc-sq-thumb tc-thumb-type-attachment czr-img opacity-forced h-centered" alt="" srcset="https://i0.wp.com/lrodrigo.sgs.lncc.br/wp/wp-content/uploads/2017/12/ubuntu-logo-8651_960_720.png?w=720 720w, https://i0.wp.com/lrodrigo.sgs.lncc.br/wp/wp-content/uploads/2017/12/ubuntu-logo-8651_960_720.png?resize=150%2C150 150w, https://i0.wp.com/lrodrigo.sgs.lncc.br/wp/wp-content/uploads/2017/12/ubuntu-logo-8651_960_720.png?resize=300%2C300 300w" sizes="(max-width: 510px) 100vw, 510px" style="height: 173px; width: auto; left: 0px; top: 0px;" data-img-centered="1" width="510" height="510"><div class="post-action btn btn-skin-dark-shaded inverted"><a href="http://lrodrigo.sgs.lncc.br/wp/wp-content/uploads/2017/12/ubuntu-logo-8651_960_720.png" class="expand-img icn-expand"></a></div>  </div>
+</section>      <section class="tc-content entry-content__holder col-12 col-lg-6 czr__r-w1by1">
+        <div class="entry-content__wrapper">
+        <header class="entry-header ">
+  <div class="entry-header-inner ">
+          <div class="entry-meta post-info">
+          Publicado <a href="http://lrodrigo.sgs.lncc.br/wp/dicas/ubuntu-procedimentos-de-seguranca-hardening-pos-instalacao/" title="Permalink to:&nbsp;Ubuntu – Procedimentos de segurança (hardening) pós instalação" rel="bookmark"><time class="entry-date published updated" datetime="2017-12-01T10:58:22+00:00">1 de dezembro de 2017</time></a>      </div>
+        <h2 class="entry-title ">
+      <a class="czr-title" href="http://lrodrigo.sgs.lncc.br/wp/dicas/ubuntu-procedimentos-de-seguranca-hardening-pos-instalacao/" title="Permalink to Ubuntu – Procedimentos de segurança (hardening) pós instalação" rel="bookmark">Ubuntu – Procedimentos de segurança (hardening) pós instalação</a>
+    </h2>
+      </div>
+</header><div class="tc-content-inner entry-summary">
+            <div class="czr-wp-the-content">
+              <p>O sistema operacional Ubuntu Linux vem sendo cada vez 
+mais utilizado, devido em parte a sua facilidade de uso, a sua 
+estabilidade […]</p>
+          </div>
+      <div class="post-pagination pagination row"><div class="col-md-12"><ul class="pag-list"> <a href="http://lrodrigo.sgs.lncc.br/wp/dicas/ubuntu-procedimentos-de-seguranca-hardening-pos-instalacao/"><span>1</span></a> <a href="http://lrodrigo.sgs.lncc.br/wp/dicas/ubuntu-procedimentos-de-seguranca-hardening-pos-instalacao/2/"><span>2</span></a></ul></div></div></div>        </div>
+      </section>
+  </div>
+</article><article id="post-2989_related_posts" class="col-6 grid-item czr-related-post post-2989 post type-post status-publish format-standard hentry category-dicas category-linux tag-linux-skype-ubuntu">
+  <div class="grid__item flex-wrap flex-lg-nowrap flex-row">
+    <section class="tc-thumbnail entry-media__holder col-12 col-lg-6 czr__r-w1by1">
+  <div class="entry-media__wrapper czr__r-i js-centering" data-img-centered-in-container="1">
+        <a class="bg-link" rel="bookmark" title="Permalink to:&nbsp;Instalando o Skype no Ubuntu 16.04" href="http://lrodrigo.sgs.lncc.br/wp/dicas/instalando-o-skype-no-ubuntu-16-04/"></a>
+  <img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/skype-banner.jpg" class="attachment-tc-sq-thumb tc-thumb-type-attachment czr-img opacity-forced h-centered" alt="" srcset="https://i0.wp.com/lrodrigo.sgs.lncc.br/wp/wp-content/uploads/2017/11/skype-banner.jpg?zoom=2&amp;resize=510%2C120 1020w, https://i0.wp.com/lrodrigo.sgs.lncc.br/wp/wp-content/uploads/2017/11/skype-banner.jpg?zoom=3&amp;resize=510%2C120 1530w" sizes="(max-width: 510px) 100vw, 510px" style="height: 173px; width: auto; left: -278.5px; top: 0px;" data-img-centered="1" width="510" height="120"><div class="post-action btn btn-skin-dark-shaded inverted"><a href="http://lrodrigo.sgs.lncc.br/wp/wp-content/uploads/2017/11/skype-banner.jpg" class="expand-img icn-expand"></a></div>  </div>
+</section>      <section class="tc-content entry-content__holder col-12 col-lg-6 czr__r-w1by1">
+        <div class="entry-content__wrapper">
+        <header class="entry-header ">
+  <div class="entry-header-inner ">
+          <div class="entry-meta post-info">
+          Publicado <a href="http://lrodrigo.sgs.lncc.br/wp/dicas/instalando-o-skype-no-ubuntu-16-04/" title="Permalink to:&nbsp;Instalando o Skype no Ubuntu 16.04" rel="bookmark"><time class="entry-date published updated" datetime="2017-11-16T15:29:31+00:00">16 de novembro de 2017</time></a>      </div>
+        <h2 class="entry-title ">
+      <a class="czr-title" href="http://lrodrigo.sgs.lncc.br/wp/dicas/instalando-o-skype-no-ubuntu-16-04/" title="Permalink to Instalando o Skype no Ubuntu 16.04" rel="bookmark">Instalando o Skype no Ubuntu 16.04</a>
+    </h2>
+      </div>
+</header><div class="tc-content-inner entry-summary">
+            <div class="czr-wp-the-content">
+              <p>&nbsp; &nbsp; Iniciamos o processo de instalação da 
+aplicação , utilizando o comando abaixo para obter a versão mais atual 
+do skype: […]</p>
+          </div>
+      </div>        </div>
+      </section>
+  </div>
+</article>  </div>
+</section>
+
+<div id="czr-comments" class="comments-area ">
+    <div id="comments" class="comments_container comments czr-comments-block">
+  <section class="post-comments">
+    	<div id="respond" class="comment-respond">
+		<h4 id="reply-title" class="comment-reply-title">Deixe um comentário <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://lrodrigo.sgs.lncc.br/wp/dicas/apache-ativando-o-protocolo-https-http-ssl/#respond" style="display:none;">Cancelar resposta</a></small></h4><p class="must-log-in">Você precisa fazer o <a href="http://lrodrigo.sgs.lncc.br/wp/wp-login.php?redirect_to=http%3A%2F%2Flrodrigo.sgs.lncc.br%2Fwp%2Fdicas%2Fapache-ativando-o-protocolo-https-http-ssl%2F">login</a> para publicar um comentário.</p>	</div><!-- #respond -->
+	<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>  </section>
+</div>  </div>                </div>
+
+                <div class="left sidebar tc-sidebar col-12 col-md-3 order-md-first">
+  <div id="left" class="widget-area" role="complementary">
+              <aside class="social-block widget widget_social">
+        <div class="social-links">
+          <ul class="socials ">
+  <li><a rel="nofollow" class="social-icon icon-feed" title="Inscreva-se no meu feed rss" aria-label="Inscreva-se no meu feed rss" href="http://lrodrigo.sgs.lncc.br/wp/feed/rss/" target="_blank"><i class="fas fa-rss"></i></a></li> <li><a rel="nofollow" class="social-icon icon-facebook" title="Siga-nos no Facebook" aria-label="Siga-nos no Facebook" href="https://www.facebook.com/lrodrigo.papagaio" target="_blank"><i class="fab fa-facebook"></i></a></li> <li><a rel="nofollow" class="social-icon icon-instagram" title="Siga-nos no Instagram" aria-label="Siga-nos no Instagram" href="https://www.instagram.com/luisrodrigoog/" target="_blank"><i class="fab fa-instagram"></i></a></li> <li><a rel="nofollow" class="social-icon icon-flickr" title="Siga-nos no Flickr" aria-label="Siga-nos no Flickr" href="https://www.flickr.com/photos/luisrodrigoog/" target="_blank"><i class="fab fa-flickr"></i></a></li> <li><a rel="nofollow" class="social-icon icon-linkedin" title="Siga-nos no Linkedin" aria-label="Siga-nos no Linkedin" href="https://www.linkedin.com/in/luisrodrigoog/" target="_blank"><i class="fab fa-linkedin"></i></a></li></ul>
+        </div>
+      </aside>
+        <aside id="search-3" class="widget widget_search"><div class="search-form__container ">
+  <form action="http://lrodrigo.sgs.lncc.br/wp/" method="get" class="czr-form search-form">
+    <div class="form-group czr-focus">
+            <label for="s-5b59af343db5c" id="lsearch-5b59af343db5c"><span>Search</span><i class="icn-search"></i><i class="icn-close"></i></label>
+      <input id="s-5b59af343db5c" class="form-control czr-search-field czr-focusable" name="s" aria-describedby="lsearch-5b59af343db5c" title="Search …" type="text">
+    </div>
+  </form>
+</div></aside><aside id="zflickr-2" class="widget widget_flickr"><h3 class="widget-title">LRodrigo Flickr</h3><div id="fbw-zflickr-2" class="flickr-badge-wrapper ltr zframe-flickr-wrap-ltr default"><ul><li id="flickr_badge_image1" class="flickr_badge_image"><a href="http://www.flickr.com/photos/luisrodrigoog/40444481672/" target="_blank"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/40444481672_b3f30ba6ac_t.jpg" alt="Uma foto no Flickr" title="E sÃ³ dÃ¡ ela." width="66" height="100"></a></li><li id="flickr_badge_image2" class="flickr_badge_image"><a href="http://www.flickr.com/photos/luisrodrigoog/39580669955/" target="_blank"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/39580669955_da954445b1_t.jpg" alt="Uma foto no Flickr" title="Miss MarÃ§o" width="96" height="100"></a></li><li id="flickr_badge_image3" class="flickr_badge_image"><a href="http://www.flickr.com/photos/luisrodrigoog/39766067934/" target="_blank"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/39766067934_a4b2bc384e_t.jpg" alt="Uma foto no Flickr" title="CalendÃ¡rios de MarÃ§o  - 2018" width="96" height="100"></a></li><li id="flickr_badge_image4" class="flickr_badge_image"><a href="http://www.flickr.com/photos/luisrodrigoog/38665958400/" target="_blank"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/38665958400_d338e31e50_t.jpg" alt="Uma foto no Flickr" title="CalendÃ¡rios de MarÃ§o  - 2018" width="96" height="100"></a></li><li id="flickr_badge_image5" class="flickr_badge_image"><a href="http://www.flickr.com/photos/luisrodrigoog/40433229552/" target="_blank"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/40433229552_f00da6133b_t.jpg" alt="Uma foto no Flickr" title="CalendÃ¡rios de MarÃ§o  - 2018" width="96" height="100"></a></li><li id="flickr_badge_image6" class="flickr_badge_image"><a href="http://www.flickr.com/photos/luisrodrigoog/25605611407/" target="_blank"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/25605611407_e6fd892b71_t.jpg" alt="Uma foto no Flickr" title="CalendÃ¡rios de MarÃ§o  - 2018" width="96" height="100"></a></li><li id="flickr_badge_image7" class="flickr_badge_image"><a href="http://www.flickr.com/photos/luisrodrigoog/26605679268/" target="_blank"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/26605679268_551e6da84d_t.jpg" alt="Uma foto no Flickr" title="CalendÃ¡rios de MarÃ§o  - 2018" width="96" height="100"></a></li><li id="flickr_badge_image8" class="flickr_badge_image"><a href="http://www.flickr.com/photos/luisrodrigoog/26605678988/" target="_blank"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/26605678988_32b4b09b1d_t.jpg" alt="Uma foto no Flickr" title="CalendÃ¡rios de MarÃ§o  - 2018" width="96" height="100"></a></li><li id="flickr_badge_image9" class="flickr_badge_image"><a href="http://www.flickr.com/photos/luisrodrigoog/26605643068/" target="_blank"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/26605643068_b4425d4c4a_t.jpg" alt="Uma foto no Flickr" title="Bora dar um passeio" width="100" height="67"></a></li><li id="flickr_badge_image10" class="flickr_badge_image"><a href="http://www.flickr.com/photos/luisrodrigoog/25605553327/" target="_blank"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/25605553327_ac5f25798d_t.jpg" alt="Uma foto no Flickr" title="Flores de Agosto." width="100" height="67"></a></li></ul></div><span style="position:absolute;left:-999em;top:-999em;visibility:hidden" class="flickr_badge_beacon"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/p.gif" alt="" width="0" height="0"></span>
+<a href="http://wordpress.org/extend/plugins/flickr-badges-widget/">
+			<span style="font-size: 11px;"><span style="color: #0063DC; font-weight: bold;">Flick</span><span style="color: #FF0084; font-weight: bold;">r</span> Badges Widget</span>
+			</a></aside><aside id="jr_insta_slider-3" class="widget jr-insta-slider"><h3 class="widget-title">LRodrigo Instagram</h3><script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$('.instaslider-nr-3').pllexislider({
+			animation: 'slide',
+			slideshowSpeed: 7000,
+			directionNav: true,
+			controlNav: false,
+			prevText: '',
+			nextText: '',
+		});
+	});
+</script>
+<div class="pllexislider pllexislider-normal instaslider-nr-3">
+
+<div class="pllex-viewport" style="overflow: hidden; position: relative;"><ul class="no-bullet slides" style="width: 8400%; transition-duration: 0s; transform: translate3d(-388px, 0px, 0px);"><li class="clone" aria-hidden="true" style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/Bj5zPlmlhua/" target="_blank" title="Luar"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/33701788_2028084554123559_2457808680247099392_n.jpg" alt="Luar" title="Luar" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">1 mês ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Luar.</span>
+</div>
+</li>
+<li style="width: 194px; margin-right: 0px; float: left; display: block;" class=""><a href="https://www.instagram.com/p/Blqg1zGgExa/" target="_blank" title="Gramado gramadoserragaucha gramadoecanela gramado"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/36976438_263001411162760_617635457013907456_n.jpg" alt="Gramado gramadoserragaucha gramadoecanela gramado" title="Gramado gramadoserragaucha gramadoecanela gramado" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">17 horas ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Gramado. &nbsp;<a href="https://www.instagram.com/explore/tags/gramadoserragaucha/" rel="nofollow" target="_blank">#gramadoserragaucha</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/gramadoecanela/" rel="nofollow" target="_blank">#gramadoecanela</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/gramado/" rel="nofollow" target="_blank">#gramado</a>&nbsp;</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;" class="pllex-active-slide"><a href="https://www.instagram.com/p/BljSjMtl0iw/" target="_blank" title="P de Lua Uma das atraes de Gramado gramado gramadoecanela"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/37169560_287774998437663_7452773478475759616_n.jpg" alt="P de Lua Uma das atraes de Gramado gramado gramadoecanela" title="P de Lua Uma das atraes de Gramado gramado gramadoecanela" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">4 dias ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Pé de Lua. Uma das atrações de Gramado. &nbsp;<a href="https://www.instagram.com/explore/tags/gramado/" rel="nofollow" target="_blank">#gramado</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/gramadoecanela/" rel="nofollow" target="_blank">#gramadoecanela</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/gramadoserragaucha/" rel="nofollow" target="_blank">#gramadoserragaucha</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/pra/" rel="nofollow" target="_blank">#pra</a>&nbsp;çadasetnias</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/Blg_Td0lyzx/" target="_blank" title="Naturelle gramado casavalduga bentogonalves"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/37134918_200816517256872_3763757395709263872_n.jpg" alt="Naturelle gramado casavalduga bentogonalves" title="Naturelle gramado casavalduga bentogonalves" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">4 dias ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Naturelle &nbsp;<a href="https://www.instagram.com/explore/tags/gramado/" rel="nofollow" target="_blank">#gramado</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/casavalduga/" rel="nofollow" target="_blank">#casavalduga</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/bentogon/" rel="nofollow" target="_blank">#bentogon</a>&nbsp;çalves</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/Blf3XDAFl46/" target="_blank" title="Cascata do Caracol cascatadocaracol canela serragaucha"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/37232630_1608911889235714_5798653441026818048_n.jpg" alt="Cascata do Caracol cascatadocaracol canela serragaucha" title="Cascata do Caracol cascatadocaracol canela serragaucha" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">5 dias ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Cascata do Caracol &nbsp;<a href="https://www.instagram.com/explore/tags/cascatadocaracol/" rel="nofollow" target="_blank">#cascatadocaracol</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/canela/" rel="nofollow" target="_blank">#canela</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/serragaucha/" rel="nofollow" target="_blank">#serragaucha</a>&nbsp;</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/BleJQiXFpeU/" target="_blank" title="AquaRio aquaRio aquariomarinhodoriodejaneiro"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/37344061_656249758066434_2488624439235706880_n.jpg" alt="AquaRio aquaRio aquariomarinhodoriodejaneiro" title="AquaRio aquaRio aquariomarinhodoriodejaneiro" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">6 dias ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">AquaRio &nbsp;<a href="https://www.instagram.com/explore/tags/aquaRio/" rel="nofollow" target="_blank">#aquaRio</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/aquariomarinhodoriodejaneiro/" rel="nofollow" target="_blank">#aquariomarinhodoriodejaneiro</a>&nbsp;</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/BlY6PSnF7OS/" target="_blank" title="Porto Maravilha portomaravilha riodejaneiro"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/36749375_342448819626314_8016727230178656256_n.jpg" alt="Porto Maravilha portomaravilha riodejaneiro" title="Porto Maravilha portomaravilha riodejaneiro" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">1 semana ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Porto Maravilha &nbsp;<a href="https://www.instagram.com/explore/tags/portomaravilha/" rel="nofollow" target="_blank">#portomaravilha</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/riodejaneiro/" rel="nofollow" target="_blank">#riodejaneiro</a>&nbsp;</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/BlWgiKXF6Ic/" target="_blank" title="Meu paraso  voc nofilter arraialdocabo"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/36631216_569104906817239_4088246676047790080_n.jpg" alt="Meu paraso  voc nofilter arraialdocabo" title="Meu paraso  voc nofilter arraialdocabo" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">1 semana ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Meu paraíso é você. &nbsp;<a href="https://www.instagram.com/explore/tags/nofilter/" rel="nofollow" target="_blank">#nofilter</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/arraialdocabo/" rel="nofollow" target="_blank">#arraialdocabo</a>&nbsp;</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/BlWM-yXFZWN/" target="_blank" title="AquaRio aquario"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/36749959_2059295410771634_7716602852633739264_n.jpg" alt="AquaRio aquario" title="AquaRio aquario" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">1 semana ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">AquaRio. &nbsp;<a href="https://www.instagram.com/explore/tags/aquario/" rel="nofollow" target="_blank">#aquario</a>&nbsp;.</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/BlQrHpRFDXw/" target="_blank" title="Marcas do tempo"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/36593571_235820420477900_5503418986827612160_n.jpg" alt="Marcas do tempo" title="Marcas do tempo" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">2 semanas ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Marcas do tempo.</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/BlOiOwGFJ44/" target="_blank" title="Luzes do Amanh arraialdocabo arraialdocaborj pordosol sunset praiagrande costadoaol capitaldomergulho"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/36582294_214339546070073_3514405540262313984_n.jpg" alt="Luzes do Amanh arraialdocabo arraialdocaborj pordosol sunset praiagrande costadoaol capitaldomergulho" title="Luzes do Amanh arraialdocabo arraialdocaborj pordosol sunset praiagrande costadoaol capitaldomergulho" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">2 semanas ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Luzes do Amanhã. &nbsp;<a href="https://www.instagram.com/explore/tags/arraialdocabo/" rel="nofollow" target="_blank">#arraialdocabo</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/arraialdocaborj/" rel="nofollow" target="_blank">#arraialdocaborj</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/pordosol/" rel="nofollow" target="_blank">#pordosol</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/sunset/" rel="nofollow" target="_blank">#sunset</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/praiagrande/" rel="nofollow" target="_blank">#praiagrande</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/costadoaol/" rel="nofollow" target="_blank">#costadoaol</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/capitaldomergulho/" rel="nofollow" target="_blank">#capitaldomergulho</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/meuparaiso/" rel="nofollow" target="_blank">#meuparaiso</a>&nbsp;</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/BlLO5_FlCgy/" target="_blank" title="Nova Flor afonso"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/36525885_2182875818610493_7815105337702219776_n.jpg" alt="Nova Flor afonso" title="Nova Flor afonso" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">2 semanas ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Nova Flor &nbsp;<a href="https://www.instagram.com/explore/tags/afonso/" rel="nofollow" target="_blank">#afonso</a>&nbsp;</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/BlGjQBllrbt/" target="_blank" title="Mirra"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/36762074_852269478295440_2090942293333770240_n.jpg" alt="Mirra" title="Mirra" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">2 semanas ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Mirra</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/BlErEfXlNK2/" target="_blank" title="F"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/36148872_242967879763367_7938894867927662592_n.jpg" alt="F" title="F" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">2 semanas ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Fé</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/Bk8gVnMlh1h/" target="_blank" title="Cerejeiras de Petrpolis petropolis"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/36135958_654782908204617_1500774578106925056_n.jpg" alt="Cerejeiras de Petrpolis petropolis" title="Cerejeiras de Petrpolis petropolis" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">3 semanas ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Cerejeiras de Petrópolis &nbsp;<a href="https://www.instagram.com/explore/tags/petropolis/" rel="nofollow" target="_blank">#petropolis</a>&nbsp;</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/Bk7nycVFgJ6/" target="_blank" title="Delicada"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/36136323_2216083761740456_1085352220112715776_n.jpg" alt="Delicada" title="Delicada" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">3 semanas ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Delicada.</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/Bk5rfzyFcCK/" target="_blank" title="Sementes"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/36085134_2096637400587399_2649140105960226816_n.jpg" alt="Sementes" title="Sementes" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">3 semanas ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Sementes</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/Bk3-5U0lfOH/" target="_blank" title="Julho 2018  Arraial do Cabo"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/35616320_513233935772628_7038140844708200448_n.jpg" alt="Julho 2018  Arraial do Cabo" title="Julho 2018  Arraial do Cabo" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">3 semanas ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Julho 2018 - Arraial do Cabo</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/Bk3-zinFf_t/" target="_blank" title="Julho 2018  Belo Horizonte"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/36136447_196277257745789_6251891457053949952_n.jpg" alt="Julho 2018  Belo Horizonte" title="Julho 2018  Belo Horizonte" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">3 semanas ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Julho 2018 - Belo Horizonte</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/Bk3-vfbFsyu/" target="_blank" title="Julho 2018"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/36505086_1691275590941180_5380899517086302208_n.jpg" alt="Julho 2018" title="Julho 2018" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">3 semanas ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Julho 2018</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/Bk3-ns8l5Us/" target="_blank" title="Julho 2018  So Loureno"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/36149159_295076081034955_7452697118252204032_n.jpg" alt="Julho 2018  So Loureno" title="Julho 2018  So Loureno" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">3 semanas ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Julho 2018 - São Lourenço</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/Bk3fb3ylRQB/" target="_blank" title="Cores do Paraso arraialdocabo"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/35461482_215182362460029_6110521461749841920_n.jpg" alt="Cores do Paraso arraialdocabo" title="Cores do Paraso arraialdocabo" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">3 semanas ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Cores do Paraíso &nbsp;<a href="https://www.instagram.com/explore/tags/arraialdocabo/" rel="nofollow" target="_blank">#arraialdocabo</a>&nbsp;</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/Bk1KchkF0tg/" target="_blank" title="Bamberg cervejaartesanal cervejaria"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/35575245_268694620552684_48388656334897152_n.jpg" alt="Bamberg cervejaartesanal cervejaria" title="Bamberg cervejaartesanal cervejaria" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">3 semanas ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Bamberg &nbsp;<a href="https://www.instagram.com/explore/tags/cervejaartesanal/" rel="nofollow" target="_blank">#cervejaartesanal</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/cervejaria/" rel="nofollow" target="_blank">#cervejaria</a>&nbsp;</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/BkyzJaUFtJH/" target="_blank" title="Relacionado"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/35616789_188449528677576_1992636062500913152_n.jpg" alt="Relacionado" title="Relacionado" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">3 semanas ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Relacionado</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/BkyzE_yF8ze/" target="_blank" title="Relacionado"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/36085551_349757138887263_3029225998483718144_n.jpg" alt="Relacionado" title="Relacionado" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">3 semanas ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Relacionado</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/Bkyy_wDFstg/" target="_blank" title="Relacionado"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/35576136_393803791028039_8275917528555847680_n.jpg" alt="Relacionado" title="Relacionado" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">3 semanas ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Relacionado</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/BkvmekJF3hM/" target="_blank" title="Hibiscus hibisco hibiscus"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/36148224_279248706164292_984444583423246336_n.jpg" alt="Hibiscus hibisco hibiscus" title="Hibiscus hibisco hibiscus" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">3 semanas ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Hibiscus &nbsp;<a href="https://www.instagram.com/explore/tags/hibisco/" rel="nofollow" target="_blank">#hibisco</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/hibiscus/" rel="nofollow" target="_blank">#hibiscus</a>&nbsp;</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/Bkst2SmFdVt/" target="_blank" title="Palcio de Cristal  Bauernfest bauernfest palaciodecristal petropolis cidadeimperial bauernfest2018"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/36036160_198385684069763_7712790381963771904_n.jpg" alt="Palcio de Cristal  Bauernfest bauernfest palaciodecristal petropolis cidadeimperial bauernfest2018" title="Palcio de Cristal  Bauernfest bauernfest palaciodecristal petropolis cidadeimperial bauernfest2018" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">4 semanas ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Palácio de Cristal - Bauernfest &nbsp;<a href="https://www.instagram.com/explore/tags/bauernfest/" rel="nofollow" target="_blank">#bauernfest</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/palaciodecristal/" rel="nofollow" target="_blank">#palaciodecristal</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/petropolis/" rel="nofollow" target="_blank">#petropolis</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/cidadeimperial/" rel="nofollow" target="_blank">#cidadeimperial</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/bauernfest2018/" rel="nofollow" target="_blank">#bauernfest2018</a>&nbsp;</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/Bkqpv6Zlac_/" target="_blank" title="Palcio Amarelo  Cmara Municipal petropolis cidadeimperial centrohistorico bauernfest"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/36021815_192464814772781_9196636986423640064_n.jpg" alt="Palcio Amarelo  Cmara Municipal petropolis cidadeimperial centrohistorico bauernfest" title="Palcio Amarelo  Cmara Municipal petropolis cidadeimperial centrohistorico bauernfest" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">4 semanas ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Palácio Amarelo - Câmara Municipal &nbsp;<a href="https://www.instagram.com/explore/tags/petropolis/" rel="nofollow" target="_blank">#petropolis</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/cidadeimperial/" rel="nofollow" target="_blank">#cidadeimperial</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/centrohistorico/" rel="nofollow" target="_blank">#centrohistorico</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/bauernfest/" rel="nofollow" target="_blank">#bauernfest</a>&nbsp;</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/BknyTS1lBLw/" target="_blank" title="14weiss cervejariabohemia"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/35399074_1894304047257755_5550354758805487616_n.jpg" alt="14weiss cervejariabohemia" title="14weiss cervejariabohemia" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">4 semanas ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">14-weiss &nbsp;<a href="https://www.instagram.com/explore/tags/cervejariabohemia/" rel="nofollow" target="_blank">#cervejariabohemia</a>&nbsp;</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/BkllFCXFOd7/" target="_blank" title="Festa do Colono Alemo  Bauernfest petropolis ucp bauernfest2018 bauernfest"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/35374949_2047991925466801_2309274486219735040_n.jpg" alt="Festa do Colono Alemo  Bauernfest petropolis ucp bauernfest2018 bauernfest" title="Festa do Colono Alemo  Bauernfest petropolis ucp bauernfest2018 bauernfest" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">4 semanas ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Festa do Colono Alemão - Bauernfest &nbsp;<a href="https://www.instagram.com/explore/tags/petropolis/" rel="nofollow" target="_blank">#petropolis</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/ucp/" rel="nofollow" target="_blank">#ucp</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/bauernfest2018/" rel="nofollow" target="_blank">#bauernfest2018</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/bauernfest/" rel="nofollow" target="_blank">#bauernfest</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/cidadeimperial/" rel="nofollow" target="_blank">#cidadeimperial</a>&nbsp;</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/BkjM-oClRiR/" target="_blank" title="Hotel Quitandinha petropolis hotelquitandinha cidadeimperial"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/35575950_189221775256278_1355765671761281024_n.jpg" alt="Hotel Quitandinha petropolis hotelquitandinha cidadeimperial" title="Hotel Quitandinha petropolis hotelquitandinha cidadeimperial" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">4 semanas ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Hotel Quitandinha &nbsp;<a href="https://www.instagram.com/explore/tags/petropolis/" rel="nofollow" target="_blank">#petropolis</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/hotelquitandinha/" rel="nofollow" target="_blank">#hotelquitandinha</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/cidadeimperial/" rel="nofollow" target="_blank">#cidadeimperial</a>&nbsp;</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/Bkh_YJOlTjL/" target="_blank" title="Por que esta semana temos Bauernfest petropolis bauernfest2018 bauernfest cidadeimperial"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/35297461_653635554974410_8624699491812900864_n.jpg" alt="Por que esta semana temos Bauernfest petropolis bauernfest2018 bauernfest cidadeimperial" title="Por que esta semana temos Bauernfest petropolis bauernfest2018 bauernfest cidadeimperial" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">4 semanas ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Por que esta semana temos Bauernfest. &nbsp;<a href="https://www.instagram.com/explore/tags/petropolis/" rel="nofollow" target="_blank">#petropolis</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/bauernfest2018/" rel="nofollow" target="_blank">#bauernfest2018</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/bauernfest/" rel="nofollow" target="_blank">#bauernfest</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/cidadeimperial/" rel="nofollow" target="_blank">#cidadeimperial</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/museuimperial/" rel="nofollow" target="_blank">#museuimperial</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/minhaterra/" rel="nofollow" target="_blank">#minhaterra</a>&nbsp;</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/BkfrKxCFuQc/" target="_blank" title="S porque  Bauernfest bauernfest bauernfest2018 ucp"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/35532585_635076150193724_341483817388736512_n.jpg" alt="S porque  Bauernfest bauernfest bauernfest2018 ucp" title="S porque  Bauernfest bauernfest bauernfest2018 ucp" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">4 semanas ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Só porque é Bauernfest. &nbsp;<a href="https://www.instagram.com/explore/tags/bauernfest/" rel="nofollow" target="_blank">#bauernfest</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/bauernfest2018/" rel="nofollow" target="_blank">#bauernfest2018</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/ucp/" rel="nofollow" target="_blank">#ucp</a>&nbsp;</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/BkbD0jdFMVH/" target="_blank" title="Por do sol na Bauernfest de 2018"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/35507985_1760189877406694_1056330494733451264_n.jpg" alt="Por do sol na Bauernfest de 2018" title="Por do sol na Bauernfest de 2018" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">1 mês ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Por do sol na Bauernfest de 2018.</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/BkYQmC_F5kv/" target="_blank" title="Biergarten 2018 bauernfest deguste"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/35507978_2035895113121594_4560189875944423424_n.jpg" alt="Biergarten 2018 bauernfest deguste" title="Biergarten 2018 bauernfest deguste" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">1 mês ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Biergarten 2018 &nbsp;<a href="https://www.instagram.com/explore/tags/bauernfest/" rel="nofollow" target="_blank">#bauernfest</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/deguste/" rel="nofollow" target="_blank">#deguste</a>&nbsp;</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/BkWRkHxFPUw/" target="_blank" title="Fogo"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/35382325_460872117763111_2097329614077558784_n.jpg" alt="Fogo" title="Fogo" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">1 mês ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Fogo.</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/BkTrZPqF5th/" target="_blank" title="Hummm  Guinness"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/34710535_201055110615202_2874930419361382400_n.jpg" alt="Hummm  Guinness" title="Hummm  Guinness" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">1 mês ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Hummm ... Guinness...</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/BkF92vjla18/" target="_blank" title="Paz no paraso arraialdocabo"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/35001579_610138739370535_614993652694908928_n.jpg" alt="Paz no paraso arraialdocabo" title="Paz no paraso arraialdocabo" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">1 mês ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Paz no paraíso. &nbsp;<a href="https://www.instagram.com/explore/tags/arraialdocabo/" rel="nofollow" target="_blank">#arraialdocabo</a>&nbsp;</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/BkBrIgAFf-P/" target="_blank" title="Porto Seguro"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/33842064_259940724553286_3462879049540435968_n.jpg" alt="Porto Seguro" title="Porto Seguro" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">1 mês ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Porto Seguro</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;"><a href="https://www.instagram.com/p/Bj5zPlmlhua/" target="_blank" title="Luar"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/33701788_2028084554123559_2457808680247099392_n.jpg" alt="Luar" title="Luar" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">1 mês ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Luar.</span>
+</div>
+</li><li style="width: 194px; margin-right: 0px; float: left; display: block;" class="clone" aria-hidden="true"><a href="https://www.instagram.com/p/Blqg1zGgExa/" target="_blank" title="Gramado gramadoserragaucha gramadoecanela gramado"><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/36976438_263001411162760_617635457013907456_n.jpg" alt="Gramado gramadoserragaucha gramadoecanela gramado" title="Gramado gramadoserragaucha gramadoecanela gramado" draggable="false"></a><div class="jr-insta-datacontainer">
+<span class="jr-insta-time">17 horas ago</span>
+<span class="jr-insta-username">by <a rel="nofollow" href="https://www.instagram.com/luisrodrigoog/" target="_blank">luisrodrigoog</a></span>
+<span class="jr-insta-caption">Gramado. &nbsp;<a href="https://www.instagram.com/explore/tags/gramadoserragaucha/" rel="nofollow" target="_blank">#gramadoserragaucha</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/gramadoecanela/" rel="nofollow" target="_blank">#gramadoecanela</a>&nbsp; &nbsp;<a href="https://www.instagram.com/explore/tags/gramado/" rel="nofollow" target="_blank">#gramado</a>&nbsp;</span>
+</div>
+</li></ul></div><ul class="pllex-direction-nav"><li class="pllex-nav-prev"><a class="pllex-prev" href="#"></a></li><li class="pllex-nav-next"><a class="pllex-next" href="#"></a></li></ul></div></aside>		<aside id="recent-posts-3" class="widget widget_recent_entries">		<h3 class="widget-title">Posts recentes</h3>		<ul>
+											<li>
+					<a href="http://lrodrigo.sgs.lncc.br/wp/programacao/curso-de-html5-e-css3-7a-aula-quotations-citacoes/">Curso de HTML5 e CSS3 – 7a. Aula – Quotations – Citações</a>
+									</li>
+											<li>
+					<a href="http://lrodrigo.sgs.lncc.br/wp/programacao/curso-de-html5-e-css3-7a-aula-computer-code/">Curso de HTML5 e CSS3 – 7a. Aula – Computer Code</a>
+									</li>
+											<li>
+					<a href="http://lrodrigo.sgs.lncc.br/wp/programacao/curso-de-html5-e-css3-6a-aula-tabelas/">Curso de HTML5 e CSS3 – 6a. Aula – Tabelas</a>
+									</li>
+											<li>
+					<a href="http://lrodrigo.sgs.lncc.br/wp/programacao/curso-de-html5-e-css3-5a-aula-listas/">Curso de HTML5 e CSS3 – 5a. Aula – Listas</a>
+									</li>
+											<li>
+					<a href="http://lrodrigo.sgs.lncc.br/wp/dicas/bootstrap-introducao/">Bootstrap – Introdução</a>
+									</li>
+					</ul>
+		</aside><aside id="calendar-4" class="widget widget_calendar"><div id="calendar_wrap" class="calendar_wrap"><table id="wp-calendar">
+	<caption>julho 2018</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="segunda-feira">S</th>
+		<th scope="col" title="terça-feira">T</th>
+		<th scope="col" title="quarta-feira">Q</th>
+		<th scope="col" title="quinta-feira">Q</th>
+		<th scope="col" title="sexta-feira">S</th>
+		<th scope="col" title="sábado">S</th>
+		<th scope="col" title="domingo">D</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="http://lrodrigo.sgs.lncc.br/wp/2018/05/">« maio</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next" class="pad">&nbsp;</td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="6" class="pad">&nbsp;</td><td>1</td>
+	</tr>
+	<tr>
+		<td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+	</tr>
+	<tr>
+		<td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td>
+	</tr>
+	<tr>
+		<td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td>
+	</tr>
+	<tr>
+		<td>23</td><td>24</td><td>25</td><td id="today">26</td><td>27</td><td>28</td><td>29</td>
+	</tr>
+	<tr>
+		<td>30</td><td>31</td>
+		<td class="pad" colspan="5">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></aside>      </div>
+</div>
+            </div><!-- .column-content-wrapper -->
+
+            
+
+          </div><!-- .container -->
+
+          <div id="czr-push-footer"></div>
+    </div><!-- #main-wrapper -->
+
+    
+          <div class="container-fluid">
+        <div class="post-navigation row ">
+  <nav id="nav-below" class="col-12" role="navigation">
+    <h2 class="sr-only">Navegação do post</h2>
+    <ul class="czr_pager row flex-row flex-no-wrap">
+      <li class="previous col-5 text-left">
+              <span class="sr-only">Previous post</span>
+        <span class="nav-previous nav-dir"><a href="http://lrodrigo.sgs.lncc.br/wp/dicas/instalando-o-komodo-edit-no-ubuntu/" rel="prev"><span class="meta-nav"><i class="arrow icn-left-open-big"></i><span class="meta-nav-title">Instalando o Komodo Edit no Ubuntu</span></span></a></span>
+            </li>
+      <li class="nav-back col-2 text-center">
+                <a href="http://lrodrigo.sgs.lncc.br/wp/" title="Back to post list">
+          <span><i class="icn-grid-empty"></i></span>
+          <span class="sr-only">Back to post list</span>
+        </a>
+              </li>
+      <li class="next col-5 text-right">
+              <span class="sr-only">Next post</span>
+        <span class="nav-next nav-dir"><a href="http://lrodrigo.sgs.lncc.br/wp/dicas/apache-redirecionando-as-conexoes-http-para-o-https/" rel="next"><span class="meta-nav"><span class="meta-nav-title">Apache: Redirecionando as conexões HTTP para o HTTPS</span><i class="arrow icn-right-open-big"></i></span></a></span>
+            </li>
+  </ul>
+  </nav>
+</div>
+      </div>
+    
+<footer id="footer" class="footer__wrapper">
+  <div id="colophon" class="colophon ">
+  <div class="container">
+    <div class="colophon__row row flex-row justify-content-between">
+      <div class="col-12 col-sm-auto">
+        <div id="footer__credits" class="footer__credits">
+  <p class="czr-copyright">
+    <span class="czr-copyright-text">©&nbsp;2018&nbsp;</span><a class="czr-copyright-link" href="http://lrodrigo.sgs.lncc.br/wp" title="LRodrigo - Web Site">LRodrigo - Web Site</a><span class="czr-rights-text">&nbsp;–&nbsp;All rights reserved</span>
+  </p>
+  <p class="czr-credits">
+    <span class="czr-designer">
+      <span class="czr-wp-powered"><span class="czr-wp-powered-text">Proporcionado por&nbsp;</span><a class="czr-wp-powered-link fab fa-wordpress" title="Desenvolvido com WordPress" href="https://wordpress.org/" target="_blank"></a></span><span class="czr-designer-text">&nbsp;–&nbsp;Designed with the <a class="czr-designer-link" href="https://presscustomizr.com/customizr" title="Customizr theme">Customizr theme</a></span>
+    </span>
+  </p>
+</div>
+      </div>
+            <div class="col-12 col-sm-auto">
+        <div class="social-links">
+          <ul class="socials ">
+  <li><a rel="nofollow" class="social-icon icon-feed" title="Inscreva-se no meu feed rss" aria-label="Inscreva-se no meu feed rss" href="http://lrodrigo.sgs.lncc.br/wp/feed/rss/" target="_blank"><i class="fas fa-rss"></i></a></li> <li><a rel="nofollow" class="social-icon icon-facebook" title="Siga-nos no Facebook" aria-label="Siga-nos no Facebook" href="https://www.facebook.com/lrodrigo.papagaio" target="_blank"><i class="fab fa-facebook"></i></a></li> <li><a rel="nofollow" class="social-icon icon-instagram" title="Siga-nos no Instagram" aria-label="Siga-nos no Instagram" href="https://www.instagram.com/luisrodrigoog/" target="_blank"><i class="fab fa-instagram"></i></a></li> <li><a rel="nofollow" class="social-icon icon-flickr" title="Siga-nos no Flickr" aria-label="Siga-nos no Flickr" href="https://www.flickr.com/photos/luisrodrigoog/" target="_blank"><i class="fab fa-flickr"></i></a></li> <li><a rel="nofollow" class="social-icon icon-linkedin" title="Siga-nos no Linkedin" aria-label="Siga-nos no Linkedin" href="https://www.linkedin.com/in/luisrodrigoog/" target="_blank"><i class="fab fa-linkedin"></i></a></li></ul>
+        </div>
+      </div>
+          </div>
+  </div>
+</div>
+</footer>
+    </div><!-- end #tc-page-wrap -->
+
+    <section class="czr-overlay search_o">
+  <a href="#" class="search-close_btn search-toggle_btn czr-overlay-toggle_btn"><i class="icn-close"></i></a>
+  <div class="overlay-content">
+    <div class="search__wrapper">
+    <div class="search-form__container ">
+  <form action="http://lrodrigo.sgs.lncc.br/wp/" method="get" class="czr-form search-form">
+    <div class="form-group czr-focus">
+            <label for="s-5b59af345067f" id="lsearch-5b59af345067f"><span>Search</span><i class="icn-search"></i><i class="icn-close"></i></label>
+      <input id="s-5b59af345067f" class="form-control czr-search-field czr-focusable" name="s" aria-describedby="lsearch-5b59af345067f" title="Search …" type="text">
+    </div>
+  </form>
+</div>    </div>
+  </div>
+</section><div class="btn czr-btt czr-btta right"><i class="icn-up-small"></i></div>
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"http:\/\/lrodrigo.sgs.lncc.br\/wp\/dicas\/apache-ativando-o-protocolo-https-http-ssl\/":2073};
+	</script>
+	
+<script type="text/javascript" src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/shCore.js"></script>
+<script type="text/javascript" src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/shBrushPlain.js"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://lrodrigo.sgs.lncc.br/wp/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/styles/shCore.css?ver=2.1.364";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://lrodrigo.sgs.lncc.br/wp/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/styles/shThemeMidnight.css?ver=2.1.364";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.clipboardSwf = 'http://lrodrigo.sgs.lncc.br/wp/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf';
+	SyntaxHighlighter.config.strings.expandSource = 'show source';
+	SyntaxHighlighter.config.strings.viewSource = 'view source';
+	SyntaxHighlighter.config.strings.copyToClipboard = 'copy to clipboard';
+	SyntaxHighlighter.config.strings.copyToClipboardConfirmation = 'The code is in your clipboard now';
+	SyntaxHighlighter.config.strings.print = 'print';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = true;
+	SyntaxHighlighter.all();
+</script>
+<script type="text/javascript" src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/photon.js"></script>
+<script type="text/javascript" src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/devicepx-jetpack.js"></script>
+<script type="text/javascript" src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/comment-reply.js"></script>
+<script type="text/javascript" src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/core.js"></script>
+<script type="text/javascript" src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/wp-embed.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/sharing.js"></script>
+<script type="text/javascript">
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-google-plus-1', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=480,height=550' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-linkedin', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-twitter', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-skype', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomskype', 'menubar=1,resizable=1,width=305,height=665' );
+				return false;
+			});
+</script>
+<script type="text/javascript" src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/e-201830.js" async="async" defer="defer"></script>
+<script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:6.2.1',blog:'80394725',post:'2073',tz:'-3',srv:'lrodrigo.sgs.lncc.br'} ]);
+	_stq.push([ 'clickTrackerInit', '80394725', '2073' ]);
+</script>
+  
+  
+<div id="sharing_email" style="display: none;">
+		<form action="/wp/dicas/apache-ativando-o-protocolo-https-http-ssl/" method="post" class="czr-focus">
+			<label for="target_email">Enviar para oendereço de e-mail</label>
+			<input name="target_email" id="target_email" class="czr-focusable" type="email">
+
+			
+				<label for="source_name">Seu nome</label>
+				<input name="source_name" id="source_name" class="czr-focusable" type="text">
+
+				<label for="source_email">Seu endereço de e-mail</label>
+				<input name="source_email" id="source_email" class="czr-focusable" type="email">
+
+						<input id="jetpack-source_f_name" name="source_f_name" class="input czr-focusable" size="25" autocomplete="off" title="Este campo é para validação e não deve ser alterado" type="text">
+			
+			<img style="float: right; display: none" class="loading" src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/loading.gif" alt="loading" width="16" height="16">
+			<input value="Enviar e-mail" class="sharing_send" type="submit">
+			<a rel="nofollow" href="#cancel" class="sharing_cancel">Cancelar</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post não foi enviado - verifique os seus endereços de e-mail!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Verificação de e-mail falhou, tente novamente			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Desculpe, seu blog não pode compartilhar posts por e-mail.			</div>
+		</form>
+	</div><img src="Apache:%20Ativando%20o%20protocolo%20HTTPS%20(HTTP%20+%20SSL)%20%E2%80%93%20LRodrigo%20%E2%80%93%20Web%20Site_arquivos/g.gif" alt=":)" id="wpstats" width="6" height="5"></body></html>

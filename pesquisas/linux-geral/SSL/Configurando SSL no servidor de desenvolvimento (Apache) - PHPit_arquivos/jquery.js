@@ -1,0 +1,4 @@
+(function($){function removeNoJsClass(){$('html:first').removeClass('no-js');}
+function superfishSetup(){$('.menu').superfish({delay:200,animation:{opacity:'show',height:'show'},speed:'fast',cssArrows:true,autoArrows:true,dropShadows:false});}
+function modifyPosts(){$('<br />').insertBefore('.postarea .more-link');$('.nocomments').parent().css('display','none');$(".scroll").click(function(event){event.preventDefault();$('html,body').animate({scrollTop:$(this.hash).offset().top},500);});$('.content').fitVids();}
+$(document).ready(removeNoJsClass).ready(superfishSetup).ready(modifyPosts).on('post-load',modifyPosts);})(jQuery);
