@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://www.hostinger.com/widgets/bottom-banner-sale/tutorials_com_br -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="./861aab7cb5"></script><script src="./nr-1130.min.js"></script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1130.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="./iframeResizer.contentWindow.min.js"></script>
+    <link href="./css" rel="stylesheet">
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Open Sans, sans-serif;
+            margin: 0;
+        }
+        .sale-preheader {
+            padding: 10px 0;
+            background-color: #1b1c1d;
+            -webkit-animation: appear 3s;
+            animation: appear 3s;
+            z-index: 100000;
+            box-shadow: 0px -1px 1px rgba(0, 0, 0, 0.1);
+        }
+        .sale-preheader .container {
+            max-width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+            padding-left: 15px;
+            padding-right: 15px;}
+
+        @-webkit-keyframes appear {
+            0% {
+                opacity: 0; }
+            50% {
+                opacity: 0; }
+            100% {
+                opacity: 1; } }
+
+        @keyframes appear {
+            0% {
+                opacity: 0; }
+            50% {
+                opacity: 0; }
+            100% {
+                opacity: 1; } }
+
+        .sale-preheader__holder {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            text-align: center; }
+        @media (max-width: 991px) {
+            .sale-preheader__holder {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                -webkit-box-pack: space-evenly;
+                -ms-flex-pack: space-evenly;
+                justify-content: space-evenly; } }
+
+        .sale-preheader-holder__left {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            min-width: 65%; }
+        @media (max-width: 991px) {
+            .sale-preheader-holder__left {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                -webkit-box-pack: space-evenly;
+                -ms-flex-pack: space-evenly;
+                justify-content: space-evenly;
+                margin-bottom: 10px; } }
+        @media (max-width: 768px) {
+            .sale-preheader-holder__left {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column; } }
+        @media (max-width: 600px) {
+            .sale-preheader-holder__left {
+                margin-bottom: 10px; } }
+
+        @media (max-width: 1199px) {
+            .sale-preheader-holder-left__text {
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                flex-direction: row; } }
+
+        @media (max-width: 480px) {
+            .sale-preheader-holder-left__text {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column; } }
+
+        .sale-preheader-holder-left__text {
+            line-height: 30px;
+            font-size: 20px;
+            color: white;
+            text-transform: uppercase;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            align-items: center;
+            margin-right: 20px; }
+        .sale-preheader-holder-left-text__img {
+            width: 150px!important;
+            height: 30px!important;
+            margin-right: 20px;
+        }
+        @media (max-width: 1199px){
+            .sale-preheader-holder-left-text__img {
+                margin-right: 10px;
+            }
+        }
+        @media (max-width: 1199px) {
+            .sale-preheader-holder-left__text {
+                font-size: 18px;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column; } }
+        @media (max-width: 991px) {
+            .sale-preheader-holder-left__text {
+                display: none } }
+        @media (max-width: 768px) {
+            .sale-preheader-holder-left__text {
+                margin-right: 0; } }
+        @media (max-width: 480px) {
+            .sale-preheader-holder-left__text {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column; } }
+
+        .sale-preheader-holder-left-text__left {
+            font-weight: 600;
+            margin-right: 10px; }
+        @media (max-width: 480px) {
+            .sale-preheader-holder-left-text__left {
+                margin-right: 0;
+                font-size: 14px; } }
+        .sale-preheader-holder-left-text__left {
+            font-weight: 600;
+            margin-right: 10px; }
+
+        .sale-preheader-holder-left-text__right {
+            font-weight: 700;
+            font-size: 28px;
+            color: #fb1f23; }
+        .sale-preheader-holder__btn-wrapper {
+            display: -webkit-inline-box;
+            display: -ms-inline-flexbox;
+            display: inline-flex;
+            min-width: 230px; }
+        @media(min-width: 991px) {
+            .sale-preheader-holder__btn-wrapper {
+                margin-left: 20px;
+                margin-right: 50px;
+            }
+        }
+        .sale-preheader-holder-btn-wrapper__btn {
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+            border-radius: 6px;
+            background-color: #fb1f23;
+            color: #fff;
+            padding: 13px;
+            width: 100%;
+            letter-spacing: 1px;
+            text-decoration: none;
+            max-width: 300px; }
+        .sale-preheader-holder-btn-wrapper__btn:visited {
+            font-size: 16px;
+            text-align: center;
+            text-transform: uppercase;
+            border-radius: 6px;
+            background-color: #fb1f23;
+            color: #fff;
+            padding: 13px;
+            width: 100%;
+            letter-spacing: 1px;
+            text-decoration: none;
+            max-width: 300px; }
+        .sale-preheader-holder-btn-wrapper__btn:hover {
+            background-color: #fb1f23 !important;
+            color: #fff!important;
+        }
+        .sale-preheader-holder-btn-wrapper__btn:focus {
+            background-color: #fb1f23 !important;
+            color: #fff!important;
+        }
+        .sale-preheader-holder__close-wrapper {
+            cursor: pointer;
+            color: white;
+            position: absolute;
+            right: 10px;
+            top: 8px;
+        }
+
+        .sale-preheader-holder-btn-wrapper__btn:focus, .sale-preheader-holder-btn-wrapper__btn:hover {
+            color: white;
+            text-decoration: none;
+            background-color: #fb1f24; }
+        @media (max-width: 768px) {
+            .sale-preheader-holder-btn-wrapper__btn {
+                padding: 10px; } }
+        .calendar-timer {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center; }
+        .calendar-timer--pre-header {
+            text-align: center; }
+        @media (max-width: 768px) {
+            .calendar-timer--pre-header .calendar-timer-holder__col-holder {
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                flex-direction: row; } }
+        .calendar-timer--pre-header .calendar-timer-holder-col-holder__col {
+            margin: 0;
+            padding: 0 10px;
+            min-height: unset; }
+        @media (max-width: 1199px) {
+            .calendar-timer--pre-header .calendar-timer-holder-col-holder__col .explained {
+                font-size: 8px; } }
+        @media (max-width: 768px) {
+            .calendar-timer--pre-header .calendar-timer-holder-col-holder__col {
+                min-width: 60px;
+                padding: 0 5px; }
+            .calendar-timer--pre-header .calendar-timer-holder-col-holder__col .explained {
+                font-size: 10px; } }
+        .calendar-timer--pre-header .triangle-left {
+            margin-left: 0; }
+        .calendar-timer--pre-header .triangle-right {
+            margin-right: 0; }
+        @media (max-width: 768px) {
+            .calendar-timer--pre-header .triangle-left, .calendar-timer--pre-header .triangle-right {
+                display: block; } }
+
+        .calendar-timer__holder {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex; }
+
+        .calendar-timer-holder__col-holder {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center; }
+
+        .calendar-timer-holder-col-holder__col {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            padding: 10px;
+            color: white;
+            border-radius: 6px;
+            min-width: 70px;
+            min-height: 70px;
+            margin: 0 10px; }
+        .calendar-timer-holder-col-holder__col .value {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 1.4px; }
+        .calendar-timer-holder-col-holder__col .explained {
+            font-size: 12px;
+            font-weight: normal; }
+
+        .triangle-left {
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-right: 15px solid #fb1f24;
+            border-bottom: 10px solid transparent;
+            margin-left: 10px; }
+
+        .triangle-right {
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-left: 15px solid #fb1f24;
+            border-bottom: 10px solid transparent;
+            margin-right: 10px; }
+
+        @media (max-width: 768px) {
+            .triangle-left, .triangle-right {
+                display: none; }
+            .calendar-timer-holder__col-holder {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column; } }
+
+        .container-timer {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            margin-top: auto;
+            margin-bottom: 3rem; }
+        .container-timer .clock-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 400;
+            text-transform: uppercase; }
+        .container-timer .value {
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center; }
+        .container-timer .explained {
+            text-align: center; }
+
+        .container-timer-white {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            margin-bottom: 3rem; }
+        .container-timer-white .clock-holder {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center; }
+        .container-timer-white .value {
+            font-size: 80px;
+            font-weight: 600;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center; }
+        .container-timer-white .explained {
+            text-align: center;
+            font-size: 18px; }
+        .container-timer-white .days, .container-timer-white .hours, .container-timer-white .minutes, .container-timer-white .seconds {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex; }
+        .container-timer-white .seperator {
+            font-size: 80px;
+            margin: 0 20px; }
+        @media (max-width: 600px) {
+            .container-timer-white .clock-holder {
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap; }
+            .container-timer-white .seperator {
+                display: none; }
+            .container-timer-white .days, .container-timer-white .hours, .container-timer-white .minutes, .container-timer-white .seconds {
+                margin-right: 20px; }
+        }
+
+    </style>
+    <script type="text/javascript">
+        jQuery(function () {
+            var salePreaheader = jQuery('#sale-preheader');
+            var countdownBf = jQuery('.countdown');
+            var ends = countdownBf.attr('data-ends-on');
+            var endsDate = new Date(ends.replace(/-/g, "/"));
+            var countDownDate = endsDate.getTime() - endsDate.getTimezoneOffset()*60*1000;
+
+            var x = setInterval(function() {
+                var now = new Date().getTime();
+                var distance = countDownDate - now;
+                if (distance >= 0){
+                    var days = ("00" + Math.floor(distance / (1000 * 60 * 60 * 24))).substr(-2);
+                    var hours = ("00" + Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).substr(-2);
+                    var minutes = ("00" + Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).substr(-2);
+                    var seconds = ("00" + Math.floor((distance % (1000 * 60)) / 1000)).substr(-2);
+                    countdownBf.find('.days .value').text(days);
+                    countdownBf.find('.hours .value').text(hours);
+                    countdownBf.find('.minutes .value').text(minutes);
+                    countdownBf.find('.seconds .value').text(seconds);
+                } else {
+                    salePreaheader.hide();
+                    countdownBf.find('.days .value').text('00');
+                    countdownBf.find('.hours .value').text('00');
+                    countdownBf.find('.minutes .value').text('00');
+                    countdownBf.find('.seconds .value').text('00');
+                }
+            }, 1000);
+
+            var closeBtn = jQuery('#sale-preheader-close');
+            closeBtn.on('click', function() {
+                salePreaheader.fadeOut();
+            });
+
+        });
+    </script>
+</head>
+<body>
+<div class="sale-preheader" id="sale-preheader">
+    <div class="container">
+        <div class="sale-preheader__holder">
+            <div class="sale-preheader-holder__left">
+                <div class="sale-preheader-holder-left__text">
+                    <img class="sale-preheader-holder-left-text__img" src="./hostinger-logo-white.png">
+                    <span class="sale-preheader-holder-left-text__left">
+                            Oferta por tempo limitado</span>
+                    <span class="sale-preheader-holder-left-text__right">90% OFF</span></div>
+                <div class="sale-preheader-holder-left__timer">
+                    <div class="calendar-timer calendar-timer--pre-header">
+                        <div class="triangle-right"></div>
+                        <div class="calendar-timer__holder timer countdown" data-ends-on="2019-07-25 00:00:00">
+                            <div class="calendar-timer-holder__col-holder">
+                                <div class="calendar-timer-holder-col-holder__col days">
+                                    <div class="value">00</div>
+                                    <div class="explained">DIAS</div>
+                                </div>
+                                <div class="calendar-timer-holder-col-holder__col hours">
+                                    <div class="value">14</div>
+                                    <div class="explained">HORAS</div>
+                                </div>
+                            </div>
+                            <div class="calendar-timer-holder__col-holder">
+                                <div class="calendar-timer-holder-col-holder__col minutes">
+                                    <div class="value">03</div>
+                                    <div class="explained">MINUTOS</div>
+                                </div>
+                                <div class="calendar-timer-holder-col-holder__col seconds">
+                                    <div class="value">08</div>
+                                    <div class="explained">SEGUNDOS</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="triangle-left"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="sale-preheader-holder__btn-wrapper"><a id="hgr-all_pages-black_friday-preheader_section-button-get_started" class="sale-preheader-holder-btn-wrapper__btn" target="_blank" href="https://www.hostinger.com.br/">COMECE AGORA</a></div>
+            <div class="sale-preheader-holder__close-wrapper" id="sale-preheader-close">×</div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.eu01.nr-data.net","licenseKey":"861aab7cb5","applicationID":"7617002","transactionName":"MhBSZQoZC0tRB0dfVwtac0QLDApVHxNaUl8AAUMeGhcRTF8JHlRZCxtVQ1ULBFRVS0hAWRccUUURFwtF","queueTime":0,"applicationTime":169,"atts":"HldRE0IDGEU=","errorBeacon":"bam.eu01.nr-data.net","agent":""}</script>
+
+<div style="clear: both; display: block;"></div></body></html>
